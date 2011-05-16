@@ -3,11 +3,17 @@
 # Author: mcasl
 ###############################################################################
 
-require("RUnit")
-packPath <- "../sandbox" 
-#TODO change this to a package relative path
-uniTestPath   <-  paste(packPath,"pkg/AMORE/unitTest", sep="/")
-testFile <- paste(packPath,"www/unitTestResults.html", sep="/") 
+require("RUnit") 
+uniTestPath   <-  "./pkg/AMORE/unitTest"
+testFile <- "./www/unitTestResults.html"
+
+testFileToSFLinkMap <- function(testFileName, testDir = "unitTest") {
+	bname <- basename(testFileName)
+	regExp <- paste("^.*/([.a-zA-Z0-9]*)/", testDir,"/.*$", sep = "")
+	pack <- sub(regExp, "\1", testFileName)
+	return(paste("https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE/", pack, "/", testDir, "/", bname,"?root=amore", sep = ""))
+}
+
 
 testsuite.AMORErefClasses <- defineTestSuite("AMORE Reference Classes Unit Tests",
 		dirs = uniTestPath ,	
@@ -18,6 +24,6 @@ testsuite.AMORErefClasses <- defineTestSuite("AMORE Reference Classes Unit Tests
 )
 testResult <- runTestSuite(testsuite.AMORErefClasses)
 testResult
-printHTMLProtocol(testResult, file=testFile)
+printHTMLProtocol(testResult, file=testFile, testFileToLinkMap = testFileToSFLinkMap)
 
 
