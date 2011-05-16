@@ -2,6 +2,9 @@
 # 
 # Author: mcasl
 ###############################################################################
+KnownActivationFunctions <- c("threshold", "logistic", "tanh", "identity", "exponential", "reciprocal", "square", "Gauss", "sine", "cosine", "Elliott", "arctan", "radialBasis")
+
+
 gNeuralLayer <- setRefClass("neuralLayer",
 		fields=list(
 				numberOfNeurons = "integer",
@@ -22,8 +25,8 @@ gNeuralLayer <- setRefClass("neuralLayer",
 							return(neuron$getFrom(ID, ...))
 						},
 						
-						getWeight = function(FROM, ID, ...){
-							return(neuron$getWeight(FROM, ID, ...))
+						getWeight = function(ID, ...){
+							return(neuron$getWeight(ID, ...))
 						},
 						
 						numOfCons = function(...){
@@ -44,16 +47,25 @@ gNeuralLayer <- setRefClass("neuralLayer",
 						},
 
 						
-						addToNeuron = function(value, ...){
-							neuron$addToLdata(value, ...)
-							numberOfNeurons <<- numberOfNeurons+length(value)
+						joinNeuron = function(value, ...){
+							neuron$join(value, ...)
+							numberOfNeurons <<- neuron$numOfNeurons()
 						},
 										
 						delete = function(ID, ...){
 							neuron$delete(ID, ...)
+							numberOfNeurons <<- neuron$numOfNeurons()
+						},
+						
+						validate = function(...){
+							if(numberOfNeurons!=neuron$numOfNeurons()) {stop("[neuralLayer Validation]: Error in numberOfNeurons.")} else {}
+							if(!is.finite(numberOfNeurons)){stop("[neuralLayer Validation]: Error, numberOfNeurons is not finite")} else {}
+							if (!(activationFunction %in% KnownActivationFunctions)) {stop("[neuralLayer Validation]: Error, unknown activation function")} else {}
+							neuron$validate(...)
 						}
 				)
 
 )
 
 gNeuralLayer$accessors(c("numberOfNeurons", "activationFunction", "neuron"))
+
