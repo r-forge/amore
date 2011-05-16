@@ -17,7 +17,7 @@ gListCon <- setRefClass("listCon",
 					}
 				},
 				
-				newFromWeight=function(FROM, WEIGHT, ...){
+				populate=function(FROM, WEIGHT, ...){
 					if (missing(FROM)||missing(WEIGHT)) {
 						initFields(...)  
 					} else {

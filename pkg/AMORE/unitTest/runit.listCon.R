@@ -12,7 +12,7 @@ test.gListCon <- function() {
 	rm(lc)
 	
 
-	lc <- gListCon$newFromWeight(FROM=1:6, WEIGHT=11:16)
+	lc <- gListCon$populate(FROM=1:6, WEIGHT=11:16)
 	checkTrue(   lc$validate())
 	checkEquals( lc$getFrom(),1:6)
 	checkEquals( lc$getWeight(),11:16)
@@ -58,20 +58,20 @@ test.gListCon <- function() {
 	
 # getFrom  unit test
 # & getWeight  unit test
-	lc <- gListCon$newFromWeight(FROM=1:10, WEIGHT=10:1)
+	lc <- gListCon$populate(FROM=1:10, WEIGHT=10:1)
 	checkEquals(lc$getFrom(), 1:10)	
 	checkEquals(lc$getWeight(), 10:1)
 	checkEquals(lc$getWeight(FROM=c(1,10)), c(10,1))
 	rm(lc)
 
 # numOfCons  unit test
-	lc <- gListCon$newFromWeight(FROM=1:10, WEIGHT=10:1)
+	lc <- gListCon$populate(FROM=1:10, WEIGHT=10:1)
 	checkEquals(lc$numOfCons(), 10)
 	rm(lc)
 	
 # setFrom  unit test
 # & setWeight  unit test
-	lc <- gListCon$newFromWeight(FROM=1:10, WEIGHT=10:1)
+	lc <- gListCon$populate(FROM=1:10, WEIGHT=10:1)
 	lc$setFrom(11:20)
 	lc$setWeight(1:10)
 	checkEquals(lc$getFrom(), 11:20)	
@@ -79,13 +79,13 @@ test.gListCon <- function() {
 	rm(lc)
 	
 # show  unit test
-	lc <- gListCon$newFromWeight(FROM=1:10, WEIGHT=10:1)
+	lc <- gListCon$populate(FROM=1:10, WEIGHT=10:1)
 	checkTrue(lc$show())
 	rm(lc)
 	
 	
 # validate  unit test
-	lc <- gListCon$newFromWeight(FROM=1:10, WEIGHT=10:1)
+	lc <- gListCon$populate(FROM=1:10, WEIGHT=10:1)
 	lc$addToLdata("xx")
 	checkException(lc$validate(), silent=TRUE)
 	
