@@ -1,0 +1,6 @@
+useDynLib(AMORE-RefClasses)
+exportPattern("^[[:alpha:]]+")
+
+
+
+	
