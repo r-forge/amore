@@ -116,17 +116,4 @@ test.gNeuron <- function() {
 	checkException(nn$validate(), silent=TRUE)
 	rm(lc, nn)
 	
-	# [1] TRUE
-	# Mensajes de aviso perdidos
-	# In asMethod(object) : NAs introducidos por coerci'on
-	# Error en checkException(nn$validate(), silent = TRUE) : 
-	#   Error not generated as expected
-
-
-	
-	
-
-	
-	
-	
 }

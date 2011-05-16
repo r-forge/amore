@@ -20,10 +20,12 @@ gMLPneuron <- setRefClass("MLPneuron",
   		cat("\n------------------------------")
 		  con$show()
   		cat("\n------------------------------")
+		return(invisible(TRUE))
 	  },
     validate=function(...){
   	  if(length(bias)!=1) {stop("[MLPneuron: Validation] MLPneuron@bias must have length 1") } else {}
-      callSuper(...)
+	  if(!is.finite(bias)) {stop("[MLPneuron: Validation] is.finite(bias) returned FALSE ")} else {}	  
+	  callSuper(...)
     }
     
   )
