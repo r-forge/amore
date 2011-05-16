@@ -29,11 +29,10 @@ test.gCon <- function() {
 	checkTrue(is(myCon$getFrom(),"Neuron"))
 	checkEquals(myCon$getFrom()$getId(),10)
 	checkEquals(myCon$getFrom(), myNeuron)
-
-	# TODO move these 3 lines to another file
+	# Check for collateral effects
 	my1stCon$setWeight(22)
 	checkEquals(myNeuron$getWeight(), 22)
-	# Once my1stCon is assigned to myNeuron, a change in my1stCon has impact on myNeuron
+	# As it can be seen, once my1stCon is assigned to myNeuron, a change in my1stCon has impact on myNeuron
 		
 	checkEquals(myCon$getWeight(),14.5)	
 	

@@ -27,11 +27,11 @@ gCon <- setRefClass("Con",
 					'
 					if(!is(from,"Neuron")) {
 						if(length(from)!=1) {stop("[ConClass: Validate] From must have length 1")} else {}
-						if(is.na(from)) {stop("[ConClass: Validate] is.na(from) returned TRUE ") } else {}
+						if(!is.finite(from)) {stop("[ConClass: Validate] is.finite(from) returned FALSE ") } else {}
 					} else {}
 					
 					if(length(weight)!=1 ) {stop("[ConClass: Validate] Weight must have length 1")} else {}	
-					if(is.na(weight)) {stop("[ConClass: Validate] is.na(weight) returned TRUE ")} else {}
+					if(!is.finite(weight)) {stop("[ConClass: Validate] is.finite(weight) returned FALSE ")} else {}
 					return(TRUE)    
 				}
 		)

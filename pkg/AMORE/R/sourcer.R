@@ -1,5 +1,5 @@
 
-#   TODO: I finished runit.listCon
+#   TODO: I finished runit.listRBFneuron
 
 require("RUnit")
 rm(list=ls(all.names=TRUE))
@@ -9,33 +9,36 @@ source("pkg/AMORE/R/listCon.R")
 source("pkg/AMORE/R/Neuron.R")
 source("pkg/AMORE/R/MLPneuron.R")
 source("pkg/AMORE/R/RBFneuron.R")
+source("pkg/AMORE/R/listNeuron.R")
+source("pkg/AMORE/R/listMLPneuron.R")
+source("pkg/AMORE/R/listRBFneuron.R")
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 
 
-lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-lapply(gListAMORE$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-
-lapply(gNeuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-
-
-lapply(gMLPneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-lapply(gRBFneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-
+#lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#lapply(gListAMORE$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#lapply(gNeuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#lapply(gMLPneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#lapply(gRBFneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#
+#lapply(gListNeuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#
+#
+#lapply(gListMLPneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#
+#
+#lapply(gListRBFneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
+#
 
 # TODO silent =TRUE in every call	
-
-
-
-source("listNeuron.R")
 
 
 #source("NeuralLayer.R")
 #source("MLPneuralLayer.R")
 #source("RBFneuralLayer.R")
 #source("listLayer.R")
-
 
 #source("method.R")
 #source("LinearNorm.R")

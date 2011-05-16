@@ -12,42 +12,14 @@ gListNeuron <- setRefClass("listNeuron",
 					if (missing(neuron)){
 						callSuper(...)
 					} else {
-						addNeuron(neuron)
+						addToLdata(neuron)
 						return(.self)
 					}
 				},
-				
-				addNeuron= function (value, ...) { 
-					addToLdata(value)
-				},	  
-				
+
 				getId=function(...){
 					return(sapply(ldata, function(x){x$getId(...)}))      
 				},  
-				
-				getBias = function(ID, ...){
-					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getBias(...)}))
-					} else {
-						return(select(ID)$getBias())
-					}
-				},
-				
-				getWidth = function(ID, ...){
-					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getWidth(...)}))
-					} else {
-						return(select(ID)$getWidth())
-					}
-				},
-				
-				getAltitude = function(ID, ...){
-					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getAltitude(...)}))
-					} else {
-						return(select(ID)$getAltitude())
-					}
-				},
 				
 				getFrom =function(ID, ...){
 					if(missing(ID)) {
@@ -67,36 +39,8 @@ gListNeuron <- setRefClass("listNeuron",
 					}
 				},
 				
-				setBias = function(value, ID,  ...) {
-					if (missing(ID)) {
-						if(numOfNeurons()!=length(value)) { stop("[listNeuron setBias(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setBias(y)})		
-						
-					} else {
-						return(select(ID)$setBias(value, ...))
-					}
-				},
-				
-				setWidth = function(value, ID,  ...) {
-					if (missing(ID)) {
-						if(numOfNeurons()!=length(value)) { stop("[listNeuron setWidth(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setWidth(y)})		
-					} else {
-						return(select(ID)$setWidth(value, ...))
-					}
-				},
-				
-				setAltitude = function(value, ID,  ...) {
-					if (missing(ID)) {
-						if(numOfNeurons()!=length(value)) { stop("[listNeuron setAltitude(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setAltitude(y)})		
-					} else {
-						return(select(ID)$setAltitude(value, ...))
-					}
-				},
-				
 				numOfCons = function(...) {
-					return(c(lapply(ldata, function(x) {x$numberOfCons()}),recursive=TRUE))
+					return(c(lapply(ldata, function(x) {x$numOfCons()}),recursive=TRUE))
 				},  
 				
 				numOfNeurons = function(...) {
@@ -121,19 +65,19 @@ gListNeuron <- setRefClass("listNeuron",
 					return(selfClone)
 				},
 				
-				setWeight=function(value, ID, ...){
+				setWeight=function(value, ID, ...){#TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
 						if(numOfNeurons()!=length(value)) {stop("[listNeuron setWeight(ID=\"missing\")<-]: Incorrect lengths.")}
-							z <- mapply(ldata, value, FUN=function(x,y){x$setWeight(y)})		
+						z <- mapply(ldata, value, FUN=function(x,y){x$setWeight(y)})		
 					} else {
 						select(ID)$setWeight(value, ...)
 					}
 				},
 				
-				setFrom=function(value, ID, ...){
+				setFrom=function(value, ID, ...){ #TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
 						if(numOfNeurons()!=length(value)) {stop("[listNeuron setFrom(ID=\"missing\")<-]: Incorrect lengths.")}
-							z <- mapply(ldata, value, FUN=function(x,y){x$setFrom(y)})
+						z <- mapply(ldata, value, FUN=function(x,y){x$setFrom(y)})
 					} else {
 						select(ID)$setFrom(value, ...)
 					}
@@ -144,20 +88,15 @@ gListNeuron <- setRefClass("listNeuron",
 						return(TRUE)
 					} else {
 						f <- getFrom(...)
-						
-# TODO por arreglar
-						return(all(mapply(identical, f[,1], f[,-1])))
+						return(all(mapply(identical, f[1], f[-1])))
 					}
 				},
 				
 				validate=function(...){
 					'Object validator for internal coherence.
-					'
-					if (anyDuplicated(getId(...))>0) {
-						stop("[listNeuron: Validation] Neuron$id  duplication error")
-					} else {
-						lapply(ldata, function(x){x$validate(...)})
-					}
+							'
+					if (anyDuplicated(getId(...))>0) {stop("[listNeuron: Validation] Neuron$id  duplication error")} else {}
+					lapply(ldata, function(x){x$validate(...)})
 					return(TRUE)
 				}
 		
