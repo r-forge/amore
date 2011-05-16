@@ -10,7 +10,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 				
 				populate=function(ID, BIAS, FROM, WEIGHT, ...){
 					if (missing(ID)||missing(BIAS)||missing(FROM)||missing(WEIGHT)) {stop("[listMLPneuron populate]: Error, Either ID, BIAS, FROM or WEIGHT is missing")  } else {}
-					if (!all(mapply(identical, length(ID), length(BIAS), length(FROM), length(WEIGHT)))) {stop("[listNeuron populate]: Error ID, BIAS, FROM, WEIGHT length's are not equal.")} else {}
+					if (!all(mapply(identical, length(ID), length(BIAS), length(FROM), length(WEIGHT)))) {stop("[listMLPneuron populate]: Error ID, BIAS, FROM, WEIGHT length's are not equal.")} else {}
 					
 					mapply(FUN=function(i,b,f,w){
 								lc <- gListCon$new()
