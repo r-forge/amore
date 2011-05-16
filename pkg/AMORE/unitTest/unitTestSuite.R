@@ -4,10 +4,10 @@
 ###############################################################################
 
 require("RUnit")
-packPath <- "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-RefClasses/" 
+packPath <- "../sandbox" 
 #TODO change this to a package relative path
-uniTestPath   <-  paste(packPath,"unitTest", sep="")
-testFile <- paste(uniTestPath,"TEST-RESULTS.html", sep="/") 
+uniTestPath   <-  paste(packPath,"pkg/AMORE/unitTest", sep="/")
+testFile <- paste(packPath,"www/unitTestResults.html", sep="/") 
 
 testsuite.AMORErefClasses <- defineTestSuite("AMORE Reference Classes Unit Tests",
 		dirs = uniTestPath ,	

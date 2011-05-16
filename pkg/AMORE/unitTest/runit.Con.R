@@ -44,7 +44,9 @@ test.gCon <- function() {
 	checkTrue(is.vector(myCon$getFrom()))
 	checkEquals(length(myCon$getFrom()),1)
 	#from is a neuron
-	myNeuron <- gNeuron$new(id=10, con=gListCon$populate(FROM=1:3,WEIGHT=c(1.4,5.6,9.8)))
+	lc <- gListCon$new()
+	lc$populate(FROM=1:3,WEIGHT=c(1.4,5.6,9.8))
+	myNeuron <- gNeuron$new(id=10, con=lc)
 	myCon <- gCon$new(from=myNeuron, weight=14.5)
 	checkTrue(myCon$validate())
 	checkTrue(is(myCon$getFrom(),"Neuron"))
