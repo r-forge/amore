@@ -12,6 +12,8 @@ source("pkg/AMORE/R/RBFneuron.R")
 source("pkg/AMORE/R/listNeuron.R")
 source("pkg/AMORE/R/listMLPneuron.R")
 source("pkg/AMORE/R/listRBFneuron.R")
+source("pkg/AMORE/R/neuralLayer.R")
+
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
 
@@ -35,7 +37,6 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 # TODO silent =TRUE in every call	
 
 
-#source("NeuralLayer.R")
 #source("MLPneuralLayer.R")
 #source("RBFneuralLayer.R")
 #source("listLayer.R")
