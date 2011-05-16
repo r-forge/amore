@@ -17,6 +17,11 @@ gListAMORE <- setRefClass("listAMORE",
       ldata <<- c(ldata, value)
     },
 	
+	join=function(value){
+		ldata <<- c(ldata, value$getLdata())
+	},
+	
+	
     show=function() {
     'Generic print function for the listAMORE class. 
     '

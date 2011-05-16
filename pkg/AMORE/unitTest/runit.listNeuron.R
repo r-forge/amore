@@ -8,7 +8,6 @@
 test.gListNeuron <- function() {
 #   new unit test
 # & addToLdata  unit test
-# & getId  unit test
 # & numOfCons  unit test
 # & numOfNeurons  unit test
 	
@@ -99,6 +98,30 @@ test.gListNeuron <- function() {
 	checkEquals(ln$getWeight(),list(11:15,1:5, 21:25))
 	checkEquals(ln$getWeight(ID=1:2),list(11:15,1:5))
 	rm(lc,nn,ln)
+	
+	
+#  setId  unit test
+# & getId  unit test
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=11:15)
+	nn <- gNeuron$new(id=1, con=lc)
+	ln <- gListNeuron$new()
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=1:5)
+	nn <- gNeuron$new(id=2, con=lc)
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=21:25)
+	nn <- gNeuron$new(id=3, con=lc)
+	ln$addToLdata(nn)
+	checkTrue(ln$validate())
+	ln$setId(11:13)
+	checkEquals(ln$getId(),11:13)
+	ln$setId(2:3,ID=12:13)
+	checkEquals(ln$getId(),c(11,2,3))
+	rm(lc,nn,ln)
+	
 	
 # is.regular  unit test
 # & select  unit test

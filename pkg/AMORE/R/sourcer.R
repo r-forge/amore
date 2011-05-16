@@ -24,15 +24,10 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 #lapply(gNeuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 #lapply(gMLPneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 #lapply(gRBFneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-#
 #lapply(gListNeuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-#
-#
 #lapply(gListMLPneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-#
-#
 #lapply(gListRBFneuron$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
-#
+#lapply(gNeuralLayer$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 
 # TODO silent =TRUE in every call	
 

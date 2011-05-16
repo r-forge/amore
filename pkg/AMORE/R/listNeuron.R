@@ -65,6 +65,14 @@ gListNeuron <- setRefClass("listNeuron",
 					return(selfClone)
 				},
 				
+				setId=function(value, ID, ...){
+					if(missing(ID)){
+						if(numOfNeurons()!=length(value)) {stop("[listNeuron setID(ID=\"missing\")<-]: Incorrect lengths.")}
+						z <- mapply(ldata, value, FUN=function(x,y){x$setId(y)})		
+					} else {
+						select(ID)$setId(value, ...)
+					}				},  
+				
 				setWeight=function(value, ID, ...){#TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
 						if(numOfNeurons()!=length(value)) {stop("[listNeuron setWeight(ID=\"missing\")<-]: Incorrect lengths.")}
