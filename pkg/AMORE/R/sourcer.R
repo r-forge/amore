@@ -1,6 +1,8 @@
 
 #   TODO: I finished runit.neuralLayer
 
+KnownActivationFunctions <- c("threshold", "logistic", "tanh", "identity", "exponential", "reciprocal", "square", "Gauss", "sine", "cosine", "Elliott", "arctan", "radialBasis")
+
 require("RUnit")
 rm(list=ls(all.names=TRUE))
 source("pkg/AMORE/R/Con.R")

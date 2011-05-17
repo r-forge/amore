@@ -38,7 +38,7 @@ gListCon <- setRefClass("listCon",
 				setWeight= function(value, FROM, ...) {
 					value <- c(value, recursive=TRUE)
 					if (missing(FROM)) {
-						if(numOfCons()!=length(value)) { stop("[listCon setWeight error]: Incorrect length(value)" )}
+						if(numOfCons(...)!=length(value)) { stop("[listCon setWeight error]: Incorrect length(value)" )}
 						mapply(FUN=function(x,w){x$setWeight(w)}, ldata, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setWeight(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 
@@ -51,7 +51,7 @@ gListCon <- setRefClass("listCon",
 				setFrom= function(value, FROM, ...) {
 					value <- c(value, recursive=TRUE)
 					if (missing(FROM)) {
-						if(numOfCons()!=length(value)) { stop("[listCon setFrom error]: Incorrect length(value)" )}
+						if(numOfCons(...)!=length(value)) { stop("[listCon setFrom error]: Incorrect length(value)" )}
 						mapply(FUN=function(x,f){x$setFrom(f)}, ldata, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setFrom(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 

@@ -18,7 +18,7 @@ gCon <- setRefClass("Con",
 					if (is.numeric(from)){
 						cat("\n From: ", from, "\t Weight: ", weight)
 					} else {
-						cat("\n From: ", from$getId(), "\t Weight: ", weight)
+						cat("\n From: ", from$getId(...), "\t Weight: ", weight)
 					}
 					return(invisible(TRUE))
 				},
