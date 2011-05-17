@@ -1,5 +1,5 @@
 
-#   TODO: I finished runit.listRBFneuron
+#   TODO: I finished runit.neuralLayer
 
 require("RUnit")
 rm(list=ls(all.names=TRUE))
