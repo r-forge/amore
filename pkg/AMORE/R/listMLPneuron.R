@@ -23,7 +23,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 					if (missing(ID)) {
 						return(sapply(ldata,function(x) { x$getBias(...)}))
 					} else {
-						return(select(ID)$getBias())
+						return(select(ID)$getBias(...))
 					}
 				},
 				

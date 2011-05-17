@@ -40,7 +40,7 @@ gListNeuron <- setRefClass("listNeuron",
 				},
 				
 				numOfCons = function(...) {
-					return(c(lapply(ldata, function(x) {x$numOfCons()}),recursive=TRUE))
+					return(c(lapply(ldata, function(x) {x$numOfCons(...)}),recursive=TRUE))
 				},  
 				
 				numOfNeurons = function(...) {
@@ -48,7 +48,7 @@ gListNeuron <- setRefClass("listNeuron",
 				},
 				
 				delete = function(ID, ...) {
-					neuronIds <- getId() 
+					neuronIds <- getId(...) 
 					delIds <- seq(along=neuronIds)[neuronIds %in% ID]
 					if (length(delIds)>0) {
 						ldata <<- ldata[-delIds]	       
@@ -56,7 +56,7 @@ gListNeuron <- setRefClass("listNeuron",
 				},
 				
 				select=function(ID, ...){
-					Ids <- getId()
+					Ids <- getId(...)
 					myMatch <- match(ID, Ids)
 					if (any(is.na(myMatch))) {stop("[listNeuron select Error]: Your ID vector contains values that were not found by the getId() call.")}
 					idx <- seq(along=ldata) [- myMatch]
@@ -75,7 +75,7 @@ gListNeuron <- setRefClass("listNeuron",
 				
 				setWeight=function(value, ID, ...){#TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
-						if(numOfNeurons()!=length(value)) {stop("[listNeuron setWeight(ID=\"missing\")<-]: Incorrect lengths.")}
+						if(numOfNeurons(...)!=length(value)) {stop("[listNeuron setWeight(ID=\"missing\")<-]: Incorrect lengths.")}
 						z <- mapply(ldata, value, FUN=function(x,y){x$setWeight(y)})		
 					} else {
 						select(ID)$setWeight(value, ...)
@@ -84,7 +84,7 @@ gListNeuron <- setRefClass("listNeuron",
 				
 				setFrom=function(value, ID, ...){ #TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
-						if(numOfNeurons()!=length(value)) {stop("[listNeuron setFrom(ID=\"missing\")<-]: Incorrect lengths.")}
+						if(numOfNeurons(...)!=length(value)) {stop("[listNeuron setFrom(ID=\"missing\")<-]: Incorrect lengths.")}
 						z <- mapply(ldata, value, FUN=function(x,y){x$setFrom(y)})
 					} else {
 						select(ID)$setFrom(value, ...)

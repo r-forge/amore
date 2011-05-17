@@ -13,19 +13,19 @@ gListAMORE <- setRefClass("listAMORE",
   ),
   methods= list(
 	
-    addToLdata=function(value){
+    addToLdata=function(value, ...){
       ldata <<- c(ldata, value)
     },
 	
-	join=function(value){
-		ldata <<- c(ldata, value$getLdata())
+	join=function(value, ...){
+		ldata <<- c(ldata, value$getLdata(...))
 	},
 	
 	
-    show=function() {
+    show=function(...) {
     'Generic print function for the listAMORE class. 
     '
-    lapply(ldata, function(x){x$show()})
+    lapply(ldata, function(x){x$show(...)})
     return(invisible(TRUE))
   	},
 

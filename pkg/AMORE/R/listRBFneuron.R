@@ -24,7 +24,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 					if (missing(ID)) {
 						return(sapply(ldata,function(x) { x$getWidth(...)}))
 					} else {
-						return(select(ID)$getWidth())
+						return(select(ID)$getWidth(...))
 					}
 				},
 				
@@ -32,7 +32,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 					if (missing(ID)) {
 						return(sapply(ldata,function(x) { x$getAltitude(...)}))
 					} else {
-						return(select(ID)$getAltitude())
+						return(select(ID)$getAltitude(...))
 					}
 				},
 				
