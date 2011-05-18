@@ -12,6 +12,11 @@ gCon <- setRefClass("Con",
 				weight="numeric"
 		),
 		methods= list(
+
+				getFromId = function(...) {
+					if(is.numeric(from)) {return(from)} else { return(from$getId()) }	
+				},
+				
 				show=function(...) {
 					'Customized print function 
 							'

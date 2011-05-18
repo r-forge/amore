@@ -16,6 +16,10 @@ gNeuron <- setRefClass("Neuron",
 					return(con$getFrom(...))
 				},
 				
+				getFromId = function(...){
+					return(con$getFromId(...))
+				},
+								
 				getWeight=function(...) {
 					return(con$getWeight(...))
 				},

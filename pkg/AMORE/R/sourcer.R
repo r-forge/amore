@@ -1,5 +1,5 @@
 
-#   TODO: I'm working at mlpLayer and rbfLayer
+#   TODO: I'm working at listLayer
 
 
 require("RUnit")
@@ -19,6 +19,7 @@ source("pkg/AMORE/R/listMLPneuron.R")
 source("pkg/AMORE/R/listRBFneuron.R")
 source("pkg/AMORE/R/mlpLayer.R")
 source("pkg/AMORE/R/rbfLayer.R")
+source("pkg/AMORE/R/listLayer.R")
 
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
@@ -36,31 +37,3 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 #lapply(gNeuralLayer$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 
 # TODO silent =TRUE in every call	
-
-
-#source("MLPneuralLayer.R")
-#source("RBFneuralLayer.R")
-#source("listLayer.R")
-
-#source("method.R")
-#source("LinearNorm.R")
-#source("listLinearNorm.R")
-#source("NormContinuous.R")
-#source("NormalizationMethod.R")
-#source("NormDiscrete.R")
-#source("EXPRESSION.R")
-#source("DerivedField.R")
-#source("listDerivedField.R")
-#source("NeuralInput.R")
-#source("listNeuralInput.R")
-#source("NeuralInputs.R")
-#source("Extension.R")
-#source("ActivationFunction.R")
-#source("listExtension.R")
-#source("listLayer.R")
-#source("listNeuralOutput.R")
-#source("NeuralOutput.R")
-#source("NeuralOutputs.R")
-#source("newMLPnet.R")
-#source("NeuralNetwork.R")
-#source("InputData.R")
