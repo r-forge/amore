@@ -1,10 +1,13 @@
 
-#   TODO: I finished runit.neuralLayer
+#   TODO: I'm working at mlpLayer and rbfLayer
 
-KnownActivationFunctions <- c("threshold", "logistic", "tanh", "identity", "exponential", "reciprocal", "square", "Gauss", "sine", "cosine", "Elliott", "arctan", "radialBasis")
 
 require("RUnit")
 rm(list=ls(all.names=TRUE))
+
+KnownActivationFunctions <- c("threshold", "logistic", "tanh", "identity", "exponential", "reciprocal", "square", "Gauss", "sine", "cosine", "Elliott", "arctan", "radialBasis")
+KnownNormalizationMethods <- c("none", "softmax", "simplemax")
+
 source("pkg/AMORE/R/Con.R")
 source("pkg/AMORE/R/listAMORE.R")
 source("pkg/AMORE/R/listCon.R")
@@ -14,7 +17,8 @@ source("pkg/AMORE/R/RBFneuron.R")
 source("pkg/AMORE/R/listNeuron.R")
 source("pkg/AMORE/R/listMLPneuron.R")
 source("pkg/AMORE/R/listRBFneuron.R")
-source("pkg/AMORE/R/neuralLayer.R")
+source("pkg/AMORE/R/mlpLayer.R")
+source("pkg/AMORE/R/rbfLayer.R")
 
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
