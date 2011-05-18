@@ -20,6 +20,11 @@ source("pkg/AMORE/R/listRBFneuron.R")
 source("pkg/AMORE/R/mlpLayer.R")
 source("pkg/AMORE/R/rbfLayer.R")
 source("pkg/AMORE/R/listLayer.R")
+source("pkg/AMORE/R/listMLPlayer.R")
+source("pkg/AMORE/R/listRBFlayer.R")
+source("pkg/AMORE/R/neuralNetwork.R")
+source("pkg/AMORE/R/MLPneuralNetwork.R")
+source("pkg/AMORE/R/RBFneuralNetwork.R")
 
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")

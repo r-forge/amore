@@ -5,7 +5,11 @@
 
 
 
+test.gListLayer <- function() {
+
 # new  unit test
+# & getId unit test
+# & numOfLayers unit test
 
 # Repeating ids so that validate fails
 nl <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
@@ -21,6 +25,7 @@ checkEquals(nl$getId(), 1:5)
 ll$addToLdata(nl)
 checkEquals(ll$getId(), list(1:5, 1:5))
 checkException(ll$validate(), silent=TRUE)  #  same ids
+checkEquals(ll$numOfLayers(), 2)
 rm(nl, ll)
 
 # Different ids so that validate returns TRUE
@@ -39,6 +44,7 @@ checkEquals(ll$getId(), list(1:5, 6:10))
 checkTrue(ll$validate()) 
 rm(nl, ll)
 
+
 # Using neurons in the FROM list
 
 nl1 <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
@@ -53,17 +59,28 @@ checkTrue(nl2$validate())
 ll$addToLdata(nl2)
 checkTrue(ll$validate())
 
-
-
+#   select unit test
+# & delete unit test
+nl <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
+nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+checkTrue(nl$validate())
+checkEquals(nl$getId(), 1:5)
+ll <- gListLayer$new()
+ll$addToLdata(nl)
+nl <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
+nl$populate(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 checkTrue(nl$validate())
 checkEquals(nl$getId(), 6:10)
 ll$addToLdata(nl)
 checkEquals(ll$getId(), list(1:5, 6:10))
 checkTrue(ll$validate()) 
+checkEquals(ll$select(POS=1)$getId(), list(1:5)) 
+checkException(ll$delete(POS=1:3), silent=TRUE )
+ll$delete(POS=1)
+checkEquals(ll$getId(), list(6:10))
+ll$delete(POS=1)
+checkEquals(ll$numOfLayers(),0)
+rm(ll, nl)
 
-rm(ll, nl1, nl2)
 
-ll$validate()
-ll$show()
-
-rm(nl, ll)
+}
