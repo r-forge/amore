@@ -14,6 +14,7 @@ test.gCon <- function() {
 	myCon <- gCon$new(from=1, weight=14.5)
 	checkTrue(myCon$validate())
 	checkEquals(myCon$getFrom(),1)	
+	checkEquals(myCon$getFromId(),1)	
 	checkEquals(myCon$getWeight(),14.5)
 	
 	
@@ -28,6 +29,7 @@ test.gCon <- function() {
 	checkTrue(is(myCon$getFrom(),"numericOrNeuron"))
 	checkTrue(is(myCon$getFrom(),"Neuron"))
 	checkEquals(myCon$getFrom()$getId(),10)
+	checkEquals(myCon$getFromId(),10)	
 	checkEquals(myCon$getFrom(), myNeuron)
 	# Check for collateral effects
 	my1stCon$setWeight(22)

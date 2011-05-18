@@ -62,6 +62,8 @@ test.gListNeuron <- function() {
 	rm(lc, nn, ln)
 	
 #  getFrom  unit test
+#  getFromId unit test
+	#from is numeric
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -77,8 +79,44 @@ test.gListNeuron <- function() {
 	ln$addToLdata(nn)
 	checkTrue(ln$validate())
 	checkEquals(ln$getFrom(),list(1:5,1:5, 1:5))
+	checkEquals(ln$getFromId(),list(1:5,1:5, 1:5))
 	checkEquals(ln$getFrom(ID=2:3),list(1:5, 1:5))
+	checkEquals(ln$getFromId(ID=2:3),list(1:5, 1:5))
 	rm(lc,nn,ln)
+	
+	#from is neuron
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=11:15)
+	nn <- gNeuron$new(id=1, con=lc)
+	ln <- gListNeuron$new()
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=1:5)
+	nn <- gNeuron$new(id=2, con=lc)
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=21:25)
+	nn <- gNeuron$new(id=3, con=lc)
+	ln$addToLdata(nn)
+	checkTrue(ln$validate())
+	ln2 <- gListNeuron$new()
+	lc <- gListCon$new()
+	lc$populate(FROM=ln$getLdata(), WEIGHT=31:33)
+	nn <- gNeuron$new(id=4, con=lc)
+	ln2$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=ln$getLdata(), WEIGHT=41:43)
+	nn <- gNeuron$new(id=5, con=lc)
+	ln2$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=ln$getLdata(), WEIGHT=41:43)
+	nn <- gNeuron$new(id=6, con=lc)
+	ln2$addToLdata(nn)
+	checkTrue(ln2$validate())
+	checkEquals(ln2$getFromId(),list(1:3,1:3, 1:3))
+	checkEquals(ln2$getFromId(ID=5:6),list(1:3, 1:3))
+	rm(lc,nn,ln)
+	
 	
 #  getWeight  unit test
 	lc <- gListCon$new()
@@ -177,6 +215,5 @@ test.gListNeuron <- function() {
 	ln$addToLdata("xx")
 	checkException(ln$validate(), silent=TRUE)
 	rm(lc, nn, ln)
-	
 	
 }

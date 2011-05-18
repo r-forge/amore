@@ -34,6 +34,7 @@ test.gListMLPneuron <- function() {
 	rm(lc, nn, ln)
 	
 #   populate unit test
+
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$is.regular())
@@ -50,6 +51,25 @@ test.gListMLPneuron <- function() {
 	checkEquals(ln$getWeight(ID=4),list(41:43))
 	rm(ln)
 
+#	populate using a list of neurons
+	
+	ln1 <- gListMLPneuron$new()
+	ln1$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	checkTrue(ln1$validate())
+	ln2 <- gListMLPneuron$new()
+	ln2$populate(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM= replicate(3, ln1$getLdata(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
+	checkTrue(ln2$is.regular())
+	checkEquals(ln2$getId(),6:8)
+	checkEquals(ln2$getBias(),c(1.1,3.4,5.4))
+	checkEquals(gListMLPneuron$new(ln2$getFrom()[[1]])$getId(), ln1$getId() )
+	checkEquals(gListMLPneuron$new(ln2$getFrom()[[2]])$getId(), ln1$getId() )
+	checkEquals(gListMLPneuron$new(ln2$getFrom()[[3]])$getId(), ln1$getId() )
+	checkEquals(ln2$getFromIds(), replicate(3, ln1$getId(), simplify=FALSE)) # An example of how handy getFromIds is.
+	checkEquals(ln2$getWeight(),list(11:15,21:25,31:35))
+	checkEquals(gListMLPneuron$new(ln2$getFrom()[[1]])$getId(),  ln1$getId() )
+	checkEquals(ln2$getWeight(ID=6),list(11:15))
+	rm(ln1, ln2)
+	
 #   setBias  unit test
 # & getBias  unit test
 	ln <- gListMLPneuron$new()

@@ -35,6 +35,10 @@ gListCon <- setRefClass("listCon",
 					return(sapply(ldata,function(x) { x$getFrom(...)}))
 				},
 				
+				getFromId = function(...){
+					return(sapply(ldata,function(x) { x$getFromId(...)}))
+				},
+				
 				setWeight= function(value, FROM, ...) {
 					value <- c(value, recursive=TRUE)
 					if (missing(FROM)) {
@@ -42,7 +46,7 @@ gListCon <- setRefClass("listCon",
 						mapply(FUN=function(x,w){x$setWeight(w)}, ldata, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setWeight(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 
-						myMatch <- match(FROM, getFrom())
+						myMatch <- match(FROM, getFromId(...))
 						if (any(is.na(myMatch))) {stop("[listCon setWeight(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")} 
 						mapply(FUN=function(x,w){x$setWeight(w)}, ldata[myMatch], value)	-> DontMakeNoise			
 					}
@@ -55,14 +59,14 @@ gListCon <- setRefClass("listCon",
 						mapply(FUN=function(x,f){x$setFrom(f)}, ldata, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setFrom(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 
-						myMatch <- match(FROM, getFrom())
+						myMatch <- match(FROM, getFromId(...))
 						if (any(is.na(myMatch))) {stop("[listCon setFrom(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")} 
 						mapply(FUN=function(x,f){x$setFrom(f)}, ldata[myMatch], value)	-> DontMakeNoise			
 					}
 				},
 				
 				delete = function(FROM, ...) {
-					fromIds <- getFrom(...) 
+					fromIds <- getFromId(...) 
 					delIds  <- seq(along=fromIds)[fromIds %in% FROM]
 					if (length(delIds)>0) {
 						ldata <<- ldata[-delIds]	       
@@ -70,7 +74,7 @@ gListCon <- setRefClass("listCon",
 				},
 				
 				select=function(FROM, ...){
-					fromObject <- getFrom()
+					fromObject <- getFromId(...)
 					myMatch <- match(FROM,  fromObject)
 					if (any(is.na(myMatch))) {stop("[listCon select Error]: Your FROM vector contains values that were not found by the .self$getFrom() call.")}
 					idx <- seq(along=ldata) [- myMatch]

@@ -29,6 +29,18 @@ gListNeuron <- setRefClass("listNeuron",
 						return(select(ID)$getFrom(...))
 					}
 				},
+
+				getFromId =function(ID, ...){
+					'This function is a handy way of obtaining the Ids of the neurons returned by getFrom since it\'s result might be a set of lists
+							'
+					if(missing(ID)) {
+						f <- lapply(ldata, function(x, ...) { x$getFromId(...)})
+						return(f)
+					} else {
+						return(select(ID)$getFromId(...))
+					}
+					
+				},
 				
 				getWeight =function(ID, ...){
 					if(missing(ID)) {
