@@ -3,9 +3,7 @@
 # Author: mcasl
 ###############################################################################
 
-test.gmlpLayer <- function() {
-	
-# new  unit test
+test.gmlpLayer.new <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -18,10 +16,10 @@ test.gmlpLayer <- function() {
 	checkEquals(nl$getId(), 15:11)
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
-	rm(nl)
-	
-#   setId  unit test
-# & getId  unit test
+}
+
+
+test.gmlpLayer.setAngGetId <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -31,9 +29,10 @@ test.gmlpLayer <- function() {
 	nl$setId(1:2,ID=15:14)
 	checkEquals(nl$getId(), c(1,2,13:11))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# join unit test	
+}
+
+
+test.gmlpLayer.join <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListMLPneuron$new()
@@ -42,19 +41,20 @@ test.gmlpLayer <- function() {
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
 	checkTrue(nl$validate())
-	rm(ln, nl)
-	
-#  delete  unit test
+}
+
+
+test.gmlpLayer.delete <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$delete(ID=4:5)
 	checkEquals(nl$getId(),1:3)
 	checkEquals(nl$getNumberOfNeurons(),3)
 	checkTrue(nl$validate())
-	rm(nl)
-	
-	
-# is.regular  unit test
+}
+
+
+test.gmlpLayer.is.regular <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
@@ -64,17 +64,18 @@ test.gmlpLayer <- function() {
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# numOfCons  unit test
+}
+
+
+test.gmlpLayer.numOfCons <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
-	rm(nl)
-	
-#   setFrom  unit test
-# & getFrom  unit test
+}
+
+
+test.gmlpLayer.setAndGetFrom <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -85,10 +86,10 @@ test.gmlpLayer <- function() {
 	checkEquals(nl$getFrom(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(4,6,7),c(2,4,8)))
 	checkEquals(nl$getFrom(ID=4:5),list(c(4,6,7),c(2,4,8)))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-#   setWeight  unit test
-# & getWeight  unit test
+}
+
+
+test.gmlpLayer.setAndGetWeight <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -99,9 +100,10 @@ test.gmlpLayer <- function() {
 	checkEquals(nl$getWeight(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(4,6,7),c(2,4,8)))
 	checkEquals(nl$getWeight(ID=4:5),list(c(4,6,7),c(2,4,8)))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# validate unit test
+}
+
+
+test.gmlpLayer.validate <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -111,5 +113,4 @@ test.gmlpLayer <- function() {
 	checkException(nl$validate(), silent=TRUE)
 	nl$setActivationFunction("foo")
 	checkException(nl$validate(), silent=TRUE)
-	
 }

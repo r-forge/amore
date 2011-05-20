@@ -4,10 +4,7 @@
 ###############################################################################
 
 
-
-test.gListRBFneuron <- function() {
-
-#   new unit test
+test.gListRBFneuron.new <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gRBFneuron$new(id=1, width=9.9, altitude=0.13, con=lc)
@@ -35,9 +32,10 @@ test.gListRBFneuron <- function() {
 	checkEquals(ln$getFrom(ID=2),list(11:15))
 	checkEquals(ln$getWeight(),list(11:15,1:5))
 	checkEquals(ln$getWeight(ID=1),list(11:15))
-	rm(lc, nn, ln)
+}
 
-# populate
+
+test.gListRBFneuron.populate <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$is.regular())
@@ -53,37 +51,37 @@ test.gListRBFneuron <- function() {
 	checkEquals(ln$getWeight(),list(11:13,21:23,31:33,41:43,51:53))
 	checkEquals(ln$getFrom(ID=4),list(10:12))
 	checkEquals(ln$getWeight(ID=4),list(41:43))
-	rm(ln)
-	
-#   setWidth  unit test
-# & getWidth  unit test
+}
+
+
+test.gListRBFneuron.setAndGetWidth <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setWidth(11:15)
 	checkEquals(ln$getWidth(),11:15)
 	checkTrue(ln$validate())
-	rm(ln)
-	
-#   setAltitude unit test
-# & getAltitude  unit test
+}
+
+
+test.gListRBFneuron.setAndGetAltitude <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setAltitude(11:15)
 	checkEquals(ln$getAltitude(),11:15)
 	checkTrue(ln$validate())
-	rm(ln)
-	
-# show  unit test
+}
+
+
+test.gListRBFneuron.show <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$show())
-	rm(ln)
-	
-# validate  unit test
+}
+
+
+test.gListRBFneuron.validate <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$addToLdata("xx")
-	checkException(ln$validate(), silent=TRUE)
-	rm(ln)
-	
-	}
+	checkException(ln$validate(), silent=TRUE)	
+}

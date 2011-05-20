@@ -3,9 +3,8 @@
 # Author: mcasl
 ###############################################################################
 
-test.gMLPneuron <- function() {
 
-#   new unit test
+test.gMLPneuron.new <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
@@ -14,22 +13,22 @@ test.gMLPneuron <- function() {
 	checkEquals(nn$getBias(),9.9)
 	checkEquals(nn$getFrom(),1:5)
 	checkEquals(nn$getWeight(),11:15)
-	rm(lc, nn)
-	
-# show  unit test
+}
+
+
+test.gMLPneuron.show <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	checkTrue(nn$validate())
 	checkTrue(nn$show())
-	rm(lc, nn)
-	
-# validate  unit test
+}
+
+
+test.gMLPneuron.validate <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	nn$setBias("xx")
 	checkException(nn$validate(), silent=TRUE)
-	rm(lc, nn)
-
 }
