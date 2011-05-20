@@ -4,58 +4,72 @@
 ###############################################################################
 
 
-test.gNeuron <- function() {
-# new unit test
+test.gNeuron.new <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkTrue(nn$validate())
 	checkEquals(nn$getId(),1)
 	checkEquals(nn$getCon(),lc)
-	rm(lc, nn)
-	
-# addCon  unit test
-# & setId  unit test
-# & getId  unit test
+}
+
+
+test.gNeuron.addCon <- function() {
+	nn <- gNeuron$new(id=1)
+	con1 <- gCon$new(from=6,weight=4.3)
+	nn$addCon(con1)
+	checkEquals(nn$getId(), 1)
+	checkEquals(nn$getFrom(), 6)
+	checkEquals(nn$getWeight(), 4.3)
+	checkTrue(nn$validate())
+}
+
+test.gNeuron.setAndGetId <- function() {
 	nn <- gNeuron$new()
 	con1 <- gCon$new(from=6,weight=4.3)
 	nn$addCon(con1)
 	checkException(nn$validate(), silent=TRUE)
 	nn$setId(1)
 	checkEquals(nn$getId(), 1)
-	checkEquals(nn$getFrom(), 6)
-	checkEquals(nn$getWeight(), 4.3)
 	checkTrue(nn$validate())
-	rm(con1, nn)
+}
 
-#  deleteCon  unit test
+
+test.gNeuron.deleteCon <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	nn$deleteCon(FROM=4)
 	checkTrue(nn$validate())
 	checkEquals(nn$getFrom(), c(1,2,3,5))
-	rm(lc, nn)
-	
-# getCon  unit test
+}
+
+
+test.gNeuron.getCon <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$getCon(), lc)
-	rm(lc, nn)
-	
-#   getFrom  unit test
-# & getFromId  unit test
-	
-	# from is numeric
+}
+
+
+test.gNeuron.getFrom.fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$getFrom(), 1:5)
-	checkEquals(nn$getFromId(), 1:5)
-	rm(lc,nn)
+}
 
-	#from is neuron
+test.gNeuron.getFromId.fromIsNumeric <- function() {
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=11:15)
+	nn <- gNeuron$new(id=1, con=lc)
+	checkEquals(nn$getFromId(), 1:5)
+}
+
+
+
+test.gNeuron.getFrom.fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -74,28 +88,50 @@ test.gNeuron <- function() {
 	lc$populate(FROM=ln$getLdata(), WEIGHT=11:13)
 	nn <- gNeuron$new(id=10, con=lc)
 	checkEquals(nn$getFrom(), ln$getLdata())
+}
+
+
+test.gNeuron.getFromId.fromIsNeuron <- function() {
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=11:15)
+	nn <- gNeuron$new(id=1, con=lc)
+	ln <- gListNeuron$new()
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=1:5)
+	nn <- gNeuron$new(id=2, con=lc)
+	ln$addToLdata(nn)
+	lc <- gListCon$new()
+	lc$populate(FROM=1:5, WEIGHT=21:25)
+	nn <- gNeuron$new(id=3, con=lc)
+	ln$addToLdata(nn)
+	checkTrue(ln$validate())
+	lc <- gListCon$new()
+	lc$populate(FROM=ln$getLdata(), WEIGHT=11:13)
+	nn <- gNeuron$new(id=10, con=lc)
 	checkEquals(nn$getFromId(), 1:3)
-	rm(lc,nn)
-	
-	
-	
-# getWeight  unit test
+}
+
+
+test.gNeuron.getWeight <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$getWeight(), 11:15)
 	checkEquals(nn$getWeight(FROM=2), 12)
 	checkEquals(nn$getWeight(FROM=2:3), 12:13)
-	rm(lc,nn)
-	
-# numOfCons  unit test
+}
+
+
+test.gNeuron.numOfCons <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$numOfCons(), 5)
-	rm(lc,nn)
-	
-# setCon  unit test
+}
+
+
+test.gNeuron.setCon <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -104,18 +140,20 @@ test.gNeuron <- function() {
 	nn$setCon(lc)
 	checkEquals(nn$getFrom(), 11:15)	
 	checkTrue(nn$validate())
-	rm(lc,nn)
-	
-# setFrom  unit test
+}
+
+
+test.gNeuron.setFrom <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$getFrom(), 1:5)
 	nn$setFrom(55:51)
 	checkEquals(nn$getFrom(), 55:51)
-	rm(lc, nn)
-	
-# setWeight  unit test
+}
+
+
+test.gNeuron.setWeight <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -124,24 +162,25 @@ test.gNeuron <- function() {
 	checkEquals(nn$getWeight(), 55:51)
 	nn$setWeight(FROM=1, 6)
 	checkEquals(nn$getWeight(FROM=1), 6)
-	rm(lc, nn)
-	
-	
+}
 
-# show  unit test
+
+test.gNeuron.show <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkTrue(nn$show())
-	rm(lc, nn)
+}
+
+
+test.gNeuron.validate <- function() {
+	nn <- gNeuron$new()
+	checkException(nn$validate(), silent=TRUE)
 	
-# validate  unit test
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkTrue(nn$validate())
 	nn$setId("xx")
 	checkException(nn$validate(), silent=TRUE)
-	rm(lc, nn)
-	
 }

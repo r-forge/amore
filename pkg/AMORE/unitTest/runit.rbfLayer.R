@@ -3,9 +3,9 @@
 # Author: mcasl
 ###############################################################################
 
-test.grbfLayer <- function() {
-	
-# new  unit test
+
+
+test.grbfLayer.new <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
@@ -23,10 +23,10 @@ test.grbfLayer <- function() {
 	checkEquals(nl$getId(), 15:11)
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
-	rm(nl)
-	
-#   setId  unit test
-# & getId  unit test
+}	
+
+
+test.grbfLayer.setIdAndGetId <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$setId(15:11)
@@ -35,9 +35,10 @@ test.grbfLayer <- function() {
 	nl$setId(1:2,ID=15:14)
 	checkEquals(nl$getId(), c(1,2,13:11))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# join unit test	
+}
+
+
+test.grbfLayer.join <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListMLPneuron$new()
@@ -62,18 +63,20 @@ test.grbfLayer <- function() {
 	checkEquals(nl$getId(),1:15)
 	checkEquals(nl$getNumberOfNeurons(),15)
 	checkTrue(nl$validate())
-	rm(ln, nl, nl2)
-	
-#  delete  unit test
+}
+
+
+test.grbfLayer.delete <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$delete(ID=4:5)
 	checkEquals(nl$getId(),1:3)
 	checkEquals(nl$getNumberOfNeurons(),3)
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# is.regular  unit test
+}
+
+
+test.grbfLayer.is.regular <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
@@ -83,17 +86,18 @@ test.grbfLayer <- function() {
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# numOfCons  unit test
+}
+
+
+test.grbfLayer.numOfCons <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
-	rm(nl)
-	
-#   setFrom  unit test
-# & getFrom  unit test
+}
+
+
+test.grbfLayer.setAndGetFrom <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -104,10 +108,10 @@ test.grbfLayer <- function() {
 	checkEquals(nl$getFrom(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(4,6,7),c(2,4,8)))
 	checkEquals(nl$getFrom(ID=4:5),list(c(4,6,7),c(2,4,8)))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-#   setWeight  unit test
-# & getWeight  unit test
+}
+
+
+test.grbfLayer.setAndGetWeight <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -118,9 +122,10 @@ test.grbfLayer <- function() {
 	checkEquals(nl$getWeight(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(4,6,7),c(2,4,8)))
 	checkEquals(nl$getWeight(ID=4:5),list(c(4,6,7),c(2,4,8)))
 	checkTrue(nl$validate())
-	rm(nl)
-	
-# validate unit test
+}
+
+
+test.grbfLayer.validate <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
