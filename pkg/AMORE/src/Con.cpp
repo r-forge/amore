@@ -33,6 +33,14 @@ using namespace Rcpp;
 															Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , getWeight());
 															return(true);
 														};
+			bool		validate		()				{
+															BEGIN_RCPP
+																if (! R_FINITE(weight) )  			throw std::range_error("weight is not finite.");
+																if (from->getId() == NA_INTEGER )	throw std::range_error("fromId is not finite.");
+																return(true);
+
+															END_RCPP
+														};
 		};
 
 
