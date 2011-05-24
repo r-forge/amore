@@ -1,10 +1,10 @@
-Package: AMORE-RefClasses
+Package: AMORErcpp
 Type: Package
 Title: A new version of the AMORE package for neural network training and simulation
 Version: 0.1
 Date: 2011-05-16
-Author: Manuel Castejón, Javier Alfonso Cendón, Joaquín B. Ordieres Meré
-Maintainer: Manuel Castejón Limas <manuel.castejon@gmail.com>
+Author: Manuel Castejon, Javier Alfonso Cendon, Joaquin B. Ordieres Mere
+Maintainer: Manuel Castejon Limas <manuel.castejon@gmail.com>
 Description: More about what it does (maybe more than one line)
 License: GNU GPL
 LazyLoad: yes
