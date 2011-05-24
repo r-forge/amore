@@ -1,4 +1,4 @@
-Package: AMORErcpp
+Package: AMORE++
 Type: Package
 Title: A new version of the AMORE package for neural network training and simulation
 Version: 0.1

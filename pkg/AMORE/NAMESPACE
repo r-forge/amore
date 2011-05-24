@@ -1,4 +1,4 @@
-useDynLib(AMORE-RefClasses)
+useDynLib(AMORE++)
 exportPattern("^[[:alpha:]]+")
 
 
