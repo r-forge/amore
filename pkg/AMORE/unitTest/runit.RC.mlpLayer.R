@@ -59,7 +59,7 @@ test.gmlpLayer.is.regular <- function() {
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
 	checkTrue(nl$validate())
-	rm(ln)
+	rm(nl)
 	nl <- gmlpLayer$new(activationFunction="tanh")
 	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
