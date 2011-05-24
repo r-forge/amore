@@ -15,7 +15,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 					mapply(FUN=function(i,b,f,w){
 								lc <- gListCon$new()
 								lc$populate(FROM=f,WEIGHT=w)
-								addToLdata(gMLPneuron$new(id=i, bias=b, con=lc))
+								push_back(gMLPneuron$new(id=i, bias=b, con=lc))
 							},	ID, BIAS, FROM, WEIGHT) -> DontMakeNoise
 				},
 					

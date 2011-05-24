@@ -24,12 +24,12 @@ test.gListAMORE.getLdata <- function() {
 }
 
 
-test.gListAMORE.addToLdata <- function() {
+test.gListAMORE.push_back <- function() {
 	lc <- gListAMORE$new()	
 	checkTrue(lc$validate())
-	lc$addToLdata(gCon$new(from=1, weight=14.5))
-	lc$addToLdata(gCon$new(from=2, weight=24.5))
-	lc$addToLdata(gCon$new(from=3, weight=34.5))
+	lc$push_back(gCon$new(from=1, weight=14.5))
+	lc$push_back(gCon$new(from=2, weight=24.5))
+	lc$push_back(gCon$new(from=3, weight=34.5))
 	ld <- gListAMORE$new(ldata=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
 	checkTrue(ld$validate())
 	checkEquals(lc,ld)
@@ -40,9 +40,9 @@ test.gListAMORE.addToLdata <- function() {
 test.gListAMORE.join <- function() {
 	lc <- gListAMORE$new()	
 	checkTrue(lc$validate())
-	lc$addToLdata(gCon$new(from=1, weight=14.5))
-	lc$addToLdata(gCon$new(from=2, weight=24.5))
-	lc$addToLdata(gCon$new(from=3, weight=34.5))
+	lc$push_back(gCon$new(from=1, weight=14.5))
+	lc$push_back(gCon$new(from=2, weight=24.5))
+	lc$push_back(gCon$new(from=3, weight=34.5))
 	ld <- gListAMORE$new(ldata=list (gCon$new(from=4, weight=1.5),	gCon$new(from=5, weight=2.5), gCon$new(from=6, weight=4.5)))	
 	checkTrue(ld$validate())
 	lc$join(ld)
@@ -68,10 +68,10 @@ test.gListAMORE.show <- function() {
 
 test.gListAMORE.validate <- function() {
 	le <- gListAMORE$new()
-	le$addToLdata("xx")
+	le$push_back("xx")
 	checkEquals(le$ldata[[1]],"xx")
 	checkException(le$validate(), silent=TRUE)
-	le$addToLdata("yy")
+	le$push_back("yy")
 	checkEquals(le$getLdata(),list("xx","yy"))
 	checkException(le$validate(), silent=TRUE)	
 }

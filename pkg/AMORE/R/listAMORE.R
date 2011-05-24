@@ -13,7 +13,7 @@ gListAMORE <- setRefClass("listAMORE",
   ),
   methods= list(
 	
-    addToLdata=function(value, ...){
+    push_back=function(value, ...){
       ldata <<- c(ldata, value)
     },
 	

@@ -15,7 +15,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 					mapply(FUN=function(i,wi,a,f,we){
 								lc <- gListCon$new()
 								lc$populate(FROM=f,WEIGHT=we)
-								addToLdata(gRBFneuron$new(id=i, width=wi, altitude=a, con=lc))
+								push_back(gRBFneuron$new(id=i, width=wi, altitude=a, con=lc))
 							},	ID, WIDTH, ALTITUDE, FROM, WEIGHT) -> DontMakeNoise
 				},
 				
