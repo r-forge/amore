@@ -16,7 +16,7 @@ test.gCon.new.fromIsNumeric <- function() {
 test.gCon.new.fromIsNeuron <- function() {
 	my1stCon <- gCon$new(from=1, weight=14.5)
 	myListCon <- gListCon$new()
-	myListCon$addToLdata(my1stCon)
+	myListCon$push_back(my1stCon)
 	myNeuron <- gNeuron$new(id=10, con=myListCon)
 	myCon <- gCon$new(from=myNeuron, weight=14.5)  # from is neuron
 	checkTrue(is(myCon,"Con"))

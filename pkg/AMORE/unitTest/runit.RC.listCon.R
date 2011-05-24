@@ -31,14 +31,14 @@ test.gListCon.fromIsNeuron <- function() {
 }
 
 
-test.gListCon.addToLdata <- function() {
+test.gListCon.push_back <- function() {
 	lc <- gListCon$new()
 	c1 <- gCon$new(from=1, weight=14.5)
 	c2 <- gCon$new(from=2, weight=24.5)
 	c3 <- gCon$new(from=3, weight=34.5) 
-	lc$addToLdata(c1)
-	lc$addToLdata(c2)
-	lc$addToLdata(c3)
+	lc$push_back(c1)
+	lc$push_back(c2)
+	lc$push_back(c3)
 	checkTrue(lc$validate())
 	checkEquals( lc$getFrom(),1:3)
 	checkEquals( lc$getWeight(),c(14.5,24.5,34.5))
@@ -47,7 +47,7 @@ test.gListCon.addToLdata <- function() {
 	c1 <- gCon$new(from=1, weight=14.5)
 	c2 <- gCon$new(from=2, weight=24.5)
 	c3 <- gCon$new(from=3, weight=34.5) 
-	lc$addToLdata(list(c1,c2, c3))
+	lc$push_back(list(c1,c2, c3))
 	checkTrue(lc$validate())
 	checkEquals( lc$getFrom(),1:3)
 	checkEquals( lc$getWeight(),c(14.5,24.5,34.5))
@@ -59,9 +59,9 @@ test.gListCon.delete <- function() {
 	c2 <- gCon$new(from=2, weight=24.5)
 	c3 <- gCon$new(from=3, weight=34.5) 
 	lc1 <- gListCon$new()
-	lc1$addToLdata(list(c1, c2, c3))
+	lc1$push_back(list(c1, c2, c3))
 	lc2 <- gListCon$new()
-	lc2$addToLdata(list(c1, c3))
+	lc2$push_back(list(c1, c3))
 	lc3 <- lc1$copy(shallow=FALSE)
 	lc3$delete(FROM=2)
 	checkEquals(lc2, lc3)	
@@ -73,7 +73,7 @@ test.gListCon.select <- function() {
 	c2 <- gCon$new(from=2, weight=24.5)
 	c3 <- gCon$new(from=3, weight=34.5) 
 	lc1 <- gListCon$new()
-	lc1$addToLdata(list(c1, c2, c3))
+	lc1$push_back(list(c1, c2, c3))
 	lc2 <- lc1$copy(shallow=FALSE)
 	lc2$delete(FROM=2)
 	checkEquals(lc1$select(FROM=c(1,3)), lc2)	
@@ -164,6 +164,6 @@ test.gListCon.show <- function() {
 test.gListCon.validate <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:10, WEIGHT=10:1)
-	lc$addToLdata("xx")
+	lc$push_back("xx")
 	checkException(lc$validate(), silent=TRUE)
 }

@@ -16,12 +16,12 @@ test.gListMLPneuron.new <- function() {
 	checkTrue(ln$validate())
 	ln <- gListMLPneuron$new()
 	checkTrue(ln$validate())
-	ln$addToLdata(nn)
+	ln$push_back(nn)
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
 	lc$populate(FROM=11:15, WEIGHT=1:5)
 	nn <- gMLPneuron$new(id=2, bias=8.7, con=lc)
-	ln$addToLdata(nn)
+	ln$push_back(nn)
 	checkTrue(ln$validate())
 	checkEquals(ln$getId(),1:2)
 	checkEquals(ln$getBias(),c(9.9, 8.7))
@@ -88,7 +88,7 @@ test.gListMLPneuron.show <- function() {
 test.gListMLPneuron.validate <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
-	ln$addToLdata("xx")
+	ln$push_back("xx")
 	checkException(ln$validate(), silent=TRUE)	
 }
 

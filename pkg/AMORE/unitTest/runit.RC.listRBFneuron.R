@@ -18,12 +18,12 @@ test.gListRBFneuron.new <- function() {
 	checkTrue(ln$validate())
 	ln <- gListRBFneuron$new()
 	checkTrue(ln$validate())
-	ln$addToLdata(nn)
+	ln$push_back(nn)
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
 	lc$populate(FROM=11:15, WEIGHT=1:5)
 	nn <- gRBFneuron$new(id=2, width=8.7, altitude=3.2, con=lc)
-	ln$addToLdata(nn)
+	ln$push_back(nn)
 	checkTrue(ln$validate())
 	checkEquals(ln$getId(),1:2)
 	checkEquals(ln$getWidth(),c(9.9, 8.7))
@@ -82,6 +82,6 @@ test.gListRBFneuron.show <- function() {
 test.gListRBFneuron.validate <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
-	ln$addToLdata("xx")
+	ln$push_back("xx")
 	checkException(ln$validate(), silent=TRUE)	
 }

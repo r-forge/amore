@@ -33,7 +33,7 @@ gNeuron <- setRefClass("Neuron",
 				}, 
 				
 				addCon= function(value, ...) { 
-					con$addToLdata(value, ...)
+					con$push_back(value, ...)
 				},
 				
 				deleteCon= function(FROM, ...) {

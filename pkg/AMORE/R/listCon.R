@@ -12,7 +12,7 @@ gListCon <- setRefClass("listCon",
 					if (missing(con)){
 						callSuper(...)
 					} else {
-						addToLdata(con)
+						push_back(con)
 						return(.self)
 					}
 				},
@@ -20,7 +20,7 @@ gListCon <- setRefClass("listCon",
 				populate=function(FROM, WEIGHT, ...){
 					if (missing(FROM)||missing(WEIGHT)) {stop("[listCon populate]: Error, FROM and/or WEIGHT parameters missing")  } else {}
 					if (length(FROM)!=length(WEIGHT)) {stop("[listCon initialize]: Error length(FROM)!=length(WEIGHT)")} else {}   
-					mapply(FUN=function(f,w){addToLdata(gCon$new(from=f, weight=w))}, FROM, WEIGHT) -> DontMakeNoise
+					mapply(FUN=function(f,w){push_back(gCon$new(from=f, weight=w))}, FROM, WEIGHT) -> DontMakeNoise
 				},
 				
 				getWeight = function(FROM, ...){

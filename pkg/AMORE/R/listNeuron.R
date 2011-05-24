@@ -12,7 +12,7 @@ gListNeuron <- setRefClass("listNeuron",
 					if (missing(neuron)){
 						callSuper(...)
 					} else {
-						addToLdata(neuron)
+						push_back(neuron)
 						return(.self)
 					}
 				},
