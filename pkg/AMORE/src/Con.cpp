@@ -20,13 +20,13 @@
  *  //================
  *  //Usage example:
  *  //================
- *   Con myCon;
- *   Neuron MyNeuron;
- *   Neuron * ptNeuron;
- *   MyNeuron.setId(1);
- *   myCon.setFromNeuron(&MyNeuron);
- *   ptNeuron = myCon.getFromNeuron();
- *   int result= ptNeuron->getId();
+ *	Con myCon;
+ *	Neuron MyNeuron;
+ *	Neuron * ptNeuron;
+ *	MyNeuron.setId(1);
+ *	myCon.setFromNeuron(&MyNeuron);
+ *	ptNeuron = myCon.getFromNeuron();
+ *	int result= ptNeuron->getId();
  * \endcode
  *
  * After execution of the code shown above, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
@@ -58,11 +58,11 @@ void Con::setFromNeuron	(Neuron * f)   	{
  *  //================
  *  //Usage example:
  *  //================
- *  	Con myCon;
- *  	Neuron MyNeuron;
- *  	MyNeuron.setId(16);
- *  	myCon.setFromNeuron(&MyNeuron);
- *  	int result= myCon.getFromId();
+ *	Con myCon;
+ *	Neuron MyNeuron;
+ *	MyNeuron.setId(16);
+ *	myCon.setFromNeuron(&MyNeuron);
+ * 	int result= myCon.getFromId();
  * \endcode
  *
  * After execution of the code shown above, MyNeuron::Id is set to the integer value 16 and, thus, result is equal to 16.
@@ -84,14 +84,14 @@ int Con::getFromId () {
  *  //================
  *  //Usage example:
  *  //================
- *  Con myCon;
- *  Neuron MyNeuron;
- * 	MyNeuron.setId(16);
- * 	myCon.setFromNeuron(&MyNeuron);
- * 	myCon.setWeight(12.4);
- * 	double result1= myCon.getWeight();
- * 	myCon.setWeight(2.2);
- * 	double result2= myCon.getWeight();
+ *	Con myCon;
+ *	Neuron MyNeuron;
+ *	MyNeuron.setId(16);
+ *	myCon.setFromNeuron(&MyNeuron);
+ *	myCon.setWeight(12.4);
+ *	double result1= myCon.getWeight();
+ *	myCon.setWeight(2.2);
+ *	double result2= myCon.getWeight();
  * \endcode
  *
  *

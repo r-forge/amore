@@ -137,13 +137,13 @@ A pointer to the \hyperlink{class_neuron}{Neuron} object referred to by the \hyp
   //================
   //Usage example:
   //================
-   Con myCon;
-   Neuron MyNeuron;
-   Neuron * ptNeuron;
-   MyNeuron.setId(1);
-   myCon.setFromNeuron(&MyNeuron);
-   ptNeuron = myCon.getFromNeuron();
-   int result= ptNeuron->getId();
+        Con myCon;
+        Neuron MyNeuron;
+        Neuron * ptNeuron;
+        MyNeuron.setId(1);
+        myCon.setFromNeuron(&MyNeuron);
+        ptNeuron = myCon.getFromNeuron();
+        int result= ptNeuron->getId();
 \end{DoxyCode}
 
 
@@ -177,8 +177,8 @@ The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (do
   //================
   //Usage example:
   //================
-  Con myCon;
-  Neuron MyNeuron;
+        Con myCon;
+        Neuron MyNeuron;
         MyNeuron.setId(16);
         myCon.setFromNeuron(&MyNeuron);
         myCon.setWeight(12.4);
