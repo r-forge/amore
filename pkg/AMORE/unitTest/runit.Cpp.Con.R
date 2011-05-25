@@ -14,14 +14,14 @@ test.Con.Cpp.setAndgetFromNeuron <- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			Neuron * ptnn;
-			nn.setId(1);
-			micon.setFromNeuron(&nn);
+			Con myCon;
+			Neuron MyNeuron;
+			Neuron * ptNeuron;
+			MyNeuron.setId(1);
+			myCon.setFromNeuron(&MyNeuron);
 			
-			ptnn = micon.getFromNeuron();
-			int result= ptnn->getId();
+			ptNeuron = myCon.getFromNeuron();
+			int result= ptNeuron->getId();
 			return wrap(result);
 			'
 	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
@@ -40,12 +40,12 @@ test.Con.Cpp.getFromId<- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			nn.setId(16);
-			micon.setFromNeuron(&nn);
+			Con myCon;
+			Neuron MyNeuron;
+			MyNeuron.setId(16);
+			myCon.setFromNeuron(&MyNeuron);
 			
-			int result= micon.getFromId();
+			int result= myCon.getFromId();
 			return wrap(result);
 			'
 	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
@@ -64,14 +64,14 @@ test.Con.Cpp.setAndgetWeight <- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			nn.setId(16);
-			micon.setFromNeuron(&nn);
-			micon.setWeight(12.4);
-			double result1= micon.getWeight();
-			micon.setWeight(2.2);
-			double result2= micon.getWeight();
+			Con myCon;
+			Neuron MyNeuron;
+			MyNeuron.setId(16);
+			myCon.setFromNeuron(&MyNeuron);
+			myCon.setWeight(12.4);
+			double result1= myCon.getWeight();
+			myCon.setWeight(2.2);
+			double result2= myCon.getWeight();
 			return Rcpp::List::create(	Rcpp::Named("R1")	= result1,
 			Rcpp::Named("R2") 	= result2);
 			'
@@ -92,12 +92,12 @@ test.Con.Cpp.show <- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			nn.setId(16);
-			micon.setFromNeuron(&nn);
-			micon.setWeight(12.4);
-			bool result= micon.show();
+			Con myCon;
+			Neuron MyNeuron;
+			MyNeuron.setId(16);
+			myCon.setFromNeuron(&MyNeuron);
+			myCon.setWeight(12.4);
+			bool result= myCon.show();
 			return wrap(result);
 			'
 	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
@@ -116,12 +116,12 @@ test.Con.Cpp.validate.weight <- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			nn.setId(16);
-			micon.setFromNeuron(&nn);
-			micon.setWeight(1.4/0);
-			micon.validate();
+			Con myCon;
+			Neuron MyNeuron;
+			MyNeuron.setId(16);
+			myCon.setFromNeuron(&MyNeuron);
+			myCon.setWeight(1.4/0);
+			myCon.validate();
 			return wrap(true);
 			'
 	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
@@ -139,13 +139,13 @@ test.Con.Cpp.validate.from <- function() {
 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
 	testCode <- '
-			Con micon;
-			Neuron nn;
-			nn.setId(NA_INTEGER);
-			micon.setFromNeuron(&nn);
-			micon.setWeight(1.4);
-			micon.validate();
-			return wrap(micon.getFromId());
+			Con myCon;
+			Neuron MyNeuron;
+			MyNeuron.setId(NA_INTEGER);
+			myCon.setFromNeuron(&MyNeuron);
+			myCon.setWeight(1.4);
+			myCon.validate();
+			return wrap(myCon.getFromId());
 			'
 	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
 	checkException(result <- testCodefun(), silent=TRUE)

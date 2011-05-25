@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" target="_top" xlink:title="Con::getFromId">
+<a xlink:href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" target="_top" xlink:title="A getter of the Id of the Neuron pointed by the from field.">
 <polygon fill="white" stroke="black" points="112,-38.5 112,-57.5 196,-57.5 196,-38.5 112,-38.5"/>
 <text text-anchor="middle" x="154" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">Con::getFromId</text>
 </a>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="class_con.html#af5f836a7b0988b3d9113589b2959d5e6" target="_top" xlink:title="Con::validate">
+<a xlink:href="class_con.html#af5f836a7b0988b3d9113589b2959d5e6" target="_top" xlink:title="Object validator.">
 <polygon fill="white" stroke="black" points="117,-0.5 117,-19.5 191,-19.5 191,-0.5 117,-0.5"/>
 <text text-anchor="middle" x="154" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Con::validate</text>
 </a>
@@ -40,7 +40,7 @@
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="class_con.html#ab85838575b5e01f3b8073136f2102922" target="_top" xlink:title="Con::show">
+<a xlink:href="class_con.html#ab85838575b5e01f3b8073136f2102922" target="_top" xlink:title="Pretty print of the Con information.">
 <polygon fill="white" stroke="black" points="232.5,-38.5 232.5,-57.5 295.5,-57.5 295.5,-38.5 232.5,-38.5"/>
 <text text-anchor="middle" x="264" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">Con::show</text>
 </a>
