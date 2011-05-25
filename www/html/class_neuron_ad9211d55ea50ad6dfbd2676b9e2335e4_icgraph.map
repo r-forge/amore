@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="Con::getFromId" alt="" coords="155,5,267,32"/>
-<area shape="rect" id="node7" href="$class_con.html#af5f836a7b0988b3d9113589b2959d5e6" title="Con::validate" alt="" coords="161,56,260,83"/>
-<area shape="rect" id="node5" href="$class_con.html#ab85838575b5e01f3b8073136f2102922" title="Con::show" alt="" coords="316,5,399,32"/>
+<area shape="rect" id="node3" href="$class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field." alt="" coords="155,5,267,32"/>
+<area shape="rect" id="node7" href="$class_con.html#af5f836a7b0988b3d9113589b2959d5e6" title="Object validator." alt="" coords="161,56,260,83"/>
+<area shape="rect" id="node5" href="$class_con.html#ab85838575b5e01f3b8073136f2102922" title="Pretty print of the Con information." alt="" coords="316,5,399,32"/>
 </map>

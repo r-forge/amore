@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "AMORE++", "index.html", [
+    [ "The AMORE++ package", "index.html", null ],
     [ "Class List", "annotated.html", [
       [ "Con", "class_con.html", null ],
       [ "Neuron", "class_neuron.html", null ]

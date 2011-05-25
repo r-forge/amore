@@ -1,53 +1,83 @@
 \begin{theindex}
 
-  \item {Con}, \hyperpage{5}
-    \subitem {getFromId}, \hyperpage{7}
-    \subitem {getFromNeuron}, \hyperpage{7}
-    \subitem {getWeight}, \hyperpage{7}
-    \subitem {setFromNeuron}, \hyperpage{8}
-    \subitem {setWeight}, \hyperpage{8}
-    \subitem {show}, \hyperpage{8}
-    \subitem {validate}, \hyperpage{8}
+  \item {Con}, \hyperpage{7}
+    \subitem {from}, \hyperpage{14}
+    \subitem {getFromId}, \hyperpage{9}
+    \subitem {getFromNeuron}, \hyperpage{10}
+    \subitem {getWeight}, \hyperpage{11}
+    \subitem {setFromNeuron}, \hyperpage{11}
+    \subitem {setWeight}, \hyperpage{12}
+    \subitem {show}, \hyperpage{12}
+    \subitem {validate}, \hyperpage{13}
+    \subitem {weight}, \hyperpage{14}
+
+  \indexspace
+
+  \item {from}
+    \subitem {Con}, \hyperpage{14}
 
   \indexspace
 
   \item {getFromId}
-    \subitem {Con}, \hyperpage{7}
+    \subitem {Con}, \hyperpage{9}
   \item {getFromNeuron}
-    \subitem {Con}, \hyperpage{7}
+    \subitem {Con}, \hyperpage{10}
   \item {getId}
-    \subitem {Neuron}, \hyperpage{9}
+    \subitem {Neuron}, \hyperpage{15}
   \item {getWeight}
-    \subitem {Con}, \hyperpage{7}
+    \subitem {Con}, \hyperpage{11}
 
   \indexspace
 
-  \item {Neuron}, \hyperpage{9}
-    \subitem {getId}, \hyperpage{9}
-    \subitem {setId}, \hyperpage{10}
+  \item {Id}
+    \subitem {Neuron}, \hyperpage{15}
 
   \indexspace
 
-  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{11}
-  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{12}
-  \item {pkg/AMORE/src/Con.h}, \hyperpage{13}
-  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{13}
-  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{14}
+  \item {listCon}
+    \subitem {Neuron}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Neuron}, \hyperpage{14}
+    \subitem {getId}, \hyperpage{15}
+    \subitem {Id}, \hyperpage{15}
+    \subitem {listCon}, \hyperpage{15}
+    \subitem {outputValue}, \hyperpage{16}
+    \subitem {setId}, \hyperpage{15}
+
+  \indexspace
+
+  \item {outputValue}
+    \subitem {Neuron}, \hyperpage{16}
+
+  \indexspace
+
+  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{17}
+  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{18}
+  \item {pkg/AMORE/src/Con.h}, \hyperpage{19}
+  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{19}
+  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{21}
 
   \indexspace
 
   \item {setFromNeuron}
-    \subitem {Con}, \hyperpage{8}
+    \subitem {Con}, \hyperpage{11}
   \item {setId}
-    \subitem {Neuron}, \hyperpage{10}
+    \subitem {Neuron}, \hyperpage{15}
   \item {setWeight}
-    \subitem {Con}, \hyperpage{8}
+    \subitem {Con}, \hyperpage{12}
   \item {show}
-    \subitem {Con}, \hyperpage{8}
+    \subitem {Con}, \hyperpage{12}
 
   \indexspace
 
   \item {validate}
-    \subitem {Con}, \hyperpage{8}
+    \subitem {Con}, \hyperpage{13}
+
+  \indexspace
+
+  \item {weight}
+    \subitem {Con}, \hyperpage{14}
 
 \end{theindex}

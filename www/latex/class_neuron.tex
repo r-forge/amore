@@ -4,6 +4,11 @@
 }
 
 
+A class to handle the information contained in a general \hyperlink{class_neuron}{Neuron}.  
+
+
+
+
 {\ttfamily \#include $<$Neuron.h$>$}
 
 \subsection*{Public Member Functions}
@@ -13,12 +18,23 @@ int \hyperlink{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}{getId} ()
 \item 
 void \hyperlink{class_neuron_aefc6637d3b0a20669af3b7e92a7bf209}{setId} (int id)
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id}
+\begin{DoxyCompactList}\small\item\em An integer variable with the \hyperlink{class_neuron}{Neuron} Id. \end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{class_neuron_ac0068e9f6837952db84e407ce3863df1}{listCon}
+\begin{DoxyCompactList}\small\item\em A vector of input connections. \end{DoxyCompactList}\item 
+double \hyperlink{class_neuron_ada029047646c36e525a6a1b77cafc03c}{outputValue}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A class to handle the information contained in a general \hyperlink{class_neuron}{Neuron}. 
 
+A general class for neurons. The MLPneuron and RBFneuron classes will specialize this general class 
 
-Definition at line 11 of file Neuron.h.
+Definition at line 16 of file Neuron.h.
 
 
 
@@ -38,8 +54,7 @@ Definition at line 15 of file Neuron.cpp.
 
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,6 +75,44 @@ Here is the caller graph for this function:
 
 
 Definition at line 19 of file Neuron.cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{
+\index{Neuron@{Neuron}!Id@{Id}}
+\index{Id@{Id}!Neuron@{Neuron}}
+\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Neuron::Id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}
+
+
+An integer variable with the \hyperlink{class_neuron}{Neuron} Id. 
+
+The \hyperlink{class_neuron}{Neuron} Id provides a name to the neuron. This value is not expected to be used neither during simulation nor training but it provides an easy reference for human readers. 
+
+Definition at line 21 of file Neuron.h.
+
+\hypertarget{class_neuron_ac0068e9f6837952db84e407ce3863df1}{
+\index{Neuron@{Neuron}!listCon@{listCon}}
+\index{listCon@{listCon}!Neuron@{Neuron}}
+\subsubsection[{listCon}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Con}$>$ {\bf Neuron::listCon}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_neuron_ac0068e9f6837952db84e407ce3863df1}
+
+
+A vector of input connections. 
+
+
+
+Definition at line 28 of file Neuron.h.
+
+\hypertarget{class_neuron_ada029047646c36e525a6a1b77cafc03c}{
+\index{Neuron@{Neuron}!outputValue@{outputValue}}
+\index{outputValue@{outputValue}!Neuron@{Neuron}}
+\subsubsection[{outputValue}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Neuron::outputValue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_neuron_ada029047646c36e525a6a1b77cafc03c}
+
+
+Definition at line 29 of file Neuron.h.
 
 
 
