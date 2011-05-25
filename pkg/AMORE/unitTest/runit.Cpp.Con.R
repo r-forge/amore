@@ -3,9 +3,17 @@
 # Author: mcasl
 ###############################################################################
 
-
+###############################################################################
 test.Con.Cpp.setAndgetFromNeuron <- function() {	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			Neuron * ptnn;
@@ -16,16 +24,22 @@ test.Con.Cpp.setAndgetFromNeuron <- function() {
 			int result= ptnn->getId();
 			return wrap(result);
 			'
-	
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	result <- fx()
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	result <- testCodefun()
 	checkEquals(result, 1)
 }
 
-
+###############################################################################
 test.Con.Cpp.getFromId<- function() {	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			nn.setId(16);
@@ -34,16 +48,22 @@ test.Con.Cpp.getFromId<- function() {
 			int result= micon.getFromId();
 			return wrap(result);
 			'
-	
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	result <- fx()
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	result <- testCodefun()
 	checkEquals(result, 16)
 }
 
-
+###############################################################################
 test.Con.Cpp.setAndgetWeight <- function() {	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			nn.setId(16);
@@ -53,18 +73,25 @@ test.Con.Cpp.setAndgetWeight <- function() {
 			micon.setWeight(2.2);
 			double result2= micon.getWeight();
 			return Rcpp::List::create(	Rcpp::Named("R1")	= result1,
-										Rcpp::Named("R2") 	= result2);
+			Rcpp::Named("R2") 	= result2);
 			'
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	result <- fx()
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	result <- testCodefun()
 	checkEquals(result$R1, 12.4)
 	checkEquals(result$R2, 2.2)
 }
 
-
+###############################################################################
 test.Con.Cpp.show <- function() {	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			nn.setId(16);
@@ -73,17 +100,22 @@ test.Con.Cpp.show <- function() {
 			bool result= micon.show();
 			return wrap(result);
 			'
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	result <- fx()
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	result <- testCodefun()
 	checkTrue(result)
-
 }
 
-
-
+###############################################################################
 test.Con.Cpp.validate.weight <- function() {	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			nn.setId(16);
@@ -92,15 +124,21 @@ test.Con.Cpp.validate.weight <- function() {
 			micon.validate();
 			return wrap(true);
 			'
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	checkException(result <- fx(), silent=TRUE)
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	checkException(result <- testCodefun(), silent=TRUE)
 }
 
-
+###############################################################################
 test.Con.Cpp.validate.from <- function() {
-	
-	funCode <- '
+###############################################################################
+	incCode <- paste(
+			paste(  "#define INLINE_R\n",					collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
+			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
+			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	testCode <- '
 			Con micon;
 			Neuron nn;
 			nn.setId(NA_INTEGER);
@@ -109,15 +147,7 @@ test.Con.Cpp.validate.from <- function() {
 			micon.validate();
 			return wrap(micon.getFromId());
 			'
-	incCode <- paste( readLines( "pkg/AMORE/src/Con.cpp"), collapse = "\n" )
-	fx <- cxxfunction( signature(), body=funCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
-	checkException(result <- fx(), silent=TRUE)
-
-
-	
+	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	checkException(result <- testCodefun(), silent=TRUE)
 }
-
-
-
-
 

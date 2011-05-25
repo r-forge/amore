@@ -45,6 +45,9 @@ echo $contents; } ?>
 
 <p> <a href="http://amore.r-forge.r-project.org/unitTestResults.html">UNIT TEST RESULTS, (powered by the RUnit package)</a>. </p>
 
+<p> <a href="http://amore.r-forge.r-project.org/html/index.html">C++ code Documentation, (powered by Doxygen)</a>. </p>
+<p> <a href="http://amore.r-forge.r-project.org/latex/refman.pdf">C++ code Documentation (PDF version), (powered by Doxygen)</a>. </p>
+
 <p> The <strong>project summary page</strong> you can find <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>here</strong></a>. </p>
 
 </body>
