@@ -7,22 +7,22 @@
 
 
 
+
+int  vecCon::numOfCons() {
+	return ldata.size();
+}
+
+
+
 //! Getter of the Id values of the vector of Cons
 /*!
  * This function returns the Id's of the neurons referred to by the vector of Cons.
  */
-
-
-
 std::vector<int>  vecCon::getFromId() {
-
-//! \todo initialize result with as many elements as "this".
+	// for each push_back(getFromId())
 	std::vector<int> result;
-	std::vector<Con>::iterator itr;
-
-	for(itr = ldata.begin();   itr != ldata.end();   itr++) {
-			result.push_back(itr->getFromId());
-	}
+	result.reserve(numOfCons());
+	for(std::vector<Con>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ result.push_back(itr->getFromId()); }
 	return result;
 }
 
@@ -59,9 +59,6 @@ std::vector<int>  vecCon::getFromId() {
 					return(sapply(ldata,function(x) { x$getFrom(...)}))
 				},
 
-				getFromId = function(...){
-					return(sapply(ldata,function(x) { x$getFromId(...)}))
-				},
 
 				setWeight= function(value, FROM, ...) {
 					value <- c(value, recursive=TRUE)

@@ -46,6 +46,8 @@
     \subitem {outputValue}, \hyperpage{22}
     \subitem {setId}, \hyperpage{21}
     \subitem {vecCon}, \hyperpage{22}
+  \item {numOfCons}
+    \subitem {vecCon}, \hyperpage{27}
 
   \indexspace
 
@@ -91,6 +93,7 @@
   \item {vecCon}, \hyperpage{25}
     \subitem {getFromId}, \hyperpage{27}
     \subitem {Neuron}, \hyperpage{22}
+    \subitem {numOfCons}, \hyperpage{27}
 
   \indexspace
 

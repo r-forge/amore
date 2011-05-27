@@ -94,18 +94,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="416" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="432" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__coll__graph.svg" width="450" height="819" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con__coll__graph.svg" width="450" height="835" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classvec_con-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749">numOfCons</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471">getFromId</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the Id values of the vector of Cons.  <a href="#aa9f3f5df4c4060951c975c4c829b8471"></a><br/></td></tr>
 </table>
@@ -132,23 +135,58 @@ Public Member Functions</h2></td></tr>
 <p>Getter of the Id values of the vector of Cons. </p>
 <p>This function returns the Id's of the neurons referred to by the vector of Cons. </p>
 
-<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>initialize result with as many elements as "this". </dd></dl>
-</p>
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00021">21</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00017">17</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
-
-<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00011">numOfCons()</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
-
+        <span class="comment">// for each push_back(getFromId())</span>
         std::vector&lt;int&gt; result;
-        std::vector&lt;Con&gt;::iterator itr;
-
-        <span class="keywordflow">for</span>(itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++) {
-                        result.push_back(itr-&gt;getFromId());
-        }
+        result.reserve(<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749">numOfCons</a>());
+        <span class="keywordflow">for</span>(std::vector&lt;Con&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)      { result.push_back(itr-&gt;getFromId()); }
         <span class="keywordflow">return</span> result;
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="classvec_con_aa9f3f5df4c4060951c975c4c829b8471_cgraph.svg" width="336" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e39a5e78c40ae8af9bbd2fd7f0dc749"></a><!-- doxytag: member="vecCon::numOfCons" ref="a1e39a5e78c40ae8af9bbd2fd7f0dc749" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vecCon::numOfCons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00011">11</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>.</p>
+
+<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00021">getFromId()</a>.</p>
+<div class="fragment"><pre class="fragment">                       {
+        <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.size();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749_icgraph.svg" width="336" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -160,7 +198,7 @@ Public Member Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_con.html">vecCon</a>      </li>
-      <li class="footer">Generated on Fri May 27 2011 02:03:20 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri May 27 2011 02:57:19 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

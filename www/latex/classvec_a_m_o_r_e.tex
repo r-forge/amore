@@ -8,7 +8,8 @@
 
 
 
-Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
+Inheritance diagram for vecAMORE$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -76,11 +77,9 @@ Definition at line 19 of file vecAMORE.cpp.
 
 \begin{DoxyCode}
                                              {
-//      for_each(ldata.begin(), ldata.end(), showCon );
-        typename std::vector<T>::iterator itr;
-        for(itr = ldata.begin();   itr != ldata.end();   itr++) {
-                        itr->show();
-        }
+        //      for_each(ldata.begin(), ldata.end(), showCon );
+        for(typename std::vector<T>::iterator itr = ldata.begin();   itr != 
+      ldata.end();   itr++)   { itr->show(); }
         return true;
 };
 \end{DoxyCode}
@@ -95,17 +94,15 @@ Definition at line 19 of file vecAMORE.cpp.
 \label{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}
 
 
-Definition at line 29 of file vecAMORE.cpp.
+Definition at line 26 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
                                                  {
-// for_each(ldata.begin(), ldata.end(), validateCon);
-        typename std::vector<T>::iterator itr;
-                for(itr = ldata.begin();   itr != ldata.end();   itr++) {
-                                itr->validate();
-                }
-                return true;
+        // for_each(ldata.begin(), ldata.end(), validateCon);
+        for(typename std::vector<T>::iterator itr = ldata.begin();   itr != 
+      ldata.end();   itr++)   { itr->validate(); }
+        return true;
 };
 \end{DoxyCode}
 

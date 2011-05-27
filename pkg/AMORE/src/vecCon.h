@@ -18,6 +18,7 @@ class vecCon: public vecAMORE<Con> {
 
 public:
 
+	int					numOfCons();
 	std::vector<int>	getFromId();
 
 	//	void 				populate	( listNeuron * FROM, std::vector<double> WEIGHT);
@@ -27,7 +28,6 @@ public:
 	//						setFrom(value, FROM);
 	//						delete(FROM);
 	//						select(FROM);
-	//						numOfCons();
 	//						validate();
 };
 

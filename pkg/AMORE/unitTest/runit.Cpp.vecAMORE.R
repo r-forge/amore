@@ -5,7 +5,7 @@
 
 
 ###############################################################################
-#test.vecAMORE.Cpp.push_back <- function() {	
+test.vecAMORE.Cpp.validate<- function() {	
 ###############################################################################
 
 
@@ -52,9 +52,4 @@ result <- testCodefun()
 checkEquals(result, 1)
 
 
-#}
-# From:	 10 	 Weight= 	 1.010000 
-# From:	 20 	 Weight= 	 22.020000 
-# From:	 30 	 Weight= 	 333.030000 
-# [1] TRUE
-
+}

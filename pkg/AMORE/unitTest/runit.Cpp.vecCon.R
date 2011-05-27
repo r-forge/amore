@@ -5,7 +5,7 @@
 
 
 ###############################################################################
-#test.vecCon.Cpp.push_back.getFromId.show <- function() {	
+test.vecCon.Cpp.push_back.getFromId.show <- function() {	
 ###############################################################################
 
 
@@ -56,12 +56,4 @@ testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plug
 result <- testCodefun()
 checkEquals(result, c(10, 20, 30))
 
-
-
-
-
-# From:	 10 	 Weight= 	 1.010000 
-# From:	 20 	 Weight= 	 22.020000 
-# From:	 30 	 Weight= 	 333.030000 
-# [1] TRUE
-
+}
