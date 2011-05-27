@@ -17,22 +17,16 @@ template <typename T> void vecAMORE<T>::push_back(T element) {
 
 
 template <typename T> bool vecAMORE<T>::show() {
-//	for_each(ldata.begin(), ldata.end(), showCon );
-	typename std::vector<T>::iterator itr;
-	for(itr = ldata.begin();   itr != ldata.end();   itr++) {
-			itr->show();
-	}
+	//	for_each(ldata.begin(), ldata.end(), showCon );
+	for(typename std::vector<T>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ itr->show(); }
 	return true;
 };
 
 
 template <typename T> bool vecAMORE<T>::validate() {
-// for_each(ldata.begin(), ldata.end(), validateCon);
-	typename std::vector<T>::iterator itr;
-		for(itr = ldata.begin();   itr != ldata.end();   itr++) {
-				itr->validate();
-		}
-		return true;
+	// for_each(ldata.begin(), ldata.end(), validateCon);
+	for(typename std::vector<T>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ itr->validate(); }
+	return true;
 };
 
 

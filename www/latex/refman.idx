@@ -40,6 +40,8 @@
 \indexentry{vecCon@{vecCon}|hyperpage}{25}
 \indexentry{vecCon@{vecCon}!getFromId@{getFromId}|hyperpage}{27}
 \indexentry{getFromId@{getFromId}!vecCon@{vecCon}|hyperpage}{27}
+\indexentry{vecCon@{vecCon}!numOfCons@{numOfCons}|hyperpage}{27}
+\indexentry{numOfCons@{numOfCons}!vecCon@{vecCon}|hyperpage}{27}
 \indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{29}
 \indexentry{pkg/AMORE/src/Con.cpp@{pkg/AMORE/src/Con.cpp}|hyperpage}{30}
 \indexentry{pkg/AMORE/src/Con.h@{pkg/AMORE/src/Con.h}|hyperpage}{31}

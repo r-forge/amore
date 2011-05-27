@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for vecAMORE&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_a_m_o_r_e__inherit__graph.svg" width="150" height="416" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_a_m_o_r_e__inherit__graph.svg" width="150" height="432" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classvec_a_m_o_r_e-members.html">List of all members.</a></p>
@@ -155,11 +156,8 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00019">19</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                             {
-<span class="comment">//      for_each(ldata.begin(), ldata.end(), showCon );</span>
-        <span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr;
-        <span class="keywordflow">for</span>(itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++) {
-                        itr-&gt;show();
-        }
+        <span class="comment">//      for_each(ldata.begin(), ldata.end(), showCon );</span>
+        <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)       { itr-&gt;show(); }
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 };
 </pre></div>
@@ -181,14 +179,11 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00029">29</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00026">26</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                 {
-<span class="comment">// for_each(ldata.begin(), ldata.end(), validateCon);</span>
-        <span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr;
-                <span class="keywordflow">for</span>(itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++) {
-                                itr-&gt;validate();
-                }
-                <span class="keywordflow">return</span> <span class="keyword">true</span>;
+        <span class="comment">// for_each(ldata.begin(), ldata.end(), validateCon);</span>
+        <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)       { itr-&gt;validate(); }
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
 };
 </pre></div>
 </div>
@@ -220,7 +215,7 @@ template&lt;typename T&gt; </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_a_m_o_r_e.html">vecAMORE</a>      </li>
-      <li class="footer">Generated on Fri May 27 2011 02:03:20 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri May 27 2011 02:57:19 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

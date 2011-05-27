@@ -44,6 +44,7 @@
 \contentsline {subsection}{\numberline {6.4.1}Detailed Description}{27}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Member Function Documentation}{27}{subsection.6.4.2}
 \contentsline {subsubsection}{\numberline {6.4.2.1}getFromId}{27}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}numOfCons}{28}{subsubsection.6.4.2.2}
 \contentsline {chapter}{\numberline {7}File Documentation}{29}{chapter.7}
 \contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{29}{section.7.1}
 \contentsline {section}{\numberline {7.2}pkg/AMORE/src/Con.cpp File Reference}{30}{section.7.2}
