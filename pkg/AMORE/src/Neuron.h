@@ -25,7 +25,8 @@ class Neuron {
 	 *
 	 */
 
-	std::vector<Con> listCon;
+	//! \todo restore vecCon<Con> listCon;
+	Con vecCon;
 	double outputValue;
 public:
 

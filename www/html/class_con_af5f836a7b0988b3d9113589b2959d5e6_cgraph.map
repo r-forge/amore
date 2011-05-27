@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="153,5,252,32"/>
+<area shape="rect" id="node3" href="$class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field." alt="" coords="152,5,264,32"/>
+<area shape="rect" id="node7" href="$class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor." alt="" coords="152,56,264,83"/>
+<area shape="rect" id="node5" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="313,5,412,32"/>
 </map>

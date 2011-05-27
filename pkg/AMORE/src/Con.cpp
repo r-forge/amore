@@ -10,6 +10,7 @@
 
 #endif /* INLINE_R */
 
+
 //=========================================================================================================
 
 //! %from field accessor.
@@ -41,7 +42,7 @@ Neuron * Con::getFromNeuron	()   			{
 
 //! %from field accessor.
 /*! This method sets the value of the \ref from field with the address used as parameter.
- * \param f is a pointer to the neuron that is to be inserted in the \ref from field.
+ * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
 void Con::setFromNeuron	(Neuron * f)   	{
@@ -108,7 +109,7 @@ double Con::getWeight () {
 
 //! %weight field accessor.
 /*! This method sets the value of the \ref weight field.
- * \param w is the new value (double) to be set in the \ref weight field.
+ * \param w The new value (double) to be set in the \ref weight field.
  *
  * \code
  *  //================
@@ -158,10 +159,9 @@ bool Con::show () {
  */
 bool Con::validate () {
 	BEGIN_RCPP
-	if (! R_FINITE(weight) )  			throw std::range_error("weight is not finite.");
-	if (from->getId() == NA_INTEGER )	throw std::range_error("fromId is not finite.");
+	if (! R_FINITE(getWeight()) )  		throw std::range_error("weight is not finite.");
+	if (getFromId() == NA_INTEGER )		throw std::range_error("fromId is not finite.");
 	return(true);
-
 	END_RCPP
 };
 
