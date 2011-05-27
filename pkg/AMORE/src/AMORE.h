@@ -18,17 +18,22 @@
 
 #include <iostream>
 #include <sstream>
+#include <algorithm>
+#include <vector>
 #include <Rcpp.h>
 
 using namespace Rcpp;
 
 class Con;
+template <typename T> class vecAMORE;
+class vecCon;
 class Neuron;
-
 
 #ifndef INLINE_R
 
 #include "Con.cpp"
+#include "vecAMORE.cpp"
+#include "vecCon.cpp"
 #include "Neuron.cpp"
 
 #endif /* INLINE_R_ */

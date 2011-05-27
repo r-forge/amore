@@ -1,0 +1,128 @@
+\hypertarget{classvec_a_m_o_r_e}{
+\section{vecAMORE$<$ T $>$ Class Template Reference}
+\label{classvec_a_m_o_r_e}\index{vecAMORE@{vecAMORE}}
+}
+
+
+{\ttfamily \#include $<$vecAMORE.h$>$}
+
+
+
+Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classvec_a_m_o_r_e__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}{push\_\-back} (T element)
+\item 
+bool \hyperlink{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{show} ()
+\item 
+bool \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ T $>$ \hyperlink{classvec_a_m_o_r_e_ab6a8dec6292a9e03a5566311d1eb650a}{ldata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class vecAMORE$<$ T $>$}
+
+
+
+Definition at line 11 of file vecAMORE.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}{
+\index{vecAMORE@{vecAMORE}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!vecAMORE@{vecAMORE}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::push\_\-back (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}
+
+
+Definition at line 14 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                                           {
+        this->ldata.push_back(element);
+};
+\end{DoxyCode}
+\hypertarget{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{
+\index{vecAMORE@{vecAMORE}!show@{show}}
+\index{show@{show}!vecAMORE@{vecAMORE}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf vecAMORE}$<$ T $>$::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}
+
+
+Definition at line 19 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                             {
+//      for_each(ldata.begin(), ldata.end(), showCon );
+        typename std::vector<T>::iterator itr;
+        for(itr = ldata.begin();   itr != ldata.end();   itr++) {
+                        itr->show();
+        }
+        return true;
+};
+\end{DoxyCode}
+\hypertarget{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{
+\index{vecAMORE@{vecAMORE}!validate@{validate}}
+\index{validate@{validate}!vecAMORE@{vecAMORE}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf vecAMORE}$<$ T $>$::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}
+
+
+Definition at line 29 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                                 {
+// for_each(ldata.begin(), ldata.end(), validateCon);
+        typename std::vector<T>::iterator itr;
+                for(itr = ldata.begin();   itr != ldata.end();   itr++) {
+                                itr->validate();
+                }
+                return true;
+};
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classvec_a_m_o_r_e_ab6a8dec6292a9e03a5566311d1eb650a}{
+\index{vecAMORE@{vecAMORE}!ldata@{ldata}}
+\index{ldata@{ldata}!vecAMORE@{vecAMORE}}
+\subsubsection[{ldata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$T$>$ {\bf vecAMORE}$<$ T $>$::{\bf ldata}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classvec_a_m_o_r_e_ab6a8dec6292a9e03a5566311d1eb650a}
+
+
+Definition at line 13 of file vecAMORE.h.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8h}{vecAMORE.h}\item 
+pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8cpp}{vecAMORE.cpp}\end{DoxyCompactItemize}

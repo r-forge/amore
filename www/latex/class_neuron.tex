@@ -11,6 +11,15 @@ A class to handle the information contained in a general \hyperlink{class_neuron
 
 {\ttfamily \#include $<$Neuron.h$>$}
 
+
+
+Collaboration diagram for Neuron:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_neuron__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,7 +32,7 @@ void \hyperlink{class_neuron_aefc6637d3b0a20669af3b7e92a7bf209}{setId} (int id)
 \item 
 int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id}
 \begin{DoxyCompactList}\small\item\em An integer variable with the \hyperlink{class_neuron}{Neuron} Id. \end{DoxyCompactList}\item 
-std::vector$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{class_neuron_ac0068e9f6837952db84e407ce3863df1}{listCon}
+\hyperlink{class_con}{Con} \hyperlink{class_neuron_a28b999e1d31bb81ac2092eb15c9a7d17}{vecCon}
 \begin{DoxyCompactList}\small\item\em A vector of input connections. \end{DoxyCompactList}\item 
 double \hyperlink{class_neuron_ada029047646c36e525a6a1b77cafc03c}{outputValue}
 \end{DoxyCompactItemize}
@@ -54,11 +63,25 @@ Definition at line 15 of file Neuron.cpp.
 
 
 
+References Id.
+
+
+
+Referenced by Con::getFromId().
+
+
+\begin{DoxyCode}
+                  {
+        return Id;
+}
+\end{DoxyCode}
+
+
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=376pt]{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4_icgraph}
+\includegraphics[width=386pt]{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4_icgraph}
 \end{center}
 \end{figure}
 
@@ -78,6 +101,16 @@ Definition at line 19 of file Neuron.cpp.
 
 
 
+References Id.
+
+
+\begin{DoxyCode}
+                         {
+        Id=id;
+}
+\end{DoxyCode}
+
+
 \subsection{Member Data Documentation}
 \hypertarget{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{
 \index{Neuron@{Neuron}!Id@{Id}}
@@ -92,24 +125,30 @@ The \hyperlink{class_neuron}{Neuron} Id provides a name to the neuron. This valu
 
 Definition at line 21 of file Neuron.h.
 
-\hypertarget{class_neuron_ac0068e9f6837952db84e407ce3863df1}{
-\index{Neuron@{Neuron}!listCon@{listCon}}
-\index{listCon@{listCon}!Neuron@{Neuron}}
-\subsubsection[{listCon}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Con}$>$ {\bf Neuron::listCon}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_neuron_ac0068e9f6837952db84e407ce3863df1}
 
 
-A vector of input connections. 
-
-
-
-Definition at line 28 of file Neuron.h.
+Referenced by getId(), and setId().
 
 \hypertarget{class_neuron_ada029047646c36e525a6a1b77cafc03c}{
 \index{Neuron@{Neuron}!outputValue@{outputValue}}
 \index{outputValue@{outputValue}!Neuron@{Neuron}}
 \subsubsection[{outputValue}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Neuron::outputValue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{class_neuron_ada029047646c36e525a6a1b77cafc03c}
+
+
+Definition at line 30 of file Neuron.h.
+
+\hypertarget{class_neuron_a28b999e1d31bb81ac2092eb15c9a7d17}{
+\index{Neuron@{Neuron}!vecCon@{vecCon}}
+\index{vecCon@{vecCon}!Neuron@{Neuron}}
+\subsubsection[{vecCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con} {\bf Neuron::vecCon}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_neuron_a28b999e1d31bb81ac2092eb15c9a7d17}
+
+
+A vector of input connections. 
+
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]restore vecCon$<$Con$>$ listCon; \end{Desc}
 
 
 Definition at line 29 of file Neuron.h.

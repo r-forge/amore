@@ -1,0 +1,94 @@
+\hypertarget{classvec_con}{
+\section{vecCon Class Reference}
+\label{classvec_con}\index{vecCon@{vecCon}}
+}
+
+
+A vector of connections.  
+
+
+
+
+{\ttfamily \#include $<$vecCon.h$>$}
+
+
+
+Inheritance diagram for vecCon:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classvec_con__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for vecCon:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classvec_con__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getFromId} ()
+\begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A vector of connections. 
+
+The \hyperlink{classvec_con}{vecCon} class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class. 
+
+Definition at line 17 of file vecCon.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{
+\index{vecCon@{vecCon}!getFromId@{getFromId}}
+\index{getFromId@{getFromId}!vecCon@{vecCon}}
+\subsubsection[{getFromId}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ int $>$ vecCon::getFromId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}
+
+
+Getter of the Id values of the vector of Cons. 
+
+This function returns the Id's of the neurons referred to by the vector of Cons. 
+
+\begin{Desc}
+\item[\hyperlink{todo__todo000003}{Todo}]initialize result with as many elements as \char`\"{}this\char`\"{}. \end{Desc}
+
+
+
+
+Definition at line 17 of file vecCon.cpp.
+
+
+
+References vecAMORE$<$ Con $>$::ldata.
+
+
+\begin{DoxyCode}
+                                  {
+
+        std::vector<int> result;
+        std::vector<Con>::iterator itr;
+
+        for(itr = ldata.begin();   itr != ldata.end();   itr++) {
+                        result.push_back(itr->getFromId());
+        }
+        return result;
+}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{vec_con_8h}{vecCon.h}\item 
+pkg/AMORE/src/\hyperlink{vec_con_8cpp}{vecCon.cpp}\end{DoxyCompactItemize}
