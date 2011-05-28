@@ -17,7 +17,7 @@ gListAMORE <- setRefClass("listAMORE",
       ldata <<- c(ldata, value)
     },
 	
-	join=function(value, ...){
+	append=function(value, ...){
 		ldata <<- c(ldata, value$getLdata(...))
 	},
 	

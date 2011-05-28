@@ -13,10 +13,13 @@ protected:
 		std::vector<T> ldata;
 
 public:
-	    void push_back(T element);
-// \todo		void join(vecAMORE<T> vecT);
-	    bool show();
-		bool validate();
+		typename std::vector<T> getLdata	();
+						void 	setLdata	( typename  std::vector<T>);
+						int 	size		();
+						void 	push_back	(T element);
+						void 	append		( vecAMORE<T> v);
+						bool 	show		();
+						bool 	validate	();
 };
 
 

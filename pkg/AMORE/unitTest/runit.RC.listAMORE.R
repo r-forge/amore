@@ -37,7 +37,7 @@ test.gListAMORE.push_back <- function() {
 }
 
 
-test.gListAMORE.join <- function() {
+test.gListAMORE.append <- function() {
 	lc <- gListAMORE$new()	
 	checkTrue(lc$validate())
 	lc$push_back(gCon$new(from=1, weight=14.5))
@@ -45,7 +45,7 @@ test.gListAMORE.join <- function() {
 	lc$push_back(gCon$new(from=3, weight=34.5))
 	ld <- gListAMORE$new(ldata=list (gCon$new(from=4, weight=1.5),	gCon$new(from=5, weight=2.5), gCon$new(from=6, weight=4.5)))	
 	checkTrue(ld$validate())
-	lc$join(ld)
+	lc$append(ld)
 	checkTrue(ld$validate())
 	checkEquals(lc$getLdata(), list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5), gCon$new(from=4, weight=1.5),	gCon$new(from=5, weight=2.5), gCon$new(from=6, weight=4.5)))	
 }

@@ -11,7 +11,7 @@ gmlpLayer <- setRefClass("mlpLayer",
 		),
 		
 		methods = list(		
-				join = function(value, ...){
+				append = function(value, ...){
 					callSuper(value, ...)
 					numberOfNeurons <<- numOfNeurons()
 				},

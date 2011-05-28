@@ -38,12 +38,12 @@ test.grbfLayer.setIdAndGetId <- function() {
 }
 
 
-test.grbfLayer.join <- function() {
+test.grbfLayer.append <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
-	nl$join(ln)
+	nl$append(ln)
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
 	checkException(nl$validate(), silent=TRUE) #   [listRBFneuron Validate]: Element is not an RBFneuron
@@ -53,13 +53,13 @@ test.grbfLayer.join <- function() {
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=6:10, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
-	nl$join(ln)
+	nl$append(ln)
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
 	checkTrue(nl$validate())		
 	nl2 <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl2$populate(ID=11:15, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
-	nl$join(nl2)
+	nl$append(nl2)
 	checkEquals(nl$getId(),1:15)
 	checkEquals(nl$getNumberOfNeurons(),15)
 	checkTrue(nl$validate())
