@@ -26,7 +26,7 @@ test.grbfLayer.new <- function() {
 }	
 
 
-test.grbfLayer.setIdAndGetId <- function() {
+test.grbfLayer.setId.getId <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$setId(15:11)
@@ -97,7 +97,7 @@ test.grbfLayer.numOfCons <- function() {
 }
 
 
-test.grbfLayer.setAndGetFrom <- function() {
+test.grbfLayer.setFrom.getFrom <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
@@ -111,7 +111,7 @@ test.grbfLayer.setAndGetFrom <- function() {
 }
 
 
-test.grbfLayer.setAndGetWeight <- function() {
+test.grbfLayer.setWeight.getWeight <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
 	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())

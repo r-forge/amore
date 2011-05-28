@@ -107,6 +107,7 @@ Collaboration diagram for vecCon:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749">numOfCons</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object.  <a href="#a1e39a5e78c40ae8af9bbd2fd7f0dc749"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471">getFromId</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the Id values of the vector of Cons.  <a href="#aa9f3f5df4c4060951c975c4c829b8471"></a><br/></td></tr>
 </table>
@@ -132,14 +133,45 @@ Public Member Functions</h2></td></tr>
 
 <p>Getter of the Id values of the vector of Cons. </p>
 <p>This function returns the Id's of the neurons referred to by the vector of Cons. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An std::vector&lt;int&gt; that contains the Ids</dd></dl>
+<div class="fragment"><pre class="fragment">  <span class="comment">//================</span>
+  <span class="comment">//Usage example:</span>
+  <span class="comment">//================</span>
+        <span class="comment">// Data set up</span>
+                <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> Con1, Con2, Con3;
+                <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> N1, N2, N3;
+                <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a> MyvecCon;
+                std::vector&lt;int&gt; result;
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00021">21</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+                N1.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(10);
+                N2.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(20);
+                N3.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(30);
 
-<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00011">numOfCons()</a>.</p>
+                Con1.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N1);
+                Con2.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N2);
+                Con3.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N3);
+
+                Con1.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(1.01);
+                Con2.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(22.02);
+                Con3.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(333.03);
+
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con1);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con2);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con3);
+
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a11b0ffb0d2481f1960cb49a26b227d37" title="Pretty print of the vecAMORE&lt;T&gt;">show</a>() ;
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e" title="Object validator.">validate</a>();
+
+        <span class="comment">// Test</span>
+                result=MyvecCon.<a class="code" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons.">getFromId</a>();
+</pre></div><p>After execution of this code, result is a vector that contains the values 10, 20 and 30. </p>
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00099">99</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00052">numOfCons()</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
-        <span class="comment">// for each push_back(getFromId())</span>
         std::vector&lt;int&gt; result;
-        result.reserve(<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749">numOfCons</a>());
+        result.reserve(<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
         <span class="keywordflow">for</span>(std::vector&lt;Con&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)      { result.push_back(itr-&gt;getFromId()); }
         <span class="keywordflow">return</span> result;
 }
@@ -167,11 +199,46 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00011">11</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+<p>Size of the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object. </p>
+<p>This function returns the size of the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object, that is to say, the number of <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects it contains. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The size of the vector</dd></dl>
+<div class="fragment"><pre class="fragment">  <span class="comment">//================</span>
+  <span class="comment">//Usage example:</span>
+  <span class="comment">//================</span>
+        <span class="comment">// Data set up</span>
+                <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> Con1, Con2, Con3;
+                <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> N1, N2, N3;
+                <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a> MyvecCon;
+                std::vector&lt;int&gt; result;
+
+                N1.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(10);
+                N2.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(20);
+                N3.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(30);
+
+                Con1.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N1);
+                Con2.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N2);
+                Con3.<a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>(&amp;N3);
+
+                Con1.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(1.01);
+                Con2.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(22.02);
+                Con3.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(333.03);
+
+        <span class="comment">// Test</span>
+                result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con1);
+                result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con2);
+                result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con3);
+                result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
+</pre></div><p>After execution of this code, result contains a numeric vector with values 0, 1, 2, and 3.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">vecAMORE::size</a> (alias) </dd></dl>
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00052">52</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
 <p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>.</p>
 
-<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00021">getFromId()</a>.</p>
+<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00099">getFromId()</a>.</p>
 <div class="fragment"><pre class="fragment">                       {
         <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.size();
 }
@@ -194,7 +261,7 @@ Here is the caller graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_con.html">vecCon</a>      </li>
-      <li class="footer">Generated on Sat May 28 2011 11:49:56 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat May 28 2011 12:49:27 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

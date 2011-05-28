@@ -8,6 +8,47 @@
 
 
 
+//! Size of the vecCon object
+/*!
+ * This function returns the size of the vecCon object, that is to say, the number of Con objects it contains.
+ * \return The size of the vector
+ *
+ *  \code
+ *  //================
+ *  //Usage example:
+ *  //================
+ * 	// Data set up
+ *		Con Con1, Con2, Con3;
+ *		Neuron N1, N2, N3;
+ *		vecCon MyvecCon;
+ *		std::vector<int> result;
+ *
+ *		N1.setId(10);
+ *		N2.setId(20);
+ *		N3.setId(30);
+ *
+ *		Con1.setFromNeuron(&N1);
+ *		Con2.setFromNeuron(&N2);
+ *		Con3.setFromNeuron(&N3);
+ *
+ *		Con1.setWeight(1.01);
+ *		Con2.setWeight(22.02);
+ *		Con3.setWeight(333.03);
+ *
+ *	// Test
+ *		result.push_back(MyvecCon.numOfCons());
+ *		MyvecCon.push_back(Con1);
+ *		result.push_back(MyvecCon.numOfCons());
+ *		MyvecCon.push_back(Con2);
+ *		result.push_back(MyvecCon.numOfCons());
+ *		MyvecCon.push_back(Con3);
+ *		result.push_back(MyvecCon.numOfCons());
+ * \endcode
+ *
+ * After execution of this code, result contains a numeric vector with values 0, 1, 2, and 3.
+ *
+ * \sa vecAMORE::size (alias)
+ */
 int  vecCon::numOfCons() {
 	return ldata.size();
 }
@@ -17,9 +58,45 @@ int  vecCon::numOfCons() {
 //! Getter of the Id values of the vector of Cons
 /*!
  * This function returns the Id's of the neurons referred to by the vector of Cons.
+ * \return An std::vector<int> that contains the Ids
+ *
+ * \code
+ *  //================
+ *  //Usage example:
+ *  //================
+ * 	// Data set up
+ *		Con Con1, Con2, Con3;
+ *		Neuron N1, N2, N3;
+ *		vecCon MyvecCon;
+ *		std::vector<int> result;
+ *
+ *		N1.setId(10);
+ *		N2.setId(20);
+ *		N3.setId(30);
+
+ *		Con1.setFromNeuron(&N1);
+ *		Con2.setFromNeuron(&N2);
+ *		Con3.setFromNeuron(&N3);
+ *
+ *		Con1.setWeight(1.01);
+ *		Con2.setWeight(22.02);
+ *		Con3.setWeight(333.03);
+
+ *		MyvecCon.push_back(Con1);
+ *		MyvecCon.push_back(Con2);
+ *		MyvecCon.push_back(Con3);
+
+ *		MyvecCon.show() ;
+ *		MyvecCon.validate();
+ *
+ *	// Test
+ *		result=MyvecCon.getFromId();
+ * \endcode
+ *
+ * After execution of this code, result is a vector that contains the values 10, 20 and 30.
+ *
  */
 std::vector<int>  vecCon::getFromId() {
-	// for each push_back(getFromId())
 	std::vector<int> result;
 	result.reserve(numOfCons());
 	for(std::vector<Con>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ result.push_back(itr->getFromId()); }

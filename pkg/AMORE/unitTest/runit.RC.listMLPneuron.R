@@ -32,7 +32,7 @@ test.gListMLPneuron.new <- function() {
 }
 
 
-test.gListMLPneuron.populate.fromIsNumeric <- function() {
+test.gListMLPneuron.populate_fromIsNumeric <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$is.regular())
@@ -50,7 +50,7 @@ test.gListMLPneuron.populate.fromIsNumeric <- function() {
 }
 
 
-test.gListMLPneuron.populate.fromIsNeuron <- function() {
+test.gListMLPneuron.populate_fromIsNeuron <- function() {
 	ln1 <- gListMLPneuron$new()
 	ln1$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln1$validate())
@@ -69,7 +69,7 @@ test.gListMLPneuron.populate.fromIsNeuron <- function() {
 }
 
 
-test.gListMLPneuron.setAndGetBias <- function() {
+test.gListMLPneuron.setBias.getBias <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setBias(11:15)

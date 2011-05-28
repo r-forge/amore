@@ -24,7 +24,7 @@ test.gNeuron.addCon <- function() {
 	checkTrue(nn$validate())
 }
 
-test.gNeuron.setAndGetId <- function() {
+test.gNeuron.setId.getId <- function() {
 	nn <- gNeuron$new()
 	con1 <- gCon$new(from=6,weight=4.3)
 	nn$addCon(con1)
@@ -53,14 +53,14 @@ test.gNeuron.getCon <- function() {
 }
 
 
-test.gNeuron.getFrom.fromIsNumeric <- function() {
+test.gNeuron.getFrom_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
 	checkEquals(nn$getFrom(), 1:5)
 }
 
-test.gNeuron.getFromId.fromIsNumeric <- function() {
+test.gNeuron.getFromId_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -69,7 +69,7 @@ test.gNeuron.getFromId.fromIsNumeric <- function() {
 
 
 
-test.gNeuron.getFrom.fromIsNeuron <- function() {
+test.gNeuron.getFrom_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -91,7 +91,7 @@ test.gNeuron.getFrom.fromIsNeuron <- function() {
 }
 
 
-test.gNeuron.getFromId.fromIsNeuron <- function() {
+test.gNeuron.getFromId_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)

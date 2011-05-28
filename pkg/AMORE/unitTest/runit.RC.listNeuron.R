@@ -56,7 +56,7 @@ test.gListNeuron.delete <- function() {
 }
 
 
-test.gListNeuron.getFrom.fromIsNumeric <- function() {
+test.gListNeuron.getFrom_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -75,7 +75,7 @@ test.gListNeuron.getFrom.fromIsNumeric <- function() {
 }
 
 
-test.gListNeuron.getFromId.fromIsNumeric <- function() {
+test.gListNeuron.getFromId_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -96,7 +96,7 @@ test.gListNeuron.getFromId.fromIsNumeric <- function() {
 }
 
 
-test.gListNeuron.getFromId.fromIsNeuron <- function() {
+test.gListNeuron.getFromId_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -130,7 +130,7 @@ test.gListNeuron.getFromId.fromIsNeuron <- function() {
 }
 
 
-test.gListNeuron.setAndGetWeight <- function() {
+test.gListNeuron.setWeight.getWeight <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -153,7 +153,7 @@ test.gListNeuron.setAndGetWeight <- function() {
 }
 
 
-test.gListNeuron.setAndGetId <- function() {
+test.gListNeuron.setId.getId <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -222,7 +222,7 @@ test.gListNeuron.select <- function() {
 }
 
 
-test.gListNeuron.setAndGetFrom <- function() {
+test.gListNeuron.setFrom.getFrom <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
