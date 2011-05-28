@@ -5,7 +5,6 @@
  *      Author: mcasl
  */
 
-//! \todo write usage examples
 
 //! A method to append one element at the end of ldata
 /*!
@@ -119,6 +118,10 @@ template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
  *  This method allows access to the data stored in the \ref ldata field (an std::vector<T> object).
  * \return The ldata vector.
  * \code
+ * 	//================
+ *	//Usage example:
+ *	//================
+ *
  * 	// Data set up
  *		Con Con1, Con2, Con3;
  *		Neuron N1, N2, N3;
@@ -184,14 +187,4 @@ template <typename T> void vecAMORE<T>::setLdata(std::vector<T> v) {
 template <typename T> int vecAMORE<T>::size() {
 	return ldata.size() ;
 };
-
-
-
-
-
-
-
-//! \todo void join(vecAMORE<T> vecT);
-// ldata <<- c(ldata, value$getLdata(...))
-
 

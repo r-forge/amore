@@ -4,7 +4,7 @@
 ###############################################################################
 
 
-test.gCon.new.fromIsNumeric <- function() {	
+test.gCon.new_fromIsNumeric <- function() {	
 	myCon <- gCon$new(from=1, weight=14.5)  # from is numeric
 	checkTrue(myCon$validate())
 	checkEquals(myCon$getFrom(),1)	
@@ -13,7 +13,7 @@ test.gCon.new.fromIsNumeric <- function() {
 }
 
 
-test.gCon.new.fromIsNeuron <- function() {
+test.gCon.new_fromIsNeuron <- function() {
 	my1stCon <- gCon$new(from=1, weight=14.5)
 	myListCon <- gListCon$new()
 	myListCon$push_back(my1stCon)
@@ -34,7 +34,7 @@ test.gCon.new.fromIsNeuron <- function() {
 }
 
 
-test.gCon.getFrom.fromIsNumeric  <- function() {
+test.gCon.getFrom_fromIsNumeric  <- function() {
 	#from is a numeric
 	myCon <- gCon$new(from=10, weight=14.5)
 	checkEquals(myCon$getFrom(),10)	
@@ -43,7 +43,7 @@ test.gCon.getFrom.fromIsNumeric  <- function() {
 }
 
 
-test.gCon.getFrom.fromIsNeuron <- function() {
+test.gCon.getFrom_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:3,WEIGHT=c(1.4,5.6,9.8))
 	myNeuron <- gNeuron$new(id=10, con=lc)

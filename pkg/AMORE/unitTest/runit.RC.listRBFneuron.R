@@ -54,7 +54,7 @@ test.gListRBFneuron.populate <- function() {
 }
 
 
-test.gListRBFneuron.setAndGetWidth <- function() {
+test.gListRBFneuron.setWidth.getWidth <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setWidth(11:15)
@@ -63,7 +63,7 @@ test.gListRBFneuron.setAndGetWidth <- function() {
 }
 
 
-test.gListRBFneuron.setAndGetAltitude <- function() {
+test.gListRBFneuron.setAltitude.getAltitude <- function() {
 	ln <- gListRBFneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setAltitude(11:15)

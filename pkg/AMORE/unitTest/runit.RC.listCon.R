@@ -10,7 +10,7 @@ test.gListCon.new <- function() {
 }
 
 
-test.gListCon.populate.fromIsNumeric <- function() {
+test.gListCon.populate_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:6, WEIGHT=11:16)
 	checkTrue(   lc$validate())
@@ -20,7 +20,7 @@ test.gListCon.populate.fromIsNumeric <- function() {
 }
 
 
-test.gListCon.fromIsNeuron <- function() {
+test.gListCon.populate_fromIsNeuron <- function() {
 	ln1 <- gListMLPneuron$new()
 	ln1$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln1$validate())
@@ -79,21 +79,21 @@ test.gListCon.select <- function() {
 	checkEquals(lc1$select(FROM=c(1,3)), lc2)	
 }
 
-test.gListCon.getFrom.fromIsNumeric <- function() {
+test.gListCon.getFrom_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:10, WEIGHT=10:1)
 	checkEquals(lc$getFrom(), 1:10)	
 }
 
 
-test.gListCon.getFromId.fromIsNumeric <- function() {
+test.gListCon.getFromId_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:10, WEIGHT=10:1)	
 	checkEquals(lc$getFromId(), 1:10)	
 }
 
 
-test.gListCon.getWeight.fromIsNumeric <- function() {
+test.gListCon.getWeight_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$populate(FROM=1:10, WEIGHT=10:1)
 	checkEquals(lc$getWeight(), 10:1)
@@ -101,7 +101,7 @@ test.gListCon.getWeight.fromIsNumeric <- function() {
 }
 
 
-test.gListCon.getFrom.fromIsNeuron <- function() {
+test.gListCon.getFrom_fromIsNeuron <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
@@ -111,7 +111,7 @@ test.gListCon.getFrom.fromIsNeuron <- function() {
 }
 
 
-test.gListCon.getFromId.fromIsNeuron <- function() {
+test.gListCon.getFromId_fromIsNeuron <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
@@ -122,7 +122,7 @@ test.gListCon.getFromId.fromIsNeuron <- function() {
 }
 
 
-test.gListCon.getWeight.fromIsNeuron <- function() {
+test.gListCon.getWeight_fromIsNeuron <- function() {
 	ln <- gListMLPneuron$new()
 	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())

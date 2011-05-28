@@ -151,9 +151,9 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00109">109</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00108">108</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 
-<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; T &gt;::ldata</a>, and <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00184">vecAMORE&lt; T &gt;::size()</a>.</p>
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; T &gt;::ldata</a>, and <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00187">vecAMORE&lt; T &gt;::size()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                             {
         <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.reserve(<a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.size() + v.<a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">size</a>());
         <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.insert( <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end(), v.<a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin(), v.<a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end() );
@@ -186,7 +186,11 @@ template&lt;typename T &gt; </div>
 
 <p>ldata field accessor function </p>
 <p>This method allows access to the data stored in the <a class="el" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a> field (an std::vector&lt;T&gt; object). </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The ldata vector. <div class="fragment"><pre class="fragment">        <span class="comment">// Data set up</span>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The ldata vector. <div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
+        <span class="comment">//Usage example:</span>
+        <span class="comment">//================</span>
+
+        <span class="comment">// Data set up</span>
                 <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> Con1, Con2, Con3;
                 <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> N1, N2, N3;
                 <a class="code" href="classvec_a_m_o_r_e.html">vecAMORE&lt;Con&gt;</a> MyvecCon;
@@ -223,7 +227,7 @@ template&lt;typename T &gt; </div>
 <p>After execution of the code shown above, vc is a vector containing Con1, Con2 and Con3 and, thus, result is an integer vector with values 10, 20, 30.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#a13768303bf31bf7065a98015c00abc9f" title="ldata field accessor function">setLdata</a> and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00161">161</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00164">164</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                         {
         <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>;
 };
@@ -248,7 +252,6 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>A method to append one element at the end of ldata. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>write usage examples </dd></dl>
 <p>This function implements the std:vector member push_back for the vecAMORE&lt;T&gt; class </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -307,7 +310,7 @@ template&lt;typename T&gt; </div>
 </pre></div><p>After execution of this code, return contains a numeric vector with values 10, 20, 30, 40, 50 and 60.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00070">70</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00069">69</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                           {
         this-&gt;<a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.push_back(element);
 };
@@ -341,7 +344,7 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#a5bb6985476d120ede398361b317b0b95" title="ldata field accessor function">getLdata</a> and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00173">173</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00176">176</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                               {
         <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>=v;
 };
@@ -369,7 +372,7 @@ template&lt;typename T &gt; </div>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true in case everything works without throwing an exception </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00081">81</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00080">80</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                             {
         <span class="comment">//      for_each(ldata.begin(), ldata.end(), showCon );</span>
         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)       { itr-&gt;show(); }
@@ -397,9 +400,9 @@ template&lt;typename T &gt; </div>
 <p>Returns the size or length of the vector. </p>
 <p>This method returns the size of the vector. In the vecAMORE&lt;T&gt; derived classes this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </p>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00184">184</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00187">187</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00109">vecAMORE&lt; T &gt;::append()</a>.</p>
+<p>Referenced by <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00108">vecAMORE&lt; T &gt;::append()</a>.</p>
 <div class="fragment"><pre class="fragment">                                            {
         <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.size() ;
 };
@@ -433,7 +436,7 @@ template&lt;typename T &gt; </div>
 <p>This method checks the object for internal coherence. This method calls the validate method for each element of the ldata std::vector&lt;T&gt;, </p>
 <dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00095">95</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00094">94</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">vecAMORE.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                 {
         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)       { itr-&gt;validate(); }
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -457,7 +460,7 @@ template&lt;typename T&gt; </div>
 
 <p>Definition at line <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">13</a> of file <a class="el" href="vec_a_m_o_r_e_8h_source.html">vecAMORE.h</a>.</p>
 
-<p>Referenced by <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00109">vecAMORE&lt; T &gt;::append()</a>.</p>
+<p>Referenced by <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00108">vecAMORE&lt; T &gt;::append()</a>.</p>
 
 </div>
 </div>
@@ -470,7 +473,7 @@ template&lt;typename T&gt; </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_a_m_o_r_e.html">vecAMORE</a>      </li>
-      <li class="footer">Generated on Sat May 28 2011 11:49:56 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat May 28 2011 12:49:27 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
