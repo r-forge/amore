@@ -8,8 +8,7 @@
 
 
 
-Inheritance diagram for vecAMORE$<$ T $>$:
-\nopagebreak
+Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,12 +18,20 @@ Inheritance diagram for vecAMORE$<$ T $>$:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+std::vector$<$ T $>$ \hyperlink{classvec_a_m_o_r_e_a5bb6985476d120ede398361b317b0b95}{getLdata} ()
+\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+void \hyperlink{classvec_a_m_o_r_e_a13768303bf31bf7065a98015c00abc9f}{setLdata} (typename std::vector$<$ T $>$)
+\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+int \hyperlink{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}{push\_\-back} (T element)
-\item 
+\begin{DoxyCompactList}\small\item\em A method to append one element at the end of ldata. \end{DoxyCompactList}\item 
+void \hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} (\hyperlink{classvec_a_m_o_r_e}{vecAMORE}$<$ T $>$ v)
+\begin{DoxyCompactList}\small\item\em Appends a vecAMORE$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{show} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Pretty print of the vecAMORE$<$T$>$ \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{validate} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,6 +49,120 @@ Definition at line 11 of file vecAMORE.h.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{
+\index{vecAMORE@{vecAMORE}!append@{append}}
+\index{append@{append}!vecAMORE@{vecAMORE}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::append (
+\begin{DoxyParamCaption}
+\item[{{\bf vecAMORE}$<$ T $>$}]{v}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}
+
+
+Appends a vecAMORE$<$T$>$ object. 
+
+This method inserts the ldata field of a second object at the end of the ldata field of the calling object. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The vecAMORE$<$T$>$ object to be added to the current one \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 109 of file vecAMORE.cpp.
+
+
+
+References vecAMORE$<$ T $>$::ldata, and vecAMORE$<$ T $>$::size().
+
+
+\begin{DoxyCode}
+                                                             {
+        ldata.reserve(ldata.size() + v.size());
+        ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
+};
+\end{DoxyCode}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classvec_a_m_o_r_e_a5bb6985476d120ede398361b317b0b95}{
+\index{vecAMORE@{vecAMORE}!getLdata@{getLdata}}
+\index{getLdata@{getLdata}!vecAMORE@{vecAMORE}}
+\subsubsection[{getLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ T $>$ {\bf vecAMORE}$<$ T $>$::getLdata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_a5bb6985476d120ede398361b317b0b95}
+
+
+ldata field accessor function 
+
+This method allows access to the data stored in the \hyperlink{classvec_a_m_o_r_e_ab6a8dec6292a9e03a5566311d1eb650a}{ldata} field (an std::vector$<$T$>$ object). \begin{DoxyReturn}{Returns}
+The ldata vector. 
+\begin{DoxyCode}
+        // Data set up
+                Con Con1, Con2, Con3;
+                Neuron N1, N2, N3;
+                vecAMORE<Con> MyvecCon;
+                std::vector<int> result;
+                std::vector<Con> vc;
+
+                N1.setId(10);
+                N2.setId(20);
+                N3.setId(30);
+
+                Con1.setFromNeuron(&N1);
+                Con2.setFromNeuron(&N2);
+                Con3.setFromNeuron(&N3);
+
+                Con1.setWeight(1.01);
+                Con2.setWeight(22.02);
+                Con3.setWeight(333.03);
+
+        // Test
+
+                MyvecCon.push_back(Con1);
+                MyvecCon.push_back(Con2);
+                MyvecCon.push_back(Con3);
+                MyvecCon.show();
+                MyvecCon.validate();
+
+                vc = MyvecCon.getLdata();
+
+                result.push_back(vc.at(0).getFromId());
+                result.push_back(vc.at(1).getFromId());
+                result.push_back(vc.at(2).getFromId());
+                return wrap(result);
+\end{DoxyCode}
+
+\end{DoxyReturn}
+After execution of the code shown above, vc is a vector containing Con1, Con2 and Con3 and, thus, result is an integer vector with values 10, 20, 30.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_a_m_o_r_e_a13768303bf31bf7065a98015c00abc9f}{setLdata} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 161 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                                         {
+        return ldata;
+};
+\end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}{
 \index{vecAMORE@{vecAMORE}!push\_\-back@{push\_\-back}}
 \index{push\_\-back@{push\_\-back}!vecAMORE@{vecAMORE}}
@@ -53,12 +174,115 @@ Definition at line 11 of file vecAMORE.h.
 \label{classvec_a_m_o_r_e_a2472d46a111328c069cdb48e7e41109b}
 
 
-Definition at line 14 of file vecAMORE.cpp.
+A method to append one element at the end of ldata. 
+
+\begin{Desc}
+\item[\hyperlink{todo__todo000002}{Todo}]write usage examples \end{Desc}
+
+
+This function implements the std:vector member push\_\-back for the vecAMORE$<$T$>$ class 
+\begin{DoxyParams}{Parameters}
+{\em T} & element The element to be inserted at the end of ldata\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+                //================
+                //Usage example:
+                //================
+                Con Con1, Con2, Con3, Con4, Con5, Con6;
+                Neuron N1, N2, N3, N4, N5, N6;
+                vecAMORE<Con> vc1, vc2;
+                std::vector<int> result;
+
+                N1.setId(10);
+                N2.setId(20);
+                N3.setId(30);
+                N4.setId(40);
+                N5.setId(50);
+                N6.setId(60);
+
+                Con1.setFromNeuron(&N1);
+                Con2.setFromNeuron(&N2);
+                Con3.setFromNeuron(&N3);
+                Con4.setFromNeuron(&N4);
+                Con5.setFromNeuron(&N5);
+                Con6.setFromNeuron(&N6);
+
+                Con1.setWeight(1.01);
+                Con2.setWeight(22.02);
+                Con3.setWeight(333.03);
+                Con4.setWeight(5.4);
+                Con5.setWeight(2.22);
+                Con6.setWeight(33.03);
+
+                vc1.push_back(Con1);
+                vc1.push_back(Con2);
+                vc1.push_back(Con3);
+                vc2.push_back(Con4);
+                vc2.push_back(Con5);
+                vc2.push_back(Con6);
+
+                Rprintf("vc1 contents:");
+                vc1.show() ;
+                Rprintf("vc2 contents:");
+                vc2.show() ;
+
+                vc1.join(vc2);
+                Rprintf("vc2 contents:");
+                vc1.show() ;
+                vc1.validate();
+
+                for(std::vector<Con>::iterator itr = (vc1.getLdata()).begin();   
+      itr != (vc1.getLdata()).end();   itr++) { result.push_back(itr->getFromId()); }
+                return wrap(result);
+\end{DoxyCode}
+
+
+After execution of this code, return contains a numeric vector with values 10, 20, 30, 40, 50 and 60.
+
+\begin{DoxySeeAlso}{See also}
+C++ documentation for std::vector::push\_\-back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 70 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
                                                            {
         this->ldata.push_back(element);
+};
+\end{DoxyCode}
+\hypertarget{classvec_a_m_o_r_e_a13768303bf31bf7065a98015c00abc9f}{
+\index{vecAMORE@{vecAMORE}!setLdata@{setLdata}}
+\index{setLdata@{setLdata}!vecAMORE@{vecAMORE}}
+\subsubsection[{setLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::setLdata (
+\begin{DoxyParamCaption}
+\item[{typename std::vector$<$ T $>$}]{v}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_a13768303bf31bf7065a98015c00abc9f}
+
+
+ldata field accessor function 
+
+This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r_e_ab6a8dec6292a9e03a5566311d1eb650a}{ldata} field (an std::vector$<$T$>$ object). 
+\begin{DoxyParams}{Parameters}
+{\em v} & The std::vector$<$T$>$ object to be stored in the ldata field \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_a_m_o_r_e_a5bb6985476d120ede398361b317b0b95}{getLdata} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 173 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                                               {
+        ldata=v;
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{
@@ -72,7 +296,17 @@ Definition at line 14 of file vecAMORE.cpp.
 \label{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}
 
 
-Definition at line 19 of file vecAMORE.cpp.
+Pretty print of the vecAMORE$<$T$>$ 
+
+This method outputs in the R terminal the contents of the vecAMORE$<$T$>$ fields. \begin{DoxyReturn}{Returns}
+true in case everything works without throwing an exception 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 81 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
@@ -83,6 +317,44 @@ Definition at line 19 of file vecAMORE.cpp.
         return true;
 };
 \end{DoxyCode}
+\hypertarget{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{
+\index{vecAMORE@{vecAMORE}!size@{size}}
+\index{size@{size}!vecAMORE@{vecAMORE}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf vecAMORE}$<$ T $>$::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}
+
+
+Returns the size or length of the vector. 
+
+This method returns the size of the vector. In the vecAMORE$<$T$>$ derived classes this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+
+Definition at line 184 of file vecAMORE.cpp.
+
+
+
+Referenced by vecAMORE$<$ T $>$::append().
+
+
+\begin{DoxyCode}
+                                            {
+        return ldata.size() ;
+};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{
 \index{vecAMORE@{vecAMORE}!validate@{validate}}
 \index{validate@{validate}!vecAMORE@{vecAMORE}}
@@ -94,12 +366,18 @@ Definition at line 19 of file vecAMORE.cpp.
 \label{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}
 
 
-Definition at line 26 of file vecAMORE.cpp.
+Object validator. 
+
+This method checks the object for internal coherence. This method calls the validate method for each element of the ldata std::vector$<$T$>$, \begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 95 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
                                                  {
-        // for_each(ldata.begin(), ldata.end(), validateCon);
         for(typename std::vector<T>::iterator itr = ldata.begin();   itr != 
       ldata.end();   itr++)   { itr->validate(); }
         return true;
@@ -116,6 +394,10 @@ Definition at line 26 of file vecAMORE.cpp.
 
 
 Definition at line 13 of file vecAMORE.h.
+
+
+
+Referenced by vecAMORE$<$ T $>$::append().
 
 
 

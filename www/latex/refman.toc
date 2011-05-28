@@ -35,23 +35,27 @@
 \contentsline {section}{\numberline {6.3}vecAMORE$<$ T $>$ Class Template Reference}{22}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Detailed Description}{24}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{24}{subsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.2.1}push\_\discretionary {-}{}{}back}{24}{subsubsection.6.3.2.1}
-\contentsline {subsubsection}{\numberline {6.3.2.2}show}{24}{subsubsection.6.3.2.2}
-\contentsline {subsubsection}{\numberline {6.3.2.3}validate}{24}{subsubsection.6.3.2.3}
-\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{24}{subsection.6.3.3}
-\contentsline {subsubsection}{\numberline {6.3.3.1}ldata}{24}{subsubsection.6.3.3.1}
-\contentsline {section}{\numberline {6.4}vecCon Class Reference}{25}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{27}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Member Function Documentation}{27}{subsection.6.4.2}
-\contentsline {subsubsection}{\numberline {6.4.2.1}getFromId}{27}{subsubsection.6.4.2.1}
-\contentsline {subsubsection}{\numberline {6.4.2.2}numOfCons}{28}{subsubsection.6.4.2.2}
-\contentsline {chapter}{\numberline {7}File Documentation}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{29}{section.7.1}
-\contentsline {section}{\numberline {7.2}pkg/AMORE/src/Con.cpp File Reference}{30}{section.7.2}
-\contentsline {section}{\numberline {7.3}pkg/AMORE/src/Con.h File Reference}{31}{section.7.3}
-\contentsline {section}{\numberline {7.4}pkg/AMORE/src/Neuron.cpp File Reference}{31}{section.7.4}
-\contentsline {section}{\numberline {7.5}pkg/AMORE/src/Neuron.h File Reference}{33}{section.7.5}
-\contentsline {section}{\numberline {7.6}pkg/AMORE/src/vecAMORE.cpp File Reference}{33}{section.7.6}
-\contentsline {section}{\numberline {7.7}pkg/AMORE/src/vecAMORE.h File Reference}{34}{section.7.7}
-\contentsline {section}{\numberline {7.8}pkg/AMORE/src/vecCon.cpp File Reference}{34}{section.7.8}
-\contentsline {section}{\numberline {7.9}pkg/AMORE/src/vecCon.h File Reference}{34}{section.7.9}
+\contentsline {subsubsection}{\numberline {6.3.2.1}append}{24}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}getLdata}{25}{subsubsection.6.3.2.2}
+\contentsline {subsubsection}{\numberline {6.3.2.3}push\_\discretionary {-}{}{}back}{26}{subsubsection.6.3.2.3}
+\contentsline {subsubsection}{\numberline {6.3.2.4}setLdata}{27}{subsubsection.6.3.2.4}
+\contentsline {subsubsection}{\numberline {6.3.2.5}show}{28}{subsubsection.6.3.2.5}
+\contentsline {subsubsection}{\numberline {6.3.2.6}size}{28}{subsubsection.6.3.2.6}
+\contentsline {subsubsection}{\numberline {6.3.2.7}validate}{29}{subsubsection.6.3.2.7}
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{29}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}ldata}{29}{subsubsection.6.3.3.1}
+\contentsline {section}{\numberline {6.4}vecCon Class Reference}{29}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{32}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Member Function Documentation}{32}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}getFromId}{32}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}numOfCons}{33}{subsubsection.6.4.2.2}
+\contentsline {chapter}{\numberline {7}File Documentation}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{35}{section.7.1}
+\contentsline {section}{\numberline {7.2}pkg/AMORE/src/Con.cpp File Reference}{36}{section.7.2}
+\contentsline {section}{\numberline {7.3}pkg/AMORE/src/Con.h File Reference}{37}{section.7.3}
+\contentsline {section}{\numberline {7.4}pkg/AMORE/src/Neuron.cpp File Reference}{37}{section.7.4}
+\contentsline {section}{\numberline {7.5}pkg/AMORE/src/Neuron.h File Reference}{39}{section.7.5}
+\contentsline {section}{\numberline {7.6}pkg/AMORE/src/vecAMORE.cpp File Reference}{39}{section.7.6}
+\contentsline {section}{\numberline {7.7}pkg/AMORE/src/vecAMORE.h File Reference}{40}{section.7.7}
+\contentsline {section}{\numberline {7.8}pkg/AMORE/src/vecCon.cpp File Reference}{40}{section.7.8}
+\contentsline {section}{\numberline {7.9}pkg/AMORE/src/vecCon.h File Reference}{40}{section.7.9}

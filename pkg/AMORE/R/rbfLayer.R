@@ -14,7 +14,7 @@ grbfLayer <- setRefClass("rbfLayer",
 				altitude = "numeric"),
 		
 		methods = list(
-				join = function(value, ...){
+				append = function(value, ...){
 					callSuper(value, ...)
 					numberOfNeurons <<- numOfNeurons()
 				},
