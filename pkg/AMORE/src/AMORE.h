@@ -27,13 +27,16 @@ using namespace Rcpp;
 
 class Con;
 template <typename T> class vecAMORE;
-class vecCon;
+//class vecCon;
 class Neuron;
 
 
 #include "Con.h"
+
+
+
 #include "vecAMORE.h"
-#include "vecCon.h"
+//#include "vecCon.h"
 #include "Neuron.h"
 
 
@@ -42,7 +45,7 @@ class Neuron;
 
 #include "Con.cpp"
 #include "vecAMORE.cpp"
-#include "vecCon.cpp"
+//#include "vecCon.cpp"
 #include "Neuron.cpp"
 
 #endif /* INLINE_R_ */

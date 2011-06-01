@@ -95,13 +95,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for Con:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_con__coll__graph.svg" width="142" height="379" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_con__coll__graph.svg" width="142" height="406" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_con-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a61621054cc1ee979385c81207ee0bceb">Con</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#ab2dab438086fc1bb26755dfecb2d2476">Con</a> (<a class="el" href="class_neuron.html">Neuron</a> *f, double w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a703b044611253c7a0a9e057ed62a3d22">~Con</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_neuron.html">Neuron</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a970a74ffcba9433d6f383ecab398f25f">getFromNeuron</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">from field accessor.  <a href="#a970a74ffcba9433d6f383ecab398f25f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4">setFromNeuron</a> (<a class="el" href="class_neuron.html">Neuron</a> *f)</td></tr>
@@ -128,7 +132,76 @@ Private Attributes</h2></td></tr>
 <p>The <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> class provides a simple class for a connection described by a pair of values: a pointer to the <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> used as the <a class="el" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2">from</a> field and the <a class="el" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0">weight</a> used to propagate the value of that <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> object. </p>
 
 <p>Definition at line <a class="el" href="_con_8h_source.html#l00016">16</a> of file <a class="el" href="_con_8h_source.html">Con.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a61621054cc1ee979385c81207ee0bceb"></a><!-- doxytag: member="Con::Con" ref="a61621054cc1ee979385c81207ee0bceb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Con::Con </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_con_8h_source.html#l00030">30</a> of file <a class="el" href="_con_8h_source.html">Con.h</a>.</p>
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>(NULL), <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(0) {};
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab2dab438086fc1bb26755dfecb2d2476"></a><!-- doxytag: member="Con::Con" ref="ab2dab438086fc1bb26755dfecb2d2476" args="(Neuron *f, double w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Con::Con </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_neuron.html">Neuron</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_con_8h_source.html#l00031">31</a> of file <a class="el" href="_con_8h_source.html">Con.h</a>.</p>
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>(f),        <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(w) {};
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a703b044611253c7a0a9e057ed62a3d22"></a><!-- doxytag: member="Con::~Con" ref="a703b044611253c7a0a9e057ed62a3d22" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Con::~Con </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_con_8h_source.html#l00032">32</a> of file <a class="el" href="_con_8h_source.html">Con.h</a>.</p>
+<div class="fragment"><pre class="fragment">{};
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aad72314592bebdcae6c68a67d2b4a505"></a><!-- doxytag: member="Con::getFromId" ref="aad72314592bebdcae6c68a67d2b4a505" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -484,15 +557,15 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="_con_8h_source.html">Con.h</a></li>
-<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="_con_8cpp_source.html">Con.cpp</a></li>
+<li>pkg/AMORE/src/<a class="el" href="_con_8h_source.html">Con.h</a></li>
+<li>pkg/AMORE/src/<a class="el" href="_con_8cpp_source.html">Con.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_con.html">Con</a>      </li>
-      <li class="footer">Generated on Wed Jun 1 2011 03:24:29 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jun 2 2011 01:07:36 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -502,7 +575,7 @@ Here is the call graph for this function:</div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

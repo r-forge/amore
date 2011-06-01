@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp Source File</title>
+<title>AMORE++: pkg/AMORE/src/vecAMORE.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -78,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp</div>  </div>
+<div class="title">pkg/AMORE/src/vecAMORE.cpp</div>  </div>
 </div>
 <div class="contents">
 <a href="vec_a_m_o_r_e_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -90,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 
 <a name="l00010"></a>00010 
-<a name="l00069"></a><a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">00069</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">vecAMORE&lt;T&gt;::push_back</a>( boost::shared_ptr&lt;T&gt; T element) {
+<a name="l00069"></a><a class="code" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156">00069</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="A method to append one element at the end of ldata.">vecAMORE&lt;T&gt;::push_back</a>( boost::shared_ptr&lt;T&gt; element) {
 <a name="l00070"></a>00070         this-&gt;ldata.push_back(element);
 <a name="l00071"></a>00071 };
 <a name="l00072"></a>00072 
@@ -103,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a>00083         <span class="comment">// for( auto x : ldata) { x.show(); }</span>
 <a name="l00084"></a>00084         <span class="comment">// Waiting for C++0x</span>
 <a name="l00085"></a>00085         <span class="comment">//</span>
-<a name="l00086"></a>00086         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++)       { itr-&gt;show(); }
+<a name="l00086"></a>00086         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++) { (*itr)-&gt;show(); }
 <a name="l00087"></a>00087 
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089         <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -113,47 +114,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 
 <a name="l00096"></a>00096 
-<a name="l00100"></a><a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e">00100</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e" title="Object validator.">vecAMORE&lt;T&gt;::validate</a>() {
-<a name="l00101"></a>00101         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++)       { itr-&gt;validate(); }
-<a name="l00102"></a>00102         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00103"></a>00103 };
-<a name="l00104"></a>00104 
+<a name="l00101"></a><a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e">00101</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e" title="Object validator.">vecAMORE&lt;T&gt;::validate</a>() {
+<a name="l00102"></a>00102         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++) { (*itr)-&gt;validate(); }
+<a name="l00103"></a>00103         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00104"></a>00104 };
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107 
 <a name="l00109"></a>00109 
-<a name="l00114"></a><a class="code" href="classvec_a_m_o_r_e.html#a2942e1dcb78bfa0b4731eb54f5a558f9">00114</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#a2942e1dcb78bfa0b4731eb54f5a558f9">vecAMORE&lt;T&gt;::append</a>( <a class="code" href="classvec_a_m_o_r_e.html">vecAMORE&lt;T&gt;</a> v) {
-<a name="l00115"></a>00115         ldata.reserve(ldata.size() + v.<a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">size</a>());
-<a name="l00116"></a>00116         ldata.insert( ldata.end(), v.<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin(), v.<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end() );
-<a name="l00117"></a>00117 };
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119 
+<a name="l00116"></a><a class="code" href="classvec_a_m_o_r_e.html#ab060ffa67e85997fc4236bedfd2f17b6">00116</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#ab060ffa67e85997fc4236bedfd2f17b6" title="Appends a vecAMORE&lt;T&gt; object.">vecAMORE&lt;T&gt;::append</a>( <a class="code" href="classvec_a_m_o_r_e.html">vecAMORE&lt;T&gt;</a> v) {
+<a name="l00117"></a>00117         ldata.reserve(ldata.size() + v.<a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">size</a>());
+<a name="l00118"></a>00118         ldata.insert( ldata.end(), v.<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin(), v.<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end() );
+<a name="l00119"></a>00119 };
 <a name="l00120"></a>00120 
 <a name="l00121"></a>00121 
 <a name="l00123"></a>00123 
-<a name="l00170"></a><a class="code" href="classvec_a_m_o_r_e.html#a5bb6985476d120ede398361b317b0b95">00170</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::vector&lt;T&gt; <a class="code" href="classvec_a_m_o_r_e.html#a5bb6985476d120ede398361b317b0b95" title="ldata field accessor function">vecAMORE&lt;T&gt;::getLdata</a>() {
-<a name="l00171"></a>00171         <span class="keywordflow">return</span> ldata;
-<a name="l00172"></a>00172 };
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174 
+<a name="l00172"></a><a class="code" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea">00172</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; <a class="code" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">vecAMORE&lt;T&gt;::getLdata</a>() {
+<a name="l00173"></a>00173         <span class="keywordflow">return</span> ldata;
+<a name="l00174"></a>00174 };
 <a name="l00175"></a>00175 
+<a name="l00176"></a>00176 
 <a name="l00177"></a>00177 
-<a name="l00182"></a><a class="code" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a">00182</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a">vecAMORE&lt;T&gt;::setLdata</a>(std::vector&lt;T&gt; v) {
-<a name="l00183"></a>00183         ldata=v;
-<a name="l00184"></a>00184 };
-<a name="l00185"></a>00185 
-<a name="l00186"></a>00186 
+<a name="l00179"></a>00179 
+<a name="l00185"></a><a class="code" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a">00185</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a" title="ldata field accessor function">vecAMORE&lt;T&gt;::setLdata</a>(std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; v) {
+<a name="l00186"></a>00186         ldata=v;
+<a name="l00187"></a>00187 };
 <a name="l00188"></a>00188 
-<a name="l00193"></a><a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48">00193</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">vecAMORE&lt;T&gt;::size</a>() {
-<a name="l00194"></a>00194         <span class="keywordflow">return</span> ldata.size() ;
-<a name="l00195"></a>00195 };
-<a name="l00196"></a>00196 
+<a name="l00189"></a>00189 
+<a name="l00191"></a>00191 
+<a name="l00197"></a><a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48">00197</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">vecAMORE&lt;T&gt;::size</a>() {
+<a name="l00198"></a>00198         <span class="keywordflow">return</span> ldata.size() ;
+<a name="l00199"></a>00199 };
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="vec_a_m_o_r_e_8cpp.html">vecAMORE.cpp</a>      </li>
-      <li class="footer">Generated on Wed Jun 1 2011 03:24:29 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jun 2 2011 01:07:36 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -163,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
