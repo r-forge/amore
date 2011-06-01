@@ -22,16 +22,17 @@ var NAVTREE =
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/AMORE.h", "_a_m_o_r_e_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp", "_con_8cpp.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h", "_con_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Neuron.cpp", "_neuron_8cpp.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Neuron.h", "_neuron_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp", "vec_a_m_o_r_e_8cpp.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.h", "vec_a_m_o_r_e_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.cpp", "vec_con_8cpp.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h", "vec_con_8h.html", null ]
-    ] ]
+      [ "pkg/AMORE/src/AMORE.h", "_a_m_o_r_e_8h.html", null ],
+      [ "pkg/AMORE/src/Con.cpp", "_con_8cpp.html", null ],
+      [ "pkg/AMORE/src/Con.h", "_con_8h.html", null ],
+      [ "pkg/AMORE/src/Neuron.cpp", "_neuron_8cpp.html", null ],
+      [ "pkg/AMORE/src/Neuron.h", "_neuron_8h.html", null ],
+      [ "pkg/AMORE/src/vecAMORE.cpp", "vec_a_m_o_r_e_8cpp.html", null ],
+      [ "pkg/AMORE/src/vecAMORE.h", "vec_a_m_o_r_e_8h.html", null ],
+      [ "pkg/AMORE/src/vecCon.cpp", "vec_con_8cpp.html", null ],
+      [ "pkg/AMORE/src/vecCon.h", "vec_con_8h.html", null ]
+    ] ],
+    [ "File Members", "globals.html", null ]
   ] ]
 ];
 

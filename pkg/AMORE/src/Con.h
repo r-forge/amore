@@ -26,15 +26,19 @@ class Con {
 	double weight;
 
 public:
+
+	Con() 						: from(NULL), weight(0) {};
+	Con(Neuron* f , double w ) 	: from(f), 	  weight(w) {};
+	~Con() {};
 	Neuron *	getFromNeuron	();
-	void 		setFromNeuron	(Neuron * f);
+	void 		setFromNeuron	(Neuron* f);
 	int			getFromId		();
 	double 		getWeight		();
 	void 		setWeight		(double w);
 	bool		show			();
 	bool		validate		();
 };
-
-
-
 #endif /* CON_H_ */
+
+
+typedef boost::shared_ptr<Con> ConPtr;

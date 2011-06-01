@@ -26,7 +26,7 @@ class Neuron {
 	 */
 
 	//! \todo restore vecCon<Con> listCon;
-	Con vecCon;
+	// Con vecCon;
 	double outputValue;
 public:
 

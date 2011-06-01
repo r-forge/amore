@@ -66,7 +66,7 @@
  *
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> T element) {
+template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> element) {
 	this->ldata.push_back(element);
 };
 
@@ -83,7 +83,7 @@ template <typename T> bool vecAMORE<T>::show() {
 	// for( auto x : ldata)	{ x.show(); }
 	// Waiting for C++0x
 	//
-	for(typename std::vector<T>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ itr->show(); }
+	for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ (*itr)->show(); }
 
 
 	return true;
@@ -97,11 +97,11 @@ template <typename T> bool vecAMORE<T>::show() {
  *  This method calls the validate method for each element of the ldata std::vector<T>,
  * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
+
 template <typename T> bool vecAMORE<T>::validate() {
-	for(typename std::vector<T>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ itr->validate(); }
+	for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ (*itr)->validate(); }
 	return true;
 };
-
 
 
 
@@ -111,12 +111,12 @@ template <typename T> bool vecAMORE<T>::validate() {
  * \param v The vecAMORE<T> object to be added to the current one
  * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
+
+
 template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
 	ldata.reserve(ldata.size() + v.size());
 	ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
 };
-
-
 
 
 //! %ldata field accessor function
@@ -167,7 +167,9 @@ template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
  *
  * \sa setLdata and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
-template <typename T> std::vector<T> vecAMORE<T>::getLdata() {
+
+
+template <typename T> std::vector< boost::shared_ptr<T>  > vecAMORE<T>::getLdata() {
 	return ldata;
 };
 
@@ -179,7 +181,8 @@ template <typename T> std::vector<T> vecAMORE<T>::getLdata() {
  * \param v The std::vector<T> object to be stored in the ldata field
  * \sa getLdata and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::setLdata(std::vector<T> v) {
+
+template <typename T> void vecAMORE<T>::setLdata(std::vector< boost::shared_ptr<T>  > v) {
 	ldata=v;
 };
 
@@ -190,7 +193,9 @@ template <typename T> void vecAMORE<T>::setLdata(std::vector<T> v) {
  *  In the vecAMORE<T> derived classes this is aliased as numOfCons, numOfNeurons and numOfLayers.
  * 	The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
+
 template <typename T> int vecAMORE<T>::size() {
 	return ldata.size() ;
 };
+
 
