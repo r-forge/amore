@@ -18,19 +18,21 @@
  * \return A pointer to the Neuron object referred to by the \ref from field.
  *
  *  \code
- *  //================
- *  //Usage example:
- *  //================
- *	Con myCon;
- *	Neuron MyNeuron;
- *	Neuron * ptNeuron;
- *	MyNeuron.setId(1);
- *	myCon.setFromNeuron(&MyNeuron);
- *	ptNeuron = myCon.getFromNeuron();
- *	int result= ptNeuron->getId();
- * \endcode
+ *	//================
+ *	//Usage example:
+ *	//================
+ *	// Data set up
+ *		Con myCon;
+ *		Neuron MyNeuron;
+ *		Neuron * ptNeuron;
+ *		MyNeuron.setId(1);
+ *		myCon.setFromNeuron(&MyNeuron);
  *
- * After execution of the code shown above, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
+ *	//Test
+ *		ptNeuron = myCon.getFromNeuron();
+ *		int result= ptNeuron->getId();
+ *	// Now, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
+ * \endcode
  *
  * \sa getFromId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
@@ -56,17 +58,19 @@ void Con::setFromNeuron	(Neuron * f)   	{
  * \return The value of the Id (an integer).
  *
  *  \code
- *  //================
- *  //Usage example:
- *  //================
- *	Con myCon;
- *	Neuron MyNeuron;
- *	MyNeuron.setId(16);
- *	myCon.setFromNeuron(&MyNeuron);
- * 	int result= myCon.getFromId();
- * \endcode
+ *	//================
+ *	//Usage example:
+ *	//================
+ *	// Data set up
+ *		Con myCon;
+ *		Neuron MyNeuron;
+ *		MyNeuron.setId(16);
+ *		myCon.setFromNeuron(&MyNeuron);
  *
- * After execution of the code shown above, MyNeuron::Id is set to the integer value 16 and, thus, result is equal to 16.
+ *	// Test
+ * 		int result= myCon.getFromId();
+ *	// After execution of the code shown above, MyNeuron::Id is set to the integer value 16 and, thus, result is equal to 16.
+ * \endcode
  *
  * \sa getFromNeuron, setFromNeuron and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
@@ -82,21 +86,21 @@ int Con::getFromId () {
  * \return The value of \ref weight (double)
  *
  *  \code
- *  //================
- *  //Usage example:
- *  //================
- *	Con myCon;
- *	Neuron MyNeuron;
- *	MyNeuron.setId(16);
- *	myCon.setFromNeuron(&MyNeuron);
- *	myCon.setWeight(12.4);
- *	double result1= myCon.getWeight();
- *	myCon.setWeight(2.2);
- *	double result2= myCon.getWeight();
+ *	//================
+ *	//Usage example:
+ *	//================
+ *	// Data set up
+ *		Con myCon;
+ *		Neuron MyNeuron;
+ *		MyNeuron.setId(16);
+ *		myCon.setFromNeuron(&MyNeuron);
+ *		myCon.setWeight(12.4);
+ *		double result1= myCon.getWeight();
+ *	// Test
+ *		myCon.setWeight(2.2);
+ *		double result2= myCon.getWeight();
+ *	// Now, result1 is equal to 12.4 and result2 is equal to 2.2.
  * \endcode
- *
- *
- * After execution of the code shown above, result1 is set to the double value 12.4 and result2 is set to the double value 2.2.
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
@@ -115,19 +119,20 @@ double Con::getWeight () {
  *  //================
  *  //Usage example:
  *  //================
- *	Con myCon;
- *	Neuron n;
- *	n.setId(16);
- *	myCon.setFromNeuron(&n);
- *	myCon.setWeight(12.4);
- *	myCon.show();
+ *  // Data set up
+ *		Con myCon;
+ *		Neuron n;
+ *		n.setId(16);
+ *		myCon.setFromNeuron(&n);
+ *
+ *	// Test
+ *		myCon.setWeight(12.4);
+ *		myCon.show();
+ *	// Now, the output at the R terminal would show:
+ *	//
+ *	//  FROM=16		WEIGHT=12.4
+ *	//
  * \endcode
- *
- * After execution of the code shown above, the output at the R terminal would show:
- *
- * \verbatim
-   FROM=16		WEIGHT=12.4
-  \endverbatim
  *
  * \sa getWeight and the unit test files (e.g. runit.Cpp.Con.R)
  */

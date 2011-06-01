@@ -74,25 +74,28 @@ The value of the Id (an integer).
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
-        Con myCon;
-        Neuron MyNeuron;
-        MyNeuron.setId(16);
-        myCon.setFromNeuron(&MyNeuron);
-        int result= myCon.getFromId();
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                Con myCon;
+                Neuron MyNeuron;
+                MyNeuron.setId(16);
+                myCon.setFromNeuron(&MyNeuron);
+
+        // Test
+                int result= myCon.getFromId();
+        // After execution of the code shown above, MyNeuron::Id is set to the in
+      teger value 16 and, thus, result is equal to 16.
 \end{DoxyCode}
 
-
-After execution of the code shown above, MyNeuron::Id is set to the integer value 16 and, thus, result is equal to 16.
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_con_a970a74ffcba9433d6f383ecab398f25f}{getFromNeuron}, \hyperlink{class_con_a19ca0a1d257a3f002693a441db03aeb4}{setFromNeuron} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 73 of file Con.cpp.
+Definition at line 77 of file Con.cpp.
 
 
 
@@ -148,27 +151,30 @@ A pointer to the \hyperlink{class_neuron}{Neuron} object referred to by the \hyp
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
-        Con myCon;
-        Neuron MyNeuron;
-        Neuron * ptNeuron;
-        MyNeuron.setId(1);
-        myCon.setFromNeuron(&MyNeuron);
-        ptNeuron = myCon.getFromNeuron();
-        int result= ptNeuron->getId();
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                Con myCon;
+                Neuron MyNeuron;
+                Neuron * ptNeuron;
+                MyNeuron.setId(1);
+                myCon.setFromNeuron(&MyNeuron);
+
+        //Test
+                ptNeuron = myCon.getFromNeuron();
+                int result= ptNeuron->getId();
+        // Now, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
+      
 \end{DoxyCode}
 
-
-After execution of the code shown above, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_con_aad72314592bebdcae6c68a67d2b4a505}{getFromId} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 37 of file Con.cpp.
+Definition at line 39 of file Con.cpp.
 
 
 
@@ -198,28 +204,29 @@ The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (do
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
-        Con myCon;
-        Neuron MyNeuron;
-        MyNeuron.setId(16);
-        myCon.setFromNeuron(&MyNeuron);
-        myCon.setWeight(12.4);
-        double result1= myCon.getWeight();
-        myCon.setWeight(2.2);
-        double result2= myCon.getWeight();
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                Con myCon;
+                Neuron MyNeuron;
+                MyNeuron.setId(16);
+                myCon.setFromNeuron(&MyNeuron);
+                myCon.setWeight(12.4);
+                double result1= myCon.getWeight();
+        // Test
+                myCon.setWeight(2.2);
+                double result2= myCon.getWeight();
+        // Now, result1 is equal to 12.4 and result2 is equal to 2.2.
 \end{DoxyCode}
 
-
-After execution of the code shown above, result1 is set to the double value 12.4 and result2 is set to the double value 2.2.
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_con_aa9b30bb7eda5c5578d11a65977968d38}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 103 of file Con.cpp.
+Definition at line 107 of file Con.cpp.
 
 
 
@@ -269,7 +276,7 @@ This method sets the value of the \hyperlink{class_con_a40215fdb25f3b2ed66e965df
 \end{DoxySeeAlso}
 
 
-Definition at line 48 of file Con.cpp.
+Definition at line 50 of file Con.cpp.
 
 
 
@@ -304,20 +311,20 @@ This method sets the value of the \hyperlink{class_con_a7f46485ba5b41971ea38641f
   //================
   //Usage example:
   //================
-        Con myCon;
-        Neuron n;
-        n.setId(16);
-        myCon.setFromNeuron(&n);
-        myCon.setWeight(12.4);
-        myCon.show();
+  // Data set up
+                Con myCon;
+                Neuron n;
+                n.setId(16);
+                myCon.setFromNeuron(&n);
+
+        // Test
+                myCon.setWeight(12.4);
+                myCon.show();
+        // Now, the output at the R terminal would show:
+        //
+        //  FROM=16             WEIGHT=12.4
+        //
 \end{DoxyCode}
-
-
-After execution of the code shown above, the output at the R terminal would show:
-
-\begin{DoxyVerb}
-   FROM=16		WEIGHT=12.4
-  \end{DoxyVerb}
 
 
 \begin{DoxySeeAlso}{See also}
@@ -325,7 +332,7 @@ After execution of the code shown above, the output at the R terminal would show
 \end{DoxySeeAlso}
 
 
-Definition at line 134 of file Con.cpp.
+Definition at line 139 of file Con.cpp.
 
 
 
@@ -358,7 +365,7 @@ true in case everything works without throwing an exception
 \end{DoxySeeAlso}
 
 
-Definition at line 146 of file Con.cpp.
+Definition at line 151 of file Con.cpp.
 
 
 
@@ -405,7 +412,7 @@ true in case the checks are Ok.
 \end{DoxyExceptions}
 
 
-Definition at line 160 of file Con.cpp.
+Definition at line 165 of file Con.cpp.
 
 
 
@@ -475,5 +482,5 @@ Referenced by getWeight(), and setWeight().
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-pkg/AMORE/src/\hyperlink{_con_8h}{Con.h}\item 
-pkg/AMORE/src/\hyperlink{_con_8cpp}{Con.cpp}\end{DoxyCompactItemize}
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/\hyperlink{_con_8h}{Con.h}\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/\hyperlink{_con_8cpp}{Con.cpp}\end{DoxyCompactItemize}

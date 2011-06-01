@@ -99,7 +99,8 @@ Inheritance diagram for vecCon:</div>
 <div class="dynheader">
 Collaboration diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__coll__graph.svg" width="450" height="936" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con__coll__graph.svg" width="468" height="1035" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classvec_con-members.html">List of all members.</a></p>
@@ -155,24 +156,24 @@ Public Member Functions</h2></td></tr>
                 Con2.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(22.02);
                 Con3.<a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>(333.03);
 
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con1);
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con2);
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con3);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con1);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con2);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con3);
 
                 MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a11b0ffb0d2481f1960cb49a26b227d37" title="Pretty print of the vecAMORE&lt;T&gt;">show</a>() ;
                 MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a247aaafe9115cc433fc3be297c1f568e" title="Object validator.">validate</a>();
 
         <span class="comment">// Test</span>
                 result=MyvecCon.<a class="code" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons.">getFromId</a>();
-</pre></div><p>After execution of this code, result is a vector that contains the values 10, 20 and 30. </p>
+        <span class="comment">// Now result is a vector that contains the values 10, 20 and 30.</span>
+</pre></div> 
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00097">97</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00099">99</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
-
-<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00052">numOfCons()</a>.</p>
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00051">numOfCons()</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
         std::vector&lt;int&gt; result;
         result.reserve(<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-        <span class="keywordflow">for</span>(std::vector&lt;Con&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.end();   itr++)      { result.push_back(itr-&gt;getFromId()); }
+        <span class="keywordflow">for</span>(std::vector&lt;Con&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end();   itr++)      { result.push_back(itr-&gt;getFromId()); }
         <span class="keywordflow">return</span> result;
 }
 </pre></div>
@@ -225,22 +226,22 @@ Here is the call graph for this function:</div>
 
         <span class="comment">// Test</span>
                 result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con1);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con1);
                 result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con2);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con2);
                 result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a2472d46a111328c069cdb48e7e41109b" title="A method to append one element at the end of ldata.">push_back</a>(Con3);
+                MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a53633d4ba97445e14f348ca64a41c079">push_back</a>(Con3);
                 result.push_back(MyvecCon.<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-</pre></div><p>After execution of this code, result contains a numeric vector with values 0, 1, 2, and 3.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">vecAMORE::size</a> (alias) </dd></dl>
+        <span class="comment">// Now, result contains a numeric vector with values 0, 1, 2, and 3.</span>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48" title="Returns the size or length of the vector.">vecAMORE::size</a> (alias) </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00052">52</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00051">51</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00013">vecAMORE&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>.</p>
 
-<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00099">getFromId()</a>.</p>
+<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00097">getFromId()</a>.</p>
 <div class="fragment"><pre class="fragment">                       {
-        <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#ab6a8dec6292a9e03a5566311d1eb650a">ldata</a>.size();
+        <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.size();
 }
 </pre></div>
 <p><div class="dynheader">
@@ -253,15 +254,15 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>pkg/AMORE/src/<a class="el" href="vec_con_8h_source.html">vecCon.h</a></li>
-<li>pkg/AMORE/src/<a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="vec_con_8h_source.html">vecCon.h</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_con.html">vecCon</a>      </li>
-      <li class="footer">Generated on Sat May 28 2011 12:49:27 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 1 2011 03:24:29 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

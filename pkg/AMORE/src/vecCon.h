@@ -20,8 +20,9 @@ public:
 
 	int					numOfCons();
 	std::vector<int>	getFromId();
+//	void 				populate	( listNeuron * FROM, std::vector<double> WEIGHT);
 
-	//	void 				populate	( listNeuron * FROM, std::vector<double> WEIGHT);
+
 	//	std::vector<double>	getWeight	(FROM);
 	//						getFrom ();
 	//						setWeight(value, FROM);

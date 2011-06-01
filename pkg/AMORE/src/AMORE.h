@@ -20,6 +20,7 @@
 #include <sstream>
 #include <algorithm>
 #include <vector>
+#include <boost/shared_ptr.hpp>
 #include <Rcpp.h>
 
 using namespace Rcpp;
@@ -28,6 +29,14 @@ class Con;
 template <typename T> class vecAMORE;
 class vecCon;
 class Neuron;
+
+
+#include "Con.h"
+#include "vecAMORE.h"
+#include "vecCon.h"
+#include "Neuron.h"
+
+
 
 #ifndef INLINE_R
 
