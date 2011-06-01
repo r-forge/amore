@@ -5,14 +5,8 @@
 
 ###############################################################################
 test.Con.Cpp.setAndgetFromNeuron <- function() {	
-###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -24,7 +18,9 @@ test.Con.Cpp.setAndgetFromNeuron <- function() {
 			int result= ptNeuron->getId();
 			return wrap(result);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, 1)
 }
@@ -32,13 +28,7 @@ test.Con.Cpp.setAndgetFromNeuron <- function() {
 ###############################################################################
 test.Con.Cpp.getFromId<- function() {	
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -48,7 +38,9 @@ test.Con.Cpp.getFromId<- function() {
 			int result= myCon.getFromId();
 			return wrap(result);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, 16)
 }
@@ -56,13 +48,7 @@ test.Con.Cpp.getFromId<- function() {
 ###############################################################################
 test.Con.Cpp.setAndgetWeight <- function() {	
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -75,7 +61,9 @@ test.Con.Cpp.setAndgetWeight <- function() {
 			return Rcpp::List::create(	Rcpp::Named("R1")	= result1,
 			Rcpp::Named("R2") 	= result2);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result$R1, 12.4)
 	checkEquals(result$R2, 2.2)
@@ -84,13 +72,7 @@ test.Con.Cpp.setAndgetWeight <- function() {
 ###############################################################################
 test.Con.Cpp.show <- function() {	
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -100,7 +82,10 @@ test.Con.Cpp.show <- function() {
 			bool result= myCon.show();
 			return wrap(result);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	
 	result <- testCodefun()
 	checkTrue(result)
 }
@@ -108,13 +93,7 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 test.Con.Cpp.validate.weight <- function() {	
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -124,20 +103,17 @@ test.Con.Cpp.validate.weight <- function() {
 			myCon.validate();
 			return wrap(true);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	
 	checkException(result <- testCodefun(), silent=TRUE)
 }
 
 ###############################################################################
 test.Con.Cpp.validate.from <- function() {
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",					collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),	collapse = "\n" ),	collapse = "\n")
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
@@ -147,7 +123,11 @@ test.Con.Cpp.validate.from <- function() {
 			myCon.validate();
 			return wrap(myCon.getFromId());
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	
 	checkException(result <- testCodefun(), silent=TRUE)
 }
+
 

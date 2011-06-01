@@ -48,3 +48,4 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 # TODO silent =TRUE in every call	
 
+

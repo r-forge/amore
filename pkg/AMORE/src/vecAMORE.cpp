@@ -66,7 +66,7 @@
  *
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::push_back(T element) {
+template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> T element) {
 	this->ldata.push_back(element);
 };
 
@@ -78,8 +78,14 @@ template <typename T> void vecAMORE<T>::push_back(T element) {
  * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
 template <typename T> bool vecAMORE<T>::show() {
-	//	for_each(ldata.begin(), ldata.end(), showCon );
+	//
+	// This is equivalent to:
+	// for( auto x : ldata)	{ x.show(); }
+	// Waiting for C++0x
+	//
 	for(typename std::vector<T>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ itr->show(); }
+
+
 	return true;
 };
 

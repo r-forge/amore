@@ -43,9 +43,8 @@
  *		result.push_back(MyvecCon.numOfCons());
  *		MyvecCon.push_back(Con3);
  *		result.push_back(MyvecCon.numOfCons());
+ *	// Now, result contains a numeric vector with values 0, 1, 2, and 3.
  * \endcode
- *
- * After execution of this code, result contains a numeric vector with values 0, 1, 2, and 3.
  *
  * \sa vecAMORE::size (alias)
  */
@@ -91,10 +90,9 @@ int  vecCon::numOfCons() {
  *
  *	// Test
  *		result=MyvecCon.getFromId();
+ *	// Now result is a vector that contains the values 10, 20 and 30.
+ *
  * \endcode
- *
- * After execution of this code, result is a vector that contains the values 10, 20 and 30.
- *
  */
 std::vector<int>  vecCon::getFromId() {
 	std::vector<int> result;
@@ -104,6 +102,28 @@ std::vector<int>  vecCon::getFromId() {
 }
 
 
+
+//
+//
+//
+//void vecCon::populate	( std::vector<Neuron> FROM, std::vector<double> WEIGHT){
+//
+//	BEGIN_RCPP
+//	Con con;
+//	if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[vecCon::populate]: Error, FROM.size() != WEIGHT.size()"); }
+//	ldata.reserve(ldata.size() + FROM.size());
+//	for( std::vector<int>::iterator itrFROM=FROM.begin(), std::vector<double>::iterator itrWEIGHT = WEIGHT.begin()	;   itrFROM != FROM.end();	itrFROM++, itrWEIGHT++)	{
+//
+//		new();
+//
+//		ldata.push_back(
+//		)
+//	}
+//
+//
+//	END_RCPP
+//}
+//	push_back(gCon$new(from=f, weight=w))}, FROM, WEIGHT)
 
 
 
@@ -118,11 +138,6 @@ std::vector<int>  vecCon::getFromId() {
 					}
 				},
 
-				populate=function(FROM, WEIGHT, ...){
-					if (missing(FROM)||missing(WEIGHT)) {stop("[listCon populate]: Error, FROM and/or WEIGHT parameters missing")  } else {}
-					if (length(FROM)!=length(WEIGHT)) {stop("[listCon initialize]: Error length(FROM)!=length(WEIGHT)")} else {}
-					mapply(FUN=function(f,w){push_back(gCon$new(from=f, weight=w))}, FROM, WEIGHT) -> DontMakeNoise
-				},
 
 				getWeight = function(FROM, ...){
 					if (missing(FROM)) {

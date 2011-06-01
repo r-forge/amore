@@ -7,15 +7,8 @@
 ###############################################################################
 test.vecAMORE.Cpp.validate.show<- function() {	
 ###############################################################################
-	incCode <- paste(
-			paste(  "#define INLINE_R\n",						collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/AMORE.h"),		collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.h"),			collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/vecAMORE.h"),		collapse = "\n" ),											
-			paste(	readLines( "pkg/AMORE/src/Neuron.h"),		collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Con.cpp"),		collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/vecAMORE.cpp"),	collapse = "\n" ),
-			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),		collapse = "\n" ),	collapse = "\n")
+#############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			// Data set up
 			Con Con1, Con2, Con3;
@@ -45,9 +38,13 @@ test.vecAMORE.Cpp.validate.show<- function() {
 			MyvecCon.validate();		
 			return wrap(1);
 			'
-	testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
+			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
+			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	
 	result <- testCodefun()
 	checkEquals(result, 1)
+
 }
 
 
