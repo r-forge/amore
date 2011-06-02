@@ -25,8 +25,8 @@ public:
 
 	//	std::vector<double>	getWeight	(FROM);
 	//
-	// Test sv
-	//
+	// Test sv (Manolo)
+	// (Manolo)
 	// Prueba voy a cambiar cosas yo ahora
 	//
 	// Esta linea es de manolo
