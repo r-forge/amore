@@ -20,7 +20,7 @@ public:
 
 									int	numOfCons();
 					std::vector<int>	getFromId();
-//								void	populate	  	( std::vector<NeuronSharedPtr> FROM, std::vector<double> WEIGHT);
+								void	populate	  	( std::vector<NeuronSharedPtr> FROM, std::vector<double> WEIGHT);
 //					std::vector<double>	getWeight	  	( );
 //					std::vector<double>	getWeight	  	( std::vector<int> FROM );
 //		std::vector<NeuronSharedPtr>	getFromNeuron 	( );

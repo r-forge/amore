@@ -8,7 +8,8 @@
 
 
 
-Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
+Inheritance diagram for vecAMORE$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,7 +35,7 @@ void \hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} 
 int \hyperlink{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
-\begin{DoxyCompactList}\small\item\em A method to append one element at the end of ldata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of ldata. \end{DoxyCompactList}\item 
 void \hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} (\hyperlink{classvec_a_m_o_r_e}{vecAMORE}$<$ T $>$ v)
 \begin{DoxyCompactList}\small\item\em Appends a vecAMORE$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{show} ()
@@ -77,11 +78,65 @@ This method inserts the ldata field of a second object at the end of the ldata f
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+
+        // Data set up
+                Neuron N1, N2, N3, N4, N5, N6;
+                vecAMORE<Con> vcA, vcB;
+                std::vector<int> result;
+
+                N1.setId(10);
+                N2.setId(20);
+                N3.setId(30);
+                N4.setId(40);
+                N5.setId(50);
+                N6.setId(60);
+
+        // Test
+                ConSharedPtr ptCon( new Con(&N1, 1.13) );       // Create and sto
+      re in vcA three Cons
+                vcA.push_back(ptCon);
+                ptCon.reset( new Con(&N2, 2.22) );
+                vcA.push_back(ptCon);
+                ptCon.reset(  new Con(&N3, 3.33) );
+                vcA.push_back(ptCon);
+
+                ptCon.reset( new Con(&N4, 1.13) );      // Create and store in vc
+      B three more Cons
+                vcB.push_back(ptCon);
+                ptCon.reset( new Con(&N5, 2.22) );
+                vcB.push_back(ptCon);
+                ptCon.reset(  new Con(&N6, 3.33) );
+                vcB.push_back(ptCon);
+
+        // Append test
+                vcA.append(vcB);
+                vcA.validate();
+                vcA.show() ;
+
+        // After execution of the code above, the output at the R terminal would 
+      display:
+        // From:         10      Weight=         1.130000
+        // From:         20      Weight=         2.220000
+        // From:         30      Weight=         3.330000
+        // From:         40      Weight=         1.130000
+        // From:         50      Weight=         2.220000
+        // From:         60      Weight=         3.330000
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{vecAMORE::setLdata} , \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{vecAMORE::push\_\-back} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 116 of file vecAMORE.cpp.
+Definition at line 133 of file vecAMORE.cpp.
 
 
 
@@ -118,57 +173,55 @@ Here is the call graph for this function:\nopagebreak
 
 ldata field accessor function 
 
-This method allows access to the data stored in the \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{ldata} field (an std::vector$<$T$>$ object). \begin{DoxyReturn}{Returns}
-The ldata vector. 
+This method allows access to the data stored in the \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{ldata} field. \begin{DoxyReturn}{Returns}
+The ldata vector.
+\end{DoxyReturn}
+
 \begin{DoxyCode}
         //================
         //Usage example:
         //================
+                // Data set up
+                        Neuron N1, N2, N3;
+                        vecAMORE<Con> MyvecCon;
+                        std::vector<int> result;
+                        std::vector<ConSharedPtr> vcA, vcB;
 
-        // Data set up
-                Con Con1, Con2, Con3;
-                Neuron N1, N2, N3;
-                vecAMORE<Con> MyvecCon;
-                std::vector<int> result;
-                std::vector<Con> vc;
+                        N1.setId(10);
+                        N2.setId(20);
+                        N3.setId(30);
 
-                N1.setId(10);
-                N2.setId(20);
-                N3.setId(30);
+                // Test
+                        ConSharedPtr ptCon( new Con(&N1, 1.13) );       // Create
+       new Con and initialize ptCon
+                        vcA.push_back(ptCon);                                           /
+      / push_back
+                        ptCon.reset( new Con(&N2, 2.22) );                      /
+      / create new Con and assign to ptCon
+                        vcA.push_back(ptCon);                                           /
+      / push_back
+                        ptCon.reset(  new Con(&N3, 3.33) );                     /
+      / create new Con and assign to ptCon
+                        vcA.push_back(ptCon);                                           /
+      / push_back
 
-                Con1.setFromNeuron(&N1);
-                Con2.setFromNeuron(&N2);
-                Con3.setFromNeuron(&N3);
+                        MyvecCon.setLdata(vcA);
+                        vcB = MyvecCon.getLdata();
 
-                Con1.setWeight(1.01);
-                Con2.setWeight(22.02);
-                Con3.setWeight(333.03);
-
-        // Test
-
-                MyvecCon.push_back(Con1);
-                MyvecCon.push_back(Con2);
-                MyvecCon.push_back(Con3);
-                MyvecCon.show();
-                MyvecCon.validate();
-
-                vc = MyvecCon.getLdata();
-
-                result.push_back(vc.at(0).getFromId());
-                result.push_back(vc.at(1).getFromId());
-                result.push_back(vc.at(2).getFromId());
-                return wrap(result);
+                        result.push_back(vcB.at(0)->getFromId());
+                        result.push_back(vcB.at(1)->getFromId());
+                        result.push_back(vcB.at(2)->getFromId());
+                // After execution of the code shown above, result is an integer 
+      vector with values 10, 20, 30.
 \end{DoxyCode}
 
-\end{DoxyReturn}
-After execution of the code shown above, vc is a vector containing Con1, Con2 and Con3 and, thus, result is an integer vector with values 10, 20, 30.
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 172 of file vecAMORE.cpp.
+Definition at line 177 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
@@ -181,17 +234,17 @@ Definition at line 172 of file vecAMORE.cpp.
 \index{push\_\-back@{push\_\-back}!vecAMORE@{vecAMORE}}
 \subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::push\_\-back (
 \begin{DoxyParamCaption}
-\item[{boost::shared\_\-ptr$<$ T $>$}]{element}
+\item[{boost::shared\_\-ptr$<$ T $>$}]{TsharedPtr}
 \end{DoxyParamCaption}
 )}}
 \label{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}
 
 
-A method to append one element at the end of ldata. 
+Append a shared\_\-ptr at the end of ldata. 
 
-This function implements the std:vector member push\_\-back for the vecAMORE$<$T$>$ class 
+Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{vecAMORE} class 
 \begin{DoxyParams}{Parameters}
-{\em T} & element The element to be inserted at the end of ldata\\
+{\em TsharedPtr} & A shared\_\-ptr pointer to be inserted at the end of ldata\\
 \hline
 \end{DoxyParams}
 
@@ -199,68 +252,50 @@ This function implements the std:vector member push\_\-back for the vecAMORE$<$T
                 //================
                 //Usage example:
                 //================
-                Con Con1, Con2, Con3, Con4, Con5, Con6;
-                Neuron N1, N2, N3, N4, N5, N6;
-                vecAMORE<Con> vc1, vc2;
-                std::vector<int> result;
+                // Data set up
+                        Neuron N1, N2, N3;
+                        vecAMORE<Con> MyvecCon;
+                        std::vector<ConSharedPtr> vc;
+                        std::vector<int> result;
+                        N1.setId(10);
+                        N2.setId(20);
+                        N3.setId(30);
+                // Test
+                        ConSharedPtr ptCon( new Con(&N1, 1.13) );       // Create
+       new Con and initialize ptCon
+                        MyvecCon.push_back(ptCon);                              /
+      / push_back
+                        ptCon.reset(  new Con(&N2, 2.22) );             // create
+       new Con and assign to ptCon
+                        MyvecCon.push_back(ptCon);                              /
+      / push_back
+                        ptCon.reset(  new Con(&N3, 3.33) );             // create
+       new Con and assign to ptCon
+                        MyvecCon.push_back(ptCon);                              /
+      / push_back
 
-                N1.setId(10);
-                N2.setId(20);
-                N3.setId(30);
-                N4.setId(40);
-                N5.setId(50);
-                N6.setId(60);
+                        vc = MyvecCon.getLdata();
 
-                Con1.setFromNeuron(&N1);
-                Con2.setFromNeuron(&N2);
-                Con3.setFromNeuron(&N3);
-                Con4.setFromNeuron(&N4);
-                Con5.setFromNeuron(&N5);
-                Con6.setFromNeuron(&N6);
-
-                Con1.setWeight(1.01);
-                Con2.setWeight(22.02);
-                Con3.setWeight(333.03);
-                Con4.setWeight(5.4);
-                Con5.setWeight(2.22);
-                Con6.setWeight(33.03);
-
-                vc1.push_back(Con1);
-                vc1.push_back(Con2);
-                vc1.push_back(Con3);
-                vc2.push_back(Con4);
-                vc2.push_back(Con5);
-                vc2.push_back(Con6);
-
-                Rprintf("vc1 contents:");
-                vc1.show() ;
-                Rprintf("vc2 contents:");
-                vc2.show() ;
-
-                vc1.join(vc2);
-                Rprintf("vc2 contents:");
-                vc1.show() ;
-                vc1.validate();
-
-                for(std::vector<Con>::iterator itr = (vc1.getLdata()).begin();   
-      itr != (vc1.getLdata()).end();   itr++) { result.push_back(itr->getFromId()); }
-                return wrap(result);
+                        result.push_back(vc.at(0)->getFromId());
+                        result.push_back(vc.at(1)->getFromId());
+                        result.push_back(vc.at(2)->getFromId());
 \end{DoxyCode}
 
 
-After execution of this code, return contains a numeric vector with values 10, 20, 30, 40, 50 and 60.
+After execution of this code, result contains a numeric vector with values 10, 20 and 30.
 
 \begin{DoxySeeAlso}{See also}
 C++ documentation for std::vector::push\_\-back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 69 of file vecAMORE.cpp.
+Definition at line 45 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
-                                                                             {
-        this->ldata.push_back(element);
+                                                                                {
+      
+        this->ldata.push_back(TsharedPtr);
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{
@@ -276,9 +311,9 @@ Definition at line 69 of file vecAMORE.cpp.
 
 ldata field accessor function 
 
-This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{ldata} field (an std::vector$<$T$>$ object). 
+This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{ldata} field. 
 \begin{DoxyParams}{Parameters}
-{\em v} & The std::vector$<$T$>$ object to be stored in the ldata field \\
+{\em v} & The vector of smart pointers to be stored in the ldata field \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -286,7 +321,7 @@ This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r
 \end{DoxySeeAlso}
 
 
-Definition at line 185 of file vecAMORE.cpp.
+Definition at line 189 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
@@ -308,7 +343,7 @@ Definition at line 185 of file vecAMORE.cpp.
 
 Pretty print of the vecAMORE$<$T$>$ 
 
-This method outputs in the R terminal the contents of the vecAMORE$<$T$>$ fields. \begin{DoxyReturn}{Returns}
+This method outputs in the R terminal the contents of \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{vecAMORE::ldata}. \begin{DoxyReturn}{Returns}
 true in case everything works without throwing an exception 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
@@ -316,20 +351,16 @@ The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
 \end{DoxySeeAlso}
 
 
-Definition at line 80 of file vecAMORE.cpp.
+Definition at line 56 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
                                              {
-        //
         // This is equivalent to:
         // for( auto x : ldata) { x.show(); }
         // Waiting for C++0x
-        //
         for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.b
       egin();   itr != ldata.end();   itr++)  { (*itr)->show(); }
-
-
         return true;
 };
 \end{DoxyCode}
@@ -346,9 +377,9 @@ Definition at line 80 of file vecAMORE.cpp.
 
 Returns the size or length of the vector. 
 
-This method returns the size of the vector. In the vecAMORE$<$T$>$ derived classes this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+This method returns the size of the vector. In the classes derived from vecAMORE$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
 
-Definition at line 197 of file vecAMORE.cpp.
+Definition at line 200 of file vecAMORE.cpp.
 
 
 
@@ -362,8 +393,7 @@ Referenced by vecAMORE$<$ T $>$::append().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -385,12 +415,12 @@ Here is the caller graph for this function:
 
 Object validator. 
 
-This method checks the object for internal coherence. This method calls the validate method for each element of the ldata std::vector$<$T$>$, \begin{DoxySeeAlso}{See also}
+This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
 The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 101 of file vecAMORE.cpp.
+Definition at line 71 of file vecAMORE.cpp.
 
 
 \begin{DoxyCode}
