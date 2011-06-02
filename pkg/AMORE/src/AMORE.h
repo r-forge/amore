@@ -40,13 +40,8 @@ class Neuron;
 #include "Neuron.h"
 
 
-
-#ifndef INLINE_R
-
 #include "Con.cpp"
 #include "vecAMORE.cpp"
 //#include "vecCon.cpp"
 #include "Neuron.cpp"
-
-#endif /* INLINE_R_ */
 

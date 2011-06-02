@@ -24,6 +24,10 @@ public:
 
 
 	//	std::vector<double>	getWeight	(FROM);
+	//
+	// Test svn
+	//
+	//
 	//						getFrom ();
 	//						setWeight(value, FROM);
 	//						setFrom(value, FROM);
