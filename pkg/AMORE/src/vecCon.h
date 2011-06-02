@@ -25,14 +25,6 @@ public:
 
 	//	std::vector<double>	getWeight	(FROM);
 	//
-	// Test sv (JAVI ha estado haciendo cambios aquí)
-	//
-	// Test sv (Manolo)
-	// (Manolo)
-	// Prueba voy a cambiar cosas yo ahora
-	//
-	// Esta linea es de manolo
-	// Esta linea también es de manolo
 	//						getFrom ();
 	//						setWeight(value, FROM);
 	//						setFrom(value, FROM);
