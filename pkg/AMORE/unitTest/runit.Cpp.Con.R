@@ -3,7 +3,6 @@
 # Author: mcasl
 ###############################################################################
 
-# FIXME Javi: Unit test for Con class constructors
 
 ###############################################################################
 test.Con.Cpp.setFromNeuron.getFromNeuron <- function() {	

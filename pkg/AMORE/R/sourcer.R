@@ -37,5 +37,17 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 #lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNois
 
 
+# Lista de Fixme's
 
-# º
+###############################################
+# FIXME Javi: Unit tests for Con class constructor methods
+# STATUS:
+###############################################
+
+###############################################
+# FIXME Javi: Implement vecCon::Validate  
+# STATUS:
+###############################################
+
+
+
