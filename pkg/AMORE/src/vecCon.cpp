@@ -61,43 +61,36 @@ int  vecCon::numOfCons() {
  *  //Usage example:
  *  //================
  * 	// Data set up
- *		Con Con1, Con2, Con3;
- *		Neuron N1, N2, N3;
- *		vecCon MyvecCon;
- *		std::vector<int> result;
+ * 	// Data set up
+ *			Neuron N1, N2, N3;
+ *			vecCon MyvecCon;
+ *			std::vector<int> result;
  *
- *		N1.setId(10);
- *		N2.setId(20);
- *		N3.setId(30);
-
- *		Con1.setFromNeuron(&N1);
- *		Con2.setFromNeuron(&N2);
- *		Con3.setFromNeuron(&N3);
+ *			N1.setId(10);
+ *			N2.setId(20);
+ *			N3.setId(30);
  *
- *		Con1.setWeight(1.01);
- *		Con2.setWeight(22.02);
- *		Con3.setWeight(333.03);
-
- *		MyvecCon.push_back(Con1);
- *		MyvecCon.push_back(Con2);
- *		MyvecCon.push_back(Con3);
-
- *		MyvecCon.show() ;
- *		MyvecCon.validate();
+ *			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ *			MyvecCon.push_back(ptCon);				// push_back
+ *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ *			MyvecCon.push_back(ptCon);				// push_back
+ *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ *			MyvecCon.push_back(ptCon);				// push_back
  *
  *	// Test
- *		result=MyvecCon.getFromId();
- *	// Now result is a vector that contains the values 10, 20 and 30.
+ *			MyvecCon.show() ;
+ *			MyvecCon.validate();
+ *			result=MyvecCon.getFromId();
  *
+ *	// Now result is a vector that contains the values 10, 20 and 30.
  * \endcode
  */
 std::vector<int>  vecCon::getFromId() {
 	std::vector<int> result;
 	result.reserve(numOfCons());
-	for(std::vector<Con>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ result.push_back(itr->getFromId()); }
+	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ result.push_back((*itr)->getFromId()); }
 	return result;
 }
-
 
 
 //
@@ -175,7 +168,7 @@ std::vector<int>  vecCon::getFromId() {
 					}
 				},
 
-				delete = function(FROM, ...) {
+				erase = function(FROM, ...) {
 					fromIds <- getFromId(...)
 					delIds  <- seq(along=fromIds)[fromIds %in% FROM]
 					if (length(delIds)>0) {

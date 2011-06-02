@@ -41,5 +41,5 @@ public:
 #endif /* CON_H_ */
 
 
-typedef boost::shared_ptr<Con> ConSharedPtr;
+
 

@@ -50,9 +50,10 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# TODO Manolo: vecCon:getFromId 
-# STATUS: Accepted
+# FIXME Manolo: numOfCons  
+# STATUS: Pending
 ###############################################
+
 
 
 

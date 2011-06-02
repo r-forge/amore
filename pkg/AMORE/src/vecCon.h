@@ -18,18 +18,18 @@ class vecCon: public vecAMORE<Con> {
 
 public:
 
-								int	numOfCons();
-				std::vector<int>	getFromId();
-							void	populate	  	( std:vector<NeuronSharedPtr> FROM, std::vector<double> WEIGHT);
-				std::vector<double>	getWeight	  	( );
-//				std::vector<double>	getWeight	  	( std::vector<int> FROM );
-		std:vector<NeuronSharedPtr>	getFromNeuron 	( );
-							void	setWeight		( std::vector<double> value);
-//							void	setWeight		( std::vector<double> value, std::vector<int> FROM);
-							void	setFrom			(value, FROM);
-							void	delete			(FROM);
-							vecCon	select			(FROM);
-							bool	validate		( );
+									int	numOfCons();
+					std::vector<int>	getFromId();
+//								void	populate	  	( std::vector<NeuronSharedPtr> FROM, std::vector<double> WEIGHT);
+//					std::vector<double>	getWeight	  	( );
+//					std::vector<double>	getWeight	  	( std::vector<int> FROM );
+//		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
+//								void	setWeight		( std::vector<double> value);
+//		À?						void	setWeight		( std::vector<double> value, std::vector<int> FROM);
+//								void	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
+//								void 	erase 			( std::vector<int> FROM );
+//								vecCon	select			( std::vector<int> FROM );
+//								bool	validate		( );
 
 };
 

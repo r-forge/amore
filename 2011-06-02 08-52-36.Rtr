@@ -9238,4 +9238,2105 @@ file410bbb1c.cpp:590: error: redefinition of 'void vecAMORE<T>::setLdata(std::ve
 file410bbb1c.cpp:601: error: redefinition of 'int vecAMORE<T>::size()'
 /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp:200: error: 'int vecAMORE<T>::size()' previously declared here
 file410bbb1c.cpp: In member function 'std::vector<int, std::allocator<int> > vecCon::getFromId()':
-file410bbb1c.cpp:704: error: conversion from '__gnu_cxx::__normal_iterator<boost::shared_ptr<Con>*, std::vector<boost::shared_ptr<Con>, std::allocator<boost::shared_ptr<Con> > > >' to non-scalar type '__
+file410bbb1c.cpp:704: error: conversion from '__gnu_cxx::__normal_iterator<boost::shared_ptr<Con>*, std::vector<boost::shared_ptr<Con>, std::allocator<boost::shared_ptr<Con> > > >' to non-scalar type '__gnu_cxx::__normal_iterator<Con*, std::vector<Con, std::allocator<Con> > >' requested
+file410bbb1c.cpp:704: error: no match for 'operator!=' in 'itr != ((vecCon*)this)->vecCon::<anonymous>.vecAMORE<Con>::ldata. std::vector<_Tp, _Alloc>::end [with _Tp = boost::shared_ptr<Con>, _Alloc = std::allocator<boost::shared_ptr<Con> >]()'
+file410bbb1c.cpp: At global scope:
+file410bbb1c.cpp:831: error: redefinition of 'int Neuron::getId()'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Neuron.cpp:15: error: 'int Neuron::getId()' previously defined here
+file410bbb1c.cpp:835: error: redefinition of 'void Neuron::setId(int)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Neuron.cpp:19: error: 'void Neuron::setId(int)' previously defined here
+file410bbb1c.cpp: In function 'SEXPREC* file410bbb1c()':
+file410bbb1c.cpp:876: error: no matching function for call to 'vecCon::push_back(Con&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp:45: note: candidates are: void vecAMORE<T>::push_back(boost::shared_ptr<X>) [with T = Con]
+file410bbb1c.cpp:878: error: no matching function for call to 'vecCon::push_back(Con&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp:45: note: candidates are: void vecAMORE<T>::push_back(boost::shared_ptr<X>) [with T = Con]
+file410bbb1c.cpp:880: error: no matching function for call to 'vecCon::push_back(Con&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecAMORE.cpp:45: note: candidates are: void vecAMORE<T>::push_back(boost::shared_ptr<X>) [with T = Con]
+make: *** [file410bbb1c.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file410bbb1c.cpp 2> file410bbb1c.cpp.err.txt' tiene estatus 1 
+ done successfully.
+
+
+
+Executing test function test.gCon.getFrom_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gCon.getFrom_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gCon.getWeight  ...  done successfully.
+
+
+
+Executing test function test.gCon.new_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gCon.new_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gCon.setFrom  ...  done successfully.
+
+
+
+Executing test function test.gCon.setWeight  ...  done successfully.
+
+
+
+Executing test function test.gCon.show  ... 
+ From:  1 	 Weight:  14.5 done successfully.
+
+
+
+Executing test function test.gCon.validate  ...  done successfully.
+
+
+
+Executing test function test.gMLPneuron.new  ...  done successfully.
+
+
+
+Executing test function test.gMLPneuron.show  ... 
+------------------------------
+ Id:  1
+-----------------
+ Bias:  9.9
+------------------------------
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+ From:  4 	 Weight:  14
+ From:  5 	 Weight:  15
+------------------------------ done successfully.
+
+
+
+Executing test function test.gMLPneuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.addCon  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.deleteCon  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getCon  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getFromId_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getFromId_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getFrom_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getFrom_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.getWeight  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.new  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.numOfCons  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.setCon  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.setFrom  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.setId.getId  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.setWeight  ...  done successfully.
+
+
+
+Executing test function test.gNeuron.show  ... 
+------------------------
+
+ Id:  1
+------------------------
+
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+ From:  4 	 Weight:  14
+ From:  5 	 Weight:  15
+------------------------
+ done successfully.
+
+
+
+Executing test function test.gNeuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gRBFneuron.new  ... 
+------------------------------
+ Id:  1
+-----------------
+ Width:  9.9
+-----------------
+ Altitude:  29.3
+------------------------------
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+ From:  4 	 Weight:  14
+ From:  5 	 Weight:  15
+------------------------------ done successfully.
+
+
+
+Executing test function test.gRBFneuron.show  ... 
+------------------------------
+ Id:  1
+-----------------
+ Width:  9.9
+-----------------
+ Altitude:  29.3
+------------------------------
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+ From:  4 	 Weight:  14
+ From:  5 	 Weight:  15
+------------------------------ done successfully.
+
+
+
+Executing test function test.gRBFneuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.append  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.getLdata  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.new  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.push_back  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.setLdata  ...  done successfully.
+
+
+
+Executing test function test.gListAMORE.show  ... 
+ From:  1 	 Weight:  14.5
+ From:  2 	 Weight:  24.5
+ From:  3 	 Weight:  34.5 done successfully.
+
+
+
+Executing test function test.gListAMORE.validate  ...  done successfully.
+
+
+
+Executing test function test.gListCon.delete  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getFromId_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getFromId_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getFrom_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getFrom_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getWeight_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListCon.getWeight_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListCon.new  ...  done successfully.
+
+
+
+Executing test function test.gListCon.numOfCons  ...  done successfully.
+
+
+
+Executing test function test.gListCon.populate_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListCon.populate_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListCon.push_back  ...  done successfully.
+
+
+
+Executing test function test.gListCon.select  ...  done successfully.
+
+
+
+Executing test function test.gListCon.setFrom  ...  done successfully.
+
+
+
+Executing test function test.gListCon.setWeight  ...  done successfully.
+
+
+
+Executing test function test.gListCon.show  ... 
+ From:  1 	 Weight:  10
+ From:  2 	 Weight:  9
+ From:  3 	 Weight:  8
+ From:  4 	 Weight:  7
+ From:  5 	 Weight:  6
+ From:  6 	 Weight:  5
+ From:  7 	 Weight:  4
+ From:  8 	 Weight:  3
+ From:  9 	 Weight:  2
+ From:  10 	 Weight:  1 done successfully.
+
+
+
+Executing test function test.gListCon.validate  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.delete  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.getId  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.new_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.new_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.numOfLayers  ...  done successfully.
+
+
+
+Executing test function test.gListLayer.select  ...  done successfully.
+
+
+
+Executing test function test.glistMLPlayer.validate  ...  done successfully.
+
+
+
+Executing test function test.gListMLPneuron.new  ...  done successfully.
+
+
+
+Executing test function test.gListMLPneuron.populate_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListMLPneuron.populate_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListMLPneuron.setBias.getBias  ...  done successfully.
+
+
+
+Executing test function test.gListMLPneuron.show  ... 
+------------------------------
+ Id:  1
+-----------------
+ Bias:  1.1
+------------------------------
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+------------------------------
+------------------------------
+ Id:  2
+-----------------
+ Bias:  3.4
+------------------------------
+ From:  1 	 Weight:  21
+ From:  2 	 Weight:  22
+ From:  3 	 Weight:  23
+------------------------------
+------------------------------
+ Id:  3
+-----------------
+ Bias:  5.4
+------------------------------
+ From:  1 	 Weight:  31
+ From:  2 	 Weight:  32
+ From:  3 	 Weight:  33
+------------------------------
+------------------------------
+ Id:  4
+-----------------
+ Bias:  9.8
+------------------------------
+ From:  1 	 Weight:  41
+ From:  2 	 Weight:  42
+ From:  3 	 Weight:  43
+------------------------------
+------------------------------
+ Id:  5
+-----------------
+ Bias:  5.6
+------------------------------
+ From:  1 	 Weight:  51
+ From:  2 	 Weight:  52
+ From:  3 	 Weight:  53
+------------------------------ done successfully.
+
+
+
+Executing test function test.gListMLPneuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.delete  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.getFromId_fromIsNeuron  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.getFromId_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.getFrom_fromIsNumeric  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.is.regular  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.new.push_back.numberOfNeurons.numOfCons  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.select  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.setFrom.getFrom  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.setId.getId  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.setWeight.getWeight  ...  done successfully.
+
+
+
+Executing test function test.gListNeuron.show  ... 
+------------------------
+
+ Id:  1
+------------------------
+
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+ From:  4 	 Weight:  14
+ From:  5 	 Weight:  15
+------------------------
+
+------------------------
+
+ Id:  2
+------------------------
+
+ From:  1 	 Weight:  1
+ From:  2 	 Weight:  2
+ From:  3 	 Weight:  3
+ From:  4 	 Weight:  4
+ From:  5 	 Weight:  5
+------------------------
+ done successfully.
+
+
+
+Executing test function test.gListNeuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gListRBFlayer.validate  ...  done successfully.
+
+
+
+Executing test function test.gListRBFneuron.new  ...  done successfully.
+
+
+
+Executing test function test.gListRBFneuron.populate  ...  done successfully.
+
+
+
+Executing test function test.gListRBFneuron.setAltitude.getAltitude  ...  done successfully.
+
+
+
+Executing test function test.gListRBFneuron.setWidth.getWidth  ...  done successfully.
+
+
+
+Executing test function test.gListRBFneuron.show  ... 
+------------------------------
+ Id:  1
+-----------------
+ Width:  1.1
+-----------------
+ Altitude:  1.9
+------------------------------
+ From:  1 	 Weight:  11
+ From:  2 	 Weight:  12
+ From:  3 	 Weight:  13
+------------------------------
+------------------------------
+ Id:  2
+-----------------
+ Width:  3.4
+-----------------
+ Altitude:  8.4
+------------------------------
+ From:  4 	 Weight:  21
+ From:  5 	 Weight:  22
+ From:  6 	 Weight:  23
+------------------------------
+------------------------------
+ Id:  3
+-----------------
+ Width:  5.4
+-----------------
+ Altitude:  8.7
+------------------------------
+ From:  7 	 Weight:  31
+ From:  8 	 Weight:  32
+ From:  9 	 Weight:  33
+------------------------------
+------------------------------
+ Id:  4
+-----------------
+ Width:  9.8
+-----------------
+ Altitude:  3.5
+------------------------------
+ From:  10 	 Weight:  41
+ From:  11 	 Weight:  42
+ From:  12 	 Weight:  43
+------------------------------
+------------------------------
+ Id:  5
+-----------------
+ Width:  5.6
+-----------------
+ Altitude:  7.6
+------------------------------
+ From:  13 	 Weight:  51
+ From:  14 	 Weight:  52
+ From:  15 	 Weight:  53
+------------------------------ done successfully.
+
+
+
+Executing test function test.gListRBFneuron.validate  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.append  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.delete  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.is.regular  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.new  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.numOfCons  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.setAndGetWeight  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.setFrom.getFrom  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.setId.getId  ...  done successfully.
+
+
+
+Executing test function test.gmlpLayer.validate  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.append  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.delete  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.is.regular  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.new  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.numOfCons  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.setFrom.getFrom  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.setId.getId  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.setWeight.getWeight  ...  done successfully.
+
+
+
+Executing test function test.grbfLayer.validate  ...  done successfully.
+
+Mensajes de aviso perdidos
+1: In asMethod(object) : NAs introducidos por coerci'on
+2: In asMethod(object) : NAs introducidos por coerci'on
+3: In asMethod(object) : NAs introducidos por coerci'on
+4: In asMethod(object) : NAs introducidos por coerci'on
+5: In asMethod(object) : NAs introducidos por coerci'on
+6: In class(value) <- "integer" : NAs introducidos por coerci'on
+> 
+> lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNois
+# TODO  append  unit test
+# TODO  callSuper  unit test
+# TODO  copy  unit test
+# TODO  delete  unit test
+# TODO  export  unit test
+# TODO  field  unit test
+# TODO  getClass  unit test
+# TODO  getFrom  unit test
+# TODO  getFromId  unit test
+# TODO  getLdata  unit test
+# TODO  getRefClass  unit test
+# TODO  getWeight  unit test
+# TODO  import  unit test
+# TODO  initFields  unit test
+# TODO  initialize  unit test
+# TODO  numOfCons  unit test
+# TODO  populate  unit test
+# TODO  push_back  unit test
+# TODO  select  unit test
+# TODO  setFrom  unit test
+# TODO  setLdata  unit test
+# TODO  setWeight  unit test
+# TODO  show  unit test
+# TODO  validate  unit test
+# TODO  validate#listAMORE  unit test
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+file69294ca0.cpp: In function 'SEXPREC* file69294ca0()':
+file69294ca0.cpp:76: error: 'result' was not declared in this scope
+file69294ca0.cpp:76: error: 'class vecAMORE<Con>' has no member named 'getFromId'
+make: *** [file69294ca0.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file69294ca0 (  );
+ 54: }
+ 55: 
+ 56: SEXP file69294ca0 (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecAMORE<Con> MyvecCon;
+ 61: 			
+ 62: 			N1.setId(10);
+ 63: 			N2.setId(20);
+ 64: 			N3.setId(30);
+ 65: 			
+ 66: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 67: 			MyvecCon.push_back(ptCon);				// push_back 
+ 68: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 69: 			MyvecCon.push_back(ptCon);				// push_back
+ 70: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 71: 			MyvecCon.push_back(ptCon);				// push_back
+ 72: 			
+ 73: 		// Test
+ 74: 			MyvecCon.show() ;
+ 75: 			MyvecCon.validate();		
+ 76: 			result=MyvecCon.getFromId();
+ 77: 			return wrap(result);
+ 78: 			
+ 79:   Rf_warning("your C program does not return anything!");
+ 80:   return R_NilValue;
+ 81: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file69294ca0.cpp: In function 'SEXPREC* file69294ca0()':
+file69294ca0.cpp:76: error: 'result' was not declared in this scope
+file69294ca0.cpp:76: error: 'class vecAMORE<Con>' has no member named 'getFromId'
+make: *** [file69294ca0.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file69294ca0.cpp 2> file69294ca0.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+file1665d250.cpp: In function 'SEXPREC* file1665d250()':
+file1665d250.cpp:77: error: 'class vecAMORE<Con>' has no member named 'getFromId'
+make: *** [file1665d250.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file1665d250 (  );
+ 54: }
+ 55: 
+ 56: SEXP file1665d250 (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecAMORE<Con> MyvecCon;
+ 61: 			std::vector<int> result;
+ 62: 			
+ 63: 			N1.setId(10);
+ 64: 			N2.setId(20);
+ 65: 			N3.setId(30);
+ 66: 			
+ 67: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 68: 			MyvecCon.push_back(ptCon);				// push_back 
+ 69: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 70: 			MyvecCon.push_back(ptCon);				// push_back
+ 71: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back
+ 73: 			
+ 74: 		// Test
+ 75: 			MyvecCon.show() ;
+ 76: 			MyvecCon.validate();		
+ 77: 			result=MyvecCon.getFromId();
+ 78: 			return wrap(result);
+ 79: 			
+ 80:   Rf_warning("your C program does not return anything!");
+ 81:   return R_NilValue;
+ 82: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file1665d250.cpp: In function 'SEXPREC* file1665d250()':
+file1665d250.cpp:77: error: 'class vecAMORE<Con>' has no member named 'getFromId'
+make: *** [file1665d250.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file1665d250.cpp 2> file1665d250.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 	
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+file76d28dac.cpp: In function 'SEXPREC* file76d28dac()':
+file76d28dac.cpp:60: error: 'vecCon' was not declared in this scope
+file76d28dac.cpp:60: error: expected `;' before 'MyvecCon'
+file76d28dac.cpp:68: error: 'MyvecCon' was not declared in this scope
+make: *** [file76d28dac.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file76d28dac (  );
+ 54: }
+ 55: 
+ 56: SEXP file76d28dac (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecCon MyvecCon;
+ 61: 			std::vector<int> result;
+ 62: 			
+ 63: 			N1.setId(10);
+ 64: 			N2.setId(20);
+ 65: 			N3.setId(30);
+ 66: 			
+ 67: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 68: 			MyvecCon.push_back(ptCon);				// push_back 
+ 69: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 70: 			MyvecCon.push_back(ptCon);				// push_back
+ 71: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back
+ 73: 			
+ 74: 		// Test
+ 75: 			MyvecCon.show() ;
+ 76: 			MyvecCon.validate();		
+ 77: 			result=MyvecCon.getFromId();
+ 78: 			return wrap(result);
+ 79: 			
+ 80:   Rf_warning("your C program does not return anything!");
+ 81:   return R_NilValue;
+ 82: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file76d28dac.cpp: In function 'SEXPREC* file76d28dac()':
+file76d28dac.cpp:60: error: 'vecCon' was not declared in this scope
+file76d28dac.cpp:60: error: expected `;' before 'MyvecCon'
+file76d28dac.cpp:68: error: 'MyvecCon' was not declared in this scope
+make: *** [file76d28dac.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file76d28dac.cpp 2> file76d28dac.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 		
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file79535425.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'std' is not a type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: expected ',' or '...' before ':' token
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file79535425.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: #include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file79535425 (  );
+ 54: }
+ 55: 
+ 56: SEXP file79535425 (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecCon MyvecCon;
+ 61: 			std::vector<int> result;
+ 62: 			
+ 63: 			N1.setId(10);
+ 64: 			N2.setId(20);
+ 65: 			N3.setId(30);
+ 66: 			
+ 67: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 68: 			MyvecCon.push_back(ptCon);				// push_back 
+ 69: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 70: 			MyvecCon.push_back(ptCon);				// push_back
+ 71: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back
+ 73: 			
+ 74: 		// Test
+ 75: 			MyvecCon.show() ;
+ 76: 			MyvecCon.validate();		
+ 77: 			result=MyvecCon.getFromId();
+ 78: 			return wrap(result);
+ 79: 			
+ 80:   Rf_warning("your C program does not return anything!");
+ 81:   return R_NilValue;
+ 82: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file79535425.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'std' is not a type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: expected ',' or '...' before ':' token
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacio
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file79535425.cpp 2> file79535425.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 		
+> # Unit Tests for the vecCon C++ class methods
+> # 
+> # Author: mcasl
+> ###############################################################################
+> 
+> 
+> ###############################################################################
+> test.vecCon.Cpp.push_back.getFromId.show <- function() {	
++ ###############################################################################
++ 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
++ 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
++ 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
++ 		result <- testCodefun()
++ 		checkEquals(result, c(10, 20, 30))
++ 			
++ }
+> 			
+> 			###############################################################################
+> 			test.vecCon.Cpp.push_back.numOfCons <- function() {	
++ 			###############################################################################
++ 			incCode <- paste(
++ 			paste(  "#define INLINE_R\n",						collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/AMORE.h"),		collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/Con.h"),			collapse = "\n" ),											
++ 			paste(	readLines( "pkg/AMORE/src/vecAMORE.h"),		collapse = "\n" ),			
++ 			paste(	readLines( "pkg/AMORE/src/vecCon.h"),		collapse = "\n" ),		
++ 			paste(	readLines( "pkg/AMORE/src/Neuron.h"),		collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/Con.cpp"),		collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/vecAMORE.cpp"),	collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/vecCon.cpp"),	collapse = "\n" ),
++ 			paste(	readLines( "pkg/AMORE/src/Neuron.cpp"),		collapse = "\n" ),	collapse = "\n")
++ 			testCode <- '
++ 	// Data set up
++ 	Con Con1, Con2, Con3;
++ 	Neuron N1, N2, N3;
++ 	vecCon MyvecCon;
++ 	std::vector<int> result;
++ 	
++ 	N1.setId(10);
++ 	N2.setId(20);
++ 	N3.setId(30);
++ 	
++ 	Con1.setFromNeuron(&N1);
++ 	Con2.setFromNeuron(&N2);
++ 	Con3.setFromNeuron(&N3);
++ 	
++ 	Con1.setWeight(1.01);
++ 	Con2.setWeight(22.02);
++ 	Con3.setWeight(333.03);			
++ 	
++ 	// Test
++ 	result.push_back(MyvecCon.numOfCons());
++ 	MyvecCon.push_back(Con1);
++ 	result.push_back(MyvecCon.numOfCons());
++ 	MyvecCon.push_back(Con2);
++ 	result.push_back(MyvecCon.numOfCons());
++ 	MyvecCon.push_back(Con3);
++ 	result.push_back(MyvecCon.numOfCons());
++ 	
++ 	return wrap(result);
++ 	'
++ 			testCodefun <- cxxfunction( signature(), body=testCode , include = incCode, plugin = "Rcpp", verbose=FALSE )
++ 			result <- testCodefun()
++ 			checkEquals(result, c(0, 1, 2, 3))
++ 			}
+> 			
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file4db9875d.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 2 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file4db9875d.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: #include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file4db9875d (  );
+ 54: }
+ 55: 
+ 56: SEXP file4db9875d (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecCon MyvecCon;
+ 61: 			std::vector<int> result;
+ 62: 			
+ 63: 			N1.setId(10);
+ 64: 			N2.setId(20);
+ 65: 			N3.setId(30);
+ 66: 			
+ 67: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 68: 			MyvecCon.push_back(ptCon);				// push_back 
+ 69: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 70: 			MyvecCon.push_back(ptCon);				// push_back
+ 71: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back
+ 73: 			
+ 74: 		// Test
+ 75: 			MyvecCon.show() ;
+ 76: 			MyvecCon.validate();		
+ 77: 			result=MyvecCon.getFromId();
+ 78: 			return wrap(result);
+ 79: 			
+ 80:   Rf_warning("your C program does not return anything!");
+ 81:   return R_NilValue;
+ 82: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file4db9875d.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 2 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigac
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file4db9875d.cpp 2> file4db9875d.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file4f661288.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 2 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file4f661288.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: #include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: #include "Con.cpp"
+ 46: #include "vecAMORE.cpp"
+ 47: //#include "vecCon.cpp"
+ 48: #include "Neuron.cpp"
+ 49: 
+ 50: 
+ 51: using namespace Rcpp;
+ 52: extern "C" {
+ 53:   SEXP file4f661288 (  );
+ 54: }
+ 55: 
+ 56: SEXP file4f661288 (  ) {
+ 57: 
+ 58: 		// Data set up
+ 59: 			Neuron N1, N2, N3;
+ 60: 			vecCon MyvecCon;
+ 61: 			std::vector<int> result;
+ 62: 			
+ 63: 			N1.setId(10);
+ 64: 			N2.setId(20);
+ 65: 			N3.setId(30);
+ 66: 			
+ 67: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 68: 			MyvecCon.push_back(ptCon);				// push_back 
+ 69: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 70: 			MyvecCon.push_back(ptCon);				// push_back
+ 71: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back
+ 73: 			
+ 74: 		// Test
+ 75: 			MyvecCon.show() ;
+ 76: 			MyvecCon.validate();		
+ 77: 			result=MyvecCon.getFromId();
+ 78: 			return wrap(result);
+ 79: 			
+ 80:   Rf_warning("your C program does not return anything!");
+ 81:   return R_NilValue;
+ 82: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file4f661288.cpp:41:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:23: error: template argument 2 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'NeuronSharedPtr' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigac
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file4f661288.cpp 2> file4f661288.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 			
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file364ac771.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: expected primary-expression before '>' token
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file364ac771.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: typedef boost::shared_ptr<Con> ConSharedPtr;
+ 37: typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
+ 38: 
+ 39: 
+ 40: #include "Con.h"
+ 41: 
+ 42: 
+ 43: 
+ 44: #include "vecAMORE.h"
+ 45: #include "vecCon.h"
+ 46: #include "Neuron.h"
+ 47: 
+ 48: 
+ 49: #include "Con.cpp"
+ 50: #include "vecAMORE.cpp"
+ 51: //#include "vecCon.cpp"
+ 52: #include "Neuron.cpp"
+ 53: 
+ 54: 
+ 55: using namespace Rcpp;
+ 56: extern "C" {
+ 57:   SEXP file364ac771 (  );
+ 58: }
+ 59: 
+ 60: SEXP file364ac771 (  ) {
+ 61: 
+ 62: 		// Data set up
+ 63: 			Neuron N1, N2, N3;
+ 64: 			vecCon MyvecCon;
+ 65: 			std::vector<int> result;
+ 66: 			
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 			
+ 71: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 			
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			result=MyvecCon.getFromId();
+ 82: 			return wrap(result);
+ 83: 			
+ 84:   Rf_warning("your C program does not return anything!");
+ 85:   return R_NilValue;
+ 86: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file364ac771.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: 'vector' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: expected primary-expression before '>' token
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: a function call cannot appear in a constant-expression
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:26: error: ISO C++ forbids declaration of 'std' with no type
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AM
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file364ac771.cpp 2> file364ac771.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 			
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file676be78f.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file676be78f.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: typedef boost::shared_ptr<Con> ConSharedPtr;
+ 37: typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
+ 38: 
+ 39: 
+ 40: #include "Con.h"
+ 41: 
+ 42: 
+ 43: 
+ 44: #include "vecAMORE.h"
+ 45: #include "vecCon.h"
+ 46: #include "Neuron.h"
+ 47: 
+ 48: 
+ 49: #include "Con.cpp"
+ 50: #include "vecAMORE.cpp"
+ 51: //#include "vecCon.cpp"
+ 52: #include "Neuron.cpp"
+ 53: 
+ 54: 
+ 55: using namespace Rcpp;
+ 56: extern "C" {
+ 57:   SEXP file676be78f (  );
+ 58: }
+ 59: 
+ 60: SEXP file676be78f (  ) {
+ 61: 
+ 62: 		// Data set up
+ 63: 			Neuron N1, N2, N3;
+ 64: 			vecCon MyvecCon;
+ 65: 			std::vector<int> result;
+ 66: 			
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 			
+ 71: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 			
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			result=MyvecCon.getFromId();
+ 82: 			return wrap(result);
+ 83: 			
+ 84:   Rf_warning("your C program does not return anything!");
+ 85:   return R_NilValue;
+ 86: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file676be78f.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'value' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:29: error: 'FROM' has not been declared
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:31: error: 'FROM' has not been declared
+make: *** [file676be78f.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file676be78f.cpp 2> file676be78f.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file5d2f9254.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+make: *** [file5d2f9254.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: typedef boost::shared_ptr<Con> ConSharedPtr;
+ 37: typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
+ 38: 
+ 39: 
+ 40: #include "Con.h"
+ 41: 
+ 42: 
+ 43: 
+ 44: #include "vecAMORE.h"
+ 45: #include "vecCon.h"
+ 46: #include "Neuron.h"
+ 47: 
+ 48: 
+ 49: #include "Con.cpp"
+ 50: #include "vecAMORE.cpp"
+ 51: //#include "vecCon.cpp"
+ 52: #include "Neuron.cpp"
+ 53: 
+ 54: 
+ 55: using namespace Rcpp;
+ 56: extern "C" {
+ 57:   SEXP file5d2f9254 (  );
+ 58: }
+ 59: 
+ 60: SEXP file5d2f9254 (  ) {
+ 61: 
+ 62: 		// Data set up
+ 63: 			Neuron N1, N2, N3;
+ 64: 			vecCon MyvecCon;
+ 65: 			std::vector<int> result;
+ 66: 			
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 			
+ 71: 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 			
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			result=MyvecCon.getFromId();
+ 82: 			return wrap(result);
+ 83: 			
+ 84:   Rf_warning("your C program does not return anything!");
+ 85:   return R_NilValue;
+ 86: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file5d2f9254.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+make: *** [file5d2f9254.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file5d2f9254.cpp 2> file5d2f9254.cpp.err.txt' tiene estatus 1 
+> 		result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+From:	 40 	 Weight= 	 1.130000 
+From:	 50 	 Weight= 	 2.220000 
+From:	 60 	 Weight= 	 3.330000 
+> 		checkEquals(result, c(10, 20, 30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (6, 3) differ
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecCon MyvecCon;
++ 			std::vector<int> result;
++ 			
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 			
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			result=MyvecCon.getFromId();
++ 			return wrap(result);
++ 			"	
+> 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file5e2ff897.cpp:45:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/vecCon.h:30: error: expected unqualified-id before 'delete'
+make: *** [file5e2ff897.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: typedef boost::shared_ptr<Con> ConSharedPtr;
+ 37: typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
+ 38: 
+ 39: 
+ 40: #include "Con.h"
+ 41: 
+ 42: 
+ 43: 
+ 44: #include "vecAMORE.h"
+ 45: #include "vecCon.h"
+ 46: #include "Neuron.h"
+ 47: 
+ 48: 
+ 49: #include "Con.cpp"
+ 50: #include "vecAMORE.cpp"
+ 51: //#include "vecCon.cpp"
+ 52: #include "Neuron.cpp"
+ 53: 
+ 54: 
+ 55: using namespace Rcpp;
+ 56: extern "C" {
+ 57:   SEXP file5e2ff897 (  );
+ 58: }
+ 59: 
+ 60: SEXP file5e2ff897 (  ) {
+ 61: 
+ 62: 		// Data set up
+ 63: 			Neuron N1, N2, N3;
+ 64: 			vecCon MyvecCon;
+ 65: 			std::vector<int> result;
+ 66: 			
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.
