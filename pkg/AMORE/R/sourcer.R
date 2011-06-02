@@ -50,8 +50,8 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: numOfCons  
-# STATUS: Pending
+# FIXME Manolo: vecCon::populate 
+# STATUS: writing
 ###############################################
 
 

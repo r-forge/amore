@@ -14,32 +14,29 @@
  *  //================
  *  //Usage example:
  *  //================
- * 	// Data set up
- *		Con Con1, Con2, Con3;
- *		Neuron N1, N2, N3;
- *		vecCon MyvecCon;
- *		std::vector<int> result;
+ *			// Data set up
+ *			Neuron N1, N2, N3;
+ *			vecCon MyvecCon;
+ *			std::vector<int> result;
  *
- *		N1.setId(10);
- *		N2.setId(20);
- *		N3.setId(30);
+ *			N1.setId(10);
+ *			N2.setId(20);
+ *			N3.setId(30);
  *
- *		Con1.setFromNeuron(&N1);
- *		Con2.setFromNeuron(&N2);
- *		Con3.setFromNeuron(&N3);
+ *			// Test
+ *			result.push_back(MyvecCon.numOfCons());		// Append numOfCons to result, create new Con and push_back into MyvecCon
+ *			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// and repeat twice
+ *			MyvecCon.push_back(ptCon);
+ *			result.push_back(MyvecCon.numOfCons());
  *
- *		Con1.setWeight(1.01);
- *		Con2.setWeight(22.02);
- *		Con3.setWeight(333.03);
+ *			ptCon.reset(  new Con(&N2, 2.22) );
+ *			MyvecCon.push_back(ptCon);
+ *			result.push_back(MyvecCon.numOfCons());
  *
- *	// Test
- *		result.push_back(MyvecCon.numOfCons());
- *		MyvecCon.push_back(Con1);
- *		result.push_back(MyvecCon.numOfCons());
- *		MyvecCon.push_back(Con2);
- *		result.push_back(MyvecCon.numOfCons());
- *		MyvecCon.push_back(Con3);
- *		result.push_back(MyvecCon.numOfCons());
+ *			ptCon.reset(  new Con(&N3, 3.33) );
+ *			MyvecCon.push_back(ptCon);
+ *			result.push_back(MyvecCon.numOfCons());
+ *
  *	// Now, result contains a numeric vector with values 0, 1, 2, and 3.
  * \endcode
  *

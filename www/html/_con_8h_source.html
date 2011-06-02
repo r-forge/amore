@@ -95,16 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00016"></a><a class="code" href="class_con.html">00016</a> <span class="keyword">class </span><a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> {
 <a name="l00018"></a>00018 
-<a name="l00021"></a><a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2">00021</a>         <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> * <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>;
+<a name="l00021"></a><a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2">00021</a>         <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>* <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>;
 <a name="l00023"></a>00023 
 <a name="l00026"></a><a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0">00026</a>         <span class="keywordtype">double</span> <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>;
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="keyword">public</span>:
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb">00030</a>         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb">Con</a>()                                           : <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>(NULL), <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(0) {};
-<a name="l00031"></a><a class="code" href="class_con.html#ab2dab438086fc1bb26755dfecb2d2476">00031</a>         <a class="code" href="class_con.html#ab2dab438086fc1bb26755dfecb2d2476">Con</a>(<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>* f , <span class="keywordtype">double</span> w )      : <a class="code" href="class_con.html#a40215fdb25f3b2ed66e965df558e86e2" title="A pointer to the Neuron used as input during simulation or training.">from</a>(f),        <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(w) {};
-<a name="l00032"></a><a class="code" href="class_con.html#a703b044611253c7a0a9e057ed62a3d22">00032</a>         <a class="code" href="class_con.html#a703b044611253c7a0a9e057ed62a3d22">~Con</a>() {};
-<a name="l00033"></a>00033         <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> *        <a class="code" href="class_con.html#a970a74ffcba9433d6f383ecab398f25f" title="from field accessor.">getFromNeuron</a>   ();
+<a name="l00030"></a>00030         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>();
+<a name="l00031"></a>00031         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>* f , <span class="keywordtype">double</span> w );
+<a name="l00032"></a>00032         <a class="code" href="class_con.html#a703b044611253c7a0a9e057ed62a3d22" title="Default Destructor.">~Con</a>();
+<a name="l00033"></a>00033         <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>*         <a class="code" href="class_con.html#a970a74ffcba9433d6f383ecab398f25f" title="from field accessor.">getFromNeuron</a>   ();
 <a name="l00034"></a>00034         <span class="keywordtype">void</span>            <a class="code" href="class_con.html#a19ca0a1d257a3f002693a441db03aeb4" title="from field accessor.">setFromNeuron</a>   (<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>* f);
 <a name="l00035"></a>00035         <span class="keywordtype">int</span>                     <a class="code" href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field.">getFromId</a>               ();
 <a name="l00036"></a>00036         <span class="keywordtype">double</span>          <a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>               ();
@@ -115,13 +115,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041 <span class="preprocessor">#endif </span><span class="comment">/* CON_H_ */</span>
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="_con_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">00044</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Con&gt; <a class="code" href="_con_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_con_8h.html">Con.h</a>      </li>
-      <li class="footer">Generated on Thu Jun 2 2011 01:07:36 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jun 2 2011 19:25:59 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
