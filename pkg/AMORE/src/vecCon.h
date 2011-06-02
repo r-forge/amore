@@ -25,11 +25,12 @@ public:
 
 	//	std::vector<double>	getWeight	(FROM);
 	//
-	// Test sv @@@
-	// @@@@@@@
+	// Test sv
+	//
 	// Prueba voy a cambiar cosas yo ahora
 	//
-	//
+	// Esta linea es de manolo
+	// Esta linea también es de manolo
 	//						getFrom ();
 	//						setWeight(value, FROM);
 	//						setFrom(value, FROM);
