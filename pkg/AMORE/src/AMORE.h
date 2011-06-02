@@ -27,8 +27,12 @@ using namespace Rcpp;
 
 class Con;
 template <typename T> class vecAMORE;
-//class vecCon;
+class vecCon;
 class Neuron;
+
+
+typedef boost::shared_ptr<Con> ConSharedPtr;
+typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
 
 
 #include "Con.h"
@@ -36,12 +40,12 @@ class Neuron;
 
 
 #include "vecAMORE.h"
-//#include "vecCon.h"
+#include "vecCon.h"
 #include "Neuron.h"
 
 
 #include "Con.cpp"
 #include "vecAMORE.cpp"
-//#include "vecCon.cpp"
+#include "vecCon.cpp"
 #include "Neuron.cpp"
 
