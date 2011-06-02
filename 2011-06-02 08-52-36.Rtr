@@ -1,0 +1,1029 @@
+﻿##------ 02/06/2011 08:52:36 ------##
+
+R version 2.13.0 (2011-04-13)
+Copyright (C) 2011 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener m'as informaci'on y
+'citation()' para saber c'omo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+> require("inline")
+Loading required package: inline
+> require("Rcpp")
+Loading required package: Rcpp
+> 
+> require("RUnit")
+Loading required package: RUnit
+> # Loading required package: RUnit
+> 
+> rm(list=ls(all.names=TRUE))
+> 
+> KnownActivationFunctions <- c("threshold", "logistic", "tanh", "identity", "exponential", "reciprocal", "square", "Gauss", "sine", "cosine", "Elliott", "arctan", "radialBasis")
+> KnownNormalizationMethods <- c("none", "softmax", "simplemax")
+> 
+> source("pkg/AMORE/R/Con.R")
+> source("pkg/AMORE/R/listAMORE.R")
+> source("pkg/AMORE/R/listCon.R")
+> source("pkg/AMORE/R/Neuron.R")
+> source("pkg/AMORE/R/MLPneuron.R")
+> source("pkg/AMORE/R/RBFneuron.R")
+> source("pkg/AMORE/R/listNeuron.R")
+> source("pkg/AMORE/R/listMLPneuron.R")
+> source("pkg/AMORE/R/listRBFneuron.R")
+> source("pkg/AMORE/R/mlpLayer.R")
+> source("pkg/AMORE/R/rbfLayer.R")
+> source("pkg/AMORE/R/listLayer.R")
+> source("pkg/AMORE/R/listMLPlayer.R")
+> source("pkg/AMORE/R/listRBFlayer.R")
+> source("pkg/AMORE/R/neuralNetwork.R")
+> source("pkg/AMORE/R/MLPneuralNetwork.R")
+> source("pkg/AMORE/R/RBFneuralNetwork.R")
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		
++ 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			return wrap(1);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file2a3a72a6.cpp:36:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+In file included from /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:9,
+                 from file2a3a72a6.cpp:48:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+file2a3a72a6.cpp: In function 'SEXPREC* file2a3a72a6()':
+file2a3a72a6.cpp:71: error: 'ConPtr' was not declared in this scope
+file2a3a72a6.cpp:71: error: expected `;' before 'ptCon'
+file2a3a72a6.cpp:72: error: 'ptCon' was not declared in this scope
+make: *** [file2a3a72a6.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: 
+ 46: #ifndef INLINE_R
+ 47: 
+ 48: #include "Con.cpp"
+ 49: #include "vecAMORE.cpp"
+ 50: //#include "vecCon.cpp"
+ 51: #include "Neuron.cpp"
+ 52: 
+ 53: #endif /* INLINE_R_ */
+ 54: 
+ 55: 
+ 56: using namespace Rcpp;
+ 57: extern "C" {
+ 58:   SEXP file2a3a72a6 (  );
+ 59: }
+ 60: 
+ 61: SEXP file2a3a72a6 (  ) {
+ 62: 
+ 63: 		// Data set up
+ 64: 			Neuron N1, N2, N3;
+ 65: 			vecAMORE<Con> MyvecCon;
+ 66: 
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 		
+ 71: 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			return wrap(1);
+ 82: 			
+ 83:   Rf_warning("your C program does not return anything!");
+ 84:   return R_NilValue;
+ 85: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file2a3a72a6.cpp:36:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+In file included from /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:9,
+                 from file2a3a72a6.cpp:48:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file2a3a72a6.cpp 2> file2a3a72a6.cpp.err.txt' tiene estatus 1 
+> 	result <- testCodefun()
+Error: no se pudo encontrar la funci'on "testCodefun"
+> 	checkEquals(result, 1)
+Error en all.equal(target, current, tolerance = tolerance, ...) : 
+  objeto 'result' no encontrado
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		
++ 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			return wrap(1);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+In file included from file633d05f2.cpp:36:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+In file included from /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:9,
+                 from file633d05f2.cpp:48:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+file633d05f2.cpp: In function 'SEXPREC* file633d05f2()':
+file633d05f2.cpp:71: error: 'ConPtr' was not declared in this scope
+file633d05f2.cpp:71: error: expected `;' before 'ptCon'
+file633d05f2.cpp:72: error: 'ptCon' was not declared in this scope
+make: *** [file633d05f2.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: 
+ 46: #ifndef INLINE_R
+ 47: 
+ 48: #include "Con.cpp"
+ 49: #include "vecAMORE.cpp"
+ 50: //#include "vecCon.cpp"
+ 51: #include "Neuron.cpp"
+ 52: 
+ 53: #endif /* INLINE_R_ */
+ 54: 
+ 55: 
+ 56: using namespace Rcpp;
+ 57: extern "C" {
+ 58:   SEXP file633d05f2 (  );
+ 59: }
+ 60: 
+ 61: SEXP file633d05f2 (  ) {
+ 62: 
+ 63: 		// Data set up
+ 64: 			Neuron N1, N2, N3;
+ 65: 			vecAMORE<Con> MyvecCon;
+ 66: 
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 		
+ 71: 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			return wrap(1);
+ 82: 			
+ 83:   Rf_warning("your C program does not return anything!");
+ 84:   return R_NilValue;
+ 85: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! In file included from file633d05f2.cpp:36:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: invalid type in declaration before ';' token
+In file included from /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:9,
+                 from file633d05f2.cpp:48:
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: 'T' was not declared in this scope
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:45: error: template argument 1 is invalid
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file633d05f2.cpp 2> file633d05f2.cpp.err.txt' tiene estatus 1 
+> 	result <- testCodefun()
+Error: no se pudo encontrar la funci'on "testCodefun"
+> 	checkEquals(result, 1)
+Error en all.equal(target, current, tolerance = tolerance, ...) : 
+  objeto 'result' no encontrado
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		
++ 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			return wrap(1);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+file3b5185c4.cpp: In function 'SEXPREC* file3b5185c4()':
+file3b5185c4.cpp:71: error: 'ConPtr' was not declared in this scope
+file3b5185c4.cpp:71: error: expected `;' before 'ptCon'
+file3b5185c4.cpp:72: error: 'ptCon' was not declared in this scope
+make: *** [file3b5185c4.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: 
+ 46: #ifndef INLINE_R
+ 47: 
+ 48: #include "Con.cpp"
+ 49: #include "vecAMORE.cpp"
+ 50: //#include "vecCon.cpp"
+ 51: #include "Neuron.cpp"
+ 52: 
+ 53: #endif /* INLINE_R_ */
+ 54: 
+ 55: 
+ 56: using namespace Rcpp;
+ 57: extern "C" {
+ 58:   SEXP file3b5185c4 (  );
+ 59: }
+ 60: 
+ 61: SEXP file3b5185c4 (  ) {
+ 62: 
+ 63: 		// Data set up
+ 64: 			Neuron N1, N2, N3;
+ 65: 			vecAMORE<Con> MyvecCon;
+ 66: 
+ 67: 			N1.setId(10);
+ 68: 			N2.setId(20);
+ 69: 			N3.setId(30);
+ 70: 		
+ 71: 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 72: 			MyvecCon.push_back(ptCon);				// push_back 
+ 73: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 74: 			MyvecCon.push_back(ptCon);				// push_back
+ 75: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 76: 			MyvecCon.push_back(ptCon);				// push_back
+ 77: 
+ 78: 		// Test
+ 79: 			MyvecCon.show() ;
+ 80: 			MyvecCon.validate();		
+ 81: 			return wrap(1);
+ 82: 			
+ 83:   Rf_warning("your C program does not return anything!");
+ 84:   return R_NilValue;
+ 85: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file3b5185c4.cpp: In function 'SEXPREC* file3b5185c4()':
+file3b5185c4.cpp:71: error: 'ConPtr' was not declared in this scope
+file3b5185c4.cpp:71: error: expected `;' before 'ptCon'
+file3b5185c4.cpp:72: error: 'ptCon' was not declared in this scope
+make: *** [file3b5185c4.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file3b5185c4.cpp 2> file3b5185c4.cpp.err.txt' tiene estatus 1 
+> 	result <- testCodefun()
+Error: no se pudo encontrar la funci'on "testCodefun"
+> 	checkEquals(result, 1)
+Error en all.equal(target, current, tolerance = tolerance, ...) : 
+  objeto 'result' no encontrado
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 
++ 		// Test
++ 			MyvecCon.show() ;
++ 			MyvecCon.validate();		
++ 			return wrap(1);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+> 	result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+> 	checkEquals(result, 1)
+[1] TRUE
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<ConSharedPtr> vc;
++ 			std::vector<int> result;
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		// Test
++ 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 				
++ 			vc = MyvecCon.getLdata();
++ 			
++ 			result.push_back(vc.at(0)->getFromId());
++ 			result.push_back(vc.at(1)->getFromId());
++ 			result.push_back(vc.at(2)->getFromId());
++ 
++ 			return wrap(result);
++ 			'
+> 	
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+file69b2cdd8.cpp: In function 'SEXPREC* file69b2cdd8()':
+file69b2cdd8.cpp:72: error: 'ConPtr' was not declared in this scope
+file69b2cdd8.cpp:72: error: expected `;' before 'ptCon'
+file69b2cdd8.cpp:73: error: 'ptCon' was not declared in this scope
+make: *** [file69b2cdd8.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: 
+ 46: #ifndef INLINE_R
+ 47: 
+ 48: #include "Con.cpp"
+ 49: #include "vecAMORE.cpp"
+ 50: //#include "vecCon.cpp"
+ 51: #include "Neuron.cpp"
+ 52: 
+ 53: #endif /* INLINE_R_ */
+ 54: 
+ 55: 
+ 56: using namespace Rcpp;
+ 57: extern "C" {
+ 58:   SEXP file69b2cdd8 (  );
+ 59: }
+ 60: 
+ 61: SEXP file69b2cdd8 (  ) {
+ 62: 
+ 63: 		// Data set up
+ 64: 			Neuron N1, N2, N3;
+ 65: 			vecAMORE<Con> MyvecCon;
+ 66: 			std::vector<ConSharedPtr> vc;
+ 67: 			std::vector<int> result;
+ 68: 			N1.setId(10);
+ 69: 			N2.setId(20);
+ 70: 			N3.setId(30);
+ 71: 		// Test
+ 72: 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 73: 			MyvecCon.push_back(ptCon);				// push_back 
+ 74: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 75: 			MyvecCon.push_back(ptCon);				// push_back
+ 76: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 77: 			MyvecCon.push_back(ptCon);				// push_back
+ 78: 				
+ 79: 			vc = MyvecCon.getLdata();
+ 80: 			
+ 81: 			result.push_back(vc.at(0)->getFromId());
+ 82: 			result.push_back(vc.at(1)->getFromId());
+ 83: 			result.push_back(vc.at(2)->getFromId());
+ 84: 
+ 85: 			return wrap(result);
+ 86: 			
+ 87:   Rf_warning("your C program does not return anything!");
+ 88:   return R_NilValue;
+ 89: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file69b2cdd8.cpp: In function 'SEXPREC* file69b2cdd8()':
+file69b2cdd8.cpp:72: error: 'ConPtr' was not declared in this scope
+file69b2cdd8.cpp:72: error: expected `;' before 'ptCon'
+file69b2cdd8.cpp:73: error: 'ptCon' was not declared in this scope
+make: *** [file69b2cdd8.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file69b2cdd8.cpp 2> file69b2cdd8.cpp.err.txt' tiene estatus 1 
+> 	result <- testCodefun()
+From:	 10 	 Weight= 	 1.130000 
+From:	 20 	 Weight= 	 2.220000 
+From:	 30 	 Weight= 	 3.330000 
+> 	checkEquals(result, c(10,20,30))
+Error en checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (1, 3) differ
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<int> result;
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		// Test
++ 			result.push_back(MyvecCon.size());
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			result.push_back(MyvecCon.size());
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			result.push_back(MyvecCon.size());
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			result.push_back(MyvecCon.size());
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	result <- testCodefun()
+> 	checkEquals(result, c(0,1,2,3))
+[1] TRUE
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<int> result;
++ 			std::vector<ConSharedPtr> vcA, vcB;
++ 
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 
++ 		// Test
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			vcA.push_back(ptCon);				// push_back 
++ 			ptCon.reset( new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			vcA.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			vcA.push_back(ptCon);				// push_back
++ 		
++ 			MyvecCon.setLdata(vcA);
++ 			
++ 			vcB = MyvecCon.getLdata();
++ 			
++ 			result.push_back(vcB.at(0)->getFromId());
++ 			result.push_back(vcB.at(1)->getFromId());
++ 			result.push_back(vcB.at(2)->getFromId());
++ 			
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	result <- testCodefun()
+> 	checkEquals(result, c(10,20,30))
+[1] TRUE
+> // Data set up
+Error: inesperado '/' en "/"
+> 			Neuron N1, N2, N3;
+Error: inesperado s'imbolo en "                        Neuron N1"
+> 			vecAMORE<Con> MyvecCon;
+Error: inesperado '>' en "                        vecAMORE<Con>"
+> 			std::vector<ConSharedPtr> vc;
+Error: inesperado '>' en "                        std::vector<ConSharedPtr>"
+> 			std::vector<int> result;
+Error: inesperado '>' en "                        std::vector<int>"
+> 			N1.setId(10);
+Error: no se pudo encontrar la funci'on "N1.setId"
+> 			N2.setId(20);
+Error: no se pudo encontrar la funci'on "N2.setId"
+> 			N3.setId(30);
+Error: no se pudo encontrar la funci'on "N3.setId"
+> 		// Test
+Error: inesperado '/' en "                /"
+> 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+Error: inesperado s'imbolo en "                        ConPtr ptCon"
+> 			MyvecCon.push_back(ptCon);				// push_back 
+Error: no se pudo encontrar la funci'on "MyvecCon.push_back"
+> 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+Error: inesperado s'imbolo en "                        ptCon.reset(  new Con"
+> 			MyvecCon.push_back(ptCon);				// push_back
+Error: no se pudo encontrar la funci'on "MyvecCon.push_back"
+> 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+Error: inesperado s'imbolo en "                        ptCon.reset(  new Con"
+> 			MyvecCon.push_back(ptCon);				// push_back
+Error: no se pudo encontrar la funci'on "MyvecCon.push_back"
+> 				
+> 			vc = MyvecCon.getLdata();
+Error: no se pudo encontrar la funci'on "MyvecCon.getLdata"
+> 			
+> 			result.push_back(vc.at(0)->getFromId());
+Error: no se pudo encontrar la funci'on "result.push_back"
+> 			result.push_back(vc.at(1)->getFromId());
+Error: no se pudo encontrar la funci'on "result.push_back"
+> 			result.push_back(vc.at(2)->getFromId());
+Error: no se pudo encontrar la funci'on "result.push_back"
+> 
+> 			return wrap(result);
+Error: inesperado s'imbolo en "                        return wrap"
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<ConSharedPtr> vc;
++ 			std::vector<int> result;
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		// Test
++ 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 				
++ 			vc = MyvecCon.getLdata();
++ 			
++ 			result.push_back(vc.at(0)->getFromId());
++ 			result.push_back(vc.at(1)->getFromId());
++ 			result.push_back(vc.at(2)->getFromId());
++ 
++ 			return wrap(result);
++ 			'
+> 	
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+file302362d8.cpp: In function 'SEXPREC* file302362d8()':
+file302362d8.cpp:72: error: 'ConPtr' was not declared in this scope
+file302362d8.cpp:72: error: expected `;' before 'ptCon'
+file302362d8.cpp:73: error: 'ptCon' was not declared in this scope
+make: *** [file302362d8.o] Error 1
+
+ERROR(s) during compilation: source code errors or compiler configuration errors!
+
+Program source:
+  1: #include <Rcpp.h>
+  2: 
+  3: /*! \mainpage The AMORE++ package
+  4:  *
+  5:  * \section intro_sec Introduction
+  6:  *
+  7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+  8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+  9:  *
+ 10:  * \section motiv_sec Motivation
+ 11:  *
+ 12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+ 13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+ 14:  *
+ 15:  * \section RoadMap Road Map
+ 16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+ 17:  *
+ 18:  */
+ 19: 
+ 20: 
+ 21: #include <iostream>
+ 22: #include <sstream>
+ 23: #include <algorithm>
+ 24: #include <vector>
+ 25: #include <boost/shared_ptr.hpp>
+ 26: #include <Rcpp.h>
+ 27: 
+ 28: using namespace Rcpp;
+ 29: 
+ 30: class Con;
+ 31: template <typename T> class vecAMORE;
+ 32: //class vecCon;
+ 33: class Neuron;
+ 34: 
+ 35: 
+ 36: #include "Con.h"
+ 37: 
+ 38: 
+ 39: 
+ 40: #include "vecAMORE.h"
+ 41: //#include "vecCon.h"
+ 42: #include "Neuron.h"
+ 43: 
+ 44: 
+ 45: 
+ 46: #ifndef INLINE_R
+ 47: 
+ 48: #include "Con.cpp"
+ 49: #include "vecAMORE.cpp"
+ 50: //#include "vecCon.cpp"
+ 51: #include "Neuron.cpp"
+ 52: 
+ 53: #endif /* INLINE_R_ */
+ 54: 
+ 55: 
+ 56: using namespace Rcpp;
+ 57: extern "C" {
+ 58:   SEXP file302362d8 (  );
+ 59: }
+ 60: 
+ 61: SEXP file302362d8 (  ) {
+ 62: 
+ 63: 		// Data set up
+ 64: 			Neuron N1, N2, N3;
+ 65: 			vecAMORE<Con> MyvecCon;
+ 66: 			std::vector<ConSharedPtr> vc;
+ 67: 			std::vector<int> result;
+ 68: 			N1.setId(10);
+ 69: 			N2.setId(20);
+ 70: 			N3.setId(30);
+ 71: 		// Test
+ 72: 			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ 73: 			MyvecCon.push_back(ptCon);				// push_back 
+ 74: 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+ 75: 			MyvecCon.push_back(ptCon);				// push_back
+ 76: 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+ 77: 			MyvecCon.push_back(ptCon);				// push_back
+ 78: 				
+ 79: 			vc = MyvecCon.getLdata();
+ 80: 			
+ 81: 			result.push_back(vc.at(0)->getFromId());
+ 82: 			result.push_back(vc.at(1)->getFromId());
+ 83: 			result.push_back(vc.at(2)->getFromId());
+ 84: 
+ 85: 			return wrap(result);
+ 86: 			
+ 87:   Rf_warning("your C program does not return anything!");
+ 88:   return R_NilValue;
+ 89: }
+Error en compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file302362d8.cpp: In function 'SEXPREC* file302362d8()':
+file302362d8.cpp:72: error: 'ConPtr' was not declared in this scope
+file302362d8.cpp:72: error: expected `;' before 'ptCon'
+file302362d8.cpp:73: error: 'ptCon' was not declared in this scope
+make: *** [file302362d8.o] Error 1
+Adem'as: Mensajes de aviso perdidos
+comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file302362d8.cpp 2> file302362d8.cpp.err.txt' tiene estatus 1 
+> 	result <- testCodefun()
+> 	checkEquals(result, c(10,20,30))
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 		// Data set up
++ 			Neuron N1, N2, N3;
++ 			vecAMORE<Con> MyvecCon;
++ 			std::vector<ConSharedPtr> vc;
++ 			std::vector<int> result;
++ 			N1.setId(10);
++ 			N2.setId(20);
++ 			N3.setId(30);
++ 		// Test
++ 			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back 
++ 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
++ 			MyvecCon.push_back(ptCon);				// push_back
++ 				
++ 			vc = MyvecCon.getLdata();
++ 			
++ 			result.push_back(vc.at(0)->getFromId());
++ 			result.push_back(vc.at(1)->getFromId());
++ 			result.push_back(vc.at(2)->getFromId());
++ 
++ 			return wrap(result);
++ 			'
+> 	
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	result <- testCodefun()
+> 	checkEquals(result, c(10,20,30))
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 			Con myCon;
++ 			Neuron MyNeuron;
++ 			Neuron * ptNeuron;
++ 			MyNeuron.setId(1);
++ 			myCon.setFromNeuron(&MyNeuron);
++ 			
++ 			ptNeuron = myCon.getFromNeuron();
++ 			int result= ptNeuron->getId();
++ 			return wrap(result);
++ 			"
+> 
+> testCode
+[1] "\n\t\t\tCon myCon;\n\t\t\tNeuron MyNeuron;\n\t\t\tNeuron * ptNeuron;\n\t\t\tMyNeuron.setId(1);\n\t\t\tmyCon.setFromNeuron(&MyNeuron);\n\t\t\t\n\t\t\tptNeuron = myCon.getFromNeuron();\n\t\t\tint result= ptNeuron->getId();\n\t\t\treturn wrap(result);\n\t\t\t"
+> getwd()
+[1] "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC"
+> dir()
+[1] "2011-06-02 08-52-36.Rtr" "Doxyfile"               
+[3] "README"                  "RunDoxy.sh"             
+[5] "pkg"                     "www"                    
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- "
++ 			Con myCon;
++ 			Neuron MyNeuron;
++ 			Neuron * ptNeuron;
++ 			MyNeuron.setId(1);
++ 			myCon.setFromNeuron(&MyNeuron);
++ 			
++ 			ptNeuron = myCon.getFromNeuron();
++ 			int result= ptNeuron->getId();
++ 			return wrap(result);
++ 			"
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	result <- testCodefun()
+> 	checkEquals(result, 1)
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			Con myCon;
++ 			Neuron MyNeuron;
++ 			MyNeuron.setId(16);
++ 			myCon.setFromNeuron(&MyNeuron);
++ 			
++ 			int result= myCon.getFromId();
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	result <- testCodefun()
+> 	checkEquals(result, 16)
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			Con myCon;
++ 			Neuron MyNeuron;
++ 			MyNeuron.setId(16);
++ 			myCon.setFromNeuron(&MyNeuron);
++ 			myCon.setWeight(12.4);
++ 			double result1= myCon.getWeight();
++ 			myCon.setWeight(2.2);
++ 			double result2= myCon.getWeight();
++ 			return Rcpp::List::create(	Rcpp::Named("R1")	= result1,
++ 			Rcpp::Named("R2") 	= result2);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+> 	result <- testCodefun()
+> 	checkEquals(result$R1, 12.4)
+[1] TRUE
+> 	checkEquals(result$R2, 2.2)
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			Con myCon;
++ 			Neuron MyNeuron;
++ 			std::vector<double> result;
++ 			MyNeuron.setId(16);
++ 			myCon.setFromNeuron(&MyNeuron);
++ 			myCon.setWeight(12.4);
++ 			result.push_back(myCon.getWeight());
++ 			myCon.setWeight(2.2);
++ 			result.push_back(myCon.getWeight());
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+> 	result <- testCodefun()
+> 	checkEquals(result, c(12.4, 2.2) )
+[1] TRUE
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			Neuron MyNeuron;
++ 			MyNeuron.setId(16);
++ 			Con myCon(&MyNeuron, 12.4);
++ 			bool result= myCon.show();
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+> 	
+> 	result <- testCodefun()
+From:	 16 	 Weight= 	 12.400000 
+> 	checkTrue(result)
+[1] TRUE
+> incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+> 	testCode <- '
++ 			Neuron MyNeuron;
++ 			MyNeuron.setId(16);
++ 			Con myCon(&MyNeuron, 12.4);
++ 			bool result= myCon.show();
++ 			return wrap(result);
++ 			'
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
++ 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
++ 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), lib
