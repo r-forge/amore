@@ -5,7 +5,6 @@
 ################################################################################
 setClassUnion("numericOrNeuron", c("numeric")) 
 # The Neuron class will be added to the class union after the Neuron class is defined
-# TODO Add help info with Roxygen
 gCon <- setRefClass("Con",
 		fields=list(
 				from="numericOrNeuron",

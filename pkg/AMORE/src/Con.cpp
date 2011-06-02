@@ -10,6 +10,29 @@
 
 //=========================================================================================================
 
+
+//! Default Constructor
+/*
+ * Default constructor, from=NULL, weight=0
+ */
+	Con::Con() : from(NULL), weight(0) {};
+
+
+//! Constructor
+/*
+ * Constructor, from=f, weight=w
+ * \param f A pointer to the neuron that is to be inserted in the \ref from field.
+ * \param w The new value (double) to be set in the \ref weight field.
+ */
+	Con::Con(Neuron* f , double w ) : from(f), weight(w) {};
+
+
+
+//! Default Destructor
+	Con::~Con() {};
+
+
+
 //! %from field accessor.
 /*! This method allows access to the address stored in the private \ref from field (a pointer to a Neuron object).*
  * \return A pointer to the Neuron object referred to by the \ref from field.
