@@ -14,6 +14,12 @@ A class to handle the information contained in a general \hyperlink{class_neuron
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_neuron_a823487d01615fadb8ac19a2768dd9d96}{Neuron} ()
+\item 
+\hyperlink{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}{Neuron} (int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id})
+\item 
+\hyperlink{class_neuron_a94a250ce7e167760e593979b899745b1}{$\sim$Neuron} ()
+\item 
 int \hyperlink{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}{getId} ()
 \item 
 void \hyperlink{class_neuron_aefc6637d3b0a20669af3b7e92a7bf209}{setId} (int id)
@@ -36,6 +42,60 @@ Definition at line 16 of file Neuron.h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_neuron_a823487d01615fadb8ac19a2768dd9d96}{
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\subsubsection[{Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron::Neuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_a823487d01615fadb8ac19a2768dd9d96}
+
+
+Definition at line 14 of file Neuron.cpp.
+
+
+\begin{DoxyCode}
+{};
+\end{DoxyCode}
+\hypertarget{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}{
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\subsubsection[{Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron::Neuron (
+\begin{DoxyParamCaption}
+\item[{int}]{Id}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}
+
+
+Definition at line 15 of file Neuron.cpp.
+
+
+\begin{DoxyCode}
+: Id(Id), outputValue(0.0) {};
+\end{DoxyCode}
+\hypertarget{class_neuron_a94a250ce7e167760e593979b899745b1}{
+\index{Neuron@{Neuron}!$\sim$Neuron@{$\sim$Neuron}}
+\index{$\sim$Neuron@{$\sim$Neuron}!Neuron@{Neuron}}
+\subsubsection[{$\sim$Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron::$\sim$Neuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_a94a250ce7e167760e593979b899745b1}
+
+
+Definition at line 16 of file Neuron.cpp.
+
+
+\begin{DoxyCode}
+{};
+\end{DoxyCode}
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}{
 \index{Neuron@{Neuron}!getId@{getId}}
@@ -48,7 +108,7 @@ Definition at line 16 of file Neuron.h.
 \label{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}
 
 
-Definition at line 15 of file Neuron.cpp.
+Definition at line 19 of file Neuron.cpp.
 
 
 
@@ -86,7 +146,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_neuron_aefc6637d3b0a20669af3b7e92a7bf209}
 
 
-Definition at line 19 of file Neuron.cpp.
+Definition at line 23 of file Neuron.cpp.
 
 
 

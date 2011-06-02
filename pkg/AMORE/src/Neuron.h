@@ -30,6 +30,9 @@ class Neuron {
 	double outputValue;
 public:
 
+	Neuron();
+	Neuron(int Id);
+	~Neuron();
 	int  getId	();
 	void setId	(int id);
 };

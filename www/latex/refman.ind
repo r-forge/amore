@@ -2,14 +2,21 @@
 
   \item {$\sim $Con}
     \subitem {Con}, \hyperpage{13}
+  \item {$\sim $Neuron}
+    \subitem {Neuron}, \hyperpage{21}
 
   \indexspace
 
   \item {AMORE.h}
-    \subitem {ConSharedPtr}, \hyperpage{38}
-    \subitem {NeuronSharedPtr}, \hyperpage{38}
+    \subitem {ConSharedPtr}, \hyperpage{42}
+    \subitem {NeuronSharedPtr}, \hyperpage{42}
   \item {append}
-    \subitem {vecAMORE}, \hyperpage{25}
+    \subitem {vecAMORE}, \hyperpage{26}
+
+  \indexspace
+
+  \item {buildAndAppend}
+    \subitem {vecCon}, \hyperpage{35}
 
   \indexspace
 
@@ -26,7 +33,7 @@
     \subitem {validate}, \hyperpage{19}
     \subitem {weight}, \hyperpage{20}
   \item {ConSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{38}
+    \subitem {AMORE.h}, \hyperpage{42}
 
   \indexspace
 
@@ -37,13 +44,13 @@
 
   \item {getFromId}
     \subitem {Con}, \hyperpage{14}
-    \subitem {vecCon}, \hyperpage{34}
+    \subitem {vecCon}, \hyperpage{36}
   \item {getFromNeuron}
     \subitem {Con}, \hyperpage{15}
   \item {getId}
-    \subitem {Neuron}, \hyperpage{21}
+    \subitem {Neuron}, \hyperpage{22}
   \item {getLdata}
-    \subitem {vecAMORE}, \hyperpage{27}
+    \subitem {vecAMORE}, \hyperpage{28}
   \item {getWeight}
     \subitem {Con}, \hyperpage{16}
 
@@ -55,40 +62,40 @@
   \indexspace
 
   \item {ldata}
-    \subitem {vecAMORE}, \hyperpage{31}
+    \subitem {vecAMORE}, \hyperpage{32}
 
   \indexspace
 
   \item {Neuron}, \hyperpage{20}
-    \subitem {getId}, \hyperpage{21}
+    \subitem {$\sim $Neuron}, \hyperpage{21}
+    \subitem {getId}, \hyperpage{22}
     \subitem {Id}, \hyperpage{22}
-    \subitem {outputValue}, \hyperpage{22}
+    \subitem {Neuron}, \hyperpage{21}
+    \subitem {outputValue}, \hyperpage{23}
     \subitem {setId}, \hyperpage{22}
   \item {NeuronSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{38}
+    \subitem {AMORE.h}, \hyperpage{42}
   \item {numOfCons}
-    \subitem {vecCon}, \hyperpage{35}
+    \subitem {vecCon}, \hyperpage{37}
 
   \indexspace
 
   \item {outputValue}
-    \subitem {Neuron}, \hyperpage{22}
+    \subitem {Neuron}, \hyperpage{23}
 
   \indexspace
 
-  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{37}
-  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{38}
-  \item {pkg/AMORE/src/Con.h}, \hyperpage{39}
-  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{40}
-  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{41}
-  \item {pkg/AMORE/src/vecAMORE.cpp}, \hyperpage{41}
-  \item {pkg/AMORE/src/vecAMORE.h}, \hyperpage{42}
-  \item {pkg/AMORE/src/vecCon.cpp}, \hyperpage{42}
-  \item {pkg/AMORE/src/vecCon.h}, \hyperpage{43}
-  \item {populate}
-    \subitem {vecCon}, \hyperpage{36}
+  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{41}
+  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{42}
+  \item {pkg/AMORE/src/Con.h}, \hyperpage{43}
+  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{44}
+  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{45}
+  \item {pkg/AMORE/src/vecAMORE.cpp}, \hyperpage{45}
+  \item {pkg/AMORE/src/vecAMORE.h}, \hyperpage{46}
+  \item {pkg/AMORE/src/vecCon.cpp}, \hyperpage{46}
+  \item {pkg/AMORE/src/vecCon.h}, \hyperpage{47}
   \item {push\_\discretionary {-}{}{}back}
-    \subitem {vecAMORE}, \hyperpage{28}
+    \subitem {vecAMORE}, \hyperpage{29}
 
   \indexspace
 
@@ -97,33 +104,33 @@
   \item {setId}
     \subitem {Neuron}, \hyperpage{22}
   \item {setLdata}
-    \subitem {vecAMORE}, \hyperpage{29}
+    \subitem {vecAMORE}, \hyperpage{30}
   \item {setWeight}
     \subitem {Con}, \hyperpage{17}
   \item {show}
     \subitem {Con}, \hyperpage{18}
-    \subitem {vecAMORE}, \hyperpage{29}
-  \item {size}
     \subitem {vecAMORE}, \hyperpage{30}
+  \item {size}
+    \subitem {vecAMORE}, \hyperpage{31}
 
   \indexspace
 
   \item {validate}
     \subitem {Con}, \hyperpage{19}
-    \subitem {vecAMORE}, \hyperpage{30}
-  \item {vecAMORE}, \hyperpage{22}
-    \subitem {append}, \hyperpage{25}
-    \subitem {getLdata}, \hyperpage{27}
-    \subitem {ldata}, \hyperpage{31}
-    \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{28}
-    \subitem {setLdata}, \hyperpage{29}
-    \subitem {show}, \hyperpage{29}
-    \subitem {size}, \hyperpage{30}
-    \subitem {validate}, \hyperpage{30}
-  \item {vecCon}, \hyperpage{31}
-    \subitem {getFromId}, \hyperpage{34}
-    \subitem {numOfCons}, \hyperpage{35}
-    \subitem {populate}, \hyperpage{36}
+    \subitem {vecAMORE}, \hyperpage{31}
+  \item {vecAMORE}, \hyperpage{23}
+    \subitem {append}, \hyperpage{26}
+    \subitem {getLdata}, \hyperpage{28}
+    \subitem {ldata}, \hyperpage{32}
+    \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{29}
+    \subitem {setLdata}, \hyperpage{30}
+    \subitem {show}, \hyperpage{30}
+    \subitem {size}, \hyperpage{31}
+    \subitem {validate}, \hyperpage{31}
+  \item {vecCon}, \hyperpage{32}
+    \subitem {buildAndAppend}, \hyperpage{35}
+    \subitem {getFromId}, \hyperpage{36}
+    \subitem {numOfCons}, \hyperpage{37}
 
   \indexspace
 

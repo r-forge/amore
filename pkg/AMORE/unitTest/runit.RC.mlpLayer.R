@@ -4,8 +4,8 @@
 ###############################################################################
 
 test.gmlpLayer.new <- function() {
-	nl <- gmlpLayer$new(activationFunction="tanh")  # populate will set the value of numberOfNeurons
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl <- gmlpLayer$new(activationFunction="tanh")  # buildAndAppend will set the value of numberOfNeurons
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	checkEquals(nl$getId(), 1:5)
 	checkEquals(nl$getFrom(), list(1:3,4:6,7:9,10:12,13:15))
@@ -21,7 +21,7 @@ test.gmlpLayer.new <- function() {
 
 test.gmlpLayer.setId.getId <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setId(15:11)
 	checkEquals(nl$getId(), 15:11)
@@ -34,9 +34,9 @@ test.gmlpLayer.setId.getId <- function() {
 
 test.gmlpLayer.append <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$append(ln)
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
@@ -46,7 +46,7 @@ test.gmlpLayer.append <- function() {
 
 test.gmlpLayer.delete <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$delete(ID=4:5)
 	checkEquals(nl$getId(),1:3)
 	checkEquals(nl$getNumberOfNeurons(),3)
@@ -56,12 +56,12 @@ test.gmlpLayer.delete <- function() {
 
 test.gmlpLayer.is.regular <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
 	checkTrue(nl$validate())
 	rm(nl)
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
 	checkTrue(nl$validate())
 }
@@ -69,7 +69,7 @@ test.gmlpLayer.is.regular <- function() {
 
 test.gmlpLayer.numOfCons <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
 }
@@ -77,7 +77,7 @@ test.gmlpLayer.numOfCons <- function() {
 
 test.gmlpLayer.setFrom.getFrom <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setFrom(list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
 	checkEquals(nl$getFrom(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
@@ -91,7 +91,7 @@ test.gmlpLayer.setFrom.getFrom <- function() {
 
 test.gmlpLayer.setAndGetWeight <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setWeight(list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
 	checkEquals(nl$getWeight(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
@@ -105,7 +105,7 @@ test.gmlpLayer.setAndGetWeight <- function() {
 
 test.gmlpLayer.validate <- function() {
 	nl <- gmlpLayer$new(activationFunction="tanh")
-	nl$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setNumberOfNeurons(4)
 	checkException(nl$validate(), silent=TRUE)

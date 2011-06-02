@@ -17,8 +17,8 @@ gListCon <- setRefClass("listCon",
 					}
 				},
 				
-				populate=function(FROM, WEIGHT, ...){
-					if (missing(FROM)||missing(WEIGHT)) {stop("[listCon populate]: Error, FROM and/or WEIGHT parameters missing")  } else {}
+				buildAndAppend=function(FROM, WEIGHT, ...){
+					if (missing(FROM)||missing(WEIGHT)) {stop("[listCon buildAndAppend]: Error, FROM and/or WEIGHT parameters missing")  } else {}
 					if (length(FROM)!=length(WEIGHT)) {stop("[listCon initialize]: Error length(FROM)!=length(WEIGHT)")} else {}   
 					mapply(FUN=function(f,w){push_back(gCon$new(from=f, weight=w))}, FROM, WEIGHT) -> DontMakeNoise
 				},

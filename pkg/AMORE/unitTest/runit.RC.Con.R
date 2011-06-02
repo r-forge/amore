@@ -45,7 +45,7 @@ test.gCon.getFrom_fromIsNumeric  <- function() {
 
 test.gCon.getFrom_fromIsNeuron <- function() {
 	lc <- gListCon$new()
-	lc$populate(FROM=1:3,WEIGHT=c(1.4,5.6,9.8))
+	lc$buildAndAppend(FROM=1:3,WEIGHT=c(1.4,5.6,9.8))
 	myNeuron <- gNeuron$new(id=10, con=lc)
 	myCon <- gCon$new(from=myNeuron, weight=14.5)
 	checkTrue(myCon$validate())

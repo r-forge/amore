@@ -11,6 +11,10 @@
 
 #endif /* INLINE_R */
 
+	Neuron::Neuron() {};
+	Neuron::Neuron(int Id) : Id(Id), outputValue(0.0) {};
+	Neuron::~Neuron() {};
+
 
 int Neuron::getId() {
 	return Id;

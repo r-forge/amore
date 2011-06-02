@@ -6,7 +6,7 @@
 
 test.gMLPneuron.new <- function() {
 	lc <- gListCon$new()
-	lc$populate(FROM=1:5, WEIGHT=11:15)
+	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	checkTrue(nn$validate())
 	checkEquals(nn$getId(),1)
@@ -18,7 +18,7 @@ test.gMLPneuron.new <- function() {
 
 test.gMLPneuron.show <- function() {
 	lc <- gListCon$new()
-	lc$populate(FROM=1:5, WEIGHT=11:15)
+	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	checkTrue(nn$validate())
 	checkTrue(nn$show())
@@ -27,7 +27,7 @@ test.gMLPneuron.show <- function() {
 
 test.gMLPneuron.validate <- function() {
 	lc <- gListCon$new()
-	lc$populate(FROM=1:5, WEIGHT=11:15)
+	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	nn$setBias("xx")
 	checkException(nn$validate(), silent=TRUE)
