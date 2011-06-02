@@ -5,9 +5,6 @@
  *      Author: mcasl
  */
 
-
-
-
 //! Size of the vecCon object
 /*!
  * This function returns the size of the vecCon object, that is to say, the number of Con objects it contains.
@@ -200,7 +197,7 @@ std::vector<int>  vecCon::getFromId() {
 					return(length(ldata))
 				},
 
-				validate=function(...){
+validate=function(...){
 					'Object validator for internal coherence.
 							'
 					lapply(ldata, function(x){if (!is(x,"Con")) {stop("[listAMORE validate]: Element is not an AMORElistElement")}  })
