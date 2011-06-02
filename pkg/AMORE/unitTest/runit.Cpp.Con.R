@@ -4,10 +4,10 @@
 ###############################################################################
 
 ###############################################################################
-test.Con.Cpp.setAndgetFromNeuron <- function() {	
+test.Con.Cpp.setFromNeuron.getFromNeuron <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- '
+	testCode <- "
 			Con myCon;
 			Neuron MyNeuron;
 			Neuron * ptNeuron;
@@ -17,13 +17,16 @@ test.Con.Cpp.setAndgetFromNeuron <- function() {
 			ptNeuron = myCon.getFromNeuron();
 			int result= ptNeuron->getId();
 			return wrap(result);
-			'
+			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, 1)
+	# [1] TRUE
 }
+
+
 
 ###############################################################################
 test.Con.Cpp.getFromId<- function() {	
@@ -43,30 +46,31 @@ test.Con.Cpp.getFromId<- function() {
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, 16)
+	# [1] TRUE
 }
 
 ###############################################################################
-test.Con.Cpp.setAndgetWeight <- function() {	
+test.Con.Cpp.setWeight.getWeight <- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			Con myCon;
 			Neuron MyNeuron;
+			std::vector<double> result;
 			MyNeuron.setId(16);
 			myCon.setFromNeuron(&MyNeuron);
 			myCon.setWeight(12.4);
-			double result1= myCon.getWeight();
+			result.push_back(myCon.getWeight());
 			myCon.setWeight(2.2);
-			double result2= myCon.getWeight();
-			return Rcpp::List::create(	Rcpp::Named("R1")	= result1,
-			Rcpp::Named("R2") 	= result2);
+			result.push_back(myCon.getWeight());
+			return wrap(result);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
-	checkEquals(result$R1, 12.4)
-	checkEquals(result$R2, 2.2)
+	checkEquals(result, c(12.4, 2.2) )
+	# [1] TRUE
 }
 
 ###############################################################################
@@ -74,11 +78,9 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			Con myCon;
 			Neuron MyNeuron;
 			MyNeuron.setId(16);
-			myCon.setFromNeuron(&MyNeuron);
-			myCon.setWeight(12.4);
+			Con myCon(&MyNeuron, 12.4);
 			bool result= myCon.show();
 			return wrap(result);
 			'
@@ -88,6 +90,8 @@ test.Con.Cpp.show <- function() {
 	
 	result <- testCodefun()
 	checkTrue(result)
+	# From:	 16 	 Weight= 	 12.400000 
+	# [1] TRUE
 }
 
 ###############################################################################
@@ -95,11 +99,9 @@ test.Con.Cpp.validate.weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			Con myCon;
 			Neuron MyNeuron;
 			MyNeuron.setId(16);
-			myCon.setFromNeuron(&MyNeuron);
-			myCon.setWeight(1.4/0);
+			Con myCon(&MyNeuron, 12.4/0);
 			myCon.validate();
 			return wrap(true);
 			'
@@ -108,6 +110,7 @@ test.Con.Cpp.validate.weight <- function() {
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	
 	checkException(result <- testCodefun(), silent=TRUE)
+	# [1] TRUE
 }
 
 ###############################################################################
@@ -115,11 +118,9 @@ test.Con.Cpp.validate.from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			Con myCon;
 			Neuron MyNeuron;
 			MyNeuron.setId(NA_INTEGER);
-			myCon.setFromNeuron(&MyNeuron);
-			myCon.setWeight(1.4);
+			Con myCon(&MyNeuron, 12.4);
 			myCon.validate();
 			return wrap(myCon.getFromId());
 			'
@@ -128,6 +129,7 @@ test.Con.Cpp.validate.from <- function() {
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	
 	checkException(result <- testCodefun(), silent=TRUE)
+	# [1] TRUE
 }
 
 

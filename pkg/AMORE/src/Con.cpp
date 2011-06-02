@@ -4,11 +4,8 @@
  *  Created on: 25/05/2011
  *      Author: mcasl
  */
-#ifndef INLINE_R
 
 #include "Con.h"
-
-#endif /* INLINE_R */
 
 
 //=========================================================================================================
@@ -24,7 +21,7 @@
  *	// Data set up
  *		Con myCon;
  *		Neuron MyNeuron;
- *		Neuron * ptNeuron;
+ *		Neuron* ptNeuron;
  *		MyNeuron.setId(1);
  *		myCon.setFromNeuron(&MyNeuron);
  *
@@ -36,7 +33,7 @@
  *
  * \sa getFromId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-Neuron * Con::getFromNeuron	()   			{
+Neuron* Con::getFromNeuron	()   			{
 	return(from);
 }
 
@@ -47,7 +44,7 @@ Neuron * Con::getFromNeuron	()   			{
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
-void Con::setFromNeuron	(Neuron * f)   	{
+void Con::setFromNeuron	(Neuron* f)   	{
 	from = f;
 }
 

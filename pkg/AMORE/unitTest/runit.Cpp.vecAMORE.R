@@ -18,7 +18,7 @@ test.vecAMORE.Cpp.validate.show<- function() {
 			N2.setId(20);
 			N3.setId(30);
 		
-			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
 			MyvecCon.push_back(ptCon);				// push_back 
 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
 			MyvecCon.push_back(ptCon);				// push_back
@@ -49,13 +49,13 @@ test.vecAMORE.Cpp.push_back<- function() {
 		// Data set up
 			Neuron N1, N2, N3;
 			vecAMORE<Con> MyvecCon;
-			std::vector<ConPtr> vc;
+			std::vector<ConSharedPtr> vc;
 			std::vector<int> result;
 			N1.setId(10);
 			N2.setId(20);
 			N3.setId(30);
 		// Test
-			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
 			MyvecCon.push_back(ptCon);				// push_back 
 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
 			MyvecCon.push_back(ptCon);				// push_back
@@ -85,14 +85,13 @@ test.vecAMORE.Cpp.size<- function() {
 			// Data set up
 			Neuron N1, N2, N3;
 			vecAMORE<Con> MyvecCon;
-			std::vector<ConPtr> vc;
 			std::vector<int> result;
 			N1.setId(10);
 			N2.setId(20);
 			N3.setId(30);
 		// Test
 			result.push_back(MyvecCon.size());
-			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
 			MyvecCon.push_back(ptCon);				// push_back 
 			result.push_back(MyvecCon.size());
 			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
@@ -116,44 +115,36 @@ test.vecAMORE.Cpp.setLdata.getLdata<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			// Data set up
-			Con Con1, Con2, Con3;
+		// Data set up
 			Neuron N1, N2, N3;
 			vecAMORE<Con> MyvecCon;
 			std::vector<int> result;
-			std::vector<Con> vcA, vcB;
-			
+			std::vector<ConSharedPtr> vcA, vcB;
+
 			N1.setId(10);
 			N2.setId(20);
 			N3.setId(30);
-			
-			Con1.setFromNeuron(&N1);
-			Con2.setFromNeuron(&N2);
-			Con3.setFromNeuron(&N3);
-			
-			Con1.setWeight(1.01);
-			Con2.setWeight(22.02);
-			Con3.setWeight(333.03);			
-			
-			// Test
-			
-			vcA.push_back(Con1);
-			vcA.push_back(Con2);
-			vcA.push_back(Con3);
-		
+
+		// Test
+			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+			vcA.push_back(ptCon);				// push_back 
+			ptCon.reset( new Con(&N2, 2.22) );		// create new Con and assign to ptCon
+			vcA.push_back(ptCon);				// push_back
+			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
+			vcA.push_back(ptCon);				// push_back
+
 			MyvecCon.setLdata(vcA);
-			
 			vcB = MyvecCon.getLdata();
-			
-			result.push_back(vcB.at(0).getFromId());
-			result.push_back(vcB.at(1).getFromId());
-			result.push_back(vcB.at(2).getFromId());
-			
+
+			result.push_back(vcB.at(0)->getFromId());
+			result.push_back(vcB.at(1)->getFromId());
+			result.push_back(vcB.at(2)->getFromId());			
 			return wrap(result);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, c(10,20,30))
+	# [1] TRUE
 }
 
 

@@ -18,7 +18,7 @@ class Con {
 	/*!
 	 * The \ref from field contains the address of the Neuron whose output will be used as input by the Neuron containing the Con object.
 	 */
-	Neuron * from;
+	Neuron* from;
 	//! A double variable that contains the weight of the connection
 	/*!
 	 * The \ref weight field contains the factor by which the output value of the Neuron addressed by the from field is multiplied during simulation or training.
@@ -30,7 +30,7 @@ public:
 	Con() 						: from(NULL), weight(0) {};
 	Con(Neuron* f , double w ) 	: from(f), 	  weight(w) {};
 	~Con() {};
-	Neuron *	getFromNeuron	();
+	Neuron*		getFromNeuron	();
 	void 		setFromNeuron	(Neuron* f);
 	int			getFromId		();
 	double 		getWeight		();
@@ -41,4 +41,5 @@ public:
 #endif /* CON_H_ */
 
 
-typedef boost::shared_ptr<Con> ConPtr;
+typedef boost::shared_ptr<Con> ConSharedPtr;
+
