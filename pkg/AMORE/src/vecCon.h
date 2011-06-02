@@ -25,6 +25,8 @@ public:
 
 	//	std::vector<double>	getWeight	(FROM);
 	//
+	// Test sv (JAVI ha estado haciendo cambios aqu’)
+	//
 	// Test sv (Manolo)
 	// (Manolo)
 	// Prueba voy a cambiar cosas yo ahora
