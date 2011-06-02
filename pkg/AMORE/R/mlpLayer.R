@@ -21,7 +21,7 @@ gmlpLayer <- setRefClass("mlpLayer",
 					numberOfNeurons <<- numOfNeurons()
 				},
 
-				populate = function(value, ...){
+				buildAndAppend = function(value, ...){
 					callSuper(value, ...)
 					numberOfNeurons <<- numOfNeurons()
 				},

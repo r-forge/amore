@@ -24,7 +24,7 @@ grbfLayer <- setRefClass("rbfLayer",
 					numberOfNeurons <<- numOfNeurons()
 				},
 				
-				populate = function(value, ...){
+				buildAndAppend = function(value, ...){
 					callSuper(value, ...)
 					numberOfNeurons <<- numOfNeurons()
 				},

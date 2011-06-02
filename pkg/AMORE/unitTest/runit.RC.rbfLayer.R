@@ -7,12 +7,12 @@
 
 test.grbfLayer.new <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
 	checkTrue(nl$validate())
 	rm(nl)	
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
 	checkEquals(nl$getId(), 1:5)
 	checkEquals(nl$getFrom(), list(1:3,4:6,7:9,10:12,13:15))
@@ -28,7 +28,7 @@ test.grbfLayer.new <- function() {
 
 test.grbfLayer.setId.getId <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$setId(15:11)
 	checkEquals(nl$getId(), 15:11)
 	checkTrue(nl$validate())
@@ -40,9 +40,9 @@ test.grbfLayer.setId.getId <- function() {
 
 test.grbfLayer.append <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=6:10, BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$append(ln)
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
@@ -50,15 +50,15 @@ test.grbfLayer.append <- function() {
 	rm(ln, nl)
 	
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln <- gListRBFneuron$new()
-	ln$populate(ID=6:10, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=6:10, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$append(ln)
 	checkEquals(nl$getId(),1:10)
 	checkEquals(nl$getNumberOfNeurons(),10)
 	checkTrue(nl$validate())		
 	nl2 <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl2$populate(ID=11:15, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl2$buildAndAppend(ID=11:15, WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$append(nl2)
 	checkEquals(nl$getId(),1:15)
 	checkEquals(nl$getNumberOfNeurons(),15)
@@ -68,7 +68,7 @@ test.grbfLayer.append <- function() {
 
 test.grbfLayer.delete <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	nl$delete(ID=4:5)
 	checkEquals(nl$getId(),1:3)
 	checkEquals(nl$getNumberOfNeurons(),3)
@@ -78,12 +78,12 @@ test.grbfLayer.delete <- function() {
 
 test.grbfLayer.is.regular <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!nl$is.regular())
 	checkTrue(nl$validate())
 	rm(nl)
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$is.regular())
 	checkTrue(nl$validate())
 }
@@ -91,7 +91,7 @@ test.grbfLayer.is.regular <- function() {
 
 test.grbfLayer.numOfCons <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	checkEquals(nl$numOfCons(), c(3,3,3,3,3))
 }
@@ -99,7 +99,7 @@ test.grbfLayer.numOfCons <- function() {
 
 test.grbfLayer.setFrom.getFrom <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setFrom(list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
 	checkEquals(nl$getFrom(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
@@ -113,7 +113,7 @@ test.grbfLayer.setFrom.getFrom <- function() {
 
 test.grbfLayer.setWeight.getWeight <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setWeight(list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
 	checkEquals(nl$getWeight(), list(c(4,6,7),c(2,4,8),c(8,7,4),c(3,5,8),c(7,6,4)))
@@ -127,7 +127,7 @@ test.grbfLayer.setWeight.getWeight <- function() {
 
 test.grbfLayer.validate <- function() {
 	nl <- grbfLayer$new(activationFunction="tanh", normalizationMethod="softmax", threshold=2.3, width=0.1, altitude=9.8)
-	nl$populate(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	nl$buildAndAppend(ID=list(1,2,3,4,5), WIDTH=list(1.1,3.4,5.4,9.8,5.6), ALTITUDE=list(1.9,8.4,8.7,3.5,7.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(nl$validate())
 	nl$setNumberOfNeurons(4)
 	checkException(nl$validate(), silent=TRUE)

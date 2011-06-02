@@ -58,7 +58,6 @@ int  vecCon::numOfCons() {
  *  //Usage example:
  *  //================
  * 	// Data set up
- * 	// Data set up
  *			Neuron N1, N2, N3;
  *			vecCon MyvecCon;
  *			std::vector<int> result;
@@ -90,27 +89,61 @@ std::vector<int>  vecCon::getFromId() {
 }
 
 
-//
-//
-//
-//void vecCon::populate	( std::vector<Neuron> FROM, std::vector<double> WEIGHT){
-//
-//	BEGIN_RCPP
-//	Con con;
-//	if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[vecCon::populate]: Error, FROM.size() != WEIGHT.size()"); }
-//	ldata.reserve(ldata.size() + FROM.size());
-//	for( std::vector<int>::iterator itrFROM=FROM.begin(), std::vector<double>::iterator itrWEIGHT = WEIGHT.begin()	;   itrFROM != FROM.end();	itrFROM++, itrWEIGHT++)	{
-//
-//		new();
-//
-//		ldata.push_back(
-//		)
-//	}
-//
-//
-//	END_RCPP
-//}
-//	push_back(gCon$new(from=f, weight=w))}, FROM, WEIGHT)
+
+
+
+//! Builds Con objects and appends them to ldata.
+/*!
+ * This function provides a convenient way of populating a vecCon object by building and apending Con objects to ldata.
+ * \param FROM  A vector of smart pointers to the neurons to be used in the Con::from fields
+ * \param WEIGHT A vector of values to be set in the Con::weight fields
+ *
+ * \code
+ *  //================
+ *  //Usage example:
+ *  //================
+ * // Data set up
+ *		std::vector<int> result;
+ *		vecCon MyvecCon;
+ *		std::vector<NeuronSharedPtr> vNeuron;
+ *		std::vector<double> vWeight;
+ *
+ *
+ *		// Test
+ *		NeuronSharedPtr ptNeuron( new Neuron(11) );
+ *		vNeuron.push_back(ptNeuron);
+ *		ptNeuron.reset( new Neuron(22) );
+ *		vNeuron.push_back(ptNeuron);
+ *		ptNeuron.reset( new Neuron(33) );
+ *		vNeuron.push_back(ptNeuron);
+ *
+ *		vWeight.push_back(12.3);
+ *		vWeight.push_back(1.2);
+ *		vWeight.push_back(2.1);
+ *
+ *		MyvecCon.buildAndAppend(vNeuron, vWeight);
+ *
+ *		result=MyvecCon.getFromId();
+ *
+ *	// Now result is a vector that contains the values 11, 22 and 32.
+ * \endcode
+ *
+ * \sa append
+ */
+bool vecCon::buildAndAppend	( std::vector<NeuronSharedPtr> FROM, std::vector<double> WEIGHT){
+	BEGIN_RCPP
+	if (FROM.empty()) { throw std::range_error("[vecCon::append]: Error, FROM is empty"); }
+	if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[vecCon::buildAndAppend]: Error, FROM.size() != WEIGHT.size()"); }
+	ldata.reserve(ldata.size() + FROM.size());
+	ConSharedPtr ptCon;
+	std::vector<double>::iterator itrWEIGHT = WEIGHT.begin();
+	for(  std::vector<NeuronSharedPtr>::iterator itrFROM=FROM.begin();  itrFROM != FROM.end();	itrFROM++ , itrWEIGHT++)	{
+	 		ptCon.reset(  new Con( itrFROM->get(), *itrWEIGHT) );
+	 		ldata.push_back(ptCon);
+	}
+	return true;
+	END_RCPP
+}
 
 
 

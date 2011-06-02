@@ -5,7 +5,7 @@
 
 test.gListMLPneuron.new <- function() {
 	lc <- gListCon$new()
-	lc$populate(FROM=1:5, WEIGHT=11:15)
+	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gMLPneuron$new(id=1, bias=9.9, con=lc)
 	checkTrue(nn$validate())
 	checkEquals(nn$getId(),1)
@@ -19,7 +19,7 @@ test.gListMLPneuron.new <- function() {
 	ln$push_back(nn)
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$populate(FROM=11:15, WEIGHT=1:5)
+	lc$buildAndAppend(FROM=11:15, WEIGHT=1:5)
 	nn <- gMLPneuron$new(id=2, bias=8.7, con=lc)
 	ln$push_back(nn)
 	checkTrue(ln$validate())
@@ -32,14 +32,14 @@ test.gListMLPneuron.new <- function() {
 }
 
 
-test.gListMLPneuron.populate_fromIsNumeric <- function() {
+test.gListMLPneuron.buildAndAppend_fromIsNumeric <- function() {
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$is.regular())
 	checkTrue(ln$validate())
 	rm(ln)
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=c(1,2,3,4,5), BIAS=c(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,4:6,7:9,10:12,13:15), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(!ln$is.regular())
 	checkEquals(ln$getId(),1:5)
 	checkEquals(ln$getBias(),c(1.1,3.4,5.4,9.8,5.6))
@@ -50,12 +50,12 @@ test.gListMLPneuron.populate_fromIsNumeric <- function() {
 }
 
 
-test.gListMLPneuron.populate_fromIsNeuron <- function() {
+test.gListMLPneuron.buildAndAppend_fromIsNeuron <- function() {
 	ln1 <- gListMLPneuron$new()
-	ln1$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln1$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln1$validate())
 	ln2 <- gListMLPneuron$new()
-	ln2$populate(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM= replicate(3, ln1$getLdata(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
+	ln2$buildAndAppend(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM= replicate(3, ln1$getLdata(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
 	checkTrue(ln2$is.regular())
 	checkEquals(ln2$getId(),6:8)
 	checkEquals(ln2$getBias(),c(1.1,3.4,5.4))
@@ -71,7 +71,7 @@ test.gListMLPneuron.populate_fromIsNeuron <- function() {
 
 test.gListMLPneuron.setBias.getBias <- function() {
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$setBias(11:15)
 	checkEquals(ln$getBias(),11:15)
 	checkTrue(ln$validate())
@@ -80,14 +80,14 @@ test.gListMLPneuron.setBias.getBias <- function() {
 
 test.gListMLPneuron.show <- function() {
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$show())
 }
 
 
 test.gListMLPneuron.validate <- function() {
 	ln <- gListMLPneuron$new()
-	ln$populate(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
+	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	ln$push_back("xx")
 	checkException(ln$validate(), silent=TRUE)	
 }

@@ -6,7 +6,7 @@
 
 ###############################################################################
 test.vecCon.Cpp.push_back.getFromId <- function() {	
-	###############################################################################
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up
@@ -41,7 +41,7 @@ test.vecCon.Cpp.push_back.getFromId <- function() {
 test.vecCon.Cpp.numOfCons.show <- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- '
+	testCode <- "
 			// Data set up
 			Neuron N1, N2, N3;
 			vecCon MyvecCon;
@@ -66,10 +66,52 @@ test.vecCon.Cpp.numOfCons.show <- function() {
 			result.push_back(MyvecCon.numOfCons());
 			
 			return wrap(result);
-			'
+			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, c(0, 1, 2, 3))
 	# [1] TRUE
 }
+
+
+
+###############################################################################
+test.vecCon.Cpp.BuildAppend <- function() {	
+###############################################################################
+incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+testCode <- "
+			// Data set up
+			std::vector<int> result;
+			vecCon MyvecCon;
+			std::vector<NeuronSharedPtr> vNeuron;
+			std::vector<double> vWeight;
+
+
+			// Test	
+			NeuronSharedPtr ptNeuron( new Neuron(11) );
+			vNeuron.push_back(ptNeuron);	
+			ptNeuron.reset( new Neuron(22) );
+			vNeuron.push_back(ptNeuron);	
+			ptNeuron.reset( new Neuron(33) );
+			vNeuron.push_back(ptNeuron);	
+
+			vWeight.push_back(12.3);
+			vWeight.push_back(1.2);
+			vWeight.push_back(2.1);
+
+			MyvecCon.buildAndAppend(vNeuron, vWeight);
+
+			result=MyvecCon.getFromId();
+			return wrap(result);
+		"
+testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+result <- testCodefun()
+checkEquals(result, c( 11, 22, 33))
+# [1] TRUE
+}
+
+
+
+
+
 

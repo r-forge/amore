@@ -8,13 +8,13 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 		contains="listNeuron",
 		methods = list(
 				
-				populate=function(ID, WIDTH, ALTITUDE, FROM, WEIGHT, ...){
-					if (missing(ID)||missing(WIDTH)||missing(ALTITUDE)||missing(FROM)||missing(WEIGHT)) {stop("[listRBFneuron populate]: Error, either ID, WIDTH, ALTITUDE, FROM or WEIGHT is missing")  } else {}
-					if (!all(mapply(identical, length(ID), length(WIDTH), length(ALTITUDE), length(FROM), length(WEIGHT)))) {stop("[listRBFneuron populate]: Error ID, WIDTH, ALTITUDE, FROM, WEIGHT length's are not equal.")} else {}
+				buildAndAppend=function(ID, WIDTH, ALTITUDE, FROM, WEIGHT, ...){
+					if (missing(ID)||missing(WIDTH)||missing(ALTITUDE)||missing(FROM)||missing(WEIGHT)) {stop("[listRBFneuron buildAndAppend]: Error, either ID, WIDTH, ALTITUDE, FROM or WEIGHT is missing")  } else {}
+					if (!all(mapply(identical, length(ID), length(WIDTH), length(ALTITUDE), length(FROM), length(WEIGHT)))) {stop("[listRBFneuron buildAndAppend]: Error ID, WIDTH, ALTITUDE, FROM, WEIGHT length's are not equal.")} else {}
 					
 					mapply(FUN=function(i,wi,a,f,we){
 								lc <- gListCon$new()
-								lc$populate(FROM=f,WEIGHT=we)
+								lc$buildAndAppend(FROM=f,WEIGHT=we)
 								push_back(gRBFneuron$new(id=i, width=wi, altitude=a, con=lc))
 							},	ID, WIDTH, ALTITUDE, FROM, WEIGHT) -> DontMakeNoise
 				},

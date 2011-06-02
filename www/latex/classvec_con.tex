@@ -13,8 +13,7 @@ A vector of connections.
 
 
 
-Inheritance diagram for vecCon:
-\nopagebreak
+Inheritance diagram for vecCon:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,8 +22,7 @@ Inheritance diagram for vecCon:
 \end{figure}
 
 
-Collaboration diagram for vecCon:
-\nopagebreak
+Collaboration diagram for vecCon:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,8 +36,8 @@ int \hyperlink{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749}{numOfCons} ()
 \begin{DoxyCompactList}\small\item\em Size of the \hyperlink{classvec_con}{vecCon} object. \end{DoxyCompactList}\item 
 std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getFromId} ()
 \begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\item 
-void \hyperlink{classvec_con_a500b452ca85bc32ddf82c3475bd4e0f6}{populate} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ FROM, std::vector$<$ double $>$ WEIGHT)
-\end{DoxyCompactItemize}
+bool \hyperlink{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ FROM, std::vector$<$ double $>$ WEIGHT)
+\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,6 +50,91 @@ Definition at line 17 of file vecCon.h.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}{
+\index{vecCon@{vecCon}!buildAndAppend@{buildAndAppend}}
+\index{buildAndAppend@{buildAndAppend}!vecCon@{vecCon}}
+\subsubsection[{buildAndAppend}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::buildAndAppend (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf NeuronSharedPtr} $>$}]{FROM, }
+\item[{std::vector$<$ double $>$}]{WEIGHT}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}
+
+
+Builds \hyperlink{class_con}{Con} objects and appends them to ldata. 
+
+This function provides a convenient way of populating a \hyperlink{classvec_con}{vecCon} object by building and apending \hyperlink{class_con}{Con} objects to ldata. 
+\begin{DoxyParams}{Parameters}
+{\em FROM} & A vector of smart pointers to the neurons to be used in the \hyperlink{class_con_a40215fdb25f3b2ed66e965df558e86e2}{Con::from} fields \\
+\hline
+{\em WEIGHT} & A vector of values to be set in the \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{Con::weight} fields\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+  //================
+  //Usage example:
+  //================
+ // Data set up
+                std::vector<int> result;
+                vecCon MyvecCon;
+                std::vector<NeuronSharedPtr> vNeuron;
+                std::vector<double> vWeight;
+
+
+                // Test
+                NeuronSharedPtr ptNeuron( new Neuron(11) );
+                vNeuron.push_back(ptNeuron);
+                ptNeuron.reset( new Neuron(22) );
+                vNeuron.push_back(ptNeuron);
+                ptNeuron.reset( new Neuron(33) );
+                vNeuron.push_back(ptNeuron);
+
+                vWeight.push_back(12.3);
+                vWeight.push_back(1.2);
+                vWeight.push_back(2.1);
+
+                MyvecCon.buildAndAppend(vNeuron, vWeight);
+
+                result=MyvecCon.getFromId();
+
+        // Now result is a vector that contains the values 11, 22 and 32.
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} 
+\end{DoxySeeAlso}
+
+
+Definition at line 133 of file vecCon.cpp.
+
+
+
+References vecAMORE$<$ Con $>$::ldata.
+
+
+\begin{DoxyCode}
+                                                                                 
+                 {
+        BEGIN_RCPP
+        if (FROM.empty()) { throw std::range_error("[vecCon::append]: Error, FROM
+       is empty"); }
+        if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[vecCon::bui
+      ldAndAppend]: Error, FROM.size() != WEIGHT.size()"); }
+        ldata.reserve(ldata.size() + FROM.size());
+        ConSharedPtr ptCon;
+        std::vector<double>::iterator itrWEIGHT = WEIGHT.begin();
+        for(  std::vector<NeuronSharedPtr>::iterator itrFROM=FROM.begin();  itrFR
+      OM != FROM.end();       itrFROM++ , itrWEIGHT++)        {
+                        ptCon.reset(  new Con( itrFROM->get(), *itrWEIGHT) );
+                        ldata.push_back(ptCon);
+        }
+        return true;
+        END_RCPP
+}
+\end{DoxyCode}
 \hypertarget{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{
 \index{vecCon@{vecCon}!getFromId@{getFromId}}
 \index{getFromId@{getFromId}!vecCon@{vecCon}}
@@ -73,7 +156,6 @@ An std::vector$<$int$>$ that contains the Ids
   //================
   //Usage example:
   //================
-        // Data set up
         // Data set up
                         Neuron N1, N2, N3;
                         vecCon MyvecCon;
@@ -105,7 +187,7 @@ An std::vector$<$int$>$ that contains the Ids
 \end{DoxyCode}
  
 
-Definition at line 85 of file vecCon.cpp.
+Definition at line 84 of file vecCon.cpp.
 
 
 
@@ -214,16 +296,6 @@ Here is the caller graph for this function:\nopagebreak
 \end{figure}
 
 
-\hypertarget{classvec_con_a500b452ca85bc32ddf82c3475bd4e0f6}{
-\index{vecCon@{vecCon}!populate@{populate}}
-\index{populate@{populate}!vecCon@{vecCon}}
-\subsubsection[{populate}]{\setlength{\rightskip}{0pt plus 5cm}void vecCon::populate (
-\begin{DoxyParamCaption}
-\item[{std::vector$<$ {\bf NeuronSharedPtr} $>$}]{FROM, }
-\item[{std::vector$<$ double $>$}]{WEIGHT}
-\end{DoxyParamCaption}
-)}}
-\label{classvec_con_a500b452ca85bc32ddf82c3475bd4e0f6}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
