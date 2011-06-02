@@ -27,9 +27,9 @@ class Con {
 
 public:
 
-	Con() 						: from(NULL), weight(0) {};
-	Con(Neuron* f , double w ) 	: from(f), 	  weight(w) {};
-	~Con() {};
+	Con();
+	Con(Neuron* f , double w );
+	~Con();
 	Neuron*		getFromNeuron	();
 	void 		setFromNeuron	(Neuron* f);
 	int			getFromId		();

@@ -1,6 +1,4 @@
 
-#   TODO: I'm working at listLayer
-
 
 require("inline")
 require("Rcpp")
