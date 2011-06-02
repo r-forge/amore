@@ -1,4 +1,4 @@
-# TODO: Add comment
+# Class definition: MLPneuralNetwork
 # 
 # Author: mcasl
 ###############################################################################

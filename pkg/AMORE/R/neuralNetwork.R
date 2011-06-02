@@ -1,4 +1,4 @@
-# TODO: Add comment
+# Class definition: listRBFlayerOrlistMLPlayer
 # 
 # Author: mcasl
 ###############################################################################
