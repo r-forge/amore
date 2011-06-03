@@ -138,7 +138,7 @@ bool vecCon::buildAndAppend	( std::vector<NeuronSharedPtr> FROM, std::vector<dou
 	ConSharedPtr ptCon;
 	std::vector<double>::iterator itrWEIGHT = WEIGHT.begin();
 	for(  std::vector<NeuronSharedPtr>::iterator itrFROM=FROM.begin();  itrFROM != FROM.end();	itrFROM++ , itrWEIGHT++)	{
-	 		ptCon.reset(  new Con( itrFROM->get(), *itrWEIGHT) );
+	 		ptCon.reset(  new Con( *itrFROM, *itrWEIGHT) );
 	 		ldata.push_back(ptCon);
 	}
 	return true;
@@ -335,6 +335,7 @@ validate=function(...){
  *  This method calls the validate method for each element in ldata,
  * \sa The unit test files, e.g., runit.Cpp.vecCon.R, for usage examples.
  */
+/*
 bool vecCon<>::validate() {
 	BEGIN_RCPP
 	std::vector<int> vIds;
@@ -346,19 +347,12 @@ bool vecCon<>::validate() {
 	return true;
 	END_RCPP
 };
-
+*/
 //! Object validator
 /*! This method checks the object for internal coherence.
  *  A try / catch mechanism exits normal execution and returns control to the R terminal in case the contents of the vecCon object are identified as corrupted.
  * \return true in case the checks are Ok.
  * \throw An std::range error if weight or from are not finite.
  */
-bool Con::validateVector() {
-	BEGIN_RCPP
-	// if (! R_FINITE(getWeight()) )  		throw std::range_error("weight is not finite.");
-	 if (numOfCons() == NA_INTEGER )		throw std::range_error("numOfCons is not finite.");
-	return(true);
-	END_RCPP
-};
 
 
