@@ -4,13 +4,32 @@
 ###############################################################################
 
 
+
 ###############################################################################
-test.Con.Cpp.setFromNeuron.getFromNeuron <- function() {	
+test.Con.Cpp.getFromNeuron <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
 			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+			ptShNeuron = ptShCon->getFromNeuron() ;				
+			int result = ptShNeuron->getId();
+			return wrap(result);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun()
+	checkEquals(result, 1)
+	# [1] TRUE
+}
+
+###############################################################################
+test.Con.Cpp.setFromNeuron <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
+			ConSharedPtr ptShCon( new Con() );  	
+			ptShCon->setFromNeuron( ptShNeuron );  	
 			ptShNeuron = ptShCon->getFromNeuron() ;				
 			int result = ptShNeuron->getId();
 			return wrap(result);
@@ -45,11 +64,11 @@ test.Con.Cpp.setWeight.getWeight <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			std::vector<double> result;
-			Neuron MyNeuron(16);
-			Con myCon(&MyNeuron, 12.4);
-			result.push_back(myCon.getWeight());
-			myCon.setWeight(2.2);
-			result.push_back(myCon.getWeight());
+			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
+			result.push_back(ptShCon->getWeight());
+			ptShCon->setWeight(2.2);
+			result.push_back(ptShCon->getWeight());
 			return wrap(result);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	

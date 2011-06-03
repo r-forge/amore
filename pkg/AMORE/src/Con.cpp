@@ -72,6 +72,22 @@ NeuronSharedPtr Con::getFromNeuron	()   			{
 //! %from field accessor.
 /*! This method sets the value of the \ref from field with the address used as parameter.
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
+ *
+ *  \code
+ *	//================
+ *	//Usage example:
+ *	//================
+ *	// Data set up
+ * 			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1
+ *			ConSharedPtr ptShCon( new Con() );
+ *			ptShCon->setFromNeuron( ptShNeuron );
+ *	// Test
+ *			ptShNeuron = ptShCon->getFromNeuron() ;
+ *			int result = ptShNeuron->getId();
+ *
+ * 	// Now, result is equal to 1
+ * 	\endcode
+ *
  * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
 void Con::setFromNeuron	(NeuronSharedPtr f)   	{
