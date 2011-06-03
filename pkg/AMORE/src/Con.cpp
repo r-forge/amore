@@ -89,14 +89,12 @@ void Con::setFromNeuron	(NeuronSharedPtr f)   	{
  *	//Usage example:
  *	//================
  *	// Data set up
- *		Con myCon;
- *		Neuron MyNeuron;
- *		MyNeuron.setId(16);
- *		myCon.setFromNeuron(&MyNeuron);
- *
+ *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16
+ *			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
  *	// Test
- * 		int result= myCon.getFromId();
- *	// After execution of the code shown above, MyNeuron::Id is set to the integer value 16 and, thus, result is equal to 16.
+ *	  		int result = ptShCon->getFromId();
+ *
+ *	// Now, result is equal to 16.
  * \endcode
  *
  * \sa getFromNeuron, setFromNeuron and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
