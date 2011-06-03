@@ -83,38 +83,65 @@ test.vecCon.Cpp.BuildAppend <- function() {
 incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 testCode <- "
 			// Data set up
-			std::vector<int> result;
-			vecCon MyvecCon;
-			std::vector<NeuronSharedPtr> vNeuron;
-			std::vector<double> vWeight;
-
-
+				std::vector<int> result;
+				std::vector<NeuronSharedPtr> vNeuron;
+				vecConSharedPtr	ptShvCon( new vecCon() );
+				ConSharedPtr	ptC;
+				NeuronSharedPtr ptN;
+				int ids[]= {10, 20, 30};
+				std::vector<double> vWeight;
+				vWeight.push_back(12.3);
+				vWeight.push_back(1.2);
+				vWeight.push_back(2.1);
+				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+					ptN.reset( new Neuron( ids[i] ) ); 	
+					vNeuron.push_back(ptN);
+				}
+				ptShvCon->buildAndAppend(vNeuron, vWeight);			 
 			// Test	
-			NeuronSharedPtr ptNeuron( new Neuron(11) );
-			vNeuron.push_back(ptNeuron);	
-			ptNeuron.reset( new Neuron(22) );
-			vNeuron.push_back(ptNeuron);	
-			ptNeuron.reset( new Neuron(33) );
-			vNeuron.push_back(ptNeuron);	
-
-			vWeight.push_back(12.3);
-			vWeight.push_back(1.2);
-			vWeight.push_back(2.1);
-
-			MyvecCon.buildAndAppend(vNeuron, vWeight);
-
-			result=MyvecCon.getFromId();
-			return wrap(result);
+				result=ptShvCon->getFromId();
+				return wrap(result);
 		"
 testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 result <- testCodefun()
-checkEquals(result, c( 11, 22, 33))
+checkEquals(result, c( 10, 20, 30))
 # [1] TRUE
 }
 
 ###############################################################################
-test.vecCon.Cpp.Validate <- function() {	
-	###############################################################################
+test.vecCon.Cpp.Validate_Weight_Inf <- function() {	
+###############################################################################
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Data set up
+				std::vector<int> result;
+				vecCon MyvecCon;
+				std::vector<NeuronSharedPtr> vNeuron;
+				std::vector<double> vWeight;
+			// Test	
+				NeuronSharedPtr ptNeuron( new Neuron(11) );
+				vNeuron.push_back(ptNeuron);	
+				ptNeuron.reset( new Neuron(22) );
+				vNeuron.push_back(ptNeuron);	
+				ptNeuron.reset( new Neuron(33) );
+				vNeuron.push_back(ptNeuron);	
+			
+				vWeight.push_back(12.3);
+				vWeight.push_back(1.2/0);
+				vWeight.push_back(2.1);
+			
+				MyvecCon.buildAndAppend(vNeuron, vWeight);
+				MyvecCon.validate();
+				return wrap(true);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	checkException(result <- testCodefun(), silent=TRUE)
+}
+
+
+###############################################################################
+test.vecCon.Cpp.Validate_Duplicated_Id <- function() {	
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up
@@ -122,14 +149,12 @@ test.vecCon.Cpp.Validate <- function() {
 			vecCon MyvecCon;
 			std::vector<NeuronSharedPtr> vNeuron;
 			std::vector<double> vWeight;
-			
-			
 			// Test	
 			NeuronSharedPtr ptNeuron( new Neuron(11) );
 			vNeuron.push_back(ptNeuron);	
 			ptNeuron.reset( new Neuron(22) );
 			vNeuron.push_back(ptNeuron);	
-			ptNeuron.reset( new Neuron(33) );
+			ptNeuron.reset( new Neuron(11) );
 			vNeuron.push_back(ptNeuron);	
 			
 			vWeight.push_back(12.3);
@@ -137,13 +162,11 @@ test.vecCon.Cpp.Validate <- function() {
 			vWeight.push_back(2.1);
 			
 			MyvecCon.buildAndAppend(vNeuron, vWeight);
-			MyvecCon.validateVector();
-			
-			return wrap(MyvecCon);
+			MyvecCon.validate();
+			return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	checkException(result <- testCodefun(), silent=TRUE)
-# [1] TRUE
 }
 
 
