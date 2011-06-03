@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="43,451,125,528"/>
+<area shape="rect" id="node4" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="5,235,163,400"/>
+<area shape="rect" id="node6" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="23,5,145,171"/>
+</map>

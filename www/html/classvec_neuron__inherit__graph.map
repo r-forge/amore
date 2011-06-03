@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="16,579,152,656"/>
+<area shape="rect" id="node2" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="5,235,163,400"/>
+<area shape="rect" id="node4" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="23,5,145,171"/>
+</map>

@@ -50,7 +50,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: vecAMORE changes due to weak_ptr
+# FIXME Manolo: vecCon changes due to weak_ptr
 # STATUS: writing
 ###############################################
 

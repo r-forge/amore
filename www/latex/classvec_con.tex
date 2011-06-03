@@ -13,7 +13,8 @@ A vector of connections.
 
 
 
-Inheritance diagram for vecCon:\nopagebreak
+Inheritance diagram for vecCon:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +23,8 @@ Inheritance diagram for vecCon:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for vecCon:\nopagebreak
+Collaboration diagram for vecCon:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,7 +39,15 @@ int \hyperlink{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749}{numOfCons} ()
 std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getFromId} ()
 \begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ FROM, std::vector$<$ double $>$ WEIGHT)
-\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\item 
+std::vector$<$ double $>$ \hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} ()
+\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ \hyperlink{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}{getFromNeuron} ()
+\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
+bool \hyperlink{classvec_con_a7dc281e7258bf8be19a1591501c5434d}{validate} ()
+\begin{DoxyCompactList}\small\item\em Internal Object validator. \end{DoxyCompactList}\item 
+bool \hyperlink{classvec_con_a948d5488bc5871d0d289e692affa5818}{validateVector} ()
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -66,24 +76,24 @@ Builds \hyperlink{class_con}{Con} objects and appends them to ldata.
 
 This function provides a convenient way of populating a \hyperlink{classvec_con}{vecCon} object by building and apending \hyperlink{class_con}{Con} objects to ldata. 
 \begin{DoxyParams}{Parameters}
-{\em FROM} & A vector of smart pointers to the neurons to be used in the \hyperlink{class_con_a40215fdb25f3b2ed66e965df558e86e2}{Con::from} fields \\
+{\em FROM} & A vector of smart pointers to the neurons to be used in the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{Con::from} fields \\
 \hline
 {\em WEIGHT} & A vector of values to be set in the \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{Con::weight} fields\\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
- // Data set up
+        //================
+        //Usage example:
+        //================
+        // Data set up
                 std::vector<int> result;
                 vecCon MyvecCon;
                 std::vector<NeuronSharedPtr> vNeuron;
                 std::vector<double> vWeight;
 
 
-                // Test
+        // Test
                 NeuronSharedPtr ptNeuron( new Neuron(11) );
                 vNeuron.push_back(ptNeuron);
                 ptNeuron.reset( new Neuron(22) );
@@ -104,7 +114,7 @@ This function provides a convenient way of populating a \hyperlink{classvec_con}
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} 
+\hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. 
 \end{DoxySeeAlso}
 
 
@@ -185,9 +195,14 @@ An std::vector$<$int$>$ that contains the Ids
 
         // Now result is a vector that contains the values 10, 20 and 30.
 \end{DoxyCode}
- 
 
-Definition at line 84 of file vecCon.cpp.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 86 of file vecCon.cpp.
 
 
 
@@ -210,6 +225,170 @@ Here is the call graph for this function:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=324pt]{classvec_con_aa9f3f5df4c4060951c975c4c829b8471_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}{
+\index{vecCon@{vecCon}!getFromNeuron@{getFromNeuron}}
+\index{getFromNeuron@{getFromNeuron}!vecCon@{vecCon}}
+\subsubsection[{getFromNeuron}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf NeuronSharedPtr} $>$ vecCon::getFromNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}
+
+
+Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. 
+
+This function provides a convenient way of getting the values of the weight field of those \hyperlink{class_con}{Con} object pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object. \begin{DoxyReturn}{Returns}
+A numeric (double) vector with the weights
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+        // Data set up
+        std::vector<int> result;
+                        vecCon MyvecCon;
+                        std::vector<NeuronSharedPtr> vNeuron;
+                        std::vector<NeuronSharedPtr> auxvec;
+                        std::vector<double> vWeight;
+
+                        // Test
+                        NeuronSharedPtr ptNeuron( new Neuron(11) );
+                        vNeuron.push_back(ptNeuron);
+                        ptNeuron.reset( new Neuron(22) );
+                        vNeuron.push_back(ptNeuron);
+                        ptNeuron.reset( new Neuron(33) );
+                        vNeuron.push_back(ptNeuron);
+
+                        vWeight.push_back(12.3);
+                        vWeight.push_back(1.2);
+                        vWeight.push_back(2.1);
+
+                        MyvecCon.buildAndAppend(vNeuron, vWeight);
+                        auxvec = MyvecCon.getFromNeuron();
+                        for(std::vector<NeuronSharedPtr>::iterator itr = auxvec.b
+      egin();   itr != auxvec.end();   itr++) { result.push_back( (*itr)->getId() ); }
+
+
+        // Now result is a vector that contains the values 11, 22 and 33 .
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getFromId} and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 237 of file vecCon.cpp.
+
+
+
+References vecAMORE$<$ Con $>$::ldata, and numOfCons().
+
+
+\begin{DoxyCode}
+                                                    {
+        std::vector<NeuronSharedPtr> result;
+        result.reserve(numOfCons());
+        for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != 
+      ldata.end();   itr++)   { result.push_back( (*itr)->getFromNeuron() ); }
+        return result;
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classvec_con_a76f10669494f2247d036ae6a1f296873}{
+\index{vecCon@{vecCon}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!vecCon@{vecCon}}
+\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ double $>$ vecCon::getWeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_a76f10669494f2247d036ae6a1f296873}
+
+
+Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. 
+
+This function provides a convenient way of getting the values of the weight field of those \hyperlink{class_con}{Con} object pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object. \begin{DoxyReturn}{Returns}
+A numeric (double) vector with the weights
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                std::vector<double> result;
+                vecCon MyvecCon;
+                std::vector<NeuronSharedPtr> vNeuron;
+                std::vector<double> vWeight;
+
+
+        // Test
+                NeuronSharedPtr ptNeuron( new Neuron(11) );
+                vNeuron.push_back(ptNeuron);
+                ptNeuron.reset( new Neuron(22) );
+                vNeuron.push_back(ptNeuron);
+                ptNeuron.reset( new Neuron(33) );
+                vNeuron.push_back(ptNeuron);
+
+                vWeight.push_back(12.3);
+                vWeight.push_back(1.2);
+                vWeight.push_back(2.1);
+
+                MyvecCon.buildAndAppend(vNeuron, vWeight);
+
+                result=MyvecCon.getWeight();
+
+        // Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getFromId} and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 188 of file vecCon.cpp.
+
+
+
+References vecAMORE$<$ Con $>$::ldata, and numOfCons().
+
+
+\begin{DoxyCode}
+                                            {
+        std::vector<double> result;
+        result.reserve(numOfCons());
+        for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != 
+      ldata.end();   itr++)   { result.push_back((*itr)->getWeight()); }
+        return result;
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classvec_con_a76f10669494f2247d036ae6a1f296873_cgraph}
 \end{center}
 \end{figure}
 
@@ -277,7 +456,7 @@ References vecAMORE$<$ Con $>$::ldata.
 
 
 
-Referenced by getFromId().
+Referenced by getFromId(), getFromNeuron(), and getWeight().
 
 
 \begin{DoxyCode}
@@ -287,15 +466,64 @@ Referenced by getFromId().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749_icgraph}
+\includegraphics[width=348pt]{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{classvec_con_a7dc281e7258bf8be19a1591501c5434d}{
+\index{vecCon@{vecCon}!validate@{validate}}
+\index{validate@{validate}!vecCon@{vecCon}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_a7dc281e7258bf8be19a1591501c5434d}
+
+
+Internal Object validator. 
+
+This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.vecCon.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{vecAMORE$<$ Con $>$}.
+
+
+
+Definition at line 338 of file vecCon.cpp.
+
+
+\begin{DoxyCode}
+                        {
+        BEGIN_RCPP
+        std::vector<int> vIds;
+        for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.b
+      egin();   itr != ldata.end();   itr++)  {
+                (*itr)->validate();
+                vIds.push_back( (*itr)->getFromId() )
+        }
+        unique(vIds)
+        return true;
+        END_RCPP
+};
+\end{DoxyCode}
+\hypertarget{classvec_con_a948d5488bc5871d0d289e692affa5818}{
+\index{vecCon@{vecCon}!validateVector@{validateVector}}
+\index{validateVector@{validateVector}!vecCon@{vecCon}}
+\subsubsection[{validateVector}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::validateVector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_a948d5488bc5871d0d289e692affa5818}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
