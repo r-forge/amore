@@ -34,7 +34,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 
 
-#lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNois
+#lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 
 
 # Lista de Fixme's
@@ -50,7 +50,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: vecCon::getFromNeuron
+# FIXME Manolo: vecAMORE changes due to weak_ptr
 # STATUS: writing
 ###############################################
 
