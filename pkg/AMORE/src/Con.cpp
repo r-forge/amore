@@ -15,7 +15,9 @@
 /*
  * Default constructor, from=NULL, weight=0
  */
-	Con::Con() : from(NULL), weight(0) {};
+	Con::Con() : weight(0) {
+		from.reset();
+	};
 
 
 //! Constructor
@@ -24,7 +26,15 @@
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \param w The new value (double) to be set in the \ref weight field.
  */
-	Con::Con(Neuron* f , double w ) : from(f), weight(w) {};
+	Con::Con(NeuronSharedPtr f , double w ) : from(f), weight(w) {};
+
+
+	//! Constructor
+	/*
+	 * Constructor, from=f, weight=0
+	 * \param f A pointer to the neuron that is to be inserted in the \ref from field.
+	 */
+		Con::Con(NeuronSharedPtr f ) : from(f), weight(0) {};
 
 
 
@@ -42,22 +52,19 @@
  *	//Usage example:
  *	//================
  *	// Data set up
- *		Con myCon;
- *		Neuron MyNeuron;
- *		Neuron* ptNeuron;
- *		MyNeuron.setId(1);
- *		myCon.setFromNeuron(&MyNeuron);
+ *	 		NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1
+ *			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+ *	// Test
+ *	  		ptShNeuron = ptShCon->getFromNeuron() ;
+ *			int result = ptShNeuron->getId();
  *
- *	//Test
- *		ptNeuron = myCon.getFromNeuron();
- *		int result= ptNeuron->getId();
- *	// Now, ptNeuron is pointing at MyNeuron and, thus, result is equal to 1.
+ *	// Now, result is equal to 1.
  * \endcode
  *
  * \sa getFromId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-Neuron* Con::getFromNeuron	()   			{
-	return(from);
+NeuronSharedPtr Con::getFromNeuron	()   			{
+	return(from.lock());
 }
 
 
@@ -67,8 +74,8 @@ Neuron* Con::getFromNeuron	()   			{
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
-void Con::setFromNeuron	(Neuron* f)   	{
-	from = f;
+void Con::setFromNeuron	(NeuronSharedPtr f)   	{
+	from=f;
 }
 
 
@@ -95,7 +102,8 @@ void Con::setFromNeuron	(Neuron* f)   	{
  * \sa getFromNeuron, setFromNeuron and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
 int Con::getFromId () {
-	return(from->getId() );
+	NeuronSharedPtr ptNeuron(from);
+	return(  ptNeuron->getId() );
 }
 
 

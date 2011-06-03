@@ -21,6 +21,7 @@
 #include <algorithm>
 #include <vector>
 #include <boost/shared_ptr.hpp>
+#include <boost/weak_ptr.hpp>
 #include <Rcpp.h>
 
 using namespace Rcpp;
@@ -33,6 +34,7 @@ class Neuron;
 
 typedef boost::shared_ptr<Con> ConSharedPtr;
 typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
+typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
 
 #include "Con.h"
@@ -40,12 +42,12 @@ typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
 
 
 #include "vecAMORE.h"
-#include "vecCon.h"
+//#include "vecCon.h"
 #include "Neuron.h"
 
 
 #include "Con.cpp"
 #include "vecAMORE.cpp"
-#include "vecCon.cpp"
+//#include "vecCon.cpp"
 #include "Neuron.cpp"
 
