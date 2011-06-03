@@ -7,16 +7,16 @@
 {\ttfamily \#include $<$algorithm$>$}\par
 {\ttfamily \#include $<$vector$>$}\par
 {\ttfamily \#include $<$boost/shared\_\-ptr.hpp$>$}\par
+{\ttfamily \#include $<$boost/weak\_\-ptr.hpp$>$}\par
 {\ttfamily \#include $<$Rcpp.h$>$}\par
 {\ttfamily \#include \char`\"{}Con.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}vecAMORE.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}vecCon.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Con.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}vecAMORE.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}vecCon.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
-Include dependency graph for AMORE.h:\nopagebreak
+Include dependency graph for AMORE.h:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,6 +29,12 @@ Include dependency graph for AMORE.h:\nopagebreak
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConSharedPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr}
+\item 
+typedef boost::weak\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{NeuronWeakPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{classvec_a_m_o_r_e}{vecAMORE}$<$ \hyperlink{class_con}{Con} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_aef4af162896b6bdede75674d0ce7d9db}{vecAMOREconSharedPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{classvec_a_m_o_r_e}{vecAMORE}$<$ \hyperlink{class_neuron}{Neuron} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_ada7ae04a1fa1bd30e64931d8f55e6aba}{vecAMOREneuronSharedPtr}
 \end{DoxyCompactItemize}
 
 
@@ -40,7 +46,7 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{
 \label{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}
 
 
-Definition at line 31 of file AMORE.h.
+Definition at line 32 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{
 \index{AMORE.h@{AMORE.h}!NeuronSharedPtr@{NeuronSharedPtr}}
@@ -49,5 +55,32 @@ Definition at line 31 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}
 
 
-Definition at line 35 of file AMORE.h.
+Definition at line 36 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{
+\index{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}}
+\index{NeuronWeakPtr@{NeuronWeakPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronWeakPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::weak\_\-ptr$<${\bf Neuron}$>$ {\bf NeuronWeakPtr}}}
+\label{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}
+
+
+Definition at line 37 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_aef4af162896b6bdede75674d0ce7d9db}{
+\index{AMORE.h@{AMORE.h}!vecAMOREconSharedPtr@{vecAMOREconSharedPtr}}
+\index{vecAMOREconSharedPtr@{vecAMOREconSharedPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{vecAMOREconSharedPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ {\bf vecAMORE}$<${\bf Con}$>$ $>$ {\bf vecAMOREconSharedPtr}}}
+\label{_a_m_o_r_e_8h_aef4af162896b6bdede75674d0ce7d9db}
+
+
+Definition at line 38 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_ada7ae04a1fa1bd30e64931d8f55e6aba}{
+\index{AMORE.h@{AMORE.h}!vecAMOREneuronSharedPtr@{vecAMOREneuronSharedPtr}}
+\index{vecAMOREneuronSharedPtr@{vecAMOREneuronSharedPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{vecAMOREneuronSharedPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ {\bf vecAMORE}$<${\bf Neuron}$>$ $>$ {\bf vecAMOREneuronSharedPtr}}}
+\label{_a_m_o_r_e_8h_ada7ae04a1fa1bd30e64931d8f55e6aba}
+
+
+Definition at line 39 of file AMORE.h.
 

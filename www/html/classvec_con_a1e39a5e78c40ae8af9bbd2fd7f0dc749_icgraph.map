@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons." alt="" coords="197,5,331,32"/>
+<area shape="rect" id="node3" href="$classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons." alt="" coords="213,5,347,32"/>
+<area shape="rect" id="node5" href="$classvec_con.html#ae72d00aedcd054e690f1dcf2ca5ac2c2" title="Getter of the weight field of the Con object related to vecCon." alt="" coords="199,56,361,83"/>
+<area shape="rect" id="node7" href="$classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con object related to vecCon." alt="" coords="213,107,347,133"/>
 </map>
