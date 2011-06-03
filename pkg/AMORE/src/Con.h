@@ -14,11 +14,11 @@
  */
 
 class Con {
-	//! A pointer to the Neuron used as input during simulation or training.
+	//! A smart pointer to the Neuron used as input during simulation or training.
 	/*!
 	 * The \ref from field contains the address of the Neuron whose output will be used as input by the Neuron containing the Con object.
 	 */
-	Neuron* from;
+	NeuronWeakPtr from;
 	//! A double variable that contains the weight of the connection
 	/*!
 	 * The \ref weight field contains the factor by which the output value of the Neuron addressed by the from field is multiplied during simulation or training.
@@ -28,15 +28,16 @@ class Con {
 public:
 
 	Con();
-	Con(Neuron* f , double w );
+	Con(NeuronSharedPtr f);
+	Con(NeuronSharedPtr f , double w );
 	~Con();
-	Neuron*		getFromNeuron	();
-	void 		setFromNeuron	(Neuron* f);
-	int			getFromId		();
-	double 		getWeight		();
-	void 		setWeight		(double w);
-	bool		show			();
-	bool		validate		();
+	NeuronSharedPtr	getFromNeuron	();
+			void	setFromNeuron	(NeuronSharedPtr f);
+				int	getFromId		();
+			double	getWeight		();
+			void	setWeight		(double w);
+			bool	show			();
+			bool	validate		();
 };
 #endif /* CON_H_ */
 

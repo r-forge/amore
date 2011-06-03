@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#ifndef VECCON_H_
-#define VECCON_H_
+#ifndef VECMLPNEURON_H_
+#define VECMLPNEURON_H_
 
 
 //!  A vector of connections
@@ -14,26 +14,25 @@
  *   The vecCon class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class.
  */
 
-class vecCon: public vecAMORE<Con> {
+class vecMLPneuron: public vecNeuron {
 
 public:
 
-									int	numOfCons();
-					std::vector<int>	getFromId();
-								bool	buildAndAppend		( std::vector<NeuronSharedPtr> FROM , std::vector<double> WEIGHT );
-					std::vector<double>	getWeight	  	( );
+//									int	numOfCons();
+//					std::vector<int>	getFromId();
+								bool	buildAndAppend	( std::vector<int> IDS , std::vector<int> BIAS, vecCon VC );
+//					std::vector<double>	getWeight	  	( );
 //					std::vector<double>	getWeight	  	( std::vector<int> FROM );
-		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
+//		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
 //								void	setWeight		( std::vector<double> value);
 //		À?						void	setWeight		( std::vector<double> value, std::vector<int> FROM);
 //								void	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
 //								void 	erase 			( std::vector<int> FROM );
 //								vecCon	select			( std::vector<int> FROM );
-								bool	validate		( );
-								bool    validateVector	   ( );
+//								bool	validate		( );
 
 };
 
-#endif /* VECCON_H_ */
+#endif /* VECMLPNEURON_H_ */
 
 

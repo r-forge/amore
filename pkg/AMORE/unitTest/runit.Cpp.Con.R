@@ -9,13 +9,10 @@ test.Con.Cpp.setFromNeuron.getFromNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			Con myCon;
-			Neuron MyNeuron(1);  // MyNeuron::Id==1
-			Neuron * ptNeuron;
-			myCon.setFromNeuron(&MyNeuron);
-			
-			ptNeuron = myCon.getFromNeuron();
-			int result= ptNeuron->getId();
+			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1 
+			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+			ptShNeuron = ptShCon->getFromNeuron() ;				
+			int result = ptShNeuron->getId();
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
