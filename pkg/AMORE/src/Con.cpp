@@ -127,21 +127,20 @@ int Con::getFromId () {
 /*! This method allows access to the value stored in the private field \ref weight
  * \return The value of \ref weight (double)
  *
- *  \code
- *	//================
- *	//Usage example:
- *	//================
- *	// Data set up
- *		Con myCon;
- *		Neuron MyNeuron;
- *		MyNeuron.setId(16);
- *		myCon.setFromNeuron(&MyNeuron);
- *		myCon.setWeight(12.4);
- *		double result1= myCon.getWeight();
+ * \code
+ *  //================
+ *  //Usage example:
+ *  //================
+ *  // Data set up
+ *			std::vector<double> result;
+ *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
+ *			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
  *	// Test
- *		myCon.setWeight(2.2);
- *		double result2= myCon.getWeight();
- *	// Now, result1 is equal to 12.4 and result2 is equal to 2.2.
+ *			result.push_back( ptShCon->getWeight() );
+ *			ptShCon->setWeight(2.2);
+ *			result.push_back( ptShCon->getWeight() );
+ *
+ *	// Now, result is a numeric vector that contains the values 12.4 and 2.2 .
  * \endcode
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
@@ -162,18 +161,15 @@ double Con::getWeight () {
  *  //Usage example:
  *  //================
  *  // Data set up
- *		Con myCon;
- *		Neuron n;
- *		n.setId(16);
- *		myCon.setFromNeuron(&n);
- *
+ *			std::vector<double> result;
+ *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
+ *			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
+ *			result.push_back(ptShCon->getWeight());
  *	// Test
- *		myCon.setWeight(12.4);
- *		myCon.show();
- *	// Now, the output at the R terminal would show:
- *	//
- *	//  FROM=16		WEIGHT=12.4
- *	//
+ *			ptShCon->setWeight(2.2);
+ *			result.push_back(ptShCon->getWeight());
+ *
+ *	// Now, result is a numeric vector that contains the values 12.4 and 2.2 .
  * \endcode
  *
  * \sa getWeight and the unit test files (e.g. runit.Cpp.Con.R)

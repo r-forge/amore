@@ -81,13 +81,12 @@ test.Con.Cpp.setWeight.getWeight <- function() {
 test.Con.Cpp.show <- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- '
-			Neuron MyNeuron;
-			MyNeuron.setId(16);
-			Con myCon(&MyNeuron, 12.4);
-			bool result= myCon.show();
+	testCode <- "
+			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
+			bool result= ptShCon->show();
 			return wrap(result);
-			'
+			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkTrue(result)
@@ -99,12 +98,12 @@ test.Con.Cpp.show <- function() {
 test.Con.Cpp.validate.weight <- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- '
-			Neuron MyNeuron(16);
-			Con myCon(&MyNeuron, 12.4/0);
-			myCon.validate();
+	testCode <- "
+			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4/0) );  // from points to ptShNeuron and weight is set to an abnormal value.		
+			ptShCon->validate();
 			return wrap(true);
-			'
+			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
 			cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -118,10 +117,10 @@ test.Con.Cpp.validate.from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			Neuron MyNeuron(NA_INTEGER);
-			Con myCon(&MyNeuron, 12.4);
-			myCon.validate();
-			return wrap(myCon.getFromId());
+			NeuronSharedPtr ptShNeuron ( new Neuron(NA_INTEGER) ); 		// Neuron Id is set to NA
+			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  		// from points to ptShNeuron and weight is set to 12.4		
+			ptShCon->validate();
+			return wrap(true);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
 			otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(),
