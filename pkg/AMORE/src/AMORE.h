@@ -37,6 +37,7 @@ typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 typedef boost::shared_ptr< vecAMORE<Con> > vecAMOREconSharedPtr;
 typedef boost::shared_ptr< vecAMORE<Neuron> > vecAMOREneuronSharedPtr;
+typedef boost::shared_ptr< vecCon > vecConSharedPtr;
 
 
 #include "Con.h"
@@ -44,12 +45,12 @@ typedef boost::shared_ptr< vecAMORE<Neuron> > vecAMOREneuronSharedPtr;
 
 
 #include "vecAMORE.h"
-//#include "vecCon.h"
+#include "vecCon.h"
 #include "Neuron.h"
 
 
 #include "Con.cpp"
 #include "vecAMORE.cpp"
-//#include "vecCon.cpp"
+#include "vecCon.cpp"
 #include "Neuron.cpp"
 

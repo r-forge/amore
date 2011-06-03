@@ -9,26 +9,27 @@ test.vecCon.Cpp.push_back.getFromId <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			// Data set up
-			Neuron N1, N2, N3;
-			vecCon MyvecCon;
-			std::vector<int> result;
-			
-			N1.setId(10);
-			N2.setId(20);
-			N3.setId(30);
-			
-			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
-			MyvecCon.push_back(ptCon);				// push_back 
-			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
-			MyvecCon.push_back(ptCon);				// push_back
-			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
-			MyvecCon.push_back(ptCon);				// push_back
-			
-			// Test
-			MyvecCon.show() ;
-			MyvecCon.validate();		
-			result=MyvecCon.getFromId();
+	// Data set up
+				std::vector<int> result;
+				std::vector<ConSharedPtr> vcA, vcB;
+				vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
+				vecConSharedPtr	ptShvCon( new vecCon() );
+				ConSharedPtr	ptC;
+				NeuronSharedPtr ptN;
+				int ids[]= {10, 20, 30};
+				double weights[] = {1.13, 2.22, 3.33 };
+				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+					ptN.reset( new Neuron( ids[i] ) ); 	
+					ptShvNeuron->push_back(ptN);
+				}
+				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
+					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptShvCon->push_back(ptC);			 
+				}		
+	// Test
+			ptShvCon->show() ;
+			ptShvCon->validate();		
+			result=ptShvCon->getFromId();
 			return wrap(result);
 			"	
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -42,34 +43,35 @@ test.vecCon.Cpp.numOfCons.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			// Data set up
-			Neuron N1, N2, N3;
-			vecCon MyvecCon;
-			std::vector<int> result;
-			
-			N1.setId(10);
-			N2.setId(20);
-			N3.setId(30);
-
-			// Test
-			result.push_back(MyvecCon.numOfCons());		// Append numOfCons to result, create new Con and push_back into MyvecCon	
-			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// and repeat twice
-			MyvecCon.push_back(ptCon);				 
-			result.push_back(MyvecCon.numOfCons());
-
-			ptCon.reset(  new Con(&N2, 2.22) );		
-			MyvecCon.push_back(ptCon);				
-			result.push_back(MyvecCon.numOfCons());
-
-			ptCon.reset(  new Con(&N3, 3.33) );		
-			MyvecCon.push_back(ptCon);				
-			result.push_back(MyvecCon.numOfCons());
-			
+	// Data set up
+				std::vector<int> result;
+				std::vector<ConSharedPtr> vcA, vcB;
+				vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
+				vecConSharedPtr	ptShvCon( new vecCon() );
+				ConSharedPtr	ptC;
+				NeuronSharedPtr ptN;
+				int ids[]= {10, 20, 30};
+				double weights[] = {1.13, 2.22, 3.33 };
+				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+					ptN.reset( new Neuron( ids[i] ) ); 	
+					ptShvNeuron->push_back(ptN);
+				}
+				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
+					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyvecCon	
+					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptShvCon->push_back(ptC);			 
+				}		
+	// Test
+			ptShvCon->show() ;
+			ptShvCon->validate();					
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
-	checkEquals(result, c(0, 1, 2, 3))
+	checkEquals(result, c(0, 1, 2))
+	# From:	 10 	 Weight= 	 1.130000 
+	# From:	 20 	 Weight= 	 2.220000 
+	# From:	 30 	 Weight= 	 3.330000 
 	# [1] TRUE
 }
 

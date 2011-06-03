@@ -1,5 +1,5 @@
 /*
- * vecCon.h
+ *  vecCon.h
  *
  *  Created on: 26/05/2011
  *      Author: mcasl
@@ -29,8 +29,7 @@ public:
 //								void	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
 //								void 	erase 			( std::vector<int> FROM );
 //								vecCon	select			( std::vector<int> FROM );
-								bool	validate		( );
-								bool    validateVector	   ( );
+//								bool	validate		( );
 
 };
 
