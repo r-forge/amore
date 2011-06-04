@@ -60,12 +60,14 @@
 \contentsline {subsubsection}{\numberline {6.4.2.3}getFromNeuron}{37}{subsubsection.6.4.2.3}
 \contentsline {subsubsection}{\numberline {6.4.2.4}getWeight}{38}{subsubsection.6.4.2.4}
 \contentsline {subsubsection}{\numberline {6.4.2.5}numOfCons}{39}{subsubsection.6.4.2.5}
-\contentsline {section}{\numberline {6.5}vecMLPneuron Class Reference}{40}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{44}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{44}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}buildAndAppend}{44}{subsubsection.6.5.2.1}
-\contentsline {section}{\numberline {6.6}vecNeuron Class Reference}{44}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{47}{subsection.6.6.1}
+\contentsline {subsubsection}{\numberline {6.4.2.6}setFromNeuron}{40}{subsubsection.6.4.2.6}
+\contentsline {subsubsection}{\numberline {6.4.2.7}setWeight}{40}{subsubsection.6.4.2.7}
+\contentsline {section}{\numberline {6.5}vecMLPneuron Class Reference}{42}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{45}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{45}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}buildAndAppend}{45}{subsubsection.6.5.2.1}
+\contentsline {section}{\numberline {6.6}vecNeuron Class Reference}{45}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{48}{subsection.6.6.1}
 \contentsline {chapter}{\numberline {7}File Documentation}{49}{chapter.7}
 \contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{49}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Typedef Documentation}{50}{subsection.7.1.1}

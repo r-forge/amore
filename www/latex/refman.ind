@@ -21,7 +21,7 @@
 
   \item {buildAndAppend}
     \subitem {vecCon}, \hyperpage{34}
-    \subitem {vecMLPneuron}, \hyperpage{44}
+    \subitem {vecMLPneuron}, \hyperpage{45}
 
   \indexspace
 
@@ -112,12 +112,14 @@
 
   \item {setFromNeuron}
     \subitem {Con}, \hyperpage{15}
+    \subitem {vecCon}, \hyperpage{40}
   \item {setId}
     \subitem {Neuron}, \hyperpage{21}
   \item {setLdata}
     \subitem {vecAMORE}, \hyperpage{29}
   \item {setWeight}
     \subitem {Con}, \hyperpage{16}
+    \subitem {vecCon}, \hyperpage{40}
   \item {show}
     \subitem {Con}, \hyperpage{17}
     \subitem {vecAMORE}, \hyperpage{29}
@@ -148,11 +150,13 @@
     \subitem {getFromNeuron}, \hyperpage{36}
     \subitem {getWeight}, \hyperpage{38}
     \subitem {numOfCons}, \hyperpage{39}
+    \subitem {setFromNeuron}, \hyperpage{40}
+    \subitem {setWeight}, \hyperpage{40}
   \item {vecConSharedPtr}
     \subitem {AMORE.h}, \hyperpage{50}
-  \item {vecMLPneuron}, \hyperpage{40}
-    \subitem {buildAndAppend}, \hyperpage{44}
-  \item {vecNeuron}, \hyperpage{44}
+  \item {vecMLPneuron}, \hyperpage{42}
+    \subitem {buildAndAppend}, \hyperpage{45}
+  \item {vecNeuron}, \hyperpage{45}
 
   \indexspace
 

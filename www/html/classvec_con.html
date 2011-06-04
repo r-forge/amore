@@ -94,13 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="592" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="622" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__coll__graph.svg" width="468" height="1078" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="classvec_con__coll__graph.svg" width="468" height="1107" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -115,9 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#ae53dc9d379d1544cb441d316c5d15ecd">buildAndAppend</a> (std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> &gt; FROM, std::vector&lt; double &gt; WEIGHT)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects and appends them to ldata.  <a href="#ae53dc9d379d1544cb441d316c5d15ecd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873">getWeight</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#a76f10669494f2247d036ae6a1f296873"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#a76f10669494f2247d036ae6a1f296873"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#ae72d00aedcd054e690f1dcf2ca5ac2c2">getFromNeuron</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#ae72d00aedcd054e690f1dcf2ca5ac2c2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the from field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#ae72d00aedcd054e690f1dcf2ca5ac2c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#aced11b92f6406b5642e7d8464386d83b">setWeight</a> (std::vector&lt; double &gt; value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#aced11b92f6406b5642e7d8464386d83b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a43000d3bd790425722ed5e7939aeeae0">setFromNeuron</a> (std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> &gt; FROM)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A vector of connections. </p>
@@ -250,7 +253,7 @@ Public Member Functions</h2></td></tr>
                         result=MyvecCon.<a class="code" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons.">getFromId</a>();
 
         <span class="comment">// Now result is a vector that contains the values 10, 20 and 30.</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con object related to vecCon.">getWeight</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con objects related to vecCon.">getWeight</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
 
 <p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00086">86</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
@@ -285,46 +288,45 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>. </p>
-<p>This function provides a convenient way of getting the values of the weight field of those <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object pointed to by the smart pointer stored in the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A numeric (double) vector with the weights</dd></dl>
+<p>Getter of the from field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>. </p>
+<p>This function provides a convenient way of getting the values of the weight field of those <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object pointed to by the smart pointer stored in the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An std::vector&lt;NeuronSharedPtr&gt; with the pointer to the incoming neurons.</dd></dl>
 <div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
         <span class="comment">//Usage example:</span>
         <span class="comment">//================</span>
         <span class="comment">// Data set up</span>
-        std::vector&lt;int&gt; result;
-                        <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a> MyvecCon;
-                        std::vector&lt;NeuronSharedPtr&gt; vNeuron;
-                        std::vector&lt;NeuronSharedPtr&gt; auxvec;
-                        std::vector&lt;double&gt; vWeight;
+                        std::vector&lt;double&gt; result;
+                <span class="keywordtype">int</span> ids[]= {1, 2, 3};
+                <span class="keywordtype">double</span> weights[] = {12.3, 1.2, 2.1 };
+                <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a> MyvecCon;
+                std::vector&lt;NeuronSharedPtr&gt; vNeuron;
+                std::vector&lt;double&gt; vWeight;
+                <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptNeuron;
 
-                        <span class="comment">// Test</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptNeuron( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(11) );
-                        vNeuron.push_back(ptNeuron);
-                        ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(22) );
-                        vNeuron.push_back(ptNeuron);
-                        ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(33) );
-                        vNeuron.push_back(ptNeuron);
-
-                        vWeight.push_back(12.3);
-                        vWeight.push_back(1.2);
-                        vWeight.push_back(2.1);
-
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
+                                ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(ids[i]) );
+                                vNeuron.<a class="code" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptNeuron);
+                                vWeight.push_back(weights[i]);
+                        }
                         MyvecCon.<a class="code" href="classvec_con.html#ae53dc9d379d1544cb441d316c5d15ecd" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
-                        auxvec = MyvecCon.<a class="code" href="classvec_con.html#ae72d00aedcd054e690f1dcf2ca5ac2c2" title="Getter of the weight field of the Con object related to vecCon.">getFromNeuron</a>();
-                        <span class="keywordflow">for</span>(std::vector&lt;NeuronSharedPtr&gt;::iterator itr = auxvec.begin();   itr != auxvec.end();   itr++)        { result.push_back( (*itr)-&gt;getId() ); }
+                <span class="comment">// Test</span>
+                        vNeuron=MyvecCon.<a class="code" href="classvec_con.html#ae72d00aedcd054e690f1dcf2ca5ac2c2" title="Getter of the from field of the Con objects related to vecCon.">getFromNeuron</a>();
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
+                                result.push_back(vNeuron.at(i)-&gt;getId());
+                        }
 
-
-        <span class="comment">// Now result is a vector that contains the values 11, 22 and 33 .</span>
+        <span class="comment">// Now result is a vector that contains the values 1, 2 and 3 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons.">getFromId</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00237">237</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00291">291</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
 
 <p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>, and <a class="el" href="vec_con_8cpp_source.html#l00045">numOfCons()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                    {
         std::vector&lt;NeuronSharedPtr&gt; result;
         result.reserve(<a class="code" href="classvec_con.html#a1e39a5e78c40ae8af9bbd2fd7f0dc749" title="Size of the vecCon object.">numOfCons</a>());
-        <span class="keywordflow">for</span>(std::vector&lt;ConSharedPtr&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end();   itr++)     { result.push_back( (*itr)-&gt;getFromNeuron() ); }
+        <span class="keywordflow">for</span>(std::vector&lt;ConSharedPtr&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end();   itr++)     {
+                result.push_back((*itr)-&gt;getFromNeuron());
+        }
         <span class="keywordflow">return</span> result;
 }
 </pre></div>
@@ -351,7 +353,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>. </p>
+<p>Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>. </p>
 <p>This function provides a convenient way of getting the values of the weight field of those <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> object pointed to by the smart pointer stored in the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A numeric (double) vector with the weights</dd></dl>
 <div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
@@ -378,7 +380,7 @@ Here is the call graph for this function:</div>
 
                 MyvecCon.<a class="code" href="classvec_con.html#ae53dc9d379d1544cb441d316c5d15ecd" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
 
-                result=MyvecCon.<a class="code" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con object related to vecCon.">getWeight</a>();
+                result=MyvecCon.<a class="code" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con objects related to vecCon.">getWeight</a>();
 
         <span class="comment">// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" title="Getter of the Id values of the vector of Cons.">getFromId</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
@@ -452,7 +454,7 @@ Here is the call graph for this function:</div>
 
 <p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>.</p>
 
-<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00086">getFromId()</a>, <a class="el" href="vec_con_8cpp_source.html#l00237">getFromNeuron()</a>, and <a class="el" href="vec_con_8cpp_source.html#l00188">getWeight()</a>.</p>
+<p>Referenced by <a class="el" href="vec_con_8cpp_source.html#l00086">getFromId()</a>, <a class="el" href="vec_con_8cpp_source.html#l00291">getFromNeuron()</a>, and <a class="el" href="vec_con_8cpp_source.html#l00188">getWeight()</a>.</p>
 <div class="fragment"><pre class="fragment">                       {
         <span class="keywordflow">return</span> <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.size();
 }
@@ -460,10 +462,99 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749_icgraph.svg" width="368" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749_icgraph.svg" width="368" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="a43000d3bd790425722ed5e7939aeeae0"></a><!-- doxytag: member="vecCon::setFromNeuron" ref="a43000d3bd790425722ed5e7939aeeae0" args="(std::vector&lt; NeuronSharedPtr &gt; FROM)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vecCon::setFromNeuron </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> &gt;&#160;</td>
+          <td class="paramname"><em>FROM</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aced11b92f6406b5642e7d8464386d83b"></a><!-- doxytag: member="vecCon::setWeight" ref="aced11b92f6406b5642e7d8464386d83b" args="(std::vector&lt; double &gt; value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vecCon::setWeight </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>. </p>
+<p>This function provides a convenient way of setting the values of the weight field of those <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects pointed to by the smart pointer stored in the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>A numeric (double) vector with the weights to be set in the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects contained in the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true in case no exception is thrown</dd></dl>
+<div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
+        <span class="comment">//Usage example:</span>
+        <span class="comment">//================</span>
+        <span class="comment">// Data set up</span>
+                std::vector&lt;double&gt; result;
+                        <span class="keywordtype">int</span> ids[]= {1, 2, 3};
+                        <span class="keywordtype">double</span> weights[] = {12.3, 1.2, 2.1 };
+                        <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a> MyvecCon;
+                        std::vector&lt;NeuronSharedPtr&gt; vNeuron;
+                        std::vector&lt;double&gt; vWeight;
+                        <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptNeuron;
+
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
+                        ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(ids[1]) );
+                        vNeuron.<a class="code" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptNeuron);
+                        vWeight.push_back(0);                                   <span class="comment">// weights are set to 0</span>
+                        }
+                        MyvecCon.<a class="code" href="classvec_con.html#ae53dc9d379d1544cb441d316c5d15ecd" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
+                        MyvecCon.<a class="code" href="classvec_a_m_o_r_e.html#a11b0ffb0d2481f1960cb49a26b227d37" title="Pretty print of the vecAMORE&lt;T&gt;">show</a>();
+
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
+                                vWeight.at(i)=weights[i];
+                        }
+        <span class="comment">// Test</span>
+                        MyvecCon.<a class="code" href="classvec_con.html#aced11b92f6406b5642e7d8464386d83b" title="Setter of the weight field of the Con objects related to vecCon.">setWeight</a>(vWeight);                    <span class="comment">// weights are set to 12.3, 1.2 and 2.1</span>
+                        result=MyvecCon.<a class="code" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con objects related to vecCon.">getWeight</a>();
+
+        <span class="comment">// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .</span>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#a76f10669494f2247d036ae6a1f296873" title="Getter of the weight field of the Con objects related to vecCon.">getWeight</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00238">238</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>.</p>
+<div class="fragment"><pre class="fragment">                                            {
+        BEGIN_RCPP
+        <span class="keywordflow">if</span> (w.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ vecCon::setWeight]: Error, w is empty&quot;</span>); }
+        <span class="keywordflow">if</span> (w.size() != <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ vecCon::setWeight]: Error, w.size() != ldata.size()&quot;</span>); }
+        std::vector&lt;double&gt;::iterator itrWeight = w.begin();
+        <span class="keywordflow">for</span>(std::vector&lt;ConSharedPtr&gt;::iterator itr = <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin();   itr != <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end();   itr++, itrWeight++)        {
+                (*itr)-&gt;setWeight( *itrWeight );
+        }
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+        END_RCPP
+}
+</pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -475,7 +566,7 @@ Here is the caller graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_con.html">vecCon</a>      </li>
-      <li class="footer">Generated on Sat Jun 4 2011 09:44:05 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jun 4 2011 11:58:01 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

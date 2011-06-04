@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; Con \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="5,235,144,400"/>
 <area shape="rect" id="node7" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l}" alt="" coords="168,235,325,400"/>
-<area shape="rect" id="node5" href="$classvec_con.html" title="A vector of connections." alt="" coords="7,451,143,587"/>
-<area shape="rect" id="node9" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="205,480,288,557"/>
-<area shape="rect" id="node11" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="179,637,315,715"/>
+<area shape="rect" id="node5" href="$classvec_con.html" title="A vector of connections." alt="" coords="7,451,143,616"/>
+<area shape="rect" id="node9" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="205,495,288,572"/>
+<area shape="rect" id="node11" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="179,667,315,744"/>
 </map>
