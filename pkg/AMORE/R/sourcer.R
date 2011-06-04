@@ -50,7 +50,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: vecCon::setWeight
+# FIXME Manolo: vecCon::setFromNeuron
 # STATUS: writing
 ###############################################
 

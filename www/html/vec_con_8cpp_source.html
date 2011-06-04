@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00138"></a>00138         <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptCon;
 <a name="l00139"></a>00139         std::vector&lt;double&gt;::iterator itrWEIGHT = WEIGHT.begin();
 <a name="l00140"></a>00140         <span class="keywordflow">for</span>(  std::vector&lt;NeuronSharedPtr&gt;::iterator itrFROM=FROM.begin();  itrFROM != FROM.end();      itrFROM++ , itrWEIGHT++)        {
-<a name="l00141"></a>00141                         ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( itrFROM-&gt;get(), *itrWEIGHT) );
+<a name="l00141"></a>00141                         ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( *itrFROM, *itrWEIGHT) );
 <a name="l00142"></a>00142                         <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.push_back(ptCon);
 <a name="l00143"></a>00143         }
 <a name="l00144"></a>00144         <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -235,34 +235,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00331"></a>00331 
 <a name="l00332"></a>00332 
 <a name="l00334"></a>00334 
-<a name="l00338"></a><a class="code" href="classvec_con.html#a7dc281e7258bf8be19a1591501c5434d">00338</a> <span class="keywordtype">bool</span> <a class="code" href="classvec_con.html#a7dc281e7258bf8be19a1591501c5434d" title="Internal Object validator.">vecCon&lt;&gt;::validate</a>() {
-<a name="l00339"></a>00339         BEGIN_RCPP
-<a name="l00340"></a>00340         std::vector&lt;int&gt; vIds;
-<a name="l00341"></a>00341         <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++) {
-<a name="l00342"></a>00342                 (*itr)-&gt;validate();
-<a name="l00343"></a>00343                 vIds.push_back( (*itr)-&gt;getFromId() )
-<a name="l00344"></a>00344         }
-<a name="l00345"></a>00345         unique(vIds)
-<a name="l00346"></a>00346         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00347"></a>00347         END_RCPP
-<a name="l00348"></a>00348 };
-<a name="l00349"></a>00349 
-<a name="l00351"></a>00351 
-<a name="l00356"></a>00356 <span class="keywordtype">bool</span> Con::validateVector() {
-<a name="l00357"></a>00357         BEGIN_RCPP
-<a name="l00358"></a>00358         <span class="comment">// if (! R_FINITE(getWeight()) )                throw std::range_error(&quot;weight is not finite.&quot;);</span>
-<a name="l00359"></a>00359          <span class="keywordflow">if</span> (numOfCons() == NA_INTEGER )                <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;numOfCons is not finite.&quot;</span>);
-<a name="l00360"></a>00360         <span class="keywordflow">return</span>(<span class="keyword">true</span>);
-<a name="l00361"></a>00361         END_RCPP
-<a name="l00362"></a>00362 };
-<a name="l00363"></a>00363 
-<a name="l00364"></a>00364 
+<a name="l00338"></a>00338 <span class="comment">/*</span>
+<a name="l00339"></a>00339 <span class="comment">bool vecCon&lt;&gt;::validate() {</span>
+<a name="l00340"></a>00340 <span class="comment">        BEGIN_RCPP</span>
+<a name="l00341"></a>00341 <span class="comment">        std::vector&lt;int&gt; vIds;</span>
+<a name="l00342"></a>00342 <span class="comment">        for(typename std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt;::iterator itr = ldata.begin();   itr != ldata.end();   itr++) {</span>
+<a name="l00343"></a>00343 <span class="comment">                (*itr)-&gt;validate();</span>
+<a name="l00344"></a>00344 <span class="comment">                vIds.push_back( (*itr)-&gt;getFromId() )</span>
+<a name="l00345"></a>00345 <span class="comment">        }</span>
+<a name="l00346"></a>00346 <span class="comment">        unique(vIds)</span>
+<a name="l00347"></a>00347 <span class="comment">        return true;</span>
+<a name="l00348"></a>00348 <span class="comment">        END_RCPP</span>
+<a name="l00349"></a>00349 <span class="comment">};</span>
+<a name="l00350"></a>00350 <span class="comment">*/</span>
+<a name="l00352"></a>00352 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="vec_con_8cpp.html">vecCon.cpp</a>      </li>
-      <li class="footer">Generated on Fri Jun 3 2011 22:10:16 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jun 4 2011 09:44:05 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

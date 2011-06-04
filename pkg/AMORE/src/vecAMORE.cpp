@@ -42,7 +42,7 @@
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
  */
 template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> TsharedPtr) {
-	this->ldata.push_back(TsharedPtr);
+	ldata.push_back(TsharedPtr);
 };
 
 

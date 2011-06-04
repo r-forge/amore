@@ -43,11 +43,7 @@ bool \hyperlink{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}{buildAndAppend} 
 std::vector$<$ double $>$ \hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} ()
 \begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
 std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ \hyperlink{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}{getFromNeuron} ()
-\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
-bool \hyperlink{classvec_con_a7dc281e7258bf8be19a1591501c5434d}{validate} ()
-\begin{DoxyCompactList}\small\item\em Internal Object validator. \end{DoxyCompactList}\item 
-bool \hyperlink{classvec_con_a948d5488bc5871d0d289e692affa5818}{validateVector} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -138,7 +134,7 @@ References vecAMORE$<$ Con $>$::ldata.
         std::vector<double>::iterator itrWEIGHT = WEIGHT.begin();
         for(  std::vector<NeuronSharedPtr>::iterator itrFROM=FROM.begin();  itrFR
       OM != FROM.end();       itrFROM++ , itrWEIGHT++)        {
-                        ptCon.reset(  new Con( itrFROM->get(), *itrWEIGHT) );
+                        ptCon.reset(  new Con( *itrFROM, *itrWEIGHT) );
                         ldata.push_back(ptCon);
         }
         return true;
@@ -302,8 +298,7 @@ References vecAMORE$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -383,8 +378,7 @@ References vecAMORE$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -466,8 +460,7 @@ Referenced by getFromId(), getFromNeuron(), and getWeight().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -476,54 +469,6 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{classvec_con_a7dc281e7258bf8be19a1591501c5434d}{
-\index{vecCon@{vecCon}!validate@{validate}}
-\index{validate@{validate}!vecCon@{vecCon}}
-\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::validate (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{classvec_con_a7dc281e7258bf8be19a1591501c5434d}
-
-
-Internal Object validator. 
-
-This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
-The unit test files, e.g., runit.Cpp.vecCon.R, for usage examples. 
-\end{DoxySeeAlso}
-
-
-Reimplemented from \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{vecAMORE$<$ Con $>$}.
-
-
-
-Definition at line 338 of file vecCon.cpp.
-
-
-\begin{DoxyCode}
-                        {
-        BEGIN_RCPP
-        std::vector<int> vIds;
-        for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.b
-      egin();   itr != ldata.end();   itr++)  {
-                (*itr)->validate();
-                vIds.push_back( (*itr)->getFromId() )
-        }
-        unique(vIds)
-        return true;
-        END_RCPP
-};
-\end{DoxyCode}
-\hypertarget{classvec_con_a948d5488bc5871d0d289e692affa5818}{
-\index{vecCon@{vecCon}!validateVector@{validateVector}}
-\index{validateVector@{validateVector}!vecCon@{vecCon}}
-\subsubsection[{validateVector}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::validateVector (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{classvec_con_a948d5488bc5871d0d289e692affa5818}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

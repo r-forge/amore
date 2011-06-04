@@ -196,6 +196,26 @@ std::vector<double>	vecCon::getWeight ( ) {
 
 
 
+
+
+
+
+bool vecCon::setWeight (std::vector<double> w)  {
+	BEGIN_RCPP
+	if (w.empty()) { throw std::range_error("[ C++ vecCon::setWeight]: Error, w is empty"); }
+	if (w.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setWeight]: Error, w.size() != ldata.size()"); }
+	std::vector<double>::iterator itrWeight = w.begin();
+	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrWeight++)	{
+		(*itr)->setWeight( *itrWeight );
+	}
+	return true;
+	END_RCPP
+}
+
+
+
+
+
 //! Getter of the weight field of the Con object related to vecCon
 /*!
  * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the vecCon object.
