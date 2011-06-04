@@ -41,9 +41,13 @@ std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471
 bool \hyperlink{classvec_con_ae53dc9d379d1544cb441d316c5d15ecd}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ FROM, std::vector$<$ double $>$ WEIGHT)
 \begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} ()
-\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
 std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ \hyperlink{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}{getFromNeuron} ()
-\begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter of the from field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
+bool \hyperlink{classvec_con_aced11b92f6406b5642e7d8464386d83b}{setWeight} (std::vector$<$ double $>$ value)
+\begin{DoxyCompactList}\small\item\em Setter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. \end{DoxyCompactList}\item 
+void \hyperlink{classvec_con_a43000d3bd790425722ed5e7939aeeae0}{setFromNeuron} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ FROM)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -236,10 +240,12 @@ Here is the call graph for this function:\nopagebreak
 \label{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}
 
 
-Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. 
+Getter of the from field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. 
 
-This function provides a convenient way of getting the values of the weight field of those \hyperlink{class_con}{Con} object pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object. \begin{DoxyReturn}{Returns}
-A numeric (double) vector with the weights
+This function provides a convenient way of getting the values of the weight field of those \hyperlink{class_con}{Con} object pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object.
+
+\begin{DoxyReturn}{Returns}
+An std::vector$<$NeuronSharedPtr$>$ with the pointer to the incoming neurons.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
@@ -247,31 +253,27 @@ A numeric (double) vector with the weights
         //Usage example:
         //================
         // Data set up
-        std::vector<int> result;
-                        vecCon MyvecCon;
-                        std::vector<NeuronSharedPtr> vNeuron;
-                        std::vector<NeuronSharedPtr> auxvec;
-                        std::vector<double> vWeight;
+                        std::vector<double> result;
+                int ids[]= {1, 2, 3};
+                double weights[] = {12.3, 1.2, 2.1 };
+                vecCon MyvecCon;
+                std::vector<NeuronSharedPtr> vNeuron;
+                std::vector<double> vWeight;
+                NeuronSharedPtr ptNeuron;
 
-                        // Test
-                        NeuronSharedPtr ptNeuron( new Neuron(11) );
-                        vNeuron.push_back(ptNeuron);
-                        ptNeuron.reset( new Neuron(22) );
-                        vNeuron.push_back(ptNeuron);
-                        ptNeuron.reset( new Neuron(33) );
-                        vNeuron.push_back(ptNeuron);
-
-                        vWeight.push_back(12.3);
-                        vWeight.push_back(1.2);
-                        vWeight.push_back(2.1);
-
+                        for (int i=0; i<=2; i++) {
+                                ptNeuron.reset( new Neuron(ids[i]) );
+                                vNeuron.push_back(ptNeuron);
+                                vWeight.push_back(weights[i]);
+                        }
                         MyvecCon.buildAndAppend(vNeuron, vWeight);
-                        auxvec = MyvecCon.getFromNeuron();
-                        for(std::vector<NeuronSharedPtr>::iterator itr = auxvec.b
-      egin();   itr != auxvec.end();   itr++) { result.push_back( (*itr)->getId() ); }
+                // Test
+                        vNeuron=MyvecCon.getFromNeuron();
+                        for (int i=0; i<=2; i++) {
+                                result.push_back(vNeuron.at(i)->getId());
+                        }
 
-
-        // Now result is a vector that contains the values 11, 22 and 33 .
+        // Now result is a vector that contains the values 1, 2 and 3 .
 \end{DoxyCode}
 
 
@@ -280,7 +282,7 @@ A numeric (double) vector with the weights
 \end{DoxySeeAlso}
 
 
-Definition at line 237 of file vecCon.cpp.
+Definition at line 291 of file vecCon.cpp.
 
 
 
@@ -292,7 +294,9 @@ References vecAMORE$<$ Con $>$::ldata, and numOfCons().
         std::vector<NeuronSharedPtr> result;
         result.reserve(numOfCons());
         for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != 
-      ldata.end();   itr++)   { result.push_back( (*itr)->getFromNeuron() ); }
+      ldata.end();   itr++)   {
+                result.push_back((*itr)->getFromNeuron());
+        }
         return result;
 }
 \end{DoxyCode}
@@ -318,7 +322,7 @@ Here is the call graph for this function:\nopagebreak
 \label{classvec_con_a76f10669494f2247d036ae6a1f296873}
 
 
-Getter of the weight field of the \hyperlink{class_con}{Con} object related to \hyperlink{classvec_con}{vecCon}. 
+Getter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. 
 
 This function provides a convenient way of getting the values of the weight field of those \hyperlink{class_con}{Con} object pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object. \begin{DoxyReturn}{Returns}
 A numeric (double) vector with the weights
@@ -460,7 +464,8 @@ Referenced by getFromId(), getFromNeuron(), and getWeight().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -469,6 +474,101 @@ Here is the caller graph for this function:\nopagebreak
 \end{figure}
 
 
+\hypertarget{classvec_con_a43000d3bd790425722ed5e7939aeeae0}{
+\index{vecCon@{vecCon}!setFromNeuron@{setFromNeuron}}
+\index{setFromNeuron@{setFromNeuron}!vecCon@{vecCon}}
+\subsubsection[{setFromNeuron}]{\setlength{\rightskip}{0pt plus 5cm}void vecCon::setFromNeuron (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf NeuronSharedPtr} $>$}]{FROM}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_a43000d3bd790425722ed5e7939aeeae0}
+\hypertarget{classvec_con_aced11b92f6406b5642e7d8464386d83b}{
+\index{vecCon@{vecCon}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!vecCon@{vecCon}}
+\subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}bool vecCon::setWeight (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ double $>$}]{w}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_con_aced11b92f6406b5642e7d8464386d83b}
+
+
+Setter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{vecCon}. 
+
+This function provides a convenient way of setting the values of the weight field of those \hyperlink{class_con}{Con} objects pointed to by the smart pointer stored in the \hyperlink{classvec_con}{vecCon} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A numeric (double) vector with the weights to be set in the \hyperlink{class_con}{Con} objects contained in the \hyperlink{classvec_con}{vecCon} object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case no exception is thrown
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                std::vector<double> result;
+                        int ids[]= {1, 2, 3};
+                        double weights[] = {12.3, 1.2, 2.1 };
+                        vecCon MyvecCon;
+                        std::vector<NeuronSharedPtr> vNeuron;
+                        std::vector<double> vWeight;
+                        NeuronSharedPtr ptNeuron;
+
+                        for (int i=0; i<=2; i++) {
+                        ptNeuron.reset( new Neuron(ids[1]) );
+                        vNeuron.push_back(ptNeuron);
+                        vWeight.push_back(0);                                   /
+      / weights are set to 0
+                        }
+                        MyvecCon.buildAndAppend(vNeuron, vWeight);
+                        MyvecCon.show();
+
+                        for (int i=0; i<=2; i++) {
+                                vWeight.at(i)=weights[i];
+                        }
+        // Test
+                        MyvecCon.setWeight(vWeight);                    // weight
+      s are set to 12.3, 1.2 and 2.1
+                        result=MyvecCon.getWeight();
+
+        // Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 238 of file vecCon.cpp.
+
+
+
+References vecAMORE$<$ Con $>$::ldata.
+
+
+\begin{DoxyCode}
+                                            {
+        BEGIN_RCPP
+        if (w.empty()) { throw std::range_error("[ C++ vecCon::setWeight]: Error,
+       w is empty"); }
+        if (w.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::set
+      Weight]: Error, w.size() != ldata.size()"); }
+        std::vector<double>::iterator itrWeight = w.begin();
+        for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != 
+      ldata.end();   itr++, itrWeight++)      {
+                (*itr)->setWeight( *itrWeight );
+        }
+        return true;
+        END_RCPP
+}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

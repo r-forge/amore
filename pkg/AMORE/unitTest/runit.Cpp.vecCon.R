@@ -190,7 +190,7 @@ test.vecCon.Cpp.getWeight <- function() {
 			NeuronSharedPtr ptNeuron;
 
 			for (int i=0; i<=2; i++) {
-				ptNeuron.reset( new Neuron(ids[1]) );
+				ptNeuron.reset( new Neuron(ids[i]) );
 				vNeuron.push_back(ptNeuron);	
 				vWeight.push_back(weights[i]);	
 			}
@@ -259,7 +259,7 @@ test.vecCon.Cpp.setWeight <- function() {
 			NeuronSharedPtr ptNeuron;
 			
 			for (int i=0; i<=2; i++) {
-			ptNeuron.reset( new Neuron(ids[1]) );
+			ptNeuron.reset( new Neuron(ids[i]) );
 			vNeuron.push_back(ptNeuron);	
 			vWeight.push_back(0);					// weights are set to 0
 			}
@@ -279,4 +279,39 @@ test.vecCon.Cpp.setWeight <- function() {
 	checkEquals(result, c( 12.3, 1.2, 2.1))
 	# [1] TRUE
 }
+
+
+###############################################################################
+test.vecCon.Cpp.getFromNeuron <- function() {	
+###############################################################################
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+		// Data set up
+			std::vector<double> result;
+			int ids[]= {1, 2, 3};
+			double weights[] = {12.3, 1.2, 2.1 };
+			vecCon MyvecCon;
+			std::vector<NeuronSharedPtr> vNeuron;
+			std::vector<double> vWeight;
+			NeuronSharedPtr ptNeuron;
+			
+			for (int i=0; i<=2; i++) {
+				ptNeuron.reset( new Neuron(ids[i]) );
+				vNeuron.push_back(ptNeuron);	
+				vWeight.push_back(weights[i]);					
+			}
+			MyvecCon.buildAndAppend(vNeuron, vWeight);
+		// Test			
+			vNeuron=MyvecCon.getFromNeuron();				
+			for (int i=0; i<=2; i++) {
+				result.push_back(vNeuron.at(i)->getId());		
+			}
+			return wrap(result);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun()
+	checkEquals(result, c( 1, 2, 3))
+	# [1] TRUE
+}
+
 

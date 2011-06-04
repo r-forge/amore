@@ -148,7 +148,7 @@ bool vecCon::buildAndAppend	( std::vector<NeuronSharedPtr> FROM, std::vector<dou
 
 
 
-//! Getter of the weight field of the Con object related to vecCon
+//! Getter of the weight field of the Con objects related to vecCon
 /*!
  * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the vecCon object.
  * \return A numeric (double) vector with the weights
@@ -193,13 +193,48 @@ std::vector<double>	vecCon::getWeight ( ) {
 }
 
 
-
-
-
-
-
-
-
+//! Setter of the weight field of the Con objects related to vecCon
+/*!
+ * This function provides a convenient way of setting the values of the weight field of those Con objects pointed to by the smart pointer stored in the vecCon object.
+ *
+ * \param w A numeric (double) vector with the weights to be set in the Con objects contained in the vecCon object.
+ *
+ * \return true in case no exception is thrown
+ *
+ * \code
+ * 	//================
+ * 	//Usage example:
+ * 	//================
+ *	// Data set up
+ *		std::vector<double> result;
+ *			int ids[]= {1, 2, 3};
+ *			double weights[] = {12.3, 1.2, 2.1 };
+ *			vecCon MyvecCon;
+ *			std::vector<NeuronSharedPtr> vNeuron;
+ *			std::vector<double> vWeight;
+ *			NeuronSharedPtr ptNeuron;
+ *
+ *			for (int i=0; i<=2; i++) {
+ *			ptNeuron.reset( new Neuron(ids[1]) );
+ *	 		vNeuron.push_back(ptNeuron);
+ *			vWeight.push_back(0);					// weights are set to 0
+ *			}
+ *			MyvecCon.buildAndAppend(vNeuron, vWeight);
+ *			MyvecCon.show();
+ *
+ *			for (int i=0; i<=2; i++) {
+ *				vWeight.at(i)=weights[i];
+ *			}
+ *	// Test
+ *			MyvecCon.setWeight(vWeight);			// weights are set to 12.3, 1.2 and 2.1
+ *			result=MyvecCon.getWeight();
+ *
+ *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
+ *
+ * \endcode
+ *
+ * \sa getWeight and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples.
+ */
 bool vecCon::setWeight (std::vector<double> w)  {
 	BEGIN_RCPP
 	if (w.empty()) { throw std::range_error("[ C++ vecCon::setWeight]: Error, w is empty"); }
@@ -216,40 +251,39 @@ bool vecCon::setWeight (std::vector<double> w)  {
 
 
 
-//! Getter of the weight field of the Con object related to vecCon
+//! Getter of the from field of the Con objects related to vecCon
 /*!
  * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the vecCon object.
- * \return A numeric (double) vector with the weights
+ *
+ * \return An std::vector<NeuronSharedPtr> with the pointer to the incoming neurons.
  *
  * \code
  * 	//================
  * 	//Usage example:
  * 	//================
  *	// Data set up
- *	std::vector<int> result;
- *			vecCon MyvecCon;
- *			std::vector<NeuronSharedPtr> vNeuron;
- *			std::vector<NeuronSharedPtr> auxvec;
- *			std::vector<double> vWeight;
+ *			std::vector<double> result;
+ *		int ids[]= {1, 2, 3};
+ *		double weights[] = {12.3, 1.2, 2.1 };
+ *		vecCon MyvecCon;
+ *		std::vector<NeuronSharedPtr> vNeuron;
+ *		std::vector<double> vWeight;
+ *		NeuronSharedPtr ptNeuron;
  *
- *			// Test
- *			NeuronSharedPtr ptNeuron( new Neuron(11) );
- *			vNeuron.push_back(ptNeuron);
- *			ptNeuron.reset( new Neuron(22) );
- *			vNeuron.push_back(ptNeuron);
- *			ptNeuron.reset( new Neuron(33) );
- *			vNeuron.push_back(ptNeuron);
- *
- *			vWeight.push_back(12.3);
- *			vWeight.push_back(1.2);
- *			vWeight.push_back(2.1);
- *
+ *			for (int i=0; i<=2; i++) {
+ *				ptNeuron.reset( new Neuron(ids[i]) );
+ *				vNeuron.push_back(ptNeuron);
+ *				vWeight.push_back(weights[i]);
+ *			}
  *			MyvecCon.buildAndAppend(vNeuron, vWeight);
- *			auxvec = MyvecCon.getFromNeuron();
- *			for(std::vector<NeuronSharedPtr>::iterator itr = auxvec.begin();   itr != auxvec.end();   itr++)	{ result.push_back( (*itr)->getId() ); }
+ *		// Test
+ *			vNeuron=MyvecCon.getFromNeuron();
+ *			for (int i=0; i<=2; i++) {
+ *				result.push_back(vNeuron.at(i)->getId());
+ *			}
  *
+ *	// Now result is a vector that contains the values 1, 2 and 3 .
  *
- *	// Now result is a vector that contains the values 11, 22 and 33 .
  * \endcode
  *
  * \sa getFromId and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples.
@@ -257,7 +291,9 @@ bool vecCon::setWeight (std::vector<double> w)  {
 std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 	std::vector<NeuronSharedPtr> result;
 	result.reserve(numOfCons());
-	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ result.push_back( (*itr)->getFromNeuron() ); }
+	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{
+		result.push_back((*itr)->getFromNeuron());
+	}
 	return result;
 }
 
@@ -277,44 +313,6 @@ std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 				},
 
 
-				getWeight = function(FROM, ...){
-					if (missing(FROM)) {
-						return(sapply(ldata,function(x) { x$getWeight(...)}))
-					} else {
-						return(select(FROM)$getWeight(...))
-					}
-				},
-
-				getFrom = function(...){
-					return(sapply(ldata,function(x) { x$getFrom(...)}))
-				},
-
-
-				setWeight= function(value, FROM, ...) {
-					value <- c(value, recursive=TRUE)
-					if (missing(FROM)) {
-						if(numOfCons(...)!=length(value)) { stop("[listCon setWeight error]: Incorrect length(value)" )}
-						mapply(FUN=function(x,w){x$setWeight(w)}, ldata, value)	-> DontMakeNoise
-					} else {
-						if(length(FROM)!=length(value)) { stop("[listCon setWeight(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )}
-						myMatch <- match(FROM, getFromId(...))
-						if (any(is.na(myMatch))) {stop("[listCon setWeight(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")}
-						mapply(FUN=function(x,w){x$setWeight(w)}, ldata[myMatch], value)	-> DontMakeNoise
-					}
-				},
-
-				setFrom= function(value, FROM, ...) {
-					value <- c(value, recursive=TRUE)
-					if (missing(FROM)) {
-						if(numOfCons(...)!=length(value)) { stop("[listCon setFrom error]: Incorrect length(value)" )}
-						mapply(FUN=function(x,f){x$setFrom(f)}, ldata, value)	-> DontMakeNoise
-					} else {
-						if(length(FROM)!=length(value)) { stop("[listCon setFrom(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )}
-						myMatch <- match(FROM, getFromId(...))
-						if (any(is.na(myMatch))) {stop("[listCon setFrom(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")}
-						mapply(FUN=function(x,f){x$setFrom(f)}, ldata[myMatch], value)	-> DontMakeNoise
-					}
-				},
 
 				erase = function(FROM, ...) {
 					fromIds <- getFromId(...)
@@ -334,9 +332,6 @@ std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 					return(selfClone)
 				},
 
-				numOfCons=function(...) {
-					return(length(ldata))
-				},
 
 validate=function(...){
 					'Object validator for internal coherence.
