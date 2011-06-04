@@ -190,7 +190,12 @@ void Con::setWeight	(double w) {
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for usage examples.
  */
 bool Con::show () {
-	Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , getWeight());
+	int id=getFromId();
+	if (id==NA_INTEGER) {
+		Rprintf("From: NA\t Invalid Connection \n");
+	} else {
+		Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , getWeight());
+	}
 	return(true);
 }
 

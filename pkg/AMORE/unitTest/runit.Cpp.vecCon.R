@@ -140,16 +140,14 @@ test.vecCon.Cpp.Validate_Weight_Inf <- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	checkException(result <- testCodefun(), silent=TRUE)
 	# [1] TRUE
-	# (plus a few reasonable warnings)
+	# (plus a few reasonable warnings from the compiler related to 1.2/0 )
 }
 
 
 
 ###############################################################################
 test.vecCon.Cpp.setFromNeuron <- function() {	
-###############################################################################
-
-	
+###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
@@ -179,11 +177,10 @@ test.vecCon.Cpp.setFromNeuron <- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, c(10, 20, 30))
-	# 
-
-
-
-	
+	# From:	 10 	 Weight= 	 0.000000 
+	# From:	 20 	 Weight= 	 0.000000 
+	# From:	 30 	 Weight= 	 0.000000 
+	# [1] TRUE
 }
 
 
