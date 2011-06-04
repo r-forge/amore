@@ -297,16 +297,15 @@ std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 
 
 
-
-
-bool	setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
+bool	vecCon::setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
 	BEGIN_RCPP
 		if (vFrom.empty()) { throw std::range_error("[ C++ vecCon::setFromNeuron]: Error, w is empty"); }
 		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setFromNeuron]: Error, w.size() != ldata.size()"); }
 		std::vector<NeuronSharedPtr>::iterator itrFrom = vFrom.begin();
-		for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
+	/*	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
 			(*itr)->setFromNeuron( *itrFrom );
 		}
+	*/
 		return true;
 		END_RCPP
 }

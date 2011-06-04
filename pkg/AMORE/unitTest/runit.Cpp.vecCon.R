@@ -144,6 +144,54 @@ test.vecCon.Cpp.Validate_Weight_Inf <- function() {
 }
 
 
+
+###############################################################################
+test.vecCon.Cpp.setFromNeuron <- function() {	
+###############################################################################
+
+	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+		// Data set up
+			std::vector<int> result;
+			vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
+			vecConSharedPtr	ptShvCon( new vecCon() );
+			ConSharedPtr	ptC;
+			NeuronSharedPtr ptN;
+
+			int ids[]= {10, 20, 30};
+			double weights[] = {1.13, 2.22, 3.33 };
+
+			for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+				ptN.reset( new Neuron( ids[i] ) ); 	
+				ptShvNeuron->push_back(ptN);
+			}
+			for (int i=0; i<=2 ; i++) {				// and a vector with three connections
+				ptC.reset( new Con() );  	
+				ptShvCon->push_back(ptC);			 
+			}		
+			// Test
+			ptShvCon->setFromNeuron(ptShvNeuron->getLdata()) ;
+			ptShvCon->show();		
+			result=ptShvCon->getFromId();
+			return wrap(result);
+			"	
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun()
+	checkEquals(result, c(10, 20, 30))
+	# 
+
+
+
+	
+}
+
+
+
+
+
+
+
 ###############################################################################
 test.vecCon.Cpp.Validate_Duplicated_Id <- function() {	
 ###############################################################################
@@ -203,42 +251,6 @@ test.vecCon.Cpp.getWeight <- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, c( 12.3, 1.2, 2.1))
-	# [1] TRUE
-}
-
-
-
-###############################################################################
-test.vecCon.Cpp.getFromNeuron <- function() {	
-###############################################################################
-	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- "
-			// Data set up
-			std::vector<int> result;
-			vecCon MyvecCon,  auxvec;
-			std::vector<NeuronSharedPtr> vNeuron;
-			std::vector<double> vWeight;
-
-			// Test	
-			NeuronSharedPtr ptNeuron( new Neuron(11) );
-			vNeuron.push_back(ptNeuron);	
-			ptNeuron.reset( new Neuron(22) );
-			vNeuron.push_back(ptNeuron);	
-			ptNeuron.reset( new Neuron(33) );
-			vNeuron.push_back(ptNeuron);	
-			
-			vWeight.push_back(12.3);
-			vWeight.push_back(1.2);
-			vWeight.push_back(2.1);
-			
-			MyvecCon.buildAndAppend(vNeuron, vWeight);
-			auxvec.buildAndAppend(MyvecCon.getFromNeuron(), vWeight);
-			result=auxvec.getFromId();
-			return wrap(result);
-			"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
-	checkEquals(result, c( 11, 22, 33))
 	# [1] TRUE
 }
 
@@ -311,6 +323,8 @@ test.vecCon.Cpp.getFromNeuron <- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, c( 1, 2, 3))
+	# [1] TRUE
+
 	# [1] TRUE
 }
 
