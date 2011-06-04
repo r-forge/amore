@@ -73,13 +73,8 @@ Default Constructor.
 Definition at line 18 of file Con.cpp.
 
 
-
-References from.
-
-
 \begin{DoxyCode}
-                 : weight(0) {
-                from.reset();
+                 : weight(0), from() {
         };
 \end{DoxyCode}
 \hypertarget{class_con_ab9ff17d0dfcd09549f87228eb5b39593}{
@@ -97,7 +92,7 @@ Constructor.
 
 
 
-Definition at line 37 of file Con.cpp.
+Definition at line 36 of file Con.cpp.
 
 
 \begin{DoxyCode}
@@ -119,7 +114,7 @@ Constructor.
 
 
 
-Definition at line 29 of file Con.cpp.
+Definition at line 28 of file Con.cpp.
 
 
 \begin{DoxyCode}
@@ -140,7 +135,7 @@ Default Destructor.
 
 
 
-Definition at line 42 of file Con.cpp.
+Definition at line 41 of file Con.cpp.
 
 
 \begin{DoxyCode}
@@ -187,7 +182,7 @@ The value of the Id (an integer).
 \end{DoxySeeAlso}
 
 
-Definition at line 118 of file Con.cpp.
+Definition at line 117 of file Con.cpp.
 
 
 
@@ -200,8 +195,12 @@ Referenced by show(), and validate().
 
 \begin{DoxyCode}
                     {
-        NeuronSharedPtr ptNeuron(from);
-        return(  ptNeuron->getId() );
+        if (from.use_count() !=0 ){
+                NeuronSharedPtr ptNeuron(from);
+                return(  ptNeuron->getId() );
+        } else {
+                return(NA_INTEGER);
+        }
 }
 \end{DoxyCode}
 
@@ -254,7 +253,7 @@ A pointer to the \hyperlink{class_neuron}{Neuron} object referred to by the \hyp
 \end{DoxySeeAlso}
 
 
-Definition at line 66 of file Con.cpp.
+Definition at line 65 of file Con.cpp.
 
 
 
@@ -308,7 +307,7 @@ The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (do
 \end{DoxySeeAlso}
 
 
-Definition at line 148 of file Con.cpp.
+Definition at line 151 of file Con.cpp.
 
 
 
@@ -376,7 +375,7 @@ This method sets the value of the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f04
 \end{DoxySeeAlso}
 
 
-Definition at line 93 of file Con.cpp.
+Definition at line 92 of file Con.cpp.
 
 
 
@@ -432,7 +431,7 @@ This method sets the value of the \hyperlink{class_con_a7f46485ba5b41971ea38641f
 \end{DoxySeeAlso}
 
 
-Definition at line 177 of file Con.cpp.
+Definition at line 180 of file Con.cpp.
 
 
 
@@ -465,7 +464,7 @@ true in case everything works without throwing an exception
 \end{DoxySeeAlso}
 
 
-Definition at line 189 of file Con.cpp.
+Definition at line 192 of file Con.cpp.
 
 
 
@@ -474,7 +473,13 @@ References getFromId(), and getWeight().
 
 \begin{DoxyCode}
                 {
-        Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , getWeight());
+        int id=getFromId();
+        if (id==NA_INTEGER) {
+                Rprintf("From: NA\t Invalid Connection \n");
+        } else {
+                Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , 
+      getWeight());
+        }
         return(true);
 }
 \end{DoxyCode}
@@ -512,7 +517,7 @@ true in case the checks are Ok.
 \end{DoxyExceptions}
 
 
-Definition at line 203 of file Con.cpp.
+Definition at line 211 of file Con.cpp.
 
 
 
@@ -559,7 +564,7 @@ Definition at line 21 of file Con.h.
 
 
 
-Referenced by Con(), getFromId(), getFromNeuron(), and setFromNeuron().
+Referenced by getFromId(), getFromNeuron(), and setFromNeuron().
 
 \hypertarget{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{
 \index{Con@{Con}!weight@{weight}}

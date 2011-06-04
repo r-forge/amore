@@ -8,12 +8,12 @@
   \indexspace
 
   \item {AMORE.h}
-    \subitem {ConSharedPtr}, \hyperpage{50}
-    \subitem {NeuronSharedPtr}, \hyperpage{50}
-    \subitem {NeuronWeakPtr}, \hyperpage{50}
-    \subitem {vecAMOREconSharedPtr}, \hyperpage{50}
-    \subitem {vecAMOREneuronSharedPtr}, \hyperpage{50}
-    \subitem {vecConSharedPtr}, \hyperpage{50}
+    \subitem {ConSharedPtr}, \hyperpage{52}
+    \subitem {NeuronSharedPtr}, \hyperpage{52}
+    \subitem {NeuronWeakPtr}, \hyperpage{52}
+    \subitem {vecAMOREconSharedPtr}, \hyperpage{52}
+    \subitem {vecAMOREneuronSharedPtr}, \hyperpage{52}
+    \subitem {vecConSharedPtr}, \hyperpage{52}
   \item {append}
     \subitem {vecAMORE}, \hyperpage{25}
 
@@ -21,7 +21,7 @@
 
   \item {buildAndAppend}
     \subitem {vecCon}, \hyperpage{34}
-    \subitem {vecMLPneuron}, \hyperpage{45}
+    \subitem {vecMLPneuron}, \hyperpage{46}
 
   \indexspace
 
@@ -38,7 +38,7 @@
     \subitem {validate}, \hyperpage{18}
     \subitem {weight}, \hyperpage{19}
   \item {ConSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
+    \subitem {AMORE.h}, \hyperpage{52}
 
   \indexspace
 
@@ -52,7 +52,7 @@
     \subitem {vecCon}, \hyperpage{35}
   \item {getFromNeuron}
     \subitem {Con}, \hyperpage{14}
-    \subitem {vecCon}, \hyperpage{36}
+    \subitem {vecCon}, \hyperpage{37}
   \item {getId}
     \subitem {Neuron}, \hyperpage{21}
   \item {getLdata}
@@ -81,9 +81,9 @@
     \subitem {outputValue}, \hyperpage{21}
     \subitem {setId}, \hyperpage{21}
   \item {NeuronSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
+    \subitem {AMORE.h}, \hyperpage{52}
   \item {NeuronWeakPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
+    \subitem {AMORE.h}, \hyperpage{52}
   \item {numOfCons}
     \subitem {vecCon}, \hyperpage{39}
 
@@ -94,17 +94,17 @@
 
   \indexspace
 
-  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{49}
-  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{50}
-  \item {pkg/AMORE/src/Con.h}, \hyperpage{52}
-  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{52}
-  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{54}
-  \item {pkg/AMORE/src/vecAMORE.cpp}, \hyperpage{54}
-  \item {pkg/AMORE/src/vecAMORE.h}, \hyperpage{55}
-  \item {pkg/AMORE/src/vecCon.cpp}, \hyperpage{55}
-  \item {pkg/AMORE/src/vecCon.h}, \hyperpage{56}
-  \item {pkg/AMORE/src/vecMLPneuron.h}, \hyperpage{56}
-  \item {pkg/AMORE/src/vecNeuron.h}, \hyperpage{56}
+  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{51}
+  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{52}
+  \item {pkg/AMORE/src/Con.h}, \hyperpage{54}
+  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{54}
+  \item {pkg/AMORE/src/Neuron.h}, \hyperpage{56}
+  \item {pkg/AMORE/src/vecAMORE.cpp}, \hyperpage{56}
+  \item {pkg/AMORE/src/vecAMORE.h}, \hyperpage{57}
+  \item {pkg/AMORE/src/vecCon.cpp}, \hyperpage{57}
+  \item {pkg/AMORE/src/vecCon.h}, \hyperpage{58}
+  \item {pkg/AMORE/src/vecMLPneuron.h}, \hyperpage{58}
+  \item {pkg/AMORE/src/vecNeuron.h}, \hyperpage{58}
   \item {push\_\discretionary {-}{}{}back}
     \subitem {vecAMORE}, \hyperpage{28}
 
@@ -119,7 +119,7 @@
     \subitem {vecAMORE}, \hyperpage{29}
   \item {setWeight}
     \subitem {Con}, \hyperpage{16}
-    \subitem {vecCon}, \hyperpage{40}
+    \subitem {vecCon}, \hyperpage{42}
   \item {show}
     \subitem {Con}, \hyperpage{17}
     \subitem {vecAMORE}, \hyperpage{29}
@@ -141,22 +141,22 @@
     \subitem {size}, \hyperpage{30}
     \subitem {validate}, \hyperpage{31}
   \item {vecAMOREconSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
+    \subitem {AMORE.h}, \hyperpage{52}
   \item {vecAMOREneuronSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
+    \subitem {AMORE.h}, \hyperpage{52}
   \item {vecCon}, \hyperpage{31}
     \subitem {buildAndAppend}, \hyperpage{34}
     \subitem {getFromId}, \hyperpage{35}
-    \subitem {getFromNeuron}, \hyperpage{36}
+    \subitem {getFromNeuron}, \hyperpage{37}
     \subitem {getWeight}, \hyperpage{38}
     \subitem {numOfCons}, \hyperpage{39}
     \subitem {setFromNeuron}, \hyperpage{40}
-    \subitem {setWeight}, \hyperpage{40}
+    \subitem {setWeight}, \hyperpage{42}
   \item {vecConSharedPtr}
-    \subitem {AMORE.h}, \hyperpage{50}
-  \item {vecMLPneuron}, \hyperpage{42}
-    \subitem {buildAndAppend}, \hyperpage{45}
-  \item {vecNeuron}, \hyperpage{45}
+    \subitem {AMORE.h}, \hyperpage{52}
+  \item {vecMLPneuron}, \hyperpage{43}
+    \subitem {buildAndAppend}, \hyperpage{46}
+  \item {vecNeuron}, \hyperpage{46}
 
   \indexspace
 

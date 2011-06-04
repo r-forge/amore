@@ -297,15 +297,58 @@ std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 
 
 
+//! Setter of the from fields of the Con objects related to vecCon
+/*!
+ * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the vecCon object.
+ *
+ * \param vFrom An std::vector<NeuronSharedPtr> with the pointers to be set in the from fields of the vecCon object.
+ *
+ * \return true if not exception is thrown
+ *
+ *
+ * \code
+ * 	//================
+ * 	//Usage example:
+ * 	//================
+ *
+ *	// Data set up
+ *		std::vector<int> result;
+ *		vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
+ *		vecConSharedPtr	ptShvCon( new vecCon() );
+ *		ConSharedPtr	ptC;
+ *		NeuronSharedPtr ptN;
+ *
+ *		int ids[]= {10, 20, 30};
+ *		double weights[] = {1.13, 2.22, 3.33 };
+ *
+ *		for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+ *			ptN.reset( new Neuron( ids[i] ) );
+ *			ptShvNeuron->push_back(ptN);
+ *		}
+ *		for (int i=0; i<=2 ; i++) {				// and a vector with three connections
+ *			ptC.reset( new Con() );
+ *			ptShvCon->push_back(ptC);
+ *		}
+ *	// Test
+ *		ptShvCon->setFromNeuron(ptShvNeuron->getLdata()) ;
+ *		ptShvCon->show();
+ *		result=ptShvCon->getFromId();
+ *
+ *	// Now result is a vector that contains the values 10, 20 and 30.
+ *
+ * \endcode
+ *
+ * \sa getFromNeuron and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples.
+ */
 bool	vecCon::setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
 	BEGIN_RCPP
 		if (vFrom.empty()) { throw std::range_error("[ C++ vecCon::setFromNeuron]: Error, w is empty"); }
 		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setFromNeuron]: Error, w.size() != ldata.size()"); }
 		std::vector<NeuronSharedPtr>::iterator itrFrom = vFrom.begin();
-	/*	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
+		for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
 			(*itr)->setFromNeuron( *itrFrom );
 		}
-	*/
+
 		return true;
 		END_RCPP
 }

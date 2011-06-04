@@ -54,7 +54,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: vecCon::setFromNeuron
+# FIXME Manolo: vecCon::select
 # STATUS: writing
 ###############################################
 

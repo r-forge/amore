@@ -18,7 +18,9 @@ test.Con.Cpp.Constructor_fromIsEmpty <- function() {
 "
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
-	checkEquals(result, NA)
+	checkTrue(is.na(result))
+# From: NA	 Invalid Connection 
+# [1] TRUE
 }
 
 

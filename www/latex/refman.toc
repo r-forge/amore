@@ -61,29 +61,29 @@
 \contentsline {subsubsection}{\numberline {6.4.2.4}getWeight}{38}{subsubsection.6.4.2.4}
 \contentsline {subsubsection}{\numberline {6.4.2.5}numOfCons}{39}{subsubsection.6.4.2.5}
 \contentsline {subsubsection}{\numberline {6.4.2.6}setFromNeuron}{40}{subsubsection.6.4.2.6}
-\contentsline {subsubsection}{\numberline {6.4.2.7}setWeight}{40}{subsubsection.6.4.2.7}
-\contentsline {section}{\numberline {6.5}vecMLPneuron Class Reference}{42}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{45}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{45}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}buildAndAppend}{45}{subsubsection.6.5.2.1}
-\contentsline {section}{\numberline {6.6}vecNeuron Class Reference}{45}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{48}{subsection.6.6.1}
-\contentsline {chapter}{\numberline {7}File Documentation}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{49}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Typedef Documentation}{50}{subsection.7.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.1}ConSharedPtr}{50}{subsubsection.7.1.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.2}NeuronSharedPtr}{50}{subsubsection.7.1.1.2}
-\contentsline {subsubsection}{\numberline {7.1.1.3}NeuronWeakPtr}{50}{subsubsection.7.1.1.3}
-\contentsline {subsubsection}{\numberline {7.1.1.4}vecAMOREconSharedPtr}{50}{subsubsection.7.1.1.4}
-\contentsline {subsubsection}{\numberline {7.1.1.5}vecAMOREneuronSharedPtr}{50}{subsubsection.7.1.1.5}
-\contentsline {subsubsection}{\numberline {7.1.1.6}vecConSharedPtr}{50}{subsubsection.7.1.1.6}
-\contentsline {section}{\numberline {7.2}pkg/AMORE/src/Con.cpp File Reference}{50}{section.7.2}
-\contentsline {section}{\numberline {7.3}pkg/AMORE/src/Con.h File Reference}{52}{section.7.3}
-\contentsline {section}{\numberline {7.4}pkg/AMORE/src/Neuron.cpp File Reference}{52}{section.7.4}
-\contentsline {section}{\numberline {7.5}pkg/AMORE/src/Neuron.h File Reference}{54}{section.7.5}
-\contentsline {section}{\numberline {7.6}pkg/AMORE/src/vecAMORE.cpp File Reference}{54}{section.7.6}
-\contentsline {section}{\numberline {7.7}pkg/AMORE/src/vecAMORE.h File Reference}{55}{section.7.7}
-\contentsline {section}{\numberline {7.8}pkg/AMORE/src/vecCon.cpp File Reference}{55}{section.7.8}
-\contentsline {section}{\numberline {7.9}pkg/AMORE/src/vecCon.h File Reference}{56}{section.7.9}
-\contentsline {section}{\numberline {7.10}pkg/AMORE/src/vecMLPneuron.h File Reference}{56}{section.7.10}
-\contentsline {section}{\numberline {7.11}pkg/AMORE/src/vecNeuron.h File Reference}{56}{section.7.11}
+\contentsline {subsubsection}{\numberline {6.4.2.7}setWeight}{42}{subsubsection.6.4.2.7}
+\contentsline {section}{\numberline {6.5}vecMLPneuron Class Reference}{43}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{46}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{46}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}buildAndAppend}{46}{subsubsection.6.5.2.1}
+\contentsline {section}{\numberline {6.6}vecNeuron Class Reference}{46}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{49}{subsection.6.6.1}
+\contentsline {chapter}{\numberline {7}File Documentation}{51}{chapter.7}
+\contentsline {section}{\numberline {7.1}pkg/AMORE/src/AMORE.h File Reference}{51}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Typedef Documentation}{52}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.1}ConSharedPtr}{52}{subsubsection.7.1.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.2}NeuronSharedPtr}{52}{subsubsection.7.1.1.2}
+\contentsline {subsubsection}{\numberline {7.1.1.3}NeuronWeakPtr}{52}{subsubsection.7.1.1.3}
+\contentsline {subsubsection}{\numberline {7.1.1.4}vecAMOREconSharedPtr}{52}{subsubsection.7.1.1.4}
+\contentsline {subsubsection}{\numberline {7.1.1.5}vecAMOREneuronSharedPtr}{52}{subsubsection.7.1.1.5}
+\contentsline {subsubsection}{\numberline {7.1.1.6}vecConSharedPtr}{52}{subsubsection.7.1.1.6}
+\contentsline {section}{\numberline {7.2}pkg/AMORE/src/Con.cpp File Reference}{52}{section.7.2}
+\contentsline {section}{\numberline {7.3}pkg/AMORE/src/Con.h File Reference}{54}{section.7.3}
+\contentsline {section}{\numberline {7.4}pkg/AMORE/src/Neuron.cpp File Reference}{54}{section.7.4}
+\contentsline {section}{\numberline {7.5}pkg/AMORE/src/Neuron.h File Reference}{56}{section.7.5}
+\contentsline {section}{\numberline {7.6}pkg/AMORE/src/vecAMORE.cpp File Reference}{56}{section.7.6}
+\contentsline {section}{\numberline {7.7}pkg/AMORE/src/vecAMORE.h File Reference}{57}{section.7.7}
+\contentsline {section}{\numberline {7.8}pkg/AMORE/src/vecCon.cpp File Reference}{57}{section.7.8}
+\contentsline {section}{\numberline {7.9}pkg/AMORE/src/vecCon.h File Reference}{58}{section.7.9}
+\contentsline {section}{\numberline {7.10}pkg/AMORE/src/vecMLPneuron.h File Reference}{58}{section.7.10}
+\contentsline {section}{\numberline {7.11}pkg/AMORE/src/vecNeuron.h File Reference}{58}{section.7.11}
