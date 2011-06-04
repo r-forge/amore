@@ -6,6 +6,23 @@
 
 
 ###############################################################################
+test.Con.Cpp.Constructor_fromIsEmpty <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
+			ConSharedPtr ptShCon( new Con() );  	// from points to ptShNeuron and weight is set to 0
+			ptShCon->show();
+			int result=ptShCon->getFromId();
+			return wrap(result);
+"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun()
+	checkEquals(result, NA)
+}
+
+
+###############################################################################
 test.Con.Cpp.getFromNeuron <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )

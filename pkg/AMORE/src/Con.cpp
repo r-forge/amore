@@ -13,10 +13,9 @@
 
 //! Default Constructor
 /*
- * Default constructor, from=NULL, weight=0
+ * Default constructor, from.use_count==0L, weight=0
  */
-	Con::Con() : weight(0) {
-		from.reset();
+	Con::Con() : weight(0), from() {
 	};
 
 
@@ -116,8 +115,12 @@ void Con::setFromNeuron	(NeuronSharedPtr f)   	{
  * \sa getFromNeuron, setFromNeuron and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
 int Con::getFromId () {
-	NeuronSharedPtr ptNeuron(from);
-	return(  ptNeuron->getId() );
+	if (from.use_count() !=0 ){
+		NeuronSharedPtr ptNeuron(from);
+		return(  ptNeuron->getId() );
+	} else {
+		return(NA_INTEGER);
+	}
 }
 
 

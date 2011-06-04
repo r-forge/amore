@@ -29,6 +29,10 @@ source("pkg/AMORE/R/neuralNetwork.R")
 source("pkg/AMORE/R/MLPneuralNetwork.R")
 source("pkg/AMORE/R/RBFneuralNetwork.R")
 
+# Loading required package: inline
+# Loading required package: Rcpp
+# Loading required package: RUnit
+
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
 
