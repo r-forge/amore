@@ -14,28 +14,25 @@
  *  //================
  *  //Usage example:
  *  //================
- *			// Data set up
- *			Neuron N1, N2, N3;
- *			vecCon MyvecCon;
- *			std::vector<int> result;
- *
- *			N1.setId(10);
- *			N2.setId(20);
- *			N3.setId(30);
- *
- *			// Test
- *			result.push_back(MyvecCon.numOfCons());		// Append numOfCons to result, create new Con and push_back into MyvecCon
- *			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// and repeat twice
- *			MyvecCon.push_back(ptCon);
- *			result.push_back(MyvecCon.numOfCons());
- *
- *			ptCon.reset(  new Con(&N2, 2.22) );
- *			MyvecCon.push_back(ptCon);
- *			result.push_back(MyvecCon.numOfCons());
- *
- *			ptCon.reset(  new Con(&N3, 3.33) );
- *			MyvecCon.push_back(ptCon);
- *			result.push_back(MyvecCon.numOfCons());
+ *	// Data set up
+ *				std::vector<int> result;
+ *				std::vector<ConSharedPtr> vcA, vcB;
+ *				vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
+ *				vecConSharedPtr	ptShvCon( new vecCon() );
+ *				ConSharedPtr	ptC;
+ *				NeuronSharedPtr ptN;
+ *				int ids[]= {10, 20, 30};
+ *				double weights[] = {1.13, 2.22, 3.33 };
+ *				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+ *					ptN.reset( new Neuron( ids[i] ) );
+ *					ptShvNeuron->push_back(ptN);
+ *				}
+ *	// Test
+ *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
+ *					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyvecCon
+ *					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *					ptShvCon->push_back(ptC);
+ *				}
  *
  *	// Now, result contains a numeric vector with values 0, 1, 2, and 3.
  * \endcode
@@ -235,11 +232,11 @@ std::vector<double>	vecCon::getWeight ( ) {
  *
  * \sa getWeight and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples.
  */
-bool vecCon::setWeight (std::vector<double> w)  {
+bool vecCon::setWeight (std::vector<double> vWeight)  {
 	BEGIN_RCPP
-	if (w.empty()) { throw std::range_error("[ C++ vecCon::setWeight]: Error, w is empty"); }
-	if (w.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setWeight]: Error, w.size() != ldata.size()"); }
-	std::vector<double>::iterator itrWeight = w.begin();
+	if (vWeight.empty()) { throw std::range_error("[ C++ vecCon::setWeight]: Error, vWeight is empty"); }
+	if (vWeight.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setWeight]: Error, vWeight.size() != ldata.size()"); }
+	std::vector<double>::iterator itrWeight = vWeight.begin();
 	for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrWeight++)	{
 		(*itr)->setWeight( *itrWeight );
 	}
@@ -262,7 +259,7 @@ bool vecCon::setWeight (std::vector<double> w)  {
  * 	//Usage example:
  * 	//================
  *	// Data set up
- *			std::vector<double> result;
+ *		std::vector<double> result;
  *		int ids[]= {1, 2, 3};
  *		double weights[] = {12.3, 1.2, 2.1 };
  *		vecCon MyvecCon;
@@ -301,20 +298,22 @@ std::vector<NeuronSharedPtr> vecCon::getFromNeuron 	( ) {
 
 
 
-/*
- *
- * 	initialize=function(con, ...){
-					if (missing(con)){
-						callSuper(...)
-					} else {
-						push_back(con)
-						return(.self)
-					}
-				},
+
+bool	setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
+	BEGIN_RCPP
+		if (vFrom.empty()) { throw std::range_error("[ C++ vecCon::setFromNeuron]: Error, w is empty"); }
+		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ vecCon::setFromNeuron]: Error, w.size() != ldata.size()"); }
+		std::vector<NeuronSharedPtr>::iterator itrFrom = vFrom.begin();
+		for(std::vector<ConSharedPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
+			(*itr)->setFromNeuron( *itrFrom );
+		}
+		return true;
+		END_RCPP
+}
 
 
 
-				erase = function(FROM, ...) {
+/*				erase = function(FROM, ...) {
 					fromIds <- getFromId(...)
 					delIds  <- seq(along=fromIds)[fromIds %in% FROM]
 					if (length(delIds)>0) {
