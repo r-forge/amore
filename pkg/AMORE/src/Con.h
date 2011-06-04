@@ -10,7 +10,7 @@
 
 //!  A class to handle the information needed to describe an input connection.
 /*!
- *   The Con class provides a simple class for a connection described by a pair of values: a pointer to the Neuron used as the \ref from field and the \ref weight used to propagate the value of that Neuron object.
+ *   The Con class provides a simple class for a connection described by a pair of values: a pointer to a Neuron object used as the \ref from field and the \ref weight used to propagate the value of that Neuron object.
  */
 
 class Con {

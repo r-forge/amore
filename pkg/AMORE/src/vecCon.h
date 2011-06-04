@@ -24,7 +24,7 @@ public:
 					std::vector<double>	getWeight	  	( );
 //					std::vector<double>	getWeight	  	( std::vector<int> FROM );
 		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
-//								void	setWeight		( std::vector<double> value);
+								bool	setWeight		( std::vector<double> value);
 //		À?						void	setWeight		( std::vector<double> value, std::vector<int> FROM);
 //								void	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
 //								void 	erase 			( std::vector<int> FROM );
