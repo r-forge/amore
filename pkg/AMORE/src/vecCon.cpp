@@ -354,6 +354,36 @@ bool	vecCon::setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
 }
 
 
+bool compConId(Con x, int y) {
+	return (x.getFromId() < y ? true : false ) ;
+
+}
+
+
+vecConSharedPtr vecCon::erase ( std::vector<int> vFrom ){
+	vecConSharedPtr result(new vecCon );
+	result->reserve(ldata.size);
+	sort (ldata,ldata.size());
+	sort (vFrom,vFrom.size());
+	set_difference (ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compConId);
+	return result;
+}
+
+
+
+vecConSharedPtr vecCon::select ( std::vector<int> vFrom ){
+	vecConSharedPtr result(new vecCon );
+	result->reserve(ldata.size);
+	sort (ldata,ldata.size());
+	sort (vFrom,vFrom.size());
+	set_intersection(ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compConId);
+	return result;
+}
+
+
+
+
+
 
 /*				erase = function(FROM, ...) {
 					fromIds <- getFromId(...)
