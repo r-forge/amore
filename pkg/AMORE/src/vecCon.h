@@ -27,7 +27,7 @@ public:
 								bool	setWeight		( std::vector<double> value);
 //		À?						void	setWeight		( std::vector<double> value, std::vector<int> FROM);
 								bool	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
-//								void 	erase 			( std::vector<int> FROM );
+								void 	erase 			( std::vector<int> FROM );
 //								vecCon	select			( std::vector<int> FROM );
 //								bool	validate		( );
 
