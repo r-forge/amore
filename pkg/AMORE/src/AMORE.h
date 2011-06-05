@@ -20,6 +20,7 @@
 #include <sstream>
 #include <algorithm>
 #include <vector>
+#include <iterator>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
 #include <Rcpp.h>

@@ -21,6 +21,7 @@ public:
 											void 	append		( vecAMORE<T>  v);
 											bool 	show		();
 											bool 	validate	();
+											void	reserve		(int n);
 };
 
 

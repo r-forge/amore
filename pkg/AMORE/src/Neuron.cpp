@@ -5,11 +5,9 @@
  *      Author: mcasl
  */
 
-#ifndef INLINE_R
 
 #include "Neuron.h"
 
-#endif /* INLINE_R */
 
 	Neuron::Neuron() {};
 	Neuron::Neuron(int Id) : Id(Id), outputValue(0.0) {};

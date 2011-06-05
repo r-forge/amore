@@ -40,7 +40,9 @@ void \hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} (\
 bool \hyperlink{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{show} ()
 \begin{DoxyCompactList}\small\item\em Pretty print of the vecAMORE$<$T$>$ \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{validate} ()
-\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
+void \hyperlink{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}{reserve} (int n)
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -297,6 +299,25 @@ Definition at line 44 of file vecAMORE.cpp.
                                                                                 {
       
         ldata.push_back(TsharedPtr);
+};
+\end{DoxyCode}
+\hypertarget{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}{
+\index{vecAMORE@{vecAMORE}!reserve@{reserve}}
+\index{reserve@{reserve}!vecAMORE@{vecAMORE}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf vecAMORE}$<$ T $>$::reserve (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}
+
+
+Definition at line 239 of file vecAMORE.cpp.
+
+
+\begin{DoxyCode}
+                                                     {
+         ldata.reserve(n) ;
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{

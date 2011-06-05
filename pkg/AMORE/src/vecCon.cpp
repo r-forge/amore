@@ -354,30 +354,113 @@ bool	vecCon::setFromNeuron	( std::vector<NeuronSharedPtr> vFrom){
 }
 
 
-bool compConId(Con x, int y) {
-	return (x.getFromId() < y ? true : false ) ;
 
+
+struct CompareId {
+
+	bool operator()(const ConSharedPtr a, const ConSharedPtr b) {
+        return a->getFromId() < b->getFromId();
+    };
+
+	bool operator()(const ConSharedPtr a, const int b) {
+           return a->getFromId() < b  ;
+       };
+
+	bool operator()(const int a, const ConSharedPtr b) {
+           return a < b->getFromId();
+       };
+
+	bool operator()(const int a, const int b) {
+           return a < b;
+       };
+};
+
+
+
+//! Erase the specified elements from the vecCom object.
+/*!
+ * Provides a convenient way of removing some Con objects from the ldata field of the vecCon object.
+ *
+ * \param vFrom An std::vector<int> with the Ids of the connections to remove.
+ *
+ * \code
+ * 	//================
+ * 	//Usage example:
+ * 	//================
+ *
+ *	// Data set up
+ *			std::vector<int> result;
+ *			std::vector<NeuronSharedPtr> vNeuron;
+ *			vecConSharedPtr	ptShvCon( new vecCon() );
+ *			vecConSharedPtr vErased;
+ *			ConSharedPtr	ptC;
+ *			NeuronSharedPtr ptN;
+ *			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
+ *			std::vector<double> vWeight;
+ *			vWeight.push_back(11.32);
+ *			vWeight.push_back(1.26);
+ *			vWeight.push_back(2.14);
+ *			vWeight.push_back(3.16);
+ *			vWeight.push_back(4.14);
+ *			vWeight.push_back(5.19);
+ *			vWeight.push_back(6.18);
+ *			vWeight.push_back(7.16);
+ *			vWeight.push_back(8.14);
+ *			vWeight.push_back(9.12);
+ *			vWeight.push_back(10.31);
+ *
+ *			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+ *				ptN.reset( new Neuron( ids[i] ) );
+ *				vNeuron.push_back(ptN);
+ *			}
+ *			ptShvCon->buildAndAppend(vNeuron, vWeight);
+ *
+ *			// Test
+ *
+ *			std::vector<int> toRemove;
+ *	 		toRemove.push_back(1);
+ *			toRemove.push_back(3);
+ *			toRemove.push_back(5);
+ *	 		toRemove.push_back(7);
+ *
+ *			ptShvCon->erase(toRemove);
+ *			ptShvCon->show();
+ *			result=ptShvCon->getFromId();
+ *
+ *		// The output at the R terminal would display :
+ *		//
+ *		// From:	 2 	 Weight= 	 9.120000
+ *		// From:	 4 	 Weight= 	 4.140000
+ *		// From:	 6 	 Weight= 	 6.180000
+ *		// From:	 8 	 Weight= 	 8.140000
+ *		// From:	 9 	 Weight= 	 2.140000
+ *		// From:	 10  Weight= 	 1.260000
+ *		// From:	 11  Weight= 	 11.320000
+ *
+ * \endcode
+ *
+ * \sa select and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples.
+ *
+ */
+void vecCon::erase ( std::vector<int> vFrom ){
+	std::vector<ConSharedPtr>::iterator itr;
+	sort (ldata.begin(), ldata.end(), CompareId());
+	sort (vFrom.begin(), vFrom.end());
+	itr=set_difference (ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(), ldata.begin(), CompareId());
+	ldata.resize(itr-ldata.begin());
 }
-
-
-vecConSharedPtr vecCon::erase ( std::vector<int> vFrom ){
-	vecConSharedPtr result(new vecCon );
-	result->reserve(ldata.size);
-	sort (ldata,ldata.size());
-	sort (vFrom,vFrom.size());
-	set_difference (ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compConId);
-	return result;
-}
-
 
 
 vecConSharedPtr vecCon::select ( std::vector<int> vFrom ){
+
+	/*
 	vecConSharedPtr result(new vecCon );
-	result->reserve(ldata.size);
+	result->reserve(ldata.size());
 	sort (ldata,ldata.size());
 	sort (vFrom,vFrom.size());
-	set_intersection(ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compConId);
+	set_intersection(ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compareId());
 	return result;
+*/
 }
 
 
@@ -385,14 +468,7 @@ vecConSharedPtr vecCon::select ( std::vector<int> vFrom ){
 
 
 
-/*				erase = function(FROM, ...) {
-					fromIds <- getFromId(...)
-					delIds  <- seq(along=fromIds)[fromIds %in% FROM]
-					if (length(delIds)>0) {
-						ldata <<- ldata[-delIds]
-					}
-				},
-
+/*
 				select=function(FROM, ...){
 					fromObject <- getFromId(...)
 					myMatch <- match(FROM,  fromObject)
