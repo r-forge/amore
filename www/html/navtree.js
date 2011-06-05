@@ -6,6 +6,7 @@ var NAVTREE =
       [ "Todo List", "todo.html", null ]
     ] ],
     [ "Class List", "annotated.html", [
+      [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],
       [ "Neuron", "class_neuron.html", null ],
       [ "vecAMORE< T >", "classvec_a_m_o_r_e.html", null ],
@@ -15,6 +16,7 @@ var NAVTREE =
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
+      [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],
       [ "Neuron", "class_neuron.html", null ],
       [ "vecAMORE< T >", "classvec_a_m_o_r_e.html", null ],

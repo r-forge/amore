@@ -94,12 +94,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="622" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con__inherit__graph.svg" width="150" height="683" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for vecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="classvec_con__coll__graph.svg" width="468" height="1107" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="classvec_con__coll__graph.svg" width="468" height="1168" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classvec_con-members.html">List of all members.</a></p>
@@ -120,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#aced11b92f6406b5642e7d8464386d83b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a19d2dc9e7be97758b90447f7ffd06f5a">setFromNeuron</a> (std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> &gt; FROM)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter of the from fields of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a>.  <a href="#a19d2dc9e7be97758b90447f7ffd06f5a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a08572e502921ba41ee28c2685d70e5f3">erase</a> (std::vector&lt; int &gt; FROM)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the specified elements from the vecCom object.  <a href="#a08572e502921ba41ee28c2685d70e5f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">vecConSharedPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_con.html#a1a5f2d0b5778778c1aa4f575e787770f">select</a> (std::vector&lt; int &gt; FROM)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A vector of connections. </p>
@@ -206,6 +209,96 @@ Public Member Functions</h2></td></tr>
         }
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
         END_RCPP
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a08572e502921ba41ee28c2685d70e5f3"></a><!-- doxytag: member="vecCon::erase" ref="a08572e502921ba41ee28c2685d70e5f3" args="(std::vector&lt; int &gt; FROM)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vecCon::erase </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>vFrom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Erase the specified elements from the vecCom object. </p>
+<p>Provides a convenient way of removing some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the ldata field of the <a class="el" href="classvec_con.html" title="A vector of connections.">vecCon</a> object.</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vFrom</td><td>An std::vector&lt;int&gt; with the Ids of the connections to remove.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
+        <span class="comment">//Usage example:</span>
+        <span class="comment">//================</span>
+
+        <span class="comment">// Data set up</span>
+                        std::vector&lt;int&gt; result;
+                        std::vector&lt;NeuronSharedPtr&gt; vNeuron;
+                        <a class="code" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">vecConSharedPtr</a> ptShvCon( <span class="keyword">new</span> <a class="code" href="classvec_con.html" title="A vector of connections.">vecCon</a>() );
+                        <a class="code" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">vecConSharedPtr</a> vErased;
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a>    ptC;
+                        <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptN;
+                        <span class="keywordtype">int</span> ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
+                        std::vector&lt;double&gt; vWeight;
+                        vWeight.push_back(11.32);
+                        vWeight.push_back(1.26);
+                        vWeight.push_back(2.14);
+                        vWeight.push_back(3.16);
+                        vWeight.push_back(4.14);
+                        vWeight.push_back(5.19);
+                        vWeight.push_back(6.18);
+                        vWeight.push_back(7.16);
+                        vWeight.push_back(8.14);
+                        vWeight.push_back(9.12);
+                        vWeight.push_back(10.31);
+
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;vWeight.size() ; i++) {                         <span class="comment">// Let&#39;s create a vector with three neurons</span>
+                                ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
+                                vNeuron.push_back(ptN);
+                        }
+                        ptShvCon-&gt;buildAndAppend(vNeuron, vWeight);
+
+                        <span class="comment">// Test</span>
+
+                        std::vector&lt;int&gt; toRemove;
+                        toRemove.push_back(1);
+                        toRemove.push_back(3);
+                        toRemove.push_back(5);
+                        toRemove.push_back(7);
+
+                        ptShvCon-&gt;erase(toRemove);
+                        ptShvCon-&gt;show();
+                        result=ptShvCon-&gt;getFromId();
+
+                <span class="comment">// The output at the R terminal would display :</span>
+                <span class="comment">//</span>
+                <span class="comment">// From:         2       Weight=         9.120000</span>
+                <span class="comment">// From:         4       Weight=         4.140000</span>
+                <span class="comment">// From:         6       Weight=         6.180000</span>
+                <span class="comment">// From:         8       Weight=         8.140000</span>
+                <span class="comment">// From:         9       Weight=         2.140000</span>
+                <span class="comment">// From:         10  Weight=     1.260000</span>
+                <span class="comment">// From:         11  Weight=     11.320000</span>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_con.html#a1a5f2d0b5778778c1aa4f575e787770f">select</a> and the unit test files, e.g. runit.Cpp.vecCon.R, for further examples. </dd></dl>
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00445">445</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+
+<p>References <a class="el" href="vec_a_m_o_r_e_8h_source.html#l00014">vecAMORE&lt; Con &gt;::ldata</a>.</p>
+<div class="fragment"><pre class="fragment">                                         {
+        std::vector&lt;ConSharedPtr&gt;::iterator itr;
+        sort (<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin(), <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end(), <a class="code" href="struct_compare_id.html">CompareId</a>());
+        sort (vFrom.begin(), vFrom.end());
+        itr=set_difference (<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin(), <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.end(), vFrom.begin(), vFrom.end(), <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin(), <a class="code" href="struct_compare_id.html">CompareId</a>());
+        <a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.resize(itr-<a class="code" href="classvec_a_m_o_r_e.html#a1aa2ee42627e14994fed21bc6446993d">ldata</a>.begin());
 }
 </pre></div>
 </div>
@@ -464,6 +557,36 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a1a5f2d0b5778778c1aa4f575e787770f"></a><!-- doxytag: member="vecCon::select" ref="a1a5f2d0b5778778c1aa4f575e787770f" args="(std::vector&lt; int &gt; FROM)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">vecConSharedPtr</a> vecCon::select </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>FROM</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00454">454</a> of file <a class="el" href="vec_con_8cpp_source.html">vecCon.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                     {
+
+        <span class="comment">/*</span>
+<span class="comment">        vecConSharedPtr result(new vecCon );</span>
+<span class="comment">        result-&gt;reserve(ldata.size());</span>
+<span class="comment">        sort (ldata,ldata.size());</span>
+<span class="comment">        sort (vFrom,vFrom.size());</span>
+<span class="comment">        set_intersection(ldata, ldata.size(), vFrom, vFrom.size(), result.begin(), compareId());</span>
+<span class="comment">        return result;</span>
+<span class="comment">*/</span>
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a19d2dc9e7be97758b90447f7ffd06f5a"></a><!-- doxytag: member="vecCon::setFromNeuron" ref="a19d2dc9e7be97758b90447f7ffd06f5a" args="(std::vector&lt; NeuronSharedPtr &gt; FROM)" -->
 <div class="memitem">
 <div class="memproto">
@@ -616,7 +739,7 @@ Here is the caller graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="classvec_con.html">vecCon</a>      </li>
-      <li class="footer">Generated on Sat Jun 4 2011 19:16:10 for AMORE++ by&#160;
+      <li class="footer">Generated on Sun Jun 5 2011 19:58:33 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

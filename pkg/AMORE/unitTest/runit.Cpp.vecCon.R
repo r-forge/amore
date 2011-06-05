@@ -321,7 +321,57 @@ test.vecCon.Cpp.getFromNeuron <- function() {
 	result <- testCodefun()
 	checkEquals(result, c( 1, 2, 3))
 	# [1] TRUE
+}
 
+
+
+###############################################################################
+test.vecCon.Cpp.erase <- function() {	
+###############################################################################
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Data set up
+			std::vector<int> result;
+			std::vector<NeuronSharedPtr> vNeuron;
+			vecConSharedPtr	ptShvCon( new vecCon() );
+			vecConSharedPtr vErased;
+			ConSharedPtr	ptC;
+			NeuronSharedPtr ptN;
+			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
+			std::vector<double> vWeight;
+			vWeight.push_back(11.32);			vWeight.push_back(1.26);			vWeight.push_back(2.14);			vWeight.push_back(3.16);
+			vWeight.push_back(4.14);			vWeight.push_back(5.19);			vWeight.push_back(6.18);			vWeight.push_back(7.16);
+			vWeight.push_back(8.14);			vWeight.push_back(9.12);			vWeight.push_back(10.31);
+	
+			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+				ptN.reset( new Neuron( ids[i] ) ); 	
+				vNeuron.push_back(ptN);
+			}
+			ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+
+			// Test	
+
+			std::vector<int> toRemove;
+			toRemove.push_back(1);
+			toRemove.push_back(3);
+			toRemove.push_back(5);
+			toRemove.push_back(7);
+
+			ptShvCon->erase(toRemove);
+			ptShvCon->show();
+			result=ptShvCon->getFromId();
+			return wrap(result);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun()	
+	checkEquals(result, c( 2,  4,  6, 8,  9, 10, 11))
+	# From:	 2 	 Weight= 	 9.120000 
+	# From:	 4 	 Weight= 	 4.140000 
+	# From:	 6 	 Weight= 	 6.180000 
+	# From:	 8 	 Weight= 	 8.140000 
+	# From:	 9 	 Weight= 	 2.140000 
+	# From:	 10 	 Weight= 	 1.260000 
+	# From:	 11 	 Weight= 	 11.320000 
 	# [1] TRUE
 }
 

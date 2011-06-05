@@ -1,0 +1,110 @@
+\hypertarget{struct_compare_id}{
+\section{CompareId Struct Reference}
+\label{struct_compare_id}\index{CompareId@{CompareId}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}{operator()} (const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConSharedPtr} a, const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConSharedPtr} b)
+\item 
+bool \hyperlink{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}{operator()} (const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConSharedPtr} a, const int b)
+\item 
+bool \hyperlink{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}{operator()} (const int a, const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConSharedPtr} b)
+\item 
+bool \hyperlink{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}{operator()} (const int a, const int b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 359 of file vecCon.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}{
+\index{CompareId@{CompareId}!operator()@{operator()}}
+\index{operator()@{operator()}!CompareId@{CompareId}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConSharedPtr}}]{a, }
+\item[{const {\bf ConSharedPtr}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}
+
+
+Definition at line 361 of file vecCon.cpp.
+
+
+\begin{DoxyCode}
+                                                                    {
+        return a->getFromId() < b->getFromId();
+    };
+\end{DoxyCode}
+\hypertarget{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}{
+\index{CompareId@{CompareId}!operator()@{operator()}}
+\index{operator()@{operator()}!CompareId@{CompareId}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{a, }
+\item[{const int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}
+
+
+Definition at line 373 of file vecCon.cpp.
+
+
+\begin{DoxyCode}
+                                                  {
+           return a < b;
+       };
+\end{DoxyCode}
+\hypertarget{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}{
+\index{CompareId@{CompareId}!operator()@{operator()}}
+\index{operator()@{operator()}!CompareId@{CompareId}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{a, }
+\item[{const {\bf ConSharedPtr}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}
+
+
+Definition at line 369 of file vecCon.cpp.
+
+
+\begin{DoxyCode}
+                                                           {
+           return a < b->getFromId();
+       };
+\end{DoxyCode}
+\hypertarget{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}{
+\index{CompareId@{CompareId}!operator()@{operator()}}
+\index{operator()@{operator()}!CompareId@{CompareId}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConSharedPtr}}]{a, }
+\item[{const int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}
+
+
+Definition at line 365 of file vecCon.cpp.
+
+
+\begin{DoxyCode}
+                                                           {
+           return a->getFromId() < b  ;
+       };
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{vec_con_8cpp}{vecCon.cpp}\end{DoxyCompactItemize}

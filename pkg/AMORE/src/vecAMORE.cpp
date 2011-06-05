@@ -236,3 +236,7 @@ template <typename T> int vecAMORE<T>::size() {
 };
 
 
+template <typename T> void vecAMORE<T>::reserve(int n) {
+	 ldata.reserve(n) ;
+};
+
