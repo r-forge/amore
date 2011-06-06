@@ -30,7 +30,7 @@
  *	// Test
  *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
  *					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyVecCon
- *					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *					ptShvCon->push_back(ptC);
  *				}
  *
@@ -338,7 +338,7 @@ std::vector<NeuronPtr> VecCon::getFrom 	( ) {
  *			ptShvCon->push_back(ptC);
  *		}
  *	// Test
- *		ptShvCon->setFrom(ptShvNeuron->getLdata()) ;
+ *		ptShvCon->setFrom(ptShvNeuron->load()) ;
  *		ptShvCon->show();
  *		result=ptShvCon->getId();
  *

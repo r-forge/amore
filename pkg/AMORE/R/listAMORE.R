@@ -12,13 +12,21 @@ gListAMORE <- setRefClass("listAMORE",
     ldata="list"
   ),
   methods= list(
+
+	load=function( ... ){
+		return(ldata)
+	},
+	
+	store=function(value, ...){
+		ldata <<- value
+	},
 	
     push_back=function(value, ...){
       ldata <<- c(ldata, value)
     },
 	
 	append=function(value, ...){
-		ldata <<- c(ldata, value$getLdata(...))
+		ldata <<- c(ldata, value$load(...))
 	},
 	
 	
@@ -40,6 +48,6 @@ gListAMORE <- setRefClass("listAMORE",
  	)
 )
 
-gListAMORE$accessors("ldata")
+
 
 

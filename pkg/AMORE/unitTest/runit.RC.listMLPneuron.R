@@ -55,7 +55,7 @@ test.gListMLPneuron.buildAndAppend_fromIsNeuron <- function() {
 	ln1$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln1$validate())
 	ln2 <- gListMLPneuron$new()
-	ln2$buildAndAppend(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM= replicate(3, ln1$getLdata(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
+	ln2$buildAndAppend(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM= replicate(3, ln1$load(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
 	checkTrue(ln2$is.regular())
 	checkEquals(ln2$getId(),6:8)
 	checkEquals(ln2$getBias(),c(1.1,3.4,5.4))

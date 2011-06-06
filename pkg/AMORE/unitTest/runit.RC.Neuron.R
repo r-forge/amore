@@ -88,9 +88,9 @@ test.gNeuron.getFrom_fromIsNeuron <- function() {
 	ln$push_back(nn)
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=11:13)
+	lc$buildAndAppend(FROM=ln$load(), WEIGHT=11:13)
 	nn <- gNeuron$new(id=10, con=lc)
-	checkEquals(nn$getFrom(), ln$getLdata())
+	checkEquals(nn$getFrom(), ln$load())
 }
 
 
@@ -110,7 +110,7 @@ test.gNeuron.getConId_fromIsNeuron <- function() {
 	ln$push_back(nn)
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=11:13)
+	lc$buildAndAppend(FROM=ln$load(), WEIGHT=11:13)
 	nn <- gNeuron$new(id=10, con=lc)
 	checkEquals(nn$getConId(), 1:3)
 }

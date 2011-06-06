@@ -650,7 +650,7 @@ The size of the vector
       / and a vector with three connections
                                         result.push_back(ptShvCon->numOfCons());                /
       / Append numOfCons to result, create new Con and push_back into MyVecCon
-                                        ptC.reset( new Con( ptShvNeuron->getLdata
+                                        ptC.reset( new Con( ptShvNeuron->load
       ().at(i), weights[i]) );
                                         ptShvCon->push_back(ptC);
                                 }
@@ -841,7 +841,7 @@ true if not exception is thrown
                         ptShvCon->push_back(ptC);
                 }
         // Test
-                ptShvCon->setFrom(ptShvNeuron->getLdata()) ;
+                ptShvCon->setFrom(ptShvNeuron->load()) ;
                 ptShvCon->show();
                 result=ptShvCon->getId();
 

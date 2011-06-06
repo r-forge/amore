@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node7" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="9,669,145,747"/>
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="5,281,149,490"/>
-<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="23,6,132,215"/>
+<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="5,281,149,490"/>
+<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="23,6,132,215"/>
 </map>

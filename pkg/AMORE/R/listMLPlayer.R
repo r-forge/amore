@@ -8,7 +8,7 @@ gListMLPLayer <- setRefClass("listMLPLayer",
 		methods = list(	
 								
 				validate = function(...){
-					lapply(getLdata(), function(x){ 
+					lapply(load(), function(x){ 
 								if(!is(x,"mlpLayer")) {stop("[listMLPlayer Validate]: Error, layer does not belogn to the mlpLayer class.")} else {} 
 							} )
 					callSuper(...)

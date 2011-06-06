@@ -21,10 +21,12 @@ test.Container.Cpp.validate.show<- function() {
 				ptN.reset( new Neuron( id ) ); 	
 				ptShvNeuron->push_back(ptN);
 			}
-			for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-				ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
-				ptShvCon->push_back(ptC);			 
-			}			 
+			int i=0;
+			foreach ( NeuronPtr itr , *ptShvNeuron ) {			// and a vector with three connections
+				ptC.reset( new Con( itr, weights[i++]) );  	
+				ptShvCon->push_back(ptC);	
+			}
+
 		// Test
 			ptShvCon->show() ;
 			ptShvCon->validate();		
@@ -59,13 +61,17 @@ test.Container.Cpp.push_back<- function() {
 					ptN.reset( new Neuron( id ) ); 	
 					ptShvNeuron->push_back(ptN);
 				}
-				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
-					ptShvCon->push_back(ptC);			 
-				}			 
-				for (int i=0; i<=2 ; i++) {				// get Ids. Container does not have getId defined
-					result.push_back( ptShvCon->getLdata().at(i)->getId());
+
+				int i=0;
+				foreach ( NeuronPtr itr , *ptShvNeuron ) {			// and a vector with three connections
+					ptC.reset( new Con( itr, weights[i++]) );  	
+					ptShvCon->push_back(ptC);	
 				}
+
+				foreach ( ConPtr itr , *ptShvCon ) {			// and a vector with three connections
+					result.push_back( itr->getId() ); 			// Container does not have getId defined	
+				}
+
 				return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -92,9 +98,11 @@ test.Container.Cpp.size<- function() {
 					ptN.reset( new Neuron( id ) ); 	
 					ptShvNeuron->push_back(ptN);
 				}
-				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
-					ptShvCon->push_back(ptC);			 
+
+				int i=0;
+				foreach ( NeuronPtr itr , *ptShvNeuron ) {			// and a vector with three connections
+					ptC.reset( new Con( itr, weights[i++]) );  	
+					ptShvCon->push_back(ptC);	
 					result.push_back(ptShvCon->size());
 				}			 
 				return wrap(result);
@@ -108,7 +116,7 @@ test.Container.Cpp.size<- function() {
 
 
 ###############################################################################
-test.Container.Cpp.setLdata.getLdata<- function() {	
+test.Container.Cpp.store.load<- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
@@ -125,14 +133,15 @@ test.Container.Cpp.setLdata.getLdata<- function() {
 					ptN.reset( new Neuron( id ) ); 	
 					ptShvNeuron->push_back(ptN);
 				}
-				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+
+				int i=0;
+				foreach( NeuronPtr itr, *ptShvNeuron) {				// and a vector with three connections
+					ptC.reset( new Con( itr , weights[i++]) );  	
 					vcA.push_back(ptC);			 
 				}			 
-
 	// Test
-			ptShvCon->setLdata(vcA);
-			vcB = ptShvCon->getLdata();
+			ptShvCon->store(vcA);
+			vcB = ptShvCon->load();
 			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getId defined
 					result.push_back( vcB.at(i)->getId());
 			}
@@ -167,12 +176,12 @@ test.Container.Cpp.append<- function() {
 				}
 	
 				for (int i=0; i<=2 ; i++) {				// A vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
 					ptShvConA->push_back(ptC);			 
 				}			 
 
 				for (int i=3; i<=5 ; i++) {				// Another vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
 					ptShvConB->push_back(ptC);			 
 				}			 
 	// Test
@@ -180,7 +189,7 @@ test.Container.Cpp.append<- function() {
 				ptShvConA->validate();		
 				ptShvConA->show() ;
 
-				foreach (ConPtr itr, ptShvConA->getLdata()){  // Get Ids (Container does not know about VecCon::getId yet, thus the loop)	
+				foreach (ConPtr itr, ptShvConA->load()){  // Get Ids (Container does not know about VecCon::getId yet, thus the loop)	
 					 result.push_back( itr->getId() );		
 				}
 				return wrap(result);

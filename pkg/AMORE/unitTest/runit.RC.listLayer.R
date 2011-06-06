@@ -35,7 +35,7 @@ test.gListLayer.new_fromIsNeuron <- function() {
 	ll <- gListLayer$new()
 	ll$push_back(nl1)
 	nl2 <- gmlpLayer$new(activationFunction="tanh")
-	nl2$buildAndAppend(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM=replicate(3, nl1$getLdata(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
+	nl2$buildAndAppend(ID=6:8, BIAS=c(1.1,3.4,5.4), FROM=replicate(3, nl1$load(), simplify=FALSE), WEIGHT=list(11:15,21:25,31:35))
 	checkTrue(nl2$validate())
 	ll$push_back(nl2)
 	checkTrue(ll$validate())

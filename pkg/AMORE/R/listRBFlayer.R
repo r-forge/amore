@@ -8,7 +8,7 @@ gListRBFLayer <- setRefClass("listRBFLayer",
 		methods = list(	
 				
 				validate = function(...){
-					lapply(getLdata(), function(x){ 
+					lapply(load(), function(x){ 
 								if(!is(x,"rbfLayer")) {stop("[listRBFlayer Validate]: Error, layer does not belogn to the rbfLayer class.")} else {} 
 							} )
 					callSuper(...)

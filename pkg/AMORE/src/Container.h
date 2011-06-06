@@ -15,13 +15,13 @@ protected:
 
 public:
 
-typedef typename std::vector<T>::iterator iterator;
-typedef typename std::vector<T>::const_iterator const_iterator;
+typedef typename std::vector<boost::shared_ptr<T> >::iterator iterator;
+typedef typename std::vector<boost::shared_ptr<T> >::const_iterator const_iterator;
 
 										iterator	begin() { 	return ldata.begin(); }
 										iterator	end() { 	return ldata.end(); }
-		typename std::vector< boost::shared_ptr<T> > getLdata	();
-											void	setLdata	( typename  std::vector< boost::shared_ptr<T> > );
+	typename std::vector< boost::shared_ptr<T> >	load	();
+											void	store	( typename  std::vector< boost::shared_ptr<T> > );
 											int 	size		();
 											void 	push_back	( boost::shared_ptr<T>   element);
 											void 	append		( Container<T>  v);
