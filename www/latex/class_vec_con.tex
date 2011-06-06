@@ -13,8 +13,7 @@ A vector of connections.
 
 
 
-Inheritance diagram for VecCon:
-\nopagebreak
+Inheritance diagram for VecCon:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,8 +22,7 @@ Inheritance diagram for VecCon:
 \end{figure}
 
 
-Collaboration diagram for VecCon:
-\nopagebreak
+Collaboration diagram for VecCon:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -328,8 +326,7 @@ References Container$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -418,8 +415,7 @@ Referenced by validate().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -430,8 +426,7 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -513,8 +508,7 @@ References Container$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -606,8 +600,7 @@ References select().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -657,8 +650,8 @@ The size of the vector
       / and a vector with three connections
                                         result.push_back(ptShvCon->numOfCons());                /
       / Append numOfCons to result, create new Con and push_back into MyVecCon
-                                        ptC.reset( new Con( ptShvNeuron->getLdata
-      ().at(i), weights[i]) );
+                                        ptC.reset( new Con( ptShvNeuron->load().a
+      t(i), weights[i]) );
                                         ptShvCon->push_back(ptC);
                                 }
 
@@ -689,8 +682,7 @@ Referenced by getFrom(), getId(), and getWeight().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -789,8 +781,7 @@ Referenced by getWeight(), and setWeight().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -849,7 +840,7 @@ true if not exception is thrown
                         ptShvCon->push_back(ptC);
                 }
         // Test
-                ptShvCon->setFrom(ptShvNeuron->getLdata()) ;
+                ptShvCon->setFrom(ptShvNeuron->load()) ;
                 ptShvCon->show();
                 result=ptShvCon->getId();
 
@@ -980,8 +971,7 @@ References select().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1134,8 +1124,7 @@ References getId().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -106,9 +106,9 @@ Collaboration diagram for Container&lt; T &gt;:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
-&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea">getLdata</a> ()</td></tr>
+&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea">load</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ldata field accessor function  <a href="#aeabf8a479f9031cc8ef9af0a971a08ea"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a">setLdata</a> (typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a">store</a> (typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ldata field accessor function  <a href="#ad1594c084d534c3de7acedd714f2e12a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvec_a_m_o_r_e.html#ae1289a7870dbdd19b6455a890e94ce48">size</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size or length of the vector.  <a href="#ae1289a7870dbdd19b6455a890e94ce48"></a><br/></td></tr>
@@ -177,11 +177,11 @@ template&lt;typename T&gt; </div>
                                         ptShvNeuron-&gt;push_back(ptN);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// A vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;getLdata().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;load().at(i), weights[i]) );
                                         ptShvConA-&gt;push_back(ptC);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=3; i&lt;=5 ; i++) {                             <span class="comment">// Another vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;getLdata().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;load().at(i), weights[i]) );
                                         ptShvConB-&gt;push_back(ptC);
                                 }
         <span class="comment">// Test</span>
@@ -197,7 +197,7 @@ template&lt;typename T&gt; </div>
         <span class="comment">//      From:    4       Weight=         5.600000</span>
         <span class="comment">//      From:    5       Weight=         4.200000</span>
         <span class="comment">//      From:    6       Weight=         3.600000</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a" title="ldata field accessor function">Container::setLdata</a> , <a class="el" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="Append a shared_ptr at the end of ldata.">Container::push_back</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a" title="ldata field accessor function">Container::store</a> , <a class="el" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="Append a shared_ptr at the end of ldata.">Container::push_back</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
 <p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00166">166</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">Container.cpp</a>.</p>
 
@@ -216,14 +216,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="aeabf8a479f9031cc8ef9af0a971a08ea"></a><!-- doxytag: member="Container::getLdata" ref="aeabf8a479f9031cc8ef9af0a971a08ea" args="()" -->
+<a class="anchor" id="aeabf8a479f9031cc8ef9af0a971a08ea"></a><!-- doxytag: member="Container::load" ref="aeabf8a479f9031cc8ef9af0a971a08ea" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; T &gt;::getLdata </td>
+          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; T &gt;::load </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -252,18 +252,18 @@ template&lt;typename T &gt; </div>
                                         ptShvNeuron-&gt;push_back(ptN);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;getLdata().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;load().at(i), weights[i]) );
                                         vcA.push_back(ptC);
                                 }
                 <span class="comment">// Test</span>
-                        ptShvCon-&gt;setLdata(vcA);
-                        vcB = ptShvCon-&gt;getLdata();
+                        ptShvCon-&gt;store(vcA);
+                        vcB = ptShvCon-&gt;load();
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                                     <span class="comment">// get Ids. Container does not have getId defined</span>
                                         result.push_back( vcB.at(i)-&gt;getId());
                         }
 
                 <span class="comment">// Now, result is an integer vector with values 10, 20, 30.</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a" title="ldata field accessor function">setLdata</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#ad1594c084d534c3de7acedd714f2e12a" title="ldata field accessor function">store</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
 <p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00211">211</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">Container.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                             {
@@ -316,7 +316,7 @@ template&lt;typename T&gt; </div>
                         ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N3, 3.33) );             <span class="comment">// create new Con and assign to ptCon</span>
                         MyVecCon.<a class="code" href="classvec_a_m_o_r_e.html#a7b02ec757039b4d8fa98c3682002f156" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
 
-                        vc = MyVecCon.<a class="code" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">getLdata</a>();
+                        vc = MyVecCon.<a class="code" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">load</a>();
 
                         result.push_back(vc.at(0)-&gt;getId());
                         result.push_back(vc.at(1)-&gt;getId());
@@ -355,14 +355,14 @@ template&lt;typename T &gt; </div>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad1594c084d534c3de7acedd714f2e12a"></a><!-- doxytag: member="Container::setLdata" ref="ad1594c084d534c3de7acedd714f2e12a" args="(typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;)" -->
+<a class="anchor" id="ad1594c084d534c3de7acedd714f2e12a"></a><!-- doxytag: member="Container::store" ref="ad1594c084d534c3de7acedd714f2e12a" args="(typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; T &gt;::setLdata </td>
+          <td class="memname">void <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; T &gt;::store </td>
           <td>(</td>
           <td class="paramtype">typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
@@ -380,7 +380,7 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">getLdata</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">load</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
 <p>Definition at line <a class="el" href="vec_a_m_o_r_e_8cpp_source.html#l00223">223</a> of file <a class="el" href="vec_a_m_o_r_e_8cpp_source.html">Container.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                   {
@@ -426,7 +426,7 @@ template&lt;typename T &gt; </div>
                         }
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;getLdata().at(i), weights[i]) );
+                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;load().at(i), weights[i]) );
                                 ptShvCon-&gt;push_back(ptC);
                         }
 

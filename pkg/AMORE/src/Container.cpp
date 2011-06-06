@@ -31,7 +31,7 @@
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
  *			MyVecCon.push_back(ptCon);				// push_back
  *
- *			vc = MyVecCon.getLdata();
+ *			vc = MyVecCon.load();
  *
  *			result.push_back(vc.at(0)->getId());
  * 			result.push_back(vc.at(1)->getId());
@@ -72,7 +72,7 @@ template <typename T> void Container<T>::push_back( boost::shared_ptr<T> Tshared
  *			}
  *
  *			for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *				ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *				ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *				ptShvCon->push_back(ptC);
  *			}
  *
@@ -144,11 +144,11 @@ template <typename T> bool Container<T>::validate() {
  *					ptShvNeuron->push_back(ptN);
  *				}
  *				for (int i=0; i<=2 ; i++) {				// A vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *					ptShvConA->push_back(ptC);
  *				}
  *				for (int i=3; i<=5 ; i++) {				// Another vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *					ptShvConB->push_back(ptC);
  *				}
  *	// Test
@@ -167,7 +167,7 @@ template <typename T> bool Container<T>::validate() {
  *
  * \endcode
  *
- * \sa Container::setLdata , Container::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
+ * \sa Container::store , Container::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> void Container<T>::append( Container<T> v) {
 	ldata.reserve(ldata.size() + v.size());
@@ -199,12 +199,12 @@ template <typename T> void Container<T>::append( Container<T> v) {
  *					ptShvNeuron->push_back(ptN);
  *				}
  *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );
+ *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *					vcA.push_back(ptC);
  *				}
  *		// Test
- *			ptShvCon->setLdata(vcA);
- *			vcB = ptShvCon->getLdata();
+ *			ptShvCon->store(vcA);
+ *			vcB = ptShvCon->load();
  *			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getId defined
  *					result.push_back( vcB.at(i)->getId());
  *			}
@@ -212,9 +212,9 @@ template <typename T> void Container<T>::append( Container<T> v) {
  * 		// Now, result is an integer vector with values 10, 20, 30.
  * \endcode
  *
- * \sa setLdata and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
+ * \sa store and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::getLdata() {
+template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::load() {
 	return ldata;
 };
 
@@ -224,9 +224,9 @@ template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::getLdat
 /*!
  *  This method sets the value of the data stored in the \ref ldata field.
  * \param v The vector of smart pointers to be stored in the ldata field
- * \sa getLdata and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
+ * \sa load and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void Container<T>::setLdata(std::vector< boost::shared_ptr<T>  > v) {
+template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>  > v) {
 	ldata=v;
 };
 

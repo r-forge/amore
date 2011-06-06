@@ -16,8 +16,8 @@
 <polyline fill="none" stroke="black" points="43.5,-116 136.5,-116 "/>
 <text text-anchor="start" x="51.5" y="-103" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
 <polyline fill="none" stroke="black" points="43.5,-97 136.5,-97 "/>
-<text text-anchor="start" x="51.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLdata()</text>
-<text text-anchor="start" x="51.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLdata()</text>
+<text text-anchor="start" x="51.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">+ load()</text>
+<text text-anchor="start" x="51.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ store()</text>
 <text text-anchor="start" x="51.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 <text text-anchor="start" x="51.5" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ push_back()</text>
 <text text-anchor="start" x="51.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">+ append()</text>

@@ -51,14 +51,14 @@
     \subitem {begin}, \hyperpage{25}
     \subitem {const\_\discretionary {-}{}{}iterator}, \hyperpage{23}
     \subitem {end}, \hyperpage{25}
-    \subitem {getLdata}, \hyperpage{25}
     \subitem {iterator}, \hyperpage{23}
     \subitem {ldata}, \hyperpage{30}
+    \subitem {load}, \hyperpage{25}
     \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{26}
     \subitem {reserve}, \hyperpage{27}
-    \subitem {setLdata}, \hyperpage{28}
     \subitem {show}, \hyperpage{28}
     \subitem {size}, \hyperpage{29}
+    \subitem {store}, \hyperpage{29}
     \subitem {validate}, \hyperpage{30}
   \item {ContainerConPtr}
     \subitem {AMORE.h}, \hyperpage{60}
@@ -88,8 +88,6 @@
     \subitem {Con}, \hyperpage{14}
     \subitem {Neuron}, \hyperpage{32}
     \subitem {VecCon}, \hyperpage{40}
-  \item {getLdata}
-    \subitem {Container}, \hyperpage{25}
   \item {getWeight}
     \subitem {Con}, \hyperpage{15}
     \subitem {VecCon}, \hyperpage{42, 43}
@@ -105,10 +103,12 @@
 
   \item {ldata}
     \subitem {Container}, \hyperpage{30}
+  \item {load}
+    \subitem {Container}, \hyperpage{25}
 
   \indexspace
 
-  \item {Neuron}, \hyperpage{31}
+  \item {Neuron}, \hyperpage{30}
     \subitem {$\sim $Neuron}, \hyperpage{31}
     \subitem {getId}, \hyperpage{32}
     \subitem {Id}, \hyperpage{32}
@@ -159,8 +159,6 @@
     \subitem {VecCon}, \hyperpage{47}
   \item {setId}
     \subitem {Neuron}, \hyperpage{32}
-  \item {setLdata}
-    \subitem {Container}, \hyperpage{28}
   \item {setWeight}
     \subitem {Con}, \hyperpage{17}
     \subitem {VecCon}, \hyperpage{48}, \hyperpage{50}
@@ -168,6 +166,8 @@
     \subitem {Con}, \hyperpage{18}
     \subitem {Container}, \hyperpage{28}
   \item {size}
+    \subitem {Container}, \hyperpage{29}
+  \item {store}
     \subitem {Container}, \hyperpage{29}
 
   \indexspace

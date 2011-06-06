@@ -45,23 +45,23 @@
 \indexentry{begin@{begin}!Container@{Container}|hyperpage}{25}
 \indexentry{Container@{Container}!end@{end}|hyperpage}{25}
 \indexentry{end@{end}!Container@{Container}|hyperpage}{25}
-\indexentry{Container@{Container}!getLdata@{getLdata}|hyperpage}{25}
-\indexentry{getLdata@{getLdata}!Container@{Container}|hyperpage}{25}
+\indexentry{Container@{Container}!load@{load}|hyperpage}{25}
+\indexentry{load@{load}!Container@{Container}|hyperpage}{25}
 \indexentry{Container@{Container}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{26}
 \indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!Container@{Container}|hyperpage}{26}
 \indexentry{Container@{Container}!reserve@{reserve}|hyperpage}{27}
 \indexentry{reserve@{reserve}!Container@{Container}|hyperpage}{27}
-\indexentry{Container@{Container}!setLdata@{setLdata}|hyperpage}{28}
-\indexentry{setLdata@{setLdata}!Container@{Container}|hyperpage}{28}
 \indexentry{Container@{Container}!show@{show}|hyperpage}{28}
 \indexentry{show@{show}!Container@{Container}|hyperpage}{28}
 \indexentry{Container@{Container}!size@{size}|hyperpage}{29}
 \indexentry{size@{size}!Container@{Container}|hyperpage}{29}
+\indexentry{Container@{Container}!store@{store}|hyperpage}{29}
+\indexentry{store@{store}!Container@{Container}|hyperpage}{29}
 \indexentry{Container@{Container}!validate@{validate}|hyperpage}{30}
 \indexentry{validate@{validate}!Container@{Container}|hyperpage}{30}
 \indexentry{Container@{Container}!ldata@{ldata}|hyperpage}{30}
 \indexentry{ldata@{ldata}!Container@{Container}|hyperpage}{30}
-\indexentry{Neuron@{Neuron}|hyperpage}{31}
+\indexentry{Neuron@{Neuron}|hyperpage}{30}
 \indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{31}
 \indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{31}
 \indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{31}

@@ -28,9 +28,9 @@ Collaboration diagram for Container$<$ T $>$:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{getLdata} ()
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{load} ()
 \begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
-void \hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
+void \hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
 \begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
 int \hyperlink{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
@@ -108,13 +108,13 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / A vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->getLdata
+                                        ptC.reset( new Con( ptShvNeuron->load
       ().at(i), weights[i]) );
                                         ptShvConA->push_back(ptC);
                                 }
                                 for (int i=3; i<=5 ; i++) {                             /
       / Another vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->getLdata
+                                        ptC.reset( new Con( ptShvNeuron->load
       ().at(i), weights[i]) );
                                         ptShvConB->push_back(ptC);
                                 }
@@ -136,7 +136,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{Container::setLdata} , \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{Container::store} , \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -165,9 +165,9 @@ Here is the call graph for this function:\nopagebreak
 
 
 \hypertarget{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{
-\index{Container@{Container}!getLdata@{getLdata}}
-\index{getLdata@{getLdata}!Container@{Container}}
-\subsubsection[{getLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf Container}$<$ T $>$::getLdata (
+\index{Container@{Container}!load@{load}}
+\index{load@{load}!Container@{Container}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf Container}$<$ T $>$::load (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -203,13 +203,13 @@ The ldata vector.
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->getLdata
+                                        ptC.reset( new Con( ptShvNeuron->load
       ().at(i), weights[i]) );
                                         vcA.push_back(ptC);
                                 }
                 // Test
-                        ptShvCon->setLdata(vcA);
-                        vcB = ptShvCon->getLdata();
+                        ptShvCon->store(vcA);
+                        vcB = ptShvCon->load();
                         for (int i=0; i<=2 ; i++) {                                     /
       / get Ids. Container does not have getId defined
                                         result.push_back( vcB.at(i)->getId())
@@ -221,7 +221,7 @@ The ldata vector.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{store} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -278,7 +278,7 @@ Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{Container} class
                         MyVecCon.push_back(ptCon);                              /
       / push_back
 
-                        vc = MyVecCon.getLdata();
+                        vc = MyVecCon.load();
 
                         result.push_back(vc.at(0)->getId());
                         result.push_back(vc.at(1)->getId());
@@ -322,9 +322,9 @@ Definition at line 239 of file Container.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{
-\index{Container@{Container}!setLdata@{setLdata}}
-\index{setLdata@{setLdata}!Container@{Container}}
-\subsubsection[{setLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::setLdata (
+\index{Container@{Container}!store@{store}}
+\index{store@{store}!Container@{Container}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::store (
 \begin{DoxyParamCaption}
 \item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{v}
 \end{DoxyParamCaption}
@@ -340,7 +340,7 @@ This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{getLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{load} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -391,7 +391,7 @@ $\ast$
 
                         for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                ptC.reset( new Con( ptShvNeuron->getLdata().at(i)
+                                ptC.reset( new Con( ptShvNeuron->load().at(i)
       , weights[i]) );
                                 ptShvCon->push_back(ptC);
                         }

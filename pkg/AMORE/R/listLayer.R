@@ -12,7 +12,7 @@ gListLayer <- setRefClass("listLayer",
 			},
 
 			numOfLayers = function(...){
-				return(length(getLdata()))	
+				return(length(load()))	
 			},
 			
 			delete = function(POS, ...) {
@@ -39,7 +39,7 @@ gListLayer <- setRefClass("listLayer",
 					
 			validate = function(...){
 				if (anyDuplicated(c(getId(...), recursive=TRUE))>0) {	stop("[listLayer: Validation] Id duplication error")} else {}
-				lapply(getLdata(), function(x){x$validate(...)} )
+				lapply(load(), function(x){x$validate(...)} )
 				return(TRUE)
 			}
 		)

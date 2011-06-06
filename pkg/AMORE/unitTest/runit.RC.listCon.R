@@ -25,7 +25,7 @@ test.gListCon.buildAndAppend_fromIsNeuron <- function() {
 	ln1$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln1$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln1$getLdata(), WEIGHT=5:1)
+	lc$buildAndAppend(FROM=ln1$load(), WEIGHT=5:1)
 	checkEquals(gListMLPneuron$new(lc$getFrom())$getId(), 1:5)	# This is interesting, lc$getFrom() is returning a set of neurons in a simple list. In order to get their Ids you need to pack that list into a listMLPneuron object, and then call getId(). This approach allows to get a result from getFrom which combines numeric and neuron values.
 	checkEquals(lc$getWeight(), 5:1)
 }
@@ -106,7 +106,7 @@ test.gListCon.getFrom_fromIsNeuron <- function() {
 	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=5:1)
+	lc$buildAndAppend(FROM=ln$load(), WEIGHT=5:1)
 	checkEquals(gListMLPneuron$new(ldata=lc$getFrom())$getId(), 1:5)
 }
 
@@ -116,7 +116,7 @@ test.gListCon.getId_fromIsNeuron <- function() {
 	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=5:1)
+	lc$buildAndAppend(FROM=ln$load(), WEIGHT=5:1)
 	checkEquals(lc$getId(), ln$getId() )
 	checkEquals(lc$getId(), 1:5)	
 }
@@ -127,7 +127,7 @@ test.gListCon.getWeight_fromIsNeuron <- function() {
 	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
-	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=5:1)
+	lc$buildAndAppend(FROM=ln$load(), WEIGHT=5:1)
 	checkEquals(lc$getWeight(), 5:1)
 	checkEquals(lc$getWeight(FROM=c(1,2)), c(5,4))		
 }

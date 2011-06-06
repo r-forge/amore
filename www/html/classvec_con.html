@@ -626,7 +626,7 @@ Here is the call graph for this function:</div>
         <span class="comment">// Test</span>
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
                                         result.push_back(ptShvCon-&gt;numOfCons());                <span class="comment">// Append numOfCons to result, create new Con and push_back into MyVecCon</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;getLdata().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( ptShvNeuron-&gt;load().at(i), weights[i]) );
                                         ptShvCon-&gt;push_back(ptC);
                                 }
 
@@ -780,7 +780,7 @@ Here is the caller graph for this function:</div>
                         ptShvCon-&gt;push_back(ptC);
                 }
         <span class="comment">// Test</span>
-                ptShvCon-&gt;setFrom(ptShvNeuron-&gt;getLdata()) ;
+                ptShvCon-&gt;setFrom(ptShvNeuron-&gt;load()) ;
                 ptShvCon-&gt;show();
                 result=ptShvCon-&gt;getId();
 
