@@ -20,15 +20,15 @@ public:
 
 									int	numOfCons();
 					std::vector<int>	getFromId();
-								bool	buildAndAppend		( std::vector<NeuronSharedPtr> FROM , std::vector<double> WEIGHT );
+								bool	buildAndAppend	( std::vector<NeuronSharedPtr> vFrom , std::vector<double> vWeight );
 					std::vector<double>	getWeight	  	( );
-//					std::vector<double>	getWeight	  	( std::vector<int> FROM );
+					std::vector<double>	getWeight	  	( std::vector<int> vFrom );
 		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
-								bool	setWeight		( std::vector<double> value);
-//		À?						void	setWeight		( std::vector<double> value, std::vector<int> FROM);
-								bool	setFromNeuron	( std::vector<NeuronSharedPtr> FROM);
-								void	erase 			( std::vector<int> FROM );
-						vecConSharedPtr	select			( std::vector<int> FROM );
+								bool	setWeight		( std::vector<double> vWeight);
+								bool	setWeight		( std::vector<double> vWeight, std::vector<int> vFrom);
+								bool	setFromNeuron	( std::vector<NeuronSharedPtr> vFrom);
+								void	erase 			( std::vector<int> vFrom );
+						vecConSharedPtr	select			( std::vector<int> vFrom );
 //								bool	validate		( );
 
 };

@@ -36,9 +36,9 @@ source("pkg/AMORE/R/RBFneuralNetwork.R")
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
 
-/*
-		void print_list(set<Employee*>& s) { for_each(s.begin(), s.end(), mem_fun(&Employee::print)); }
-*/
+#/*
+#	 for_each(s.begin(), s.end(), mem_fun(&Employee::print)); 
+#*/
 		
 
 #lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
@@ -57,7 +57,7 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 ###############################################
 
 ###############################################
-# FIXME Manolo: vecCon::select
+# FIXME Manolo: Beuron.h
 # STATUS: writing
 ###############################################
 

@@ -194,7 +194,7 @@ bool Con::show () {
 	if (id==NA_INTEGER) {
 		Rprintf("From: NA\t Invalid Connection \n");
 	} else {
-		Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , getWeight());
+		Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight());
 	}
 	return(true);
 }
