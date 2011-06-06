@@ -11,9 +11,9 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-24 99,-24 99,5 -4,5"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="vecAMORE\&lt; T \&gt;">
+<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="Container\&lt; T \&gt;">
 <polygon fill="white" stroke="black" points="0.5,-0.5 0.5,-19.5 93.5,-19.5 93.5,-0.5 0.5,-0.5"/>
-<text text-anchor="middle" x="47" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecAMORE&lt; T &gt;</text>
+<text text-anchor="middle" x="47" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 </a>
 </g>
 </g>

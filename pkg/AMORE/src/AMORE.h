@@ -23,35 +23,33 @@
 #include <iterator>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
+#include <boost/foreach.hpp>
 #include <Rcpp.h>
 
 using namespace Rcpp;
 
 class Con;
-template <typename T> class vecAMORE;
-class vecCon;
+template <typename T> class Container;
+class VecCon;
 class Neuron;
 
 
-typedef boost::shared_ptr<Con> ConSharedPtr;
-typedef boost::shared_ptr<Neuron> NeuronSharedPtr;
-typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
-typedef boost::shared_ptr< vecAMORE<Con> > vecAMOREconSharedPtr;
-typedef boost::shared_ptr< vecAMORE<Neuron> > vecAMOREneuronSharedPtr;
-typedef boost::shared_ptr< vecCon > vecConSharedPtr;
+#define foreach         BOOST_FOREACH
 
+typedef boost::shared_ptr<Con> 					ConPtr;
+typedef boost::shared_ptr<Neuron>				NeuronPtr;
+typedef boost::weak_ptr<Neuron>					NeuronWeakPtr;
+typedef boost::shared_ptr< Container<Con> > 	ContainerConPtr;
+typedef boost::shared_ptr< Container<Neuron> > 	ContainerNeuronPtr;
+typedef boost::shared_ptr< VecCon > 			VecConPtr;
 
 #include "Con.h"
-
-
-
-#include "vecAMORE.h"
-#include "vecCon.h"
+#include "Container.h"
+#include "VecCon.h"
 #include "Neuron.h"
 
-
 #include "Con.cpp"
-#include "vecAMORE.cpp"
-#include "vecCon.cpp"
+#include "Container.cpp"
+#include "VecCon.cpp"
 #include "Neuron.cpp"
 

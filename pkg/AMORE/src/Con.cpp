@@ -25,7 +25,7 @@
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \param w The new value (double) to be set in the \ref weight field.
  */
-	Con::Con(NeuronSharedPtr f , double w ) : from(f), weight(w) {};
+	Con::Con(NeuronPtr f , double w ) : from(f), weight(w) {};
 
 
 	//! Constructor
@@ -33,7 +33,7 @@
 	 * Constructor, from=f, weight=0
 	 * \param f A pointer to the neuron that is to be inserted in the \ref from field.
 	 */
-		Con::Con(NeuronSharedPtr f ) : from(f), weight(0) {};
+		Con::Con(NeuronPtr f ) : from(f), weight(0) {};
 
 
 
@@ -51,8 +51,8 @@
  *	//Usage example:
  *	//================
  *	// Data set up
- *	 		NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1
- *			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+ *	 		NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1
+ *			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
  *	// Test
  *	  		ptShNeuron = ptShCon->getFromNeuron() ;
  *			int result = ptShNeuron->getId();
@@ -62,7 +62,7 @@
  *
  * \sa getFromId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-NeuronSharedPtr Con::getFromNeuron	()   			{
+NeuronPtr Con::getFromNeuron	()   			{
 	return(from.lock());
 }
 
@@ -77,8 +77,8 @@ NeuronSharedPtr Con::getFromNeuron	()   			{
  *	//Usage example:
  *	//================
  *	// Data set up
- * 			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1
- *			ConSharedPtr ptShCon( new Con() );
+ * 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1
+ *			ConPtr ptShCon( new Con() );
  *			ptShCon->setFromNeuron( ptShNeuron );
  *	// Test
  *			ptShNeuron = ptShCon->getFromNeuron() ;
@@ -89,7 +89,7 @@ NeuronSharedPtr Con::getFromNeuron	()   			{
  *
  * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
-void Con::setFromNeuron	(NeuronSharedPtr f)   	{
+void Con::setFromNeuron	(NeuronPtr f)   	{
 	from=f;
 }
 
@@ -104,8 +104,8 @@ void Con::setFromNeuron	(NeuronSharedPtr f)   	{
  *	//Usage example:
  *	//================
  *	// Data set up
- *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16
- *			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+ *			NeuronPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16
+ *			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
  *	// Test
  *	  		int result = ptShCon->getFromId();
  *
@@ -116,7 +116,7 @@ void Con::setFromNeuron	(NeuronSharedPtr f)   	{
  */
 int Con::getFromId () {
 	if (from.use_count() !=0 ){
-		NeuronSharedPtr ptNeuron(from);
+		NeuronPtr ptNeuron(from);
 		return(  ptNeuron->getId() );
 	} else {
 		return(NA_INTEGER);
@@ -136,8 +136,8 @@ int Con::getFromId () {
  *  //================
  *  // Data set up
  *			std::vector<double> result;
- *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
- *			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
+ *			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
+ *			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
  *	// Test
  *			result.push_back( ptShCon->getWeight() );
  *			ptShCon->setWeight(2.2);
@@ -165,8 +165,8 @@ double Con::getWeight () {
  *  //================
  *  // Data set up
  *			std::vector<double> result;
- *			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
- *			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
+ *			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
+ *			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
  *			result.push_back(ptShCon->getWeight());
  *	// Test
  *			ptShCon->setWeight(2.2);

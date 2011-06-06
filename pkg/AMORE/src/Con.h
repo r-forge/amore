@@ -28,11 +28,11 @@ class Con {
 public:
 
 	Con();
-	Con(NeuronSharedPtr f);
-	Con(NeuronSharedPtr f , double w );
+	Con(NeuronPtr f);
+	Con(NeuronPtr f , double w );
 	~Con();
-	NeuronSharedPtr	getFromNeuron	();
-			void	setFromNeuron	(NeuronSharedPtr f);
+	NeuronPtr	getFromNeuron	();
+			void	setFromNeuron	(NeuronPtr f);
 				int	getFromId		();
 			double	getWeight		();
 			void	setWeight		(double w);

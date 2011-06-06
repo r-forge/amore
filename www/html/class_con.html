@@ -252,7 +252,7 @@ Private Attributes</h2></td></tr>
         <span class="comment">//================</span>
         <span class="comment">// Data set up</span>
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptShNeuron ( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(16) );  <span class="comment">// Neuron Id is set to 16</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron) );    <span class="comment">// from points to ptShNeuron and weight is set to 0</span>
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron) );    <span class="comment">// from points to ptShNeuron and weight is set to 0</span>
         <span class="comment">// Test</span>
                         <span class="keywordtype">int</span> result = ptShCon-&gt;getFromId();
 
@@ -304,7 +304,7 @@ Here is the caller graph for this function:</div>
         <span class="comment">//================</span>
         <span class="comment">// Data set up</span>
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptShNeuron ( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(1) );   <span class="comment">// Neuron Id is set 1</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron) );    <span class="comment">// from points to ptShNeuron and weight is set to 0</span>
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron) );    <span class="comment">// from points to ptShNeuron and weight is set to 0</span>
         <span class="comment">// Test</span>
                         ptShNeuron = ptShCon-&gt;getFromNeuron() ;
                         <span class="keywordtype">int</span> result = ptShNeuron-&gt;getId();
@@ -344,7 +344,7 @@ Here is the caller graph for this function:</div>
   <span class="comment">// Data set up</span>
                         std::vector&lt;double&gt; result;
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptShNeuron ( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(16) );          <span class="comment">// Neuron Id is set to 16</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron, 12.4) );  <span class="comment">// from points to ptShNeuron and weight is set to 12.4</span>
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron, 12.4) );  <span class="comment">// from points to ptShNeuron and weight is set to 12.4</span>
         <span class="comment">// Test</span>
                         result.push_back( ptShCon-&gt;getWeight() );
                         ptShCon-&gt;setWeight(2.2);
@@ -399,7 +399,7 @@ Here is the caller graph for this function:</div>
         <span class="comment">//================</span>
         <span class="comment">// Data set up</span>
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptShNeuron ( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(1) );   <span class="comment">// Neuron Id is set to 1</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>() );
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>() );
                         ptShCon-&gt;setFromNeuron( ptShNeuron );
         <span class="comment">// Test</span>
                         ptShNeuron = ptShCon-&gt;getFromNeuron() ;
@@ -446,7 +446,7 @@ Here is the caller graph for this function:</div>
   <span class="comment">// Data set up</span>
                         std::vector&lt;double&gt; result;
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptShNeuron ( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(16) );          <span class="comment">// Neuron Id is set to 16</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConSharedPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron, 12.4) );  <span class="comment">// from points to ptShNeuron and weight is set to 12.4</span>
+                        <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> ptShCon( <span class="keyword">new</span> <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(ptShNeuron, 12.4) );  <span class="comment">// from points to ptShNeuron and weight is set to 12.4</span>
                         result.push_back(ptShCon-&gt;getWeight());
         <span class="comment">// Test</span>
                         ptShCon-&gt;setWeight(2.2);
@@ -491,7 +491,7 @@ Here is the caller graph for this function:</div>
         <span class="keywordflow">if</span> (<span class="keywordtype">id</span>==NA_INTEGER) {
                 Rprintf(<span class="stringliteral">&quot;From: NA\t Invalid Connection \n&quot;</span>);
         } <span class="keywordflow">else</span> {
-                Rprintf(<span class="stringliteral">&quot;From:\t %d \t Weight= \t %lf \n&quot;</span>, <a class="code" href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field.">getFromId</a>() , <a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>());
+                Rprintf(<span class="stringliteral">&quot;From:\t %d \t Weight= \t %lf \n&quot;</span>, <span class="keywordtype">id</span> , <a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>());
         }
         <span class="keywordflow">return</span>(<span class="keyword">true</span>);
 }
@@ -599,7 +599,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_con.html">Con</a>      </li>
-      <li class="footer">Generated on Mon Jun 6 2011 00:37:46 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 6 2011 12:10:17 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

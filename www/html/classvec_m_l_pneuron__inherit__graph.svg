@@ -36,9 +36,9 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{vecAMORE\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
+<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
 <polygon fill="white" stroke="black" points="0,-193 0,-327 118,-327 118,-193 0,-193"/>
-<text text-anchor="middle" x="59" y="-314" font-family="Helvetica,sans-Serif" font-size="10.00">vecAMORE&lt; Neuron &gt;</text>
+<text text-anchor="middle" x="59" y="-314" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Neuron &gt;</text>
 <polyline fill="none" stroke="black" points="0,-308 118,-308 "/>
 <text text-anchor="start" x="8" y="-295" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
 <polyline fill="none" stroke="black" points="0,-289 118,-289 "/>
@@ -59,9 +59,9 @@
 </g>
 <!-- Node4 -->
 <g id="node6" class="node"><title>Node4</title>
-<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{vecAMORE\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
+<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
 <polygon fill="white" stroke="black" points="12.5,-377 12.5,-511 105.5,-511 105.5,-377 12.5,-377"/>
-<text text-anchor="middle" x="59" y="-498" font-family="Helvetica,sans-Serif" font-size="10.00">vecAMORE&lt; T &gt;</text>
+<text text-anchor="middle" x="59" y="-498" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="12.5,-492 105.5,-492 "/>
 <text text-anchor="start" x="20.5" y="-479" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
 <polyline fill="none" stroke="black" points="12.5,-473 105.5,-473 "/>

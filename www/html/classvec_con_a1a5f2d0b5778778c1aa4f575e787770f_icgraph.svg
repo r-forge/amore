@@ -12,13 +12,13 @@
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 82,-19.5 82,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="41" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon::select</text>
+<text text-anchor="middle" x="41" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::select</text>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
 <a xlink:href="classvec_con.html#a147dc894ce4fe5f35870399de239089c" target="_top" xlink:title="Getter of the weights of the specified elements from the vecCom object.">
 <polygon fill="white" stroke="black" points="118,-0.5 118,-19.5 218,-19.5 218,-0.5 118,-0.5"/>
-<text text-anchor="middle" x="168" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon::getWeight</text>
+<text text-anchor="middle" x="168" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::getWeight</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node2 -->

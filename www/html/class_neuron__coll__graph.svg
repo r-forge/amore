@@ -15,7 +15,7 @@
 <text text-anchor="middle" x="49" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">Neuron</text>
 <polyline fill="none" stroke="black" points="12,-256 86,-256 "/>
 <text text-anchor="start" x="20" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Id</text>
-<text text-anchor="start" x="20" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; vecCon</text>
+<text text-anchor="start" x="20" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VecCon</text>
 <text text-anchor="start" x="20" y="-221" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; outputValue</text>
 <polyline fill="none" stroke="black" points="12,-215 86,-215 "/>
 <text text-anchor="start" x="20" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
@@ -49,7 +49,7 @@
 <g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M49,-145.558C49,-159.035 49,-172.639 49,-184.874"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="49,-135.303 53.5001,-145.302 49,-140.303 49.0001,-145.303 49.0001,-145.303 49.0001,-145.303 49,-140.303 44.5001,-145.303 49,-135.303 49,-135.303"/>
-<text text-anchor="middle" x="66" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon</text>
+<text text-anchor="middle" x="66" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon</text>
 </g>
 </g>
 </svg>

@@ -48,16 +48,12 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 ###############################################
 # FIXME Javi: Unit tests for Con class constructor methods
-# STATUS: Pending
+# STATUS: DONE
 ###############################################
 
-###############################################
-# FIXME Javi: Implement vecCon::Validate  
-# STATUS: Pending
-###############################################
 
 ###############################################
-# FIXME Manolo: Beuron.h
+# FIXME Manolo: Neuron.h
 # STATUS: writing
 ###############################################
 

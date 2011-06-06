@@ -1,14 +1,15 @@
 \hypertarget{classvec_a_m_o_r_e}{
-\section{vecAMORE$<$ T $>$ Class Template Reference}
-\label{classvec_a_m_o_r_e}\index{vecAMORE@{vecAMORE}}
+\section{Container$<$ T $>$ Class Template Reference}
+\label{classvec_a_m_o_r_e}\index{Container@{Container}}
 }
 
 
-{\ttfamily \#include $<$vecAMORE.h$>$}
+{\ttfamily \#include $<$Container.h$>$}
 
 
 
-Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
+Inheritance diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,7 +18,7 @@ Inheritance diagram for vecAMORE$<$ T $>$:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for vecAMORE$<$ T $>$:\nopagebreak
+Collaboration diagram for Container$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,10 +36,10 @@ int \hyperlink{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
 \begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of ldata. \end{DoxyCompactList}\item 
-void \hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} (\hyperlink{classvec_a_m_o_r_e}{vecAMORE}$<$ T $>$ v)
-\begin{DoxyCompactList}\small\item\em Appends a vecAMORE$<$T$>$ object. \end{DoxyCompactList}\item 
+void \hyperlink{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{append} (\hyperlink{classvec_a_m_o_r_e}{Container}$<$ T $>$ v)
+\begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{show} ()
-\begin{DoxyCompactList}\small\item\em Pretty print of the vecAMORE$<$T$>$ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Pretty print of the Container$<$T$>$ \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{validate} ()
 \begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
 void \hyperlink{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}{reserve} (int n)
@@ -51,35 +52,35 @@ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{classvec_a_m_o_r_e_a
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename T$>$class vecAMORE$<$ T $>$}
+\subsubsection*{template$<$typename T$>$class Container$<$ T $>$}
 
 
 
-Definition at line 12 of file vecAMORE.h.
+Definition at line 12 of file Container.h.
 
 
 
 \subsection{Member Function Documentation}
 \hypertarget{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}{
-\index{vecAMORE@{vecAMORE}!append@{append}}
-\index{append@{append}!vecAMORE@{vecAMORE}}
-\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::append (
+\index{Container@{Container}!append@{append}}
+\index{append@{append}!Container@{Container}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::append (
 \begin{DoxyParamCaption}
-\item[{{\bf vecAMORE}$<$ T $>$}]{v}
+\item[{{\bf Container}$<$ T $>$}]{v}
 \end{DoxyParamCaption}
 )}}
 \label{classvec_a_m_o_r_e_ab060ffa67e85997fc4236bedfd2f17b6}
 
 
-Appends a vecAMORE$<$T$>$ object. 
+Appends a Container$<$T$>$ object. 
 
 This method inserts the ldata field of a second object at the end of the ldata field of the calling object. 
 \begin{DoxyParams}{Parameters}
-{\em v} & The vecAMORE$<$T$>$ object to be added to the current one \\
+{\em v} & The Container$<$T$>$ object to be added to the current one \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}
@@ -88,14 +89,14 @@ The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
         //================
         // Data set up
                                 std::vector<int> result;
-                                std::vector<ConSharedPtr> vcA, vcB;
-                                vecAMOREneuronSharedPtr ptShvNeuron( new 
-      vecAMORE<Neuron>() );
-                                vecAMOREconSharedPtr    ptShvConA( new 
-      vecAMORE<Con>() );
-                                vecAMOREconSharedPtr    ptShvConB( new 
-      vecAMORE<Con>() );
-                                ConSharedPtr    ptC;
+                                std::vector<ConPtr> vcA, vcB;
+                                ContainerneuronSharedPtr ptShvNeuron( new 
+      Container<Neuron>() );
+                                ContainerconSharedPtr    ptShvConA( new 
+      Container<Con>() );
+                                ContainerconSharedPtr    ptShvConB( new 
+      Container<Con>() );
+                                ConPtr    ptC;
                                 NeuronSharedPtr ptN;
                                 int ids[]= {1, 2, 3, 4, 5, 6};
                                 double weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3
@@ -135,15 +136,15 @@ The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{vecAMORE::setLdata} , \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{vecAMORE::push\_\-back} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{Container::setLdata} , \hyperlink{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 166 of file vecAMORE.cpp.
+Definition at line 166 of file Container.cpp.
 
 
 
-References vecAMORE$<$ T $>$::ldata, and vecAMORE$<$ T $>$::size().
+References Container$<$ T $>$::ldata, and Container$<$ T $>$::size().
 
 
 \begin{DoxyCode}
@@ -164,9 +165,9 @@ Here is the call graph for this function:\nopagebreak
 
 
 \hypertarget{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{
-\index{vecAMORE@{vecAMORE}!getLdata@{getLdata}}
-\index{getLdata@{getLdata}!vecAMORE@{vecAMORE}}
-\subsubsection[{getLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf vecAMORE}$<$ T $>$::getLdata (
+\index{Container@{Container}!getLdata@{getLdata}}
+\index{getLdata@{getLdata}!Container@{Container}}
+\subsubsection[{getLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf Container}$<$ T $>$::getLdata (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -186,12 +187,12 @@ The ldata vector.
         //================
                 // Data set up
                                 std::vector<int> result;
-                                std::vector<ConSharedPtr> vcA, vcB;
-                                vecAMOREneuronSharedPtr ptShvNeuron( new 
-      vecAMORE<Neuron>() );
-                                vecAMOREconSharedPtr    ptShvCon( new 
-      vecAMORE<Con>() );
-                                ConSharedPtr    ptC;
+                                std::vector<ConPtr> vcA, vcB;
+                                ContainerneuronSharedPtr ptShvNeuron( new 
+      Container<Neuron>() );
+                                ContainerconSharedPtr    ptShvCon( new 
+      Container<Con>() );
+                                ConPtr    ptC;
                                 NeuronSharedPtr ptN;
                                 int ids[]= {10, 20, 30};
                                 double weights[] = {1.13, 2.22, 3.33 };
@@ -210,7 +211,7 @@ The ldata vector.
                         ptShvCon->setLdata(vcA);
                         vcB = ptShvCon->getLdata();
                         for (int i=0; i<=2 ; i++) {                                     /
-      / get Ids. vecAMORE does not have getFromId defined
+      / get Ids. Container does not have getFromId defined
                                         result.push_back( vcB.at(i)->getFromId())
       ;
                         }
@@ -220,11 +221,11 @@ The ldata vector.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{setLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 211 of file vecAMORE.cpp.
+Definition at line 211 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -233,9 +234,9 @@ Definition at line 211 of file vecAMORE.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_a7b02ec757039b4d8fa98c3682002f156}{
-\index{vecAMORE@{vecAMORE}!push\_\-back@{push\_\-back}}
-\index{push\_\-back@{push\_\-back}!vecAMORE@{vecAMORE}}
-\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::push\_\-back (
+\index{Container@{Container}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!Container@{Container}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
 \begin{DoxyParamCaption}
 \item[{boost::shared\_\-ptr$<$ T $>$}]{TsharedPtr}
 \end{DoxyParamCaption}
@@ -245,7 +246,7 @@ Definition at line 211 of file vecAMORE.cpp.
 
 Append a shared\_\-ptr at the end of ldata. 
 
-Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{vecAMORE} class 
+Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{Container} class 
 \begin{DoxyParams}{Parameters}
 {\em TsharedPtr} & A shared\_\-ptr pointer to be inserted at the end of ldata\\
 \hline
@@ -257,27 +258,27 @@ Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{vecAMORE} class
                 //================
                 // Data set up
                         Neuron N1, N2, N3;
-                        vecAMORE<Con> MyvecCon;
-                        std::vector<ConSharedPtr> vc;
+                        Container<Con> MyVecCon;
+                        std::vector<ConPtr> vc;
                         std::vector<int> result;
                         N1.setId(10);
                         N2.setId(20);
                         N3.setId(30);
                 // Test
-                        ConSharedPtr ptCon( new Con(&N1, 1.13) );       // Create
+                        ConPtr ptCon( new Con(&N1, 1.13) );       // Create
        new Con and initialize ptCon
-                        MyvecCon.push_back(ptCon);                              /
+                        MyVecCon.push_back(ptCon);                              /
       / push_back
                         ptCon.reset(  new Con(&N2, 2.22) );             // create
        new Con and assign to ptCon
-                        MyvecCon.push_back(ptCon);                              /
+                        MyVecCon.push_back(ptCon);                              /
       / push_back
                         ptCon.reset(  new Con(&N3, 3.33) );             // create
        new Con and assign to ptCon
-                        MyvecCon.push_back(ptCon);                              /
+                        MyVecCon.push_back(ptCon);                              /
       / push_back
 
-                        vc = MyvecCon.getLdata();
+                        vc = MyVecCon.getLdata();
 
                         result.push_back(vc.at(0)->getFromId());
                         result.push_back(vc.at(1)->getFromId());
@@ -288,11 +289,11 @@ Implements push\_\-back for the \hyperlink{classvec_a_m_o_r_e}{vecAMORE} class
 
 
 \begin{DoxySeeAlso}{See also}
-C++ documentation for std::vector::push\_\-back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+C++ documentation for std::vector::push\_\-back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 44 of file vecAMORE.cpp.
+Definition at line 44 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -302,9 +303,9 @@ Definition at line 44 of file vecAMORE.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}{
-\index{vecAMORE@{vecAMORE}!reserve@{reserve}}
-\index{reserve@{reserve}!vecAMORE@{vecAMORE}}
-\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf vecAMORE}$<$ T $>$::reserve (
+\index{Container@{Container}!reserve@{reserve}}
+\index{reserve@{reserve}!Container@{Container}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Container}$<$ T $>$::reserve (
 \begin{DoxyParamCaption}
 \item[{int}]{n}
 \end{DoxyParamCaption}
@@ -312,7 +313,7 @@ Definition at line 44 of file vecAMORE.cpp.
 \label{classvec_a_m_o_r_e_ad8b51e17ac5ba203cb3d0221b4f7de2f}
 
 
-Definition at line 239 of file vecAMORE.cpp.
+Definition at line 239 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -321,9 +322,9 @@ Definition at line 239 of file vecAMORE.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ad1594c084d534c3de7acedd714f2e12a}{
-\index{vecAMORE@{vecAMORE}!setLdata@{setLdata}}
-\index{setLdata@{setLdata}!vecAMORE@{vecAMORE}}
-\subsubsection[{setLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf vecAMORE}$<$ T $>$::setLdata (
+\index{Container@{Container}!setLdata@{setLdata}}
+\index{setLdata@{setLdata}!Container@{Container}}
+\subsubsection[{setLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::setLdata (
 \begin{DoxyParamCaption}
 \item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{v}
 \end{DoxyParamCaption}
@@ -339,11 +340,11 @@ This method sets the value of the data stored in the \hyperlink{classvec_a_m_o_r
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{getLdata} and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+\hyperlink{classvec_a_m_o_r_e_aeabf8a479f9031cc8ef9af0a971a08ea}{getLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 223 of file vecAMORE.cpp.
+Definition at line 223 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -353,9 +354,9 @@ Definition at line 223 of file vecAMORE.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}{
-\index{vecAMORE@{vecAMORE}!show@{show}}
-\index{show@{show}!vecAMORE@{vecAMORE}}
-\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf vecAMORE}$<$ T $>$::show (
+\index{Container@{Container}!show@{show}}
+\index{show@{show}!Container@{Container}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::show (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -363,9 +364,9 @@ Definition at line 223 of file vecAMORE.cpp.
 \label{classvec_a_m_o_r_e_a11b0ffb0d2481f1960cb49a26b227d37}
 
 
-Pretty print of the vecAMORE$<$T$>$ 
+Pretty print of the Container$<$T$>$ 
 
-This method outputs in the R terminal the contents of \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{vecAMORE::ldata}. \begin{DoxyReturn}{Returns}
+This method outputs in the R terminal the contents of \hyperlink{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{Container::ldata}. \begin{DoxyReturn}{Returns}
 true in case everything works without throwing an exception
 \end{DoxyReturn}
 $\ast$ 
@@ -374,10 +375,10 @@ $\ast$
                 //Usage example:
                 //================
                 // Data set up
-                        vecAMOREneuronSharedPtr ptShvNeuron( new 
-      vecAMORE<Neuron>() );
-                        vecAMOREconSharedPtr    ptShvCon( new vecAMORE<Con>() );
-                        ConSharedPtr    ptC;
+                        ContainerneuronSharedPtr ptShvNeuron( new 
+      Container<Neuron>() );
+                        ContainerconSharedPtr    ptShvCon( new Container<Con>() );
+                        ConPtr    ptC;
                         NeuronSharedPtr ptN;
                         int ids[]= {10, 20, 30};
                         double weights[] = {1.13, 2.22, 3.33 };
@@ -408,11 +409,11 @@ $\ast$
 
 
 \begin{DoxySeeAlso}{See also}
-The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 93 of file vecAMORE.cpp.
+Definition at line 93 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -426,9 +427,9 @@ Definition at line 93 of file vecAMORE.cpp.
 };
 \end{DoxyCode}
 \hypertarget{classvec_a_m_o_r_e_ae1289a7870dbdd19b6455a890e94ce48}{
-\index{vecAMORE@{vecAMORE}!size@{size}}
-\index{size@{size}!vecAMORE@{vecAMORE}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf vecAMORE}$<$ T $>$::size (
+\index{Container@{Container}!size@{size}}
+\index{size@{size}!Container@{Container}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Container}$<$ T $>$::size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -438,13 +439,13 @@ Definition at line 93 of file vecAMORE.cpp.
 
 Returns the size or length of the vector. 
 
-This method returns the size of the vector. In the classes derived from vecAMORE$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+This method returns the size of the vector. In the classes derived from Container$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 
-Definition at line 234 of file vecAMORE.cpp.
+Definition at line 234 of file Container.cpp.
 
 
 
-Referenced by vecAMORE$<$ T $>$::append().
+Referenced by Container$<$ T $>$::append().
 
 
 \begin{DoxyCode}
@@ -464,9 +465,9 @@ Here is the caller graph for this function:\nopagebreak
 
 
 \hypertarget{classvec_a_m_o_r_e_a247aaafe9115cc433fc3be297c1f568e}{
-\index{vecAMORE@{vecAMORE}!validate@{validate}}
-\index{validate@{validate}!vecAMORE@{vecAMORE}}
-\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf vecAMORE}$<$ T $>$::validate (
+\index{Container@{Container}!validate@{validate}}
+\index{validate@{validate}!Container@{Container}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::validate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -477,11 +478,15 @@ Here is the caller graph for this function:\nopagebreak
 Object validator. 
 
 This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
-The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples. 
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 108 of file vecAMORE.cpp.
+Reimplemented in \hyperlink{classvec_con_a7dc281e7258bf8be19a1591501c5434d}{VecCon}.
+
+
+
+Definition at line 108 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -495,21 +500,21 @@ Definition at line 108 of file vecAMORE.cpp.
 
 \subsection{Member Data Documentation}
 \hypertarget{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}{
-\index{vecAMORE@{vecAMORE}!ldata@{ldata}}
-\index{ldata@{ldata}!vecAMORE@{vecAMORE}}
-\subsubsection[{ldata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf vecAMORE}$<$ T $>$::{\bf ldata}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\index{Container@{Container}!ldata@{ldata}}
+\index{ldata@{ldata}!Container@{Container}}
+\subsubsection[{ldata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf ldata}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classvec_a_m_o_r_e_a1aa2ee42627e14994fed21bc6446993d}
 
 
-Definition at line 14 of file vecAMORE.h.
+Definition at line 14 of file Container.h.
 
 
 
-Referenced by vecAMORE$<$ T $>$::append().
+Referenced by Container$<$ T $>$::append().
 
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8h}{vecAMORE.h}\item 
-pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8cpp}{vecAMORE.cpp}\end{DoxyCompactItemize}
+pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8h}{Container.h}\item 
+pkg/AMORE/src/\hyperlink{vec_a_m_o_r_e_8cpp}{Container.cpp}\end{DoxyCompactItemize}

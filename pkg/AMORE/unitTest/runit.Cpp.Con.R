@@ -10,8 +10,8 @@ test.Con.Cpp.Constructor_fromIsEmpty <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
-			ConSharedPtr ptShCon( new Con() );  	// from points to ptShNeuron and weight is set to 0
+			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
+			ConPtr ptShCon( new Con() );  	// from points to ptShNeuron and weight is set to 0
 			ptShCon->show();
 			int result=ptShCon->getFromId();
 			return wrap(result);
@@ -29,8 +29,8 @@ test.Con.Cpp.getFromNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
-			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
+			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
 			ptShNeuron = ptShCon->getFromNeuron() ;				
 			int result = ptShNeuron->getId();
 			return wrap(result);
@@ -46,8 +46,8 @@ test.Con.Cpp.setFromNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronSharedPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
-			ConSharedPtr ptShCon( new Con() );  	
+			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
+			ConPtr ptShCon( new Con() );  	
 			ptShCon->setFromNeuron( ptShNeuron );  	
 			ptShNeuron = ptShCon->getFromNeuron() ;				
 			int result = ptShNeuron->getId();
@@ -66,8 +66,8 @@ test.Con.Cpp.getFromId<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16 
-			ConSharedPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
+			NeuronPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16 
+			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
 			int result = ptShCon->getFromId();
 			return wrap(result);
 			'
@@ -83,8 +83,8 @@ test.Con.Cpp.setWeight.getWeight <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			std::vector<double> result;
-			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
-			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
+			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
 			result.push_back(ptShCon->getWeight());
 			ptShCon->setWeight(2.2);
 			result.push_back(ptShCon->getWeight());
@@ -101,8 +101,8 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
-			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
+			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4		
 			bool result= ptShCon->show();
 			return wrap(result);
 			"
@@ -118,8 +118,8 @@ test.Con.Cpp.validate.weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronSharedPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
-			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4/0) );  // from points to ptShNeuron and weight is set to an abnormal value.		
+			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16 
+			ConPtr ptShCon( new Con(ptShNeuron, 12.4/0) );  // from points to ptShNeuron and weight is set to an abnormal value.		
 			ptShCon->validate();
 			return wrap(true);
 			"
@@ -136,8 +136,8 @@ test.Con.Cpp.validate.from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronSharedPtr ptShNeuron ( new Neuron(NA_INTEGER) ); 		// Neuron Id is set to NA
-			ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  		// from points to ptShNeuron and weight is set to 12.4		
+			NeuronPtr ptShNeuron ( new Neuron(NA_INTEGER) ); 		// Neuron Id is set to NA
+			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  		// from points to ptShNeuron and weight is set to 12.4		
 			ptShCon->validate();
 			return wrap(true);
 			'
