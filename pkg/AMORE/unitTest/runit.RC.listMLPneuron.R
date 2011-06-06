@@ -62,7 +62,7 @@ test.gListMLPneuron.buildAndAppend_fromIsNeuron <- function() {
 	checkEquals(gListMLPneuron$new(ln2$getFrom()[[1]])$getId(), ln1$getId() )
 	checkEquals(gListMLPneuron$new(ln2$getFrom()[[2]])$getId(), ln1$getId() )
 	checkEquals(gListMLPneuron$new(ln2$getFrom()[[3]])$getId(), ln1$getId() )
-	checkEquals(ln2$getFromId(), replicate(3, ln1$getId(), simplify=FALSE)) # An example of how handy getFromId is.
+	checkEquals(ln2$getConId(), replicate(3, ln1$getId(), simplify=FALSE)) # An example of how handy getId is.
 	checkEquals(ln2$getWeight(),list(11:15,21:25,31:35))
 	checkEquals(gListMLPneuron$new(ln2$getFrom()[[1]])$getId(),  ln1$getId() )
 	checkEquals(ln2$getWeight(ID=6),list(11:15))

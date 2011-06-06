@@ -33,9 +33,9 @@
  *
  *			vc = MyVecCon.getLdata();
  *
- *			result.push_back(vc.at(0)->getFromId());
- * 			result.push_back(vc.at(1)->getFromId());
- *			result.push_back(vc.at(2)->getFromId());
+ *			result.push_back(vc.at(0)->getId());
+ * 			result.push_back(vc.at(1)->getId());
+ *			result.push_back(vc.at(2)->getId());
  *	// After execution of this code, result contains a numeric vector with values 10, 20 and 30.
  * \endcode
  *
@@ -205,8 +205,8 @@ template <typename T> void Container<T>::append( Container<T> v) {
  *		// Test
  *			ptShvCon->setLdata(vcA);
  *			vcB = ptShvCon->getLdata();
- *			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getFromId defined
- *					result.push_back( vcB.at(i)->getFromId());
+ *			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getId defined
+ *					result.push_back( vcB.at(i)->getId());
  *			}
  *
  * 		// Now, result is an integer vector with values 10, 20, 30.

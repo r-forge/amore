@@ -15,7 +15,7 @@ test.gListCon.buildAndAppend_fromIsNumeric <- function() {
 	lc$buildAndAppend(FROM=1:6, WEIGHT=11:16)
 	checkTrue(   lc$validate())
 	checkEquals( lc$getFrom(),1:6)
-	checkEquals( lc$getFromId(),1:6)
+	checkEquals( lc$getId(),1:6)
 	checkEquals( lc$getWeight(),11:16)
 }
 
@@ -86,10 +86,10 @@ test.gListCon.getFrom_fromIsNumeric <- function() {
 }
 
 
-test.gListCon.getFromId_fromIsNumeric <- function() {
+test.gListCon.getId_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=1:10, WEIGHT=10:1)	
-	checkEquals(lc$getFromId(), 1:10)	
+	checkEquals(lc$getId(), 1:10)	
 }
 
 
@@ -111,14 +111,14 @@ test.gListCon.getFrom_fromIsNeuron <- function() {
 }
 
 
-test.gListCon.getFromId_fromIsNeuron <- function() {
+test.gListCon.getId_fromIsNeuron <- function() {
 	ln <- gListMLPneuron$new()
 	ln$buildAndAppend(ID=list(1,2,3,4,5), BIAS=list(1.1,3.4,5.4,9.8,5.6), FROM=list(1:3,1:3,1:3,1:3,1:3), WEIGHT=list(11:13,21:23,31:33,41:43,51:53))
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=5:1)
-	checkEquals(lc$getFromId(), ln$getId() )
-	checkEquals(lc$getFromId(), 1:5)	
+	checkEquals(lc$getId(), ln$getId() )
+	checkEquals(lc$getId(), 1:5)	
 }
 
 

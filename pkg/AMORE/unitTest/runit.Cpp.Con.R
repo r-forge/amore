@@ -13,7 +13,7 @@ test.Con.Cpp.Constructor_fromIsEmpty <- function() {
 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
 			ConPtr ptShCon( new Con() );  	// from points to ptShNeuron and weight is set to 0
 			ptShCon->show();
-			int result=ptShCon->getFromId();
+			int result=ptShCon->getId();
 			return wrap(result);
 "
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -25,13 +25,13 @@ test.Con.Cpp.Constructor_fromIsEmpty <- function() {
 
 
 ###############################################################################
-test.Con.Cpp.getFromNeuron <- function() {	
+test.Con.Cpp.getFrom <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
 			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
-			ptShNeuron = ptShCon->getFromNeuron() ;				
+			ptShNeuron = ptShCon->getFrom() ;				
 			int result = ptShNeuron->getId();
 			return wrap(result);
 			"
@@ -42,14 +42,14 @@ test.Con.Cpp.getFromNeuron <- function() {
 }
 
 ###############################################################################
-test.Con.Cpp.setFromNeuron <- function() {	
+test.Con.Cpp.setFrom <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1 
 			ConPtr ptShCon( new Con() );  	
-			ptShCon->setFromNeuron( ptShNeuron );  	
-			ptShNeuron = ptShCon->getFromNeuron() ;				
+			ptShCon->setFrom( ptShNeuron );  	
+			ptShNeuron = ptShCon->getFrom() ;				
 			int result = ptShNeuron->getId();
 			return wrap(result);
 			"
@@ -62,13 +62,13 @@ test.Con.Cpp.setFromNeuron <- function() {
 
 
 ###############################################################################
-test.Con.Cpp.getFromId<- function() {	
+test.Con.Cpp.getId<- function() {	
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			NeuronPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16 
 			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
-			int result = ptShCon->getFromId();
+			int result = ptShCon->getId();
 			return wrap(result);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())

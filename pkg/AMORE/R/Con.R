@@ -12,7 +12,7 @@ gCon <- setRefClass("Con",
 		),
 		methods= list(
 
-				getFromId = function(...) {
+				getId = function(...) {
 					if(is.numeric(from)) {return(from)} else { return(from$getId()) }	
 				},
 				

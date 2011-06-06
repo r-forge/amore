@@ -30,14 +30,14 @@ gListNeuron <- setRefClass("listNeuron",
 					}
 				},
 
-				getFromId =function(ID, ...){
+				getConId =function(ID, ...){
 					'This function is a handy way of obtaining the Ids of the neurons returned by getFrom since it\'s result might be a set of lists
 							'
 					if(missing(ID)) {
-						f <- lapply(ldata, function(x, ...) { x$getFromId(...)})
+						f <- lapply(ldata, function(x, ...) { x$getConId(...)})
 						return(f)
 					} else {
-						return(select(ID)$getFromId(...))
+						return(select(ID)$getConId(...))
 					}
 					
 				},
