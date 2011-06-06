@@ -22,7 +22,7 @@ test.VecCon.Cpp.push_back.getId <- function() {
 					ptShvNeuron->push_back(ptN);
 				}
 				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
 					ptShvCon->push_back(ptC);			 
 				}		
 	// Test
@@ -60,7 +60,7 @@ test.VecCon.Cpp.numOfCons.show <- function() {
 				}
 				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
 					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyVecCon	
-					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
 					ptShvCon->push_back(ptC);			 
 				}		
 	// Test
@@ -207,7 +207,7 @@ test.VecCon.Cpp.setFrom <- function() {
 				ptShvCon->push_back(ptC);			 
 			}		
 			// Test
-			ptShvCon->setFrom(ptShvNeuron->getLdata()) ;
+			ptShvCon->setFrom(ptShvNeuron->load()) ;
 			ptShvCon->show();		
 			result=ptShvCon->getId();
 			return wrap(result);
