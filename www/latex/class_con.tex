@@ -168,7 +168,7 @@ The value of the Id (an integer).
         // Data set up
                         NeuronSharedPtr ptShNeuron ( new Neuron(16) );  // Neuron
        Id is set to 16
-                        ConSharedPtr ptShCon( new Con(ptShNeuron) );    // from p
+                        ConPtr ptShCon( new Con(ptShNeuron) );    // from p
       oints to ptShNeuron and weight is set to 0
         // Test
                         int result = ptShCon->getFromId();
@@ -238,7 +238,7 @@ A pointer to the \hyperlink{class_neuron}{Neuron} object referred to by the \hyp
         // Data set up
                         NeuronSharedPtr ptShNeuron ( new Neuron(1) );   // Neuron
        Id is set 1
-                        ConSharedPtr ptShCon( new Con(ptShNeuron) );    // from p
+                        ConPtr ptShCon( new Con(ptShNeuron) );    // from p
       oints to ptShNeuron and weight is set to 0
         // Test
                         ptShNeuron = ptShCon->getFromNeuron() ;
@@ -290,7 +290,7 @@ The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (do
                         std::vector<double> result;
                         NeuronSharedPtr ptShNeuron ( new Neuron(16) );          /
       / Neuron Id is set to 16
-                        ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // fr
+                        ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // fr
       om points to ptShNeuron and weight is set to 12.4
         // Test
                         result.push_back( ptShCon->getWeight() );
@@ -360,7 +360,7 @@ This method sets the value of the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f04
         // Data set up
                         NeuronSharedPtr ptShNeuron ( new Neuron(1) );   // Neuron
        Id is set to 1
-                        ConSharedPtr ptShCon( new Con() );
+                        ConPtr ptShCon( new Con() );
                         ptShCon->setFromNeuron( ptShNeuron );
         // Test
                         ptShNeuron = ptShCon->getFromNeuron() ;
@@ -414,7 +414,7 @@ This method sets the value of the \hyperlink{class_con_a7f46485ba5b41971ea38641f
                         std::vector<double> result;
                         NeuronSharedPtr ptShNeuron ( new Neuron(16) );          /
       / Neuron Id is set to 16
-                        ConSharedPtr ptShCon( new Con(ptShNeuron, 12.4) );  // fr
+                        ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // fr
       om points to ptShNeuron and weight is set to 12.4
                         result.push_back(ptShCon->getWeight());
         // Test
@@ -477,8 +477,7 @@ References getFromId(), and getWeight().
         if (id==NA_INTEGER) {
                 Rprintf("From: NA\t Invalid Connection \n");
         } else {
-                Rprintf("From:\t %d \t Weight= \t %lf \n", getFromId() , 
-      getWeight());
+                Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight());
         }
         return(true);
 }

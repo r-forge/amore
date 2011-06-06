@@ -12,13 +12,13 @@
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-19.5 0,-38.5 82,-38.5 82,-19.5 0,-19.5"/>
-<text text-anchor="middle" x="41" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon::select</text>
+<text text-anchor="middle" x="41" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::select</text>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
 <a xlink:href="classvec_con.html#ac3d4b7b11bfff3407afd585c1ae6a658" target="_top" xlink:title="Getter of the weights of the specified elements from the vecCom object.">
 <polygon fill="white" stroke="black" points="118,-38.5 118,-57.5 218,-57.5 218,-38.5 118,-38.5"/>
-<text text-anchor="middle" x="168" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon::getWeight</text>
+<text text-anchor="middle" x="168" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::getWeight</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
@@ -28,9 +28,9 @@
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="classvec_con.html#a89a39247b0188b4fcc473c430ad46d4c" target="_top" xlink:title="Setter of the weights of the specified elements from the vecCon object.">
+<a xlink:href="classvec_con.html#a89a39247b0188b4fcc473c430ad46d4c" target="_top" xlink:title="Setter of the weights of the specified elements from the VecCon object.">
 <polygon fill="white" stroke="black" points="118,-0.5 118,-19.5 218,-19.5 218,-0.5 118,-0.5"/>
-<text text-anchor="middle" x="168" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">vecCon::setWeight</text>
+<text text-anchor="middle" x="168" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::setWeight</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node3 -->

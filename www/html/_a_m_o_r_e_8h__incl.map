@@ -1,10 +1,10 @@
 <map id="G" name="G">
 <area shape="rect" id="node19" href="$_con_8h.html" title="Con.h" alt="" coords="997,155,1053,181"/>
-<area shape="rect" id="node21" href="$vec_a_m_o_r_e_8h.html" title="vecAMORE.h" alt="" coords="923,80,1024,107"/>
-<area shape="rect" id="node23" href="$vec_con_8h.html" title="vecCon.h" alt="" coords="1048,80,1125,107"/>
+<area shape="rect" id="node21" href="$vec_a_m_o_r_e_8h.html" title="Container.h" alt="" coords="923,80,1024,107"/>
+<area shape="rect" id="node23" href="$vec_con_8h.html" title="VecCon.h" alt="" coords="1048,80,1125,107"/>
 <area shape="rect" id="node25" href="$_neuron_8h.html" title="Neuron.h" alt="" coords="1385,155,1460,181"/>
 <area shape="rect" id="node27" href="$_con_8cpp.html" title="Con.cpp" alt="" coords="1149,80,1219,107"/>
-<area shape="rect" id="node30" href="$vec_a_m_o_r_e_8cpp.html" title="vecAMORE.cpp" alt="" coords="1293,80,1408,107"/>
-<area shape="rect" id="node32" href="$vec_con_8cpp.html" title="vecCon.cpp" alt="" coords="1432,80,1523,107"/>
+<area shape="rect" id="node30" href="$vec_a_m_o_r_e_8cpp.html" title="Container.cpp" alt="" coords="1293,80,1408,107"/>
+<area shape="rect" id="node32" href="$vec_con_8cpp.html" title="VecCon.cpp" alt="" coords="1432,80,1523,107"/>
 <area shape="rect" id="node34" href="$_neuron_8cpp.html" title="Neuron.cpp" alt="" coords="1547,80,1635,107"/>
 </map>

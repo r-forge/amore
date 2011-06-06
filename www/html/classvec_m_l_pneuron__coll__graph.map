@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="175,968,257,1045"/>
-<area shape="rect" id="node4" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="137,737,295,917"/>
+<area shape="rect" id="node4" href="$classvec_a_m_o_r_e.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="137,737,295,917"/>
 <area shape="rect" id="node8" title="STL class." alt="" coords="183,147,297,224"/>
-<area shape="rect" id="node12" href="$classvec_a_m_o_r_e.html" title="{vecAMORE\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="240,491,363,671"/>
+<area shape="rect" id="node12" href="$classvec_a_m_o_r_e.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="240,491,363,671"/>
 </map>

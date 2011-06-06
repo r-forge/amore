@@ -1,5 +1,5 @@
 /*
- * vecAMORE.cpp
+ * Container.cpp
  *
  *  Created on: 26/05/2011
  *      Author: mcasl
@@ -8,7 +8,7 @@
 
 //! Append a shared_ptr at the end of ldata
 /*!
- * Implements push_back for the vecAMORE class
+ * Implements push_back for the Container class
  * \param TsharedPtr A shared_ptr pointer to be inserted at the end of ldata
  *
  * \code
@@ -17,21 +17,21 @@
  *		//================
  *		// Data set up
  *			Neuron N1, N2, N3;
- *			vecAMORE<Con> MyvecCon;
- *			std::vector<ConSharedPtr> vc;
+ *			Container<Con> MyVecCon;
+ *			std::vector<ConPtr> vc;
  *			std::vector<int> result;
  *			N1.setId(10);
  *			N2.setId(20);
  *			N3.setId(30);
  *		// Test
- *			ConSharedPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
- *			MyvecCon.push_back(ptCon);				// push_back
+ *			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
+ *			MyVecCon.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
- *			MyvecCon.push_back(ptCon);				// push_back
+ *			MyVecCon.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
- *			MyvecCon.push_back(ptCon);				// push_back
+ *			MyVecCon.push_back(ptCon);				// push_back
  *
- *			vc = MyvecCon.getLdata();
+ *			vc = MyVecCon.getLdata();
  *
  *			result.push_back(vc.at(0)->getFromId());
  * 			result.push_back(vc.at(1)->getFromId());
@@ -39,16 +39,16 @@
  *	// After execution of this code, result contains a numeric vector with values 10, 20 and 30.
  * \endcode
  *
- * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> TsharedPtr) {
+template <typename T> void Container<T>::push_back( boost::shared_ptr<T> TsharedPtr) {
 	ldata.push_back(TsharedPtr);
 };
 
 
 
-//! Pretty print of the vecAMORE<T>
-/*! This method outputs in the R terminal the contents of vecAMORE::ldata.
+//! Pretty print of the Container<T>
+/*! This method outputs in the R terminal the contents of Container::ldata.
  * \return true in case everything works without throwing an exception
  *
  *
@@ -59,10 +59,10 @@ template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> TsharedP
  *		//Usage example:
  *		//================
  *		// Data set up
- * 			vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
- *			vecAMOREconSharedPtr	ptShvCon( new vecAMORE<Con>() );
- *			ConSharedPtr	ptC;
- *			NeuronSharedPtr ptN;
+ * 			ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
+ *			ContainerConPtr	ptShvCon( new Container<Con>() );
+ *			ConPtr	ptC;
+ *			NeuronPtr ptN;
  *			int ids[]= {10, 20, 30};
  *			double weights[] = {1.13, 2.22, 3.33 };
  *
@@ -88,13 +88,17 @@ template <typename T> void vecAMORE<T>::push_back( boost::shared_ptr<T> TsharedP
  *
  * \endcode
  *
- * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> bool vecAMORE<T>::show() {
+template <typename T> bool Container<T>::show() {
+
 	// This is equivalent to:
 	// for( auto x : ldata)	{ x.show(); }
 	// Waiting for C++0x
-	for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ (*itr)->show(); }
+
+	foreach (typename boost::shared_ptr<T> itr, ldata){
+		itr->show();
+	}
 	return true;
 };
 
@@ -103,20 +107,22 @@ template <typename T> bool vecAMORE<T>::show() {
 //! Object validator
 /*! This method checks the object for internal coherence.
  *  This method calls the validate method for each element in ldata,
- * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> bool vecAMORE<T>::validate() {
-	for(typename std::vector< boost::shared_ptr<T>  >::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{ (*itr)->validate(); }
+template <typename T> bool Container<T>::validate() {
+	foreach (typename boost::shared_ptr<T> itr, ldata){
+		itr->validate();
+	}
 	return true;
 };
 
 
 
-//! Appends a vecAMORE<T> object
+//! Appends a Container<T> object
 /*!
  * This method inserts the ldata field of a second object at the end of the ldata field of the calling object.
- * \param v The vecAMORE<T> object to be added to the current one
- * \sa The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \param v The Container<T> object to be added to the current one
+ * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  *
  *
  * \code
@@ -125,12 +131,12 @@ template <typename T> bool vecAMORE<T>::validate() {
  *	//================
  *	// Data set up
  *				std::vector<int> result;
- *				std::vector<ConSharedPtr> vcA, vcB;
- *				vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
- *				vecAMOREconSharedPtr	ptShvConA( new vecAMORE<Con>() );
- *				vecAMOREconSharedPtr	ptShvConB( new vecAMORE<Con>() );
- *				ConSharedPtr	ptC;
- *				NeuronSharedPtr ptN;
+ *				std::vector<ConPtr> vcA, vcB;
+ *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
+ *				ContainerConPtr	ptShvConA( new Container<Con>() );
+ *				ContainerConPtr	ptShvConB( new Container<Con>() );
+ *				ConPtr	ptC;
+ *				NeuronPtr ptN;
  *				int ids[]= {1, 2, 3, 4, 5, 6};
  *				double weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3.6 };
  *				for (int i=0; i<=5 ; i++) {				// Let's create a vector with six neurons
@@ -161,9 +167,9 @@ template <typename T> bool vecAMORE<T>::validate() {
  *
  * \endcode
  *
- * \sa vecAMORE::setLdata , vecAMORE::push_back and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa Container::setLdata , Container::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
+template <typename T> void Container<T>::append( Container<T> v) {
 	ldata.reserve(ldata.size() + v.size());
 	ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
 };
@@ -181,11 +187,11 @@ template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
  *	//================
  *		// Data set up
  *				std::vector<int> result;
- *				std::vector<ConSharedPtr> vcA, vcB;
- *				vecAMOREneuronSharedPtr	ptShvNeuron( new vecAMORE<Neuron>() );
- *				vecAMOREconSharedPtr	ptShvCon( new vecAMORE<Con>() );
- *				ConSharedPtr	ptC;
- *				NeuronSharedPtr ptN;
+ *				std::vector<ConPtr> vcA, vcB;
+ *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
+ *				ContainerConPtr	ptShvCon( new Container<Con>() );
+ *				ConPtr	ptC;
+ *				NeuronPtr ptN;
  *				int ids[]= {10, 20, 30};
  *				double weights[] = {1.13, 2.22, 3.33 };
  *				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
@@ -199,16 +205,16 @@ template <typename T> void vecAMORE<T>::append( vecAMORE<T> v) {
  *		// Test
  *			ptShvCon->setLdata(vcA);
  *			vcB = ptShvCon->getLdata();
- *			for (int i=0; i<=2 ; i++) {					// get Ids. vecAMORE does not have getFromId defined
+ *			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getFromId defined
  *					result.push_back( vcB.at(i)->getFromId());
  *			}
  *
  * 		// Now, result is an integer vector with values 10, 20, 30.
  * \endcode
  *
- * \sa setLdata and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa setLdata and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> std::vector< boost::shared_ptr<T>  > vecAMORE<T>::getLdata() {
+template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::getLdata() {
 	return ldata;
 };
 
@@ -218,9 +224,9 @@ template <typename T> std::vector< boost::shared_ptr<T>  > vecAMORE<T>::getLdata
 /*!
  *  This method sets the value of the data stored in the \ref ldata field.
  * \param v The vector of smart pointers to be stored in the ldata field
- * \sa getLdata and the unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ * \sa getLdata and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void vecAMORE<T>::setLdata(std::vector< boost::shared_ptr<T>  > v) {
+template <typename T> void Container<T>::setLdata(std::vector< boost::shared_ptr<T>  > v) {
 	ldata=v;
 };
 
@@ -228,15 +234,15 @@ template <typename T> void vecAMORE<T>::setLdata(std::vector< boost::shared_ptr<
 //! Returns the size or length of the vector
 /*!
  *  This method returns the size of the vector.
- *  In the classes derived from vecAMORE<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
- * 	The unit test files, e.g., runit.Cpp.vecAMORE.R, for usage examples.
+ *  In the classes derived from Container<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
+ * 	The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> int vecAMORE<T>::size() {
+template <typename T> int Container<T>::size() {
 	return ldata.size() ;
 };
 
 
-template <typename T> void vecAMORE<T>::reserve(int n) {
+template <typename T> void Container<T>::reserve(int n) {
 	 ldata.reserve(n) ;
 };
 

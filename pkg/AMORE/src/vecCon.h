@@ -1,5 +1,5 @@
 /*
- *  vecCon.h
+ *  VecCon.h
  *
  *  Created on: 26/05/2011
  *      Author: mcasl
@@ -11,25 +11,25 @@
 
 //!  A vector of connections
 /*!
- *   The vecCon class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class.
+ *   The VecCon class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class.
  */
 
-class vecCon: public vecAMORE<Con> {
+class VecCon: public Container<Con> {
 
 public:
 
 									int	numOfCons();
 					std::vector<int>	getFromId();
-								bool	buildAndAppend	( std::vector<NeuronSharedPtr> vFrom , std::vector<double> vWeight );
+								bool	buildAndAppend	( std::vector<NeuronPtr> vFrom , std::vector<double> vWeight );
 					std::vector<double>	getWeight	  	( );
 					std::vector<double>	getWeight	  	( std::vector<int> vFrom );
-		std::vector<NeuronSharedPtr>	getFromNeuron 	( );
+		std::vector<NeuronPtr>	getFromNeuron 	( );
 								bool	setWeight		( std::vector<double> vWeight);
 								bool	setWeight		( std::vector<double> vWeight, std::vector<int> vFrom);
-								bool	setFromNeuron	( std::vector<NeuronSharedPtr> vFrom);
+								bool	setFromNeuron	( std::vector<NeuronPtr> vFrom);
 								void	erase 			( std::vector<int> vFrom );
-						vecConSharedPtr	select			( std::vector<int> vFrom );
-//								bool	validate		( );
+							VecConPtr	select			( std::vector<int> vFrom );
+								bool	validate		( );
 
 };
 
