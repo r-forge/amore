@@ -63,8 +63,8 @@ test.Container.Cpp.push_back<- function() {
 					ptC.reset( new Con( ptShvNeuron->getLdata().at(i), weights[i]) );  	
 					ptShvCon->push_back(ptC);			 
 				}			 
-				for (int i=0; i<=2 ; i++) {				// get Ids. Container does not have getFromId defined
-					result.push_back( ptShvCon->getLdata().at(i)->getFromId());
+				for (int i=0; i<=2 ; i++) {				// get Ids. Container does not have getId defined
+					result.push_back( ptShvCon->getLdata().at(i)->getId());
 				}
 				return wrap(result);
 			"
@@ -133,8 +133,8 @@ test.Container.Cpp.setLdata.getLdata<- function() {
 	// Test
 			ptShvCon->setLdata(vcA);
 			vcB = ptShvCon->getLdata();
-			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getFromId defined
-					result.push_back( vcB.at(i)->getFromId());
+			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getId defined
+					result.push_back( vcB.at(i)->getId());
 			}
 		
 			return wrap(result);
@@ -151,13 +151,13 @@ test.Container.Cpp.append<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 	// Data set up
-				std::vector<int> result;
-				std::vector<ConPtr> vcA, vcB;
-				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
-				ContainerConPtr	ptShvConA( new Container<Con>() );
-				ContainerConPtr	ptShvConB( new Container<Con>() );
-				ConPtr	ptC;
-				NeuronPtr ptN;
+				std::vector<int> 	result;
+				std::vector<ConPtr>	vcA, vcB;
+				ContainerNeuronPtr	ptShvNeuron(new Container<Neuron>() );
+				ContainerConPtr		ptShvConA(	new Container<Con>() );
+				ContainerConPtr		ptShvConB(	new Container<Con>() );
+				ConPtr				ptC;
+				NeuronPtr 			ptN;
 				int ids[]= {1, 2, 3, 4, 5, 6};
 				double weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3.6 };
 	
@@ -179,12 +179,10 @@ test.Container.Cpp.append<- function() {
 				ptShvConA->append(*ptShvConB);
 				ptShvConA->validate();		
 				ptShvConA->show() ;
-			
-				result=VecCon::getFromId();
 
-//				foreach (ConPtr itr, ptShvConA->getLdata()){  // Get Ids (Container does not know about VecCon::getFromId yet, thus the loop)	
-	//				 result.push_back( itr->getFromId() );		
-		//		}
+				foreach (ConPtr itr, ptShvConA->getLdata()){  // Get Ids (Container does not know about VecCon::getId yet, thus the loop)	
+					 result.push_back( itr->getId() );		
+				}
 				return wrap(result);
 		"
 testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())

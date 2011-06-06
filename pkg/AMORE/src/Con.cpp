@@ -54,15 +54,15 @@
  *	 		NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1
  *			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
  *	// Test
- *	  		ptShNeuron = ptShCon->getFromNeuron() ;
+ *	  		ptShNeuron = ptShCon->getFrom() ;
  *			int result = ptShNeuron->getId();
  *
  *	// Now, result is equal to 1.
  * \endcode
  *
- * \sa getFromId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
+ * \sa getId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-NeuronPtr Con::getFromNeuron	()   			{
+NeuronPtr Con::getFrom	()   			{
 	return(from.lock());
 }
 
@@ -79,17 +79,17 @@ NeuronPtr Con::getFromNeuron	()   			{
  *	// Data set up
  * 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1
  *			ConPtr ptShCon( new Con() );
- *			ptShCon->setFromNeuron( ptShNeuron );
+ *			ptShCon->setFrom( ptShNeuron );
  *	// Test
- *			ptShNeuron = ptShCon->getFromNeuron() ;
+ *			ptShNeuron = ptShCon->getFrom() ;
  *			int result = ptShNeuron->getId();
  *
  * 	// Now, result is equal to 1
  * 	\endcode
  *
- * \sa getFromNeuron and getFromId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
+ * \sa getFrom and getId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
-void Con::setFromNeuron	(NeuronPtr f)   	{
+void Con::setFrom	(NeuronPtr f)   	{
 	from=f;
 }
 
@@ -107,14 +107,14 @@ void Con::setFromNeuron	(NeuronPtr f)   	{
  *			NeuronPtr ptShNeuron ( new Neuron(16) ); 	// Neuron Id is set to 16
  *			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
  *	// Test
- *	  		int result = ptShCon->getFromId();
+ *	  		int result = ptShCon->getId();
  *
  *	// Now, result is equal to 16.
  * \endcode
  *
- * \sa getFromNeuron, setFromNeuron and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
+ * \sa getFrom, setFrom and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-int Con::getFromId () {
+int Con::getId () {
 	if (from.use_count() !=0 ){
 		NeuronPtr ptNeuron(from);
 		return(  ptNeuron->getId() );
@@ -190,7 +190,7 @@ void Con::setWeight	(double w) {
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for usage examples.
  */
 bool Con::show () {
-	int id=getFromId();
+	int id=getId();
 	if (id==NA_INTEGER) {
 		Rprintf("From: NA\t Invalid Connection \n");
 	} else {
@@ -211,7 +211,7 @@ bool Con::show () {
 bool Con::validate () {
 	BEGIN_RCPP
 	if (! R_FINITE(getWeight()) )  		throw std::range_error("weight is not finite.");
-	if (getFromId() == NA_INTEGER )		throw std::range_error("fromId is not finite.");
+	if (getId() == NA_INTEGER )		throw std::range_error("fromId is not finite.");
 	return(true);
 	END_RCPP
 };

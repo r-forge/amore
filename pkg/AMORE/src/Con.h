@@ -31,9 +31,9 @@ public:
 	Con(NeuronPtr f);
 	Con(NeuronPtr f , double w );
 	~Con();
-	NeuronPtr	getFromNeuron	();
-			void	setFromNeuron	(NeuronPtr f);
-				int	getFromId		();
+	NeuronPtr	getFrom	();
+			void	setFrom	(NeuronPtr f);
+				int	getId		();
 			double	getWeight		();
 			void	setWeight		(double w);
 			bool	show			();

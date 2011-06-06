@@ -60,11 +60,14 @@ test.gNeuron.getFrom_fromIsNumeric <- function() {
 	checkEquals(nn$getFrom(), 1:5)
 }
 
-test.gNeuron.getFromId_fromIsNumeric <- function() {
+test.gNeuron.getConId_fromIsNumeric <- function() {
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
-	checkEquals(nn$getFromId(), 1:5)
+	checkEquals(nn$getConId(), 1:5)
+	# Error en checkEquals(nn$getId(), 1:5) : Numeric: lengths (1, 5) differ
+
+
 }
 
 
@@ -91,7 +94,7 @@ test.gNeuron.getFrom_fromIsNeuron <- function() {
 }
 
 
-test.gNeuron.getFromId_fromIsNeuron <- function() {
+test.gNeuron.getConId_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=1:5, WEIGHT=11:15)
 	nn <- gNeuron$new(id=1, con=lc)
@@ -109,7 +112,7 @@ test.gNeuron.getFromId_fromIsNeuron <- function() {
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=ln$getLdata(), WEIGHT=11:13)
 	nn <- gNeuron$new(id=10, con=lc)
-	checkEquals(nn$getFromId(), 1:3)
+	checkEquals(nn$getConId(), 1:3)
 }
 
 
