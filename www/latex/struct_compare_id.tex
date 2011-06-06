@@ -5,11 +5,11 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}{operator()} (const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConPtr} a, const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConPtr} b)
+bool \hyperlink{struct_compare_id_abc68f7bc4aafb243e126fbd35c36c7c2}{operator()} (const \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} a, const \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} b)
 \item 
-bool \hyperlink{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}{operator()} (const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConPtr} a, const int b)
+bool \hyperlink{struct_compare_id_af99b7dae8a94fccd1da8078cb1788f13}{operator()} (const \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} a, const int b)
 \item 
-bool \hyperlink{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}{operator()} (const int a, const \hyperlink{_a_m_o_r_e_8h_ae7d05d5880745e8a588e1efd62c81f32}{ConPtr} b)
+bool \hyperlink{struct_compare_id_a052ddbeca61d5edc795f33290b7af112}{operator()} (const int a, const \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} b)
 \item 
 bool \hyperlink{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}{operator()} (const int a, const int b)
 \end{DoxyCompactItemize}
@@ -18,12 +18,12 @@ bool \hyperlink{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}{operator()}
 \subsection{Detailed Description}
 
 
-Definition at line 359 of file VecCon.cpp.
+Definition at line 367 of file VecCon.cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}{
+\hypertarget{struct_compare_id_abc68f7bc4aafb243e126fbd35c36c7c2}{
 \index{CompareId@{CompareId}!operator()@{operator()}}
 \index{operator()@{operator()}!CompareId@{CompareId}}
 \subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
@@ -32,15 +32,15 @@ Definition at line 359 of file VecCon.cpp.
 \item[{const {\bf ConPtr}}]{b}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{struct_compare_id_a470bef628ec23bbdbd8f3bb103e60814}
+\label{struct_compare_id_abc68f7bc4aafb243e126fbd35c36c7c2}
 
 
-Definition at line 361 of file VecCon.cpp.
+Definition at line 369 of file VecCon.cpp.
 
 
 \begin{DoxyCode}
-                                                                    {
-        return a->getFromId() < b->getFromId();
+                                                        {
+        return a->getId() < b->getId();
     };
 \end{DoxyCode}
 \hypertarget{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}{
@@ -55,7 +55,7 @@ Definition at line 361 of file VecCon.cpp.
 \label{struct_compare_id_a1310378d3e8c8a9e4c74f6f0ac239c05}
 
 
-Definition at line 373 of file VecCon.cpp.
+Definition at line 381 of file VecCon.cpp.
 
 
 \begin{DoxyCode}
@@ -63,7 +63,7 @@ Definition at line 373 of file VecCon.cpp.
            return a < b;
        };
 \end{DoxyCode}
-\hypertarget{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}{
+\hypertarget{struct_compare_id_a052ddbeca61d5edc795f33290b7af112}{
 \index{CompareId@{CompareId}!operator()@{operator()}}
 \index{operator()@{operator()}!CompareId@{CompareId}}
 \subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
@@ -72,18 +72,18 @@ Definition at line 373 of file VecCon.cpp.
 \item[{const {\bf ConPtr}}]{b}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{struct_compare_id_a43e46a0d30eb25672a449b7365bb6f31}
+\label{struct_compare_id_a052ddbeca61d5edc795f33290b7af112}
 
 
-Definition at line 369 of file VecCon.cpp.
+Definition at line 377 of file VecCon.cpp.
 
 
 \begin{DoxyCode}
-                                                           {
-           return a < b->getFromId();
+                                                     {
+           return a < b->getId();
        };
 \end{DoxyCode}
-\hypertarget{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}{
+\hypertarget{struct_compare_id_af99b7dae8a94fccd1da8078cb1788f13}{
 \index{CompareId@{CompareId}!operator()@{operator()}}
 \index{operator()@{operator()}!CompareId@{CompareId}}
 \subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool CompareId::operator() (
@@ -92,19 +92,19 @@ Definition at line 369 of file VecCon.cpp.
 \item[{const int}]{b}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{struct_compare_id_a2342f4d0e9448a2af26314e7f8ff94ec}
+\label{struct_compare_id_af99b7dae8a94fccd1da8078cb1788f13}
 
 
-Definition at line 365 of file VecCon.cpp.
+Definition at line 373 of file VecCon.cpp.
 
 
 \begin{DoxyCode}
-                                                           {
-           return a->getFromId() < b  ;
+                                                     {
+           return a->getId() < b  ;
        };
 \end{DoxyCode}
 
 
 The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-pkg/AMORE/src/\hyperlink{vec_con_8cpp}{VecCon.cpp}\end{DoxyCompactItemize}
+pkg/AMORE/src/\hyperlink{_vec_con_8cpp}{VecCon.cpp}\end{DoxyCompactItemize}

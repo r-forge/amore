@@ -102,12 +102,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 <span class="keyword">public</span>:
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>();
-<a name="l00031"></a>00031         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(<a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> f);
-<a name="l00032"></a>00032         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(<a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> f , <span class="keywordtype">double</span> w );
+<a name="l00031"></a>00031         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> f);
+<a name="l00032"></a>00032         <a class="code" href="class_con.html#a61621054cc1ee979385c81207ee0bceb" title="Default Constructor.">Con</a>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> f , <span class="keywordtype">double</span> w );
 <a name="l00033"></a>00033         <a class="code" href="class_con.html#a703b044611253c7a0a9e057ed62a3d22" title="Default Destructor.">~Con</a>();
-<a name="l00034"></a>00034         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> <a class="code" href="class_con.html#a93bb48dcfd631d4f6346e1b900bc3aa0" title="from field accessor.">getFromNeuron</a>   ();
-<a name="l00035"></a>00035                         <span class="keywordtype">void</span>    <a class="code" href="class_con.html#a88d665801c38f923b61091f2b4d4c571" title="from field accessor.">setFromNeuron</a>   (<a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> f);
-<a name="l00036"></a>00036                                 <span class="keywordtype">int</span>     <a class="code" href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field.">getFromId</a>               ();
+<a name="l00034"></a>00034         <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>       <a class="code" href="class_con.html#a0c126eb4479324b156768e0810723423" title="from field accessor.">getFrom</a> ();
+<a name="l00035"></a>00035                         <span class="keywordtype">void</span>    <a class="code" href="class_con.html#a40b0ebc859b40eb908ee937abf6886c5" title="from field accessor.">setFrom</a> (<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> f);
+<a name="l00036"></a>00036                                 <span class="keywordtype">int</span>     <a class="code" href="class_con.html#ad12ce81a557eadb2a00b10d5b5f4adb6" title="A getter of the Id of the Neuron pointed by the from field.">getId</a>           ();
 <a name="l00037"></a>00037                         <span class="keywordtype">double</span>  <a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>               ();
 <a name="l00038"></a>00038                         <span class="keywordtype">void</span>    <a class="code" href="class_con.html#aa9b30bb7eda5c5578d11a65977968d38" title="weight field accessor.">setWeight</a>               (<span class="keywordtype">double</span> w);
 <a name="l00039"></a>00039                         <span class="keywordtype">bool</span>    <a class="code" href="class_con.html#ab85838575b5e01f3b8073136f2102922" title="Pretty print of the Con information.">show</a>                    ();
@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_con_8h.html">Con.h</a>      </li>
-      <li class="footer">Generated on Mon Jun 6 2011 12:10:16 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 6 2011 22:05:37 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

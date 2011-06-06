@@ -18,7 +18,7 @@
 <g id="node3" class="node"><title>Node2</title>
 <a xlink:href="classvec_con.html#aa9f3f5df4c4060951c975c4c829b8471" target="_top" xlink:title="Getter of the Id values of the vector of Cons.">
 <polygon fill="white" stroke="black" points="126,-0.5 126,-19.5 226,-19.5 226,-0.5 126,-0.5"/>
-<text text-anchor="middle" x="176" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::getFromId</text>
+<text text-anchor="middle" x="176" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon::getId</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node2 -->

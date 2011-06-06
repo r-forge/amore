@@ -1,0 +1,592 @@
+\hypertarget{class_container}{
+\section{Container$<$ T $>$ Class Template Reference}
+\label{class_container}\index{Container@{Container}}
+}
+
+
+{\ttfamily \#include $<$Container.h$>$}
+
+
+
+Inheritance diagram for Container$<$ T $>$:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_container__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Container$<$ T $>$:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_container__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ T $>$::\hyperlink{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}{iterator} \hyperlink{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}{iterator}
+\item 
+typedef std::vector$<$ T $>$::\hyperlink{class_container_a14d2de6ebbd48b6b78e8a0d66070c305}{const\_\-iterator} \hyperlink{class_container_a14d2de6ebbd48b6b78e8a0d66070c305}{const\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}{iterator} \hyperlink{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{begin} ()
+\item 
+\hyperlink{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}{iterator} \hyperlink{class_container_a769250b7546b782007f1adaba8a07336}{end} ()
+\item 
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a6fb8ecb9656c1732dbbc8d5a8a98f14d}{getLdata} ()
+\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+void \hyperlink{class_container_a9ba632f4fc005eca7a7cb4c7616a7796}{setLdata} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
+\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+int \hyperlink{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
+\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of ldata. \end{DoxyCompactList}\item 
+void \hyperlink{class_container_ae763eb37b721d401327c97016fb2fa54}{append} (\hyperlink{class_container}{Container}$<$ T $>$ v)
+\begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
+\begin{DoxyCompactList}\small\item\em Pretty print of the Container$<$T$>$ \end{DoxyCompactList}\item 
+bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
+\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
+void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Container$<$ T $>$}
+
+
+
+Definition at line 12 of file Container.h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_container_a14d2de6ebbd48b6b78e8a0d66070c305}{
+\index{Container@{Container}!const\_\-iterator@{const\_\-iterator}}
+\index{const\_\-iterator@{const\_\-iterator}!Container@{Container}}
+\subsubsection[{const\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef std::vector$<$T$>$::{\bf const\_\-iterator} {\bf Container}$<$ T $>$::{\bf const\_\-iterator}}}
+\label{class_container_a14d2de6ebbd48b6b78e8a0d66070c305}
+
+
+Definition at line 19 of file Container.h.
+
+\hypertarget{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}{
+\index{Container@{Container}!iterator@{iterator}}
+\index{iterator@{iterator}!Container@{Container}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef std::vector$<$T$>$::{\bf iterator} {\bf Container}$<$ T $>$::{\bf iterator}}}
+\label{class_container_a9baa5c3be9ea8fb85a4fd43f29ab7504}
+
+
+Definition at line 18 of file Container.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_container_ae763eb37b721d401327c97016fb2fa54}{
+\index{Container@{Container}!append@{append}}
+\index{append@{append}!Container@{Container}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::append (
+\begin{DoxyParamCaption}
+\item[{{\bf Container}$<$ T $>$}]{v}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ae763eb37b721d401327c97016fb2fa54}
+
+
+Appends a Container$<$T$>$ object. 
+
+This method inserts the ldata field of a second object at the end of the ldata field of the calling object. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The Container$<$T$>$ object to be added to the current one \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+        // Data set up
+                                std::vector<int> result;
+                                std::vector<ConPtr> vcA, vcB;
+                                ContainerNeuronPtr      ptShvNeuron( new 
+      Container<Neuron>() );
+                                ContainerConPtr ptShvConA( new Container<Con>() )
+      ;
+                                ContainerConPtr ptShvConB( new Container<Con>() )
+      ;
+                                ConPtr  ptC;
+                                NeuronPtr ptN;
+                                int ids[]= {1, 2, 3, 4, 5, 6};
+                                double weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3
+      .6 };
+                                for (int i=0; i<=5 ; i++) {                             /
+      / Let's create a vector with six neurons
+                                        ptN.reset( new Neuron( ids[i] ) );
+                                        ptShvNeuron->push_back(ptN);
+                                }
+                                for (int i=0; i<=2 ; i++) {                             /
+      / A vector with three connections
+                                        ptC.reset( new Con( ptShvNeuron->getLdata
+      ().at(i), weights[i]) );
+                                        ptShvConA->push_back(ptC);
+                                }
+                                for (int i=3; i<=5 ; i++) {                             /
+      / Another vector with three connections
+                                        ptC.reset( new Con( ptShvNeuron->getLdata
+      ().at(i), weights[i]) );
+                                        ptShvConB->push_back(ptC);
+                                }
+        // Test
+                                ptShvConA->append(*ptShvConB);
+                                ptShvConA->validate();
+                                ptShvConA->show() ;
+
+        // After execution of the code above, the output at the R terminal would 
+      display:
+        //
+        //  From:        1       Weight=         1.130000
+        //      From:    2       Weight=         2.220000
+        //      From:    3       Weight=         3.330000
+        //      From:    4       Weight=         5.600000
+        //      From:    5       Weight=         4.200000
+        //      From:    6       Weight=         3.600000
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_container_a9ba632f4fc005eca7a7cb4c7616a7796}{Container::setLdata} , \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 172 of file Container.cpp.
+
+
+
+References Container$<$ T $>$::ldata, and Container$<$ T $>$::size().
+
+
+\begin{DoxyCode}
+                                                               {
+        ldata.reserve(ldata.size() + v.size());
+        ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
+};
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_container_ae763eb37b721d401327c97016fb2fa54_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{
+\index{Container@{Container}!begin@{begin}}
+\index{begin@{begin}!Container@{Container}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_container_a9ad6802d12bf5f48400bc346de37ad0f}
+
+
+Definition at line 21 of file Container.h.
+
+
+\begin{DoxyCode}
+{       return ldata.begin(); }
+\end{DoxyCode}
+\hypertarget{class_container_a769250b7546b782007f1adaba8a07336}{
+\index{Container@{Container}!end@{end}}
+\index{end@{end}!Container@{Container}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_container_a769250b7546b782007f1adaba8a07336}
+
+
+Definition at line 22 of file Container.h.
+
+
+\begin{DoxyCode}
+{       return ldata.end(); }
+\end{DoxyCode}
+\hypertarget{class_container_a6fb8ecb9656c1732dbbc8d5a8a98f14d}{
+\index{Container@{Container}!getLdata@{getLdata}}
+\index{getLdata@{getLdata}!Container@{Container}}
+\subsubsection[{getLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf Container}$<$ T $>$::getLdata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a6fb8ecb9656c1732dbbc8d5a8a98f14d}
+
+
+ldata field accessor function 
+
+This method allows access to the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata} field. \begin{DoxyReturn}{Returns}
+The ldata vector.
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+        //================
+        //Usage example:
+        //================
+                // Data set up
+                                std::vector<int> result;
+                                std::vector<ConPtr> vcA, vcB;
+                                ContainerNeuronPtr      ptShvNeuron( new 
+      Container<Neuron>() );
+                                ContainerConPtr ptShvCon( new Container<Con>() );
+      
+                                ConPtr  ptC;
+                                NeuronPtr ptN;
+                                int ids[]= {10, 20, 30};
+                                double weights[] = {1.13, 2.22, 3.33 };
+                                for (int i=0; i<=2 ; i++) {                             /
+      / Let's create a vector with three neurons
+                                        ptN.reset( new Neuron( ids[i] ) );
+                                        ptShvNeuron->push_back(ptN);
+                                }
+                                for (int i=0; i<=2 ; i++) {                             /
+      / and a vector with three connections
+                                        ptC.reset( new Con( ptShvNeuron->getLdata
+      ().at(i), weights[i]) );
+                                        vcA.push_back(ptC);
+                                }
+                // Test
+                        ptShvCon->setLdata(vcA);
+                        vcB = ptShvCon->getLdata();
+                        for (int i=0; i<=2 ; i++) {                                     /
+      / get Ids. Container does not have getId defined
+                                        result.push_back( vcB.at(i)->getId());
+                        }
+
+                // Now, result is an integer vector with values 10, 20, 30.
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_container_a9ba632f4fc005eca7a7cb4c7616a7796}{setLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 217 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                                              {
+        return ldata;
+};
+\end{DoxyCode}
+\hypertarget{class_container_afd87c69cb799ed7b434c29090083a285}{
+\index{Container@{Container}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!Container@{Container}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
+\begin{DoxyParamCaption}
+\item[{boost::shared\_\-ptr$<$ T $>$}]{TsharedPtr}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_afd87c69cb799ed7b434c29090083a285}
+
+
+Append a shared\_\-ptr at the end of ldata. 
+
+Implements push\_\-back for the \hyperlink{class_container}{Container} class 
+\begin{DoxyParams}{Parameters}
+{\em TsharedPtr} & A shared\_\-ptr pointer to be inserted at the end of ldata\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+                //================
+                //Usage example:
+                //================
+                // Data set up
+                        Neuron N1, N2, N3;
+                        Container<Con> MyVecCon;
+                        std::vector<ConPtr> vc;
+                        std::vector<int> result;
+                        N1.setId(10);
+                        N2.setId(20);
+                        N3.setId(30);
+                // Test
+                        ConPtr ptCon( new Con(&N1, 1.13) );     // Create new Con
+       and initialize ptCon
+                        MyVecCon.push_back(ptCon);                              /
+      / push_back
+                        ptCon.reset(  new Con(&N2, 2.22) );             // create
+       new Con and assign to ptCon
+                        MyVecCon.push_back(ptCon);                              /
+      / push_back
+                        ptCon.reset(  new Con(&N3, 3.33) );             // create
+       new Con and assign to ptCon
+                        MyVecCon.push_back(ptCon);                              /
+      / push_back
+
+                        vc = MyVecCon.getLdata();
+
+                        result.push_back(vc.at(0)->getId());
+                        result.push_back(vc.at(1)->getId());
+                        result.push_back(vc.at(2)->getId());
+        // After execution of this code, result contains a numeric vector with va
+      lues 10, 20 and 30.
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+C++ documentation for std::vector::push\_\-back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 44 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                                                 
+      {
+        ldata.push_back(TsharedPtr);
+};
+\end{DoxyCode}
+\hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
+\index{Container@{Container}!reserve@{reserve}}
+\index{reserve@{reserve}!Container@{Container}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Container}$<$ T $>$::reserve (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
+
+
+Definition at line 245 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                      {
+         ldata.reserve(n) ;
+};
+\end{DoxyCode}
+\hypertarget{class_container_a9ba632f4fc005eca7a7cb4c7616a7796}{
+\index{Container@{Container}!setLdata@{setLdata}}
+\index{setLdata@{setLdata}!Container@{Container}}
+\subsubsection[{setLdata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::setLdata (
+\begin{DoxyParamCaption}
+\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{v}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a9ba632f4fc005eca7a7cb4c7616a7796}
+
+
+ldata field accessor function 
+
+This method sets the value of the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata} field. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector of smart pointers to be stored in the ldata field \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_container_a6fb8ecb9656c1732dbbc8d5a8a98f14d}{getLdata} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 229 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                                                 
+         {
+        ldata=v;
+};
+\end{DoxyCode}
+\hypertarget{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{
+\index{Container@{Container}!show@{show}}
+\index{show@{show}!Container@{Container}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ad72379ee222b073a5eecec7fc1bedfc2}
+
+
+Pretty print of the Container$<$T$>$ 
+
+This method outputs in the R terminal the contents of \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{Container::ldata}. \begin{DoxyReturn}{Returns}
+true in case everything works without throwing an exception
+\end{DoxyReturn}
+$\ast$ 
+\begin{DoxyCode}
+                //================
+                //Usage example:
+                //================
+                // Data set up
+                        ContainerNeuronPtr      ptShvNeuron( new 
+      Container<Neuron>() );
+                        ContainerConPtr ptShvCon( new Container<Con>() );
+                        ConPtr  ptC;
+                        NeuronPtr ptN;
+                        int ids[]= {10, 20, 30};
+                        double weights[] = {1.13, 2.22, 3.33 };
+
+                        for (int i=0; i<=2 ; i++) {                             /
+      / Let's create a vector with three neurons
+                                ptN.reset( new Neuron( ids[i] ) );
+                                ptShvNeuron->push_back(ptN);
+                        }
+
+                        for (int i=0; i<=2 ; i++) {                             /
+      / and a vector with three connections
+                                ptC.reset( new Con( ptShvNeuron->getLdata().at(i)
+      , weights[i]) );
+                                ptShvCon->push_back(ptC);
+                        }
+
+                // Test
+                        ptShvCon->show() ;
+
+                // The output at the R terminal would display:
+                //
+                //      # From:  10      Weight=         1.130000
+                //      # From:  20      Weight=         2.220000
+                //      # From:  30      Weight=         3.330000
+                //
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 93 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                              {
+
+        // This is equivalent to:
+        // for( auto x : ldata) { x.show(); }
+        // Waiting for C++0x
+
+        foreach (typename boost::shared_ptr<T> itr, ldata){
+                itr->show();
+        }
+        return true;
+};
+\end{DoxyCode}
+\hypertarget{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{
+\index{Container@{Container}!size@{size}}
+\index{size@{size}!Container@{Container}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Container}$<$ T $>$::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}
+
+
+Returns the size or length of the vector. 
+
+This method returns the size of the vector. In the classes derived from Container$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+
+Definition at line 240 of file Container.cpp.
+
+
+
+Referenced by Container$<$ T $>$::append().
+
+
+\begin{DoxyCode}
+                                             {
+        return ldata.size() ;
+};
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_container_aef8dda28fbfe205ce25ae824d84bb1c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{
+\index{Container@{Container}!validate@{validate}}
+\index{validate@{validate}!Container@{Container}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aa99a036fd0fe6d6b82ba558157e557d3}
+
+
+Object validator. 
+
+This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
+The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \hyperlink{class_vec_con_af008396d3982fb7ccf1af9618b89937c}{VecCon}.
+
+
+
+Definition at line 112 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                  {
+        foreach (typename boost::shared_ptr<T> itr, ldata){
+                itr->validate();
+        }
+        return true;
+};
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_container_aef055b4e4f94e227cc8a2124af13c177}{
+\index{Container@{Container}!ldata@{ldata}}
+\index{ldata@{ldata}!Container@{Container}}
+\subsubsection[{ldata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf ldata}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_container_aef055b4e4f94e227cc8a2124af13c177}
+
+
+Definition at line 14 of file Container.h.
+
+
+
+Referenced by Container$<$ T $>$::append(), Container$<$ Neuron $>$::begin(), and Container$<$ Neuron $>$::end().
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{_container_8h}{Container.h}\item 
+pkg/AMORE/src/\hyperlink{_container_8cpp}{Container.cpp}\end{DoxyCompactItemize}

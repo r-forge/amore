@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#define-members">Defines</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">pkg/AMORE/src/AMORE.h File Reference</div>  </div>
@@ -91,62 +92,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;iterator&gt;</code><br/>
 <code>#include &lt;boost/shared_ptr.hpp&gt;</code><br/>
 <code>#include &lt;boost/weak_ptr.hpp&gt;</code><br/>
+<code>#include &lt;boost/foreach.hpp&gt;</code><br/>
 <code>#include &lt;Rcpp.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_con_8h_source.html">Con.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="vec_a_m_o_r_e_8h_source.html">Container.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="vec_con_8h_source.html">VecCon.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_container_8h_source.html">Container.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_vec_con_8h_source.html">VecCon.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_neuron_8h_source.html">Neuron.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_con_8cpp_source.html">Con.cpp</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="vec_a_m_o_r_e_8cpp_source.html">Container.cpp</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_container_8cpp_source.html">Container.cpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AMORE.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="1640" height="187" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="1768" height="187" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="_a_m_o_r_e_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a85d9ac269eba33293361f4ed7c2a697b">foreach</a>&#160;&#160;&#160;BOOST_FOREACH</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_con.html">Con</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_con.html">Con</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::weak_ptr&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; <a class="el" href="class_con.html">Con</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a></td></tr>
+&lt; <a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="class_con.html">Con</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classvec_con.html">VecCon</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">VecConPtr</a></td></tr>
+&lt; <a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a3f07c97535da998eecacce734deb1013">ContainerNeuronPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_vec_con.html">VecCon</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ace651cf590286fe2630c2c353a49a1db">VecConPtr</a></td></tr>
 </table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ae7d05d5880745e8a588e1efd62c81f32"></a><!-- doxytag: member="AMORE.h::ConPtr" ref="ae7d05d5880745e8a588e1efd62c81f32" args="" -->
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a85d9ac269eba33293361f4ed7c2a697b"></a><!-- doxytag: member="AMORE.h::foreach" ref="a85d9ac269eba33293361f4ed7c2a697b" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="class_con.html">Con</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00033">33</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a03051950b0faf9499d14cf376e04c329"></a><!-- doxytag: member="AMORE.h::NeuronSharedPtr" ref="a03051950b0faf9499d14cf376e04c329" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a></td>
+          <td class="memname">#define foreach&#160;&#160;&#160;BOOST_FOREACH</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00037">37</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="a169bb8e5f26ce70bf2b10dec2fb5ee50"></a><!-- doxytag: member="AMORE.h::ConPtr" ref="a169bb8e5f26ce70bf2b10dec2fb5ee50" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="class_con.html">Con</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00039">39</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abcc891be2636ea372a61f7c4394b626e"></a><!-- doxytag: member="AMORE.h::ContainerConPtr" ref="abcc891be2636ea372a61f7c4394b626e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="class_container.html">Container</a>&lt;<a class="el" href="class_con.html">Con</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00042">42</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f07c97535da998eecacce734deb1013"></a><!-- doxytag: member="AMORE.h::ContainerNeuronPtr" ref="a3f07c97535da998eecacce734deb1013" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="class_container.html">Container</a>&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#a3f07c97535da998eecacce734deb1013">ContainerNeuronPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00043">43</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1ea936c2c7728eb382278131652fef4"></a><!-- doxytag: member="AMORE.h::NeuronPtr" ref="ac1ea936c2c7728eb382278131652fef4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00040">40</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -161,52 +213,22 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00038">38</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aef4af162896b6bdede75674d0ce7d9db"></a><!-- doxytag: member="AMORE.h::ContainerconSharedPtr" ref="aef4af162896b6bdede75674d0ce7d9db" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt;<a class="el" href="class_con.html">Con</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00039">39</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ada7ae04a1fa1bd30e64931d8f55e6aba"></a><!-- doxytag: member="AMORE.h::ContainerneuronSharedPtr" ref="ada7ae04a1fa1bd30e64931d8f55e6aba" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="classvec_a_m_o_r_e.html">Container</a>&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00040">40</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a16f0806a3e5478c590c5b8ac41187e57"></a><!-- doxytag: member="AMORE.h::VecConPtr" ref="a16f0806a3e5478c590c5b8ac41187e57" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="classvec_con.html">VecCon</a> &gt; <a class="el" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">VecConPtr</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
 <p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00041">41</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace651cf590286fe2630c2c353a49a1db"></a><!-- doxytag: member="AMORE.h::VecConPtr" ref="ace651cf590286fe2630c2c353a49a1db" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt; <a class="el" href="class_vec_con.html">VecCon</a> &gt; <a class="el" href="_a_m_o_r_e_8h.html#ace651cf590286fe2630c2c353a49a1db">VecConPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00044">44</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -215,7 +237,7 @@ Typedefs</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_a_m_o_r_e_8h.html">AMORE.h</a>      </li>
-      <li class="footer">Generated on Mon Jun 6 2011 12:10:16 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 6 2011 22:05:37 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -225,7 +247,7 @@ Typedefs</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
