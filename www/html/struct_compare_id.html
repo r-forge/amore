@@ -91,29 +91,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#a470bef628ec23bbdbd8f3bb103e60814">operator()</a> (const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> a, const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#a2342f4d0e9448a2af26314e7f8ff94ec">operator()</a> (const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> a, const int b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#a43e46a0d30eb25672a449b7365bb6f31">operator()</a> (const int a, const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a> b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a> (const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> a, const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#af99b7dae8a94fccd1da8078cb1788f13">operator()</a> (const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> a, const int b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#a052ddbeca61d5edc795f33290b7af112">operator()</a> (const int a, const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compare_id.html#a1310378d3e8c8a9e4c74f6f0ac239c05">operator()</a> (const int a, const int b)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00359">359</a> of file <a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00367">367</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a470bef628ec23bbdbd8f3bb103e60814"></a><!-- doxytag: member="CompareId::operator()" ref="a470bef628ec23bbdbd8f3bb103e60814" args="(const ConPtr a, const ConPtr b)" -->
+<a class="anchor" id="abc68f7bc4aafb243e126fbd35c36c7c2"></a><!-- doxytag: member="CompareId::operator()" ref="abc68f7bc4aafb243e126fbd35c36c7c2" args="(const ConPtr a, const ConPtr b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool CompareId::operator() </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -125,9 +125,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00361">361</a> of file <a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                    {
-        <span class="keywordflow">return</span> a-&gt;getFromId() &lt; b-&gt;getFromId();
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00369">369</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                        {
+        <span class="keywordflow">return</span> a-&gt;getId() &lt; b-&gt;getId();
     };
 </pre></div>
 </div>
@@ -157,14 +157,14 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00373">373</a> of file <a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00381">381</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                                  {
            <span class="keywordflow">return</span> a &lt; b;
        };
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a43e46a0d30eb25672a449b7365bb6f31"></a><!-- doxytag: member="CompareId::operator()" ref="a43e46a0d30eb25672a449b7365bb6f31" args="(const int a, const ConPtr b)" -->
+<a class="anchor" id="a052ddbeca61d5edc795f33290b7af112"></a><!-- doxytag: member="CompareId::operator()" ref="a052ddbeca61d5edc795f33290b7af112" args="(const int a, const ConPtr b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -177,7 +177,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -189,21 +189,21 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00369">369</a> of file <a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                           {
-           <span class="keywordflow">return</span> a &lt; b-&gt;getFromId();
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00377">377</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                     {
+           <span class="keywordflow">return</span> a &lt; b-&gt;getId();
        };
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a2342f4d0e9448a2af26314e7f8ff94ec"></a><!-- doxytag: member="CompareId::operator()" ref="a2342f4d0e9448a2af26314e7f8ff94ec" args="(const ConPtr a, const int b)" -->
+<a class="anchor" id="af99b7dae8a94fccd1da8078cb1788f13"></a><!-- doxytag: member="CompareId::operator()" ref="af99b7dae8a94fccd1da8078cb1788f13" args="(const ConPtr a, const int b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool CompareId::operator() </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -221,22 +221,22 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec_con_8cpp_source.html#l00365">365</a> of file <a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                           {
-           <span class="keywordflow">return</span> a-&gt;getFromId() &lt; b  ;
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00373">373</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                     {
+           <span class="keywordflow">return</span> a-&gt;getId() &lt; b  ;
        };
 </pre></div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>pkg/AMORE/src/<a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a></li>
+<li>pkg/AMORE/src/<a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="struct_compare_id.html">CompareId</a>      </li>
-      <li class="footer">Generated on Mon Jun 6 2011 12:10:17 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 6 2011 22:05:37 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -246,7 +246,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

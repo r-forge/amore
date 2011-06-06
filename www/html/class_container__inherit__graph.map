@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="11,281,136,490"/>
+<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ getLdata()\l+ setLdata()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="160,281,304,490"/>
+<area shape="rect" id="node5" href="$class_vec_con.html" title="A vector of connections." alt="" coords="5,542,141,781"/>
+<area shape="rect" id="node9" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="191,623,273,700"/>
+<area shape="rect" id="node11" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="164,832,300,909"/>
+</map>

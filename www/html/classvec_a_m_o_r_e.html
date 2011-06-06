@@ -258,8 +258,8 @@ template&lt;typename T &gt; </div>
                 <span class="comment">// Test</span>
                         ptShvCon-&gt;setLdata(vcA);
                         vcB = ptShvCon-&gt;getLdata();
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                                     <span class="comment">// get Ids. Container does not have getFromId defined</span>
-                                        result.push_back( vcB.at(i)-&gt;getFromId());
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                                     <span class="comment">// get Ids. Container does not have getId defined</span>
+                                        result.push_back( vcB.at(i)-&gt;getId());
                         }
 
                 <span class="comment">// Now, result is an integer vector with values 10, 20, 30.</span>
@@ -318,9 +318,9 @@ template&lt;typename T&gt; </div>
 
                         vc = MyVecCon.<a class="code" href="classvec_a_m_o_r_e.html#aeabf8a479f9031cc8ef9af0a971a08ea" title="ldata field accessor function">getLdata</a>();
 
-                        result.push_back(vc.at(0)-&gt;getFromId());
-                        result.push_back(vc.at(1)-&gt;getFromId());
-                        result.push_back(vc.at(2)-&gt;getFromId());
+                        result.push_back(vc.at(0)-&gt;getId());
+                        result.push_back(vc.at(1)-&gt;getId());
+                        result.push_back(vc.at(2)-&gt;getId());
         <span class="comment">// After execution of this code, result contains a numeric vector with values 10, 20 and 30.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd>C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 

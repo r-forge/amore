@@ -16,15 +16,15 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="class_con.html#aad72314592bebdcae6c68a67d2b4a505" target="_top" xlink:title="A getter of the Id of the Neuron pointed by the from field.">
-<polygon fill="white" stroke="black" points="110,-38.5 110,-57.5 194,-57.5 194,-38.5 110,-38.5"/>
-<text text-anchor="middle" x="152" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">Con::getFromId</text>
+<a xlink:href="class_con.html#ad12ce81a557eadb2a00b10d5b5f4adb6" target="_top" xlink:title="A getter of the Id of the Neuron pointed by the from field.">
+<polygon fill="white" stroke="black" points="121,-38.5 121,-57.5 183,-57.5 183,-38.5 121,-38.5"/>
+<text text-anchor="middle" x="152" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">Con::getId</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M74.0197,-35.1163C82.2314,-36.473 91.0841,-37.9356 99.7747,-39.3715"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="99.4174,-42.8598 109.854,-41.0368 100.558,-35.9534 99.4174,-42.8598"/>
+<path fill="none" stroke="midnightblue" d="M74.0197,-35.1163C85.7001,-37.0461 98.6775,-39.1902 110.641,-41.1667"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="110.398,-44.6739 120.834,-42.8509 111.539,-37.7675 110.398,-44.6739"/>
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>

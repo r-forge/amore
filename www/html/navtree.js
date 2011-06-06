@@ -8,9 +8,9 @@ var NAVTREE =
     [ "Class List", "annotated.html", [
       [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],
+      [ "Container< T >", "class_container.html", null ],
       [ "Neuron", "class_neuron.html", null ],
-      [ "Container< T >", "classvec_a_m_o_r_e.html", null ],
-      [ "VecCon", "classvec_con.html", null ],
+      [ "VecCon", "class_vec_con.html", null ],
       [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ],
       [ "vecNeuron", "classvec_neuron.html", null ]
     ] ],
@@ -18,30 +18,30 @@ var NAVTREE =
     [ "Class Hierarchy", "hierarchy.html", [
       [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],
-      [ "Neuron", "class_neuron.html", null ],
-      [ "Container< T >", "classvec_a_m_o_r_e.html", null ],
-      [ "Container< Con >", "classvec_a_m_o_r_e.html", [
-        [ "VecCon", "classvec_con.html", null ]
+      [ "Container< T >", "class_container.html", null ],
+      [ "Container< Con >", "class_container.html", [
+        [ "VecCon", "class_vec_con.html", null ]
       ] ],
-      [ "Container< Neuron >", "classvec_a_m_o_r_e.html", [
+      [ "Container< Neuron >", "class_container.html", [
         [ "vecNeuron", "classvec_neuron.html", [
           [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
         ] ]
-      ] ]
+      ] ],
+      [ "Neuron", "class_neuron.html", null ]
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
       [ "pkg/AMORE/src/AMORE.h", "_a_m_o_r_e_8h.html", null ],
       [ "pkg/AMORE/src/Con.cpp", "_con_8cpp.html", null ],
       [ "pkg/AMORE/src/Con.h", "_con_8h.html", null ],
+      [ "pkg/AMORE/src/Container.cpp", "_container_8cpp.html", null ],
+      [ "pkg/AMORE/src/Container.h", "_container_8h.html", null ],
       [ "pkg/AMORE/src/Neuron.cpp", "_neuron_8cpp.html", null ],
       [ "pkg/AMORE/src/Neuron.h", "_neuron_8h.html", null ],
-      [ "pkg/AMORE/src/Container.cpp", "vec_a_m_o_r_e_8cpp.html", null ],
-      [ "pkg/AMORE/src/Container.h", "vec_a_m_o_r_e_8h.html", null ],
-      [ "pkg/AMORE/src/VecCon.cpp", "vec_con_8cpp.html", null ],
-      [ "pkg/AMORE/src/VecCon.h", "vec_con_8h.html", null ],
-      [ "pkg/AMORE/src/vecMLPneuron.h", "vec_m_l_pneuron_8h.html", null ],
-      [ "pkg/AMORE/src/vecNeuron.h", "vec_neuron_8h.html", null ]
+      [ "pkg/AMORE/src/VecCon.cpp", "_vec_con_8cpp.html", null ],
+      [ "pkg/AMORE/src/VecCon.h", "_vec_con_8h.html", null ],
+      [ "pkg/AMORE/src/VecMLPneuron.h", "_vec_m_l_pneuron_8h.html", null ],
+      [ "pkg/AMORE/src/VecNeuron.h", "_vec_neuron_8h.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]
   ] ]

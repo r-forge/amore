@@ -20,9 +20,9 @@
 <text text-anchor="start" x="7.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Con()</text>
 <text text-anchor="start" x="7.5" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Con()</text>
 <text text-anchor="start" x="7.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Con()</text>
-<text text-anchor="start" x="7.5" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFromNeuron()</text>
-<text text-anchor="start" x="7.5" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFromNeuron()</text>
-<text text-anchor="start" x="7.5" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFromId()</text>
+<text text-anchor="start" x="7.5" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFrom()</text>
+<text text-anchor="start" x="7.5" y="-61.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFrom()</text>
+<text text-anchor="start" x="7.5" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 <text text-anchor="start" x="7.5" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getWeight()</text>
 <text text-anchor="start" x="7.5" y="-28.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setWeight()</text>
 <text text-anchor="start" x="7.5" y="-17.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ show()</text>

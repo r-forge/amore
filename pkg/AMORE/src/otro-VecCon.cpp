@@ -73,18 +73,18 @@ int  VecCon::numOfCons() {
  *	// Test
  *			MyVecCon.show() ;
  *			MyVecCon.validate();
- *			result=MyVecCon.getFromId();
+ *			result=MyVecCon.getId();
  *
  *	// Now result is a vector that contains the values 10, 20 and 30.
  * \endcode
  *
  * \sa getWeight and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
-std::vector<int>  VecCon::getFromId() {
+std::vector<int>  VecCon::getId() {
 	std::vector<int> result;
 	result.reserve(numOfCons());
 	foreach (ConPtr itr, ldata){
-		result.push_back(itr->getFromId());
+		result.push_back(itr->getId());
 	}
 	return result;
 }
@@ -122,7 +122,7 @@ std::vector<int>  VecCon::getFromId() {
  *
  *		MyVecCon.buildAndAppend(vNeuron, vWeight);
  *
- *		result=MyVecCon.getFromId();
+ *		result=MyVecCon.getId();
  *
  *	// Now result is a vector that contains the values 11, 22 and 32.
  * \endcode
@@ -184,7 +184,7 @@ bool VecCon::buildAndAppend	( std::vector<NeuronPtr> FROM, std::vector<double> W
  *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
  * \endcode
  *
- * \sa getFromId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
 std::vector<double>	VecCon::getWeight ( ) {
 	std::vector<double> result;
@@ -244,8 +244,9 @@ bool VecCon::setWeight (std::vector<double> vWeight)  {
 	if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: Error, vWeight is empty"); }
 	if (vWeight.size() != ldata.size() ) { throw std::range_error("[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()"); }
 	std::vector<double>::iterator itrWeight = vWeight.begin();
-	for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrWeight++)	{
-		(*itr)->setWeight( *itrWeight );
+	foreach (ConPtr itr, ldata){
+		itr->setWeight( *itrWeight );
+		itrWeight++;
 	}
 	return true;
 	END_RCPP
@@ -281,7 +282,7 @@ bool VecCon::setWeight (std::vector<double> vWeight)  {
  *			}
  *			MyVecCon.buildAndAppend(vNeuron, vWeight);
  *		// Test
- *			vNeuron=MyVecCon.getFromNeuron();
+ *			vNeuron=MyVecCon.getFrom();
  *			for (int i=0; i<=2; i++) {
  *				result.push_back(vNeuron.at(i)->getId());
  *			}
@@ -290,13 +291,13 @@ bool VecCon::setWeight (std::vector<double> vWeight)  {
  *
  * \endcode
  *
- * \sa getFromId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
-std::vector<NeuronPtr> VecCon::getFromNeuron 	( ) {
+std::vector<NeuronPtr> VecCon::getFrom 	( ) {
 	std::vector<NeuronPtr> result;
 	result.reserve(numOfCons());
-	for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++)	{
-		result.push_back((*itr)->getFromNeuron());
+	foreach(ConPtr itr, ldata){
+		result.push_back( itr->getFrom() );
 	}
 	return result;
 }
@@ -337,25 +338,25 @@ std::vector<NeuronPtr> VecCon::getFromNeuron 	( ) {
  *			ptShvCon->push_back(ptC);
  *		}
  *	// Test
- *		ptShvCon->setFromNeuron(ptShvNeuron->getLdata()) ;
+ *		ptShvCon->setFrom(ptShvNeuron->getLdata()) ;
  *		ptShvCon->show();
- *		result=ptShvCon->getFromId();
+ *		result=ptShvCon->getId();
  *
  *	// Now result is a vector that contains the values 10, 20 and 30.
  *
  * \endcode
  *
- * \sa getFromNeuron and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getFrom and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
-bool	VecCon::setFromNeuron	( std::vector<NeuronPtr> vFrom){
+bool	VecCon::setFrom	( std::vector<NeuronPtr> vFrom){
 	BEGIN_RCPP
-		if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFromNeuron]: Error, w is empty"); }
-		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ VecCon::setFromNeuron]: Error, w.size() != ldata.size()"); }
+		if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFrom]: Error, w is empty"); }
+		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ VecCon::setFrom]: Error, w.size() != ldata.size()"); }
 		std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
-		for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != ldata.end();   itr++, itrFrom++)	{
-			(*itr)->setFromNeuron( *itrFrom );
+		foreach(ConPtr itr , ldata)	{
+			itr->setFrom( *itrFrom );
+			itrFrom++;
 		}
-
 		return true;
 		END_RCPP
 }
@@ -366,15 +367,15 @@ bool	VecCon::setFromNeuron	( std::vector<NeuronPtr> vFrom){
 struct CompareId {
 
 	bool operator()(const ConPtr a, const ConPtr b) {
-        return a->getFromId() < b->getFromId();
+        return a->getId() < b->getId();
     };
 
 	bool operator()(const ConPtr a, const int b) {
-           return a->getFromId() < b  ;
+           return a->getId() < b  ;
        };
 
 	bool operator()(const int a, const ConPtr b) {
-           return a < b->getFromId();
+           return a < b->getId();
        };
 
 	bool operator()(const int a, const int b) {
@@ -432,7 +433,7 @@ struct CompareId {
  *
  *			ptShvCon->erase(toRemove);
  *			ptShvCon->show();
- *			result=ptShvCon->getFromId();
+ *			result=ptShvCon->getId();
  *
  *		// The output at the R terminal would display :
  *		//
@@ -493,7 +494,7 @@ void VecCon::erase ( std::vector<int> vFrom ){
  *		toSelect.push_back(7);
  *
  *		VecConPtr  vSelect (  ptShvCon->select(toSelect)  );
- *		result=vSelect->getFromId();
+ *		result=vSelect->getId();
  *
  *		// Now, result is a numeric vector with the values 1, 3, 5 and 7.
  *
@@ -654,7 +655,7 @@ bool VecCon::validate() {
 
 	std::vector<int>::iterator itr;
 
-	std::vector<int> vIds = getFromId();
+	std::vector<int> vIds = getId();
 	sort(vIds.begin(), vIds.end());
 	itr=adjacent_find(vIds.begin(), vIds.end());
 	if ( itr!= vIds.end() )  throw std::range_error("[C++ VecCon::validate]: Error, duplicated Id.");

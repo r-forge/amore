@@ -17,14 +17,14 @@
 <text text-anchor="middle" x="146" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="95,-141 197,-141 "/>
 <text text-anchor="start" x="103" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">+ numOfCons()</text>
-<text text-anchor="start" x="103" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFromId()</text>
+<text text-anchor="start" x="103" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 <text text-anchor="start" x="103" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">+ buildAndAppend()</text>
 <text text-anchor="start" x="103" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">+ getWeight()</text>
 <text text-anchor="start" x="103" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">+ getWeight()</text>
-<text text-anchor="start" x="103" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFromNeuron()</text>
+<text text-anchor="start" x="103" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFrom()</text>
 <text text-anchor="start" x="103" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">+ setWeight()</text>
 <text text-anchor="start" x="103" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">+ setWeight()</text>
-<text text-anchor="start" x="103" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFromNeuron()</text>
+<text text-anchor="start" x="103" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFrom()</text>
 <text text-anchor="start" x="103" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">+ erase()</text>
 <text text-anchor="start" x="103" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">+ select()</text>
 <text text-anchor="start" x="103" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+ validate()</text>
