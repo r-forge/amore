@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="11,293,136,517"/>
-<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="160,293,304,517"/>
-<area shape="rect" id="node5" href="$class_vec_con.html" title="A vector of connections." alt="" coords="5,569,141,807"/>
-<area shape="rect" id="node9" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="191,649,273,727"/>
-<area shape="rect" id="node11" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="164,859,300,936"/>
+<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ operator[]()\l}" alt="" coords="11,310,136,549"/>
+<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ operator[]()\l}" alt="" coords="160,310,304,549"/>
+<area shape="rect" id="node5" href="$class_vec_con.html" title="A vector of connections." alt="" coords="5,601,141,839"/>
+<area shape="rect" id="node9" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="191,681,273,759"/>
+<area shape="rect" id="node11" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="164,891,300,968"/>
 </map>

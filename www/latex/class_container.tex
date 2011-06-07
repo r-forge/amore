@@ -44,7 +44,7 @@ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a916
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 void \hyperlink{class_container_aadc7faacbf43540e46144319f7369a3e}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
-int \hyperlink{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{size} ()
+size\_\-type \hyperlink{class_container_a842c3d9eca81b78b59112fde9707b091}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
 \begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
@@ -57,11 +57,13 @@ bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
 void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
 \item 
 void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
+\item 
+boost::shared\_\-ptr$<$ T $>$ \& \hyperlink{class_container_aed3c227120a6a745fa9adfb25c3dd225}{operator\mbox{[}$\,$\mbox{]}} (size\_\-type offset)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection}
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection}
 \end{DoxyCompactItemize}
 
 
@@ -223,8 +225,7 @@ Referenced by Container$<$ T $>$::append().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -256,8 +257,7 @@ Referenced by Container$<$ T $>$::append().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -279,7 +279,7 @@ Here is the caller graph for this function:
 
 collection field accessor function 
 
-This method allows access to the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection} field. \begin{DoxyReturn}{Returns}
+This method allows access to the data stored in the \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection} field. \begin{DoxyReturn}{Returns}
 The collection vector.
 \end{DoxyReturn}
 
@@ -333,6 +333,26 @@ Definition at line 217 of file Container.cpp.
                                                                           {
         return collection;
 };
+\end{DoxyCode}
+\hypertarget{class_container_aed3c227120a6a745fa9adfb25c3dd225}{
+\index{Container@{Container}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Container@{Container}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ boost::shared\_\-ptr$<$ T $>$ \& {\bf Container}$<$ T $>$::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-type}]{offset}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aed3c227120a6a745fa9adfb25c3dd225}
+
+
+Definition at line 255 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                                                 
+                  {
+        return collection[offset];
+}
 \end{DoxyCode}
 \hypertarget{class_container_afd87c69cb799ed7b434c29090083a285}{
 \index{Container@{Container}!push\_\-back@{push\_\-back}}
@@ -454,7 +474,7 @@ Definition at line 245 of file Container.cpp.
 
 Pretty print of the Container$<$T$>$ 
 
-This method outputs in the R terminal the contents of \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{Container::collection}. \begin{DoxyReturn}{Returns}
+This method outputs in the R terminal the contents of \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{Container::collection}. \begin{DoxyReturn}{Returns}
 true in case everything works without throwing an exception
 \end{DoxyReturn}
 $\ast$ 
@@ -512,7 +532,7 @@ Referenced by Neuron::show().
                                               {
 
         // This is equivalent to:
-        // for( auto x : collection) { x.show(); }
+        // for( auto x : collection)    { x.show(); }
         // Waiting for C++0x
 
         foreach (typename boost::shared_ptr<T> itr, *this){
@@ -523,8 +543,7 @@ Referenced by Neuron::show().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -533,15 +552,15 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{
+\hypertarget{class_container_a842c3d9eca81b78b59112fde9707b091}{
 \index{Container@{Container}!size@{size}}
 \index{size@{size}!Container@{Container}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Container}$<$ T $>$::size (
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ size\_\-type {\bf Container}$<$ T $>$::size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}
+\label{class_container_a842c3d9eca81b78b59112fde9707b091}
 
 
 Returns the size or length of the vector. 
@@ -556,17 +575,18 @@ Referenced by Container$<$ T $>$::append().
 
 
 \begin{DoxyCode}
-                                             {
+                                                   {
         return collection.size() ;
 };
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=294pt]{class_container_aef8dda28fbfe205ce25ae824d84bb1c9_icgraph}
+\includegraphics[width=294pt]{class_container_a842c3d9eca81b78b59112fde9707b091_icgraph}
 \end{center}
 \end{figure}
 
@@ -584,7 +604,7 @@ Here is the caller graph for this function:\nopagebreak
 
 collection field accessor function 
 
-This method sets the value of the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection} field. 
+This method sets the value of the data stored in the \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection} field. 
 \begin{DoxyParams}{Parameters}
 {\em v} & The vector of smart pointers to be stored in the collection field \\
 \hline
@@ -639,11 +659,11 @@ Definition at line 112 of file Container.cpp.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_container_aef055b4e4f94e227cc8a2124af13c177}{
+\hypertarget{class_container_a6cc12233bceb7d72709320d2c57e3398}{
 \index{Container@{Container}!collection@{collection}}
 \index{collection@{collection}!Container@{Container}}
 \subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf collection}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_container_aef055b4e4f94e227cc8a2124af13c177}
+\label{class_container_a6cc12233bceb7d72709320d2c57e3398}
 
 
 Definition at line 14 of file Container.h.

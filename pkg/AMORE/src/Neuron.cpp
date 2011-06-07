@@ -9,7 +9,7 @@
 #include "Neuron.h"
 
 
-	Neuron::Neuron() {};
+	Neuron::Neuron() : Id(NA_INTEGER), con() {};
 	Neuron::Neuron(int Id) : Id(Id), outputValue(0.0) {};
 	Neuron::Neuron(int Id, VecCon con) : Id(Id), con(con), outputValue(0.0) {} ;
 	Neuron::~Neuron() {};
@@ -53,10 +53,19 @@ int	Neuron::numOfCons	(){
 }
 
 bool	Neuron::show		(){
+	int id=getId();
 	Rprintf("\n------------------------\n");
-	Rprintf("\n Id: ", getId());
+	if (id==NA_INTEGER) {
+		Rprintf("\n Id: NA, Invalid neuron Id");
+	} else {
+		Rprintf("\n Id: %d", id);
+	}
 	Rprintf("\n------------------------\n");
-	con.show();
+	if (numOfCons()==0) {
+		Rprintf("\n No connections defined");
+	} else {
+		con.show();
+	}
 	Rprintf("\n------------------------\n");
 	return true;
 
