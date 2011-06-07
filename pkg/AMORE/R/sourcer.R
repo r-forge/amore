@@ -42,15 +42,16 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 # Lista de Fixme's
 
-###############################################
-# FIXME Javi: Unit tests for Con class constructor methods
-# STATUS: DONE
-###############################################
 
+
+###############################################
+# FIXME Javi: Implement vecCon::Validate  
+# STATUS: writing
+###############################################
 
 ###############################################
 # FIXME Javi: RBFNeuron
-# STATUS: Pending
+# STATUS: Accepted
 ###############################################
 
 
