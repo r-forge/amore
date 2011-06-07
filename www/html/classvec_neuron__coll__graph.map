@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="145,766,289,975"/>
+<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="145,779,289,1003"/>
 <area shape="rect" id="node6" title="STL class." alt="" coords="183,147,297,224"/>
-<area shape="rect" id="node10" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}" alt="" coords="245,491,355,701"/>
+<area shape="rect" id="node10" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="245,491,355,715"/>
 </map>

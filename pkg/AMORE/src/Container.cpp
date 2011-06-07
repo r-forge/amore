@@ -96,7 +96,7 @@ template <typename T> bool Container<T>::show() {
 	// for( auto x : ldata)	{ x.show(); }
 	// Waiting for C++0x
 
-	foreach (typename boost::shared_ptr<T> itr, ldata){
+	foreach (typename boost::shared_ptr<T> itr, *this){
 		itr->show();
 	}
 	return true;
@@ -110,7 +110,7 @@ template <typename T> bool Container<T>::show() {
  * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> bool Container<T>::validate() {
-	foreach (typename boost::shared_ptr<T> itr, ldata){
+	foreach (typename boost::shared_ptr<T> itr, *this){
 		itr->validate();
 	}
 	return true;
@@ -170,8 +170,8 @@ template <typename T> bool Container<T>::validate() {
  * \sa Container::store , Container::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> void Container<T>::append( Container<T> v) {
-	ldata.reserve(ldata.size() + v.size());
-	ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
+	reserve(size() + v.size());
+	ldata.insert( end(), v.begin(), v.end() );
 };
 
 
@@ -240,6 +240,11 @@ template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>
 template <typename T> int Container<T>::size() {
 	return ldata.size() ;
 };
+
+
+template <typename T> void Container<T>::resize ( int n) {
+	ldata.resize(n);
+}
 
 
 template <typename T> void Container<T>::reserve(int n) {

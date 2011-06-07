@@ -36,7 +36,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
@@ -94,12 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for VecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con__inherit__graph.svg" width="147" height="787" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con__inherit__graph.svg" width="147" height="814" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for VecCon:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con__coll__graph.svg" width="468" height="1272" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con__coll__graph.svg" width="468" height="1299" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_vec_con-members.html">List of all members.</a></p>
@@ -145,13 +146,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool VecCon::buildAndAppend </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> &gt;&#160;</td>
-          <td class="paramname"><em>FROM</em>, </td>
+          <td class="paramname"><em>vFrom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>WEIGHT</em>&#160;</td>
+          <td class="paramname"><em>vWeight</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,26 +201,34 @@ Public Member Functions</h2></td></tr>
         <span class="comment">// Now result is a vector that contains the values 11, 22 and 32.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#ae763eb37b721d401327c97016fb2fa54">append</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00132">132</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00134">134</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                      {
+<p>References <a class="el" href="class_container.html#afd87c69cb799ed7b434c29090083a285">Container&lt; Con &gt;::push_back()</a>, <a class="el" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">Container&lt; Con &gt;::reserve()</a>, and <a class="el" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">Container&lt; Con &gt;::size()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                        {
         BEGIN_RCPP
-        <span class="keywordflow">if</span> (FROM.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::append]: Error, FROM is empty&quot;</span>); }
-        <span class="keywordflow">if</span> (FROM.size() != WEIGHT.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::buildAndAppend]: Error, FROM.size() != WEIGHT.size()&quot;</span>); }
-        <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.reserve(<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.size() + FROM.size());
+        <span class="keywordflow">if</span> (vFrom.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::append]: Error, vFrom is empty&quot;</span>); }
+        <span class="keywordflow">if</span> (vFrom.size() != vWeight.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::buildAndAppend]: Error, vFrom.size() != vWeight.size()&quot;</span>); }
+        <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() + vFrom.size());
         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon;
-        std::vector&lt;double&gt;::iterator itrWeight = WEIGHT.begin();
+        std::vector&lt;double&gt;::iterator itrWeight = vWeight.begin();
 
-        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrFrom, FROM){
+        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrFrom, vFrom){
                 ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( itrFrom, *itrWeight) );
-                <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.push_back(ptCon);
+                <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">push_back</a>(ptCon);
                 itrWeight++;
         }
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
         END_RCPP
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_a2ab58248509550b1c99435a90ece59f1_cgraph.svg" width="427" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a4f6a58d420e063b51157e805dfb0b34c"></a><!-- doxytag: member="VecCon::erase" ref="a4f6a58d420e063b51157e805dfb0b34c" args="(std::vector&lt; int &gt; vFrom)" -->
@@ -299,17 +308,25 @@ Public Member Functions</h2></td></tr>
                 <span class="comment">// From:         11  Weight=     11.320000</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#ac911eb9746bc1d7620becd7cd54bb6c0" title="Selects the specified elements from the vecCom object.">select</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00453">453</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00455">455</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="_container_8h_source.html#l00021">Container&lt; Con &gt;::begin()</a>, <a class="el" href="_container_8h_source.html#l00022">Container&lt; Con &gt;::end()</a>, and <a class="el" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">Container&lt; Con &gt;::resize()</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
         std::vector&lt;ConPtr&gt;::iterator itr;
-        sort (<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin(), <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.end(), <a class="code" href="struct_compare_id.html">CompareId</a>());
+        sort (<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
         sort (vFrom.begin(), vFrom.end());
-        itr=set_difference (<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin(), <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.end(), vFrom.begin(), vFrom.end(), <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin(), <a class="code" href="struct_compare_id.html">CompareId</a>());
-        <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.resize(itr-<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin());
+        itr=set_difference (<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), <a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
+        <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">resize</a>(itr-<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>());
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_a4f6a58d420e063b51157e805dfb0b34c_cgraph.svg" width="336" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aee24ad1e9f3a8af771bef14cac0bf71d"></a><!-- doxytag: member="VecCon::getFrom" ref="aee24ad1e9f3a8af771bef14cac0bf71d" args="()" -->
@@ -356,13 +373,15 @@ Public Member Functions</h2></td></tr>
         <span class="comment">// Now result is a vector that contains the values 1, 2 and 3 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f" title="Getter of the Id values of the vector of Cons.">getId</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00296">296</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00298">298</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00027">Neuron::getFrom()</a>.</p>
 <div class="fragment"><pre class="fragment">                                            {
         std::vector&lt;NeuronPtr&gt; result;
         result.reserve(<a class="code" href="class_vec_con.html#aa9a397520b07fbeead0b6d252c1ea882" title="Size of the VecCon object.">numOfCons</a>());
-        <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>){
+        <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
                 result.push_back( itr-&gt;getFrom() );
         }
         <span class="keywordflow">return</span> result;
@@ -371,7 +390,16 @@ Public Member Functions</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_cgraph.svg" width="331" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_cgraph.svg" width="536" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_icgraph.svg" width="304" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -402,9 +430,9 @@ Here is the call graph for this function:</div>
                         <a class="code" href="class_vec_con.html" title="A vector of connections.">VecCon</a> MyVecCon;
                         std::vector&lt;int&gt; result;
 
-                        N1.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(10);
-                        N2.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(20);
-                        N3.<a class="code" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a>(30);
+                        N1.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(10);
+                        N2.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(20);
+                        N3.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(30);
 
                         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N1, 1.13) );     <span class="comment">// Create new Con and initialize ptCon</span>
                         MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
@@ -421,15 +449,15 @@ Here is the call graph for this function:</div>
         <span class="comment">// Now result is a vector that contains the values 10, 20 and 30.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00083">83</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00085">85</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
 
-<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00653">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00032">Neuron::getConId()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00655">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">                              {
         std::vector&lt;int&gt; result;
         result.reserve(<a class="code" href="class_vec_con.html#aa9a397520b07fbeead0b6d252c1ea882" title="Size of the VecCon object.">numOfCons</a>());
-        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>){
+        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
                 result.push_back(itr-&gt;getId());
         }
         <span class="keywordflow">return</span> result;
@@ -438,14 +466,16 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_a03d5dde143e166e68b01c9596573eb5f_cgraph.svg" width="312" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_a03d5dde143e166e68b01c9596573eb5f_cgraph.svg" width="518" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_a03d5dde143e166e68b01c9596573eb5f_icgraph.svg" width="288" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_a03d5dde143e166e68b01c9596573eb5f_icgraph.svg" width="456" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -497,13 +527,15 @@ Here is the caller graph for this function:</div>
         <span class="comment">// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f" title="Getter of the Id values of the vector of Cons.">getId</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00189">189</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00191">191</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00042">numOfCons()</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00037">Neuron::getWeight()</a>.</p>
 <div class="fragment"><pre class="fragment">                                            {
         std::vector&lt;double&gt; result;
         result.reserve(<a class="code" href="class_vec_con.html#aa9a397520b07fbeead0b6d252c1ea882" title="Size of the VecCon object.">numOfCons</a>());
-        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>){
+        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
                  result.push_back( itr-&gt;getWeight() );
         }
 
@@ -513,7 +545,16 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_aafa37c30d566b8784ac84d23a14b5638_cgraph.svg" width="342" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_aafa37c30d566b8784ac84d23a14b5638_cgraph.svg" width="547" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_aafa37c30d566b8784ac84d23a14b5638_icgraph.svg" width="326" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -578,9 +619,9 @@ Here is the call graph for this function:</div>
         <span class="comment">// Now, result is a numeric vector with the values  10.31, 3.16,  5.19 and 7.16.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd>setWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00566">566</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00568">568</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_vec_con_8cpp_source.html#l00505">select()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00507">select()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                        {
         <span class="keywordflow">return</span>  <a class="code" href="class_vec_con.html#ac911eb9746bc1d7620becd7cd54bb6c0" title="Selects the specified elements from the vecCom object.">select</a>(vFrom)-&gt;getWeight();
 }
@@ -588,7 +629,8 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_a0de571e8fde8e354887e0b43b8d00772_cgraph.svg" width="307" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_a0de571e8fde8e354887e0b43b8d00772_cgraph.svg" width="520" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -639,17 +681,26 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00042">42</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">Container&lt; Con &gt;::size()</a>.</p>
 
-<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00296">getFrom()</a>, <a class="el" href="_vec_con_8cpp_source.html#l00083">getId()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00189">getWeight()</a>.</p>
+<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00298">getFrom()</a>, <a class="el" href="_vec_con_8cpp_source.html#l00085">getId()</a>, <a class="el" href="_vec_con_8cpp_source.html#l00191">getWeight()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00051">Neuron::numOfCons()</a>.</p>
 <div class="fragment"><pre class="fragment">                       {
-        <span class="keywordflow">return</span> <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.size();
+        <span class="keywordflow">return</span> <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>();
 }
 </pre></div>
 <p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_aa9a397520b07fbeead0b6d252c1ea882_cgraph.svg" width="363" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_aa9a397520b07fbeead0b6d252c1ea882_icgraph.svg" width="512" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_aa9a397520b07fbeead0b6d252c1ea882_icgraph.svg" width="691" height="227" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -712,21 +763,29 @@ Here is the caller graph for this function:</div>
                 <span class="comment">// Now, result is a numeric vector with the values 1, 3, 5 and 7.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#a4f6a58d420e063b51157e805dfb0b34c" title="Erase the specified elements from the vecCom object.">erase</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00505">505</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00507">507</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="_container_8h_source.html#l00021">Container&lt; Con &gt;::begin()</a>, <a class="el" href="_container_8h_source.html#l00022">Container&lt; Con &gt;::end()</a>, and <a class="el" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">Container&lt; Con &gt;::size()</a>.</p>
 
-<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00566">getWeight()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00628">setWeight()</a>.</p>
+<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00568">getWeight()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00630">setWeight()</a>.</p>
 <div class="fragment"><pre class="fragment">                                               {
         <a class="code" href="_a_m_o_r_e_8h.html#ace651cf590286fe2630c2c353a49a1db">VecConPtr</a> result(<span class="keyword">new</span> <a class="code" href="class_vec_con.html" title="A vector of connections.">VecCon</a> );
-        result-&gt;reserve(<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.size());
-        sort (<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin(), <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.end(), <a class="code" href="struct_compare_id.html">CompareId</a>());
+        result-&gt;reserve(<a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>());
+        sort (<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
         sort (vFrom.begin(), vFrom.end());
-        set_intersection(<a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.begin(), <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.end(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;ldata) , <a class="code" href="struct_compare_id.html">CompareId</a>());
+        set_intersection(<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;ldata) , <a class="code" href="struct_compare_id.html">CompareId</a>());
 
         <span class="keywordflow">return</span> result;
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_ac911eb9746bc1d7620becd7cd54bb6c0_cgraph.svg" width="336" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -790,15 +849,17 @@ Here is the caller graph for this function:</div>
         <span class="comment">// Now result is a vector that contains the values 10, 20 and 30.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#aee24ad1e9f3a8af771bef14cac0bf71d" title="Getter of the from field of the Con objects related to VecCon.">getFrom</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00351">351</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00353">353</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">Container&lt; Con &gt;::size()</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00042">Neuron::setFrom()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                     {
         BEGIN_RCPP
                 <span class="keywordflow">if</span> (vFrom.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setFrom]: Error, w is empty&quot;</span>); }
-                <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != ldata.size()&quot;</span>); }
+                <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != ldata.size()&quot;</span>); }
                 std::vector&lt;NeuronPtr&gt;::iterator itrFrom = vFrom.begin();
-                <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr , <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>)     {
+                <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr , *<span class="keyword">this</span>)     {
                         itr-&gt;setFrom( *itrFrom );
                         itrFrom++;
                 }
@@ -806,6 +867,22 @@ Here is the caller graph for this function:</div>
                 END_RCPP
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_ad5327f9345cc4dee223ba7f1038ad9ec_cgraph.svg" width="342" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_ad5327f9345cc4dee223ba7f1038ad9ec_icgraph.svg" width="304" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aaa0a177cb55c86e7506f02d712c06604"></a><!-- doxytag: member="VecCon::setWeight" ref="aaa0a177cb55c86e7506f02d712c06604" args="(std::vector&lt; double &gt; vWeight, std::vector&lt; int &gt; vFrom)" -->
@@ -884,9 +961,9 @@ Here is the caller graph for this function:</div>
         <span class="comment">// Now, result is a numeric vector with the values  1000.10, 9.12, 3000.30, 4.14, 5000.50, 6.18, 7000.70, 8.14, 2.14, 1.26 and 11.32 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd>getWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00628">628</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00630">630</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_vec_con_8cpp_source.html#l00505">select()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00507">select()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                  {
         BEGIN_RCPP
         <span class="keywordflow">return</span>  <a class="code" href="class_vec_con.html#ac911eb9746bc1d7620becd7cd54bb6c0" title="Selects the specified elements from the vecCom object.">select</a>(vFrom)-&gt;setWeight(vWeight);
@@ -896,7 +973,8 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_aaa0a177cb55c86e7506f02d712c06604_cgraph.svg" width="307" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_aaa0a177cb55c86e7506f02d712c06604_cgraph.svg" width="520" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -956,15 +1034,17 @@ Here is the call graph for this function:</div>
         <span class="comment">// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a> and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00242">242</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00244">244</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00014">Container&lt; Con &gt;::ldata</a>.</p>
+<p>References <a class="el" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">Container&lt; Con &gt;::size()</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00047">Neuron::setWeight()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                  {
         BEGIN_RCPP
         <span class="keywordflow">if</span> (vWeight.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setWeight]: Error, vWeight is empty&quot;</span>); }
-        <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()&quot;</span>); }
+        <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()&quot;</span>); }
         std::vector&lt;double&gt;::iterator itrWeight = vWeight.begin();
-        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, <a class="code" href="class_container.html#aef055b4e4f94e227cc8a2124af13c177">ldata</a>){
+        <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
                 itr-&gt;setWeight( *itrWeight );
                 itrWeight++;
         }
@@ -972,6 +1052,22 @@ Here is the call graph for this function:</div>
         END_RCPP
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_a5ccf0a3d9ccd6b744d22ab0e508f8010_cgraph.svg" width="352" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_a5ccf0a3d9ccd6b744d22ab0e508f8010_icgraph.svg" width="326" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af008396d3982fb7ccf1af9618b89937c"></a><!-- doxytag: member="VecCon::validate" ref="af008396d3982fb7ccf1af9618b89937c" args="()" -->
@@ -1001,9 +1097,11 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3">Container&lt; Con &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00653">653</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_vec_con_8cpp_source.html#l00655">655</a> of file <a class="el" href="_vec_con_8cpp_source.html">VecCon.cpp</a>.</p>
 
-<p>References <a class="el" href="_vec_con_8cpp_source.html#l00083">getId()</a>.</p>
+<p>References <a class="el" href="_vec_con_8cpp_source.html#l00085">getId()</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00066">Neuron::validate()</a>.</p>
 <div class="fragment"><pre class="fragment">                      {
         BEGIN_RCPP
 
@@ -1022,7 +1120,16 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_vec_con_af008396d3982fb7ccf1af9618b89937c_cgraph.svg" width="483" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_vec_con_af008396d3982fb7ccf1af9618b89937c_cgraph.svg" width="688" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_vec_con_af008396d3982fb7ccf1af9618b89937c_icgraph.svg" width="299" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -1037,7 +1144,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_vec_con.html">VecCon</a>      </li>
-      <li class="footer">Generated on Tue Jun 7 2011 00:12:05 for AMORE++ by&#160;
+      <li class="footer">Generated on Tue Jun 7 2011 04:02:32 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

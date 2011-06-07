@@ -13,7 +13,8 @@ A vector of connections.
 
 
 
-Inheritance diagram for VecCon:\nopagebreak
+Inheritance diagram for VecCon:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +23,8 @@ Inheritance diagram for VecCon:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for VecCon:\nopagebreak
+Collaboration diagram for VecCon:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -73,8 +75,8 @@ Definition at line 17 of file VecCon.h.
 \index{buildAndAppend@{buildAndAppend}!VecCon@{VecCon}}
 \subsubsection[{buildAndAppend}]{\setlength{\rightskip}{0pt plus 5cm}bool VecCon::buildAndAppend (
 \begin{DoxyParamCaption}
-\item[{std::vector$<$ {\bf NeuronPtr} $>$}]{FROM, }
-\item[{std::vector$<$ double $>$}]{WEIGHT}
+\item[{std::vector$<$ {\bf NeuronPtr} $>$}]{vFrom, }
+\item[{std::vector$<$ double $>$}]{vWeight}
 \end{DoxyParamCaption}
 )}}
 \label{class_vec_con_a2ab58248509550b1c99435a90ece59f1}
@@ -126,34 +128,46 @@ This function provides a convenient way of populating a \hyperlink{class_vec_con
 \end{DoxySeeAlso}
 
 
-Definition at line 132 of file VecCon.cpp.
+Definition at line 134 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::push\_\-back(), Container$<$ Con $>$::reserve(), and Container$<$ Con $>$::size().
 
 
 \begin{DoxyCode}
                                                                                  
-           {
+             {
         BEGIN_RCPP
-        if (FROM.empty()) { throw std::range_error("[VecCon::append]: Error, FROM
-       is empty"); }
-        if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[VecCon::bui
-      ldAndAppend]: Error, FROM.size() != WEIGHT.size()"); }
-        ldata.reserve(ldata.size() + FROM.size());
+        if (vFrom.empty()) { throw std::range_error("[VecCon::append]: Error, vFr
+      om is empty"); }
+        if (vFrom.size() != vWeight.size() ) { throw std::range_error("[VecCon::b
+      uildAndAppend]: Error, vFrom.size() != vWeight.size()"); }
+        reserve(size() + vFrom.size());
         ConPtr ptCon;
-        std::vector<double>::iterator itrWeight = WEIGHT.begin();
+        std::vector<double>::iterator itrWeight = vWeight.begin();
 
-        foreach (NeuronPtr itrFrom, FROM){
+        foreach (NeuronPtr itrFrom, vFrom){
                 ptCon.reset(  new Con( itrFrom, *itrWeight) );
-                ldata.push_back(ptCon);
+                push_back(ptCon);
                 itrWeight++;
         }
         return true;
         END_RCPP
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=392pt]{class_vec_con_a2ab58248509550b1c99435a90ece59f1_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_vec_con_a4f6a58d420e063b51157e805dfb0b34c}{
 \index{VecCon@{VecCon}!erase@{erase}}
 \index{erase@{erase}!VecCon@{VecCon}}
@@ -237,23 +251,35 @@ Provides a convenient way of removing some \hyperlink{class_con}{Con} objects fr
 \end{DoxySeeAlso}
 
 
-Definition at line 453 of file VecCon.cpp.
+Definition at line 455 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::begin(), Container$<$ Con $>$::end(), and Container$<$ Con $>$::resize().
 
 
 \begin{DoxyCode}
                                          {
         std::vector<ConPtr>::iterator itr;
-        sort (ldata.begin(), ldata.end(), CompareId());
+        sort (begin(), end(), CompareId());
         sort (vFrom.begin(), vFrom.end());
-        itr=set_difference (ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(
-      ), ldata.begin(), CompareId());
-        ldata.resize(itr-ldata.begin());
+        itr=set_difference (begin(), end(), vFrom.begin(), vFrom.end(), begin(), 
+      CompareId());
+        resize(itr-begin());
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_vec_con_a4f6a58d420e063b51157e805dfb0b34c_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d}{
 \index{VecCon@{VecCon}!getFrom@{getFrom}}
 \index{getFrom@{getFrom}!VecCon@{VecCon}}
@@ -307,18 +333,22 @@ An std::vector$<$NeuronPtr$>$ with the pointer to the incoming neurons.
 \end{DoxySeeAlso}
 
 
-Definition at line 296 of file VecCon.cpp.
+Definition at line 298 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References numOfCons().
+
+
+
+Referenced by Neuron::getFrom().
 
 
 \begin{DoxyCode}
                                             {
         std::vector<NeuronPtr> result;
         result.reserve(numOfCons());
-        foreach(ConPtr itr, ldata){
+        foreach(ConPtr itr, *this){
                 result.push_back( itr->getFrom() );
         }
         return result;
@@ -326,11 +356,24 @@ References Container$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_cgraph}
+\includegraphics[width=400pt]{class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_vec_con_aee24ad1e9f3a8af771bef14cac0bf71d_icgraph}
 \end{center}
 \end{figure}
 
@@ -392,22 +435,22 @@ An std::vector$<$int$>$ that contains the Ids
 \end{DoxySeeAlso}
 
 
-Definition at line 83 of file VecCon.cpp.
+Definition at line 85 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References numOfCons().
 
 
 
-Referenced by validate().
+Referenced by Neuron::getConId(), and validate().
 
 
 \begin{DoxyCode}
                               {
         std::vector<int> result;
         result.reserve(numOfCons());
-        foreach (ConPtr itr, ldata){
+        foreach (ConPtr itr, *this){
                 result.push_back(itr->getId());
         }
         return result;
@@ -415,22 +458,24 @@ Referenced by validate().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=306pt]{class_vec_con_a03d5dde143e166e68b01c9596573eb5f_cgraph}
+\includegraphics[width=400pt]{class_vec_con_a03d5dde143e166e68b01c9596573eb5f_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{class_vec_con_a03d5dde143e166e68b01c9596573eb5f_icgraph}
+\includegraphics[width=400pt]{class_vec_con_a03d5dde143e166e68b01c9596573eb5f_icgraph}
 \end{center}
 \end{figure}
 
@@ -488,18 +533,22 @@ A numeric (double) vector with the weights
 \end{DoxySeeAlso}
 
 
-Definition at line 189 of file VecCon.cpp.
+Definition at line 191 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References numOfCons().
+
+
+
+Referenced by Neuron::getWeight().
 
 
 \begin{DoxyCode}
                                             {
         std::vector<double> result;
         result.reserve(numOfCons());
-        foreach (ConPtr itr, ldata){
+        foreach (ConPtr itr, *this){
                  result.push_back( itr->getWeight() );
         }
 
@@ -508,11 +557,24 @@ References Container$<$ Con $>$::ldata, and numOfCons().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{class_vec_con_aafa37c30d566b8784ac84d23a14b5638_cgraph}
+\includegraphics[width=400pt]{class_vec_con_aafa37c30d566b8784ac84d23a14b5638_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_vec_con_aafa37c30d566b8784ac84d23a14b5638_icgraph}
 \end{center}
 \end{figure}
 
@@ -586,7 +648,7 @@ setWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples
 \end{DoxySeeAlso}
 
 
-Definition at line 566 of file VecCon.cpp.
+Definition at line 568 of file VecCon.cpp.
 
 
 
@@ -600,11 +662,12 @@ References select().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{class_vec_con_a0de571e8fde8e354887e0b43b8d00772_cgraph}
+\includegraphics[width=400pt]{class_vec_con_a0de571e8fde8e354887e0b43b8d00772_cgraph}
 \end{center}
 \end{figure}
 
@@ -668,21 +731,34 @@ Definition at line 42 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::size().
 
 
 
-Referenced by getFrom(), getId(), and getWeight().
+Referenced by getFrom(), getId(), getWeight(), and Neuron::numOfCons().
 
 
 \begin{DoxyCode}
                        {
-        return ldata.size();
+        return size();
 }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_vec_con_aa9a397520b07fbeead0b6d252c1ea882_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -756,11 +832,11 @@ Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects f
 \end{DoxySeeAlso}
 
 
-Definition at line 505 of file VecCon.cpp.
+Definition at line 507 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::begin(), Container$<$ Con $>$::end(), and Container$<$ Con $>$::size().
 
 
 
@@ -770,15 +846,27 @@ Referenced by getWeight(), and setWeight().
 \begin{DoxyCode}
                                                {
         VecConPtr result(new VecCon );
-        result->reserve(ldata.size());
-        sort (ldata.begin(), ldata.end(), CompareId());
+        result->reserve(size());
+        sort (begin(), end(), CompareId());
         sort (vFrom.begin(), vFrom.end());
-        set_intersection(ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(), 
-      back_inserter(result->ldata) , CompareId());
+        set_intersection(begin(), end(), vFrom.begin(), vFrom.end(), back_inserte
+      r(result->ldata) , CompareId());
 
         return result;
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_vec_con_ac911eb9746bc1d7620becd7cd54bb6c0_cgraph}
+\end{center}
+\end{figure}
+
+
 
 
 Here is the caller graph for this function:\nopagebreak
@@ -853,11 +941,15 @@ true if not exception is thrown
 \end{DoxySeeAlso}
 
 
-Definition at line 351 of file VecCon.cpp.
+Definition at line 353 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::size().
+
+
+
+Referenced by Neuron::setFrom().
 
 
 \begin{DoxyCode}
@@ -865,10 +957,10 @@ References Container$<$ Con $>$::ldata.
         BEGIN_RCPP
                 if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFro
       m]: Error, w is empty"); }
-                if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++
-       VecCon::setFrom]: Error, w.size() != ldata.size()"); }
+                if (vFrom.size() != size() ) { throw std::range_error("[C++ VecCo
+      n::setFrom]: Error, w.size() != ldata.size()"); }
                 std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
-                foreach(ConPtr itr , ldata)     {
+                foreach(ConPtr itr , *this)     {
                         itr->setFrom( *itrFrom );
                         itrFrom++;
                 }
@@ -876,6 +968,30 @@ References Container$<$ Con $>$::ldata.
                 END_RCPP
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_vec_con_ad5327f9345cc4dee223ba7f1038ad9ec_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_vec_con_ad5327f9345cc4dee223ba7f1038ad9ec_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_vec_con_aaa0a177cb55c86e7506f02d712c06604}{
 \index{VecCon@{VecCon}!setWeight@{setWeight}}
 \index{setWeight@{setWeight}!VecCon@{VecCon}}
@@ -954,7 +1070,7 @@ getWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples
 \end{DoxySeeAlso}
 
 
-Definition at line 628 of file VecCon.cpp.
+Definition at line 630 of file VecCon.cpp.
 
 
 
@@ -971,11 +1087,12 @@ References select().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{class_vec_con_aaa0a177cb55c86e7506f02d712c06604_cgraph}
+\includegraphics[width=400pt]{class_vec_con_aaa0a177cb55c86e7506f02d712c06604_cgraph}
 \end{center}
 \end{figure}
 
@@ -1043,11 +1160,15 @@ true in case no exception is thrown
 \end{DoxySeeAlso}
 
 
-Definition at line 242 of file VecCon.cpp.
+Definition at line 244 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::size().
+
+
+
+Referenced by Neuron::setWeight().
 
 
 \begin{DoxyCode}
@@ -1055,10 +1176,10 @@ References Container$<$ Con $>$::ldata.
         BEGIN_RCPP
         if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: 
       Error, vWeight is empty"); }
-        if (vWeight.size() != ldata.size() ) { throw std::range_error("[C++ VecCo
-      n::setWeight]: Error, vWeight.size() != ldata.size()"); }
+        if (vWeight.size() != size() ) { throw std::range_error("[C++ VecCon::set
+      Weight]: Error, vWeight.size() != ldata.size()"); }
         std::vector<double>::iterator itrWeight = vWeight.begin();
-        foreach (ConPtr itr, ldata){
+        foreach (ConPtr itr, *this){
                 itr->setWeight( *itrWeight );
                 itrWeight++;
         }
@@ -1066,6 +1187,30 @@ References Container$<$ Con $>$::ldata.
         END_RCPP
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_vec_con_a5ccf0a3d9ccd6b744d22ab0e508f8010_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_vec_con_a5ccf0a3d9ccd6b744d22ab0e508f8010_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_vec_con_af008396d3982fb7ccf1af9618b89937c}{
 \index{VecCon@{VecCon}!validate@{validate}}
 \index{validate@{validate}!VecCon@{VecCon}}
@@ -1098,11 +1243,15 @@ Reimplemented from \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}
 
 
 
-Definition at line 653 of file VecCon.cpp.
+Definition at line 655 of file VecCon.cpp.
 
 
 
 References getId().
+
+
+
+Referenced by Neuron::validate().
 
 
 \begin{DoxyCode}
@@ -1124,11 +1273,24 @@ References getId().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=400pt]{class_vec_con_af008396d3982fb7ccf1af9618b89937c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_vec_con_af008396d3982fb7ccf1af9618b89937c_icgraph}
 \end{center}
 \end{figure}
 

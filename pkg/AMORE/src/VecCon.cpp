@@ -40,8 +40,10 @@
  * \sa Container::size (alias)
  */
 int  VecCon::numOfCons() {
-	return ldata.size();
+	return size();
 }
+
+
 
 
 
@@ -83,7 +85,7 @@ int  VecCon::numOfCons() {
 std::vector<int>  VecCon::getId() {
 	std::vector<int> result;
 	result.reserve(numOfCons());
-	foreach (ConPtr itr, ldata){
+	foreach (ConPtr itr, *this){
 		result.push_back(itr->getId());
 	}
 	return result;
@@ -129,17 +131,17 @@ std::vector<int>  VecCon::getId() {
  *
  * \sa append and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
-bool VecCon::buildAndAppend	( std::vector<NeuronPtr> FROM, std::vector<double> WEIGHT){
+bool VecCon::buildAndAppend	( std::vector<NeuronPtr> vFrom, std::vector<double> vWeight){
 	BEGIN_RCPP
-	if (FROM.empty()) { throw std::range_error("[VecCon::append]: Error, FROM is empty"); }
-	if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[VecCon::buildAndAppend]: Error, FROM.size() != WEIGHT.size()"); }
-	ldata.reserve(ldata.size() + FROM.size());
+	if (vFrom.empty()) { throw std::range_error("[VecCon::append]: Error, vFrom is empty"); }
+	if (vFrom.size() != vWeight.size() ) { throw std::range_error("[VecCon::buildAndAppend]: Error, vFrom.size() != vWeight.size()"); }
+	reserve(size() + vFrom.size());
 	ConPtr ptCon;
-	std::vector<double>::iterator itrWeight = WEIGHT.begin();
+	std::vector<double>::iterator itrWeight = vWeight.begin();
 
-	foreach (NeuronPtr itrFrom, FROM){
+	foreach (NeuronPtr itrFrom, vFrom){
  		ptCon.reset(  new Con( itrFrom, *itrWeight) );
- 		ldata.push_back(ptCon);
+ 		push_back(ptCon);
 		itrWeight++;
 	}
 	return true;
@@ -189,7 +191,7 @@ bool VecCon::buildAndAppend	( std::vector<NeuronPtr> FROM, std::vector<double> W
 std::vector<double>	VecCon::getWeight ( ) {
 	std::vector<double> result;
 	result.reserve(numOfCons());
-	foreach (ConPtr itr, ldata){
+	foreach (ConPtr itr, *this){
 		 result.push_back( itr->getWeight() );
 	}
 
@@ -242,9 +244,9 @@ std::vector<double>	VecCon::getWeight ( ) {
 bool VecCon::setWeight (std::vector<double> vWeight)  {
 	BEGIN_RCPP
 	if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: Error, vWeight is empty"); }
-	if (vWeight.size() != ldata.size() ) { throw std::range_error("[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()"); }
+	if (vWeight.size() != size() ) { throw std::range_error("[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()"); }
 	std::vector<double>::iterator itrWeight = vWeight.begin();
-	foreach (ConPtr itr, ldata){
+	foreach (ConPtr itr, *this){
 		itr->setWeight( *itrWeight );
 		itrWeight++;
 	}
@@ -296,7 +298,7 @@ bool VecCon::setWeight (std::vector<double> vWeight)  {
 std::vector<NeuronPtr> VecCon::getFrom 	( ) {
 	std::vector<NeuronPtr> result;
 	result.reserve(numOfCons());
-	foreach(ConPtr itr, ldata){
+	foreach(ConPtr itr, *this){
 		result.push_back( itr->getFrom() );
 	}
 	return result;
@@ -351,9 +353,9 @@ std::vector<NeuronPtr> VecCon::getFrom 	( ) {
 bool	VecCon::setFrom	( std::vector<NeuronPtr> vFrom){
 	BEGIN_RCPP
 		if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFrom]: Error, w is empty"); }
-		if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++ VecCon::setFrom]: Error, w.size() != ldata.size()"); }
+		if (vFrom.size() != size() ) { throw std::range_error("[C++ VecCon::setFrom]: Error, w.size() != ldata.size()"); }
 		std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
-		foreach(ConPtr itr , ldata)	{
+		foreach(ConPtr itr , *this)	{
 			itr->setFrom( *itrFrom );
 			itrFrom++;
 		}
@@ -452,10 +454,10 @@ struct CompareId {
  */
 void VecCon::erase ( std::vector<int> vFrom ){
 	std::vector<ConPtr>::iterator itr;
-	sort (ldata.begin(), ldata.end(), CompareId());
+	sort (begin(), end(), CompareId());
 	sort (vFrom.begin(), vFrom.end());
-	itr=set_difference (ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(), ldata.begin(), CompareId());
-	ldata.resize(itr-ldata.begin());
+	itr=set_difference (begin(), end(), vFrom.begin(), vFrom.end(), begin(), CompareId());
+	resize(itr-begin());
 }
 
 //! Selects the specified elements from the vecCom object.
@@ -504,10 +506,10 @@ void VecCon::erase ( std::vector<int> vFrom ){
 */
 VecConPtr VecCon::select ( std::vector<int> vFrom ){
 	VecConPtr result(new VecCon );
-	result->reserve(ldata.size());
-	sort (ldata.begin(), ldata.end(), CompareId());
+	result->reserve(size());
+	sort (begin(), end(), CompareId());
 	sort (vFrom.begin(), vFrom.end());
-	set_intersection(ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(), back_inserter(result->ldata) , CompareId());
+	set_intersection(begin(), end(), vFrom.begin(), vFrom.end(), back_inserter(result->ldata) , CompareId());
 
 	return result;
 }

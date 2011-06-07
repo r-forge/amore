@@ -36,6 +36,10 @@ class Neuron;
 
 #define foreach         BOOST_FOREACH
 
+#ifndef size_type
+#define size_type unsigned int
+#endif
+
 typedef boost::shared_ptr<Con> 					ConPtr;
 typedef boost::shared_ptr<Neuron>				NeuronPtr;
 typedef boost::weak_ptr<Neuron>					NeuronWeakPtr;

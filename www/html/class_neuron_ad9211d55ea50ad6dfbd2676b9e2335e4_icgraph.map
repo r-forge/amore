@@ -1,5 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_con.html#aad72314592bebdcae6c68a67d2b4a505" title="A getter of the Id of the Neuron pointed by the from field." alt="" coords="155,31,267,57"/>
-<area shape="rect" id="node5" href="$class_con.html#ab85838575b5e01f3b8073136f2102922" title="Pretty print of the Con information." alt="" coords="323,5,405,32"/>
-<area shape="rect" id="node7" href="$class_con.html#af5f836a7b0988b3d9113589b2959d5e6" title="Object validator." alt="" coords="315,56,413,83"/>
+<area shape="rect" id="node3" href="$class_neuron.html#a255c3597520c730d798218f7174eff1b" title="Neuron::show" alt="" coords="163,5,264,32"/>
+<area shape="rect" id="node5" href="$class_neuron.html#a95327aa80a9ec949491f214a0c159b5a" title="Neuron::validate" alt="" coords="156,56,271,83"/>
 </map>
