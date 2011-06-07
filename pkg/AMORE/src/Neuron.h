@@ -18,23 +18,32 @@ class Neuron {
 	/*!
 	 * The Neuron Id provides a name to the neuron. This value is not expected to be used neither during simulation nor training but it provides an easy reference for human readers.
 	 */
-	int Id;
+	int id;
 
 	//! A vector of input connections
 	/*!
 	 *
 	 */
 
-	//! \todo restore VecCon<Con> listCon;
-	// Con VecCon;
+	VecCon con;
 	double outputValue;
 public:
 
-	Neuron();
-	Neuron(int Id);
-	~Neuron();
-	int  getId	();
-	void setId	(int id);
+							Neuron		( );
+							Neuron		(int Id);
+							Neuron		(int Id, VecCon Con);
+							~Neuron		( );
+						int	getId		( );
+					void	setId		(int Id);
+	std::vector<NeuronPtr>	getFrom		();
+		std::vector<int>	getConId	();
+		std::vector<double>	getWeight	();
+					bool	setFrom		(NeuronPtr vFrom);
+					bool	setWeight	(std::vector<double> vWeight);
+						int	numOfCons	();
+					bool	show		();
+					bool	validate	();
+
 };
 
 

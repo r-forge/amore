@@ -36,7 +36,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
@@ -92,22 +91,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="class_neuron.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_neuron_8h_source.html">Neuron.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Neuron:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron__coll__graph.svg" width="468" height="1662" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_neuron-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a05698a11ac18b6cee34d18f63681ddcc">Neuron</a> (int <a class="el" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680">Id</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a05698a11ac18b6cee34d18f63681ddcc">Neuron</a> (int Id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#af6ba81347cc25d4d5d256dba2c4e441a">Neuron</a> (int Id, <a class="el" href="class_vec_con.html">VecCon</a> <a class="el" href="class_con.html">Con</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a94a250ce7e167760e593979b899745b1">~Neuron</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aefc6637d3b0a20669af3b7e92a7bf209">setId</a> (int id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a> (int Id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a66e3800037d2789a8fe7b73996c14f84">getFrom</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aac7d538b4a5087f730ba80f19852bced">getConId</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a3349c0a2053e35afa5b7036bb816f8c6">getWeight</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a2741d3516b532c0b4af12c1f4ebd3c39">setFrom</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> vFrom)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ab067bfe507f5386eccc860d4ad2d0bca">setWeight</a> (std::vector&lt; double &gt; vWeight)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ae447dce39ed04581609a83d742b585d1">numOfCons</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a255c3597520c730d798218f7174eff1b">show</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a95327aa80a9ec949491f214a0c159b5a">validate</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680">Id</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An integer variable with the <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> Id.  <a href="#a72bb327a7c5c865e6748a4e074ce0680"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aef4b01c293054fa2e5419afd56afd628">id</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An integer variable with the <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a> Id.  <a href="#aef4b01c293054fa2e5419afd56afd628"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vec_con.html">VecCon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616">con</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of input connections.  <a href="#a1451f2424a8f9e46ca643d03ff98a616"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ada029047646c36e525a6a1b77cafc03c">outputValue</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of input connections.  <a href="#ada029047646c36e525a6a1b77cafc03c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A class to handle the information contained in a general <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>. </p>
@@ -150,7 +165,37 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00013">13</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>(<a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>), <a class="code" href="class_neuron.html#ada029047646c36e525a6a1b77cafc03c" title="A vector of input connections.">outputValue</a>(0.0) {};
+<div class="fragment"><pre class="fragment">: Id(Id), <a class="code" href="class_neuron.html#ada029047646c36e525a6a1b77cafc03c">outputValue</a>(0.0) {};
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="af6ba81347cc25d4d5d256dba2c4e441a"></a><!-- doxytag: member="Neuron::Neuron" ref="af6ba81347cc25d4d5d256dba2c4e441a" args="(int Id, VecCon Con)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Neuron::Neuron </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vec_con.html">VecCon</a>&#160;</td>
+          <td class="paramname"><em>Con</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00014">14</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">: Id(Id), Con(Con), <a class="code" href="class_neuron.html#ada029047646c36e525a6a1b77cafc03c">outputValue</a>(0.0) {} ;
 </pre></div>
 </div>
 </div>
@@ -168,12 +213,74 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00014">14</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00015">15</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{};
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aac7d538b4a5087f730ba80f19852bced"></a><!-- doxytag: member="Neuron::getConId" ref="aac7d538b4a5087f730ba80f19852bced" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; Neuron::getConId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00032">32</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00085">VecCon::getId()</a>.</p>
+<div class="fragment"><pre class="fragment">                                  {
+        <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f" title="Getter of the Id values of the vector of Cons.">getId</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_aac7d538b4a5087f730ba80f19852bced_cgraph.svg" width="691" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a66e3800037d2789a8fe7b73996c14f84"></a><!-- doxytag: member="Neuron::getFrom" ref="a66e3800037d2789a8fe7b73996c14f84" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> &gt; Neuron::getFrom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00027">27</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00298">VecCon::getFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                  {
+        <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#aee24ad1e9f3a8af771bef14cac0bf71d" title="Getter of the from field of the Con objects related to VecCon.">getFrom</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a66e3800037d2789a8fe7b73996c14f84_cgraph.svg" width="704" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ad9211d55ea50ad6dfbd2676b9e2335e4"></a><!-- doxytag: member="Neuron::getId" ref="ad9211d55ea50ad6dfbd2676b9e2335e4" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -188,16 +295,118 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00017">17</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00018">18</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00021">Id</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00055">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00066">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">                  {
-        <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>;
+        <span class="keywordflow">return</span> Id;
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4_icgraph.svg" width="278" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a class="anchor" id="aefc6637d3b0a20669af3b7e92a7bf209"></a><!-- doxytag: member="Neuron::setId" ref="aefc6637d3b0a20669af3b7e92a7bf209" args="(int id)" -->
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3349c0a2053e35afa5b7036bb816f8c6"></a><!-- doxytag: member="Neuron::getWeight" ref="a3349c0a2053e35afa5b7036bb816f8c6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; Neuron::getWeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00037">37</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00191">VecCon::getWeight()</a>.</p>
+<div class="fragment"><pre class="fragment">                                          {
+        <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a3349c0a2053e35afa5b7036bb816f8c6_cgraph.svg" width="726" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae447dce39ed04581609a83d742b585d1"></a><!-- doxytag: member="Neuron::numOfCons" ref="ae447dce39ed04581609a83d742b585d1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neuron::numOfCons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00051">51</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00042">VecCon::numOfCons()</a>.</p>
+<div class="fragment"><pre class="fragment">                          {
+        <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#aa9a397520b07fbeead0b6d252c1ea882" title="Size of the VecCon object.">numOfCons</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_ae447dce39ed04581609a83d742b585d1_cgraph.svg" width="552" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2741d3516b532c0b4af12c1f4ebd3c39"></a><!-- doxytag: member="Neuron::setFrom" ref="a2741d3516b532c0b4af12c1f4ebd3c39" args="(NeuronPtr vFrom)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Neuron::setFrom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td>
+          <td class="paramname"><em>vFrom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00042">42</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00353">VecCon::setFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                 {
+        <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#ad5327f9345cc4dee223ba7f1038ad9ec" title="Setter of the from fields of the Con objects related to VecCon.">setFrom</a>(vFrom);
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a2741d3516b532c0b4af12c1f4ebd3c39_cgraph.svg" width="510" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6eb17a0d297b8c65170911aff37ba968"></a><!-- doxytag: member="Neuron::setId" ref="a6eb17a0d297b8c65170911aff37ba968" args="(int Id)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -205,29 +414,153 @@ Private Attributes</h2></td></tr>
           <td class="memname">void Neuron::setId </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>Id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00021">21</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00022">22</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00021">Id</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00021">id</a>.</p>
 <div class="fragment"><pre class="fragment">                         {
-        <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>=id;
+        Id=<a class="code" href="class_neuron.html#aef4b01c293054fa2e5419afd56afd628" title="An integer variable with the Neuron Id.">id</a>;
 }
 </pre></div>
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a72bb327a7c5c865e6748a4e074ce0680"></a><!-- doxytag: member="Neuron::Id" ref="a72bb327a7c5c865e6748a4e074ce0680" args="" -->
+<a class="anchor" id="ab067bfe507f5386eccc860d4ad2d0bca"></a><!-- doxytag: member="Neuron::setWeight" ref="ab067bfe507f5386eccc860d4ad2d0bca" args="(std::vector&lt; double &gt; vWeight)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680">Neuron::Id</a><code> [private]</code></td>
+          <td class="memname">bool Neuron::setWeight </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>vWeight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00047">47</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00244">VecCon::setWeight()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                   {
+        <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#a5ccf0a3d9ccd6b744d22ab0e508f8010" title="Setter of the weight field of the Con objects related to VecCon.">setWeight</a>(vWeight);
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_ab067bfe507f5386eccc860d4ad2d0bca_cgraph.svg" width="531" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a255c3597520c730d798218f7174eff1b"></a><!-- doxytag: member="Neuron::show" ref="a255c3597520c730d798218f7174eff1b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Neuron::show </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00055">55</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00018">getId()</a>, and <a class="el" href="_container_8cpp_source.html#l00093">Container&lt; T &gt;::show()</a>.</p>
+<div class="fragment"><pre class="fragment">                                  {
+        Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+        Rprintf(<span class="stringliteral">&quot;\n Id: &quot;</span>, <a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a>());
+        Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+        <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
+        Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a255c3597520c730d798218f7174eff1b_cgraph.svg" width="280" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a95327aa80a9ec949491f214a0c159b5a"></a><!-- doxytag: member="Neuron::validate" ref="a95327aa80a9ec949491f214a0c159b5a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Neuron::validate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00066">66</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00028">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00018">getId()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00655">VecCon::validate()</a>.</p>
+<div class="fragment"><pre class="fragment">                          {
+        BEGIN_RCPP
+        <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a>() == NA_INTEGER )             <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ Neuron::validate]: Error, Id is NA.&quot;</span>);
+        <a class="code" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616" title="A vector of input connections.">con</a>.<a class="code" href="class_vec_con.html#af008396d3982fb7ccf1af9618b89937c" title="Object validator.">validate</a>();
+        <span class="keywordflow">return</span>(TRUE);
+        END_RCPP
+
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a95327aa80a9ec949491f214a0c159b5a_cgraph.svg" width="854" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a1451f2424a8f9e46ca643d03ff98a616"></a><!-- doxytag: member="Neuron::con" ref="a1451f2424a8f9e46ca643d03ff98a616" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vec_con.html">VecCon</a> <a class="el" href="class_neuron.html#a1451f2424a8f9e46ca643d03ff98a616">Neuron::con</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A vector of input connections. </p>
+
+<p>Definition at line <a class="el" href="_neuron_8h_source.html#l00028">28</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00032">getConId()</a>, <a class="el" href="_neuron_8cpp_source.html#l00027">getFrom()</a>, <a class="el" href="_neuron_8cpp_source.html#l00037">getWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00051">numOfCons()</a>, <a class="el" href="_neuron_8cpp_source.html#l00042">setFrom()</a>, <a class="el" href="_neuron_8cpp_source.html#l00047">setWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00055">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00066">validate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef4b01c293054fa2e5419afd56afd628"></a><!-- doxytag: member="Neuron::id" ref="aef4b01c293054fa2e5419afd56afd628" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_neuron.html#aef4b01c293054fa2e5419afd56afd628">Neuron::id</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -238,7 +571,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00021">21</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00017">getId()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00021">setId()</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00022">setId()</a>.</p>
 
 </div>
 </div>
@@ -253,10 +586,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>A vector of input connections. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>restore VecCon&lt;Con&gt; listCon; </dd></dl>
-
-<p>Definition at line <a class="el" href="_neuron_8h_source.html#l00030">30</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8h_source.html#l00029">29</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
 </div>
 </div>
@@ -269,7 +599,7 @@ Private Attributes</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neuron.html">Neuron</a>      </li>
-      <li class="footer">Generated on Tue Jun 7 2011 00:12:05 for AMORE++ by&#160;
+      <li class="footer">Generated on Tue Jun 7 2011 04:02:31 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

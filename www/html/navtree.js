@@ -2,9 +2,6 @@ var NAVTREE =
 [
   [ "AMORE++", "index.html", [
     [ "The AMORE++ package", "index.html", null ],
-    [ "Related Pages", "pages.html", [
-      [ "Todo List", "todo.html", null ]
-    ] ],
     [ "Class List", "annotated.html", [
       [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],

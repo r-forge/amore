@@ -8,7 +8,8 @@
 
 
 
-Inheritance diagram for Container$<$ T $>$:\nopagebreak
+Inheritance diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,7 +18,8 @@ Inheritance diagram for Container$<$ T $>$:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Container$<$ T $>$:\nopagebreak
+Collaboration diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -53,6 +55,8 @@ bool \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
 bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
 \begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
+\item 
+void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -175,22 +179,23 @@ Definition at line 172 of file Container.cpp.
 
 
 
-References Container$<$ T $>$::ldata, and Container$<$ T $>$::size().
+References Container$<$ T $>$::begin(), Container$<$ T $>$::end(), and Container$<$ T $>$::size().
 
 
 \begin{DoxyCode}
                                                                {
-        ldata.reserve(ldata.size() + v.size());
-        ldata.insert( ldata.end(), v.ldata.begin(), v.ldata.end() );
+        reserve(size() + v.size());
+        ldata.insert( end(), v.begin(), v.end() );
 };
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=294pt]{class_container_ae763eb37b721d401327c97016fb2fa54_cgraph}
+\includegraphics[width=300pt]{class_container_ae763eb37b721d401327c97016fb2fa54_cgraph}
 \end{center}
 \end{figure}
 
@@ -209,9 +214,25 @@ Here is the call graph for this function:\nopagebreak
 Definition at line 21 of file Container.h.
 
 
+
+Referenced by Container$<$ T $>$::append().
+
+
 \begin{DoxyCode}
 {       return ldata.begin(); }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_container_a9ad6802d12bf5f48400bc346de37ad0f_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_container_a769250b7546b782007f1adaba8a07336}{
 \index{Container@{Container}!end@{end}}
 \index{end@{end}!Container@{Container}}
@@ -226,9 +247,25 @@ Definition at line 21 of file Container.h.
 Definition at line 22 of file Container.h.
 
 
+
+Referenced by Container$<$ T $>$::append().
+
+
 \begin{DoxyCode}
 {       return ldata.end(); }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_container_a769250b7546b782007f1adaba8a07336_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_container_a9161a87726434f8955398137c647947c}{
 \index{Container@{Container}!load@{load}}
 \index{load@{load}!Container@{Container}}
@@ -377,13 +414,32 @@ Definition at line 44 of file Container.cpp.
 \label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
 
 
-Definition at line 245 of file Container.cpp.
+Definition at line 250 of file Container.cpp.
 
 
 \begin{DoxyCode}
                                                       {
          ldata.reserve(n) ;
 };
+\end{DoxyCode}
+\hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
+\index{Container@{Container}!resize@{resize}}
+\index{resize@{resize}!Container@{Container}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Container}$<$ T $>$::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ab77ce6f8173bd47c4cf46643317dffdb}
+
+
+Definition at line 245 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                       {
+        ldata.resize(n);
+}
 \end{DoxyCode}
 \hypertarget{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{
 \index{Container@{Container}!show@{show}}
@@ -448,6 +504,10 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 Definition at line 93 of file Container.cpp.
 
 
+
+Referenced by Neuron::show().
+
+
 \begin{DoxyCode}
                                               {
 
@@ -455,12 +515,24 @@ Definition at line 93 of file Container.cpp.
         // for( auto x : ldata) { x.show(); }
         // Waiting for C++0x
 
-        foreach (typename boost::shared_ptr<T> itr, ldata){
+        foreach (typename boost::shared_ptr<T> itr, *this){
                 itr->show();
         }
         return true;
 };
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_container_ad72379ee222b073a5eecec7fc1bedfc2_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{
 \index{Container@{Container}!size@{size}}
 \index{size@{size}!Container@{Container}}
@@ -558,7 +630,7 @@ Definition at line 112 of file Container.cpp.
 
 \begin{DoxyCode}
                                                   {
-        foreach (typename boost::shared_ptr<T> itr, ldata){
+        foreach (typename boost::shared_ptr<T> itr, *this){
                 itr->validate();
         }
         return true;
@@ -578,7 +650,7 @@ Definition at line 14 of file Container.h.
 
 
 
-Referenced by Container$<$ T $>$::append(), Container$<$ Neuron $>$::begin(), and Container$<$ Neuron $>$::end().
+Referenced by Container$<$ Neuron $>$::begin(), and Container$<$ Neuron $>$::end().
 
 
 
