@@ -1,0 +1,181 @@
+\hypertarget{class_vec_neuron}{
+\section{VecNeuron Class Reference}
+\label{class_vec_neuron}\index{VecNeuron@{VecNeuron}}
+}
+
+
+A vector of neurons.  
+
+
+
+
+{\ttfamily \#include $<$VecNeuron.h$>$}
+
+
+
+Inheritance diagram for VecNeuron:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_vec_neuron__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for VecNeuron:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_vec_neuron__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vec_neuron_ae0bbf203eaef81c45facbee57b463b37}{VecNeuron} ()
+\item 
+\hyperlink{class_vec_neuron_ae7bc02590cd22902220fbcd7949be0e7}{VecNeuron} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ vNeuron)
+\item 
+\hyperlink{class_vec_neuron_a6bf0db759d6940f4e69e0da4a4c4ea98}{$\sim$VecNeuron} ()
+\item 
+int \hyperlink{class_vec_neuron_a3bade484bdea1bec20aa6bb0b977d259}{numOfNeurons} ()
+\item 
+std::vector$<$ int $>$ \hyperlink{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}{getId} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A vector of neurons. 
+
+The vecNeuron class provides a simple class for a vector of neurons. It's named after the R equivalent Reference Class. 
+
+Definition at line 17 of file VecNeuron.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_vec_neuron_ae0bbf203eaef81c45facbee57b463b37}{
+\index{VecNeuron@{VecNeuron}!VecNeuron@{VecNeuron}}
+\index{VecNeuron@{VecNeuron}!VecNeuron@{VecNeuron}}
+\subsubsection[{VecNeuron}]{\setlength{\rightskip}{0pt plus 5cm}VecNeuron::VecNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_ae0bbf203eaef81c45facbee57b463b37}
+
+
+Definition at line 8 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_ae7bc02590cd22902220fbcd7949be0e7}{
+\index{VecNeuron@{VecNeuron}!VecNeuron@{VecNeuron}}
+\index{VecNeuron@{VecNeuron}!VecNeuron@{VecNeuron}}
+\subsubsection[{VecNeuron}]{\setlength{\rightskip}{0pt plus 5cm}VecNeuron::VecNeuron (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf NeuronPtr} $>$}]{vNeuron}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_ae7bc02590cd22902220fbcd7949be0e7}
+
+
+Definition at line 12 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+                                                    :
+  Container<Neuron>(collection)
+{
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a6bf0db759d6940f4e69e0da4a4c4ea98}{
+\index{VecNeuron@{VecNeuron}!$\sim$VecNeuron@{$\sim$VecNeuron}}
+\index{$\sim$VecNeuron@{$\sim$VecNeuron}!VecNeuron@{VecNeuron}}
+\subsubsection[{$\sim$VecNeuron}]{\setlength{\rightskip}{0pt plus 5cm}VecNeuron::$\sim$VecNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a6bf0db759d6940f4e69e0da4a4c4ea98}
+
+
+Definition at line 17 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}{
+\index{VecNeuron@{VecNeuron}!getId@{getId}}
+\index{getId@{getId}!VecNeuron@{VecNeuron}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ int $>$ VecNeuron::getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}
+
+
+Definition at line 28 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+                {
+  std::vector<int> nIds;
+  foreach(NeuronPtr itrNeuron, *this){
+    nIds.push_back( itrNeuron->getId() );
+  }
+  return nIds;
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a3bade484bdea1bec20aa6bb0b977d259}{
+\index{VecNeuron@{VecNeuron}!numOfNeurons@{numOfNeurons}}
+\index{numOfNeurons@{numOfNeurons}!VecNeuron@{VecNeuron}}
+\subsubsection[{numOfNeurons}]{\setlength{\rightskip}{0pt plus 5cm}int VecNeuron::numOfNeurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a3bade484bdea1bec20aa6bb0b977d259}
+
+
+Definition at line 22 of file VecNeuron.cpp.
+
+
+
+References Container$<$ Neuron $>$::size().
+
+
+\begin{DoxyCode}
+{
+  size();
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=386pt]{class_vec_neuron_a3bade484bdea1bec20aa6bb0b977d259_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{_vec_neuron_8h}{VecNeuron.h}\item 
+pkg/AMORE/src/\hyperlink{_vec_neuron_8cpp}{VecNeuron.cpp}\end{DoxyCompactItemize}
