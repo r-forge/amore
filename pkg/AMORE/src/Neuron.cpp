@@ -33,12 +33,12 @@ Neuron::getId()
 }
 
 void
-Neuron::setId(int id)
+Neuron::setId(int value)
 {
-  Id = id;
+  Id = value;
 }
 
-std::vector<NeuronPtr>
+VecNeuron
 Neuron::getFrom()
 {
   return con.getFrom();
@@ -57,15 +57,15 @@ Neuron::getWeight()
 }
 
 bool
-Neuron::setFrom(std::vector<NeuronPtr> vFrom)
+Neuron::setFrom(VecNeuron neuronContainer)
 {
-  con.setFrom(vFrom);
+  con.setFrom(neuronContainer);
 }
 
 bool
-Neuron::setWeight(std::vector<double> vWeight)
+Neuron::setWeight(std::vector<double> nWeights)
 {
-  con.setWeight(vWeight);
+  con.setWeight(nWeights);
 }
 
 int

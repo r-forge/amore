@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="_vec_neuron_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> *  vecNeuron.h</span>
+<a name="l00002"></a>00002 <span class="comment"> *  VecNeuron.h</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
 <a name="l00004"></a>00004 <span class="comment"> *  Created on: 03/06/2011</span>
 <a name="l00005"></a>00005 <span class="comment"> *  Author: mcasl</span>
@@ -92,35 +92,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor">#ifndef VECNEURON_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#define VECNEURON_H_</span>
 <a name="l00011"></a>00011 <span class="preprocessor"></span>
-<a name="l00012"></a>00012 
-<a name="l00014"></a>00014 
-<a name="l00018"></a><a class="code" href="classvec_neuron.html">00018</a> <span class="keyword">class </span><a class="code" href="classvec_neuron.html" title="A vector of neurons.">vecNeuron</a>: <span class="keyword">public</span> <a class="code" href="class_container.html">Container</a>&lt;Neuron&gt; {
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">public</span>:
+<a name="l00013"></a>00013 
+<a name="l00017"></a><a class="code" href="class_vec_neuron.html">00017</a> <span class="keyword">class </span><a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a> : <span class="keyword">public</span> <a class="code" href="class_container.html">Container</a>&lt;Neuron&gt;
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019 <span class="keyword">public</span>:
+<a name="l00020"></a>00020   <a class="code" href="class_vec_neuron.html#ae0bbf203eaef81c45facbee57b463b37">VecNeuron</a>();
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="comment">//                                                                      int     numOfNeurons();</span>
-<a name="l00023"></a>00023 <span class="comment">//                                      std::vector&lt;int&gt;        getId();</span>
-<a name="l00024"></a>00024 <span class="comment">//                                      std::vector&lt;double&gt;     getWeight               ( );</span>
-<a name="l00025"></a>00025 <span class="comment">//                                      std::vector&lt;double&gt;     getWeight               ( std::vector&lt;int&gt; FROM );</span>
-<a name="l00026"></a>00026 <span class="comment">//              std::vector&lt;NeuronPtr&gt;  getFrom         ( );</span>
-<a name="l00027"></a>00027 <span class="comment">//                                                              void    setWeight               ( std::vector&lt;double&gt; value);</span>
-<a name="l00028"></a>00028 <span class="comment">//              À?                                              void    setWeight               ( std::vector&lt;double&gt; value, std::vector&lt;int&gt; FROM);</span>
-<a name="l00029"></a>00029 <span class="comment">//                                                              void    setFrom ( std::vector&lt;NeuronPtr&gt; FROM);</span>
-<a name="l00030"></a>00030 <span class="comment">//                                                              void    erase                   ( std::vector&lt;int&gt; FROM );</span>
-<a name="l00031"></a>00031 <span class="comment">//                                                              VecCon  select                  ( std::vector&lt;int&gt; FROM );</span>
-<a name="l00032"></a>00032 <span class="comment">//                                                              bool    validate                ( );</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="preprocessor">#endif </span><span class="comment">/* VECNEURON_H_ */</span>
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 
+<a name="l00022"></a>00022   <a class="code" href="class_vec_neuron.html#ae0bbf203eaef81c45facbee57b463b37">VecNeuron</a>(std::vector&lt;NeuronPtr&gt; vNeuron);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024   <a class="code" href="class_vec_neuron.html#a6bf0db759d6940f4e69e0da4a4c4ea98">~VecNeuron</a>();
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026   <span class="keywordtype">int</span>
+<a name="l00027"></a>00027   <a class="code" href="class_vec_neuron.html#a3bade484bdea1bec20aa6bb0b977d259">numOfNeurons</a>();
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029   std::vector&lt;int&gt;
+<a name="l00030"></a>00030   <a class="code" href="class_vec_neuron.html#ab9cf35c1f6b087e0cabfe5294186397c">getId</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#if 0</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>
+<a name="l00034"></a>00034   <span class="keywordtype">int</span>
+<a name="l00035"></a>00035   numOfCons ( );
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037   std::vector&lt;int&gt;
+<a name="l00038"></a>00038   getConId ( );
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042   <span class="keywordtype">bool</span>
+<a name="l00043"></a>00043   setId ( );
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a>
+<a name="l00046"></a>00046   getFrom ( );
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048   <span class="keywordtype">bool</span>
+<a name="l00049"></a>00049   is.regular ( );
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051   std::vector&lt;double&gt;
+<a name="l00052"></a>00052   getWeight();
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054   std::vector&lt;double&gt;
+<a name="l00055"></a>00055   getWeight(std::vector&lt;int&gt; FROM);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057   <a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a>
+<a name="l00058"></a>00058   getFrom();
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060   <span class="keywordtype">void</span>
+<a name="l00061"></a>00061   setWeight(std::vector&lt;double&gt; value);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063   <span class="keywordtype">void</span>
+<a name="l00064"></a>00064   setWeight(std::vector&lt;double&gt; value, std::vector&lt;int&gt; FROM);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066   <span class="keywordtype">void</span>
+<a name="l00067"></a>00067   setFrom(std::vector&lt;NeuronPtr&gt; FROM);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069   <span class="keywordtype">void</span>
+<a name="l00070"></a>00070   erase(std::vector&lt;int&gt; FROM);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072   <a class="code" href="class_vec_con.html" title="A vector of connections.">VecCon</a>
+<a name="l00073"></a>00073   select(std::vector&lt;int&gt; FROM);
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075   <span class="keywordtype">bool</span>
+<a name="l00076"></a>00076   <a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3">validate</a>();
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="preprocessor">#endif </span><span class="comment">/* 0 */</span>
+<a name="l00079"></a>00079 };
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="preprocessor">#endif </span><span class="comment">/* VECNEURON_H_ */</span>
+<a name="l00082"></a>00082 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_vec_neuron_8h.html">VecNeuron.h</a>      </li>
-      <li class="footer">Generated on Tue Jun 7 2011 19:59:20 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 01:21:53 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

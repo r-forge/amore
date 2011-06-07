@@ -88,85 +88,144 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 
-<a name="l00010"></a>00010 
-<a name="l00044"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00044</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container&lt;T&gt;::push_back</a>( boost::shared_ptr&lt;T&gt; TsharedPtr) {
-<a name="l00045"></a>00045         collection.push_back(TsharedPtr);
-<a name="l00046"></a>00046 };
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 
-<a name="l00051"></a>00051 
-<a name="l00093"></a><a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2">00093</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">Container&lt;T&gt;::show</a>() {
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095         <span class="comment">// This is equivalent to:</span>
-<a name="l00096"></a>00096         <span class="comment">// for( auto x : collection)    { x.show(); }</span>
-<a name="l00097"></a>00097         <span class="comment">// Waiting for C++0x</span>
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099         <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>){
-<a name="l00100"></a>00100                 itr-&gt;show();
-<a name="l00101"></a>00101         }
-<a name="l00102"></a>00102         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00103"></a>00103 };
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 
-<a name="l00108"></a>00108 
-<a name="l00112"></a><a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3">00112</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3" title="Object validator.">Container&lt;T&gt;::validate</a>() {
-<a name="l00113"></a>00113         <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>){
-<a name="l00114"></a>00114                 itr-&gt;validate();
-<a name="l00115"></a>00115         }
-<a name="l00116"></a>00116         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00117"></a>00117 };
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120 
-<a name="l00122"></a>00122 
-<a name="l00172"></a><a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54">00172</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54" title="Appends a Container&lt;T&gt; object.">Container&lt;T&gt;::append</a>( <a class="code" href="class_container.html">Container&lt;T&gt;</a> v) {
-<a name="l00173"></a>00173         reserve(size() + v.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>());
-<a name="l00174"></a>00174         collection.insert( end(), v.<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), v.<a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>() );
-<a name="l00175"></a>00175 };
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178 
-<a name="l00180"></a>00180 
-<a name="l00217"></a><a class="code" href="class_container.html#a9161a87726434f8955398137c647947c">00217</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; <a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">Container&lt;T&gt;::load</a>() {
-<a name="l00218"></a>00218         <span class="keywordflow">return</span> collection;
-<a name="l00219"></a>00219 };
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221 
-<a name="l00222"></a>00222 
-<a name="l00224"></a>00224 
-<a name="l00229"></a><a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e">00229</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; v) {
-<a name="l00230"></a>00230         collection=v;
-<a name="l00231"></a>00231 };
-<a name="l00232"></a>00232 
-<a name="l00233"></a>00233 
-<a name="l00235"></a>00235 
-<a name="l00240"></a><a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091">00240</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">Container&lt;T&gt;::size</a>() {
-<a name="l00241"></a>00241         <span class="keywordflow">return</span> collection.size() ;
-<a name="l00242"></a>00242 };
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244 
-<a name="l00245"></a><a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">00245</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">Container&lt;T&gt;::resize</a> ( <span class="keywordtype">int</span> n) {
-<a name="l00246"></a>00246         collection.resize(n);
-<a name="l00247"></a>00247 }
-<a name="l00248"></a>00248 
-<a name="l00249"></a>00249 
-<a name="l00250"></a><a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">00250</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">Container&lt;T&gt;::reserve</a>(<span class="keywordtype">int</span> n) {
-<a name="l00251"></a>00251          collection.reserve(n) ;
-<a name="l00252"></a>00252 };
-<a name="l00253"></a>00253 
-<a name="l00254"></a>00254 
-<a name="l00255"></a><a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">00255</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; boost::shared_ptr&lt;T&gt;      &amp; <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">Container&lt;T&gt;::operator[]</a>( <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset ) {
-<a name="l00256"></a>00256         <span class="keywordflow">return</span> collection[offset];
-<a name="l00257"></a>00257 }
+<a name="l00008"></a>00008 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00009"></a><a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">00009</a>   <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container&lt;T&gt;::Container</a>()
+<a name="l00010"></a>00010   {
+<a name="l00011"></a>00011   }
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00014"></a><a class="code" href="class_container.html#a161e09c0c1cbe40429df228f7db63972">00014</a>   <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container&lt;T&gt;::Container</a>(
+<a name="l00015"></a>00015       <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; collection) :
+<a name="l00016"></a>00016     collection(collection)
+<a name="l00017"></a>00017   {
+<a name="l00018"></a>00018   }
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00021"></a>00021   <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::iterator
+<a name="l00022"></a><a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">00022</a>   <a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">Container&lt;T&gt;::begin</a>()
+<a name="l00023"></a>00023   {
+<a name="l00024"></a>00024     <span class="keywordflow">return</span> collection.begin();
+<a name="l00025"></a>00025   }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00028"></a>00028   <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::iterator
+<a name="l00029"></a><a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">00029</a>   <a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">Container&lt;T&gt;::end</a>()
+<a name="l00030"></a>00030   {
+<a name="l00031"></a>00031     <span class="keywordflow">return</span> collection.end();
+<a name="l00032"></a>00032   }
+<a name="l00033"></a>00033 
+<a name="l00035"></a>00035 
+<a name="l00069"></a>00069 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00070"></a>00070   <span class="keywordtype">void</span>
+<a name="l00071"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00071</a>   <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container&lt;T&gt;::push_back</a>(boost::shared_ptr&lt;T&gt; TsharedPtr)
+<a name="l00072"></a>00072   {
+<a name="l00073"></a>00073     collection.push_back(TsharedPtr);
+<a name="l00074"></a>00074   }
+<a name="l00075"></a>00075 ;
+<a name="l00076"></a>00076 
+<a name="l00078"></a>00078 
+<a name="l00120"></a>00120 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00121"></a>00121   <span class="keywordtype">bool</span>
+<a name="l00122"></a><a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2">00122</a>   <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">Container&lt;T&gt;::show</a>()
+<a name="l00123"></a>00123   {
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125     <span class="comment">// This is equivalent to:</span>
+<a name="l00126"></a>00126     <span class="comment">// for( auto x : collection)        { x.show(); }</span>
+<a name="l00127"></a>00127     <span class="comment">// Waiting for C++0x</span>
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129     <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>)
+<a name="l00130"></a>00130       {
+<a name="l00131"></a>00131         itr-&gt;show();
+<a name="l00132"></a>00132       }
+<a name="l00133"></a>00133     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00134"></a>00134   }
+<a name="l00135"></a>00135 ;
+<a name="l00136"></a>00136 
+<a name="l00138"></a>00138 
+<a name="l00142"></a>00142 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00143"></a>00143   <span class="keywordtype">bool</span>
+<a name="l00144"></a><a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3">00144</a>   <a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3" title="Object validator.">Container&lt;T&gt;::validate</a>()
+<a name="l00145"></a>00145   {
+<a name="l00146"></a>00146     <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>)
+<a name="l00147"></a>00147       {
+<a name="l00148"></a>00148         itr-&gt;validate();
+<a name="l00149"></a>00149       }
+<a name="l00150"></a>00150     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00151"></a>00151   }
+<a name="l00152"></a>00152 ;
+<a name="l00153"></a>00153 
+<a name="l00155"></a>00155 
+<a name="l00205"></a>00205 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00206"></a>00206   <span class="keywordtype">void</span>
+<a name="l00207"></a><a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54">00207</a>   <a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54" title="Appends a Container&lt;T&gt; object.">Container&lt;T&gt;::append</a>(<a class="code" href="class_container.html">Container&lt;T&gt;</a> v)
+<a name="l00208"></a>00208   {
+<a name="l00209"></a>00209     reserve(size() + v.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>());
+<a name="l00210"></a>00210     collection.insert(end(), v.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>(), v.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>());
+<a name="l00211"></a>00211   }
+<a name="l00212"></a>00212 ;
+<a name="l00213"></a>00213 
+<a name="l00215"></a>00215 
+<a name="l00252"></a>00252 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00253"></a>00253   std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;
+<a name="l00254"></a><a class="code" href="class_container.html#a9161a87726434f8955398137c647947c">00254</a>   <a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">Container&lt;T&gt;::load</a>()
+<a name="l00255"></a>00255   {
+<a name="l00256"></a>00256     <span class="keywordflow">return</span> collection;
+<a name="l00257"></a>00257   }
+<a name="l00258"></a>00258 ;
+<a name="l00259"></a>00259 
+<a name="l00261"></a>00261 
+<a name="l00266"></a>00266 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00267"></a>00267   <span class="keywordtype">void</span>
+<a name="l00268"></a><a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e">00268</a>   <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; v)
+<a name="l00269"></a>00269   {
+<a name="l00270"></a>00270     collection = v;
+<a name="l00271"></a>00271   }
+<a name="l00272"></a>00272 ;
+<a name="l00273"></a>00273 
+<a name="l00275"></a>00275 
+<a name="l00280"></a>00280 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00281"></a>00281   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00282"></a><a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091">00282</a>   <a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">Container&lt;T&gt;::size</a>()
+<a name="l00283"></a>00283   {
+<a name="l00284"></a>00284     <span class="keywordflow">return</span> collection.size();
+<a name="l00285"></a>00285   }
+<a name="l00286"></a>00286 ;
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00289"></a>00289   <span class="keywordtype">void</span>
+<a name="l00290"></a><a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">00290</a>   <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">Container&lt;T&gt;::resize</a>(<span class="keywordtype">int</span> n)
+<a name="l00291"></a>00291   {
+<a name="l00292"></a>00292     collection.resize(n);
+<a name="l00293"></a>00293   }
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00296"></a>00296   <span class="keywordtype">void</span>
+<a name="l00297"></a><a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">00297</a>   <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">Container&lt;T&gt;::reserve</a>(<span class="keywordtype">int</span> n)
+<a name="l00298"></a>00298   {
+<a name="l00299"></a>00299     collection.reserve(n);
+<a name="l00300"></a>00300   }
+<a name="l00301"></a>00301 
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00304"></a>00304   <span class="keywordtype">bool</span>
+<a name="l00305"></a><a class="code" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">00305</a>   <a class="code" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">Container&lt;T&gt;::empty</a>()
+<a name="l00306"></a>00306   {
+<a name="l00307"></a>00307     <span class="keywordflow">return</span>( collection.empty() );
+<a name="l00308"></a>00308   }
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00312"></a>00312   boost::shared_ptr&lt;T&gt; &amp;
+<a name="l00313"></a><a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">00313</a>   <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">Container&lt;T&gt;::operator[]</a>(<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset)
+<a name="l00314"></a>00314   {
+<a name="l00315"></a>00315     <span class="keywordflow">return</span> collection[offset];
+<a name="l00316"></a>00316   }
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_8cpp.html">Container.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jun 7 2011 19:59:20 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 01:21:53 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

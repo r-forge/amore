@@ -8,7 +8,8 @@
 
 
 
-Inheritance diagram for Container$<$ T $>$:\nopagebreak
+Inheritance diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,11 +18,12 @@ Inheritance diagram for Container$<$ T $>$:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Container$<$ T $>$:\nopagebreak
+Collaboration diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{class_container__coll__graph}
+\includegraphics[height=600pt]{class_container__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -34,9 +36,13 @@ typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_conta
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{begin} ()
+\hyperlink{class_container_ab17ce1f67243b28abcd4c8113a72524c}{Container} ()
 \item 
-\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a769250b7546b782007f1adaba8a07336}{end} ()
+\hyperlink{class_container_a161e09c0c1cbe40429df228f7db63972}{Container} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection})
+\item 
+\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_ac5e2a75311f6e6a690ca67603490ddb1}{begin} ()
+\item 
+\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a266eabe62963d6909d3aca7f105e203e}{end} ()
 \item 
 std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a9161a87726434f8955398137c647947c}{load} ()
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
@@ -55,6 +61,8 @@ bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
 void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
 \item 
 void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
+\item 
+bool \hyperlink{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{empty} ()
 \item 
 boost::shared\_\-ptr$<$ T $>$ \& \hyperlink{class_container_aed3c227120a6a745fa9adfb25c3dd225}{operator\mbox{[}$\,$\mbox{]}} (size\_\-type offset)
 \end{DoxyCompactItemize}
@@ -82,7 +90,7 @@ Definition at line 12 of file Container.h.
 \label{class_container_a5eabadaffdd508cb623c955eb0af1518}
 
 
-Definition at line 19 of file Container.h.
+Definition at line 22 of file Container.h.
 
 \hypertarget{class_container_afe880028d8304353129f47cd1d28c20a}{
 \index{Container@{Container}!iterator@{iterator}}
@@ -91,8 +99,49 @@ Definition at line 19 of file Container.h.
 \label{class_container_afe880028d8304353129f47cd1d28c20a}
 
 
-Definition at line 18 of file Container.h.
+Definition at line 19 of file Container.h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_container_ab17ce1f67243b28abcd4c8113a72524c}{
+\index{Container@{Container}!Container@{Container}}
+\index{Container@{Container}!Container@{Container}}
+\subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Container}$<$ T $>$::{\bf Container} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ab17ce1f67243b28abcd4c8113a72524c}
+
+
+Definition at line 9 of file Container.cpp.
+
+
+\begin{DoxyCode}
+  {
+  }
+\end{DoxyCode}
+\hypertarget{class_container_a161e09c0c1cbe40429df228f7db63972}{
+\index{Container@{Container}!Container@{Container}}
+\index{Container@{Container}!Container@{Container}}
+\subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Container}$<$ T $>$::{\bf Container} (
+\begin{DoxyParamCaption}
+\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{collection}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a161e09c0c1cbe40429df228f7db63972}
+
+
+Definition at line 14 of file Container.cpp.
+
+
+\begin{DoxyCode}
+                                                          :
+    collection(collection)
+  {
+  }
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -175,7 +224,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 \end{DoxySeeAlso}
 
 
-Definition at line 172 of file Container.cpp.
+Definition at line 207 of file Container.cpp.
 
 
 
@@ -183,14 +232,15 @@ References Container$<$ T $>$::begin(), Container$<$ T $>$::end(), and Container
 
 
 \begin{DoxyCode}
-                                                               {
-        reserve(size() + v.size());
-        collection.insert( end(), v.begin(), v.end() );
-};
+  {
+    reserve(size() + v.size());
+    collection.insert(end(), v.begin(), v.end());
+  }
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,50 +249,88 @@ Here is the call graph for this function:\nopagebreak
 \end{figure}
 
 
-\hypertarget{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{
+\hypertarget{class_container_ac5e2a75311f6e6a690ca67603490ddb1}{
 \index{Container@{Container}!begin@{begin}}
 \index{begin@{begin}!Container@{Container}}
-\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::begin (
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::{\bf iterator} {\bf Container}$<$ T $>$::begin (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{class_container_a9ad6802d12bf5f48400bc346de37ad0f}
+)}}
+\label{class_container_ac5e2a75311f6e6a690ca67603490ddb1}
 
 
-Definition at line 21 of file Container.h.
+Definition at line 22 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append().
+Referenced by Container$<$ T $>$::append(), and VecCon::setFrom().
 
 
 \begin{DoxyCode}
-{       return collection.begin(); }
+  {
+    return collection.begin();
+  }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=300pt]{class_container_a9ad6802d12bf5f48400bc346de37ad0f_icgraph}
+\includegraphics[width=400pt]{class_container_ac5e2a75311f6e6a690ca67603490ddb1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_container_a769250b7546b782007f1adaba8a07336}{
-\index{Container@{Container}!end@{end}}
-\index{end@{end}!Container@{Container}}
-\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::end (
+\hypertarget{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{
+\index{Container@{Container}!empty@{empty}}
+\index{empty@{empty}!Container@{Container}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::empty (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
-\label{class_container_a769250b7546b782007f1adaba8a07336}
+)}}
+\label{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}
 
 
-Definition at line 22 of file Container.h.
+Definition at line 305 of file Container.cpp.
+
+
+
+Referenced by VecCon::buildAndAppend(), and VecCon::setFrom().
+
+
+\begin{DoxyCode}
+  {
+    return( collection.empty() );
+  }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_container_ab8e09c25f519687468ef5b9f0fae9b3e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_container_a266eabe62963d6909d3aca7f105e203e}{
+\index{Container@{Container}!end@{end}}
+\index{end@{end}!Container@{Container}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::{\bf iterator} {\bf Container}$<$ T $>$::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a266eabe62963d6909d3aca7f105e203e}
+
+
+Definition at line 29 of file Container.cpp.
 
 
 
@@ -250,15 +338,18 @@ Referenced by Container$<$ T $>$::append().
 
 
 \begin{DoxyCode}
-{       return collection.end(); }
+  {
+    return collection.end();
+  }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=292pt]{class_container_a769250b7546b782007f1adaba8a07336_icgraph}
+\includegraphics[width=292pt]{class_container_a266eabe62963d6909d3aca7f105e203e_icgraph}
 \end{center}
 \end{figure}
 
@@ -323,13 +414,13 @@ The collection vector.
 \end{DoxySeeAlso}
 
 
-Definition at line 217 of file Container.cpp.
+Definition at line 254 of file Container.cpp.
 
 
 \begin{DoxyCode}
-                                                                          {
-        return collection;
-};
+  {
+    return collection;
+  }
 \end{DoxyCode}
 \hypertarget{class_container_aed3c227120a6a745fa9adfb25c3dd225}{
 \index{Container@{Container}!operator\mbox{[}\mbox{]}@{operator[]}}
@@ -342,14 +433,13 @@ Definition at line 217 of file Container.cpp.
 \label{class_container_aed3c227120a6a745fa9adfb25c3dd225}
 
 
-Definition at line 255 of file Container.cpp.
+Definition at line 313 of file Container.cpp.
 
 
 \begin{DoxyCode}
-                                                                                 
-                  {
-        return collection[offset];
-}
+  {
+    return collection[offset];
+  }
 \end{DoxyCode}
 \hypertarget{class_container_afd87c69cb799ed7b434c29090083a285}{
 \index{Container@{Container}!push\_\-back@{push\_\-back}}
@@ -411,15 +501,30 @@ C++ documentation for std::vector::push\_\-back and the unit test files, e.g., r
 \end{DoxySeeAlso}
 
 
-Definition at line 44 of file Container.cpp.
+Definition at line 71 of file Container.cpp.
+
+
+
+Referenced by VecCon::getFrom().
 
 
 \begin{DoxyCode}
-                                                                                 
-      {
-        collection.push_back(TsharedPtr);
-};
+  {
+    collection.push_back(TsharedPtr);
+  }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_container_afd87c69cb799ed7b434c29090083a285_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
 \index{Container@{Container}!reserve@{reserve}}
 \index{reserve@{reserve}!Container@{Container}}
@@ -431,14 +536,30 @@ Definition at line 44 of file Container.cpp.
 \label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
 
 
-Definition at line 250 of file Container.cpp.
+Definition at line 297 of file Container.cpp.
+
+
+
+Referenced by VecCon::getFrom().
 
 
 \begin{DoxyCode}
-                                                      {
-         collection.reserve(n) ;
-};
+  {
+    collection.reserve(n);
+  }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_container_aa3cbae68ebeed649c52eb3805a30fb75_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
 \index{Container@{Container}!resize@{resize}}
 \index{resize@{resize}!Container@{Container}}
@@ -450,13 +571,13 @@ Definition at line 250 of file Container.cpp.
 \label{class_container_ab77ce6f8173bd47c4cf46643317dffdb}
 
 
-Definition at line 245 of file Container.cpp.
+Definition at line 290 of file Container.cpp.
 
 
 \begin{DoxyCode}
-                                                       {
-        collection.resize(n);
-}
+  {
+    collection.resize(n);
+  }
 \end{DoxyCode}
 \hypertarget{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{
 \index{Container@{Container}!show@{show}}
@@ -518,7 +639,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 \end{DoxySeeAlso}
 
 
-Definition at line 93 of file Container.cpp.
+Definition at line 122 of file Container.cpp.
 
 
 
@@ -526,17 +647,18 @@ Referenced by Neuron::show().
 
 
 \begin{DoxyCode}
-                                              {
+  {
 
-        // This is equivalent to:
-        // for( auto x : collection)    { x.show(); }
-        // Waiting for C++0x
+    // This is equivalent to:
+    // for( auto x : collection)        { x.show(); }
+    // Waiting for C++0x
 
-        foreach (typename boost::shared_ptr<T> itr, *this){
-                itr->show();
-        }
-        return true;
-};
+    foreach (typename boost::shared_ptr<T> itr, *this)
+      {
+        itr->show();
+      }
+    return true;
+  }
 \end{DoxyCode}
 
 
@@ -564,25 +686,26 @@ Returns the size or length of the vector.
 
 This method returns the size of the vector. In the classes derived from Container$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 
-Definition at line 240 of file Container.cpp.
+Definition at line 282 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append().
+Referenced by Container$<$ T $>$::append(), VecCon::buildAndAppend(), and VecCon::setFrom().
 
 
 \begin{DoxyCode}
-                                                   {
-        return collection.size() ;
-};
+  {
+    return collection.size();
+  }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=294pt]{class_container_a842c3d9eca81b78b59112fde9707b091_icgraph}
+\includegraphics[width=400pt]{class_container_a842c3d9eca81b78b59112fde9707b091_icgraph}
 \end{center}
 \end{figure}
 
@@ -610,14 +733,13 @@ This method sets the value of the data stored in the \hyperlink{class_container_
 \end{DoxySeeAlso}
 
 
-Definition at line 229 of file Container.cpp.
+Definition at line 268 of file Container.cpp.
 
 
 \begin{DoxyCode}
-                                                                                 
-      {
-        collection=v;
-};
+  {
+    collection = v;
+  }
 \end{DoxyCode}
 \hypertarget{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{
 \index{Container@{Container}!validate@{validate}}
@@ -641,16 +763,17 @@ Reimplemented in \hyperlink{class_vec_con_af008396d3982fb7ccf1af9618b89937c}{Vec
 
 
 
-Definition at line 112 of file Container.cpp.
+Definition at line 144 of file Container.cpp.
 
 
 \begin{DoxyCode}
-                                                  {
-        foreach (typename boost::shared_ptr<T> itr, *this){
-                itr->validate();
-        }
-        return true;
-};
+  {
+    foreach (typename boost::shared_ptr<T> itr, *this)
+      {
+        itr->validate();
+      }
+    return true;
+  }
 \end{DoxyCode}
 
 
@@ -662,11 +785,7 @@ Definition at line 112 of file Container.cpp.
 \label{class_container_a6cc12233bceb7d72709320d2c57e3398}
 
 
-Definition at line 14 of file Container.h.
-
-
-
-Referenced by Container$<$ Neuron $>$::begin(), and Container$<$ Neuron $>$::end().
+Definition at line 15 of file Container.h.
 
 
 

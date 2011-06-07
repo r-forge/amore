@@ -1,5 +1,4 @@
 <map id="G" name="G">
 <area shape="rect" id="node1" href="$class_container.html" title="Container\&lt; Neuron \&gt;" alt="" coords="5,5,149,32"/>
-<area shape="rect" id="node3" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="199,5,281,32"/>
-<area shape="rect" id="node5" href="$classvec_m_l_pneuron.html" title="A vector of connections." alt="" coords="332,5,439,32"/>
+<area shape="rect" id="node3" href="$class_vec_neuron.html" title="A vector of neurons." alt="" coords="199,5,284,32"/>
 </map>

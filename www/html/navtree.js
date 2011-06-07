@@ -9,7 +9,7 @@ var NAVTREE =
       [ "Neuron", "class_neuron.html", null ],
       [ "VecCon", "class_vec_con.html", null ],
       [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ],
-      [ "vecNeuron", "classvec_neuron.html", null ]
+      [ "VecNeuron", "class_vec_neuron.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
@@ -20,11 +20,10 @@ var NAVTREE =
         [ "VecCon", "class_vec_con.html", null ]
       ] ],
       [ "Container< Neuron >", "class_container.html", [
-        [ "vecNeuron", "classvec_neuron.html", [
-          [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
-        ] ]
+        [ "VecNeuron", "class_vec_neuron.html", null ]
       ] ],
-      [ "Neuron", "class_neuron.html", null ]
+      [ "Neuron", "class_neuron.html", null ],
+      [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
@@ -38,6 +37,7 @@ var NAVTREE =
       [ "pkg/AMORE/src/VecCon.cpp", "_vec_con_8cpp.html", null ],
       [ "pkg/AMORE/src/VecCon.h", "_vec_con_8h.html", null ],
       [ "pkg/AMORE/src/VecMLPneuron.h", "_vec_m_l_pneuron_8h.html", null ],
+      [ "pkg/AMORE/src/VecNeuron.cpp", "_vec_neuron_8cpp.html", null ],
       [ "pkg/AMORE/src/VecNeuron.h", "_vec_neuron_8h.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]

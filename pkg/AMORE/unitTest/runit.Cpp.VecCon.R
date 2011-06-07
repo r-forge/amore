@@ -86,20 +86,20 @@ incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 testCode <- "
 			// Data set up
 				std::vector<int> result;
-				std::vector<NeuronPtr> vNeuron;
+				VecNeuron neuronContainer;
 				VecConPtr	ptShvCon( new VecCon() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
 				int ids[]= {10, 20, 30};
-				std::vector<double> vWeight;
-				vWeight.push_back(12.3);
-				vWeight.push_back(1.2);
-				vWeight.push_back(2.1);
+				std::vector<double> nWeights;
+				nWeights.push_back(12.3);
+				nWeights.push_back(1.2);
+				nWeights.push_back(2.1);
 				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
 					ptN.reset( new Neuron( ids[i] ) ); 	
-					vNeuron.push_back(ptN);
+					neuronContainer.push_back(ptN);
 				}
-				ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+				ptShvCon->buildAndAppend(neuronContainer, nWeights);			 
 			// Test	
 				result=ptShvCon->getId();
 				return wrap(result);
@@ -305,26 +305,22 @@ test.VecCon.Cpp.getFrom <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			std::vector<double> result;
 			int ids[]= {1, 2, 3};
 			double weights[] = {12.3, 1.2, 2.1 };
-			VecCon MyVecCon;
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			VecCon conContainer;
+			VecNeuron neuronContainer , nNeurons;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
-			
+
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);	
-				vWeight.push_back(weights[i]);					
+				neuronContainer.push_back(ptNeuron);	
+				nWeights.push_back(weights[i]);					
 			}
-			MyVecCon.buildAndAppend(vNeuron, vWeight);
+			conContainer.buildAndAppend(neuronContainer, nWeights);
 		// Test			
-			vNeuron=MyVecCon.getFrom();				
-			for (int i=0; i<=2; i++) {
-				result.push_back(vNeuron.at(i)->getId());		
-			}
-			return wrap(result);
+			nNeurons=conContainer.getFrom();				
+			return wrap(nNeurons.getId());
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
