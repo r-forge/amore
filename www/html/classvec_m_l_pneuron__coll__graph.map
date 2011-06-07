@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="176,1053,259,1131"/>
-<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="145,779,289,1003"/>
+<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="145,779,289,1003"/>
 <area shape="rect" id="node8" title="STL class." alt="" coords="183,147,297,224"/>
-<area shape="rect" id="node12" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="245,491,355,715"/>
+<area shape="rect" id="node12" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="245,491,355,715"/>
 </map>

@@ -31,11 +31,11 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="4,-218.5 4,-385.5 98,-385.5 98,-218.5 4,-218.5"/>
 <text text-anchor="middle" x="51" y="-372.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Con &gt;</text>
 <polyline fill="none" stroke="black" points="4,-366.5 98,-366.5 "/>
-<text text-anchor="start" x="12" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="12" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="4,-347.5 98,-347.5 "/>
 <text text-anchor="start" x="12" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="12" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -57,11 +57,11 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="10,-434.5 10,-601.5 92,-601.5 92,-434.5 10,-434.5"/>
 <text text-anchor="middle" x="51" y="-588.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="10,-582.5 92,-582.5 "/>
-<text text-anchor="start" x="18" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="18" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="10,-563.5 92,-563.5 "/>
 <text text-anchor="start" x="18" y="-550.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="18" y="-539.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>

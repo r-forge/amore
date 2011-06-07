@@ -39,7 +39,7 @@ int \hyperlink{class_vec_con_aa9a397520b07fbeead0b6d252c1ea882}{numOfCons} ()
 std::vector$<$ int $>$ \hyperlink{class_vec_con_a03d5dde143e166e68b01c9596573eb5f}{getId} ()
 \begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\item 
 bool \hyperlink{class_vec_con_a2ab58248509550b1c99435a90ece59f1}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ vFrom, std::vector$<$ double $>$ vWeight)
-\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to collection. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{class_vec_con_aafa37c30d566b8784ac84d23a14b5638}{getWeight} ()
 \begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{class_vec_con}{VecCon}. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{class_vec_con_a0de571e8fde8e354887e0b43b8d00772}{getWeight} (std::vector$<$ int $>$ vFrom)
@@ -82,9 +82,9 @@ Definition at line 17 of file VecCon.h.
 \label{class_vec_con_a2ab58248509550b1c99435a90ece59f1}
 
 
-Builds \hyperlink{class_con}{Con} objects and appends them to ldata. 
+Builds \hyperlink{class_con}{Con} objects and appends them to collection. 
 
-This function provides a convenient way of populating a \hyperlink{class_vec_con}{VecCon} object by building and apending \hyperlink{class_con}{Con} objects to ldata. 
+This function provides a convenient way of populating a \hyperlink{class_vec_con}{VecCon} object by building and apending \hyperlink{class_con}{Con} objects to collection. 
 \begin{DoxyParams}{Parameters}
 {\em FROM} & A vector of smart pointers to the neurons to be used in the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{Con::from} fields \\
 \hline
@@ -181,7 +181,7 @@ Here is the call graph for this function:
 
 Erase the specified elements from the vecCom object. 
 
-Provides a convenient way of removing some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{class_vec_con}{VecCon} object.
+Provides a convenient way of removing some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{class_vec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -592,7 +592,7 @@ Here is the caller graph for this function:
 
 Getter of the weights of the specified elements from the vecCom object. 
 
-Provides a convenient way of getting the weights of some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{class_vec_con}{VecCon} object.
+Provides a convenient way of getting the weights of some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{class_vec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -780,7 +780,7 @@ Here is the caller graph for this function:
 
 Selects the specified elements from the vecCom object. 
 
-Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{class_vec_con}{VecCon} object.
+Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{class_vec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -850,7 +850,7 @@ Referenced by getWeight(), and setWeight().
         sort (begin(), end(), CompareId());
         sort (vFrom.begin(), vFrom.end());
         set_intersection(begin(), end(), vFrom.begin(), vFrom.end(), back_inserte
-      r(result->ldata) , CompareId());
+      r(result->collection) , CompareId());
 
         return result;
 }
@@ -958,7 +958,7 @@ Referenced by Neuron::setFrom().
                 if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFro
       m]: Error, w is empty"); }
                 if (vFrom.size() != size() ) { throw std::range_error("[C++ VecCo
-      n::setFrom]: Error, w.size() != ldata.size()"); }
+      n::setFrom]: Error, w.size() != collection.size()"); }
                 std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
                 foreach(ConPtr itr , *this)     {
                         itr->setFrom( *itrFrom );
@@ -1006,7 +1006,7 @@ Here is the caller graph for this function:
 
 Setter of the weights of the specified elements from the \hyperlink{class_vec_con}{VecCon} object. 
 
-Provides a convenient way of setting the weights of some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{class_vec_con}{VecCon} object.
+Provides a convenient way of setting the weights of some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{class_vec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -1177,7 +1177,7 @@ Referenced by Neuron::setWeight().
         if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: 
       Error, vWeight is empty"); }
         if (vWeight.size() != size() ) { throw std::range_error("[C++ VecCon::set
-      Weight]: Error, vWeight.size() != ldata.size()"); }
+      Weight]: Error, vWeight.size() != collection.size()"); }
         std::vector<double>::iterator itrWeight = vWeight.begin();
         foreach (ConPtr itr, *this){
                 itr->setWeight( *itrWeight );

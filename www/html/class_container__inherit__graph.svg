@@ -14,7 +14,7 @@
 <polygon fill="#bfbfbf" stroke="black" points="77,-530.5 77,-697.5 159,-697.5 159,-530.5 77,-530.5"/>
 <text text-anchor="middle" x="118" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="77,-678.5 159,-678.5 "/>
-<text text-anchor="start" x="85" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="85" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="77,-659.5 159,-659.5 "/>
 <text text-anchor="start" x="85" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="85" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -30,11 +30,11 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="4,-314.5 4,-481.5 98,-481.5 98,-314.5 4,-314.5"/>
 <text text-anchor="middle" x="51" y="-468.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Con &gt;</text>
 <polyline fill="none" stroke="black" points="4,-462.5 98,-462.5 "/>
-<text text-anchor="start" x="12" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="12" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="4,-443.5 98,-443.5 "/>
 <text text-anchor="start" x="12" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="12" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -57,11 +57,11 @@
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="116,-314.5 116,-481.5 224,-481.5 224,-314.5 116,-314.5"/>
 <text text-anchor="middle" x="170" y="-468.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Neuron &gt;</text>
 <polyline fill="none" stroke="black" points="116,-462.5 224,-462.5 "/>
-<text text-anchor="start" x="124" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="124" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="116,-443.5 224,-443.5 "/>
 <text text-anchor="start" x="124" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="124" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>

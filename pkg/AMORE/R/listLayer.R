@@ -8,7 +8,7 @@ gListLayer <- setRefClass("listLayer",
 	
 		methods = list(	
 			getId = function(...){
-				return(lapply(ldata, function(x){x$getId(...)}))	
+				return(lapply(collection, function(x){x$getId(...)}))	
 			},
 
 			numOfLayers = function(...){
@@ -20,7 +20,7 @@ gListLayer <- setRefClass("listLayer",
 				myMatch <- match(POS, Pos)
 				if (any(is.na(myMatch))) {stop("[listLayer delect Error]: Your POS vector contains values that were not present in the listLayer.")}			
 				if (length(myMatch)>0) {
-					ldata <<- ldata[-myMatch]	       
+					collection <<- collection[-myMatch]	       
 				}
 			},
 			

@@ -41,13 +41,13 @@ typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_conta
 \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a769250b7546b782007f1adaba8a07336}{end} ()
 \item 
 std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a9161a87726434f8955398137c647947c}{load} ()
-\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 void \hyperlink{class_container_aadc7faacbf43540e46144319f7369a3e}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
-\begin{DoxyCompactList}\small\item\em ldata field accessor function \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 int \hyperlink{class_container_aef8dda28fbfe205ce25ae824d84bb1c9}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
-\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of ldata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_ae763eb37b721d401327c97016fb2fa54}{append} (\hyperlink{class_container}{Container}$<$ T $>$ v)
 \begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
@@ -61,7 +61,7 @@ void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int 
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata}
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection}
 \end{DoxyCompactItemize}
 
 
@@ -109,7 +109,7 @@ Definition at line 18 of file Container.h.
 
 Appends a Container$<$T$>$ object. 
 
-This method inserts the ldata field of a second object at the end of the ldata field of the calling object. 
+This method inserts the collection field of a second object at the end of the collection field of the calling object. 
 \begin{DoxyParams}{Parameters}
 {\em v} & The Container$<$T$>$ object to be added to the current one \\
 \hline
@@ -185,7 +185,7 @@ References Container$<$ T $>$::begin(), Container$<$ T $>$::end(), and Container
 \begin{DoxyCode}
                                                                {
         reserve(size() + v.size());
-        ldata.insert( end(), v.begin(), v.end() );
+        collection.insert( end(), v.begin(), v.end() );
 };
 \end{DoxyCode}
 
@@ -219,7 +219,7 @@ Referenced by Container$<$ T $>$::append().
 
 
 \begin{DoxyCode}
-{       return ldata.begin(); }
+{       return collection.begin(); }
 \end{DoxyCode}
 
 
@@ -252,7 +252,7 @@ Referenced by Container$<$ T $>$::append().
 
 
 \begin{DoxyCode}
-{       return ldata.end(); }
+{       return collection.end(); }
 \end{DoxyCode}
 
 
@@ -277,10 +277,10 @@ Here is the caller graph for this function:
 \label{class_container_a9161a87726434f8955398137c647947c}
 
 
-ldata field accessor function 
+collection field accessor function 
 
-This method allows access to the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata} field. \begin{DoxyReturn}{Returns}
-The ldata vector.
+This method allows access to the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection} field. \begin{DoxyReturn}{Returns}
+The collection vector.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
@@ -331,7 +331,7 @@ Definition at line 217 of file Container.cpp.
 
 \begin{DoxyCode}
                                                                           {
-        return ldata;
+        return collection;
 };
 \end{DoxyCode}
 \hypertarget{class_container_afd87c69cb799ed7b434c29090083a285}{
@@ -345,11 +345,11 @@ Definition at line 217 of file Container.cpp.
 \label{class_container_afd87c69cb799ed7b434c29090083a285}
 
 
-Append a shared\_\-ptr at the end of ldata. 
+Append a shared\_\-ptr at the end of collection. 
 
 Implements push\_\-back for the \hyperlink{class_container}{Container} class 
 \begin{DoxyParams}{Parameters}
-{\em TsharedPtr} & A shared\_\-ptr pointer to be inserted at the end of ldata\\
+{\em TsharedPtr} & A shared\_\-ptr pointer to be inserted at the end of collection\\
 \hline
 \end{DoxyParams}
 
@@ -400,7 +400,7 @@ Definition at line 44 of file Container.cpp.
 \begin{DoxyCode}
                                                                                  
       {
-        ldata.push_back(TsharedPtr);
+        collection.push_back(TsharedPtr);
 };
 \end{DoxyCode}
 \hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
@@ -419,7 +419,7 @@ Definition at line 250 of file Container.cpp.
 
 \begin{DoxyCode}
                                                       {
-         ldata.reserve(n) ;
+         collection.reserve(n) ;
 };
 \end{DoxyCode}
 \hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
@@ -438,7 +438,7 @@ Definition at line 245 of file Container.cpp.
 
 \begin{DoxyCode}
                                                        {
-        ldata.resize(n);
+        collection.resize(n);
 }
 \end{DoxyCode}
 \hypertarget{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{
@@ -454,7 +454,7 @@ Definition at line 245 of file Container.cpp.
 
 Pretty print of the Container$<$T$>$ 
 
-This method outputs in the R terminal the contents of \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{Container::ldata}. \begin{DoxyReturn}{Returns}
+This method outputs in the R terminal the contents of \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{Container::collection}. \begin{DoxyReturn}{Returns}
 true in case everything works without throwing an exception
 \end{DoxyReturn}
 $\ast$ 
@@ -512,7 +512,7 @@ Referenced by Neuron::show().
                                               {
 
         // This is equivalent to:
-        // for( auto x : ldata) { x.show(); }
+        // for( auto x : collection) { x.show(); }
         // Waiting for C++0x
 
         foreach (typename boost::shared_ptr<T> itr, *this){
@@ -557,7 +557,7 @@ Referenced by Container$<$ T $>$::append().
 
 \begin{DoxyCode}
                                              {
-        return ldata.size() ;
+        return collection.size() ;
 };
 \end{DoxyCode}
 
@@ -582,11 +582,11 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_container_aadc7faacbf43540e46144319f7369a3e}
 
 
-ldata field accessor function 
+collection field accessor function 
 
-This method sets the value of the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{ldata} field. 
+This method sets the value of the data stored in the \hyperlink{class_container_aef055b4e4f94e227cc8a2124af13c177}{collection} field. 
 \begin{DoxyParams}{Parameters}
-{\em v} & The vector of smart pointers to be stored in the ldata field \\
+{\em v} & The vector of smart pointers to be stored in the collection field \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -600,7 +600,7 @@ Definition at line 229 of file Container.cpp.
 \begin{DoxyCode}
                                                                                  
       {
-        ldata=v;
+        collection=v;
 };
 \end{DoxyCode}
 \hypertarget{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{
@@ -616,7 +616,7 @@ Definition at line 229 of file Container.cpp.
 
 Object validator. 
 
-This method checks the object for internal coherence. This method calls the validate method for each element in ldata, \begin{DoxySeeAlso}{See also}
+This method checks the object for internal coherence. This method calls the validate method for each element in collection, \begin{DoxySeeAlso}{See also}
 The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
@@ -640,9 +640,9 @@ Definition at line 112 of file Container.cpp.
 
 \subsection{Member Data Documentation}
 \hypertarget{class_container_aef055b4e4f94e227cc8a2124af13c177}{
-\index{Container@{Container}!ldata@{ldata}}
-\index{ldata@{ldata}!Container@{Container}}
-\subsubsection[{ldata}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf ldata}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\index{Container@{Container}!collection@{collection}}
+\index{collection@{collection}!Container@{Container}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf collection}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{class_container_aef055b4e4f94e227cc8a2124af13c177}
 
 

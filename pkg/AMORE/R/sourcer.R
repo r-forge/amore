@@ -49,6 +49,12 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 
 
 ###############################################
+# FIXME Javi: RBFNeuron
+# STATUS: Pending
+###############################################
+
+
+###############################################
 # FIXME Manolo: Neuron.h
 # STATUS: writing
 ###############################################

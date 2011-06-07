@@ -63,11 +63,11 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="101,-490.5 101,-657.5 195,-657.5 195,-490.5 101,-490.5"/>
 <text text-anchor="middle" x="148" y="-644.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Con &gt;</text>
 <polyline fill="none" stroke="black" points="101,-638.5 195,-638.5 "/>
-<text text-anchor="start" x="109" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="109" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="101,-619.5 195,-619.5 "/>
 <text text-anchor="start" x="109" y="-606.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="109" y="-595.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -100,7 +100,7 @@
 <g id="edge6" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M101.824,-882.135C109.914,-828.153 124.759,-729.092 135.435,-657.844"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="100.3,-892.308 97.3314,-881.752 101.041,-887.364 101.782,-882.419 101.782,-882.419 101.782,-882.419 101.041,-887.364 106.232,-883.086 100.3,-892.308 100.3,-892.308"/>
-<text text-anchor="middle" x="138.5" y="-786.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="138.5" y="-786.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 <!-- Node5 -->
 <g id="node8" class="node"><title>Node5</title>
@@ -151,11 +151,11 @@
 </g>
 <!-- Node7 -->
 <g id="node12" class="node"><title>Node7</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="167,-706.5 167,-873.5 249,-873.5 249,-706.5 167,-706.5"/>
 <text text-anchor="middle" x="208" y="-860.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="167,-854.5 249,-854.5 "/>
-<text text-anchor="start" x="175" y="-841.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="175" y="-841.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="167,-835.5 249,-835.5 "/>
 <text text-anchor="start" x="175" y="-822.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="175" y="-811.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -180,7 +180,7 @@
 <g id="edge14" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M230.752,-958.205C227.54,-934.456 223.301,-903.118 219.353,-873.934"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="232.107,-968.218 226.307,-958.911 231.436,-963.263 230.766,-958.308 230.766,-958.308 230.766,-958.308 231.436,-963.263 235.226,-957.705 232.107,-968.218 232.107,-968.218"/>
-<text text-anchor="middle" x="239.5" y="-917.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="239.5" y="-917.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 </g>
 </svg>

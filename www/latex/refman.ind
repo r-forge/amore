@@ -55,7 +55,7 @@
     \subitem {const\_\discretionary {-}{}{}iterator}, \hyperpage{21}
     \subitem {end}, \hyperpage{24}
     \subitem {iterator}, \hyperpage{21}
-    \subitem {ldata}, \hyperpage{29}
+    \subitem {collection}, \hyperpage{29}
     \subitem {load}, \hyperpage{24}
     \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{25}
     \subitem {reserve}, \hyperpage{26}
@@ -109,7 +109,7 @@
 
   \indexspace
 
-  \item {ldata}
+  \item {collection}
     \subitem {Container}, \hyperpage{29}
   \item {load}
     \subitem {Container}, \hyperpage{24}

@@ -9,39 +9,39 @@ setClassUnion("AMORElistElement", c("Con"))
 
 gListAMORE <- setRefClass("listAMORE",
   fields=list(
-    ldata="list"
+    collection="list"
   ),
   methods= list(
 
 	load=function( ... ){
-		return(ldata)
+		return(collection)
 	},
 	
 	store=function(value, ...){
-		ldata <<- value
+		collection <<- value
 	},
 	
     push_back=function(value, ...){
-      ldata <<- c(ldata, value)
+      collection <<- c(collection, value)
     },
 	
 	append=function(value, ...){
-		ldata <<- c(ldata, value$load(...))
+		collection <<- c(collection, value$load(...))
 	},
 	
 	
     show=function(...) {
     'Generic print function for the listAMORE class. 
     '
-    lapply(ldata, function(x){x$show(...)})
+    lapply(collection, function(x){x$show(...)})
     return(invisible(TRUE))
   	},
 
 	validate=function(...){
 		'Object validator for internal coherence.
 		'
-		lapply(ldata, function(x){if (!is(x,"AMORElistElement")) {stop("[listAMORE validate]: Element is not an AMORElistElement")}  })
-		lapply(ldata, function(x){x$validate(...)})
+		lapply(collection, function(x){if (!is(x,"AMORElistElement")) {stop("[listAMORE validate]: Element is not an AMORElistElement")}  })
+		lapply(collection, function(x){x$validate(...)})
 		return(TRUE)
 	}
 

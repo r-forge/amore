@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f">getId</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the Id values of the vector of Cons.  <a href="#a03d5dde143e166e68b01c9596573eb5f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1">buildAndAppend</a> (std::vector&lt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> &gt; vFrom, std::vector&lt; double &gt; vWeight)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects and appends them to ldata.  <a href="#a2ab58248509550b1c99435a90ece59f1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects and appends them to collection.  <a href="#a2ab58248509550b1c99435a90ece59f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638">getWeight</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the weight field of the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects related to <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a>.  <a href="#aafa37c30d566b8784ac84d23a14b5638"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec_con.html#a0de571e8fde8e354887e0b43b8d00772">getWeight</a> (std::vector&lt; int &gt; vFrom)</td></tr>
@@ -163,8 +163,8 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Builds <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects and appends them to ldata. </p>
-<p>This function provides a convenient way of populating a <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object by building and apending <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects to ldata. </p>
+<p>Builds <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects and appends them to collection. </p>
+<p>This function provides a convenient way of populating a <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object by building and apending <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects to collection. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">FROM</td><td>A vector of smart pointers to the neurons to be used in the <a class="el" href="class_con.html#a7c05f90dff56fd26c1fa0f042bba67a6" title="A smart pointer to the Neuron used as input during simulation or training.">Con::from</a> fields </td></tr>
@@ -194,7 +194,7 @@ Public Member Functions</h2></td></tr>
                 vWeight.push_back(1.2);
                 vWeight.push_back(2.1);
 
-                MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
+                MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(vNeuron, vWeight);
 
                 result=MyVecCon.<a class="code" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f" title="Getter of the Id values of the vector of Cons.">getId</a>();
 
@@ -247,7 +247,7 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Erase the specified elements from the vecCom object. </p>
-<p>Provides a convenient way of removing some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the ldata field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
+<p>Provides a convenient way of removing some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the collection field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">vFrom</td><td>An std::vector&lt;int&gt; with the Ids of the connections to remove.</td></tr>
@@ -360,10 +360,10 @@ Here is the call graph for this function:</div>
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
                                 ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(ids[i]) );
-                                vNeuron.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptNeuron);
+                                vNeuron.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptNeuron);
                                 vWeight.push_back(weights[i]);
                         }
-                        MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
+                        MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(vNeuron, vWeight);
                 <span class="comment">// Test</span>
                         vNeuron=MyVecCon.<a class="code" href="class_vec_con.html#aee24ad1e9f3a8af771bef14cac0bf71d" title="Getter of the from field of the Con objects related to VecCon.">getFrom</a>();
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
@@ -435,11 +435,11 @@ Here is the caller graph for this function:</div>
                         N3.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(30);
 
                         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N1, 1.13) );     <span class="comment">// Create new Con and initialize ptCon</span>
-                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
+                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
                         ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N2, 2.22) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
+                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
                         ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N3, 3.33) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
+                        MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
 
         <span class="comment">// Test</span>
                         MyVecCon.<a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>() ;
@@ -520,7 +520,7 @@ Here is the caller graph for this function:</div>
                 vWeight.push_back(1.2);
                 vWeight.push_back(2.1);
 
-                MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
+                MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(vNeuron, vWeight);
 
                 result=MyVecCon.<a class="code" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a>();
 
@@ -576,7 +576,7 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Getter of the weights of the specified elements from the vecCom object. </p>
-<p>Provides a convenient way of getting the weights of some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the ldata field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
+<p>Provides a convenient way of getting the weights of some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the collection field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">vFrom</td><td>An std::vector&lt;int&gt; with the Ids of the connections to select</td></tr>
@@ -722,7 +722,7 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Selects the specified elements from the vecCom object. </p>
-<p>Provides a convenient way of selecting some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the ldata field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
+<p>Provides a convenient way of selecting some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the collection field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">vFrom</td><td>An std::vector&lt;int&gt; with the Ids of the connections to select.</td></tr>
@@ -773,7 +773,7 @@ Here is the caller graph for this function:</div>
         result-&gt;reserve(<a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>());
         sort (<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
         sort (vFrom.begin(), vFrom.end());
-        set_intersection(<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;ldata) , <a class="code" href="struct_compare_id.html">CompareId</a>());
+        set_intersection(<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;collection) , <a class="code" href="struct_compare_id.html">CompareId</a>());
 
         <span class="keywordflow">return</span> result;
 }
@@ -857,7 +857,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><pre class="fragment">                                                     {
         BEGIN_RCPP
                 <span class="keywordflow">if</span> (vFrom.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setFrom]: Error, w is empty&quot;</span>); }
-                <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != ldata.size()&quot;</span>); }
+                <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != collection.size()&quot;</span>); }
                 std::vector&lt;NeuronPtr&gt;::iterator itrFrom = vFrom.begin();
                 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr , *<span class="keyword">this</span>)     {
                         itr-&gt;setFrom( *itrFrom );
@@ -911,7 +911,7 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Setter of the weights of the specified elements from the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object. </p>
-<p>Provides a convenient way of setting the weights of some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the ldata field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
+<p>Provides a convenient way of setting the weights of some <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects from the collection field of the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">vWeight</td><td>A numeric (double) vector with the weights to be set in the <a class="el" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a> objects contained in the <a class="el" href="class_vec_con.html" title="A vector of connections.">VecCon</a> object. </td></tr>
@@ -1018,10 +1018,10 @@ Here is the call graph for this function:</div>
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
                         ptNeuron.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>(ids[1]) );
-                        vNeuron.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">push_back</a>(ptNeuron);
+                        vNeuron.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptNeuron);
                         vWeight.push_back(0);                                   <span class="comment">// weights are set to 0</span>
                         }
-                        MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to ldata.">buildAndAppend</a>(vNeuron, vWeight);
+                        MyVecCon.<a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(vNeuron, vWeight);
                         MyVecCon.<a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2; i++) {
@@ -1042,7 +1042,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><pre class="fragment">                                                  {
         BEGIN_RCPP
         <span class="keywordflow">if</span> (vWeight.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setWeight]: Error, vWeight is empty&quot;</span>); }
-        <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()&quot;</span>); }
+        <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != collection.size()&quot;</span>); }
         std::vector&lt;double&gt;::iterator itrWeight = vWeight.begin();
         <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
                 itr-&gt;setWeight( *itrWeight );

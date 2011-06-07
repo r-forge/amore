@@ -36,11 +36,11 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="105,-192.5 105,-359.5 213,-359.5 213,-192.5 105,-192.5"/>
 <text text-anchor="middle" x="159" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Neuron &gt;</text>
 <polyline fill="none" stroke="black" points="105,-340.5 213,-340.5 "/>
-<text text-anchor="start" x="113" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="113" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="105,-321.5 213,-321.5 "/>
 <text text-anchor="start" x="113" y="-308.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="113" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -73,7 +73,7 @@
 <g id="edge6" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M109.272,-584.135C117.984,-530.153 133.971,-431.092 145.469,-359.844"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="107.63,-594.308 104.781,-583.719 108.427,-589.372 109.224,-584.436 109.224,-584.436 109.224,-584.436 108.427,-589.372 113.666,-585.153 107.63,-594.308 107.63,-594.308"/>
-<text text-anchor="middle" x="147.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="147.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 <!-- Node5 -->
 <g id="node8" class="node"><title>Node5</title>
@@ -124,11 +124,11 @@
 </g>
 <!-- Node7 -->
 <g id="node12" class="node"><title>Node7</title>
-<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
+<a xlink:href="class_container.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}">
 <polygon fill="white" stroke="black" points="180,-408.5 180,-575.5 262,-575.5 262,-408.5 180,-408.5"/>
 <text text-anchor="middle" x="221" y="-562.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="180,-556.5 262,-556.5 "/>
-<text text-anchor="start" x="188" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="188" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="180,-537.5 262,-537.5 "/>
 <text text-anchor="start" x="188" y="-524.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="188" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -153,7 +153,7 @@
 <g id="edge14" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M247.815,-660.205C244.029,-636.456 239.033,-605.118 234.381,-575.934"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="249.411,-670.218 243.393,-661.051 248.624,-665.28 247.837,-660.342 247.837,-660.342 247.837,-660.342 248.624,-665.28 252.281,-659.634 249.411,-670.218 249.411,-670.218"/>
-<text text-anchor="middle" x="256.5" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="256.5" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 </g>
 </svg>

@@ -93,9 +93,9 @@ std::vector<int>  VecCon::getId() {
 
 
 
-//! Builds Con objects and appends them to ldata.
+//! Builds Con objects and appends them to collection.
 /*!
- * This function provides a convenient way of populating a VecCon object by building and apending Con objects to ldata.
+ * This function provides a convenient way of populating a VecCon object by building and apending Con objects to collection.
  * \param FROM  A vector of smart pointers to the neurons to be used in the Con::from fields
  * \param WEIGHT A vector of values to be set in the Con::weight fields
  *
@@ -244,7 +244,7 @@ std::vector<double>	VecCon::getWeight ( ) {
 bool VecCon::setWeight (std::vector<double> vWeight)  {
 	BEGIN_RCPP
 	if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: Error, vWeight is empty"); }
-	if (vWeight.size() != size() ) { throw std::range_error("[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()"); }
+	if (vWeight.size() != size() ) { throw std::range_error("[C++ VecCon::setWeight]: Error, vWeight.size() != collection.size()"); }
 	std::vector<double>::iterator itrWeight = vWeight.begin();
 	foreach (ConPtr itr, *this){
 		itr->setWeight( *itrWeight );
@@ -353,7 +353,7 @@ std::vector<NeuronPtr> VecCon::getFrom 	( ) {
 bool	VecCon::setFrom	( std::vector<NeuronPtr> vFrom){
 	BEGIN_RCPP
 		if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFrom]: Error, w is empty"); }
-		if (vFrom.size() != size() ) { throw std::range_error("[C++ VecCon::setFrom]: Error, w.size() != ldata.size()"); }
+		if (vFrom.size() != size() ) { throw std::range_error("[C++ VecCon::setFrom]: Error, w.size() != collection.size()"); }
 		std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
 		foreach(ConPtr itr , *this)	{
 			itr->setFrom( *itrFrom );
@@ -389,7 +389,7 @@ struct CompareId {
 
 //! Erase the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of removing some Con objects from the ldata field of the VecCon object.
+ * Provides a convenient way of removing some Con objects from the collection field of the VecCon object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to remove.
  *
@@ -462,7 +462,7 @@ void VecCon::erase ( std::vector<int> vFrom ){
 
 //! Selects the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of selecting some Con objects from the ldata field of the VecCon object.
+ * Provides a convenient way of selecting some Con objects from the collection field of the VecCon object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to select.
  *
@@ -509,7 +509,7 @@ VecConPtr VecCon::select ( std::vector<int> vFrom ){
 	result->reserve(size());
 	sort (begin(), end(), CompareId());
 	sort (vFrom.begin(), vFrom.end());
-	set_intersection(begin(), end(), vFrom.begin(), vFrom.end(), back_inserter(result->ldata) , CompareId());
+	set_intersection(begin(), end(), vFrom.begin(), vFrom.end(), back_inserter(result->collection) , CompareId());
 
 	return result;
 }
@@ -519,7 +519,7 @@ VecConPtr VecCon::select ( std::vector<int> vFrom ){
 
 //! Getter of the weights of the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of getting the weights of some Con objects from the ldata field of the VecCon object.
+ * Provides a convenient way of getting the weights of some Con objects from the collection field of the VecCon object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to select
  *
@@ -574,7 +574,7 @@ std::vector<double>	VecCon::getWeight	  	( std::vector<int> vFrom ){
 
 //! Setter of the weights of the specified elements from the VecCon object.
 /*!
- * Provides a convenient way of setting the weights of some Con objects from the ldata field of the VecCon object.
+ * Provides a convenient way of setting the weights of some Con objects from the collection field of the VecCon object.
  *
  * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the VecCon object.
  * \param vFrom An std::vector<int> with the Ids of the connections to select

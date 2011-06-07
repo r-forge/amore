@@ -18,7 +18,7 @@ class Neuron {
 	/*!
 	 * The Neuron Id provides a name to the neuron. This value is not expected to be used neither during simulation nor training but it provides an easy reference for human readers.
 	 */
-	int id;
+	int Id;
 
 	//! A vector of input connections
 	/*!
@@ -38,7 +38,7 @@ public:
 	std::vector<NeuronPtr>	getFrom		();
 		std::vector<int>	getConId	();
 		std::vector<double>	getWeight	();
-					bool	setFrom		(NeuronPtr vFrom);
+					bool	setFrom		(std::vector<NeuronPtr> vFrom);
 					bool	setWeight	(std::vector<double> vWeight);
 						int	numOfCons	();
 					bool	show		();

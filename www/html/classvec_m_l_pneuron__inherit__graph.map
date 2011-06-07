@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classvec_neuron.html" title="A vector of neurons." alt="" coords="36,568,119,645"/>
-<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="5,293,149,517"/>
-<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# ldata\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="23,5,132,229"/>
+<area shape="rect" id="node4" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="5,293,149,517"/>
+<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l}" alt="" coords="23,5,132,229"/>
 </map>

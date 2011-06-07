@@ -90,8 +90,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 
 <a name="l00010"></a>00010 
-<a name="l00044"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00044</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of ldata.">Container&lt;T&gt;::push_back</a>( boost::shared_ptr&lt;T&gt; TsharedPtr) {
-<a name="l00045"></a>00045         ldata.push_back(TsharedPtr);
+<a name="l00044"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00044</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container&lt;T&gt;::push_back</a>( boost::shared_ptr&lt;T&gt; TsharedPtr) {
+<a name="l00045"></a>00045         collection.push_back(TsharedPtr);
 <a name="l00046"></a>00046 };
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00093"></a><a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2">00093</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">Container&lt;T&gt;::show</a>() {
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095         <span class="comment">// This is equivalent to:</span>
-<a name="l00096"></a>00096         <span class="comment">// for( auto x : ldata) { x.show(); }</span>
+<a name="l00096"></a>00096         <span class="comment">// for( auto x : collection) { x.show(); }</span>
 <a name="l00097"></a>00097         <span class="comment">// Waiting for C++0x</span>
 <a name="l00098"></a>00098 
 <a name="l00099"></a>00099         <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>){
@@ -124,37 +124,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00122"></a>00122 
 <a name="l00172"></a><a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54">00172</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54" title="Appends a Container&lt;T&gt; object.">Container&lt;T&gt;::append</a>( <a class="code" href="class_container.html">Container&lt;T&gt;</a> v) {
 <a name="l00173"></a>00173         reserve(size() + v.<a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9" title="Returns the size or length of the vector.">size</a>());
-<a name="l00174"></a>00174         ldata.insert( end(), v.<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), v.<a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>() );
+<a name="l00174"></a>00174         collection.insert( end(), v.<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), v.<a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>() );
 <a name="l00175"></a>00175 };
 <a name="l00176"></a>00176 
 <a name="l00177"></a>00177 
 <a name="l00178"></a>00178 
 <a name="l00180"></a>00180 
-<a name="l00217"></a><a class="code" href="class_container.html#a9161a87726434f8955398137c647947c">00217</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; <a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="ldata field accessor function">Container&lt;T&gt;::load</a>() {
-<a name="l00218"></a>00218         <span class="keywordflow">return</span> ldata;
+<a name="l00217"></a><a class="code" href="class_container.html#a9161a87726434f8955398137c647947c">00217</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; <a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">Container&lt;T&gt;::load</a>() {
+<a name="l00218"></a>00218         <span class="keywordflow">return</span> collection;
 <a name="l00219"></a>00219 };
 <a name="l00220"></a>00220 
 <a name="l00221"></a>00221 
 <a name="l00222"></a>00222 
 <a name="l00224"></a>00224 
-<a name="l00229"></a><a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e">00229</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="ldata field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; v) {
-<a name="l00230"></a>00230         ldata=v;
+<a name="l00229"></a><a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e">00229</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt; boost::shared_ptr&lt;T&gt;  &gt; v) {
+<a name="l00230"></a>00230         collection=v;
 <a name="l00231"></a>00231 };
 <a name="l00232"></a>00232 
 <a name="l00233"></a>00233 
 <a name="l00235"></a>00235 
 <a name="l00240"></a><a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">00240</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9" title="Returns the size or length of the vector.">Container&lt;T&gt;::size</a>() {
-<a name="l00241"></a>00241         <span class="keywordflow">return</span> ldata.size() ;
+<a name="l00241"></a>00241         <span class="keywordflow">return</span> collection.size() ;
 <a name="l00242"></a>00242 };
 <a name="l00243"></a>00243 
 <a name="l00244"></a>00244 
 <a name="l00245"></a><a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">00245</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">Container&lt;T&gt;::resize</a> ( <span class="keywordtype">int</span> n) {
-<a name="l00246"></a>00246         ldata.resize(n);
+<a name="l00246"></a>00246         collection.resize(n);
 <a name="l00247"></a>00247 }
 <a name="l00248"></a>00248 
 <a name="l00249"></a>00249 
 <a name="l00250"></a><a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">00250</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">Container&lt;T&gt;::reserve</a>(<span class="keywordtype">int</span> n) {
-<a name="l00251"></a>00251          ldata.reserve(n) ;
+<a name="l00251"></a>00251          collection.reserve(n) ;
 <a name="l00252"></a>00252 };
 <a name="l00253"></a>00253 
 </pre></div></div>

@@ -11,15 +11,15 @@
 
 template <typename T> class Container {
 protected:
-		std::vector<boost::shared_ptr<T> > ldata; // Don't forget the space between "> >"
+		std::vector<boost::shared_ptr<T> > collection; // Don't forget the space between "> >"
 
 public:
 
 typedef typename std::vector<boost::shared_ptr<T> >::iterator iterator;
 typedef typename std::vector<boost::shared_ptr<T> >::const_iterator const_iterator;
 
-										iterator	begin() { 	return ldata.begin(); }
-										iterator	end() 	{ 	return ldata.end(); }
+										iterator	begin() { 	return collection.begin(); }
+										iterator	end() 	{ 	return collection.end(); }
 	typename std::vector< boost::shared_ptr<T> >	load	( );
 											void	store	( typename  std::vector< boost::shared_ptr<T> > );
 											int 	size		( );

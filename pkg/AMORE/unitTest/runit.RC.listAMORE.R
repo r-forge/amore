@@ -9,7 +9,7 @@ test.gListAMORE.new <- function() {
 	la <- gListAMORE$new()
 	checkTrue(la$validate())
 	checkException(gListAMORE$new(list(1:3)), silent=TRUE)
-	lb <- gListAMORE$new(ldata=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
+	lb <- gListAMORE$new(collection=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
 	checkTrue(lb$validate())
 	checkEquals(lb$load()[[1]], gCon$new(from=1, weight=14.5))	
 	checkEquals(lb$load()[[2]], gCon$new(from=2, weight=24.5))	
@@ -18,9 +18,9 @@ test.gListAMORE.new <- function() {
 
 
 test.gListAMORE.load <- function() {
-	lb <- gListAMORE$new(ldata=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
+	lb <- gListAMORE$new(collection=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
 	checkTrue(lb$validate())	
-	checkEquals(lb$ldata,lb$load())
+	checkEquals(lb$collection,lb$load())
 }
 
 
@@ -30,7 +30,7 @@ test.gListAMORE.push_back <- function() {
 	lc$push_back(gCon$new(from=1, weight=14.5))
 	lc$push_back(gCon$new(from=2, weight=24.5))
 	lc$push_back(gCon$new(from=3, weight=34.5))
-	ld <- gListAMORE$new(ldata=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
+	ld <- gListAMORE$new(collection=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
 	checkTrue(ld$validate())
 	checkEquals(lc,ld)
 	checkEquals(lc$load(), list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))
@@ -43,7 +43,7 @@ test.gListAMORE.append <- function() {
 	lc$push_back(gCon$new(from=1, weight=14.5))
 	lc$push_back(gCon$new(from=2, weight=24.5))
 	lc$push_back(gCon$new(from=3, weight=34.5))
-	ld <- gListAMORE$new(ldata=list (gCon$new(from=4, weight=1.5),	gCon$new(from=5, weight=2.5), gCon$new(from=6, weight=4.5)))	
+	ld <- gListAMORE$new(collection=list (gCon$new(from=4, weight=1.5),	gCon$new(from=5, weight=2.5), gCon$new(from=6, weight=4.5)))	
 	checkTrue(ld$validate())
 	lc$append(ld)
 	checkTrue(ld$validate())
@@ -61,7 +61,7 @@ test.gListAMORE.store <- function() {
 
 
 test.gListAMORE.show <- function() {
-	ld <- gListAMORE$new(ldata=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
+	ld <- gListAMORE$new(collection=list (gCon$new(from=1, weight=14.5),	gCon$new(from=2, weight=24.5), gCon$new(from=3, weight=34.5)))	
 	checkTrue(ld$show())
 }
 
@@ -69,7 +69,7 @@ test.gListAMORE.show <- function() {
 test.gListAMORE.validate <- function() {
 	le <- gListAMORE$new()
 	le$push_back("xx")
-	checkEquals(le$ldata[[1]],"xx")
+	checkEquals(le$collection[[1]],"xx")
 	checkException(le$validate(), silent=TRUE)
 	le$push_back("yy")
 	checkEquals(le$load(),list("xx","yy"))

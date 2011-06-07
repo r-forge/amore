@@ -107,7 +107,7 @@ test.gListCon.getFrom_fromIsNeuron <- function() {
 	checkTrue(ln$validate())
 	lc <- gListCon$new()
 	lc$buildAndAppend(FROM=ln$load(), WEIGHT=5:1)
-	checkEquals(gListMLPneuron$new(ldata=lc$getFrom())$getId(), 1:5)
+	checkEquals(gListMLPneuron$new(collection=lc$getFrom())$getId(), 1:5)
 }
 
 

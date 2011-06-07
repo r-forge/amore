@@ -52,7 +52,7 @@
 \contentsline {subsubsection}{\numberline {5.3.3.10}store}{29}{subsubsection.5.3.3.10}
 \contentsline {subsubsection}{\numberline {5.3.3.11}validate}{29}{subsubsection.5.3.3.11}
 \contentsline {subsection}{\numberline {5.3.4}Member Data Documentation}{29}{subsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.4.1}ldata}{29}{subsubsection.5.3.4.1}
+\contentsline {subsubsection}{\numberline {5.3.4.1}collection}{29}{subsubsection.5.3.4.1}
 \contentsline {section}{\numberline {5.4}Neuron Class Reference}{30}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Detailed Description}{32}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{32}{subsection.5.4.2}
