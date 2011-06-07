@@ -52,13 +52,15 @@ test.Container.Cpp.Constructor_collectionAsArgument<- function() {
 				foreach(ConPtr itr, AuxContainer){
 					result.push_back( itr->getId() );
 				}
+				VecCon MyVecCon( ptShvCon->load() );					// VecCon constructor calls Container constructor as well
+				std::vector<int> vIds(MyVecCon.getId());
+				result.insert(result.end(), vIds.begin(), vIds.end());
 				return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
-	checkEquals(result, c(10, 20, 30))
-	# [1] TRUE
-	}
+	checkEquals(result, c(10, 20, 30, 10, 20, 30))
+}
 
 
 

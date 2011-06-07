@@ -18,6 +18,10 @@ class VecCon : public Container<Con>
 
 public:
 
+  VecCon();
+
+  VecCon(std::vector<ConPtr> collection);
+
   int
   numOfCons();
 
