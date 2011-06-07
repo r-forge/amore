@@ -28,19 +28,16 @@ class Con {
 public:
 
 	Con();
-	Con(NeuronPtr f);
-	Con(NeuronPtr f , double w );
+	Con(NeuronPtr from);
+	Con(NeuronPtr from, double weight);
 	~Con();
-	NeuronPtr	getFrom	();
-			void	setFrom	(NeuronPtr f);
-				int	getId		();
-			double	getWeight		();
-			void	setWeight		(double w);
-			bool	show			();
-			bool	validate		();
+	NeuronPtr getFrom();
+	void setFrom(NeuronPtr from);
+	int getId();
+	double getWeight();
+	void setWeight(double weight);
+	bool show();
+	bool validate();
 };
 #endif /* CON_H_ */
-
-
-
 

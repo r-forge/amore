@@ -15,13 +15,15 @@ protected:
 
 public:
 
-typedef typename std::vector<boost::shared_ptr<T> >::iterator iterator;
-typedef typename std::vector<boost::shared_ptr<T> >::const_iterator const_iterator;
+	typedef typename std::vector<boost::shared_ptr<T> >::iterator	iterator;
+	typedef typename std::vector<boost::shared_ptr<T> >::const_iterator	const_iterator;
 
-										iterator	begin() { 	return collection.begin(); }
-										iterator	end() 	{ 	return collection.end(); }
-	typename std::vector< boost::shared_ptr<T> >	load	( );
-											void	store	( typename  std::vector< boost::shared_ptr<T> > );
+													Container	( );
+													Container	( typename std::vector<boost::shared_ptr<T> > collection);
+										iterator	begin		( )	{ 	return collection.begin();	}
+										iterator	end			( )	{ 	return collection.end();	}
+	typename std::vector< boost::shared_ptr<T> >	load		( );
+											void	store		( typename  std::vector< boost::shared_ptr<T> > );
 										size_type 	size		( );
 											void 	push_back	( boost::shared_ptr<T>   element);
 											void 	append		( Container<T>  v);
@@ -29,8 +31,7 @@ typedef typename std::vector<boost::shared_ptr<T> >::const_iterator const_iterat
 											bool 	validate	( );
 											void	reserve		( int n );
 											void	resize		( int n );
-							boost::shared_ptr<T>	&operator[]( size_type offset ) ;
-
+							boost::shared_ptr<T>	&operator[]	( size_type offset ) ;
 };
 
 

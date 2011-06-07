@@ -7,7 +7,6 @@
 
 #include "Con.h"
 
-
 //=========================================================================================================
 
 
@@ -15,9 +14,10 @@
 /*
  * Default constructor, from.use_count==0L, weight=0
  */
-	Con::Con() : weight(0), from() {
-	};
-
+Con::Con() :
+	weight(0), from() {
+}
+;
 
 //! Constructor
 /*
@@ -25,22 +25,25 @@
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \param w The new value (double) to be set in the \ref weight field.
  */
-	Con::Con(NeuronPtr f , double w ) : from(f), weight(w) {};
+Con::Con(NeuronPtr from, double weight) :
+	from(from), weight(weight) {
+}
+;
 
-
-	//! Constructor
-	/*
-	 * Constructor, from=f, weight=0
-	 * \param f A pointer to the neuron that is to be inserted in the \ref from field.
-	 */
-		Con::Con(NeuronPtr f ) : from(f), weight(0) {};
-
-
+//! Constructor
+/*
+ * Constructor, from=f, weight=0
+ * \param f A pointer to the neuron that is to be inserted in the \ref from field.
+ */
+Con::Con(NeuronPtr from) :
+	from(from), weight(0) {
+}
+;
 
 //! Default Destructor
-	Con::~Con() {};
-
-
+Con::~Con() {
+}
+;
 
 //! %from field accessor.
 /*! This method allows access to the address stored in the private \ref from field (a pointer to a Neuron object).*
@@ -62,11 +65,9 @@
  *
  * \sa getId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-NeuronPtr Con::getFrom	()   			{
-	return(from.lock());
+NeuronPtr Con::getFrom() {
+	return (from.lock());
 }
-
-
 
 //! %from field accessor.
 /*! This method sets the value of the \ref from field with the address used as parameter.
@@ -89,11 +90,9 @@ NeuronPtr Con::getFrom	()   			{
  *
  * \sa getFrom and getId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
-void Con::setFrom	(NeuronPtr f)   	{
-	from=f;
+void Con::setFrom(NeuronPtr from_) {
+	from = from_;
 }
-
-
 
 //! A getter of the Id of the Neuron pointed by the from field.
 /*! This method gets the Id of the Neuron referred to by the \ref from field
@@ -114,17 +113,14 @@ void Con::setFrom	(NeuronPtr f)   	{
  *
  * \sa getFrom, setFrom and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-int Con::getId () {
-	if (from.use_count() !=0 ){
+int Con::getId() {
+	if (from.use_count() != 0) {
 		NeuronPtr ptNeuron(from);
-		return(  ptNeuron->getId() );
+		return (ptNeuron->getId());
 	} else {
-		return(NA_INTEGER);
+		return (NA_INTEGER);
 	}
 }
-
-
-
 
 //! %weight field accessor.
 /*! This method allows access to the value stored in the private field \ref weight
@@ -148,12 +144,9 @@ int Con::getId () {
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-double Con::getWeight () {
-	return(weight);
+double Con::getWeight() {
+	return (weight);
 }
-
-
-
 
 //! %weight field accessor.
 /*! This method sets the value of the \ref weight field.
@@ -177,30 +170,24 @@ double Con::getWeight () {
  *
  * \sa getWeight and the unit test files (e.g. runit.Cpp.Con.R)
  */
-void Con::setWeight	(double w) {
+void Con::setWeight(double w) {
 	weight = w;
 }
-
-
-
 
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.
  * \return true in case everything works without throwing an exception
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for usage examples.
  */
-bool Con::show () {
-	int id=getId();
-	if (id==NA_INTEGER) {
+bool Con::show() {
+	int id = getId();
+	if (id == NA_INTEGER) {
 		Rprintf("From: NA\t Invalid Connection \n");
 	} else {
-		Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight());
+		Rprintf("From:\t %d \t Weight= \t %lf \n", id, getWeight());
 	}
-	return(true);
+	return (true);
 }
-
-
-
 
 //! Object validator
 /*! This method checks the object for internal coherence.
@@ -208,12 +195,11 @@ bool Con::show () {
  * \return true in case the checks are Ok.
  * \throw An std::range error if weight or from are not finite.
  */
-bool Con::validate () {
+bool Con::validate() {
 	BEGIN_RCPP
-	if (! R_FINITE(getWeight()) )  		throw std::range_error("weight is not finite.");
-	if (getId() == NA_INTEGER )		throw std::range_error("fromId is not finite.");
-	return(true);
-	END_RCPP
-};
-
+	if (! R_FINITE(getWeight()) ) throw std::range_error("weight is not finite.");
+	if (getId() == NA_INTEGER)
+		throw std::range_error("fromId is not finite.");
+	return (true);
+END_RCPP};
 
