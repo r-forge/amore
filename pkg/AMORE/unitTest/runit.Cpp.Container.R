@@ -5,9 +5,72 @@
 
 
 ###############################################################################
-test.Container.Cpp.validate.show<- function() {	
+test.Container.Cpp.Constructor_EmptyArgumentList<- function() {	
 ###############################################################################
-#############################################################################	
+
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Test
+			Container<Con> MyContainer;
+			MyContainer.validate();		
+			return wrap(MyContainer.size());
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun()
+	checkEquals(result, 0)
+	# [1] TRUE
+}
+
+
+
+###############################################################################
+test.Container.Cpp.Constructor_collectionAsArgument<- function() {	
+###############################################################################
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+		// Data set up
+				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
+				ContainerConPtr		ptShvCon( new Container<Con>() );
+				ConPtr	ptC;
+				NeuronPtr ptN;
+				int ids[]= {10, 20, 30};
+				double weights[] = {1.13, 2.22, 3.33 };
+				foreach (int id, ids){  			// Let's create a vector with three neurons
+					ptN.reset( new Neuron( id ) ); 	
+					ptShvNeuron->push_back(ptN);
+				}
+
+				int i=0;
+				foreach ( NeuronPtr itr , *ptShvNeuron ) {			// and a vector with three connections
+					ptC.reset( new Con( itr, weights[i++]) );  	
+					ptShvCon->push_back(ptC);	
+				}
+
+			// Test
+				Container<Con> AuxContainer( ptShvCon->load() );		// Constructor from a std::vector<ConPtr> object
+				std::vector<int> result;
+				foreach(ConPtr itr, AuxContainer){
+					result.push_back( itr->getId() );
+				}
+				return wrap(result);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun()
+	checkEquals(result, c(10, 20, 30))
+	# [1] TRUE
+	}
+
+
+
+
+
+
+
+
+
+###############################################################################
+test.Container.Cpp.validate.show<- function() {	
+###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up

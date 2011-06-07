@@ -6,6 +6,13 @@
  */
 
 
+template <typename T>  Container<T>::Container	( ) {};
+
+
+template <typename T>  Container<T>::Container	( typename std::vector<boost::shared_ptr<T> > collection)  :  collection(collection) {}
+
+
+
 //! Append a shared_ptr at the end of collection
 /*!
  * Implements push_back for the Container class
