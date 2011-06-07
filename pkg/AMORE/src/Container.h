@@ -22,13 +22,15 @@ typedef typename std::vector<boost::shared_ptr<T> >::const_iterator const_iterat
 										iterator	end() 	{ 	return collection.end(); }
 	typename std::vector< boost::shared_ptr<T> >	load	( );
 											void	store	( typename  std::vector< boost::shared_ptr<T> > );
-											int 	size		( );
+										size_type 	size		( );
 											void 	push_back	( boost::shared_ptr<T>   element);
 											void 	append		( Container<T>  v);
 											bool 	show		( );
 											bool 	validate	( );
 											void	reserve		( int n );
 											void	resize		( int n );
+							boost::shared_ptr<T>	&operator[]( size_type offset ) ;
+
 };
 
 

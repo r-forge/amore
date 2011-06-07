@@ -237,7 +237,7 @@ template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>
  *  In the classes derived from Container<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
  * 	The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> int Container<T>::size() {
+template <typename T> size_type Container<T>::size() {
 	return collection.size() ;
 };
 
@@ -251,3 +251,7 @@ template <typename T> void Container<T>::reserve(int n) {
 	 collection.reserve(n) ;
 };
 
+
+template <typename T> boost::shared_ptr<T>	& Container<T>::operator[]( size_type offset ) {
+	return collection[offset];
+}

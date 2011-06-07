@@ -40,7 +40,7 @@
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9" target="_top" xlink:title="Returns the size or length of the vector.">
+<a xlink:href="class_container.html#a842c3d9eca81b78b59112fde9707b091" target="_top" xlink:title="Returns the size or length of the vector.">
 <polygon fill="white" stroke="black" points="135,-0.5 135,-19.5 217,-19.5 217,-0.5 135,-0.5"/>
 <text text-anchor="middle" x="176" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container::size</text>
 </a>

@@ -26,15 +26,15 @@ Collaboration diagram for Neuron:
 \item 
 \hyperlink{class_neuron_a823487d01615fadb8ac19a2768dd9d96}{Neuron} ()
 \item 
-\hyperlink{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}{Neuron} (int Id)
+\hyperlink{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}{Neuron} (int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id})
 \item 
-\hyperlink{class_neuron_af6ba81347cc25d4d5d256dba2c4e441a}{Neuron} (int Id, \hyperlink{class_vec_con}{VecCon} \hyperlink{class_con}{Con})
+\hyperlink{class_neuron_af6ba81347cc25d4d5d256dba2c4e441a}{Neuron} (int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id}, \hyperlink{class_vec_con}{VecCon} \hyperlink{class_con}{Con})
 \item 
 \hyperlink{class_neuron_a94a250ce7e167760e593979b899745b1}{$\sim$Neuron} ()
 \item 
 int \hyperlink{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}{getId} ()
 \item 
-void \hyperlink{class_neuron_a6eb17a0d297b8c65170911aff37ba968}{setId} (int Id)
+void \hyperlink{class_neuron_a6eb17a0d297b8c65170911aff37ba968}{setId} (int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id})
 \item 
 std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ \hyperlink{class_neuron_a66e3800037d2789a8fe7b73996c14f84}{getFrom} ()
 \item 
@@ -42,7 +42,7 @@ std::vector$<$ int $>$ \hyperlink{class_neuron_aac7d538b4a5087f730ba80f19852bced
 \item 
 std::vector$<$ double $>$ \hyperlink{class_neuron_a3349c0a2053e35afa5b7036bb816f8c6}{getWeight} ()
 \item 
-bool \hyperlink{class_neuron_a2741d3516b532c0b4af12c1f4ebd3c39}{setFrom} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} vFrom)
+bool \hyperlink{class_neuron_ace0e92348f8a5604f25a3cfc07f38ec8}{setFrom} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ vFrom)
 \item 
 bool \hyperlink{class_neuron_ab067bfe507f5386eccc860d4ad2d0bca}{setWeight} (std::vector$<$ double $>$ vWeight)
 \item 
@@ -55,7 +55,7 @@ bool \hyperlink{class_neuron_a95327aa80a9ec949491f214a0c159b5a}{validate} ()
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_neuron_aef4b01c293054fa2e5419afd56afd628}{id}
+int \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id}
 \begin{DoxyCompactList}\small\item\em An integer variable with the \hyperlink{class_neuron}{Neuron} Id. \end{DoxyCompactList}\item 
 \hyperlink{class_vec_con}{VecCon} \hyperlink{class_neuron_a1451f2424a8f9e46ca643d03ff98a616}{con}
 \begin{DoxyCompactList}\small\item\em A vector of input connections. \end{DoxyCompactList}\item 
@@ -88,7 +88,7 @@ Definition at line 12 of file Neuron.cpp.
 
 
 \begin{DoxyCode}
-{};
+: Id(NA_INTEGER), con() {};
 \end{DoxyCode}
 \hypertarget{class_neuron_a05698a11ac18b6cee34d18f63681ddcc}{
 \index{Neuron@{Neuron}!Neuron@{Neuron}}
@@ -123,7 +123,7 @@ Definition at line 14 of file Neuron.cpp.
 
 
 \begin{DoxyCode}
-: Id(Id), Con(Con), outputValue(0.0) {} ;
+: Id(Id), con(con), outputValue(0.0) {} ;
 \end{DoxyCode}
 \hypertarget{class_neuron_a94a250ce7e167760e593979b899745b1}{
 \index{Neuron@{Neuron}!$\sim$Neuron@{$\sim$Neuron}}
@@ -230,6 +230,10 @@ Definition at line 18 of file Neuron.cpp.
 
 
 
+References Id.
+
+
+
 Referenced by show(), and validate().
 
 
@@ -240,8 +244,7 @@ Referenced by show(), and validate().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -303,6 +306,10 @@ Definition at line 51 of file Neuron.cpp.
 References con, and VecCon::numOfCons().
 
 
+
+Referenced by show().
+
+
 \begin{DoxyCode}
                           {
         return con.numOfCons();
@@ -320,15 +327,27 @@ Here is the call graph for this function:
 \end{figure}
 
 
-\hypertarget{class_neuron_a2741d3516b532c0b4af12c1f4ebd3c39}{
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_neuron_ae447dce39ed04581609a83d742b585d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_neuron_ace0e92348f8a5604f25a3cfc07f38ec8}{
 \index{Neuron@{Neuron}!setFrom@{setFrom}}
 \index{setFrom@{setFrom}!Neuron@{Neuron}}
 \subsubsection[{setFrom}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron::setFrom (
 \begin{DoxyParamCaption}
-\item[{{\bf NeuronPtr}}]{vFrom}
+\item[{std::vector$<$ {\bf NeuronPtr} $>$}]{vFrom}
 \end{DoxyParamCaption}
 )}}
-\label{class_neuron_a2741d3516b532c0b4af12c1f4ebd3c39}
+\label{class_neuron_ace0e92348f8a5604f25a3cfc07f38ec8}
 
 
 Definition at line 42 of file Neuron.cpp.
@@ -339,7 +358,7 @@ References con, and VecCon::setFrom().
 
 
 \begin{DoxyCode}
-                                                 {
+                                                            {
         con.setFrom(vFrom);
 }
 \end{DoxyCode}
@@ -350,7 +369,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_neuron_a2741d3516b532c0b4af12c1f4ebd3c39_cgraph}
+\includegraphics[width=400pt]{class_neuron_ace0e92348f8a5604f25a3cfc07f38ec8_cgraph}
 \end{center}
 \end{figure}
 
@@ -370,7 +389,7 @@ Definition at line 22 of file Neuron.cpp.
 
 
 
-References id.
+References Id.
 
 
 \begin{DoxyCode}
@@ -428,15 +447,24 @@ Definition at line 55 of file Neuron.cpp.
 
 
 
-References con, getId(), and Container$<$ T $>$::show().
+References con, getId(), numOfCons(), and Container$<$ T $>$::show().
 
 
 \begin{DoxyCode}
                                   {
+        int id=getId();
         Rprintf("\n------------------------\n");
-        Rprintf("\n Id: ", getId());
+        if (id==NA_INTEGER) {
+                Rprintf("\n Id: NA, Invalid neuron Id");
+        } else {
+                Rprintf("\n Id: %d", id);
+        }
         Rprintf("\n------------------------\n");
-        con.show();
+        if (numOfCons()==0) {
+                Rprintf("\n No connections defined");
+        } else {
+                con.show();
+        }
         Rprintf("\n------------------------\n");
         return true;
 
@@ -449,7 +477,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{class_neuron_a255c3597520c730d798218f7174eff1b_cgraph}
+\includegraphics[width=400pt]{class_neuron_a255c3597520c730d798218f7174eff1b_cgraph}
 \end{center}
 \end{figure}
 
@@ -465,7 +493,7 @@ Here is the call graph for this function:
 \label{class_neuron_a95327aa80a9ec949491f214a0c159b5a}
 
 
-Definition at line 66 of file Neuron.cpp.
+Definition at line 75 of file Neuron.cpp.
 
 
 
@@ -515,11 +543,11 @@ Definition at line 28 of file Neuron.h.
 
 Referenced by getConId(), getFrom(), getWeight(), numOfCons(), setFrom(), setWeight(), show(), and validate().
 
-\hypertarget{class_neuron_aef4b01c293054fa2e5419afd56afd628}{
-\index{Neuron@{Neuron}!id@{id}}
-\index{id@{id}!Neuron@{Neuron}}
-\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Neuron::id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_neuron_aef4b01c293054fa2e5419afd56afd628}
+\hypertarget{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{
+\index{Neuron@{Neuron}!Id@{Id}}
+\index{Id@{Id}!Neuron@{Neuron}}
+\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Neuron::Id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}
 
 
 An integer variable with the \hyperlink{class_neuron}{Neuron} Id. 
@@ -530,7 +558,7 @@ Definition at line 21 of file Neuron.h.
 
 
 
-Referenced by setId().
+Referenced by getId(), and setId().
 
 \hypertarget{class_neuron_ada029047646c36e525a6a1b77cafc03c}{
 \index{Neuron@{Neuron}!outputValue@{outputValue}}

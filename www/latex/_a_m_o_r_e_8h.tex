@@ -15,11 +15,13 @@
 {\ttfamily \#include \char`\"{}Container.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}VecCon.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}VecNeuron.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Con.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Container.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}VecCon.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
-Include dependency graph for AMORE.h:\nopagebreak
+Include dependency graph for AMORE.h:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -47,6 +49,8 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyper
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyperlink{class_neuron}{Neuron} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_a3f07c97535da998eecacce734deb1013}{ContainerNeuronPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_vec_con}{VecCon} $>$ \hyperlink{_a_m_o_r_e_8h_ace651cf590286fe2630c2c353a49a1db}{VecConPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ VecNeuron $>$ \hyperlink{_a_m_o_r_e_8h_a59a0784350f9c1ef8ea2a7e7104405e8}{VecNeuronPtr}
 \end{DoxyCompactItemize}
 
 
@@ -58,7 +62,7 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_vec_con}{VecCon} $>$ \hyperlink
 \label{_a_m_o_r_e_8h_a85d9ac269eba33293361f4ed7c2a697b}
 
 
-Definition at line 37 of file AMORE.h.
+Definition at line 38 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_adead3ef83e9181db3b1d4d7d098a18c0}{
 \index{AMORE.h@{AMORE.h}!size\_\-type@{size\_\-type}}
@@ -67,7 +71,7 @@ Definition at line 37 of file AMORE.h.
 \label{_a_m_o_r_e_8h_adead3ef83e9181db3b1d4d7d098a18c0}
 
 
-Definition at line 40 of file AMORE.h.
+Definition at line 41 of file AMORE.h.
 
 
 
@@ -79,7 +83,7 @@ Definition at line 40 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}
 
 
-Definition at line 43 of file AMORE.h.
+Definition at line 44 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_abcc891be2636ea372a61f7c4394b626e}{
 \index{AMORE.h@{AMORE.h}!ContainerConPtr@{ContainerConPtr}}
@@ -88,7 +92,7 @@ Definition at line 43 of file AMORE.h.
 \label{_a_m_o_r_e_8h_abcc891be2636ea372a61f7c4394b626e}
 
 
-Definition at line 46 of file AMORE.h.
+Definition at line 47 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a3f07c97535da998eecacce734deb1013}{
 \index{AMORE.h@{AMORE.h}!ContainerNeuronPtr@{ContainerNeuronPtr}}
@@ -97,7 +101,7 @@ Definition at line 46 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a3f07c97535da998eecacce734deb1013}
 
 
-Definition at line 47 of file AMORE.h.
+Definition at line 48 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{
 \index{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}}
@@ -106,7 +110,7 @@ Definition at line 47 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}
 
 
-Definition at line 44 of file AMORE.h.
+Definition at line 45 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{
 \index{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}}
@@ -115,7 +119,7 @@ Definition at line 44 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}
 
 
-Definition at line 45 of file AMORE.h.
+Definition at line 46 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ace651cf590286fe2630c2c353a49a1db}{
 \index{AMORE.h@{AMORE.h}!VecConPtr@{VecConPtr}}
@@ -124,5 +128,14 @@ Definition at line 45 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ace651cf590286fe2630c2c353a49a1db}
 
 
-Definition at line 48 of file AMORE.h.
+Definition at line 49 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_a59a0784350f9c1ef8ea2a7e7104405e8}{
+\index{AMORE.h@{AMORE.h}!VecNeuronPtr@{VecNeuronPtr}}
+\index{VecNeuronPtr@{VecNeuronPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{VecNeuronPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ VecNeuron $>$ {\bf VecNeuronPtr}}}
+\label{_a_m_o_r_e_8h_a59a0784350f9c1ef8ea2a7e7104405e8}
+
+
+Definition at line 50 of file AMORE.h.
 
