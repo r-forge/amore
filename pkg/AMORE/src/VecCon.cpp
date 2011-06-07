@@ -5,6 +5,12 @@
  *      Author: mcasl
  */
 
+  VecCon::VecCon(){};
+
+  VecCon::VecCon(std::vector<ConPtr> collection) : Container<Con>(collection) {  } ; // Call to Base constructor
+
+
+
 //! Size of the VecCon object
 /*!
  * This function returns the size of the VecCon object, that is to say, the number of Con objects it contains.
