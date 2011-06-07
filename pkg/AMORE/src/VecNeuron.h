@@ -26,6 +26,9 @@ public:
   int
   numOfNeurons();
 
+  std::vector<int>
+  getId();
+
 #if 0
 
   int
@@ -34,8 +37,7 @@ public:
   std::vector<int>
   getConId ( );
 
-  std::vector<int>
-  getId();
+
 
   bool
   setId ( );

@@ -92,12 +92,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Container&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container__inherit__graph.svg" width="310" height="974" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container__inherit__graph.svg" width="310" height="960" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Container&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container__coll__graph.svg" width="288" height="675" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container__coll__graph.svg" width="288" height="718" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_container-members.html">List of all members.</a></p>
@@ -112,8 +114,10 @@ Public Types</h2></td></tr>
  &gt;::<a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a161e09c0c1cbe40429df228f7db63972">Container</a> (typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; <a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
 &lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a9161a87726434f8955398137c647947c">load</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">collection field accessor function  <a href="#a9161a87726434f8955398137c647947c"></a><br/></td></tr>
@@ -131,6 +135,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Object validator.  <a href="#aa99a036fd0fe6d6b82ba558157e557d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a> (int n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">resize</a> (int n)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">empty</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">operator[]</a> (size_type offset)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -157,7 +162,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8h_source.html#l00019">19</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
+<p>Definition at line <a class="el" href="_container_8h_source.html#l00022">22</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
 
 </div>
 </div>
@@ -174,8 +179,56 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8h_source.html#l00018">18</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
+<p>Definition at line <a class="el" href="_container_8h_source.html#l00019">19</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
 
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab17ce1f67243b28abcd4c8113a72524c"></a><!-- doxytag: member="Container::Container" ref="ab17ce1f67243b28abcd4c8113a72524c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html">Container</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00009">9</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+  }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a161e09c0c1cbe40429df228f7db63972"></a><!-- doxytag: member="Container::Container" ref="a161e09c0c1cbe40429df228f7db63972" args="(typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; collection)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html">Container</a> </td>
+          <td>(</td>
+          <td class="paramtype">typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;&#160;</td>
+          <td class="paramname"><em>collection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00014">14</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                          :
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>(<a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>)
+  {
+  }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -211,9 +264,9 @@ template&lt;typename T&gt; </div>
         <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                <a class="code" href="_a_m_o_r_e_8h.html#a3f07c97535da998eecacce734deb1013">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                                <a class="code" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a> ptShvConA( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
-                                <a class="code" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a> ptShvConB( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#a51de806b5fb3f72d5ba606754815d3c2">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">ContainerConPtr</a> ptShvConA( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">ContainerConPtr</a> ptShvConB( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                                 <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
                                 <span class="keywordtype">int</span> ids[]= {1, 2, 3, 4, 5, 6};
@@ -245,78 +298,118 @@ template&lt;typename T&gt; </div>
         <span class="comment">//      From:    6       Weight=         3.600000</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">Container::store</a> , <a class="el" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container::push_back</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00172">172</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00207">207</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 
-<p>References <a class="el" href="_container_8h_source.html#l00021">Container&lt; T &gt;::begin()</a>, <a class="el" href="_container_8h_source.html#l00022">Container&lt; T &gt;::end()</a>, and <a class="el" href="_container_8cpp_source.html#l00240">Container&lt; T &gt;::size()</a>.</p>
-<div class="fragment"><pre class="fragment">                                                               {
-        <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>() + v.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>());
-        <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.insert( <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), v.<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), v.<a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>() );
-};
+<p>References <a class="el" href="_container_8cpp_source.html#l00022">Container&lt; T &gt;::begin()</a>, <a class="el" href="_container_8cpp_source.html#l00029">Container&lt; T &gt;::end()</a>, and <a class="el" href="_container_8cpp_source.html#l00282">Container&lt; T &gt;::size()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>() + v.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>());
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.insert(<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>(), v.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>(), v.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>());
+  }
 </pre></div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container_ae763eb37b721d401327c97016fb2fa54_cgraph.svg" width="304" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container_ae763eb37b721d401327c97016fb2fa54_cgraph.svg" width="304" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a9ad6802d12bf5f48400bc346de37ad0f"></a><!-- doxytag: member="Container::begin" ref="a9ad6802d12bf5f48400bc346de37ad0f" args="()" -->
+<a class="anchor" id="ac5e2a75311f6e6a690ca67603490ddb1"></a><!-- doxytag: member="Container::begin" ref="ac5e2a75311f6e6a690ca67603490ddb1" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::begin </td>
+          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8h_source.html#l00021">21</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00022">22</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00172">Container&lt; T &gt;::append()</a>.</p>
-<div class="fragment"><pre class="fragment">{       <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin(); }
+<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00376">VecCon::setFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin();
+  }
 </pre></div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container_a9ad6802d12bf5f48400bc346de37ad0f_icgraph.svg" width="304" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container_ac5e2a75311f6e6a690ca67603490ddb1_icgraph.svg" width="472" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a769250b7546b782007f1adaba8a07336"></a><!-- doxytag: member="Container::end" ref="a769250b7546b782007f1adaba8a07336" args="()" -->
+<a class="anchor" id="ab8e09c25f519687468ef5b9f0fae9b3e"></a><!-- doxytag: member="Container::empty" ref="ab8e09c25f519687468ef5b9f0fae9b3e" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::end </td>
+          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8h_source.html#l00022">22</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00305">305</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00172">Container&lt; T &gt;::append()</a>.</p>
-<div class="fragment"><pre class="fragment">{       <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.end(); }
+<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00146">VecCon::buildAndAppend()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00376">VecCon::setFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span>( <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.empty() );
+  }
 </pre></div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container_a769250b7546b782007f1adaba8a07336_icgraph.svg" width="294" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container_ab8e09c25f519687468ef5b9f0fae9b3e_icgraph.svg" width="520" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a266eabe62963d6909d3aca7f105e203e"></a><!-- doxytag: member="Container::end" ref="a266eabe62963d6909d3aca7f105e203e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00029">29</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.end();
+  }
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_container_a266eabe62963d6909d3aca7f105e203e_icgraph.svg" width="294" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -347,8 +440,8 @@ template&lt;typename T &gt; </div>
                 <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                <a class="code" href="_a_m_o_r_e_8h.html#a3f07c97535da998eecacce734deb1013">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                                <a class="code" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a> ptShvCon( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#a51de806b5fb3f72d5ba606754815d3c2">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">ContainerConPtr</a> ptShvCon( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                                 <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
                                 <span class="keywordtype">int</span> ids[]= {10, 20, 30};
@@ -371,10 +464,10 @@ template&lt;typename T &gt; </div>
                 <span class="comment">// Now, result is an integer vector with values 10, 20, 30.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">store</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00217">217</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                          {
-        <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>;
-};
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00254">254</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>;
+  }
 </pre></div>
 </div>
 </div>
@@ -395,10 +488,10 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00255">255</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                             {
-        <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>[offset];
-}
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00313">313</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>[offset];
+  }
 </pre></div>
 </div>
 </div>
@@ -435,9 +528,9 @@ template&lt;typename T&gt; </div>
                         <a class="code" href="class_container.html">Container&lt;Con&gt;</a> MyVecCon;
                         std::vector&lt;ConPtr&gt; vc;
                         std::vector&lt;int&gt; result;
-                        N1.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(10);
-                        N2.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(20);
-                        N3.<a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">setId</a>(30);
+                        N1.<a class="code" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">setId</a>(10);
+                        N2.<a class="code" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">setId</a>(20);
+                        N3.<a class="code" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">setId</a>(30);
                 <span class="comment">// Test</span>
                         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(&amp;N1, 1.13) );     <span class="comment">// Create new Con and initialize ptCon</span>
                         MyVecCon.<a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                              <span class="comment">// push_back</span>
@@ -454,11 +547,21 @@ template&lt;typename T&gt; </div>
         <span class="comment">// After execution of this code, result contains a numeric vector with values 10, 20 and 30.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd>C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00044">44</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                 {
-        <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.push_back(TsharedPtr);
-};
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00071">71</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00321">VecCon::getFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.push_back(TsharedPtr);
+  }
 </pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_container_afd87c69cb799ed7b434c29090083a285_icgraph.svg" width="502" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aa3cbae68ebeed649c52eb3805a30fb75"></a><!-- doxytag: member="Container::reserve" ref="aa3cbae68ebeed649c52eb3805a30fb75" args="(int n)" -->
@@ -478,11 +581,21 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00250">250</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                      {
-         <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.reserve(n) ;
-};
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00297">297</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_vec_con_8cpp_source.html#l00321">VecCon::getFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.reserve(n);
+  }
 </pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_container_aa3cbae68ebeed649c52eb3805a30fb75_icgraph.svg" width="480" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ab77ce6f8173bd47c4cf46643317dffdb"></a><!-- doxytag: member="Container::resize" ref="ab77ce6f8173bd47c4cf46643317dffdb" args="(int n)" -->
@@ -502,10 +615,10 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00245">245</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                       {
-        <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.resize(n);
-}
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00290">290</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.resize(n);
+  }
 </pre></div>
 </div>
 </div>
@@ -533,8 +646,8 @@ template&lt;typename T &gt; </div>
                 <span class="comment">//Usage example:</span>
                 <span class="comment">//================</span>
                 <span class="comment">// Data set up</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#a3f07c97535da998eecacce734deb1013">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                        <a class="code" href="_a_m_o_r_e_8h.html#abcc891be2636ea372a61f7c4394b626e">ContainerConPtr</a> ptShvCon( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
+                        <a class="code" href="_a_m_o_r_e_8h.html#a51de806b5fb3f72d5ba606754815d3c2">ContainerNeuronPtr</a>      ptShvNeuron( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
+                        <a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">ContainerConPtr</a> ptShvCon( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
                         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                         <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
                         <span class="keywordtype">int</span> ids[]= {10, 20, 30};
@@ -561,20 +674,21 @@ template&lt;typename T &gt; </div>
                 <span class="comment">//</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00093">93</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00122">122</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00055">Neuron::show()</a>.</p>
-<div class="fragment"><pre class="fragment">                                              {
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00078">Neuron::show()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
 
-        <span class="comment">// This is equivalent to:</span>
-        <span class="comment">// for( auto x : collection)    { x.show(); }</span>
-        <span class="comment">// Waiting for C++0x</span>
+    <span class="comment">// This is equivalent to:</span>
+    <span class="comment">// for( auto x : collection)        { x.show(); }</span>
+    <span class="comment">// Waiting for C++0x</span>
 
-        <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>){
-                itr-&gt;show();
-        }
-        <span class="keywordflow">return</span> <span class="keyword">true</span>;
-};
+    <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>)
+      {
+        itr-&gt;show();
+      }
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+  }
 </pre></div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -604,17 +718,18 @@ template&lt;typename T &gt; </div>
 <p>Returns the size or length of the vector. </p>
 <p>This method returns the size of the vector. In the classes derived from Container&lt;T&gt; this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. </p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00240">240</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00282">282</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00172">Container&lt; T &gt;::append()</a>.</p>
-<div class="fragment"><pre class="fragment">                                                   {
-        <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.size() ;
-};
+<p>Referenced by <a class="el" href="_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>, <a class="el" href="_vec_con_8cpp_source.html#l00146">VecCon::buildAndAppend()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00376">VecCon::setFrom()</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.size();
+  }
 </pre></div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container_a842c3d9eca81b78b59112fde9707b091_icgraph.svg" width="296" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container_a842c3d9eca81b78b59112fde9707b091_icgraph.svg" width="507" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -647,10 +762,10 @@ template&lt;typename T&gt; </div>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">load</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00229">229</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                 {
-        <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>=v;
-};
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00268">268</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a> = v;
+  }
 </pre></div>
 </div>
 </div>
@@ -676,13 +791,14 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_vec_con.html#af008396d3982fb7ccf1af9618b89937c">VecCon</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00112">112</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                  {
-        <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>){
-                itr-&gt;validate();
-        }
-        <span class="keywordflow">return</span> <span class="keyword">true</span>;
-};
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00144">144</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; itr, *<span class="keyword">this</span>)
+      {
+        itr-&gt;validate();
+      }
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+  }
 </pre></div>
 </div>
 </div>
@@ -700,9 +816,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8h_source.html#l00014">14</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_container_8h_source.html#l00021">Container&lt; Neuron &gt;::begin()</a>, and <a class="el" href="_container_8h_source.html#l00022">Container&lt; Neuron &gt;::end()</a>.</p>
+<p>Definition at line <a class="el" href="_container_8h_source.html#l00015">15</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
 
 </div>
 </div>
@@ -715,7 +829,7 @@ template&lt;typename T&gt; </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_container.html">Container</a>      </li>
-      <li class="footer">Generated on Tue Jun 7 2011 19:59:21 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 01:21:54 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

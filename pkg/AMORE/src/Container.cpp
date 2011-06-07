@@ -298,7 +298,15 @@ template<typename T>
   {
     collection.reserve(n);
   }
-;
+
+
+template<typename T>
+  bool
+  Container<T>::empty()
+  {
+    return( collection.empty() );
+  }
+
 
 template<typename T>
   boost::shared_ptr<T> &

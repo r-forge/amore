@@ -29,31 +29,31 @@ public:
   getId();
 
   bool
-  buildAndAppend(std::vector<NeuronPtr> vFrom, std::vector<double> vWeight);
+  buildAndAppend(VecNeuron neuronContainer, std::vector<double> nWeights);
 
   std::vector<double>
   getWeight();
 
   std::vector<double>
-  getWeight(std::vector<int> vFrom);
+  getWeight(std::vector<int> nIds);
 
-  std::vector<NeuronPtr>
+  VecNeuron
   getFrom();
 
   bool
-  setWeight(std::vector<double> vWeight);
+  setWeight(std::vector<double> nWeights);
 
   bool
-  setWeight(std::vector<double> vWeight, std::vector<int> vFrom);
+  setWeight(std::vector<double> nWeights, std::vector<int> nIds);
 
   bool
-  setFrom(std::vector<NeuronPtr> vFrom);
+  setFrom(VecNeuron neuronContainer);
 
   void
-  erase(std::vector<int> vFrom);
+  erase(std::vector<int> nIds);
 
   VecConPtr
-  select(std::vector<int> vFrom);
+  select(std::vector<int> nIds);
 
   bool
   validate();

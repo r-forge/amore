@@ -50,6 +50,7 @@ typedef boost::shared_ptr<VecNeuron> VecNeuronPtr;
 
 #include "Con.h"
 #include "Container.h"
+
 #include "VecCon.h"
 #include "Neuron.h"
 #include "VecNeuron.h"
@@ -58,6 +59,6 @@ typedef boost::shared_ptr<VecNeuron> VecNeuronPtr;
 #include "Container.cpp"
 #include "VecCon.cpp"
 #include "Neuron.cpp"
-//#include "VecNeuron.cpp"
+#include "VecNeuron.cpp"
 
 

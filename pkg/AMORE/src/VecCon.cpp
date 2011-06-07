@@ -5,11 +5,16 @@
  *      Author: mcasl
  */
 
-  VecCon::VecCon(){};
 
-  VecCon::VecCon(std::vector<ConPtr> collection) : Container<Con>(collection) {  } ; // Call to Base constructor
+VecCon::VecCon()
+{
+}
 
 
+VecCon::VecCon(std::vector<ConPtr> collection) :
+  Container<Con> (collection)                   // Call to Base constructor
+{
+}
 
 //! Size of the VecCon object
 /*!
@@ -98,6 +103,7 @@ VecCon::getId()
   return result;
 }
 
+
 //! Builds Con objects and appends them to collection.
 /*!
  * This function provides a convenient way of populating a VecCon object by building and apending Con objects to collection.
@@ -137,24 +143,23 @@ VecCon::getId()
  * \sa append and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
 bool
-VecCon::buildAndAppend(std::vector<NeuronPtr> vFrom,
-    std::vector<double> vWeight)
+VecCon::buildAndAppend(VecNeuron neuronContainer, std::vector<double> nWeights)
 {
   BEGIN_RCPP
-  if (vFrom.empty())
-    { throw std::range_error("[VecCon::append]: Error, vFrom is empty");}
-  if (vFrom.size() != vWeight.size())
+  if (neuronContainer.empty())
+    { throw std::range_error("[VecCon::BuildAndAppend]: Error, neuronContainer is empty");}
+  if (neuronContainer.size() != nWeights.size())
     {
       throw std::range_error(
-          "[VecCon::buildAndAppend]: Error, vFrom.size() != vWeight.size()");
+          "[VecCon::buildAndAppend]: Error, neuronContainer.size() != nWeights.size()");
     }
-  reserve(size() + vFrom.size());
+  reserve(size() + neuronContainer.size());
   ConPtr ptCon;
-  std::vector<double>::iterator itrWeight = vWeight.begin();
 
-  foreach (NeuronPtr itrFrom, vFrom)
+  std::vector<double>::iterator itrWeight = nWeights.begin();
+  foreach (NeuronPtr itrNeuron, neuronContainer)
     {
-      ptCon.reset( new Con( itrFrom, *itrWeight) );
+      ptCon.reset( new Con( itrNeuron, *itrWeight) );
       push_back(ptCon);
       itrWeight++;
     }
@@ -256,17 +261,17 @@ VecCon::getWeight()
  * \sa getWeight and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
 bool
-VecCon::setWeight(std::vector<double> vWeight)
+VecCon::setWeight(std::vector<double> nWeights)
 {
   BEGIN_RCPP
-  if (vWeight.empty())
+  if (nWeights.empty())
     { throw std::range_error("[ C++ VecCon::setWeight]: Error, vWeight is empty");}
-  if (vWeight.size() != size())
+  if (nWeights.size() != size())
     {
       throw std::range_error(
           "[C++ VecCon::setWeight]: Error, vWeight.size() != collection.size()");
     }
-  std::vector<double>::iterator itrWeight = vWeight.begin();
+  std::vector<double>::iterator itrWeight = nWeights.begin();
   foreach (ConPtr itr, *this)
     {
       itr->setWeight( *itrWeight );
@@ -312,10 +317,10 @@ END_RCPP}
  *
  * \sa getId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
-std::vector<NeuronPtr>
+VecNeuron
 VecCon::getFrom()
 {
-  std::vector < NeuronPtr > result;
+  VecNeuron result;
   result.reserve(numOfCons());
   foreach(ConPtr itr, *this)
     {
@@ -368,21 +373,21 @@ VecCon::getFrom()
  * \sa getFrom and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
 bool
-VecCon::setFrom(std::vector<NeuronPtr> vFrom)
+VecCon::setFrom(VecNeuron neuronContainer)
 {
   BEGIN_RCPP
-  if (vFrom.empty())
+  if (neuronContainer.empty())
     { throw std::range_error("[ C++ VecCon::setFrom]: Error, w is empty");}
-  if (vFrom.size() != size())
+  if (neuronContainer.size() != size())
     {
       throw std::range_error(
-          "[C++ VecCon::setFrom]: Error, w.size() != collection.size()");
+          "[C++ VecCon::setFrom]: Error, neuronContainer.size() != collection.size()");
     }
-  std::vector<NeuronPtr>::iterator itrFrom = vFrom.begin();
+  std::vector<NeuronPtr>::iterator itrNeuron = neuronContainer.begin();
   foreach(ConPtr itr , *this)
     {
-      itr->setFrom( *itrFrom );
-      itrFrom++;
+      itr->setFrom( *itrNeuron );
+      itrNeuron++;
     }
   return true;
 END_RCPP}
@@ -485,12 +490,12 @@ struct CompareId
  *
  */
 void
-VecCon::erase(std::vector<int> vFrom)
+VecCon::erase(std::vector<int> nIds)
 {
   std::vector<ConPtr>::iterator itr;
   sort(begin(), end(), CompareId());
-  sort(vFrom.begin(), vFrom.end());
-  itr = set_difference(begin(), end(), vFrom.begin(), vFrom.end(), begin(),
+  sort(nIds.begin(), nIds.end());
+  itr = set_difference(begin(), end(), nIds.begin(), nIds.end(), begin(),
       CompareId());
   resize(itr - begin());
 }
@@ -540,13 +545,13 @@ VecCon::erase(std::vector<int> vFrom)
  *		\sa erase and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
  */
 VecConPtr
-VecCon::select(std::vector<int> vFrom)
+VecCon::select(std::vector<int> nIds)
 {
   VecConPtr result(new VecCon);
   result->reserve(size());
   sort(begin(), end(), CompareId());
-  sort(vFrom.begin(), vFrom.end());
-  set_intersection(begin(), end(), vFrom.begin(), vFrom.end(),
+  sort(nIds.begin(), nIds.end());
+  set_intersection(begin(), end(), nIds.begin(), nIds.end(),
       back_inserter(result->collection), CompareId());
 
   return result;
@@ -601,9 +606,9 @@ VecCon::select(std::vector<int> vFrom)
  *
  */
 std::vector<double>
-VecCon::getWeight(std::vector<int> vFrom)
+VecCon::getWeight(std::vector<int> nIds)
 {
-  return select(vFrom)->getWeight();
+  return select(nIds)->getWeight();
 }
 
 //! Setter of the weights of the specified elements from the VecCon object.
@@ -662,9 +667,10 @@ VecCon::getWeight(std::vector<int> vFrom)
  *
  */
 bool
-VecCon::setWeight(std::vector<double> vWeight, std::vector<int> vFrom)
+VecCon::setWeight(std::vector<double> nWeights, std::vector<int> nIds)
 {
-BEGIN_RCPP return select(vFrom)->setWeight(vWeight);
+BEGIN_RCPP
+return select(nIds)->setWeight(nWeights);
 END_RCPP
 }
 
@@ -685,7 +691,6 @@ VecCon::validate()
   BEGIN_RCPP
 
   std::vector<int>::iterator itr;
-
   std::vector<int> vIds = getId();
   sort(vIds.begin(), vIds.end());
   itr = adjacent_find(vIds.begin(), vIds.end());

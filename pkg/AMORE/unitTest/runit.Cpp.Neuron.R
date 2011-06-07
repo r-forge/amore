@@ -177,26 +177,21 @@ test.Neuron.Cpp.getFrom <- function() {
 			// Data set up
 			int ids[]= {1, 2, 3};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			VecNeuron neuronContainer, nNeurons;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
-				vWeight.push_back(weights[i]);					
+				neuronContainer.push_back(ptNeuron);
+				nWeights.push_back(weights[i]);					
 			}
 			VecConPtr vcPt(new VecCon());
-			vcPt->buildAndAppend(vNeuron, vWeight);
-			NeuronPtr ptN(new Neuron(123, *vcPt));
-			ptN->show();
+			vcPt->buildAndAppend(neuronContainer, nWeights);
+			ptNeuron.reset(new Neuron(123, *vcPt));
+			ptNeuron->show();
 			// Test	
-			vNeuron=ptN->getFrom();
-
-			std::vector<int> result;
-			foreach(NeuronPtr itr, vNeuron){
-				result.push_back( itr->getId() );
-			}
-			return wrap(result);
+			nNeurons=ptNeuron->getFrom();			
+			return wrap(nNeurons.getId());
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()	

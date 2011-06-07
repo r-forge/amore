@@ -34,7 +34,7 @@ public:
 
   Neuron(int Id);
 
-  Neuron(int Id, VecCon Con);
+  Neuron(int Id, VecCon con);
 
   ~Neuron();
 
@@ -42,9 +42,9 @@ public:
   getId();
 
   void
-  setId(int Id);
+  setId(int value);
 
-  std::vector<NeuronPtr>
+  VecNeuron
   getFrom();
 
   std::vector<int>
@@ -54,10 +54,10 @@ public:
   getWeight();
 
   bool
-  setFrom(std::vector<NeuronPtr> vFrom);
+  setFrom(VecNeuron neuronContainer);
 
   bool
-  setWeight(std::vector<double> vWeight);
+  setWeight(std::vector<double> nWeights);
 
   int
   numOfCons();

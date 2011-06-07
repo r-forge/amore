@@ -58,6 +58,9 @@ template<typename T>
     void
     resize(int n);
 
+    bool
+    empty();
+
     boost::shared_ptr<T> &
     operator[](size_type offset);
 
