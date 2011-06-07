@@ -25,30 +25,30 @@ gListCon <- setRefClass("listCon",
 				
 				getWeight = function(FROM, ...){
 					if (missing(FROM)) {
-						return(sapply(ldata,function(x) { x$getWeight(...)}))
+						return(sapply(collection,function(x) { x$getWeight(...)}))
 					} else {
 						return(select(FROM)$getWeight(...))
 					}
 				},
 				
 				getFrom = function(...){
-					return(sapply(ldata,function(x) { x$getFrom(...)}))
+					return(sapply(collection,function(x) { x$getFrom(...)}))
 				},
 				
 				getId = function(...){
-					return(sapply(ldata,function(x) { x$getId(...)}))
+					return(sapply(collection,function(x) { x$getId(...)}))
 				},
 				
 				setWeight= function(value, FROM, ...) {
 					value <- c(value, recursive=TRUE)
 					if (missing(FROM)) {
 						if(numOfCons(...)!=length(value)) { stop("[listCon setWeight error]: Incorrect length(value)" )}
-						mapply(FUN=function(x,w){x$setWeight(w)}, ldata, value)	-> DontMakeNoise	
+						mapply(FUN=function(x,w){x$setWeight(w)}, collection, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setWeight(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 
 						myMatch <- match(FROM, getId(...))
 						if (any(is.na(myMatch))) {stop("[listCon setWeight(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")} 
-						mapply(FUN=function(x,w){x$setWeight(w)}, ldata[myMatch], value)	-> DontMakeNoise			
+						mapply(FUN=function(x,w){x$setWeight(w)}, collection[myMatch], value)	-> DontMakeNoise			
 					}
 				},
 				
@@ -56,12 +56,12 @@ gListCon <- setRefClass("listCon",
 					value <- c(value, recursive=TRUE)
 					if (missing(FROM)) {
 						if(numOfCons(...)!=length(value)) { stop("[listCon setFrom error]: Incorrect length(value)" )}
-						mapply(FUN=function(x,f){x$setFrom(f)}, ldata, value)	-> DontMakeNoise	
+						mapply(FUN=function(x,f){x$setFrom(f)}, collection, value)	-> DontMakeNoise	
 					} else {
 						if(length(FROM)!=length(value)) { stop("[listCon setFrom(FROM=\"numeric\") error]:  Please, provide as many values as FROM slots you want to set." )} 
 						myMatch <- match(FROM, getId(...))
 						if (any(is.na(myMatch))) {stop("[listCon setFrom(FROM=\"numeric\")]: Your FROM vector contains values that were not found by the .self$getFrom() call.")} 
-						mapply(FUN=function(x,f){x$setFrom(f)}, ldata[myMatch], value)	-> DontMakeNoise			
+						mapply(FUN=function(x,f){x$setFrom(f)}, collection[myMatch], value)	-> DontMakeNoise			
 					}
 				},
 				
@@ -69,7 +69,7 @@ gListCon <- setRefClass("listCon",
 					fromIds <- getId(...) 
 					delIds  <- seq(along=fromIds)[fromIds %in% FROM]
 					if (length(delIds)>0) {
-						ldata <<- ldata[-delIds]	       
+						collection <<- collection[-delIds]	       
 					}
 				},
 				
@@ -77,22 +77,22 @@ gListCon <- setRefClass("listCon",
 					fromObject <- getId(...)
 					myMatch <- match(FROM,  fromObject)
 					if (any(is.na(myMatch))) {stop("[listCon select Error]: Your FROM vector contains values that were not found by the .self$getFrom() call.")}
-					idx <- seq(along=ldata) [- myMatch]
+					idx <- seq(along=collection) [- myMatch]
 					selfClone <- copy(shallow=FALSE)
 					selfClone$delete(FROM=fromObject[idx])
 					return(selfClone)
 				},
 				
 				numOfCons=function(...) {
-					return(length(ldata))			
+					return(length(collection))			
 				},
 				
 				validate=function(...){
 					'Object validator for internal coherence.
 							'
-					lapply(ldata, function(x){if (!is(x,"Con")) {stop("[listAMORE validate]: Element is not an AMORElistElement")}  })
-					if (anyDuplicated(lapply(ldata, function(x){x$getFrom(...)}))>0) {stop("[listCon: Validation] Con@from duplication error")} else {}
-					lapply(ldata, function(x){x$validate(...)})
+					lapply(collection, function(x){if (!is(x,"Con")) {stop("[listAMORE validate]: Element is not an AMORElistElement")}  })
+					if (anyDuplicated(lapply(collection, function(x){x$getFrom(...)}))>0) {stop("[listCon: Validation] Con@from duplication error")} else {}
+					lapply(collection, function(x){x$validate(...)})
 					return(TRUE)
 				}
 		)

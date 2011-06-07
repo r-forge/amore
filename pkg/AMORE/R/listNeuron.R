@@ -18,12 +18,12 @@ gListNeuron <- setRefClass("listNeuron",
 				},
 
 				getId=function(...){
-					return(sapply(ldata, function(x){x$getId(...)}))      
+					return(sapply(collection, function(x){x$getId(...)}))      
 				},  
 				
 				getFrom =function(ID, ...){
 					if(missing(ID)) {
-						f <- lapply(ldata, function(x, ...) { x$getFrom(...)})
+						f <- lapply(collection, function(x, ...) { x$getFrom(...)})
 						return(f)
 					} else {
 						return(select(ID)$getFrom(...))
@@ -34,7 +34,7 @@ gListNeuron <- setRefClass("listNeuron",
 					'This function is a handy way of obtaining the Ids of the neurons returned by getFrom since it\'s result might be a set of lists
 							'
 					if(missing(ID)) {
-						f <- lapply(ldata, function(x, ...) { x$getConId(...)})
+						f <- lapply(collection, function(x, ...) { x$getConId(...)})
 						return(f)
 					} else {
 						return(select(ID)$getConId(...))
@@ -44,7 +44,7 @@ gListNeuron <- setRefClass("listNeuron",
 				
 				getWeight =function(ID, ...){
 					if(missing(ID)) {
-						w <- lapply(ldata, function(x, ...) { x$getWeight(...)})
+						w <- lapply(collection, function(x, ...) { x$getWeight(...)})
 						return(w)
 					} else {
 						return(select(ID)$getWeight(...))
@@ -52,18 +52,18 @@ gListNeuron <- setRefClass("listNeuron",
 				},
 				
 				numOfCons = function(...) {
-					return(c(lapply(ldata, function(x) {x$numOfCons(...)}),recursive=TRUE))
+					return(c(lapply(collection, function(x) {x$numOfCons(...)}),recursive=TRUE))
 				},  
 				
 				numOfNeurons = function(...) {
-					return(length(ldata))
+					return(length(collection))
 				},
 				
 				delete = function(ID, ...) {
 					neuronIds <- getId(...) 
 					delIds <- seq(along=neuronIds)[neuronIds %in% ID]
 					if (length(delIds)>0) {
-						ldata <<- ldata[-delIds]	       
+						collection <<- collection[-delIds]	       
 					}
 				},
 				
@@ -71,7 +71,7 @@ gListNeuron <- setRefClass("listNeuron",
 					Ids <- getId(...)
 					myMatch <- match(ID, Ids)
 					if (any(is.na(myMatch))) {stop("[listNeuron select Error]: Your ID vector contains values that were not found by the getId() call.")}
-					idx <- seq(along=ldata) [- myMatch]
+					idx <- seq(along=collection) [- myMatch]
 					selfClone <- copy(shallow=FALSE)
 					selfClone$delete(ID=Ids[idx])
 					return(selfClone)
@@ -80,7 +80,7 @@ gListNeuron <- setRefClass("listNeuron",
 				setId=function(value, ID, ...){
 					if(missing(ID)){
 						if(numOfNeurons()!=length(value)) {stop("[listNeuron setID(ID=\"missing\")<-]: Incorrect lengths.")}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setId(y)})		
+						z <- mapply(collection, value, FUN=function(x,y){x$setId(y)})		
 					} else {
 						select(ID)$setId(value, ...)
 					}				},  
@@ -88,7 +88,7 @@ gListNeuron <- setRefClass("listNeuron",
 				setWeight=function(value, ID, ...){#TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
 						if(numOfNeurons(...)!=length(value)) {stop("[listNeuron setWeight(ID=\"missing\")<-]: Incorrect lengths.")}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setWeight(y)})		
+						z <- mapply(collection, value, FUN=function(x,y){x$setWeight(y)})		
 					} else {
 						select(ID)$setWeight(value, ...)
 					}
@@ -97,7 +97,7 @@ gListNeuron <- setRefClass("listNeuron",
 				setFrom=function(value, ID, ...){ #TODO Remark in the help that value is a list and that the returned value from the getter is a list as well
 					if(missing(ID)){
 						if(numOfNeurons(...)!=length(value)) {stop("[listNeuron setFrom(ID=\"missing\")<-]: Incorrect lengths.")}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setFrom(y)})
+						z <- mapply(collection, value, FUN=function(x,y){x$setFrom(y)})
 					} else {
 						select(ID)$setFrom(value, ...)
 					}
@@ -116,7 +116,7 @@ gListNeuron <- setRefClass("listNeuron",
 					'Object validator for internal coherence.
 							'
 					if (anyDuplicated(getId(...))>0) {stop("[listNeuron: Validation] Neuron$id  duplication error")} else {}
-					lapply(ldata, function(x){x$validate(...)})
+					lapply(collection, function(x){x$validate(...)})
 					return(TRUE)
 				}
 		

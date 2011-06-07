@@ -39,7 +39,7 @@ int \hyperlink{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749}{numOfCons} ()
 std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getId} ()
 \begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_con_ae2f2979a6ce42fa5ff0a8911a3ec3cb6}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ vFrom, std::vector$<$ double $>$ vWeight)
-\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to ldata. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to collection. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} ()
 \begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{VecCon}. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{classvec_con_ac3d4b7b11bfff3407afd585c1ae6a658}{getWeight} (std::vector$<$ int $>$ vFrom)
@@ -82,9 +82,9 @@ Definition at line 17 of file VecCon.h.
 \label{classvec_con_ae2f2979a6ce42fa5ff0a8911a3ec3cb6}
 
 
-Builds \hyperlink{class_con}{Con} objects and appends them to ldata. 
+Builds \hyperlink{class_con}{Con} objects and appends them to collection. 
 
-This function provides a convenient way of populating a \hyperlink{classvec_con}{VecCon} object by building and apending \hyperlink{class_con}{Con} objects to ldata. 
+This function provides a convenient way of populating a \hyperlink{classvec_con}{VecCon} object by building and apending \hyperlink{class_con}{Con} objects to collection. 
 \begin{DoxyParams}{Parameters}
 {\em FROM} & A vector of smart pointers to the neurons to be used in the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{Con::from} fields \\
 \hline
@@ -132,7 +132,7 @@ Definition at line 130 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 \begin{DoxyCode}
@@ -143,13 +143,13 @@ References Container$<$ Con $>$::ldata.
        is empty"); }
         if (FROM.size() != WEIGHT.size() ) { throw std::range_error("[VecCon::bui
       ldAndAppend]: Error, FROM.size() != WEIGHT.size()"); }
-        ldata.reserve(ldata.size() + FROM.size());
+        collection.reserve(collection.size() + FROM.size());
         ConPtr ptCon;
         std::vector<double>::iterator itrWEIGHT = WEIGHT.begin();
         for(  std::vector<NeuronSharedPtr>::iterator itrFROM=FROM.begin();  itrFR
       OM != FROM.end();       itrFROM++ , itrWEIGHT++)        {
                         ptCon.reset(  new Con( *itrFROM, *itrWEIGHT) );
-                        ldata.push_back(ptCon);
+                        collection.push_back(ptCon);
         }
         return true;
         END_RCPP
@@ -168,7 +168,7 @@ References Container$<$ Con $>$::ldata.
 
 Erase the specified elements from the vecCom object. 
 
-Provides a convenient way of removing some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{classvec_con}{VecCon} object.
+Provides a convenient way of removing some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{classvec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -242,17 +242,17 @@ Definition at line 445 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 \begin{DoxyCode}
                                          {
         std::vector<ConPtr>::iterator itr;
-        sort (ldata.begin(), ldata.end(), CompareId());
+        sort (collection.begin(), collection.end(), CompareId());
         sort (vFrom.begin(), vFrom.end());
-        itr=set_difference (ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(
-      ), ldata.begin(), CompareId());
-        ldata.resize(itr-ldata.begin());
+        itr=set_difference (collection.begin(), collection.end(), vFrom.begin(), vFrom.end(
+      ), collection.begin(), CompareId());
+        collection.resize(itr-collection.begin());
 }
 \end{DoxyCode}
 \hypertarget{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{
@@ -316,7 +316,7 @@ Definition at line 83 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References Container$<$ Con $>$::collection, and numOfCons().
 
 
 
@@ -327,8 +327,8 @@ Referenced by validate().
                                   {
         std::vector<int> result;
         result.reserve(numOfCons());
-        for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != 
-      ldata.end();   itr++)   { result.push_back((*itr)->getId()); }
+        for(std::vector<ConPtr>::iterator itr = collection.begin();   itr != 
+      collection.end();   itr++)   { result.push_back((*itr)->getId()); }
         return result;
 }
 \end{DoxyCode}
@@ -412,15 +412,15 @@ Definition at line 288 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References Container$<$ Con $>$::collection, and numOfCons().
 
 
 \begin{DoxyCode}
                                                     {
         std::vector<NeuronSharedPtr> result;
         result.reserve(numOfCons());
-        for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != 
-      ldata.end();   itr++)   {
+        for(std::vector<ConPtr>::iterator itr = collection.begin();   itr != 
+      collection.end();   itr++)   {
                 result.push_back((*itr)->getFrom());
         }
         return result;
@@ -494,15 +494,15 @@ Definition at line 185 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata, and numOfCons().
+References Container$<$ Con $>$::collection, and numOfCons().
 
 
 \begin{DoxyCode}
                                             {
         std::vector<double> result;
         result.reserve(numOfCons());
-        for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != 
-      ldata.end();   itr++)   { result.push_back((*itr)->getWeight()); }
+        for(std::vector<ConPtr>::iterator itr = collection.begin();   itr != 
+      collection.end();   itr++)   { result.push_back((*itr)->getWeight()); }
         return result;
 }
 \end{DoxyCode}
@@ -530,7 +530,7 @@ Here is the call graph for this function:\nopagebreak
 
 Getter of the weights of the specified elements from the vecCom object. 
 
-Provides a convenient way of getting the weights of some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{classvec_con}{VecCon} object.
+Provides a convenient way of getting the weights of some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{classvec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -668,7 +668,7 @@ Definition at line 42 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 
@@ -677,7 +677,7 @@ Referenced by getId(), getFrom(), and getWeight().
 
 \begin{DoxyCode}
                        {
-        return ldata.size();
+        return collection.size();
 }
 \end{DoxyCode}
 
@@ -705,7 +705,7 @@ Here is the caller graph for this function:
 
 Selects the specified elements from the vecCom object. 
 
-Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{classvec_con}{VecCon} object.
+Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{classvec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -761,7 +761,7 @@ Definition at line 497 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 
@@ -771,11 +771,11 @@ Referenced by getWeight(), and setWeight().
 \begin{DoxyCode}
                                                      {
         VecConPtr result(new VecCon );
-        result->reserve(ldata.size());
-        sort (ldata.begin(), ldata.end(), CompareId());
+        result->reserve(collection.size());
+        sort (collection.begin(), collection.end(), CompareId());
         sort (vFrom.begin(), vFrom.end());
-        set_intersection(ldata.begin(), ldata.end(), vFrom.begin(), vFrom.end(), 
-      back_inserter(result->ldata) , CompareId());
+        set_intersection(collection.begin(), collection.end(), vFrom.begin(), vFrom.end(), 
+      back_inserter(result->collection) , CompareId());
 
         return result;
 }
@@ -858,7 +858,7 @@ Definition at line 343 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 \begin{DoxyCode}
@@ -866,11 +866,11 @@ References Container$<$ Con $>$::ldata.
         BEGIN_RCPP
                 if (vFrom.empty()) { throw std::range_error("[ C++ VecCon::setFro
       mNeuron]: Error, w is empty"); }
-                if (vFrom.size() != ldata.size() ) { throw std::range_error("[C++
-       VecCon::setFrom]: Error, w.size() != ldata.size()"); }
+                if (vFrom.size() != collection.size() ) { throw std::range_error("[C++
+       VecCon::setFrom]: Error, w.size() != collection.size()"); }
                 std::vector<NeuronSharedPtr>::iterator itrFrom = vFrom.begin();
-                for(std::vector<ConPtr>::iterator itr = ldata.begin();   it
-      r != ldata.end();   itr++, itrFrom++)   {
+                for(std::vector<ConPtr>::iterator itr = collection.begin();   it
+      r != collection.end();   itr++, itrFrom++)   {
                         (*itr)->setFrom( *itrFrom );
                 }
 
@@ -892,7 +892,7 @@ References Container$<$ Con $>$::ldata.
 
 Setter of the weights of the specified elements from the \hyperlink{classvec_con}{VecCon} object. 
 
-Provides a convenient way of setting the weights of some \hyperlink{class_con}{Con} objects from the ldata field of the \hyperlink{classvec_con}{VecCon} object.
+Provides a convenient way of setting the weights of some \hyperlink{class_con}{Con} objects from the collection field of the \hyperlink{classvec_con}{VecCon} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -1049,7 +1049,7 @@ Definition at line 235 of file VecCon.cpp.
 
 
 
-References Container$<$ Con $>$::ldata.
+References Container$<$ Con $>$::collection.
 
 
 \begin{DoxyCode}
@@ -1057,11 +1057,11 @@ References Container$<$ Con $>$::ldata.
         BEGIN_RCPP
         if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: 
       Error, vWeight is empty"); }
-        if (vWeight.size() != ldata.size() ) { throw std::range_error("[C++ vecCo
-      n::setWeight]: Error, vWeight.size() != ldata.size()"); }
+        if (vWeight.size() != collection.size() ) { throw std::range_error("[C++ vecCo
+      n::setWeight]: Error, vWeight.size() != collection.size()"); }
         std::vector<double>::iterator itrWeight = vWeight.begin();
-        for(std::vector<ConPtr>::iterator itr = ldata.begin();   itr != 
-      ldata.end();   itr++, itrWeight++)      {
+        for(std::vector<ConPtr>::iterator itr = collection.begin();   itr != 
+      collection.end();   itr++, itrWeight++)      {
                 (*itr)->setWeight( *itrWeight );
         }
         return true;

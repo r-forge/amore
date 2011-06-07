@@ -11,7 +11,7 @@
 
 	Neuron::Neuron() {};
 	Neuron::Neuron(int Id) : Id(Id), outputValue(0.0) {};
-	Neuron::Neuron(int Id, VecCon Con) : Id(Id), Con(Con), outputValue(0.0) {} ;
+	Neuron::Neuron(int Id, VecCon con) : Id(Id), con(con), outputValue(0.0) {} ;
 	Neuron::~Neuron() {};
 
 
@@ -39,7 +39,7 @@ std::vector<double>	Neuron::getWeight	(){
 }
 
 
-bool	Neuron::setFrom		(NeuronPtr vFrom){
+bool	Neuron::setFrom		(std::vector<NeuronPtr> vFrom){
 	con.setFrom(vFrom);
 }
 

@@ -14,7 +14,7 @@
 <polygon fill="#bfbfbf" stroke="black" points="49,-0.5 49,-167.5 131,-167.5 131,-0.5 49,-0.5"/>
 <text text-anchor="middle" x="90" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="49,-148.5 131,-148.5 "/>
-<text text-anchor="start" x="57" y="-135.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="57" y="-135.5" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="49,-129.5 131,-129.5 "/>
 <text text-anchor="start" x="57" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin()</text>
 <text text-anchor="start" x="57" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ end()</text>
@@ -41,7 +41,7 @@
 <g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M90,-206.017C90,-194.377 90,-181.142 90,-167.786"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="90,-216.216 85.5001,-206.216 90,-211.216 90.0001,-206.216 90.0001,-206.216 90.0001,-206.216 90,-211.216 94.5001,-206.216 90,-216.216 90,-216.216"/>
-<text text-anchor="middle" x="100.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="100.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>

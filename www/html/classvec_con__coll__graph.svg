@@ -31,11 +31,11 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# ldata\l|+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
+<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; Con \&gt;\n|# collection\l|+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
 <polygon fill="white" stroke="black" points="93.5,-219 93.5,-353 198.5,-353 198.5,-219 93.5,-219"/>
 <text text-anchor="middle" x="146" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; Con &gt;</text>
 <polyline fill="none" stroke="black" points="93.5,-334 198.5,-334 "/>
-<text text-anchor="start" x="101.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="101.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="93.5,-315 198.5,-315 "/>
 <text text-anchor="start" x="101.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">+ load()</text>
 <text text-anchor="start" x="101.5" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00">+ store()</text>
@@ -65,7 +65,7 @@
 <g id="edge4" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M102.493,-546.17C110.671,-497.268 124.853,-412.462 134.796,-353.003"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="100.794,-556.331 98.0053,-545.725 101.619,-551.399 102.444,-546.468 102.444,-546.468 102.444,-546.468 101.619,-551.399 106.882,-547.21 100.794,-556.331 100.794,-556.331"/>
-<text text-anchor="middle" x="137.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="137.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 <!-- Node4 -->
 <g id="node6" class="node"><title>Node4</title>
@@ -116,11 +116,11 @@
 </g>
 <!-- Node6 -->
 <g id="node10" class="node"><title>Node6</title>
-<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# ldata\l|+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
+<a xlink:href="classvec_a_m_o_r_e.html" target="_top" xlink:title="{Container\&lt; T \&gt;\n|# collection\l|+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l}">
 <polygon fill="white" stroke="black" points="162.5,-403 162.5,-537 255.5,-537 255.5,-403 162.5,-403"/>
 <text text-anchor="middle" x="209" y="-524" font-family="Helvetica,sans-Serif" font-size="10.00">Container&lt; T &gt;</text>
 <polyline fill="none" stroke="black" points="162.5,-518 255.5,-518 "/>
-<text text-anchor="start" x="170.5" y="-505" font-family="Helvetica,sans-Serif" font-size="10.00"># ldata</text>
+<text text-anchor="start" x="170.5" y="-505" font-family="Helvetica,sans-Serif" font-size="10.00"># collection</text>
 <polyline fill="none" stroke="black" points="162.5,-499 255.5,-499 "/>
 <text text-anchor="start" x="170.5" y="-486" font-family="Helvetica,sans-Serif" font-size="10.00">+ load()</text>
 <text text-anchor="start" x="170.5" y="-475" font-family="Helvetica,sans-Serif" font-size="10.00">+ store()</text>
@@ -142,7 +142,7 @@
 <g id="edge12" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M230.551,-622.454C227.1,-598.038 222.542,-565.795 218.507,-537.252"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="231.958,-632.405 226.102,-623.134 231.258,-627.455 230.558,-622.504 230.558,-622.504 230.558,-622.504 231.258,-627.455 235.014,-621.874 231.958,-632.405 231.958,-632.405"/>
-<text text-anchor="middle" x="238.5" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">ldata</text>
+<text text-anchor="middle" x="238.5" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">collection</text>
 </g>
 </g>
 </svg>

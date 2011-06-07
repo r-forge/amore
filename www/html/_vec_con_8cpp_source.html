@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095 
 <a name="l00097"></a>00097 
-<a name="l00134"></a><a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1">00134</a> <span class="keywordtype">bool</span> <a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to ldata.">VecCon::buildAndAppend</a>     ( std::vector&lt;NeuronPtr&gt; vFrom, std::vector&lt;double&gt; vWeight){
+<a name="l00134"></a><a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1">00134</a> <span class="keywordtype">bool</span> <a class="code" href="class_vec_con.html#a2ab58248509550b1c99435a90ece59f1" title="Builds Con objects and appends them to collection.">VecCon::buildAndAppend</a>     ( std::vector&lt;NeuronPtr&gt; vFrom, std::vector&lt;double&gt; vWeight){
 <a name="l00135"></a>00135         BEGIN_RCPP
 <a name="l00136"></a>00136         <span class="keywordflow">if</span> (vFrom.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::append]: Error, vFrom is empty&quot;</span>); }
 <a name="l00137"></a>00137         <span class="keywordflow">if</span> (vFrom.size() != vWeight.size() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[VecCon::buildAndAppend]: Error, vFrom.size() != vWeight.size()&quot;</span>); }
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00244"></a><a class="code" href="class_vec_con.html#a5ccf0a3d9ccd6b744d22ab0e508f8010">00244</a> <span class="keywordtype">bool</span> <a class="code" href="class_vec_con.html#a5ccf0a3d9ccd6b744d22ab0e508f8010" title="Setter of the weight field of the Con objects related to VecCon.">VecCon::setWeight</a> (std::vector&lt;double&gt; vWeight)  {
 <a name="l00245"></a>00245         BEGIN_RCPP
 <a name="l00246"></a>00246         <span class="keywordflow">if</span> (vWeight.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setWeight]: Error, vWeight is empty&quot;</span>); }
-<a name="l00247"></a>00247         <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != ldata.size()&quot;</span>); }
+<a name="l00247"></a>00247         <span class="keywordflow">if</span> (vWeight.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setWeight]: Error, vWeight.size() != collection.size()&quot;</span>); }
 <a name="l00248"></a>00248         std::vector&lt;double&gt;::iterator itrWeight = vWeight.begin();
 <a name="l00249"></a>00249         <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>){
 <a name="l00250"></a>00250                 itr-&gt;setWeight( *itrWeight );
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00353"></a><a class="code" href="class_vec_con.html#ad5327f9345cc4dee223ba7f1038ad9ec">00353</a> <span class="keywordtype">bool</span>    <a class="code" href="class_vec_con.html#ad5327f9345cc4dee223ba7f1038ad9ec" title="Setter of the from fields of the Con objects related to VecCon.">VecCon::setFrom</a> ( std::vector&lt;NeuronPtr&gt; vFrom){
 <a name="l00354"></a>00354         BEGIN_RCPP
 <a name="l00355"></a>00355                 <span class="keywordflow">if</span> (vFrom.empty()) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[ C++ VecCon::setFrom]: Error, w is empty&quot;</span>); }
-<a name="l00356"></a>00356                 <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != ldata.size()&quot;</span>); }
+<a name="l00356"></a>00356                 <span class="keywordflow">if</span> (vFrom.size() != <a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>() ) { <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ VecCon::setFrom]: Error, w.size() != collection.size()&quot;</span>); }
 <a name="l00357"></a>00357                 std::vector&lt;NeuronPtr&gt;::iterator itrFrom = vFrom.begin();
 <a name="l00358"></a>00358                 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr , *<span class="keyword">this</span>)     {
 <a name="l00359"></a>00359                         itr-&gt;setFrom( *itrFrom );
@@ -226,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00509"></a>00509         result-&gt;reserve(<a class="code" href="class_container.html#aef8dda28fbfe205ce25ae824d84bb1c9">size</a>());
 <a name="l00510"></a>00510         sort (<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
 <a name="l00511"></a>00511         sort (vFrom.begin(), vFrom.end());
-<a name="l00512"></a>00512         set_intersection(<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;ldata) , <a class="code" href="struct_compare_id.html">CompareId</a>());
+<a name="l00512"></a>00512         set_intersection(<a class="code" href="class_container.html#a9ad6802d12bf5f48400bc346de37ad0f">begin</a>(), <a class="code" href="class_container.html#a769250b7546b782007f1adaba8a07336">end</a>(), vFrom.begin(), vFrom.end(), back_inserter(result-&gt;collection) , <a class="code" href="struct_compare_id.html">CompareId</a>());
 <a name="l00513"></a>00513 
 <a name="l00514"></a>00514         <span class="keywordflow">return</span> result;
 <a name="l00515"></a>00515 }

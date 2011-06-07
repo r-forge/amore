@@ -21,7 +21,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 					
 				getBias = function(ID, ...){
 					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getBias(...)}))
+						return(sapply(collection,function(x) { x$getBias(...)}))
 					} else {
 						return(select(ID)$getBias(...))
 					}
@@ -30,7 +30,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 				setBias = function(value, ID,  ...) {
 					if (missing(ID)) {
 						if(numOfNeurons()!=length(value)) { stop("[listNeuron setBias(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setBias(y)})		
+						z <- mapply(collection, value, FUN=function(x,y){x$setBias(y)})		
 						
 					} else {
 						return(select(ID)$setBias(value, ...))
@@ -40,7 +40,7 @@ gListMLPneuron <- setRefClass("listMLPneuron",
 				validate=function(...){
 					'Object validator for internal coherence.
 							'
-					lapply(ldata, function(x){if (!is(x,"MLPneuron")) {stop("[listMLPneuron Validate]: Element is not an MLPneuron")}  })
+					lapply(collection, function(x){if (!is(x,"MLPneuron")) {stop("[listMLPneuron Validate]: Element is not an MLPneuron")}  })
 					callSuper(...)
 				}
 		

@@ -22,7 +22,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 				
 				getWidth = function(ID, ...){
 					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getWidth(...)}))
+						return(sapply(collection,function(x) { x$getWidth(...)}))
 					} else {
 						return(select(ID)$getWidth(...))
 					}
@@ -30,7 +30,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 				
 				getAltitude = function(ID, ...){
 					if (missing(ID)) {
-						return(sapply(ldata,function(x) { x$getAltitude(...)}))
+						return(sapply(collection,function(x) { x$getAltitude(...)}))
 					} else {
 						return(select(ID)$getAltitude(...))
 					}
@@ -39,7 +39,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 				setWidth = function(value, ID,  ...) {
 					if (missing(ID)) {
 						if(numOfNeurons()!=length(value)) { stop("[listNeuron setWidth(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setWidth(y)})		
+						z <- mapply(collection, value, FUN=function(x,y){x$setWidth(y)})		
 					} else {
 						return(select(ID)$setWidth(value, ...))
 					}
@@ -48,7 +48,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 				setAltitude = function(value, ID,  ...) {
 					if (missing(ID)) {
 						if(numOfNeurons()!=length(value)) { stop("[listNeuron setAltitude(ID=\"missing\")<- Error]: Incorrect length(value)" )}
-						z <- mapply(ldata, value, FUN=function(x,y){x$setAltitude(y)})		
+						z <- mapply(collection, value, FUN=function(x,y){x$setAltitude(y)})		
 					} else {
 						return(select(ID)$setAltitude(value, ...))
 					}
@@ -57,7 +57,7 @@ gListRBFneuron <- setRefClass("listRBFneuron",
 				validate=function(...){
 					'Object validator for internal coherence.
 							'
-					lapply(ldata, function(x){if (!is(x,"RBFneuron")) {stop("[listRBFneuron Validate]: Element is not an MLPneuron")}  })
+					lapply(collection, function(x){if (!is(x,"RBFneuron")) {stop("[listRBFneuron Validate]: Element is not an MLPneuron")}  })
 					callSuper(...)
 				}
 

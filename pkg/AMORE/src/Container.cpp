@@ -6,10 +6,10 @@
  */
 
 
-//! Append a shared_ptr at the end of ldata
+//! Append a shared_ptr at the end of collection
 /*!
  * Implements push_back for the Container class
- * \param TsharedPtr A shared_ptr pointer to be inserted at the end of ldata
+ * \param TsharedPtr A shared_ptr pointer to be inserted at the end of collection
  *
  * \code
  *		//================
@@ -42,13 +42,13 @@
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> void Container<T>::push_back( boost::shared_ptr<T> TsharedPtr) {
-	ldata.push_back(TsharedPtr);
+	collection.push_back(TsharedPtr);
 };
 
 
 
 //! Pretty print of the Container<T>
-/*! This method outputs in the R terminal the contents of Container::ldata.
+/*! This method outputs in the R terminal the contents of Container::collection.
  * \return true in case everything works without throwing an exception
  *
  *
@@ -93,7 +93,7 @@ template <typename T> void Container<T>::push_back( boost::shared_ptr<T> Tshared
 template <typename T> bool Container<T>::show() {
 
 	// This is equivalent to:
-	// for( auto x : ldata)	{ x.show(); }
+	// for( auto x : collection)	{ x.show(); }
 	// Waiting for C++0x
 
 	foreach (typename boost::shared_ptr<T> itr, *this){
@@ -106,7 +106,7 @@ template <typename T> bool Container<T>::show() {
 
 //! Object validator
 /*! This method checks the object for internal coherence.
- *  This method calls the validate method for each element in ldata,
+ *  This method calls the validate method for each element in collection,
  * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> bool Container<T>::validate() {
@@ -120,7 +120,7 @@ template <typename T> bool Container<T>::validate() {
 
 //! Appends a Container<T> object
 /*!
- * This method inserts the ldata field of a second object at the end of the ldata field of the calling object.
+ * This method inserts the collection field of a second object at the end of the collection field of the calling object.
  * \param v The Container<T> object to be added to the current one
  * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  *
@@ -171,15 +171,15 @@ template <typename T> bool Container<T>::validate() {
  */
 template <typename T> void Container<T>::append( Container<T> v) {
 	reserve(size() + v.size());
-	ldata.insert( end(), v.begin(), v.end() );
+	collection.insert( end(), v.begin(), v.end() );
 };
 
 
 
-//! %ldata field accessor function
+//! %collection field accessor function
 /*!
- *  This method allows access to the data stored in the \ref ldata field.
- * \return The ldata vector.
+ *  This method allows access to the data stored in the \ref collection field.
+ * \return The collection vector.
  *
  * \code
  * 	//================
@@ -215,19 +215,19 @@ template <typename T> void Container<T>::append( Container<T> v) {
  * \sa store and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::load() {
-	return ldata;
+	return collection;
 };
 
 
 
-//! %ldata field accessor function
+//! %collection field accessor function
 /*!
- *  This method sets the value of the data stored in the \ref ldata field.
- * \param v The vector of smart pointers to be stored in the ldata field
+ *  This method sets the value of the data stored in the \ref collection field.
+ * \param v The vector of smart pointers to be stored in the collection field
  * \sa load and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>  > v) {
-	ldata=v;
+	collection=v;
 };
 
 
@@ -238,16 +238,16 @@ template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>
  * 	The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template <typename T> int Container<T>::size() {
-	return ldata.size() ;
+	return collection.size() ;
 };
 
 
 template <typename T> void Container<T>::resize ( int n) {
-	ldata.resize(n);
+	collection.resize(n);
 }
 
 
 template <typename T> void Container<T>::reserve(int n) {
-	 ldata.reserve(n) ;
+	 collection.reserve(n) ;
 };
 
