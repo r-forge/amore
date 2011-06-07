@@ -658,8 +658,7 @@ VecCon::getWeight(std::vector<int> vFrom)
 bool
 VecCon::setWeight(std::vector<double> vWeight, std::vector<int> vFrom)
 {
-BEGIN_RCPP
-return select(vFrom)->setWeight(vWeight);
+BEGIN_RCPP return select(vFrom)->setWeight(vWeight);
 END_RCPP
 }
 

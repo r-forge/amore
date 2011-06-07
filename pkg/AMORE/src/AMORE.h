@@ -15,7 +15,6 @@
  *
  */
 
-
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -29,11 +28,11 @@
 using namespace Rcpp;
 
 class Con;
-template <typename T> class Container;
+template<typename T>
+  class Container;
 class VecCon;
 class Neuron;
 class VecNeuron;
-
 
 #define foreach         BOOST_FOREACH
 
@@ -41,13 +40,13 @@ class VecNeuron;
 #define size_type unsigned int
 #endif
 
-typedef boost::shared_ptr<Con> 					ConPtr;
-typedef boost::shared_ptr<Neuron>				NeuronPtr;
-typedef boost::weak_ptr<Neuron>					NeuronWeakPtr;
-typedef boost::shared_ptr< Container<Con> > 	ContainerConPtr;
-typedef boost::shared_ptr< Container<Neuron> > 	ContainerNeuronPtr;
-typedef boost::shared_ptr< VecCon > 			VecConPtr;
-typedef boost::shared_ptr< VecNeuron > 			VecNeuronPtr;
+typedef boost::shared_ptr<Con> ConPtr;
+typedef boost::shared_ptr<Neuron> NeuronPtr;
+typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
+typedef boost::shared_ptr<Container<Con> > ContainerConPtr;
+typedef boost::shared_ptr<Container<Neuron> > ContainerNeuronPtr;
+typedef boost::shared_ptr<VecCon> VecConPtr;
+typedef boost::shared_ptr<VecNeuron> VecNeuronPtr;
 
 #include "Con.h"
 #include "Container.h"
@@ -60,6 +59,5 @@ typedef boost::shared_ptr< VecNeuron > 			VecNeuronPtr;
 #include "VecCon.cpp"
 #include "Neuron.cpp"
 //#include "VecNeuron.cpp"
-
 
 

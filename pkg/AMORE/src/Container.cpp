@@ -5,13 +5,31 @@
  *      Author: mcasl
  */
 
+template<typename T>
+  Container<T>::Container()
+  {
+  }
 
-template <typename T>  Container<T>::Container	( ) {};
+template<typename T>
+  Container<T>::Container(
+      typename std::vector<boost::shared_ptr<T> > collection) :
+    collection(collection)
+  {
+  }
 
+template<typename T>
+  typename std::vector<boost::shared_ptr<T> >::iterator
+  Container<T>::begin()
+  {
+    return collection.begin();
+  }
 
-template <typename T>  Container<T>::Container	( typename std::vector<boost::shared_ptr<T> > collection)  :  collection(collection) {}
-
-
+template<typename T>
+  typename std::vector<boost::shared_ptr<T> >::iterator
+  Container<T>::end()
+  {
+    return collection.end();
+  }
 
 //! Append a shared_ptr at the end of collection
 /*!
@@ -48,11 +66,13 @@ template <typename T>  Container<T>::Container	( typename std::vector<boost::sha
  *
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void Container<T>::push_back( boost::shared_ptr<T> TsharedPtr) {
-	collection.push_back(TsharedPtr);
-};
-
-
+template<typename T>
+  void
+  Container<T>::push_back(boost::shared_ptr<T> TsharedPtr)
+  {
+    collection.push_back(TsharedPtr);
+  }
+;
 
 //! Pretty print of the Container<T>
 /*! This method outputs in the R terminal the contents of Container::collection.
@@ -97,33 +117,39 @@ template <typename T> void Container<T>::push_back( boost::shared_ptr<T> Tshared
  *
  * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> bool Container<T>::show() {
+template<typename T>
+  bool
+  Container<T>::show()
+  {
 
-	// This is equivalent to:
-	// for( auto x : collection)	{ x.show(); }
-	// Waiting for C++0x
+    // This is equivalent to:
+    // for( auto x : collection)	{ x.show(); }
+    // Waiting for C++0x
 
-	foreach (typename boost::shared_ptr<T> itr, *this){
-		itr->show();
-	}
-	return true;
-};
-
-
+    foreach (typename boost::shared_ptr<T> itr, *this)
+      {
+        itr->show();
+      }
+    return true;
+  }
+;
 
 //! Object validator
 /*! This method checks the object for internal coherence.
  *  This method calls the validate method for each element in collection,
  * \sa The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> bool Container<T>::validate() {
-	foreach (typename boost::shared_ptr<T> itr, *this){
-		itr->validate();
-	}
-	return true;
-};
-
-
+template<typename T>
+  bool
+  Container<T>::validate()
+  {
+    foreach (typename boost::shared_ptr<T> itr, *this)
+      {
+        itr->validate();
+      }
+    return true;
+  }
+;
 
 //! Appends a Container<T> object
 /*!
@@ -176,12 +202,14 @@ template <typename T> bool Container<T>::validate() {
  *
  * \sa Container::store , Container::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void Container<T>::append( Container<T> v) {
-	reserve(size() + v.size());
-	collection.insert( end(), v.begin(), v.end() );
-};
-
-
+template<typename T>
+  void
+  Container<T>::append(Container<T> v)
+  {
+    reserve(size() + v.size());
+    collection.insert(end(), v.begin(), v.end());
+  }
+;
 
 //! %collection field accessor function
 /*!
@@ -221,11 +249,13 @@ template <typename T> void Container<T>::append( Container<T> v) {
  *
  * \sa store and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::load() {
-	return collection;
-};
-
-
+template<typename T>
+  std::vector<boost::shared_ptr<T> >
+  Container<T>::load()
+  {
+    return collection;
+  }
+;
 
 //! %collection field accessor function
 /*!
@@ -233,10 +263,13 @@ template <typename T> std::vector< boost::shared_ptr<T>  > Container<T>::load() 
  * \param v The vector of smart pointers to be stored in the collection field
  * \sa load and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>  > v) {
-	collection=v;
-};
-
+template<typename T>
+  void
+  Container<T>::store(std::vector<boost::shared_ptr<T> > v)
+  {
+    collection = v;
+  }
+;
 
 //! Returns the size or length of the vector
 /*!
@@ -244,21 +277,32 @@ template <typename T> void Container<T>::store(std::vector< boost::shared_ptr<T>
  *  In the classes derived from Container<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
  * 	The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
-template <typename T> size_type Container<T>::size() {
-	return collection.size() ;
-};
+template<typename T>
+  size_type
+  Container<T>::size()
+  {
+    return collection.size();
+  }
+;
 
+template<typename T>
+  void
+  Container<T>::resize(int n)
+  {
+    collection.resize(n);
+  }
 
-template <typename T> void Container<T>::resize ( int n) {
-	collection.resize(n);
-}
+template<typename T>
+  void
+  Container<T>::reserve(int n)
+  {
+    collection.reserve(n);
+  }
+;
 
-
-template <typename T> void Container<T>::reserve(int n) {
-	 collection.reserve(n) ;
-};
-
-
-template <typename T> boost::shared_ptr<T>	& Container<T>::operator[]( size_type offset ) {
-	return collection[offset];
-}
+template<typename T>
+  boost::shared_ptr<T> &
+  Container<T>::operator[](size_type offset)
+  {
+    return collection[offset];
+  }
