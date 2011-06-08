@@ -18,6 +18,8 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, 0)
+	# [1] TRUE
+
 	# In file included from file635071b6.cpp:64:
 	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/NeuronContainer.cpp:22: error: stray '\312' in program
 	# make: *** [file635071b6.o] Error 1
