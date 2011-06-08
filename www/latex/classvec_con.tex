@@ -38,7 +38,7 @@ int \hyperlink{classvec_con_a1e39a5e78c40ae8af9bbd2fd7f0dc749}{numOfCons} ()
 \begin{DoxyCompactList}\small\item\em Size of the \hyperlink{classvec_con}{VecCon} object. \end{DoxyCompactList}\item 
 std::vector$<$ int $>$ \hyperlink{classvec_con_aa9f3f5df4c4060951c975c4c829b8471}{getId} ()
 \begin{DoxyCompactList}\small\item\em Getter of the Id values of the vector of Cons. \end{DoxyCompactList}\item 
-bool \hyperlink{classvec_con_ae2f2979a6ce42fa5ff0a8911a3ec3cb6}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ vFrom, std::vector$<$ double $>$ vWeight)
+bool \hyperlink{classvec_con_ae2f2979a6ce42fa5ff0a8911a3ec3cb6}{buildAndAppend} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ vFrom, std::vector$<$ double $>$ nWeights)
 \begin{DoxyCompactList}\small\item\em Builds \hyperlink{class_con}{Con} objects and appends them to collection. \end{DoxyCompactList}\item 
 std::vector$<$ double $>$ \hyperlink{classvec_con_a76f10669494f2247d036ae6a1f296873}{getWeight} ()
 \begin{DoxyCompactList}\small\item\em Getter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{VecCon}. \end{DoxyCompactList}\item 
@@ -46,9 +46,9 @@ std::vector$<$ double $>$ \hyperlink{classvec_con_ac3d4b7b11bfff3407afd585c1ae6a
 \begin{DoxyCompactList}\small\item\em Getter of the weights of the specified elements from the vecCom object. \end{DoxyCompactList}\item 
 std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ \hyperlink{classvec_con_ae72d00aedcd054e690f1dcf2ca5ac2c2}{getFrom} ()
 \begin{DoxyCompactList}\small\item\em Getter of the from field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{VecCon}. \end{DoxyCompactList}\item 
-bool \hyperlink{classvec_con_aed79ead4c7a01a8e34e5ed69da74e877}{setWeight} (std::vector$<$ double $>$ vWeight)
+bool \hyperlink{classvec_con_aed79ead4c7a01a8e34e5ed69da74e877}{setWeight} (std::vector$<$ double $>$ nWeights)
 \begin{DoxyCompactList}\small\item\em Setter of the weight field of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{VecCon}. \end{DoxyCompactList}\item 
-bool \hyperlink{classvec_con_a89a39247b0188b4fcc473c430ad46d4c}{setWeight} (std::vector$<$ double $>$ vWeight, std::vector$<$ int $>$ vFrom)
+bool \hyperlink{classvec_con_a89a39247b0188b4fcc473c430ad46d4c}{setWeight} (std::vector$<$ double $>$ nWeights, std::vector$<$ int $>$ vFrom)
 \begin{DoxyCompactList}\small\item\em Setter of the weights of the specified elements from the \hyperlink{classvec_con}{VecCon} object. \end{DoxyCompactList}\item 
 bool \hyperlink{classvec_con_aa5ab6f399819f3a4ac0ba85adc1eb8d2}{setFrom} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_a03051950b0faf9499d14cf376e04c329}{NeuronSharedPtr} $>$ vFrom)
 \begin{DoxyCompactList}\small\item\em Setter of the from fields of the \hyperlink{class_con}{Con} objects related to \hyperlink{classvec_con}{VecCon}. \end{DoxyCompactList}\item 
@@ -99,23 +99,23 @@ This function provides a convenient way of populating a \hyperlink{classvec_con}
         // Data set up
                 std::vector<int> result;
                 VecCon MyVecCon;
-                std::vector<NeuronSharedPtr> vNeuron;
-                std::vector<double> vWeight;
+                std::vector<NeuronSharedPtr> neuronContainer;
+                std::vector<double> nWeights;
 
 
         // Test
                 NeuronSharedPtr ptNeuron( new Neuron(11) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
                 ptNeuron.reset( new Neuron(22) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
                 ptNeuron.reset( new Neuron(33) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
 
-                vWeight.push_back(12.3);
-                vWeight.push_back(1.2);
-                vWeight.push_back(2.1);
+                nWeights.push_back(12.3);
+                nWeights.push_back(1.2);
+                nWeights.push_back(2.1);
 
-                MyVecCon.buildAndAppend(vNeuron, vWeight);
+                MyVecCon.buildAndAppend(neuronContainer, nWeights);
 
                 result=MyVecCon.getId();
 
@@ -183,31 +183,31 @@ Provides a convenient way of removing some \hyperlink{class_con}{Con} objects fr
 
         // Data set up
                         std::vector<int> result;
-                        std::vector<NeuronSharedPtr> vNeuron;
-                        VecConPtr ptShvCon( new VecCon() );
+                        std::vector<NeuronSharedPtr> neuronContainer;
+                        VecConPtr conContainerPtr( new VecCon() );
                         VecConPtr vErased;
                         ConPtr    ptC;
                         NeuronSharedPtr ptN;
                         int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
-                        std::vector<double> vWeight;
-                        vWeight.push_back(11.32);
-                        vWeight.push_back(1.26);
-                        vWeight.push_back(2.14);
-                        vWeight.push_back(3.16);
-                        vWeight.push_back(4.14);
-                        vWeight.push_back(5.19);
-                        vWeight.push_back(6.18);
-                        vWeight.push_back(7.16);
-                        vWeight.push_back(8.14);
-                        vWeight.push_back(9.12);
-                        vWeight.push_back(10.31);
+                        std::vector<double> nWeights;
+                        nWeights.push_back(11.32);
+                        nWeights.push_back(1.26);
+                        nWeights.push_back(2.14);
+                        nWeights.push_back(3.16);
+                        nWeights.push_back(4.14);
+                        nWeights.push_back(5.19);
+                        nWeights.push_back(6.18);
+                        nWeights.push_back(7.16);
+                        nWeights.push_back(8.14);
+                        nWeights.push_back(9.12);
+                        nWeights.push_back(10.31);
 
-                        for (int i=0; i<vWeight.size() ; i++) {                         /
+                        for (int i=0; i<nWeights.size() ; i++) {                         /
       / Let's create a vector with three neurons
                                 ptN.reset( new Neuron( ids[i] ) );
-                                vNeuron.push_back(ptN);
+                                neuronContainer.push_back(ptN);
                         }
-                        ptShvCon->buildAndAppend(vNeuron, vWeight);
+                        conContainerPtr->buildAndAppend(neuronContainer, nWeights);
 
                         // Test
 
@@ -217,9 +217,9 @@ Provides a convenient way of removing some \hyperlink{class_con}{Con} objects fr
                         toRemove.push_back(5);
                         toRemove.push_back(7);
 
-                        ptShvCon->erase(toRemove);
-                        ptShvCon->show();
-                        result=ptShvCon->getId();
+                        conContainerPtr->erase(toRemove);
+                        conContainerPtr->show();
+                        result=conContainerPtr->getId();
 
                 // The output at the R terminal would display :
                 //
@@ -383,20 +383,20 @@ An std::vector$<$NeuronSharedPtr$>$ with the pointer to the incoming neurons.
                 int ids[]= {1, 2, 3};
                 double weights[] = {12.3, 1.2, 2.1 };
                 VecCon MyVecCon;
-                std::vector<NeuronSharedPtr> vNeuron;
-                std::vector<double> vWeight;
+                std::vector<NeuronSharedPtr> neuronContainer;
+                std::vector<double> nWeights;
                 NeuronSharedPtr ptNeuron;
 
                         for (int i=0; i<=2; i++) {
                                 ptNeuron.reset( new Neuron(ids[i]) );
-                                vNeuron.push_back(ptNeuron);
-                                vWeight.push_back(weights[i]);
+                                neuronContainer.push_back(ptNeuron);
+                                nWeights.push_back(weights[i]);
                         }
-                        MyVecCon.buildAndAppend(vNeuron, vWeight);
+                        MyVecCon.buildAndAppend(neuronContainer, nWeights);
                 // Test
-                        vNeuron=MyVecCon.getFrom();
+                        neuronContainer=MyVecCon.getFrom();
                         for (int i=0; i<=2; i++) {
-                                result.push_back(vNeuron.at(i)->getId());
+                                result.push_back(neuronContainer.at(i)->getId());
                         }
 
         // Now result is a vector that contains the values 1, 2 and 3 .
@@ -461,23 +461,23 @@ A numeric (double) vector with the weights
         // Data set up
                 std::vector<double> result;
                 VecCon MyVecCon;
-                std::vector<NeuronSharedPtr> vNeuron;
-                std::vector<double> vWeight;
+                std::vector<NeuronSharedPtr> neuronContainer;
+                std::vector<double> nWeights;
 
 
         // Test
                 NeuronSharedPtr ptNeuron( new Neuron(11) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
                 ptNeuron.reset( new Neuron(22) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
                 ptNeuron.reset( new Neuron(33) );
-                vNeuron.push_back(ptNeuron);
+                neuronContainer.push_back(ptNeuron);
 
-                vWeight.push_back(12.3);
-                vWeight.push_back(1.2);
-                vWeight.push_back(2.1);
+                nWeights.push_back(12.3);
+                nWeights.push_back(1.2);
+                nWeights.push_back(2.1);
 
-                MyVecCon.buildAndAppend(vNeuron, vWeight);
+                MyVecCon.buildAndAppend(neuronContainer, nWeights);
 
                 result=MyVecCon.getWeight();
 
@@ -549,23 +549,23 @@ An std::vector$<$double$>$ with the weights of the selected connections
         // Data set up
 
                 std::vector<double> result;
-                std::vector<NeuronSharedPtr> vNeuron;
-                VecConPtr ptShvCon( new VecCon() );
+                std::vector<NeuronSharedPtr> neuronContainer;
+                VecConPtr conContainerPtr( new VecCon() );
                 ConPtr    ptC;
                 NeuronSharedPtr ptN;
                 int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
                 double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16
       , 8.14, 9.12, 10.31};
-                std::vector<double> vWeight;
+                std::vector<double> nWeights;
                 for (int i=0; i<11; i++) {
-                        vWeight.push_back(weights[i]);
+                        nWeights.push_back(weights[i]);
                 }
-                for (int i=0; i<vWeight.size() ; i++) {                         /
+                for (int i=0; i<nWeights.size() ; i++) {                         /
       / Let's create a vector with three neurons
                         ptN.reset( new Neuron( ids[i] ) );
-                        vNeuron.push_back(ptN);
+                        neuronContainer.push_back(ptN);
                 }
-                ptShvCon->buildAndAppend(vNeuron, vWeight);
+                conContainerPtr->buildAndAppend(neuronContainer, nWeights);
 
         // Test
                 std::vector<int> toSelect;
@@ -574,7 +574,7 @@ An std::vector$<$double$>$ with the weights of the selected connections
                 toSelect.push_back(5);
                 toSelect.push_back(7);
 
-                result=ptShvCon->getWeight(toSelect);
+                result=conContainerPtr->getWeight(toSelect);
 
         // Now, result is a numeric vector with the values  10.31, 3.16,  5.19 an
       d 7.16.
@@ -633,9 +633,9 @@ The size of the vector
         // Data set up
                                 std::vector<int> result;
                                 std::vector<ConPtr> vcA, vcB;
-                                ContainerneuronSharedPtr ptShvNeuron( new 
+                                ContainerneuronSharedPtr neuronContainerPtr( new 
       Container<Neuron>() );
-                                VecConPtr ptShvCon( new VecCon() );
+                                VecConPtr conContainerPtr( new VecCon() );
                                 ConPtr    ptC;
                                 NeuronSharedPtr ptN;
                                 int ids[]= {10, 20, 30};
@@ -643,16 +643,16 @@ The size of the vector
                                 for (int i=0; i<=2 ; i++) {                             /
       / Let's create a vector with three neurons
                                         ptN.reset( new Neuron( ids[i] ) );
-                                        ptShvNeuron->push_back(ptN);
+                                        neuronContainerPtr->push_back(ptN);
                                 }
         // Test
                                 for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                        result.push_back(ptShvCon->numOfCons());                /
+                                        result.push_back(conContainerPtr->numOfCons());                /
       / Append numOfCons to result, create new Con and push_back into MyVecCon
-                                        ptC.reset( new Con( ptShvNeuron->load
+                                        ptC.reset( new Con( neuronContainerPtr->load
       ().at(i), weights[i]) );
-                                        ptShvCon->push_back(ptC);
+                                        conContainerPtr->push_back(ptC);
                                 }
 
         // Now, result contains a numeric vector with values 0, 1, 2, and 3.
@@ -720,23 +720,23 @@ Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects f
 
         // Data set up
                 std::vector<int> result;
-                std::vector<NeuronSharedPtr> vNeuron;
-                VecConPtr ptShvCon( new VecCon() );
+                std::vector<NeuronSharedPtr> neuronContainer;
+                VecConPtr conContainerPtr( new VecCon() );
                 ConPtr    ptC;
                 NeuronSharedPtr ptN;
                 int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
                 double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16
       , 8.14, 9.12, 10.31};
-                std::vector<double> vWeight;
+                std::vector<double> nWeights;
                 for (int i=0; i<11; i++) {
-                        vWeight.push_back(weights[i]);
+                        nWeights.push_back(weights[i]);
                 }
-                for (int i=0; i<vWeight.size() ; i++) {                         /
+                for (int i=0; i<nWeights.size() ; i++) {                         /
       / Let's create a vector with three neurons
                         ptN.reset( new Neuron( ids[i] ) );
-                        vNeuron.push_back(ptN);
+                        neuronContainer.push_back(ptN);
                 }
-                ptShvCon->buildAndAppend(vNeuron, vWeight);
+                conContainerPtr->buildAndAppend(neuronContainer, nWeights);
                 // Test
                 std::vector<int> toSelect;
                 toSelect.push_back(1);
@@ -744,7 +744,7 @@ Provides a convenient way of selecting some \hyperlink{class_con}{Con} objects f
                 toSelect.push_back(5);
                 toSelect.push_back(7);
 
-                VecConPtr  vSelect (  ptShvCon->select(toSelect)  );
+                VecConPtr  vSelect (  conContainerPtr->select(toSelect)  );
                 result=vSelect->getId();
 
                 // Now, result is a numeric vector with the values 1, 3, 5 and 7.
@@ -822,8 +822,8 @@ true if not exception is thrown
 
         // Data set up
                 std::vector<int> result;
-                ContainerneuronSharedPtr ptShvNeuron( new Container<Neuron>() );
-                VecConPtr ptShvCon( new VecCon() );
+                ContainerneuronSharedPtr neuronContainerPtr( new Container<Neuron>() );
+                VecConPtr conContainerPtr( new VecCon() );
                 ConPtr    ptC;
                 NeuronSharedPtr ptN;
 
@@ -833,17 +833,17 @@ true if not exception is thrown
                 for (int i=0; i<=2 ; i++) {                             // Let's 
       create a vector with three neurons
                         ptN.reset( new Neuron( ids[i] ) );
-                        ptShvNeuron->push_back(ptN);
+                        neuronContainerPtr->push_back(ptN);
                 }
                 for (int i=0; i<=2 ; i++) {                             // and a 
       vector with three connections
                         ptC.reset( new Con() );
-                        ptShvCon->push_back(ptC);
+                        conContainerPtr->push_back(ptC);
                 }
         // Test
-                ptShvCon->setFrom(ptShvNeuron->load()) ;
-                ptShvCon->show();
-                result=ptShvCon->getId();
+                conContainerPtr->setFrom(neuronContainerPtr->load()) ;
+                conContainerPtr->show();
+                result=conContainerPtr->getId();
 
         // Now result is a vector that contains the values 10, 20 and 30.
 \end{DoxyCode}
@@ -883,7 +883,7 @@ References Container$<$ Con $>$::collection.
 \index{setWeight@{setWeight}!VecCon@{VecCon}}
 \subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}bool VecCon::setWeight (
 \begin{DoxyParamCaption}
-\item[{std::vector$<$ double $>$}]{vWeight, }
+\item[{std::vector$<$ double $>$}]{nWeights, }
 \item[{std::vector$<$ int $>$}]{vFrom}
 \end{DoxyParamCaption}
 )}}
@@ -896,7 +896,7 @@ Provides a convenient way of setting the weights of some \hyperlink{class_con}{C
 
 
 \begin{DoxyParams}{Parameters}
-{\em vWeight} & A numeric (double) vector with the weights to be set in the \hyperlink{class_con}{Con} objects contained in the \hyperlink{classvec_con}{VecCon} object. \\
+{\em nWeights} & A numeric (double) vector with the weights to be set in the \hyperlink{class_con}{Con} objects contained in the \hyperlink{classvec_con}{VecCon} object. \\
 \hline
 {\em vFrom} & An std::vector$<$int$>$ with the Ids of the connections to select\\
 \hline
@@ -912,23 +912,23 @@ true in case no exception is thrown
 
         // Data set up
                 std::vector<double> result;
-                        std::vector<NeuronSharedPtr> vNeuron;
-                        VecConPtr ptShvCon( new VecCon() );
+                        std::vector<NeuronSharedPtr> neuronContainer;
+                        VecConPtr conContainerPtr( new VecCon() );
                         ConPtr    ptC;
                         NeuronSharedPtr ptN;
                         int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
                         double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.
       18, 7.16, 8.14, 9.12, 10.31};
-                        std::vector<double> vWeight;
+                        std::vector<double> nWeights;
                         for (int i=0; i<11; i++) {
-                        vWeight.push_back(weights[i]);
+                        nWeights.push_back(weights[i]);
                         }
-                        for (int i=0; i<vWeight.size() ; i++) {                         /
+                        for (int i=0; i<nWeights.size() ; i++) {                         /
       / Let's create a vector with three neurons
                         ptN.reset( new Neuron( ids[i] ) );
-                        vNeuron.push_back(ptN);
+                        neuronContainer.push_back(ptN);
                         }
-                        ptShvCon->buildAndAppend(vNeuron, vWeight);
+                        conContainerPtr->buildAndAppend(neuronContainer, nWeights);
 
                         std::vector<int> toSelect;
                         std::vector<double> vNewWeights;
@@ -940,10 +940,10 @@ true in case no exception is thrown
                         vNewWeights.push_back(3000.3);
                         vNewWeights.push_back(5000.5);
                         vNewWeights.push_back(7000.7);
-                        ptShvCon->setWeight(vNewWeights, toSelect);
+                        conContainerPtr->setWeight(vNewWeights, toSelect);
 
         // Test
-                        result = ptShvCon->getWeight();
+                        result = conContainerPtr->getWeight();
                         return wrap(result);
 
         // Now, result is a numeric vector with the values  1000.10, 9.12, 3000.3
@@ -967,7 +967,7 @@ References select().
                                                                                  
        {
         BEGIN_RCPP
-        return  select(vFrom)->setWeight(vWeight);
+        return  select(vFrom)->setWeight(nWeights);
         END_RCPP
 }
 \end{DoxyCode}
@@ -987,7 +987,7 @@ Here is the call graph for this function:\nopagebreak
 \index{setWeight@{setWeight}!VecCon@{VecCon}}
 \subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}bool VecCon::setWeight (
 \begin{DoxyParamCaption}
-\item[{std::vector$<$ double $>$}]{vWeight}
+\item[{std::vector$<$ double $>$}]{nWeights}
 \end{DoxyParamCaption}
 )}}
 \label{classvec_con_aed79ead4c7a01a8e34e5ed69da74e877}
@@ -999,7 +999,7 @@ This function provides a convenient way of setting the values of the weight fiel
 
 
 \begin{DoxyParams}{Parameters}
-{\em vWeight} & A numeric (double) vector with the weights to be set in the \hyperlink{class_con}{Con} objects contained in the \hyperlink{classvec_con}{VecCon} object.\\
+{\em nWeights} & A numeric (double) vector with the weights to be set in the \hyperlink{class_con}{Con} objects contained in the \hyperlink{classvec_con}{VecCon} object.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1015,24 +1015,24 @@ true in case no exception is thrown
                         int ids[]= {1, 2, 3};
                         double weights[] = {12.3, 1.2, 2.1 };
                         VecCon MyVecCon;
-                        std::vector<NeuronSharedPtr> vNeuron;
-                        std::vector<double> vWeight;
+                        std::vector<NeuronSharedPtr> neuronContainer;
+                        std::vector<double> nWeights;
                         NeuronSharedPtr ptNeuron;
 
                         for (int i=0; i<=2; i++) {
                         ptNeuron.reset( new Neuron(ids[1]) );
-                        vNeuron.push_back(ptNeuron);
-                        vWeight.push_back(0);                                   /
+                        neuronContainer.push_back(ptNeuron);
+                        nWeights.push_back(0);                                   /
       / weights are set to 0
                         }
-                        MyVecCon.buildAndAppend(vNeuron, vWeight);
+                        MyVecCon.buildAndAppend(neuronContainer, nWeights);
                         MyVecCon.show();
 
                         for (int i=0; i<=2; i++) {
-                                vWeight.at(i)=weights[i];
+                                nWeights.at(i)=weights[i];
                         }
         // Test
-                        MyVecCon.setWeight(vWeight);                    // weight
+                        MyVecCon.setWeight(nWeights);                    // weight
       s are set to 12.3, 1.2 and 2.1
                         result=MyVecCon.getWeight();
 
@@ -1055,11 +1055,11 @@ References Container$<$ Con $>$::collection.
 \begin{DoxyCode}
                                                   {
         BEGIN_RCPP
-        if (vWeight.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: 
-      Error, vWeight is empty"); }
-        if (vWeight.size() != collection.size() ) { throw std::range_error("[C++ vecCo
-      n::setWeight]: Error, vWeight.size() != collection.size()"); }
-        std::vector<double>::iterator itrWeight = vWeight.begin();
+        if (nWeights.empty()) { throw std::range_error("[ C++ VecCon::setWeight]: 
+      Error, nWeights is empty"); }
+        if (nWeights.size() != collection.size() ) { throw std::range_error("[C++ vecCo
+      n::setWeight]: Error, nWeights.size() != collection.size()"); }
+        std::vector<double>::iterator itrWeight = nWeights.begin();
         for(std::vector<ConPtr>::iterator itr = collection.begin();   itr != 
       collection.end();   itr++, itrWeight++)      {
                 (*itr)->setWeight( *itrWeight );

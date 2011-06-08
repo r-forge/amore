@@ -11,24 +11,24 @@ test.ConContainer.Cpp.push_back.getId <- function() {
 	testCode <- "
 	// Data set up
 				std::vector<int> result;
-				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
-				ConContainerPtr	ptShvCon( new ConContainer() );
+				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ConContainerPtr	conContainerPtr( new ConContainer() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
 				int ids[]= {10, 20, 30};
 				double weights[] = {1.13, 2.22, 3.33 };
 				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
 					ptN.reset( new Neuron( ids[i] ) ); 	
-					ptShvNeuron->push_back(ptN);
+					neuronContainerPtr->push_back(ptN);
 				}
 				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
-					ptShvCon->push_back(ptC);			 
+					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );  	
+					conContainerPtr->push_back(ptC);			 
 				}		
 	// Test
-			ptShvCon->show() ;
-			ptShvCon->validate();		
-			result=ptShvCon->getId();
+			conContainerPtr->show() ;
+			conContainerPtr->validate();		
+			result=conContainerPtr->getId();
 			return wrap(result);
 			"	
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -48,24 +48,24 @@ test.ConContainer.Cpp.numOfCons.show <- function() {
 	// Data set up
 				std::vector<int> result;
 				std::vector<ConPtr> vcA, vcB;
-				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
-				ConContainerPtr	ptShvCon( new ConContainer() );
+				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ConContainerPtr	conContainerPtr( new ConContainer() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
 				int ids[]= {10, 20, 30};
 				double weights[] = {1.13, 2.22, 3.33 };
 				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
 					ptN.reset( new Neuron( ids[i] ) ); 	
-					ptShvNeuron->push_back(ptN);
+					neuronContainerPtr->push_back(ptN);
 				}
 				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
-					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyConContainer	
-					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );  	
-					ptShvCon->push_back(ptC);			 
+					result.push_back(conContainerPtr->numOfCons());		// Append numOfCons to result, create new Con and push_back into conContainer	
+					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );  	
+					conContainerPtr->push_back(ptC);			 
 				}		
 	// Test
-			ptShvCon->show() ;
-			ptShvCon->validate();					
+			conContainerPtr->show() ;
+			conContainerPtr->validate();					
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -87,7 +87,7 @@ testCode <- "
 			// Data set up
 				std::vector<int> result;
 				NeuronContainer neuronContainer;
-				ConContainerPtr	ptShvCon( new ConContainer() );
+				ConContainerPtr	conContainerPtr( new ConContainer() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
 				int ids[]= {10, 20, 30};
@@ -99,9 +99,9 @@ testCode <- "
 					ptN.reset( new Neuron( ids[i] ) ); 	
 					neuronContainer.push_back(ptN);
 				}
-				ptShvCon->buildAndAppend(neuronContainer, nWeights);			 
+				conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );			 
 			// Test	
-				result=ptShvCon->getId();
+				result=conContainerPtr->getId();
 				return wrap(result);
 		"
 testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -114,29 +114,29 @@ checkEquals(result, c( 10, 20, 30))
 
 ###############################################################################
 test.ConContainer.Cpp.Validate_Duplicated_Id <- function() {	
-	###############################################################################
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up
 			std::vector<int> result;
-			ConContainer MyConContainer;
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			ConContainer conContainer;
+			NeuronContainer neuronContainer;
+			std::vector<double> nWeights;
 			// Test	
 			NeuronPtr ptNeuron( new Neuron(11) );
-			vNeuron.push_back(ptNeuron);	
+			neuronContainer.push_back(ptNeuron);	
 			ptNeuron.reset( new Neuron(22) );
-			vNeuron.push_back(ptNeuron);	
+			neuronContainer.push_back(ptNeuron);	
 			ptNeuron.reset( new Neuron(11) );
-			vNeuron.push_back(ptNeuron);	
+			neuronContainer.push_back(ptNeuron);	
 			
-			vWeight.push_back(12.3);
-			vWeight.push_back(1.2);
-			vWeight.push_back(2.1);
+			nWeights.push_back(12.3);
+			nWeights.push_back(1.2);
+			nWeights.push_back(2.1);
 			
-			MyConContainer.buildAndAppend(vNeuron, vWeight);
-			MyConContainer.show();
-			MyConContainer.validate();
+			conContainer.buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
+			conContainer.show();
+			conContainer.validate();
 			return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -156,23 +156,23 @@ test.ConContainer.Cpp.Validate_Weight_Inf <- function() {
 	testCode <- "
 			// Data set up
 				std::vector<int> result;
-				ConContainer MyConContainer;
-				std::vector<NeuronPtr> vNeuron;
-				std::vector<double> vWeight;
+				ConContainer conContainer;
+				std::vector<NeuronPtr> neuronContainer;
+				std::vector<double> nWeights;
 			// Test	
 				NeuronPtr ptNeuron( new Neuron(11) );
-				vNeuron.push_back(ptNeuron);	
+				neuronContainer.push_back(ptNeuron);	
 				ptNeuron.reset( new Neuron(22) );
-				vNeuron.push_back(ptNeuron);	
+				neuronContainer.push_back(ptNeuron);	
 				ptNeuron.reset( new Neuron(33) );
-				vNeuron.push_back(ptNeuron);	
+				neuronContainer.push_back(ptNeuron);	
 			
-				vWeight.push_back(12.3);
-				vWeight.push_back(1.2/0);
-				vWeight.push_back(2.1);
+				nWeights.push_back(12.3);
+				nWeights.push_back(1.2/0);
+				nWeights.push_back(2.1);
 			
-				MyConContainer.buildAndAppend(vNeuron, vWeight);
-				MyConContainer.validate();
+				conContainer.buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
+				conContainer.validate();
 				return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -190,8 +190,8 @@ test.ConContainer.Cpp.setFrom <- function() {
 	testCode <- "
 		// Data set up
 			std::vector<int> result;
-			ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
-			ConContainerPtr	ptShvCon( new ConContainer() );
+			ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+			ConContainerPtr	conContainerPtr( new ConContainer() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
 
@@ -200,16 +200,16 @@ test.ConContainer.Cpp.setFrom <- function() {
 
 			for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
 				ptN.reset( new Neuron( ids[i] ) ); 	
-				ptShvNeuron->push_back(ptN);
+				neuronContainerPtr->push_back(ptN);
 			}
 			for (int i=0; i<=2 ; i++) {				// and a vector with three connections
 				ptC.reset( new Con() );  	
-				ptShvCon->push_back(ptC);			 
+				conContainerPtr->push_back(ptC);			 
 			}		
 			// Test
-			ptShvCon->setFrom(ptShvNeuron->load()) ;
-			ptShvCon->show();		
-			result=ptShvCon->getId();
+			conContainerPtr->setFrom(neuronContainerPtr->load()) ;
+			conContainerPtr->show();		
+			result=conContainerPtr->getId();
 			return wrap(result);
 			"	
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -235,20 +235,20 @@ test.ConContainer.Cpp.getWeight <- function() {
 			std::vector<double> result;
 			int ids[]= {1, 2, 3};
 			double weights[] = {12.3, 1.2, 2.1 };
-			ConContainer MyConContainer;
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			ConContainer conContainer;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);	
-				vWeight.push_back(weights[i]);	
+				neuronContainer.push_back(ptNeuron);	
+				nWeights.push_back(weights[i]);	
 			}
-			MyConContainer.buildAndAppend(vNeuron, vWeight);
+			conContainer.buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 
 		// Test			
-			result=MyConContainer.getWeight();
+			result=conContainer.getWeight();
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -268,25 +268,25 @@ test.ConContainer.Cpp.setWeight <- function() {
 			std::vector<double> result;
 			int ids[]= {1, 2, 3};
 			double weights[] = {12.3, 1.2, 2.1 };
-			ConContainer MyConContainer;
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			ConContainer conContainer;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			
 			for (int i=0; i<=2; i++) {
 			ptNeuron.reset( new Neuron(ids[i]) );
-			vNeuron.push_back(ptNeuron);	
-			vWeight.push_back(0);					// weights are set to 0
+			neuronContainer.push_back(ptNeuron);	
+			nWeights.push_back(0);					// weights are set to 0
 			}
-			MyConContainer.buildAndAppend(vNeuron, vWeight);
-			MyConContainer.show();
+			conContainer.buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
+			conContainer.show();
 			
 			for (int i=0; i<=2; i++) {
-				vWeight.at(i)=weights[i];	
+				nWeights.at(i)=weights[i];	
 			}
 			// Test			
-			MyConContainer.setWeight(vWeight);			// weights are set to 12.3, 1.2 and 2.1	
-			result=MyConContainer.getWeight();
+			conContainer.setWeight(nWeights);			// weights are set to 12.3, 1.2 and 2.1	
+			result=conContainer.getWeight();
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -317,7 +317,7 @@ test.ConContainer.Cpp.getFrom <- function() {
 				neuronContainer.push_back(ptNeuron);	
 				nWeights.push_back(weights[i]);					
 			}
-			conContainer.buildAndAppend(neuronContainer, nWeights);
+			conContainer.buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 		// Test			
 			nNeurons=conContainer.getFrom();				
 			return wrap(nNeurons.getId());
@@ -337,21 +337,22 @@ test.ConContainer.Cpp.erase <- function() {
 	testCode <- "
 			// Data set up
 			std::vector<int> result;
-			std::vector<NeuronPtr> vNeuron;
-			ConContainerPtr	ptShvCon( new ConContainer() );
+			std::vector<NeuronPtr> neuronContainer;
+			ConContainerPtr	conContainerPtr( new ConContainer() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
 			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
-			std::vector<double> vWeight;
-			vWeight.push_back(11.32);			vWeight.push_back(1.26);			vWeight.push_back(2.14);			vWeight.push_back(3.16);
-			vWeight.push_back(4.14);			vWeight.push_back(5.19);			vWeight.push_back(6.18);			vWeight.push_back(7.16);
-			vWeight.push_back(8.14);			vWeight.push_back(9.12);			vWeight.push_back(10.31);
+			std::vector<double> nWeights;
+			nWeights.push_back(11.32);			nWeights.push_back(1.26);			nWeights.push_back(2.14);			nWeights.push_back(3.16);
+			nWeights.push_back(4.14);			nWeights.push_back(5.19);			nWeights.push_back(6.18);			nWeights.push_back(7.16);
+			nWeights.push_back(8.14);			nWeights.push_back(9.12);			nWeights.push_back(10.31);
 	
-			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
 				ptN.reset( new Neuron( ids[i] ) ); 	
-				vNeuron.push_back(ptN);
+				neuronContainer.push_back(ptN);
 			}
-			ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+			conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );	
+ 
 
 			// Test	
 
@@ -361,9 +362,9 @@ test.ConContainer.Cpp.erase <- function() {
 			toRemove.push_back(5);
 			toRemove.push_back(7);
 
-			ptShvCon->erase(toRemove);
-			ptShvCon->show();
-			result=ptShvCon->getId();
+			conContainerPtr->erase(toRemove);
+			conContainerPtr->show();
+			result=conContainerPtr->getId();
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -388,21 +389,21 @@ test.ConContainer.Cpp.select <- function() {
 	testCode <- "
 			// Data set up
 			std::vector<int> result;
-			std::vector<NeuronPtr> vNeuron;
-			ConContainerPtr	ptShvCon( new ConContainer() );
+			std::vector<NeuronPtr> neuronContainer;
+			ConContainerPtr	conContainerPtr( new ConContainer() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
 			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
 			double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
-			std::vector<double> vWeight;
+			std::vector<double> nWeights;
 			for (int i=0; i<11; i++) {
-				vWeight.push_back(weights[i]);
+				nWeights.push_back(weights[i]);
 			}
-			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
 				ptN.reset( new Neuron( ids[i] ) ); 	
-				vNeuron.push_back(ptN);
+				neuronContainer.push_back(ptN);
 			}
-			ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+			conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );			 
 			// Test
 			std::vector<int> toSelect;
 			toSelect.push_back(1);
@@ -410,7 +411,7 @@ test.ConContainer.Cpp.select <- function() {
 			toSelect.push_back(5);
 			toSelect.push_back(7);
 			
-			ConContainerPtr  vSelect (  ptShvCon->select(toSelect)  );
+			ConContainerPtr  vSelect (  conContainerPtr->select(toSelect)  );
 			result=vSelect->getId();
 			return wrap(result);
 	"
@@ -430,21 +431,21 @@ test.ConContainer.Cpp.getWeight_FromIsNumeric <- function() {
 	testCode <- "
 		// Data set up
 			std::vector<double> result;
-			std::vector<NeuronPtr> vNeuron;
-			ConContainerPtr	ptShvCon( new ConContainer() );
+			std::vector<NeuronPtr> neuronContainer;
+			ConContainerPtr	conContainerPtr( new ConContainer() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
 			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
 			double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
-			std::vector<double> vWeight;
+			std::vector<double> nWeights;
 			for (int i=0; i<11; i++) {
-			vWeight.push_back(weights[i]);
+			nWeights.push_back(weights[i]);
 			}
-			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
 			ptN.reset( new Neuron( ids[i] ) ); 	
-			vNeuron.push_back(ptN);
+			neuronContainer.push_back(ptN);
 			}
-			ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+			conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );			 
 
 		// Test
 			std::vector<int> toSelect;
@@ -453,7 +454,7 @@ test.ConContainer.Cpp.getWeight_FromIsNumeric <- function() {
 			toSelect.push_back(5);
 			toSelect.push_back(7);
 			
-			result=ptShvCon->getWeight(toSelect);
+			result=conContainerPtr->getWeight(toSelect);
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -472,21 +473,21 @@ test.ConContainer.Cpp.setWeight_FromIsNumeric <- function() {
 	testCode <- "
 	// Data set up
 			std::vector<double> result;
-			std::vector<NeuronPtr> vNeuron;
-			ConContainerPtr	ptShvCon( new ConContainer() );
+			std::vector<NeuronPtr> neuronContainer;
+			ConContainerPtr	conContainerPtr( new ConContainer() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
 			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
 			double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
-			std::vector<double> vWeight;
+			std::vector<double> nWeights;
 			for (int i=0; i<11; i++) {
-			vWeight.push_back(weights[i]);
+			nWeights.push_back(weights[i]);
 			}
-			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
 			ptN.reset( new Neuron( ids[i] ) ); 	
-			vNeuron.push_back(ptN);
+			neuronContainer.push_back(ptN);
 			}
-			ptShvCon->buildAndAppend(vNeuron, vWeight);			 
+			conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );		 
 			
 			std::vector<int> toSelect;
 			std::vector<double> vNewWeights;
@@ -498,10 +499,10 @@ test.ConContainer.Cpp.setWeight_FromIsNumeric <- function() {
 			vNewWeights.push_back(3000.3);
 			vNewWeights.push_back(5000.5);
 			vNewWeights.push_back(7000.7);
-			ptShvCon->setWeight(vNewWeights, toSelect);
+			conContainerPtr->setWeight(vNewWeights, toSelect);
 			
 	// Test			
-			result = ptShvCon->getWeight();
+			result = conContainerPtr->getWeight();
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	

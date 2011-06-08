@@ -29,23 +29,34 @@ class Con
 public:
 
   Con();
+
   Con(NeuronPtr neuronPtr);
+
   Con(NeuronPtr neuronPtr, double value);
+
   ~Con();
+
   NeuronPtr
   getFrom();
+
   void
   setFrom(NeuronPtr neuronPtr);
+
   int
   getId();
+
   double
   getWeight();
+
   void
   setWeight(double value);
+
   bool
   show();
+
   bool
   validate();
 };
+
 #endif /* CON_H_ */
 

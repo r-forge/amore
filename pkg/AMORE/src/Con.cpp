@@ -18,7 +18,6 @@ Con::Con() :
   weight(0), from()
 {
 }
-;
 
 //! Constructor
 /*
@@ -31,7 +30,6 @@ Con::Con(NeuronPtr neuronPtr, double value) :
 {
 }
 
-
 //! Constructor
 /*
  * Constructor, from=f, weight=0
@@ -41,13 +39,11 @@ Con::Con(NeuronPtr neuronPtr) :
   from(neuronPtr), weight(0)
 {
 }
-;
 
 //! Default Destructor
 Con::~Con()
 {
 }
-;
 
 //! %from field accessor.
 /*! This method allows access to the address stored in the private \ref from field (a pointer to a Neuron object).*
@@ -134,7 +130,6 @@ Con::getId()
       return (NA_INTEGER);
     }
 }
-
 //! %weight field accessor.
 /*! This method allows access to the value stored in the private field \ref weight
  * \return The value of \ref weight (double)
@@ -225,5 +220,5 @@ Con::validate()
   if (getId() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);
-END_RCPP};
+END_RCPP}
 

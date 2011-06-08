@@ -5,14 +5,12 @@
  *      Author: mcasl
  */
 
-
 ConContainer::ConContainer()
 {
 }
 
-
 ConContainer::ConContainer(std::vector<ConPtr> collection) :
-  Container<Con> (collection)                   // Call to Base constructor
+  Container<Con> (collection) // Call to Base constructor
 {
 }
 
@@ -28,21 +26,21 @@ ConContainer::ConContainer(std::vector<ConPtr> collection) :
  *	// Data set up
  *				std::vector<int> result;
  *				std::vector<ConPtr> vcA, vcB;
- *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *				ConContainerPtr	ptShvCon( new ConContainer() );
+ *				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+ *				ConContainerPtr	conContainerPtr( new ConContainer() );
  *				ConPtr	ptC;
  *				NeuronPtr ptN;
  *				int ids[]= {10, 20, 30};
  *				double weights[] = {1.13, 2.22, 3.33 };
  *				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
  *					ptN.reset( new Neuron( ids[i] ) );
- *					ptShvNeuron->push_back(ptN);
+ *					neuronContainerPtr->push_back(ptN);
  *				}
  *	// Test
  *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyConContainer
- *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
- *					ptShvCon->push_back(ptC);
+ *					result.push_back(conContainerPtr->numOfCons());		// Append numOfCons to result, create new Con and push_back into conContainer
+ *					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );
+ *					conContainerPtr->push_back(ptC);
  *				}
  *
  *	// Now, result contains a numeric vector with values 0, 1, 2, and 3.
@@ -67,7 +65,7 @@ ConContainer::numOfCons()
  *  //================
  * 	// Data set up
  *			Neuron N1, N2, N3;
- *			ConContainer MyConContainer;
+ *			ConContainer conContainer;
  *			std::vector<int> result;
  *
  *			N1.setId(10);
@@ -75,16 +73,16 @@ ConContainer::numOfCons()
  *			N3.setId(30);
  *
  *			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *
  *	// Test
- *			MyConContainer.show() ;
- *			MyConContainer.validate();
- *			result=MyConContainer.getId();
+ *			conContainer.show() ;
+ *			conContainer.validate();
+ *			result=conContainer.getId();
  *
  *	// Now result is a vector that contains the values 10, 20 and 30.
  * \endcode
@@ -103,7 +101,6 @@ ConContainer::getId()
   return result;
 }
 
-
 //! Builds Con objects and appends them to collection.
 /*!
  * This function provides a convenient way of populating a ConContainer object by building and apending Con objects to collection.
@@ -116,26 +113,26 @@ ConContainer::getId()
  * 	//================
  *	// Data set up
  *		std::vector<int> result;
- *		ConContainer MyConContainer;
- *		std::vector<NeuronPtr> vNeuron;
- *		std::vector<double> vWeight;
+ *		ConContainer conContainer;
+ *		std::vector<NeuronPtr> neuronContainer;
+ *		std::vector<double> nWeights;
  *
  *
  *	// Test
  *		NeuronPtr ptNeuron( new Neuron(11) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *		ptNeuron.reset( new Neuron(22) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *		ptNeuron.reset( new Neuron(33) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *
- *		vWeight.push_back(12.3);
- *		vWeight.push_back(1.2);
- *		vWeight.push_back(2.1);
+ *		nWeights.push_back(12.3);
+ *		nWeights.push_back(1.2);
+ *		nWeights.push_back(2.1);
  *
- *		MyConContainer.buildAndAppend(vNeuron, vWeight);
+ *		conContainer.buildAndAppend(neuronContainer, nWeights);
  *
- *		result=MyConContainer.getId();
+ *		result=conContainer.getId();
  *
  *	// Now result is a vector that contains the values 11, 22 and 32.
  * \endcode
@@ -143,25 +140,33 @@ ConContainer::getId()
  * \sa append and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 bool
-ConContainer::buildAndAppend(NeuronContainer neuronContainer, std::vector<double> nWeights)
+ConContainer::buildAndAppend(std::vector<NeuronPtr>::iterator firstNeuron,
+    std::vector<NeuronPtr>::iterator lastNeuron,
+    std::vector<double>::iterator firstWeight,
+    std::vector<double>::iterator lastWeight)
 {
   BEGIN_RCPP
-  if (neuronContainer.empty())
-    { throw std::range_error("[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");}
-  if (neuronContainer.size() != nWeights.size())
+
+  bool emptyNeuronContainer = (firstNeuron==lastNeuron);
+  if (emptyNeuronContainer)
+    {
+      throw std::range_error(
+          "[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");
+    }
+
+  bool differentSize = (lastNeuron - firstNeuron) != (lastWeight - firstWeight);
+  if (differentSize)
     {
       throw std::range_error(
           "[ConContainer::buildAndAppend]: Error, neuronContainer.size() != nWeights.size()");
     }
-  reserve(size() + neuronContainer.size());
-  ConPtr ptCon;
 
-  std::vector<double>::iterator itrWeight = nWeights.begin();
-  foreach (NeuronPtr itrNeuron, neuronContainer)
+  reserve( size() + (lastNeuron - firstNeuron));
+  ConPtr ptCon;
+  while (firstNeuron != lastNeuron)
     {
-      ptCon.reset( new Con( itrNeuron, *itrWeight) );
+      ptCon.reset(new Con(*firstNeuron++, *firstWeight++));
       push_back(ptCon);
-      itrWeight++;
     }
   return true;
 END_RCPP}
@@ -179,26 +184,26 @@ END_RCPP}
  * 	//================
  *	// Data set up
  *		std::vector<double> result;
- *		ConContainer MyConContainer;
- *		std::vector<NeuronPtr> vNeuron;
- *		std::vector<double> vWeight;
+ *		ConContainer conContainer;
+ *		std::vector<NeuronPtr> neuronContainer;
+ *		std::vector<double> nWeights;
  *
  *
  *	// Test
  *		NeuronPtr ptNeuron( new Neuron(11) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *		ptNeuron.reset( new Neuron(22) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *		ptNeuron.reset( new Neuron(33) );
- *		vNeuron.push_back(ptNeuron);
+ *		neuronContainer.push_back(ptNeuron);
  *
- *		vWeight.push_back(12.3);
- *		vWeight.push_back(1.2);
- *		vWeight.push_back(2.1);
+ *		nWeights.push_back(12.3);
+ *		nWeights.push_back(1.2);
+ *		nWeights.push_back(2.1);
  *
- *		MyConContainer.buildAndAppend(vNeuron, vWeight);
+ *		conContainer.buildAndAppend(neuronContainer, nWeights);
  *
- *		result=MyConContainer.getWeight();
+ *		result=conContainer.getWeight();
  *
  *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
  * \endcode
@@ -222,7 +227,7 @@ ConContainer::getWeight()
 /*!
  * This function provides a convenient way of setting the values of the weight field of those Con objects pointed to by the smart pointer stored in the ConContainer object.
  *
- * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
+ * \param nWeights A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
  *
  * \return true in case no exception is thrown
  *
@@ -234,25 +239,25 @@ ConContainer::getWeight()
  *		std::vector<double> result;
  *			int ids[]= {1, 2, 3};
  *			double weights[] = {12.3, 1.2, 2.1 };
- *			ConContainer MyConContainer;
- *			std::vector<NeuronPtr> vNeuron;
- *			std::vector<double> vWeight;
+ *			ConContainer conContainer;
+ *			std::vector<NeuronPtr> neuronContainer;
+ *			std::vector<double> nWeights;
  *			NeuronPtr ptNeuron;
  *
  *			for (int i=0; i<=2; i++) {
  *			ptNeuron.reset( new Neuron(ids[1]) );
- *	 		vNeuron.push_back(ptNeuron);
- *			vWeight.push_back(0);					// weights are set to 0
+ *	 		neuronContainer.push_back(ptNeuron);
+ *			nWeights.push_back(0);					// weights are set to 0
  *			}
- *			MyConContainer.buildAndAppend(vNeuron, vWeight);
- *			MyConContainer.show();
+ *			conContainer.buildAndAppend(neuronContainer, nWeights);
+ *			conContainer.show();
  *
  *			for (int i=0; i<=2; i++) {
- *				vWeight.at(i)=weights[i];
+ *				nWeights.at(i)=weights[i];
  *			}
  *	// Test
- *			MyConContainer.setWeight(vWeight);			// weights are set to 12.3, 1.2 and 2.1
- *			result=MyConContainer.getWeight();
+ *			conContainer.setWeight(nWeights);			// weights are set to 12.3, 1.2 and 2.1
+ *			result=conContainer.getWeight();
  *
  *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
  *
@@ -265,11 +270,11 @@ ConContainer::setWeight(std::vector<double> nWeights)
 {
   BEGIN_RCPP
   if (nWeights.empty())
-    { throw std::range_error("[ C++ ConContainer::setWeight]: Error, vWeight is empty");}
+    { throw std::range_error("[ C++ ConContainer::setWeight]: Error, nWeights is empty");}
   if (nWeights.size() != size())
     {
       throw std::range_error(
-          "[C++ ConContainer::setWeight]: Error, vWeight.size() != collection.size()");
+          "[C++ ConContainer::setWeight]: Error, nWeights.size() != collection.size()");
     }
   std::vector<double>::iterator itrWeight = nWeights.begin();
   foreach (ConPtr itr, *this)
@@ -294,21 +299,21 @@ END_RCPP}
  *		std::vector<double> result;
  *		int ids[]= {1, 2, 3};
  *		double weights[] = {12.3, 1.2, 2.1 };
- *		ConContainer MyConContainer;
- *		std::vector<NeuronPtr> vNeuron;
- *		std::vector<double> vWeight;
+ *		ConContainer conContainer;
+ *		std::vector<NeuronPtr> neuronContainer;
+ *		std::vector<double> nWeights;
  *		NeuronPtr ptNeuron;
  *
  *			for (int i=0; i<=2; i++) {
  *				ptNeuron.reset( new Neuron(ids[i]) );
- *				vNeuron.push_back(ptNeuron);
- *				vWeight.push_back(weights[i]);
+ *				neuronContainer.push_back(ptNeuron);
+ *				nWeights.push_back(weights[i]);
  *			}
- *			MyConContainer.buildAndAppend(vNeuron, vWeight);
+ *			conContainer.buildAndAppend(neuronContainer, nWeights);
  *		// Test
- *			vNeuron=MyConContainer.getFrom();
+ *			neuronContainer=conContainer.getFrom();
  *			for (int i=0; i<=2; i++) {
- *				result.push_back(vNeuron.at(i)->getId());
+ *				result.push_back(neuronContainer.at(i)->getId());
  *			}
  *
  *	// Now result is a vector that contains the values 1, 2 and 3 .
@@ -345,8 +350,8 @@ ConContainer::getFrom()
  *
  *	// Data set up
  *		std::vector<int> result;
- *		ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *		ConContainerPtr	ptShvCon( new ConContainer() );
+ *		ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+ *		ConContainerPtr	conContainerPtr( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *
@@ -355,16 +360,16 @@ ConContainer::getFrom()
  *
  *		for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
  *			ptN.reset( new Neuron( ids[i] ) );
- *			ptShvNeuron->push_back(ptN);
+ *			neuronContainerPtr->push_back(ptN);
  *		}
  *		for (int i=0; i<=2 ; i++) {				// and a vector with three connections
  *			ptC.reset( new Con() );
- *			ptShvCon->push_back(ptC);
+ *			conContainerPtr->push_back(ptC);
  *		}
  *	// Test
- *		ptShvCon->setFrom(ptShvNeuron->load()) ;
- *		ptShvCon->show();
- *		result=ptShvCon->getId();
+ *		conContainerPtr->setFrom(neuronContainerPtr->load()) ;
+ *		conContainerPtr->show();
+ *		result=conContainerPtr->getId();
  *
  *	// Now result is a vector that contains the values 10, 20 and 30.
  *
@@ -437,30 +442,30 @@ struct CompareId
  *
  *	// Data set up
  *			std::vector<int> result;
- *			std::vector<NeuronPtr> vNeuron;
- *			ConContainerPtr	ptShvCon( new ConContainer() );
+ *			std::vector<NeuronPtr> neuronContainer;
+ *			ConContainerPtr	conContainerPtr( new ConContainer() );
  *			ConContainerPtr vErased;
  *			ConPtr	ptC;
  *			NeuronPtr ptN;
  *			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
- *			std::vector<double> vWeight;
- *			vWeight.push_back(11.32);
- *			vWeight.push_back(1.26);
- *			vWeight.push_back(2.14);
- *			vWeight.push_back(3.16);
- *			vWeight.push_back(4.14);
- *			vWeight.push_back(5.19);
- *			vWeight.push_back(6.18);
- *			vWeight.push_back(7.16);
- *			vWeight.push_back(8.14);
- *			vWeight.push_back(9.12);
- *			vWeight.push_back(10.31);
+ *			std::vector<double> nWeights;
+ *			nWeights.push_back(11.32);
+ *			nWeights.push_back(1.26);
+ *			nWeights.push_back(2.14);
+ *			nWeights.push_back(3.16);
+ *			nWeights.push_back(4.14);
+ *			nWeights.push_back(5.19);
+ *			nWeights.push_back(6.18);
+ *			nWeights.push_back(7.16);
+ *			nWeights.push_back(8.14);
+ *			nWeights.push_back(9.12);
+ *			nWeights.push_back(10.31);
  *
- *			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+ *			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
  *				ptN.reset( new Neuron( ids[i] ) );
- *				vNeuron.push_back(ptN);
+ *				neuronContainer.push_back(ptN);
  *			}
- *			ptShvCon->buildAndAppend(vNeuron, vWeight);
+ *			conContainerPtr->buildAndAppend(neuronContainer, nWeights);
  *
  *			// Test
  *
@@ -470,9 +475,9 @@ struct CompareId
  *			toRemove.push_back(5);
  *	 		toRemove.push_back(7);
  *
- *			ptShvCon->erase(toRemove);
- *			ptShvCon->show();
- *			result=ptShvCon->getId();
+ *			conContainerPtr->erase(toRemove);
+ *			conContainerPtr->show();
+ *			result=conContainerPtr->getId();
  *
  *		// The output at the R terminal would display :
  *		//
@@ -513,21 +518,21 @@ ConContainer::erase(std::vector<int> nIds)
  *
  *	// Data set up
  *		std::vector<int> result;
- *		std::vector<NeuronPtr> vNeuron;
- *		ConContainerPtr	ptShvCon( new ConContainer() );
+ *		std::vector<NeuronPtr> neuronContainer;
+ *		ConContainerPtr	conContainerPtr( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *		int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
  *		double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
- *		std::vector<double> vWeight;
+ *		std::vector<double> nWeights;
  *		for (int i=0; i<11; i++) {
- *			vWeight.push_back(weights[i]);
+ *			nWeights.push_back(weights[i]);
  *		}
- *		for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+ *		for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
  *			ptN.reset( new Neuron( ids[i] ) );
- *			vNeuron.push_back(ptN);
+ *			neuronContainer.push_back(ptN);
  *		}
- *		ptShvCon->buildAndAppend(vNeuron, vWeight);
+ *		conContainerPtr->buildAndAppend(neuronContainer, nWeights);
  *		// Test
  *		std::vector<int> toSelect;
  *		toSelect.push_back(1);
@@ -535,7 +540,7 @@ ConContainer::erase(std::vector<int> nIds)
  *		toSelect.push_back(5);
  *		toSelect.push_back(7);
  *
- *		ConContainerPtr  vSelect (  ptShvCon->select(toSelect)  );
+ *		ConContainerPtr  vSelect (  conContainerPtr->select(toSelect)  );
  *		result=vSelect->getId();
  *
  *		// Now, result is a numeric vector with the values 1, 3, 5 and 7.
@@ -573,21 +578,21 @@ ConContainer::select(std::vector<int> nIds)
  *	// Data set up
  *
  *		std::vector<double> result;
- *		std::vector<NeuronPtr> vNeuron;
- *		ConContainerPtr	ptShvCon( new ConContainer() );
+ *		std::vector<NeuronPtr> neuronContainer;
+ *		ConContainerPtr	conContainerPtr( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *		int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
  *		double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
- *		std::vector<double> vWeight;
+ *		std::vector<double> nWeights;
  *		for (int i=0; i<11; i++) {
- *			vWeight.push_back(weights[i]);
+ *			nWeights.push_back(weights[i]);
  *		}
- *		for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+ *		for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
  *			ptN.reset( new Neuron( ids[i] ) );
- *			vNeuron.push_back(ptN);
+ *			neuronContainer.push_back(ptN);
  *		}
- *		ptShvCon->buildAndAppend(vNeuron, vWeight);
+ *		conContainerPtr->buildAndAppend(neuronContainer, nWeights);
  *
  *	// Test
  *		std::vector<int> toSelect;
@@ -596,7 +601,7 @@ ConContainer::select(std::vector<int> nIds)
  *		toSelect.push_back(5);
  *		toSelect.push_back(7);
  *
- *		result=ptShvCon->getWeight(toSelect);
+ *		result=conContainerPtr->getWeight(toSelect);
  *
  *	// Now, result is a numeric vector with the values  10.31, 3.16,  5.19 and 7.16.
  *
@@ -615,7 +620,7 @@ ConContainer::getWeight(std::vector<int> nIds)
 /*!
  * Provides a convenient way of setting the weights of some Con objects from the collection field of the ConContainer object.
  *
- * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
+ * \param nWeights A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
  * \param vFrom An std::vector<int> with the Ids of the connections to select
  *
  * \return true in case no exception is thrown
@@ -627,21 +632,21 @@ ConContainer::getWeight(std::vector<int> nIds)
  *
  *	// Data set up
  *		std::vector<double> result;
- *			std::vector<NeuronPtr> vNeuron;
- *			ConContainerPtr	ptShvCon( new ConContainer() );
+ *			std::vector<NeuronPtr> neuronContainer;
+ *			ConContainerPtr	conContainerPtr( new ConContainer() );
  *			ConPtr	ptC;
  *			NeuronPtr ptN;
  *			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
  *			double weights[]={11.32, 1.26, 2.14, 3.16, 4.14, 5.19, 6.18, 7.16, 8.14, 9.12, 10.31};
- *			std::vector<double> vWeight;
+ *			std::vector<double> nWeights;
  *			for (int i=0; i<11; i++) {
- *			vWeight.push_back(weights[i]);
+ *			nWeights.push_back(weights[i]);
  *			}
- *			for (int i=0; i<vWeight.size() ; i++) {				// Let's create a vector with three neurons
+ *			for (int i=0; i<nWeights.size() ; i++) {				// Let's create a vector with three neurons
  *			ptN.reset( new Neuron( ids[i] ) );
- *			vNeuron.push_back(ptN);
+ *			neuronContainer.push_back(ptN);
  *			}
- *			ptShvCon->buildAndAppend(vNeuron, vWeight);
+ *			conContainerPtr->buildAndAppend(neuronContainer, nWeights);
  *
  *			std::vector<int> toSelect;
  *			std::vector<double> vNewWeights;
@@ -653,10 +658,10 @@ ConContainer::getWeight(std::vector<int> nIds)
  *			vNewWeights.push_back(3000.3);
  *			vNewWeights.push_back(5000.5);
  *			vNewWeights.push_back(7000.7);
- *			ptShvCon->setWeight(vNewWeights, toSelect);
+ *			conContainerPtr->setWeight(vNewWeights, toSelect);
  *
  *	// Test
- *			result = ptShvCon->getWeight();
+ *			result = conContainerPtr->getWeight();
  *			return wrap(result);
  *
  *	// Now, result is a numeric vector with the values  1000.10, 9.12, 3000.30, 4.14, 5000.50, 6.18, 7000.70, 8.14, 2.14, 1.26 and 11.32 .
@@ -669,8 +674,7 @@ ConContainer::getWeight(std::vector<int> nIds)
 bool
 ConContainer::setWeight(std::vector<double> nWeights, std::vector<int> nIds)
 {
-BEGIN_RCPP
-return select(nIds)->setWeight(nWeights);
+BEGIN_RCPP return select(nIds)->setWeight(nWeights);
 END_RCPP
 }
 
@@ -695,7 +699,8 @@ ConContainer::validate()
   sort(vIds.begin(), vIds.end());
   itr = adjacent_find(vIds.begin(), vIds.end());
   if (itr != vIds.end())
-    throw std::range_error("[C++ ConContainer::validate]: Error, duplicated Id.");
+    throw std::range_error(
+        "[C++ ConContainer::validate]: Error, duplicated Id.");
   Container<Con>::validate();
   return (true);
 END_RCPP};
