@@ -78,16 +78,6 @@ NeuronContainer::getWeight()
   return result;
 }
 
-std::vector<NeuronContainer>
-NeuronContainer::getFrom()
-{
-  std::vector < NeuronContainer > result;
-  foreach(NeuronPtr itrNeuron, *this)
-    {
-      result.push_back( itrNeuron->getFrom() );
-    }
-  return result;
-}
 
 void
 NeuronContainer::setFrom(std::vector<NeuronContainer> neuronArray)

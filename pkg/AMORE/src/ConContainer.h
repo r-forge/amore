@@ -40,9 +40,6 @@ public:
   std::vector<double>
   getWeight(std::vector<int> nIds);
 
-  NeuronContainer
-  getFrom();
-
   bool
   setWeight(std::vector<double> nWeights);
 

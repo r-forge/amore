@@ -285,54 +285,6 @@ ConContainer::setWeight(std::vector<double> nWeights)
   return true;
 END_RCPP}
 
-//! Getter of the from field of the Con objects related to ConContainer
-/*!
- * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the ConContainer object.
- *
- * \return An std::vector<NeuronPtr> with the pointer to the incoming neurons.
- *
- * \code
- * 	//================
- * 	//Usage example:
- * 	//================
- *	// Data set up
- *		std::vector<double> result;
- *		int ids[]= {1, 2, 3};
- *		double weights[] = {12.3, 1.2, 2.1 };
- *		ConContainer conContainer;
- *		std::vector<NeuronPtr> neuronContainer;
- *		std::vector<double> nWeights;
- *		NeuronPtr ptNeuron;
- *
- *			for (int i=0; i<=2; i++) {
- *				ptNeuron.reset( new Neuron(ids[i]) );
- *				neuronContainer.push_back(ptNeuron);
- *				nWeights.push_back(weights[i]);
- *			}
- *			conContainer.buildAndAppend(neuronContainer, nWeights);
- *		// Test
- *			neuronContainer=conContainer.getFrom();
- *			for (int i=0; i<=2; i++) {
- *				result.push_back(neuronContainer.at(i)->getId());
- *			}
- *
- *	// Now result is a vector that contains the values 1, 2 and 3 .
- *
- * \endcode
- *
- * \sa getId and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
- */
-NeuronContainer
-ConContainer::getFrom()
-{
-  NeuronContainer result;
-  result.reserve(numOfCons());
-  foreach(ConPtr itr, *this)
-    {
-      result.push_back( itr->getFrom() );
-    }
-  return result;
-}
 
 //! Setter of the from fields of the Con objects related to ConContainer
 /*!
