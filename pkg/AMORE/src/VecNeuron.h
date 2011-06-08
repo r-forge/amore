@@ -27,50 +27,46 @@ public:
   numOfNeurons();
 
   std::vector<int>
-  getId();
-
-#if 0
-
-  int
-  numOfCons ( );
+  numOfCons();
 
   std::vector<int>
-  getConId ( );
+  getId();
+
+  void
+  setId(std::vector<int> nIds);
+
+  std::vector<std::vector<int> > // Don't forget the blank space between "> >"
+  getConId();
+
+  std::vector<std::vector<double> > // Don't forget the blank space between "> >"
+  getWeight();
+
+  std::vector<VecNeuron>
+  getFrom();
+
+  void
+  setFrom(std::vector<VecNeuron> neuronArray);
 
 
+  void
+  setWeight(std::vector<std::vector<double> > value);
 
-  bool
-  setId ( );
-
-  VecNeuron
-  getFrom ( );
-
+#if 0
   bool
   is.regular ( );
 
   std::vector<double>
-  getWeight();
-
-  std::vector<double>
   getWeight(std::vector<int> FROM);
-
-  VecNeuron
-  getFrom();
-
-  void
-  setWeight(std::vector<double> value);
 
   void
   setWeight(std::vector<double> value, std::vector<int> FROM);
 
-  void
-  setFrom(std::vector<NeuronPtr> FROM);
 
   void
-  erase(std::vector<int> FROM);
+  erase(std::vector<int> FROM); // Move it to Container
 
   VecCon
-  select(std::vector<int> FROM);
+  select(std::vector<int> FROM); // Move it to Container
 
   bool
   validate();

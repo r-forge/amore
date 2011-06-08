@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ operator[]()\l}" alt="" coords="137,837,281,1120"/>
+<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="137,854,281,1151"/>
 <area shape="rect" id="node6" title="STL class." alt="" coords="183,147,297,224"/>
-<area shape="rect" id="node10" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ operator[]()\l}" alt="" coords="252,491,361,773"/>
+<area shape="rect" id="node10" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="252,491,361,789"/>
 </map>

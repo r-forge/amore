@@ -117,9 +117,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00069"></a>00069 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00070"></a>00070   <span class="keywordtype">void</span>
-<a name="l00071"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00071</a>   <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container&lt;T&gt;::push_back</a>(boost::shared_ptr&lt;T&gt; TsharedPtr)
+<a name="l00071"></a><a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285">00071</a>   <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">Container&lt;T&gt;::push_back</a>(boost::shared_ptr&lt;T&gt; element)
 <a name="l00072"></a>00072   {
-<a name="l00073"></a>00073     collection.push_back(TsharedPtr);
+<a name="l00073"></a>00073     collection.push_back(element);
 <a name="l00074"></a>00074   }
 <a name="l00075"></a>00075 ;
 <a name="l00076"></a>00076 
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00155"></a>00155 
 <a name="l00205"></a>00205 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00206"></a>00206   <span class="keywordtype">void</span>
-<a name="l00207"></a><a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54">00207</a>   <a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54" title="Appends a Container&lt;T&gt; object.">Container&lt;T&gt;::append</a>(<a class="code" href="class_container.html">Container&lt;T&gt;</a> v)
+<a name="l00207"></a><a class="code" href="class_container.html#a86d42cf807e073724bd2f8e08dcdfefa">00207</a>   <a class="code" href="class_container.html#a86d42cf807e073724bd2f8e08dcdfefa" title="Appends a Container&lt;T&gt; object.">Container&lt;T&gt;::append</a>(<a class="code" href="class_container.html">Container&lt;T&gt;</a> v)
 <a name="l00208"></a>00208   {
 <a name="l00209"></a>00209     reserve(size() + v.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>());
 <a name="l00210"></a>00210     collection.insert(end(), v.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>(), v.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>());
@@ -176,11 +176,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00261"></a>00261 
 <a name="l00266"></a>00266 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00267"></a>00267   <span class="keywordtype">void</span>
-<a name="l00268"></a><a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e">00268</a>   <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; v)
+<a name="l00268"></a><a class="code" href="class_container.html#a601371159ddfee9ab29b676207a0cf75">00268</a>   <a class="code" href="class_container.html#a601371159ddfee9ab29b676207a0cf75" title="collection field accessor function">Container&lt;T&gt;::store</a>(std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; collectionT)
 <a name="l00269"></a>00269   {
-<a name="l00270"></a>00270     collection = v;
+<a name="l00270"></a>00270     collection = collectionT;
 <a name="l00271"></a>00271   }
-<a name="l00272"></a>00272 ;
+<a name="l00272"></a>00272 
 <a name="l00273"></a>00273 
 <a name="l00275"></a>00275 
 <a name="l00280"></a>00280 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
@@ -214,18 +214,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00308"></a>00308   }
 <a name="l00309"></a>00309 
 <a name="l00310"></a>00310 
-<a name="l00311"></a>00311 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00312"></a>00312   boost::shared_ptr&lt;T&gt; &amp;
-<a name="l00313"></a><a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">00313</a>   <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">Container&lt;T&gt;::operator[]</a>(<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset)
-<a name="l00314"></a>00314   {
-<a name="l00315"></a>00315     <span class="keywordflow">return</span> collection[offset];
-<a name="l00316"></a>00316   }
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00313"></a>00313   <span class="keywordtype">void</span>
+<a name="l00314"></a><a class="code" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">00314</a>   <a class="code" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">Container&lt;T&gt;::clear</a>()
+<a name="l00315"></a>00315   {
+<a name="l00316"></a>00316     collection.clear();
+<a name="l00317"></a>00317   }
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319 
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00322"></a>00322   boost::shared_ptr&lt;T&gt; &amp;
+<a name="l00323"></a><a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">00323</a>   <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">Container&lt;T&gt;::operator[]</a>(<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset)
+<a name="l00324"></a>00324   {
+<a name="l00325"></a>00325     <span class="keywordflow">return</span> collection[offset];
+<a name="l00326"></a>00326   }
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_8cpp.html">Container.cpp</a>      </li>
-      <li class="footer">Generated on Wed Jun 8 2011 01:21:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 02:52:43 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

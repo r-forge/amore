@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 }
 <a name="l00011"></a>00011 
 <a name="l00012"></a><a class="code" href="class_vec_neuron.html#ae7bc02590cd22902220fbcd7949be0e7">00012</a> <a class="code" href="class_vec_neuron.html#ae0bbf203eaef81c45facbee57b463b37">VecNeuron::VecNeuron</a>(std::vector&lt;NeuronPtr&gt; collection) :
-<a name="l00013"></a>00013   <a class="code" href="class_container.html">Container</a>&lt;<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>&gt;(collection)
+<a name="l00013"></a>00013   <a class="code" href="class_container.html">Container</a>&lt;<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>&gt; (collection)
 <a name="l00014"></a>00014 {
 <a name="l00015"></a>00015 }
 <a name="l00016"></a>00016 
@@ -108,19 +108,98 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 }
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 std::vector&lt;int&gt;
-<a name="l00028"></a><a class="code" href="class_vec_neuron.html#ab9cf35c1f6b087e0cabfe5294186397c">00028</a> <a class="code" href="class_vec_neuron.html#ab9cf35c1f6b087e0cabfe5294186397c">VecNeuron::getId</a>(){
-<a name="l00029"></a>00029   std::vector&lt;int&gt; nIds;
-<a name="l00030"></a>00030   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>){
-<a name="l00031"></a>00031     nIds.push_back( itrNeuron-&gt;getId() );
-<a name="l00032"></a>00032   }
-<a name="l00033"></a>00033   <span class="keywordflow">return</span> nIds;
-<a name="l00034"></a>00034 }
+<a name="l00028"></a><a class="code" href="class_vec_neuron.html#a70b0a6f571c1737a6a1d1f6c831fa585">00028</a> <a class="code" href="class_vec_neuron.html#a70b0a6f571c1737a6a1d1f6c831fa585">VecNeuron::numOfCons</a>()
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030   std::vector&lt;int&gt; nIds;
+<a name="l00031"></a>00031   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00032"></a>00032     {
+<a name="l00033"></a>00033       nIds.push_back( itrNeuron-&gt;numOfCons() );
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035   <span class="keywordflow">return</span> nIds;
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 std::vector&lt;int&gt;
+<a name="l00039"></a><a class="code" href="class_vec_neuron.html#ab9cf35c1f6b087e0cabfe5294186397c">00039</a> <a class="code" href="class_vec_neuron.html#ab9cf35c1f6b087e0cabfe5294186397c">VecNeuron::getId</a>()
+<a name="l00040"></a>00040 {
+<a name="l00041"></a>00041   std::vector&lt;int&gt; nIds;
+<a name="l00042"></a>00042   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00043"></a>00043     {
+<a name="l00044"></a>00044       nIds.push_back( itrNeuron-&gt;getId() );
+<a name="l00045"></a>00045     }
+<a name="l00046"></a>00046   <span class="keywordflow">return</span> nIds;
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="keywordtype">void</span>
+<a name="l00050"></a><a class="code" href="class_vec_neuron.html#a552e694e9ec6a2bc6afc3dfa37ed1a46">00050</a> <a class="code" href="class_vec_neuron.html#a552e694e9ec6a2bc6afc3dfa37ed1a46">VecNeuron::setId</a>(std::vector&lt;int&gt; nIds)
+<a name="l00051"></a>00051 {
+<a name="l00052"></a>00052   std::vector&lt;int&gt;::iterator itrId(nIds.begin());
+<a name="l00053"></a>00053 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00054"></a>00054   {
+<a name="l00055"></a>00055     itrNeuron-&gt;setId(*itrId);
+<a name="l00056"></a>00056   }
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 std::vector&lt;std::vector&lt;int&gt; &gt;
+<a name="l00060"></a><a class="code" href="class_vec_neuron.html#a90a0279a43adde8619add1fc24f2be0d">00060</a> <a class="code" href="class_vec_neuron.html#a90a0279a43adde8619add1fc24f2be0d">VecNeuron::getConId</a>()
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062   std::vector &lt; std::vector&lt;int&gt; &gt; result;
+<a name="l00063"></a>00063   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065       result.push_back( itrNeuron-&gt;getConId() );
+<a name="l00066"></a>00066     }
+<a name="l00067"></a>00067   <span class="keywordflow">return</span> result;
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 std::vector&lt;std::vector&lt;double&gt; &gt; <span class="comment">// Don&#39;t forget the blank space between &quot;&gt; &gt;&quot;</span>
+<a name="l00071"></a><a class="code" href="class_vec_neuron.html#a7d8e5973473abd6395e6651d6a3cd72e">00071</a> <a class="code" href="class_vec_neuron.html#a7d8e5973473abd6395e6651d6a3cd72e">VecNeuron::getWeight</a>()
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073   std::vector &lt; std::vector&lt;double&gt; &gt; result;
+<a name="l00074"></a>00074   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00075"></a>00075     {
+<a name="l00076"></a>00076       result.push_back( itrNeuron-&gt;getWeight() );
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078   <span class="keywordflow">return</span> result;
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 std::vector&lt;VecNeuron&gt;
+<a name="l00082"></a><a class="code" href="class_vec_neuron.html#a03fd78d7a064de1ce6509d19cd9d5b58">00082</a> <a class="code" href="class_vec_neuron.html#a03fd78d7a064de1ce6509d19cd9d5b58">VecNeuron::getFrom</a>()
+<a name="l00083"></a>00083 {
+<a name="l00084"></a>00084   std::vector &lt; VecNeuron &gt; result;
+<a name="l00085"></a>00085   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087       result.push_back( itrNeuron-&gt;getFrom() );
+<a name="l00088"></a>00088     }
+<a name="l00089"></a>00089   <span class="keywordflow">return</span> result;
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="keywordtype">void</span>
+<a name="l00093"></a><a class="code" href="class_vec_neuron.html#ab1b2fe596ccf959fa86dfd84844aa81a">00093</a> <a class="code" href="class_vec_neuron.html#ab1b2fe596ccf959fa86dfd84844aa81a">VecNeuron::setFrom</a>(std::vector&lt;VecNeuron&gt; neuronArray)
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095   std::vector&lt;VecNeuron&gt;::iterator itrArray(neuronArray.begin());
+<a name="l00096"></a>00096 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00097"></a>00097   {
+<a name="l00098"></a>00098     itrNeuron-&gt;setFrom(*itrArray);
+<a name="l00099"></a>00099     itrArray++;
+<a name="l00100"></a>00100   }
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="keywordtype">void</span>
+<a name="l00104"></a><a class="code" href="class_vec_neuron.html#ad8a9e6c5a28170c1278a8612bfac706a">00104</a> <a class="code" href="class_vec_neuron.html#ad8a9e6c5a28170c1278a8612bfac706a">VecNeuron::setWeight</a>(std::vector&lt;std::vector&lt;double&gt; &gt; value)
+<a name="l00105"></a>00105 {
+<a name="l00106"></a>00106   std::vector&lt;std::vector&lt;double&gt; &gt;<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">::iterator</a> itrValue(value.begin());
+<a name="l00107"></a>00107 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00108"></a>00108   {
+<a name="l00109"></a>00109     itrNeuron-&gt;setWeight(*itrValue);
+<a name="l00110"></a>00110     itrValue++;
+<a name="l00111"></a>00111   }
+<a name="l00112"></a>00112 }
+<a name="l00113"></a>00113 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_vec_neuron_8cpp.html">VecNeuron.cpp</a>      </li>
-      <li class="footer">Generated on Wed Jun 8 2011 01:21:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 02:52:43 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

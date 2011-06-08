@@ -29,19 +29,19 @@ class Con
 public:
 
   Con();
-  Con(NeuronPtr from);
-  Con(NeuronPtr from, double weight);
+  Con(NeuronPtr neuronPtr);
+  Con(NeuronPtr neuronPtr, double value);
   ~Con();
   NeuronPtr
   getFrom();
   void
-  setFrom(NeuronPtr from);
+  setFrom(NeuronPtr neuronPtr);
   int
   getId();
   double
   getWeight();
   void
-  setWeight(double weight);
+  setWeight(double value);
   bool
   show();
   bool
