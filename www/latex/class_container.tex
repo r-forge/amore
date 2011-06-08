@@ -18,8 +18,7 @@ Inheritance diagram for Container$<$ T $>$:
 \end{figure}
 
 
-Collaboration diagram for Container$<$ T $>$:
-\nopagebreak
+Collaboration diagram for Container$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -241,8 +240,7 @@ References Container$<$ T $>$::begin(), Container$<$ T $>$::end(), and Container
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -266,7 +264,7 @@ Definition at line 22 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append(), and VecCon::setFrom().
+Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
 
 
 \begin{DoxyCode}
@@ -297,7 +295,7 @@ Here is the caller graph for this function:
 \label{class_container_aab0690d44c8e04614cea46935ff49e7a}
 
 
-Definition at line 314 of file Container.cpp.
+Definition at line 310 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -316,21 +314,22 @@ Definition at line 314 of file Container.cpp.
 \label{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}
 
 
-Definition at line 305 of file Container.cpp.
+Definition at line 303 of file Container.cpp.
 
 
 
-Referenced by VecCon::buildAndAppend(), and VecCon::setFrom().
+Referenced by ConContainer::buildAndAppend(), and ConContainer::setFrom().
 
 
 \begin{DoxyCode}
   {
-    return( collection.empty() );
+    return (collection.empty());
   }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -364,8 +363,7 @@ Referenced by Container$<$ T $>$::append().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -453,7 +451,7 @@ Definition at line 254 of file Container.cpp.
 \label{class_container_aed3c227120a6a745fa9adfb25c3dd225}
 
 
-Definition at line 323 of file Container.cpp.
+Definition at line 317 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -486,7 +484,7 @@ Implements push\_\-back for the \hyperlink{class_container}{Container} class
                 //================
                 // Data set up
                         Neuron N1, N2, N3;
-                        Container<Con> MyVecCon;
+                        Container<Con> MyConContainer;
                         std::vector<ConPtr> vc;
                         std::vector<int> result;
                         N1.setId(10);
@@ -495,18 +493,18 @@ Implements push\_\-back for the \hyperlink{class_container}{Container} class
                 // Test
                         ConPtr ptCon( new Con(&N1, 1.13) );     // Create new Con
        and initialize ptCon
-                        MyVecCon.push_back(ptCon);                              /
+                        MyConContainer.push_back(ptCon);                                /
       / push_back
                         ptCon.reset(  new Con(&N2, 2.22) );             // create
        new Con and assign to ptCon
-                        MyVecCon.push_back(ptCon);                              /
+                        MyConContainer.push_back(ptCon);                                /
       / push_back
                         ptCon.reset(  new Con(&N3, 3.33) );             // create
        new Con and assign to ptCon
-                        MyVecCon.push_back(ptCon);                              /
+                        MyConContainer.push_back(ptCon);                                /
       / push_back
 
-                        vc = MyVecCon.load();
+                        vc = MyConContainer.load();
 
                         result.push_back(vc.at(0)->getId());
                         result.push_back(vc.at(1)->getId());
@@ -525,7 +523,7 @@ Definition at line 71 of file Container.cpp.
 
 
 
-Referenced by VecCon::getFrom().
+Referenced by ConContainer::getFrom().
 
 
 \begin{DoxyCode}
@@ -535,7 +533,8 @@ Referenced by VecCon::getFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -555,11 +554,11 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
 
 
-Definition at line 297 of file Container.cpp.
+Definition at line 296 of file Container.cpp.
 
 
 
-Referenced by VecCon::getFrom().
+Referenced by ConContainer::getFrom().
 
 
 \begin{DoxyCode}
@@ -569,7 +568,8 @@ Referenced by VecCon::getFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -589,7 +589,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_container_ab77ce6f8173bd47c4cf46643317dffdb}
 
 
-Definition at line 290 of file Container.cpp.
+Definition at line 289 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -704,11 +704,11 @@ Returns the size or length of the vector.
 
 This method returns the size of the vector. In the classes derived from Container$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 
-Definition at line 282 of file Container.cpp.
+Definition at line 281 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append(), VecCon::buildAndAppend(), and VecCon::setFrom().
+Referenced by Container$<$ T $>$::append(), ConContainer::buildAndAppend(), and ConContainer::setFrom().
 
 
 \begin{DoxyCode}
@@ -777,7 +777,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 \end{DoxySeeAlso}
 
 
-Reimplemented in \hyperlink{class_vec_con_af008396d3982fb7ccf1af9618b89937c}{VecCon}.
+Reimplemented in \hyperlink{class_con_container_aac12a3d3604db9ff715503816109470c}{ConContainer}.
 
 
 

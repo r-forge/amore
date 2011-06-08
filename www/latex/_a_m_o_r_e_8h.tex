@@ -13,15 +13,16 @@
 {\ttfamily \#include $<$Rcpp.h$>$}\par
 {\ttfamily \#include \char`\"{}Con.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Container.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}VecCon.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ConContainer.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}VecNeuron.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}NeuronContainer.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Con.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Container.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}VecCon.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ConContainer.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}VecNeuron.cpp\char`\"{}}\par
-Include dependency graph for AMORE.h:\nopagebreak
+{\ttfamily \#include \char`\"{}NeuronContainer.cpp\char`\"{}}\par
+Include dependency graph for AMORE.h:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -48,9 +49,9 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyper
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyperlink{class_neuron}{Neuron} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_a51de806b5fb3f72d5ba606754815d3c2}{ContainerNeuronPtr}
 \item 
-typedef boost::shared\_\-ptr$<$ \hyperlink{class_vec_con}{VecCon} $>$ \hyperlink{_a_m_o_r_e_8h_a046825e30d0ea2676a07e83f08f8ef00}{VecConPtr}
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_con_container}{ConContainer} $>$ \hyperlink{_a_m_o_r_e_8h_a12fa6814670892b8e70b57d93c999323}{ConContainerPtr}
 \item 
-typedef boost::shared\_\-ptr$<$ \hyperlink{class_vec_neuron}{VecNeuron} $>$ \hyperlink{_a_m_o_r_e_8h_a99d350c3aace7600ad2d065cc4ef2ce4}{VecNeuronPtr}
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron_container}{NeuronContainer} $>$ \hyperlink{_a_m_o_r_e_8h_a23aedc5b485b7eeabdf6be68146c3599}{NeuronContainerPtr}
 \end{DoxyCompactItemize}
 
 
@@ -76,6 +77,15 @@ Definition at line 40 of file AMORE.h.
 
 
 \subsection{Typedef Documentation}
+\hypertarget{_a_m_o_r_e_8h_a12fa6814670892b8e70b57d93c999323}{
+\index{AMORE.h@{AMORE.h}!ConContainerPtr@{ConContainerPtr}}
+\index{ConContainerPtr@{ConContainerPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{ConContainerPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf ConContainer}$>$ {\bf ConContainerPtr}}}
+\label{_a_m_o_r_e_8h_a12fa6814670892b8e70b57d93c999323}
+
+
+Definition at line 48 of file AMORE.h.
+
 \hypertarget{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{
 \index{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}}
 \index{ConPtr@{ConPtr}!AMORE.h@{AMORE.h}}
@@ -103,6 +113,15 @@ Definition at line 46 of file AMORE.h.
 
 Definition at line 47 of file AMORE.h.
 
+\hypertarget{_a_m_o_r_e_8h_a23aedc5b485b7eeabdf6be68146c3599}{
+\index{AMORE.h@{AMORE.h}!NeuronContainerPtr@{NeuronContainerPtr}}
+\index{NeuronContainerPtr@{NeuronContainerPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronContainerPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf NeuronContainer}$>$ {\bf NeuronContainerPtr}}}
+\label{_a_m_o_r_e_8h_a23aedc5b485b7eeabdf6be68146c3599}
+
+
+Definition at line 49 of file AMORE.h.
+
 \hypertarget{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{
 \index{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}}
 \index{NeuronPtr@{NeuronPtr}!AMORE.h@{AMORE.h}}
@@ -120,22 +139,4 @@ Definition at line 44 of file AMORE.h.
 
 
 Definition at line 45 of file AMORE.h.
-
-\hypertarget{_a_m_o_r_e_8h_a046825e30d0ea2676a07e83f08f8ef00}{
-\index{AMORE.h@{AMORE.h}!VecConPtr@{VecConPtr}}
-\index{VecConPtr@{VecConPtr}!AMORE.h@{AMORE.h}}
-\subsubsection[{VecConPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf VecCon}$>$ {\bf VecConPtr}}}
-\label{_a_m_o_r_e_8h_a046825e30d0ea2676a07e83f08f8ef00}
-
-
-Definition at line 48 of file AMORE.h.
-
-\hypertarget{_a_m_o_r_e_8h_a99d350c3aace7600ad2d065cc4ef2ce4}{
-\index{AMORE.h@{AMORE.h}!VecNeuronPtr@{VecNeuronPtr}}
-\index{VecNeuronPtr@{VecNeuronPtr}!AMORE.h@{AMORE.h}}
-\subsubsection[{VecNeuronPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf VecNeuron}$>$ {\bf VecNeuronPtr}}}
-\label{_a_m_o_r_e_8h_a99d350c3aace7600ad2d065cc4ef2ce4}
-
-
-Definition at line 49 of file AMORE.h.
 

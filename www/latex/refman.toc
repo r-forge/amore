@@ -34,113 +34,113 @@
 \contentsline {subsection}{\numberline {5.2.4}Member Data Documentation}{18}{subsection.5.2.4}
 \contentsline {subsubsection}{\numberline {5.2.4.1}from}{18}{subsubsection.5.2.4.1}
 \contentsline {subsubsection}{\numberline {5.2.4.2}weight}{18}{subsubsection.5.2.4.2}
-\contentsline {section}{\numberline {5.3}Container$<$ T $>$ Class Template Reference}{19}{section.5.3}
+\contentsline {section}{\numberline {5.3}ConContainer Class Reference}{19}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Detailed Description}{22}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Member Typedef Documentation}{23}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}const\_\discretionary {-}{}{}iterator}{23}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}iterator}{23}{subsubsection.5.3.2.2}
-\contentsline {subsection}{\numberline {5.3.3}Constructor \& Destructor Documentation}{23}{subsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.3.1}Container}{23}{subsubsection.5.3.3.1}
-\contentsline {subsubsection}{\numberline {5.3.3.2}Container}{23}{subsubsection.5.3.3.2}
-\contentsline {subsection}{\numberline {5.3.4}Member Function Documentation}{23}{subsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.4.1}append}{23}{subsubsection.5.3.4.1}
-\contentsline {subsubsection}{\numberline {5.3.4.2}begin}{25}{subsubsection.5.3.4.2}
-\contentsline {subsubsection}{\numberline {5.3.4.3}clear}{26}{subsubsection.5.3.4.3}
-\contentsline {subsubsection}{\numberline {5.3.4.4}empty}{26}{subsubsection.5.3.4.4}
-\contentsline {subsubsection}{\numberline {5.3.4.5}end}{26}{subsubsection.5.3.4.5}
-\contentsline {subsubsection}{\numberline {5.3.4.6}load}{27}{subsubsection.5.3.4.6}
-\contentsline {subsubsection}{\numberline {5.3.4.7}operator[]}{28}{subsubsection.5.3.4.7}
-\contentsline {subsubsection}{\numberline {5.3.4.8}push\_\discretionary {-}{}{}back}{28}{subsubsection.5.3.4.8}
-\contentsline {subsubsection}{\numberline {5.3.4.9}reserve}{29}{subsubsection.5.3.4.9}
-\contentsline {subsubsection}{\numberline {5.3.4.10}resize}{30}{subsubsection.5.3.4.10}
-\contentsline {subsubsection}{\numberline {5.3.4.11}show}{30}{subsubsection.5.3.4.11}
-\contentsline {subsubsection}{\numberline {5.3.4.12}size}{31}{subsubsection.5.3.4.12}
-\contentsline {subsubsection}{\numberline {5.3.4.13}store}{32}{subsubsection.5.3.4.13}
-\contentsline {subsubsection}{\numberline {5.3.4.14}validate}{32}{subsubsection.5.3.4.14}
-\contentsline {subsection}{\numberline {5.3.5}Member Data Documentation}{33}{subsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.5.1}collection}{33}{subsubsection.5.3.5.1}
-\contentsline {section}{\numberline {5.4}Neuron Class Reference}{33}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{35}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{35}{subsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.2.1}Neuron}{35}{subsubsection.5.4.2.1}
-\contentsline {subsubsection}{\numberline {5.4.2.2}Neuron}{36}{subsubsection.5.4.2.2}
-\contentsline {subsubsection}{\numberline {5.4.2.3}Neuron}{36}{subsubsection.5.4.2.3}
-\contentsline {subsubsection}{\numberline {5.4.2.4}$\sim $Neuron}{36}{subsubsection.5.4.2.4}
-\contentsline {subsection}{\numberline {5.4.3}Member Function Documentation}{36}{subsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.3.1}getConId}{36}{subsubsection.5.4.3.1}
-\contentsline {subsubsection}{\numberline {5.4.3.2}getFrom}{37}{subsubsection.5.4.3.2}
-\contentsline {subsubsection}{\numberline {5.4.3.3}getId}{37}{subsubsection.5.4.3.3}
-\contentsline {subsubsection}{\numberline {5.4.3.4}getWeight}{38}{subsubsection.5.4.3.4}
-\contentsline {subsubsection}{\numberline {5.4.3.5}numOfCons}{38}{subsubsection.5.4.3.5}
-\contentsline {subsubsection}{\numberline {5.4.3.6}setFrom}{39}{subsubsection.5.4.3.6}
-\contentsline {subsubsection}{\numberline {5.4.3.7}setId}{39}{subsubsection.5.4.3.7}
-\contentsline {subsubsection}{\numberline {5.4.3.8}setWeight}{40}{subsubsection.5.4.3.8}
-\contentsline {subsubsection}{\numberline {5.4.3.9}show}{40}{subsubsection.5.4.3.9}
-\contentsline {subsubsection}{\numberline {5.4.3.10}validate}{41}{subsubsection.5.4.3.10}
-\contentsline {subsection}{\numberline {5.4.4}Member Data Documentation}{41}{subsection.5.4.4}
-\contentsline {subsubsection}{\numberline {5.4.4.1}con}{41}{subsubsection.5.4.4.1}
-\contentsline {subsubsection}{\numberline {5.4.4.2}Id}{42}{subsubsection.5.4.4.2}
-\contentsline {subsubsection}{\numberline {5.4.4.3}outputValue}{42}{subsubsection.5.4.4.3}
-\contentsline {section}{\numberline {5.5}VecCon Class Reference}{42}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{45}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{45}{subsection.5.5.2}
-\contentsline {subsubsection}{\numberline {5.5.2.1}VecCon}{45}{subsubsection.5.5.2.1}
-\contentsline {subsubsection}{\numberline {5.5.2.2}VecCon}{46}{subsubsection.5.5.2.2}
-\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{46}{subsection.5.5.3}
-\contentsline {subsubsection}{\numberline {5.5.3.1}buildAndAppend}{46}{subsubsection.5.5.3.1}
-\contentsline {subsubsection}{\numberline {5.5.3.2}erase}{47}{subsubsection.5.5.3.2}
-\contentsline {subsubsection}{\numberline {5.5.3.3}getFrom}{49}{subsubsection.5.5.3.3}
-\contentsline {subsubsection}{\numberline {5.5.3.4}getId}{51}{subsubsection.5.5.3.4}
-\contentsline {subsubsection}{\numberline {5.5.3.5}getWeight}{52}{subsubsection.5.5.3.5}
-\contentsline {subsubsection}{\numberline {5.5.3.6}getWeight}{54}{subsubsection.5.5.3.6}
-\contentsline {subsubsection}{\numberline {5.5.3.7}numOfCons}{55}{subsubsection.5.5.3.7}
-\contentsline {subsubsection}{\numberline {5.5.3.8}select}{57}{subsubsection.5.5.3.8}
-\contentsline {subsubsection}{\numberline {5.5.3.9}setFrom}{59}{subsubsection.5.5.3.9}
-\contentsline {subsubsection}{\numberline {5.5.3.10}setWeight}{61}{subsubsection.5.5.3.10}
-\contentsline {subsubsection}{\numberline {5.5.3.11}setWeight}{62}{subsubsection.5.5.3.11}
-\contentsline {subsubsection}{\numberline {5.5.3.12}validate}{64}{subsubsection.5.5.3.12}
-\contentsline {section}{\numberline {5.6}vecMLPneuron Class Reference}{66}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{66}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{66}{subsection.5.6.2}
-\contentsline {subsubsection}{\numberline {5.6.2.1}buildAndAppend}{66}{subsubsection.5.6.2.1}
-\contentsline {subsubsection}{\numberline {5.6.2.2}getId}{66}{subsubsection.5.6.2.2}
-\contentsline {section}{\numberline {5.7}VecNeuron Class Reference}{66}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{69}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{69}{subsection.5.7.2}
-\contentsline {subsubsection}{\numberline {5.7.2.1}VecNeuron}{69}{subsubsection.5.7.2.1}
-\contentsline {subsubsection}{\numberline {5.7.2.2}VecNeuron}{69}{subsubsection.5.7.2.2}
-\contentsline {subsubsection}{\numberline {5.7.2.3}$\sim $VecNeuron}{69}{subsubsection.5.7.2.3}
-\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{70}{subsection.5.7.3}
-\contentsline {subsubsection}{\numberline {5.7.3.1}getConId}{70}{subsubsection.5.7.3.1}
-\contentsline {subsubsection}{\numberline {5.7.3.2}getFrom}{70}{subsubsection.5.7.3.2}
-\contentsline {subsubsection}{\numberline {5.7.3.3}getId}{70}{subsubsection.5.7.3.3}
-\contentsline {subsubsection}{\numberline {5.7.3.4}getWeight}{70}{subsubsection.5.7.3.4}
-\contentsline {subsubsection}{\numberline {5.7.3.5}numOfCons}{71}{subsubsection.5.7.3.5}
-\contentsline {subsubsection}{\numberline {5.7.3.6}numOfNeurons}{71}{subsubsection.5.7.3.6}
-\contentsline {subsubsection}{\numberline {5.7.3.7}setFrom}{71}{subsubsection.5.7.3.7}
-\contentsline {subsubsection}{\numberline {5.7.3.8}setId}{72}{subsubsection.5.7.3.8}
-\contentsline {subsubsection}{\numberline {5.7.3.9}setWeight}{72}{subsubsection.5.7.3.9}
-\contentsline {chapter}{\numberline {6}File Documentation}{73}{chapter.6}
-\contentsline {section}{\numberline {6.1}pkg/AMORE/src/AMORE.h File Reference}{73}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Define Documentation}{74}{subsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.1}foreach}{74}{subsubsection.6.1.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.2}size\_\discretionary {-}{}{}type}{74}{subsubsection.6.1.1.2}
-\contentsline {subsection}{\numberline {6.1.2}Typedef Documentation}{74}{subsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.2.1}ConPtr}{74}{subsubsection.6.1.2.1}
-\contentsline {subsubsection}{\numberline {6.1.2.2}ContainerConPtr}{74}{subsubsection.6.1.2.2}
-\contentsline {subsubsection}{\numberline {6.1.2.3}ContainerNeuronPtr}{75}{subsubsection.6.1.2.3}
-\contentsline {subsubsection}{\numberline {6.1.2.4}NeuronPtr}{75}{subsubsection.6.1.2.4}
-\contentsline {subsubsection}{\numberline {6.1.2.5}NeuronWeakPtr}{75}{subsubsection.6.1.2.5}
-\contentsline {subsubsection}{\numberline {6.1.2.6}VecConPtr}{75}{subsubsection.6.1.2.6}
-\contentsline {subsubsection}{\numberline {6.1.2.7}VecNeuronPtr}{75}{subsubsection.6.1.2.7}
-\contentsline {section}{\numberline {6.2}pkg/AMORE/src/Con.cpp File Reference}{75}{section.6.2}
-\contentsline {section}{\numberline {6.3}pkg/AMORE/src/Con.h File Reference}{76}{section.6.3}
-\contentsline {section}{\numberline {6.4}pkg/AMORE/src/Container.cpp File Reference}{77}{section.6.4}
-\contentsline {section}{\numberline {6.5}pkg/AMORE/src/Container.h File Reference}{77}{section.6.5}
-\contentsline {section}{\numberline {6.6}pkg/AMORE/src/Neuron.cpp File Reference}{77}{section.6.6}
-\contentsline {section}{\numberline {6.7}pkg/AMORE/src/Neuron.h File Reference}{79}{section.6.7}
-\contentsline {section}{\numberline {6.8}pkg/AMORE/src/VecCon.cpp File Reference}{79}{section.6.8}
-\contentsline {section}{\numberline {6.9}pkg/AMORE/src/VecCon.h File Reference}{80}{section.6.9}
-\contentsline {section}{\numberline {6.10}pkg/AMORE/src/VecMLPneuron.h File Reference}{80}{section.6.10}
-\contentsline {section}{\numberline {6.11}pkg/AMORE/src/VecNeuron.cpp File Reference}{81}{section.6.11}
-\contentsline {section}{\numberline {6.12}pkg/AMORE/src/VecNeuron.h File Reference}{81}{section.6.12}
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{22}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}ConContainer}{22}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}ConContainer}{23}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{23}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}buildAndAppend}{23}{subsubsection.5.3.3.1}
+\contentsline {subsubsection}{\numberline {5.3.3.2}erase}{24}{subsubsection.5.3.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3.3}getFrom}{26}{subsubsection.5.3.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.4}getId}{28}{subsubsection.5.3.3.4}
+\contentsline {subsubsection}{\numberline {5.3.3.5}getWeight}{29}{subsubsection.5.3.3.5}
+\contentsline {subsubsection}{\numberline {5.3.3.6}getWeight}{31}{subsubsection.5.3.3.6}
+\contentsline {subsubsection}{\numberline {5.3.3.7}numOfCons}{32}{subsubsection.5.3.3.7}
+\contentsline {subsubsection}{\numberline {5.3.3.8}select}{34}{subsubsection.5.3.3.8}
+\contentsline {subsubsection}{\numberline {5.3.3.9}setFrom}{36}{subsubsection.5.3.3.9}
+\contentsline {subsubsection}{\numberline {5.3.3.10}setWeight}{38}{subsubsection.5.3.3.10}
+\contentsline {subsubsection}{\numberline {5.3.3.11}setWeight}{40}{subsubsection.5.3.3.11}
+\contentsline {subsubsection}{\numberline {5.3.3.12}validate}{42}{subsubsection.5.3.3.12}
+\contentsline {section}{\numberline {5.4}Container$<$ T $>$ Class Template Reference}{43}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{46}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Member Typedef Documentation}{47}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}const\_\discretionary {-}{}{}iterator}{47}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}iterator}{47}{subsubsection.5.4.2.2}
+\contentsline {subsection}{\numberline {5.4.3}Constructor \& Destructor Documentation}{47}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}Container}{47}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}Container}{47}{subsubsection.5.4.3.2}
+\contentsline {subsection}{\numberline {5.4.4}Member Function Documentation}{47}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}append}{47}{subsubsection.5.4.4.1}
+\contentsline {subsubsection}{\numberline {5.4.4.2}begin}{49}{subsubsection.5.4.4.2}
+\contentsline {subsubsection}{\numberline {5.4.4.3}clear}{50}{subsubsection.5.4.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4.4}empty}{50}{subsubsection.5.4.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.5}end}{50}{subsubsection.5.4.4.5}
+\contentsline {subsubsection}{\numberline {5.4.4.6}load}{51}{subsubsection.5.4.4.6}
+\contentsline {subsubsection}{\numberline {5.4.4.7}operator[]}{52}{subsubsection.5.4.4.7}
+\contentsline {subsubsection}{\numberline {5.4.4.8}push\_\discretionary {-}{}{}back}{52}{subsubsection.5.4.4.8}
+\contentsline {subsubsection}{\numberline {5.4.4.9}reserve}{53}{subsubsection.5.4.4.9}
+\contentsline {subsubsection}{\numberline {5.4.4.10}resize}{54}{subsubsection.5.4.4.10}
+\contentsline {subsubsection}{\numberline {5.4.4.11}show}{54}{subsubsection.5.4.4.11}
+\contentsline {subsubsection}{\numberline {5.4.4.12}size}{55}{subsubsection.5.4.4.12}
+\contentsline {subsubsection}{\numberline {5.4.4.13}store}{56}{subsubsection.5.4.4.13}
+\contentsline {subsubsection}{\numberline {5.4.4.14}validate}{56}{subsubsection.5.4.4.14}
+\contentsline {subsection}{\numberline {5.4.5}Member Data Documentation}{57}{subsection.5.4.5}
+\contentsline {subsubsection}{\numberline {5.4.5.1}collection}{57}{subsubsection.5.4.5.1}
+\contentsline {section}{\numberline {5.5}Neuron Class Reference}{57}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{59}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{59}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}Neuron}{59}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}Neuron}{60}{subsubsection.5.5.2.2}
+\contentsline {subsubsection}{\numberline {5.5.2.3}Neuron}{60}{subsubsection.5.5.2.3}
+\contentsline {subsubsection}{\numberline {5.5.2.4}$\sim $Neuron}{60}{subsubsection.5.5.2.4}
+\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{60}{subsection.5.5.3}
+\contentsline {subsubsection}{\numberline {5.5.3.1}getConId}{60}{subsubsection.5.5.3.1}
+\contentsline {subsubsection}{\numberline {5.5.3.2}getFrom}{61}{subsubsection.5.5.3.2}
+\contentsline {subsubsection}{\numberline {5.5.3.3}getId}{61}{subsubsection.5.5.3.3}
+\contentsline {subsubsection}{\numberline {5.5.3.4}getWeight}{62}{subsubsection.5.5.3.4}
+\contentsline {subsubsection}{\numberline {5.5.3.5}numOfCons}{62}{subsubsection.5.5.3.5}
+\contentsline {subsubsection}{\numberline {5.5.3.6}setFrom}{63}{subsubsection.5.5.3.6}
+\contentsline {subsubsection}{\numberline {5.5.3.7}setId}{63}{subsubsection.5.5.3.7}
+\contentsline {subsubsection}{\numberline {5.5.3.8}setWeight}{64}{subsubsection.5.5.3.8}
+\contentsline {subsubsection}{\numberline {5.5.3.9}show}{64}{subsubsection.5.5.3.9}
+\contentsline {subsubsection}{\numberline {5.5.3.10}validate}{65}{subsubsection.5.5.3.10}
+\contentsline {subsection}{\numberline {5.5.4}Member Data Documentation}{65}{subsection.5.5.4}
+\contentsline {subsubsection}{\numberline {5.5.4.1}con}{65}{subsubsection.5.5.4.1}
+\contentsline {subsubsection}{\numberline {5.5.4.2}Id}{66}{subsubsection.5.5.4.2}
+\contentsline {subsubsection}{\numberline {5.5.4.3}outputValue}{66}{subsubsection.5.5.4.3}
+\contentsline {section}{\numberline {5.6}NeuronContainer Class Reference}{66}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{69}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Constructor \& Destructor Documentation}{69}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}NeuronContainer}{69}{subsubsection.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.2.2}NeuronContainer}{69}{subsubsection.5.6.2.2}
+\contentsline {subsubsection}{\numberline {5.6.2.3}$\sim $NeuronContainer}{69}{subsubsection.5.6.2.3}
+\contentsline {subsection}{\numberline {5.6.3}Member Function Documentation}{70}{subsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.3.1}getConId}{70}{subsubsection.5.6.3.1}
+\contentsline {subsubsection}{\numberline {5.6.3.2}getFrom}{70}{subsubsection.5.6.3.2}
+\contentsline {subsubsection}{\numberline {5.6.3.3}getId}{70}{subsubsection.5.6.3.3}
+\contentsline {subsubsection}{\numberline {5.6.3.4}getWeight}{70}{subsubsection.5.6.3.4}
+\contentsline {subsubsection}{\numberline {5.6.3.5}numOfCons}{71}{subsubsection.5.6.3.5}
+\contentsline {subsubsection}{\numberline {5.6.3.6}numOfNeurons}{71}{subsubsection.5.6.3.6}
+\contentsline {subsubsection}{\numberline {5.6.3.7}setFrom}{71}{subsubsection.5.6.3.7}
+\contentsline {subsubsection}{\numberline {5.6.3.8}setId}{72}{subsubsection.5.6.3.8}
+\contentsline {subsubsection}{\numberline {5.6.3.9}setWeight}{72}{subsubsection.5.6.3.9}
+\contentsline {section}{\numberline {5.7}vecMLPneuron Class Reference}{72}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{72}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{73}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.2.1}buildAndAppend}{73}{subsubsection.5.7.2.1}
+\contentsline {subsubsection}{\numberline {5.7.2.2}getId}{73}{subsubsection.5.7.2.2}
+\contentsline {chapter}{\numberline {6}File Documentation}{75}{chapter.6}
+\contentsline {section}{\numberline {6.1}pkg/AMORE/src/AMORE.h File Reference}{75}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Define Documentation}{76}{subsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.1}foreach}{76}{subsubsection.6.1.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.2}size\_\discretionary {-}{}{}type}{76}{subsubsection.6.1.1.2}
+\contentsline {subsection}{\numberline {6.1.2}Typedef Documentation}{76}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}ConContainerPtr}{76}{subsubsection.6.1.2.1}
+\contentsline {subsubsection}{\numberline {6.1.2.2}ConPtr}{76}{subsubsection.6.1.2.2}
+\contentsline {subsubsection}{\numberline {6.1.2.3}ContainerConPtr}{77}{subsubsection.6.1.2.3}
+\contentsline {subsubsection}{\numberline {6.1.2.4}ContainerNeuronPtr}{77}{subsubsection.6.1.2.4}
+\contentsline {subsubsection}{\numberline {6.1.2.5}NeuronContainerPtr}{77}{subsubsection.6.1.2.5}
+\contentsline {subsubsection}{\numberline {6.1.2.6}NeuronPtr}{77}{subsubsection.6.1.2.6}
+\contentsline {subsubsection}{\numberline {6.1.2.7}NeuronWeakPtr}{77}{subsubsection.6.1.2.7}
+\contentsline {section}{\numberline {6.2}pkg/AMORE/src/Con.cpp File Reference}{77}{section.6.2}
+\contentsline {section}{\numberline {6.3}pkg/AMORE/src/Con.h File Reference}{78}{section.6.3}
+\contentsline {section}{\numberline {6.4}pkg/AMORE/src/Container.cpp File Reference}{79}{section.6.4}
+\contentsline {section}{\numberline {6.5}pkg/AMORE/src/Container.h File Reference}{79}{section.6.5}
+\contentsline {section}{\numberline {6.6}pkg/AMORE/src/Neuron.cpp File Reference}{79}{section.6.6}
+\contentsline {section}{\numberline {6.7}pkg/AMORE/src/Neuron.h File Reference}{81}{section.6.7}
+\contentsline {section}{\numberline {6.8}pkg/AMORE/src/VecCon.cpp File Reference}{81}{section.6.8}
+\contentsline {section}{\numberline {6.9}pkg/AMORE/src/VecCon.h File Reference}{81}{section.6.9}
+\contentsline {section}{\numberline {6.10}pkg/AMORE/src/VecMLPneuron.h File Reference}{82}{section.6.10}
+\contentsline {section}{\numberline {6.11}pkg/AMORE/src/VecNeuron.cpp File Reference}{82}{section.6.11}
+\contentsline {section}{\numberline {6.12}pkg/AMORE/src/VecNeuron.h File Reference}{82}{section.6.12}

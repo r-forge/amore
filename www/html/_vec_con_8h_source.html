@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="_vec_con_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> *  VecCon.h</span>
+<a name="l00002"></a>00002 <span class="comment"> *  ConContainer.h</span>
 <a name="l00003"></a>00003 <span class="comment"> *</span>
 <a name="l00004"></a>00004 <span class="comment"> *  Created on: 26/05/2011</span>
 <a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
@@ -92,50 +92,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define VECCON_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
 <a name="l00012"></a>00012 
-<a name="l00016"></a><a class="code" href="class_vec_con.html">00016</a> <span class="keyword">class </span><a class="code" href="class_vec_con.html" title="A vector of connections.">VecCon</a> : <span class="keyword">public</span> <a class="code" href="class_container.html">Container</a>&lt;Con&gt;
+<a name="l00016"></a><a class="code" href="class_con_container.html">00016</a> <span class="keyword">class </span><a class="code" href="class_con_container.html" title="A vector of connections.">ConContainer</a> : <span class="keyword">public</span> <a class="code" href="class_container.html">Container</a>&lt;Con&gt;
 <a name="l00017"></a>00017 {
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="keyword">public</span>:
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021   <a class="code" href="class_vec_con.html#afc51866624c1229206e45ed66a08bd44">VecCon</a>();
+<a name="l00021"></a>00021   <a class="code" href="class_con_container.html#aec4578b20ba3509e450bfbc9851d3393">ConContainer</a>();
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023   <a class="code" href="class_vec_con.html#afc51866624c1229206e45ed66a08bd44">VecCon</a>(std::vector&lt;ConPtr&gt; <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>);
+<a name="l00023"></a>00023   <a class="code" href="class_con_container.html#aec4578b20ba3509e450bfbc9851d3393">ConContainer</a>(std::vector&lt;ConPtr&gt; <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>);
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025   <span class="keywordtype">int</span>
-<a name="l00026"></a>00026   <a class="code" href="class_vec_con.html#aa9a397520b07fbeead0b6d252c1ea882" title="Size of the VecCon object.">numOfCons</a>();
+<a name="l00026"></a>00026   <a class="code" href="class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object.">numOfCons</a>();
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028   std::vector&lt;int&gt;
-<a name="l00029"></a>00029   <a class="code" href="class_vec_con.html#a03d5dde143e166e68b01c9596573eb5f" title="Getter of the Id values of the vector of Cons.">getId</a>();
+<a name="l00029"></a>00029   <a class="code" href="class_con_container.html#a387ac09ab154d21c5ad597d32b32dbc2" title="Getter of the Id values of the vector of Cons.">getId</a>();
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031   <span class="keywordtype">bool</span>
-<a name="l00032"></a>00032   <a class="code" href="class_vec_con.html#a7234c09d040d7114209137176d384566" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(<a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a> neuronContainer, std::vector&lt;double&gt; nWeights);
+<a name="l00032"></a>00032   <a class="code" href="class_con_container.html#a7a4303c5597439ae3be57fa9707a6fd4" title="Builds Con objects and appends them to collection.">buildAndAppend</a>(<a class="code" href="class_neuron_container.html" title="A vector of neurons.">NeuronContainer</a> neuronContainer, std::vector&lt;double&gt; nWeights);
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034   std::vector&lt;double&gt;
-<a name="l00035"></a>00035   <a class="code" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a>();
+<a name="l00035"></a>00035   <a class="code" href="class_con_container.html#a9a460c0aa4154c29caff4777607b43c1" title="Getter of the weight field of the Con objects related to ConContainer.">getWeight</a>();
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037   std::vector&lt;double&gt;
-<a name="l00038"></a>00038   <a class="code" href="class_vec_con.html#aafa37c30d566b8784ac84d23a14b5638" title="Getter of the weight field of the Con objects related to VecCon.">getWeight</a>(std::vector&lt;int&gt; nIds);
+<a name="l00038"></a>00038   <a class="code" href="class_con_container.html#a9a460c0aa4154c29caff4777607b43c1" title="Getter of the weight field of the Con objects related to ConContainer.">getWeight</a>(std::vector&lt;int&gt; nIds);
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040   <a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a>
-<a name="l00041"></a>00041   <a class="code" href="class_vec_con.html#ad9dc02872d29a1a58f5079457c3f8001" title="Getter of the from field of the Con objects related to VecCon.">getFrom</a>();
+<a name="l00040"></a>00040   <a class="code" href="class_neuron_container.html" title="A vector of neurons.">NeuronContainer</a>
+<a name="l00041"></a>00041   <a class="code" href="class_con_container.html#a705da30e27c1022561e32c59ce81da5e" title="Getter of the from field of the Con objects related to ConContainer.">getFrom</a>();
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043   <span class="keywordtype">bool</span>
-<a name="l00044"></a>00044   <a class="code" href="class_vec_con.html#afff0a663e82c72ebb6edf512c664013e" title="Setter of the weight field of the Con objects related to VecCon.">setWeight</a>(std::vector&lt;double&gt; nWeights);
+<a name="l00044"></a>00044   <a class="code" href="class_con_container.html#a36dc3c4d86e63eda0a1e9ba17179c0f9" title="Setter of the weight field of the Con objects related to ConContainer.">setWeight</a>(std::vector&lt;double&gt; nWeights);
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046   <span class="keywordtype">bool</span>
-<a name="l00047"></a>00047   <a class="code" href="class_vec_con.html#afff0a663e82c72ebb6edf512c664013e" title="Setter of the weight field of the Con objects related to VecCon.">setWeight</a>(std::vector&lt;double&gt; nWeights, std::vector&lt;int&gt; nIds);
+<a name="l00047"></a>00047   <a class="code" href="class_con_container.html#a36dc3c4d86e63eda0a1e9ba17179c0f9" title="Setter of the weight field of the Con objects related to ConContainer.">setWeight</a>(std::vector&lt;double&gt; nWeights, std::vector&lt;int&gt; nIds);
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049   <span class="keywordtype">bool</span>
-<a name="l00050"></a>00050   <a class="code" href="class_vec_con.html#a280ee1e24c44c8aeff1c4c4076322b71" title="Setter of the from fields of the Con objects related to VecCon.">setFrom</a>(<a class="code" href="class_vec_neuron.html" title="A vector of neurons.">VecNeuron</a> neuronContainer);
+<a name="l00050"></a>00050   <a class="code" href="class_con_container.html#aa7f1bbd910afe9c4241e8bd4d5fbc497" title="Setter of the from fields of the Con objects related to ConContainer.">setFrom</a>(<a class="code" href="class_neuron_container.html" title="A vector of neurons.">NeuronContainer</a> neuronContainer);
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052   <span class="keywordtype">void</span>
-<a name="l00053"></a>00053   <a class="code" href="class_vec_con.html#a930078dc6021e192d9a01bb520de66ab" title="Erase the specified elements from the vecCom object.">erase</a>(std::vector&lt;int&gt; nIds);
+<a name="l00053"></a>00053   <a class="code" href="class_con_container.html#a9665acde2f526ae4207b919c90615fe5" title="Erase the specified elements from the vecCom object.">erase</a>(std::vector&lt;int&gt; nIds);
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055   <a class="code" href="_a_m_o_r_e_8h.html#a046825e30d0ea2676a07e83f08f8ef00">VecConPtr</a>
-<a name="l00056"></a>00056   <a class="code" href="class_vec_con.html#a6fe488b3fe3834fe7cf5553fb4471c78" title="Selects the specified elements from the vecCom object.">select</a>(std::vector&lt;int&gt; nIds);
+<a name="l00055"></a>00055   <a class="code" href="_a_m_o_r_e_8h.html#a12fa6814670892b8e70b57d93c999323">ConContainerPtr</a>
+<a name="l00056"></a>00056   <a class="code" href="class_con_container.html#a7fb490683bd4733cae3c6428bad9328c" title="Selects the specified elements from the vecCom object.">select</a>(std::vector&lt;int&gt; nIds);
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058   <span class="keywordtype">bool</span>
-<a name="l00059"></a>00059   <a class="code" href="class_vec_con.html#af008396d3982fb7ccf1af9618b89937c" title="Object validator.">validate</a>();
+<a name="l00059"></a>00059   <a class="code" href="class_con_container.html#aac12a3d3604db9ff715503816109470c" title="Object validator.">validate</a>();
 <a name="l00060"></a>00060 };
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062 <span class="preprocessor">#endif </span><span class="comment">/* VECCON_H_ */</span>
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_vec_con_8h.html">VecCon.h</a>      </li>
-      <li class="footer">Generated on Wed Jun 8 2011 02:52:43 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 11:12:57 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

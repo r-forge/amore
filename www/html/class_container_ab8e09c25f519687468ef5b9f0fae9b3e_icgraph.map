@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_vec_con.html#a7234c09d040d7114209137176d384566" title="Builds Con objects and appends them to collection." alt="" coords="176,5,347,32"/>
-<area shape="rect" id="node5" href="$class_vec_con.html#a280ee1e24c44c8aeff1c4c4076322b71" title="Setter of the from fields of the Con objects related to VecCon." alt="" coords="200,56,323,83"/>
-<area shape="rect" id="node7" href="$class_neuron.html#a2aa3a89c77ac950559689d6d48a044f9" title="Neuron::setFrom" alt="" coords="395,56,515,83"/>
+<area shape="rect" id="node3" href="$class_con_container.html#a7a4303c5597439ae3be57fa9707a6fd4" title="Builds Con objects and appends them to collection." alt="" coords="177,5,380,32"/>
+<area shape="rect" id="node5" href="$class_con_container.html#aa7f1bbd910afe9c4241e8bd4d5fbc497" title="Setter of the from fields of the Con objects related to ConContainer." alt="" coords="200,56,357,83"/>
+<area shape="rect" id="node7" href="$class_neuron.html#ac8129f5de3ec1c143f40d507b6843649" title="Neuron::setFrom" alt="" coords="429,56,549,83"/>
 </map>
