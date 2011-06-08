@@ -1,6 +1,6 @@
 
 ###############################################################################
-test.VecNeuron.Cpp.Constructor <- function() {	
+test.NeuronContainer.Cpp.Constructor <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
@@ -15,7 +15,7 @@ test.VecNeuron.Cpp.Constructor <- function() {
 			vNeuron.push_back(ptNeuron);
 			vWeight.push_back(weights[i]);					
 			}
-			VecConPtr vcPt(new VecCon());
+			ConContainerPtr vcPt(new ConContainer());
 			vcPt->buildAndAppend(vNeuron, vWeight);
 			// Test	
 			NeuronPtr ptN(new Neuron(123, *vcPt));

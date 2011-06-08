@@ -19,7 +19,7 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	result <- testCodefun()
 	checkEquals(result, 0)
 	# In file included from file635071b6.cpp:64:
-	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/VecNeuron.cpp:22: error: stray '\312' in program
+	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/NeuronContainer.cpp:22: error: stray '\312' in program
 	# make: *** [file635071b6.o] Error 1
 	# 
 	# ERROR(s) during compilation: source code errors or compiler configuration errors!
@@ -59,9 +59,9 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	#  32: class Con;
 	#  33: template<typename T>
 	#  34:   class Container;
-	#  35: class VecCon;
+	#  35: class ConContainer;
 	#  36: class Neuron;
-	#  37: class VecNeuron;
+	#  37: class NeuronContainer;
 	#  38: 
 	#  39: #define foreach         BOOST_FOREACH
 	#  40: 
@@ -74,21 +74,21 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	#  47: typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 	#  48: typedef boost::shared_ptr<Container<Con> > ContainerConPtr;
 	#  49: typedef boost::shared_ptr<Container<Neuron> > ContainerNeuronPtr;
-	#  50: typedef boost::shared_ptr<VecCon> VecConPtr;
-	#  51: typedef boost::shared_ptr<VecNeuron> VecNeuronPtr;
+	#  50: typedef boost::shared_ptr<ConContainer> ConContainerPtr;
+	#  51: typedef boost::shared_ptr<NeuronContainer> NeuronContainerPtr;
 	#  52: 
 	#  53: #include "Con.h"
 	#  54: #include "Container.h"
 	#  55: 
-	#  56: #include "VecCon.h"
+	#  56: #include "ConContainer.h"
 	#  57: #include "Neuron.h"
-	#  58: #include "VecNeuron.h"
+	#  58: #include "NeuronContainer.h"
 	#  59: 
 	#  60: #include "Con.cpp"
 	#  61: #include "Container.cpp"
-	#  62: #include "VecCon.cpp"
+	#  62: #include "ConContainer.cpp"
 	#  63: #include "Neuron.cpp"
-	#  64: #include "VecNeuron.cpp"
+	#  64: #include "NeuronContainer.cpp"
 	#  65: 
 	#  66: 
 	#  67: 
@@ -109,7 +109,7 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	#  82: }
 	# Error en compileCode(f, code, language, verbose) : 
 	#   Compilation ERROR, function(s)/method(s) not created! In file included from file635071b6.cpp:64:
-	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/VecNeuron.cpp:22: error: stray '\312' in program
+	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/NeuronContainer.cpp:22: error: stray '\312' in program
 	# make: *** [file635071b6.o] Error 1
 	# Adem'as: Mensajes de aviso perdidos
 	# comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file635071b6.cpp 2> file635071b6.cpp.err.txt' tiene estatus 1 
@@ -151,8 +151,8 @@ test.Container.Cpp.Constructor_collectionAsArgument<- function() {
 				foreach(ConPtr itr, AuxContainer){
 					result.push_back( itr->getId() );
 				}
-				VecCon MyVecCon( ptShvCon->load() );					// VecCon constructor calls Container constructor as well
-				std::vector<int> vIds(MyVecCon.getId());
+				ConContainer MyConContainer( ptShvCon->load() );					// ConContainer constructor calls Container constructor as well
+				std::vector<int> vIds(MyConContainer.getId());
 				result.insert(result.end(), vIds.begin(), vIds.end());
 				return wrap(result);
 			"
@@ -353,7 +353,7 @@ test.Container.Cpp.append<- function() {
 				ptShvConA->validate();		
 				ptShvConA->show() ;
 
-				foreach (ConPtr itr, ptShvConA->load()){  // Get Ids (Container does not know about VecCon::getId yet, thus the loop)	
+				foreach (ConPtr itr, ptShvConA->load()){  // Get Ids (Container does not know about ConContainer::getId yet, thus the loop)	
 					 result.push_back( itr->getId() );		
 				}
 				return wrap(result);

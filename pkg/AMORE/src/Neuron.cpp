@@ -17,7 +17,7 @@ Neuron::Neuron(int Id) :
 {
 }
 
-Neuron::Neuron(int Id, VecCon con) :
+Neuron::Neuron(int Id, ConContainer con) :
   Id(Id), con(con), outputValue(0.0)
 {
 }
@@ -38,7 +38,7 @@ Neuron::setId(int value)
   Id = value;
 }
 
-VecNeuron
+NeuronContainer
 Neuron::getFrom()
 {
   return con.getFrom();
@@ -57,7 +57,7 @@ Neuron::getWeight()
 }
 
 bool
-Neuron::setFrom(VecNeuron neuronContainer)
+Neuron::setFrom(NeuronContainer neuronContainer)
 {
   con.setFrom(neuronContainer);
 }

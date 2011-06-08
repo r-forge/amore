@@ -1,5 +1,5 @@
 /*
- *  VecCon.h
+ *  ConContainer.h
  *
  *  Created on: 26/05/2011
  *      Author: mcasl
@@ -10,17 +10,17 @@
 
 //!  A vector of connections
 /*!
- *   The VecCon class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class.
+ *   The ConContainer class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class.
  */
 
-class VecCon : public Container<Con>
+class ConContainer : public Container<Con>
 {
 
 public:
 
-  VecCon();
+  ConContainer();
 
-  VecCon(std::vector<ConPtr> collection);
+  ConContainer(std::vector<ConPtr> collection);
 
   int
   numOfCons();
@@ -29,7 +29,7 @@ public:
   getId();
 
   bool
-  buildAndAppend(VecNeuron neuronContainer, std::vector<double> nWeights);
+  buildAndAppend(NeuronContainer neuronContainer, std::vector<double> nWeights);
 
   std::vector<double>
   getWeight();
@@ -37,7 +37,7 @@ public:
   std::vector<double>
   getWeight(std::vector<int> nIds);
 
-  VecNeuron
+  NeuronContainer
   getFrom();
 
   bool
@@ -47,12 +47,12 @@ public:
   setWeight(std::vector<double> nWeights, std::vector<int> nIds);
 
   bool
-  setFrom(VecNeuron neuronContainer);
+  setFrom(NeuronContainer neuronContainer);
 
   void
   erase(std::vector<int> nIds);
 
-  VecConPtr
+  ConContainerPtr
   select(std::vector<int> nIds);
 
   bool
