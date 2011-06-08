@@ -38,11 +38,6 @@ Neuron::setId(int value)
   Id = value;
 }
 
-NeuronContainer
-Neuron::getFrom()
-{
-  return con.getFrom();
-}
 
 std::vector<int>
 Neuron::getConId()

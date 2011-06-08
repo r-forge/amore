@@ -44,8 +44,6 @@ public:
   void
   setId(int value);
 
-  NeuronContainer
-  getFrom();
 
   std::vector<int>
   getConId();
