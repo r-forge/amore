@@ -77,16 +77,16 @@ test.Neuron.Cpp.Constructor_FullArgumentList <- function() {
 		// Data set up
 				int ids[]= {1, 2, 3};
 				double weights[]= {0.11, 0.22, 0.33};
-				std::vector<NeuronPtr> vNeuron;
-				std::vector<double> vWeight;
+				NeuronContainer neuronContainer;
+				std::vector<double> nWeights;
 				NeuronPtr ptNeuron;
 				for (int i=0; i<=2; i++) {
 					ptNeuron.reset( new Neuron(ids[i]) );
-					vNeuron.push_back(ptNeuron);
-					vWeight.push_back(weights[i]);					
+					neuronContainer.push_back(ptNeuron);
+					nWeights.push_back(weights[i]);					
 				}
 				ConContainerPtr vcPt(new ConContainer());
-				vcPt->buildAndAppend(vNeuron, vWeight);
+				vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 		// Test	
 				NeuronPtr ptN(new Neuron(123, *vcPt));
 				ptN->show();
@@ -186,7 +186,7 @@ test.Neuron.Cpp.getFrom <- function() {
 				nWeights.push_back(weights[i]);					
 			}
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(neuronContainer, nWeights);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			ptNeuron.reset(new Neuron(123, *vcPt));
 			ptNeuron->show();
 			// Test	
@@ -219,16 +219,16 @@ test.Neuron.Cpp.getConId <- function() {
 		// Data set up
 			int ids[]= {1, 2, 3};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 			ptNeuron.reset( new Neuron(ids[i]) );
-			vNeuron.push_back(ptNeuron);
-			vWeight.push_back(weights[i]);					
+			neuronContainer.push_back(ptNeuron);
+			nWeights.push_back(weights[i]);					
 			}
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			NeuronPtr ptN(new Neuron(123, *vcPt));
 			ptN->show();
 		// Test		
@@ -262,16 +262,16 @@ test.Neuron.Cpp.getWeight <- function() {
 			// Data set up
 			int ids[]= {1, 2, 3};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
-				vWeight.push_back(weights[i]);					
+				neuronContainer.push_back(ptNeuron);
+				nWeights.push_back(weights[i]);					
 			}
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			// Test	
 			NeuronPtr ptN(new Neuron(123, *vcPt));
 			ptN->show();
@@ -304,27 +304,27 @@ test.Neuron.Cpp.setFrom <- function() {
 		// Data set up
 			int ids[]= {1, 2, 3, 4, 5, 6};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
-				vWeight.push_back(weights[i]);
+				neuronContainer.push_back(ptNeuron);
+				nWeights.push_back(weights[i]);
 			}
 
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			
 			NeuronPtr ptN(new Neuron(123456 ,*vcPt));
-			vNeuron.clear();
+			neuronContainer.clear();
 			for (int i=3; i<=5; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
+				neuronContainer.push_back(ptNeuron);
 			}
 		// Test		
-			ptN->setFrom(vNeuron);
+			ptN->setFrom(neuronContainer);
 			ptN->show();
 			std::vector<int> result ( ptN->getConId() );
 			return wrap(result);
@@ -356,26 +356,26 @@ test.Neuron.Cpp.setWeight <- function() {
 			// Data set up
 			int ids[]= {1, 2, 3, 4, 5, 6};
 			double weights[]= {0.11, 0.22, 0.33, 0.44, 0.55, 0.66};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
-				vWeight.push_back(weights[i]);
+				neuronContainer.push_back(ptNeuron);
+				nWeights.push_back(weights[i]);
 			}
 			
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			
 			NeuronPtr ptN(new Neuron(123456 ,*vcPt));
-			vWeight.clear();
+			nWeights.clear();
 			for (int i=3; i<=5; i++) {
-				vWeight.push_back(weights[i]);
+				nWeights.push_back(weights[i]);
 			}
 			// Test		
-			ptN->setWeight(vWeight);
+			ptN->setWeight(nWeights);
 			ptN->show();
 			std::vector<double> result ( ptN->getWeight() );
 			return wrap(result);
@@ -406,16 +406,16 @@ test.Neuron.Cpp.numOfCons <- function() {
 		// Data set up
 			int ids[]= {1, 2, 3};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			std::vector<NeuronPtr> neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 				ptNeuron.reset( new Neuron(ids[i]) );
-				vNeuron.push_back(ptNeuron);
-				vWeight.push_back(weights[i]);					
+				neuronContainer.push_back(ptNeuron);
+				nWeights.push_back(weights[i]);					
 			}
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 			NeuronPtr ptN(new Neuron(123, *vcPt));
 		// Test	
 			return wrap(ptN->numOfCons());

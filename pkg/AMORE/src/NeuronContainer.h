@@ -19,7 +19,7 @@ class NeuronContainer : public Container<Neuron>
 public:
   NeuronContainer();
 
-  NeuronContainer(std::vector<NeuronPtr> vNeuron);
+  NeuronContainer(std::vector<NeuronPtr> neuronContainer);
 
   ~NeuronContainer();
 

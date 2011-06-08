@@ -60,4 +60,3 @@ typedef boost::shared_ptr<NeuronContainer> NeuronContainerPtr;
 #include "Neuron.cpp"
 #include "NeuronContainer.cpp"
 
-

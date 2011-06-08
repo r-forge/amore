@@ -90,11 +90,11 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
         // Data set up
                                 std::vector<int> result;
                                 std::vector<ConPtr> vcA, vcB;
-                                ContainerneuronSharedPtr ptShvNeuron( new 
+                                ContainerneuronSharedPtr neuronContainerPtr( new 
       Container<Neuron>() );
-                                ContainerconSharedPtr    ptShvConA( new 
+                                ContainerconSharedPtr    conContainerPtrA( new 
       Container<Con>() );
-                                ContainerconSharedPtr    ptShvConB( new 
+                                ContainerconSharedPtr    conContainerPtrB( new 
       Container<Con>() );
                                 ConPtr    ptC;
                                 NeuronSharedPtr ptN;
@@ -104,24 +104,24 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
                                 for (int i=0; i<=5 ; i++) {                             /
       / Let's create a vector with six neurons
                                         ptN.reset( new Neuron( ids[i] ) );
-                                        ptShvNeuron->push_back(ptN);
+                                        neuronContainerPtr->push_back(ptN);
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / A vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load
+                                        ptC.reset( new Con( neuronContainerPtr->load
       ().at(i), weights[i]) );
-                                        ptShvConA->push_back(ptC);
+                                        conContainerPtrA->push_back(ptC);
                                 }
                                 for (int i=3; i<=5 ; i++) {                             /
       / Another vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load
+                                        ptC.reset( new Con( neuronContainerPtr->load
       ().at(i), weights[i]) );
-                                        ptShvConB->push_back(ptC);
+                                        conContainerPtrB->push_back(ptC);
                                 }
         // Test
-                                ptShvConA->append(*ptShvConB);
-                                ptShvConA->validate();
-                                ptShvConA->show() ;
+                                conContainerPtrA->append(*conContainerPtrB);
+                                conContainerPtrA->validate();
+                                conContainerPtrA->show() ;
 
         // After execution of the code above, the output at the R terminal would 
       display:
@@ -188,9 +188,9 @@ The collection vector.
                 // Data set up
                                 std::vector<int> result;
                                 std::vector<ConPtr> vcA, vcB;
-                                ContainerneuronSharedPtr ptShvNeuron( new 
+                                ContainerneuronSharedPtr neuronContainerPtr( new 
       Container<Neuron>() );
-                                ContainerconSharedPtr    ptShvCon( new 
+                                ContainerconSharedPtr    conContainerPtr( new 
       Container<Con>() );
                                 ConPtr    ptC;
                                 NeuronSharedPtr ptN;
@@ -199,17 +199,17 @@ The collection vector.
                                 for (int i=0; i<=2 ; i++) {                             /
       / Let's create a vector with three neurons
                                         ptN.reset( new Neuron( ids[i] ) );
-                                        ptShvNeuron->push_back(ptN);
+                                        neuronContainerPtr->push_back(ptN);
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load
+                                        ptC.reset( new Con( neuronContainerPtr->load
       ().at(i), weights[i]) );
                                         vcA.push_back(ptC);
                                 }
                 // Test
-                        ptShvCon->store(vcA);
-                        vcB = ptShvCon->load();
+                        conContainerPtr->store(vcA);
+                        vcB = conContainerPtr->load();
                         for (int i=0; i<=2 ; i++) {                                     /
       / get Ids. Container does not have getId defined
                                         result.push_back( vcB.at(i)->getId())
@@ -375,9 +375,9 @@ $\ast$
                 //Usage example:
                 //================
                 // Data set up
-                        ContainerneuronSharedPtr ptShvNeuron( new 
+                        ContainerneuronSharedPtr neuronContainerPtr( new 
       Container<Neuron>() );
-                        ContainerconSharedPtr    ptShvCon( new Container<Con>() );
+                        ContainerconSharedPtr    conContainerPtr( new Container<Con>() );
                         ConPtr    ptC;
                         NeuronSharedPtr ptN;
                         int ids[]= {10, 20, 30};
@@ -386,18 +386,18 @@ $\ast$
                         for (int i=0; i<=2 ; i++) {                             /
       / Let's create a vector with three neurons
                                 ptN.reset( new Neuron( ids[i] ) );
-                                ptShvNeuron->push_back(ptN);
+                                neuronContainerPtr->push_back(ptN);
                         }
 
                         for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                ptC.reset( new Con( ptShvNeuron->load().at(i)
+                                ptC.reset( new Con( neuronContainerPtr->load().at(i)
       , weights[i]) );
-                                ptShvCon->push_back(ptC);
+                                conContainerPtr->push_back(ptC);
                         }
 
                 // Test
-                        ptShvCon->show() ;
+                        conContainerPtr->show() ;
 
                 // The output at the R terminal would display:
                 //

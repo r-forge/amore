@@ -7,16 +7,16 @@ test.NeuronContainer.Cpp.Constructor <- function() {
 			// Data set up
 			int ids[]= {1, 2, 3};
 			double weights[]= {0.11, 0.22, 0.33};
-			std::vector<NeuronPtr> vNeuron;
-			std::vector<double> vWeight;
+			NeuronContainer neuronContainer;
+			std::vector<double> nWeights;
 			NeuronPtr ptNeuron;
 			for (int i=0; i<=2; i++) {
 			ptNeuron.reset( new Neuron(ids[i]) );
-			vNeuron.push_back(ptNeuron);
-			vWeight.push_back(weights[i]);					
+			neuronContainer.push_back(ptNeuron);
+			nWeights.push_back(weights[i]);					
 			}
 			ConContainerPtr vcPt(new ConContainer());
-			vcPt->buildAndAppend(vNeuron, vWeight);
+			vcPt->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end());
 			// Test	
 			NeuronPtr ptN(new Neuron(123, *vcPt));
 			ptN->show();

@@ -42,7 +42,7 @@ template<typename T>
  *		//================
  *		// Data set up
  *			Neuron N1, N2, N3;
- *			Container<Con> MyConContainer;
+ *			Container<Con> conContainer;
  *			std::vector<ConPtr> vc;
  *			std::vector<int> result;
  *			N1.setId(10);
@@ -50,13 +50,13 @@ template<typename T>
  *			N3.setId(30);
  *		// Test
  *			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
- *			MyConContainer.push_back(ptCon);				// push_back
+ *			conContainer.push_back(ptCon);				// push_back
  *
- *			vc = MyConContainer.load();
+ *			vc = conContainer.load();
  *
  *			result.push_back(vc.at(0)->getId());
  * 			result.push_back(vc.at(1)->getId());
@@ -86,8 +86,8 @@ template<typename T>
  *		//Usage example:
  *		//================
  *		// Data set up
- * 			ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *			ContainerConPtr	ptShvCon( new Container<Con>() );
+ * 			ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+ *			ContainerConPtr	conContainerPtr( new Container<Con>() );
  *			ConPtr	ptC;
  *			NeuronPtr ptN;
  *			int ids[]= {10, 20, 30};
@@ -95,16 +95,16 @@ template<typename T>
  *
  *			for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
  *				ptN.reset( new Neuron( ids[i] ) );
- *				ptShvNeuron->push_back(ptN);
+ *				neuronContainerPtr->push_back(ptN);
  *			}
  *
  *			for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *				ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
- *				ptShvCon->push_back(ptC);
+ *				ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );
+ *				conContainerPtr->push_back(ptC);
  *			}
  *
  *		// Test
- *			ptShvCon->show() ;
+ *			conContainerPtr->show() ;
  *
  *		// The output at the R terminal would display:
  *		//
@@ -132,7 +132,7 @@ template<typename T>
       }
     return true;
   }
-;
+
 
 //! Object validator
 /*! This method checks the object for internal coherence.
@@ -165,29 +165,29 @@ template<typename T>
  *	// Data set up
  *				std::vector<int> result;
  *				std::vector<ConPtr> vcA, vcB;
- *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *				ContainerConPtr	ptShvConA( new Container<Con>() );
- *				ContainerConPtr	ptShvConB( new Container<Con>() );
+ *				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+ *				ContainerConPtr	conContainerPtrA( new Container<Con>() );
+ *				ContainerConPtr	conContainerPtrB( new Container<Con>() );
  *				ConPtr	ptC;
  *				NeuronPtr ptN;
  *				int ids[]= {1, 2, 3, 4, 5, 6};
  *				double weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3.6 };
  *				for (int i=0; i<=5 ; i++) {				// Let's create a vector with six neurons
  *					ptN.reset( new Neuron( ids[i] ) );
- *					ptShvNeuron->push_back(ptN);
+ *					neuronContainerPtr->push_back(ptN);
  *				}
  *				for (int i=0; i<=2 ; i++) {				// A vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
- *					ptShvConA->push_back(ptC);
+ *					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );
+ *					conContainerPtrA->push_back(ptC);
  *				}
  *				for (int i=3; i<=5 ; i++) {				// Another vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
- *					ptShvConB->push_back(ptC);
+ *					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );
+ *					conContainerPtrB->push_back(ptC);
  *				}
  *	// Test
- *				ptShvConA->append(*ptShvConB);
- *				ptShvConA->validate();
- *				ptShvConA->show() ;
+ *				conContainerPtrA->append(*conContainerPtrB);
+ *				conContainerPtrA->validate();
+ *				conContainerPtrA->show() ;
  *
  *	// After execution of the code above, the output at the R terminal would display:
  *	//
@@ -223,23 +223,23 @@ template<typename T>
  *		// Data set up
  *				std::vector<int> result;
  *				std::vector<ConPtr> vcA, vcB;
- *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *				ContainerConPtr	ptShvCon( new Container<Con>() );
+ *				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+ *				ContainerConPtr	conContainerPtr( new Container<Con>() );
  *				ConPtr	ptC;
  *				NeuronPtr ptN;
  *				int ids[]= {10, 20, 30};
  *				double weights[] = {1.13, 2.22, 3.33 };
  *				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
  *					ptN.reset( new Neuron( ids[i] ) );
- *					ptShvNeuron->push_back(ptN);
+ *					neuronContainerPtr->push_back(ptN);
  *				}
  *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
+ *					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );
  *					vcA.push_back(ptC);
  *				}
  *		// Test
- *			ptShvCon->store(vcA);
- *			vcB = ptShvCon->load();
+ *			conContainerPtr->store(vcA);
+ *			vcB = conContainerPtr->load();
  *			for (int i=0; i<=2 ; i++) {					// get Ids. Container does not have getId defined
  *					result.push_back( vcB.at(i)->getId());
  *			}

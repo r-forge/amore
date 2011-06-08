@@ -29,7 +29,10 @@ public:
   getId();
 
   bool
-  buildAndAppend(NeuronContainer neuronContainer, std::vector<double> nWeights);
+  buildAndAppend(std::vector<NeuronPtr>::iterator firstNeuron,
+      std::vector<NeuronPtr>::iterator lastNeuron,
+      std::vector<double>::iterator firstWeight,
+      std::vector<double>::iterator lastWeight);
 
   std::vector<double>
   getWeight();
