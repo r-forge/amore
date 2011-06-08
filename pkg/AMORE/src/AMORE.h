@@ -30,9 +30,9 @@ using namespace Rcpp;
 class Con;
 template<typename T>
   class Container;
-class VecCon;
+class ConContainer;
 class Neuron;
-class VecNeuron;
+class NeuronContainer;
 
 #define foreach         BOOST_FOREACH
 
@@ -45,20 +45,20 @@ typedef boost::shared_ptr<Neuron> NeuronPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 typedef boost::shared_ptr<Container<Con> > ContainerConPtr;
 typedef boost::shared_ptr<Container<Neuron> > ContainerNeuronPtr;
-typedef boost::shared_ptr<VecCon> VecConPtr;
-typedef boost::shared_ptr<VecNeuron> VecNeuronPtr;
+typedef boost::shared_ptr<ConContainer> ConContainerPtr;
+typedef boost::shared_ptr<NeuronContainer> NeuronContainerPtr;
 
 #include "Con.h"
 #include "Container.h"
 
-#include "VecCon.h"
+#include "ConContainer.h"
 #include "Neuron.h"
-#include "VecNeuron.h"
+#include "NeuronContainer.h"
 
 #include "Con.cpp"
 #include "Container.cpp"
-#include "VecCon.cpp"
+#include "ConContainer.cpp"
 #include "Neuron.cpp"
-#include "VecNeuron.cpp"
+#include "NeuronContainer.cpp"
 
 

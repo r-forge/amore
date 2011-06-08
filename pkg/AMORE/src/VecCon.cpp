@@ -1,24 +1,24 @@
 /*
- * VecCon.cpp
+ * ConContainer.cpp
  *
  *  Created on: 26/05/2011
  *      Author: mcasl
  */
 
 
-VecCon::VecCon()
+ConContainer::ConContainer()
 {
 }
 
 
-VecCon::VecCon(std::vector<ConPtr> collection) :
+ConContainer::ConContainer(std::vector<ConPtr> collection) :
   Container<Con> (collection)                   // Call to Base constructor
 {
 }
 
-//! Size of the VecCon object
+//! Size of the ConContainer object
 /*!
- * This function returns the size of the VecCon object, that is to say, the number of Con objects it contains.
+ * This function returns the size of the ConContainer object, that is to say, the number of Con objects it contains.
  * \return The size of the vector
  *
  *  \code
@@ -29,7 +29,7 @@ VecCon::VecCon(std::vector<ConPtr> collection) :
  *				std::vector<int> result;
  *				std::vector<ConPtr> vcA, vcB;
  *				ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *				VecConPtr	ptShvCon( new VecCon() );
+ *				ConContainerPtr	ptShvCon( new ConContainer() );
  *				ConPtr	ptC;
  *				NeuronPtr ptN;
  *				int ids[]= {10, 20, 30};
@@ -40,7 +40,7 @@ VecCon::VecCon(std::vector<ConPtr> collection) :
  *				}
  *	// Test
  *				for (int i=0; i<=2 ; i++) {				// and a vector with three connections
- *					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyVecCon
+ *					result.push_back(ptShvCon->numOfCons());		// Append numOfCons to result, create new Con and push_back into MyConContainer
  *					ptC.reset( new Con( ptShvNeuron->load().at(i), weights[i]) );
  *					ptShvCon->push_back(ptC);
  *				}
@@ -51,7 +51,7 @@ VecCon::VecCon(std::vector<ConPtr> collection) :
  * \sa Container::size (alias)
  */
 int
-VecCon::numOfCons()
+ConContainer::numOfCons()
 {
   return size();
 }
@@ -67,7 +67,7 @@ VecCon::numOfCons()
  *  //================
  * 	// Data set up
  *			Neuron N1, N2, N3;
- *			VecCon MyVecCon;
+ *			ConContainer MyConContainer;
  *			std::vector<int> result;
  *
  *			N1.setId(10);
@@ -75,24 +75,24 @@ VecCon::numOfCons()
  *			N3.setId(30);
  *
  *			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *
  *	// Test
- *			MyVecCon.show() ;
- *			MyVecCon.validate();
- *			result=MyVecCon.getId();
+ *			MyConContainer.show() ;
+ *			MyConContainer.validate();
+ *			result=MyConContainer.getId();
  *
  *	// Now result is a vector that contains the values 10, 20 and 30.
  * \endcode
  *
- * \sa getWeight and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getWeight and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 std::vector<int>
-VecCon::getId()
+ConContainer::getId()
 {
   std::vector<int> result;
   result.reserve(numOfCons());
@@ -106,7 +106,7 @@ VecCon::getId()
 
 //! Builds Con objects and appends them to collection.
 /*!
- * This function provides a convenient way of populating a VecCon object by building and apending Con objects to collection.
+ * This function provides a convenient way of populating a ConContainer object by building and apending Con objects to collection.
  * \param FROM  A vector of smart pointers to the neurons to be used in the Con::from fields
  * \param WEIGHT A vector of values to be set in the Con::weight fields
  *
@@ -116,7 +116,7 @@ VecCon::getId()
  * 	//================
  *	// Data set up
  *		std::vector<int> result;
- *		VecCon MyVecCon;
+ *		ConContainer MyConContainer;
  *		std::vector<NeuronPtr> vNeuron;
  *		std::vector<double> vWeight;
  *
@@ -133,25 +133,25 @@ VecCon::getId()
  *		vWeight.push_back(1.2);
  *		vWeight.push_back(2.1);
  *
- *		MyVecCon.buildAndAppend(vNeuron, vWeight);
+ *		MyConContainer.buildAndAppend(vNeuron, vWeight);
  *
- *		result=MyVecCon.getId();
+ *		result=MyConContainer.getId();
  *
  *	// Now result is a vector that contains the values 11, 22 and 32.
  * \endcode
  *
- * \sa append and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa append and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 bool
-VecCon::buildAndAppend(VecNeuron neuronContainer, std::vector<double> nWeights)
+ConContainer::buildAndAppend(NeuronContainer neuronContainer, std::vector<double> nWeights)
 {
   BEGIN_RCPP
   if (neuronContainer.empty())
-    { throw std::range_error("[VecCon::BuildAndAppend]: Error, neuronContainer is empty");}
+    { throw std::range_error("[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");}
   if (neuronContainer.size() != nWeights.size())
     {
       throw std::range_error(
-          "[VecCon::buildAndAppend]: Error, neuronContainer.size() != nWeights.size()");
+          "[ConContainer::buildAndAppend]: Error, neuronContainer.size() != nWeights.size()");
     }
   reserve(size() + neuronContainer.size());
   ConPtr ptCon;
@@ -166,11 +166,11 @@ VecCon::buildAndAppend(VecNeuron neuronContainer, std::vector<double> nWeights)
   return true;
 END_RCPP}
 
-//! Getter of the weight field of the Con objects related to VecCon
+//! Getter of the weight field of the Con objects related to ConContainer
 /*!
  * This function provides a convenient way of getting the values of
  * the weight field of those Con object pointed to by the smart pointer
- * stored in the VecCon object.
+ * stored in the ConContainer object.
  * \return A numeric (double) vector with the weights
  *
  * \code
@@ -179,7 +179,7 @@ END_RCPP}
  * 	//================
  *	// Data set up
  *		std::vector<double> result;
- *		VecCon MyVecCon;
+ *		ConContainer MyConContainer;
  *		std::vector<NeuronPtr> vNeuron;
  *		std::vector<double> vWeight;
  *
@@ -196,17 +196,17 @@ END_RCPP}
  *		vWeight.push_back(1.2);
  *		vWeight.push_back(2.1);
  *
- *		MyVecCon.buildAndAppend(vNeuron, vWeight);
+ *		MyConContainer.buildAndAppend(vNeuron, vWeight);
  *
- *		result=MyVecCon.getWeight();
+ *		result=MyConContainer.getWeight();
  *
  *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
  * \endcode
  *
- * \sa getId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getId and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 std::vector<double>
-VecCon::getWeight()
+ConContainer::getWeight()
 {
   std::vector<double> result;
   result.reserve(numOfCons());
@@ -218,11 +218,11 @@ VecCon::getWeight()
   return result;
 }
 
-//! Setter of the weight field of the Con objects related to VecCon
+//! Setter of the weight field of the Con objects related to ConContainer
 /*!
- * This function provides a convenient way of setting the values of the weight field of those Con objects pointed to by the smart pointer stored in the VecCon object.
+ * This function provides a convenient way of setting the values of the weight field of those Con objects pointed to by the smart pointer stored in the ConContainer object.
  *
- * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the VecCon object.
+ * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
  *
  * \return true in case no exception is thrown
  *
@@ -234,7 +234,7 @@ VecCon::getWeight()
  *		std::vector<double> result;
  *			int ids[]= {1, 2, 3};
  *			double weights[] = {12.3, 1.2, 2.1 };
- *			VecCon MyVecCon;
+ *			ConContainer MyConContainer;
  *			std::vector<NeuronPtr> vNeuron;
  *			std::vector<double> vWeight;
  *			NeuronPtr ptNeuron;
@@ -244,32 +244,32 @@ VecCon::getWeight()
  *	 		vNeuron.push_back(ptNeuron);
  *			vWeight.push_back(0);					// weights are set to 0
  *			}
- *			MyVecCon.buildAndAppend(vNeuron, vWeight);
- *			MyVecCon.show();
+ *			MyConContainer.buildAndAppend(vNeuron, vWeight);
+ *			MyConContainer.show();
  *
  *			for (int i=0; i<=2; i++) {
  *				vWeight.at(i)=weights[i];
  *			}
  *	// Test
- *			MyVecCon.setWeight(vWeight);			// weights are set to 12.3, 1.2 and 2.1
- *			result=MyVecCon.getWeight();
+ *			MyConContainer.setWeight(vWeight);			// weights are set to 12.3, 1.2 and 2.1
+ *			result=MyConContainer.getWeight();
  *
  *	// Now result is a vector that contains the values 12.3, 1.2 and 2.1 .
  *
  * \endcode
  *
- * \sa getWeight and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getWeight and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 bool
-VecCon::setWeight(std::vector<double> nWeights)
+ConContainer::setWeight(std::vector<double> nWeights)
 {
   BEGIN_RCPP
   if (nWeights.empty())
-    { throw std::range_error("[ C++ VecCon::setWeight]: Error, vWeight is empty");}
+    { throw std::range_error("[ C++ ConContainer::setWeight]: Error, vWeight is empty");}
   if (nWeights.size() != size())
     {
       throw std::range_error(
-          "[C++ VecCon::setWeight]: Error, vWeight.size() != collection.size()");
+          "[C++ ConContainer::setWeight]: Error, vWeight.size() != collection.size()");
     }
   std::vector<double>::iterator itrWeight = nWeights.begin();
   foreach (ConPtr itr, *this)
@@ -280,9 +280,9 @@ VecCon::setWeight(std::vector<double> nWeights)
   return true;
 END_RCPP}
 
-//! Getter of the from field of the Con objects related to VecCon
+//! Getter of the from field of the Con objects related to ConContainer
 /*!
- * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the VecCon object.
+ * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the ConContainer object.
  *
  * \return An std::vector<NeuronPtr> with the pointer to the incoming neurons.
  *
@@ -294,7 +294,7 @@ END_RCPP}
  *		std::vector<double> result;
  *		int ids[]= {1, 2, 3};
  *		double weights[] = {12.3, 1.2, 2.1 };
- *		VecCon MyVecCon;
+ *		ConContainer MyConContainer;
  *		std::vector<NeuronPtr> vNeuron;
  *		std::vector<double> vWeight;
  *		NeuronPtr ptNeuron;
@@ -304,9 +304,9 @@ END_RCPP}
  *				vNeuron.push_back(ptNeuron);
  *				vWeight.push_back(weights[i]);
  *			}
- *			MyVecCon.buildAndAppend(vNeuron, vWeight);
+ *			MyConContainer.buildAndAppend(vNeuron, vWeight);
  *		// Test
- *			vNeuron=MyVecCon.getFrom();
+ *			vNeuron=MyConContainer.getFrom();
  *			for (int i=0; i<=2; i++) {
  *				result.push_back(vNeuron.at(i)->getId());
  *			}
@@ -315,12 +315,12 @@ END_RCPP}
  *
  * \endcode
  *
- * \sa getId and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getId and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
-VecNeuron
-VecCon::getFrom()
+NeuronContainer
+ConContainer::getFrom()
 {
-  VecNeuron result;
+  NeuronContainer result;
   result.reserve(numOfCons());
   foreach(ConPtr itr, *this)
     {
@@ -329,11 +329,11 @@ VecCon::getFrom()
   return result;
 }
 
-//! Setter of the from fields of the Con objects related to VecCon
+//! Setter of the from fields of the Con objects related to ConContainer
 /*!
- * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the VecCon object.
+ * This function provides a convenient way of getting the values of the weight field of those Con object pointed to by the smart pointer stored in the ConContainer object.
  *
- * \param vFrom An std::vector<NeuronPtr> with the pointers to be set in the from fields of the VecCon object.
+ * \param vFrom An std::vector<NeuronPtr> with the pointers to be set in the from fields of the ConContainer object.
  *
  * \return true if not exception is thrown
  *
@@ -346,7 +346,7 @@ VecCon::getFrom()
  *	// Data set up
  *		std::vector<int> result;
  *		ContainerNeuronPtr	ptShvNeuron( new Container<Neuron>() );
- *		VecConPtr	ptShvCon( new VecCon() );
+ *		ConContainerPtr	ptShvCon( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *
@@ -370,18 +370,18 @@ VecCon::getFrom()
  *
  * \endcode
  *
- * \sa getFrom and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa getFrom and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
 bool
-VecCon::setFrom(VecNeuron neuronContainer)
+ConContainer::setFrom(NeuronContainer neuronContainer)
 {
   BEGIN_RCPP
   if (neuronContainer.empty())
-    { throw std::range_error("[ C++ VecCon::setFrom]: Error, w is empty");}
+    { throw std::range_error("[ C++ ConContainer::setFrom]: Error, w is empty");}
   if (neuronContainer.size() != size())
     {
       throw std::range_error(
-          "[C++ VecCon::setFrom]: Error, neuronContainer.size() != collection.size()");
+          "[C++ ConContainer::setFrom]: Error, neuronContainer.size() != collection.size()");
     }
   std::vector<NeuronPtr>::iterator itrNeuron = neuronContainer.begin();
   foreach(ConPtr itr , *this)
@@ -426,7 +426,7 @@ struct CompareId
 
 //! Erase the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of removing some Con objects from the collection field of the VecCon object.
+ * Provides a convenient way of removing some Con objects from the collection field of the ConContainer object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to remove.
  *
@@ -438,8 +438,8 @@ struct CompareId
  *	// Data set up
  *			std::vector<int> result;
  *			std::vector<NeuronPtr> vNeuron;
- *			VecConPtr	ptShvCon( new VecCon() );
- *			VecConPtr vErased;
+ *			ConContainerPtr	ptShvCon( new ConContainer() );
+ *			ConContainerPtr vErased;
  *			ConPtr	ptC;
  *			NeuronPtr ptN;
  *			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
@@ -486,11 +486,11 @@ struct CompareId
  *
  * \endcode
  *
- * \sa select and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ * \sa select and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  *
  */
 void
-VecCon::erase(std::vector<int> nIds)
+ConContainer::erase(std::vector<int> nIds)
 {
   std::vector<ConPtr>::iterator itr;
   sort(begin(), end(), CompareId());
@@ -502,7 +502,7 @@ VecCon::erase(std::vector<int> nIds)
 
 //! Selects the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of selecting some Con objects from the collection field of the VecCon object.
+ * Provides a convenient way of selecting some Con objects from the collection field of the ConContainer object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to select.
  *
@@ -514,7 +514,7 @@ VecCon::erase(std::vector<int> nIds)
  *	// Data set up
  *		std::vector<int> result;
  *		std::vector<NeuronPtr> vNeuron;
- *		VecConPtr	ptShvCon( new VecCon() );
+ *		ConContainerPtr	ptShvCon( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *		int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
@@ -535,19 +535,19 @@ VecCon::erase(std::vector<int> nIds)
  *		toSelect.push_back(5);
  *		toSelect.push_back(7);
  *
- *		VecConPtr  vSelect (  ptShvCon->select(toSelect)  );
+ *		ConContainerPtr  vSelect (  ptShvCon->select(toSelect)  );
  *		result=vSelect->getId();
  *
  *		// Now, result is a numeric vector with the values 1, 3, 5 and 7.
  *
  *		\endcode
  *
- *		\sa erase and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ *		\sa erase and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  */
-VecConPtr
-VecCon::select(std::vector<int> nIds)
+ConContainerPtr
+ConContainer::select(std::vector<int> nIds)
 {
-  VecConPtr result(new VecCon);
+  ConContainerPtr result(new ConContainer);
   result->reserve(size());
   sort(begin(), end(), CompareId());
   sort(nIds.begin(), nIds.end());
@@ -559,7 +559,7 @@ VecCon::select(std::vector<int> nIds)
 
 //! Getter of the weights of the specified elements from the vecCom object.
 /*!
- * Provides a convenient way of getting the weights of some Con objects from the collection field of the VecCon object.
+ * Provides a convenient way of getting the weights of some Con objects from the collection field of the ConContainer object.
  *
  * \param vFrom An std::vector<int> with the Ids of the connections to select
  *
@@ -574,7 +574,7 @@ VecCon::select(std::vector<int> nIds)
  *
  *		std::vector<double> result;
  *		std::vector<NeuronPtr> vNeuron;
- *		VecConPtr	ptShvCon( new VecCon() );
+ *		ConContainerPtr	ptShvCon( new ConContainer() );
  *		ConPtr	ptC;
  *		NeuronPtr ptN;
  *		int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
@@ -602,20 +602,20 @@ VecCon::select(std::vector<int> nIds)
  *
  * \endcode
  *
- *	\sa setWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ *	\sa setWeigth and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  *
  */
 std::vector<double>
-VecCon::getWeight(std::vector<int> nIds)
+ConContainer::getWeight(std::vector<int> nIds)
 {
   return select(nIds)->getWeight();
 }
 
-//! Setter of the weights of the specified elements from the VecCon object.
+//! Setter of the weights of the specified elements from the ConContainer object.
 /*!
- * Provides a convenient way of setting the weights of some Con objects from the collection field of the VecCon object.
+ * Provides a convenient way of setting the weights of some Con objects from the collection field of the ConContainer object.
  *
- * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the VecCon object.
+ * \param vWeight A numeric (double) vector with the weights to be set in the Con objects contained in the ConContainer object.
  * \param vFrom An std::vector<int> with the Ids of the connections to select
  *
  * \return true in case no exception is thrown
@@ -628,7 +628,7 @@ VecCon::getWeight(std::vector<int> nIds)
  *	// Data set up
  *		std::vector<double> result;
  *			std::vector<NeuronPtr> vNeuron;
- *			VecConPtr	ptShvCon( new VecCon() );
+ *			ConContainerPtr	ptShvCon( new ConContainer() );
  *			ConPtr	ptC;
  *			NeuronPtr ptN;
  *			int ids[]= {11, 10, 9, 3, 4, 5, 6, 7, 8, 2, 1};
@@ -663,11 +663,11 @@ VecCon::getWeight(std::vector<int> nIds)
  *
  * \endcode
  *
- *	\sa getWeigth and the unit test files, e.g. runit.Cpp.VecCon.R, for further examples.
+ *	\sa getWeigth and the unit test files, e.g. runit.Cpp.ConContainer.R, for further examples.
  *
  */
 bool
-VecCon::setWeight(std::vector<double> nWeights, std::vector<int> nIds)
+ConContainer::setWeight(std::vector<double> nWeights, std::vector<int> nIds)
 {
 BEGIN_RCPP
 return select(nIds)->setWeight(nWeights);
@@ -676,17 +676,17 @@ END_RCPP
 
 //! Object validator
 /*! This method checks the object for internal coherence.
- *  A try / catch mechanism exits normal execution and returns control to the R terminal in case the contents of the VecCon object are identified as corrupted.
+ *  A try / catch mechanism exits normal execution and returns control to the R terminal in case the contents of the ConContainer object are identified as corrupted.
  *
  * \return true in case the checks are Ok.
  *
  * \throw An std::range error if weight or from are not finite.
  *
- * \sa The unit test files, e.g., runit.Cpp.VecCon.R, for usage examples.
+ * \sa The unit test files, e.g., runit.Cpp.ConContainer.R, for usage examples.
  */
 
 bool
-VecCon::validate()
+ConContainer::validate()
 {
   BEGIN_RCPP
 
@@ -695,7 +695,7 @@ VecCon::validate()
   sort(vIds.begin(), vIds.end());
   itr = adjacent_find(vIds.begin(), vIds.end());
   if (itr != vIds.end())
-    throw std::range_error("[C++ VecCon::validate]: Error, duplicated Id.");
+    throw std::range_error("[C++ ConContainer::validate]: Error, duplicated Id.");
   Container<Con>::validate();
   return (true);
 END_RCPP};

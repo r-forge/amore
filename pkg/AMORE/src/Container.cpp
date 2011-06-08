@@ -42,7 +42,7 @@ template<typename T>
  *		//================
  *		// Data set up
  *			Neuron N1, N2, N3;
- *			Container<Con> MyVecCon;
+ *			Container<Con> MyConContainer;
  *			std::vector<ConPtr> vc;
  *			std::vector<int> result;
  *			N1.setId(10);
@@ -50,13 +50,13 @@ template<typename T>
  *			N3.setId(30);
  *		// Test
  *			ConPtr ptCon( new Con(&N1, 1.13) );  	// Create new Con and initialize ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N2, 2.22) );		// create new Con and assign to ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *			ptCon.reset(  new Con(&N3, 3.33) );		// create new Con and assign to ptCon
- *			MyVecCon.push_back(ptCon);				// push_back
+ *			MyConContainer.push_back(ptCon);				// push_back
  *
- *			vc = MyVecCon.load();
+ *			vc = MyConContainer.load();
  *
  *			result.push_back(vc.at(0)->getId());
  * 			result.push_back(vc.at(1)->getId());

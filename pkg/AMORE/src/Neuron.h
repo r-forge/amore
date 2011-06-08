@@ -26,7 +26,7 @@ class Neuron
    *
    */
 
-  VecCon con;
+  ConContainer con;
   double outputValue;
 
 public:
@@ -34,7 +34,7 @@ public:
 
   Neuron(int Id);
 
-  Neuron(int Id, VecCon con);
+  Neuron(int Id, ConContainer con);
 
   ~Neuron();
 
@@ -44,7 +44,7 @@ public:
   void
   setId(int value);
 
-  VecNeuron
+  NeuronContainer
   getFrom();
 
   std::vector<int>
@@ -54,7 +54,7 @@ public:
   getWeight();
 
   bool
-  setFrom(VecNeuron neuronContainer);
+  setFrom(NeuronContainer neuronContainer);
 
   bool
   setWeight(std::vector<double> nWeights);

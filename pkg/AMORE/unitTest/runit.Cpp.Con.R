@@ -57,6 +57,8 @@ test.Con.Cpp.setFrom <- function() {
 	result <- testCodefun()
 	checkEquals(result, 1)
 	# [1] TRUE
+
+	# [1] TRUE
 }
 
 

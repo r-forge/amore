@@ -1,5 +1,5 @@
 /*
- *  VecNeuron.h
+ *  NeuronContainer.h
  *
  *  Created on: 03/06/2011
  *  Author: mcasl
@@ -14,14 +14,14 @@
  *   The vecNeuron class provides a simple class for a vector of neurons. It's named after the R equivalent Reference Class.
  */
 
-class VecNeuron : public Container<Neuron>
+class NeuronContainer : public Container<Neuron>
 {
 public:
-  VecNeuron();
+  NeuronContainer();
 
-  VecNeuron(std::vector<NeuronPtr> vNeuron);
+  NeuronContainer(std::vector<NeuronPtr> vNeuron);
 
-  ~VecNeuron();
+  ~NeuronContainer();
 
   int
   numOfNeurons();
@@ -41,11 +41,11 @@ public:
   std::vector<std::vector<double> > // Don't forget the blank space between "> >"
   getWeight();
 
-  std::vector<VecNeuron>
+  std::vector<NeuronContainer>
   getFrom();
 
   void
-  setFrom(std::vector<VecNeuron> neuronArray);
+  setFrom(std::vector<NeuronContainer> neuronArray);
 
 
   void
@@ -65,7 +65,7 @@ public:
   void
   erase(std::vector<int> FROM); // Move it to Container
 
-  VecCon
+  ConContainer
   select(std::vector<int> FROM); // Move it to Container
 
   bool

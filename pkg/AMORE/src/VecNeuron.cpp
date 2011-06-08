@@ -1,31 +1,31 @@
 /*
- *  VecNeuron.cpp
+ *  NeuronContainer.cpp
  *
  *  Created on: 03/06/2011
  *
  */
 
-VecNeuron::VecNeuron()
+NeuronContainer::NeuronContainer()
 {
 }
 
-VecNeuron::VecNeuron(std::vector<NeuronPtr> collection) :
+NeuronContainer::NeuronContainer(std::vector<NeuronPtr> collection) :
   Container<Neuron> (collection)
 {
 }
 
-VecNeuron::~VecNeuron()
+NeuronContainer::~NeuronContainer()
 {
 }
 
 int
-VecNeuron::numOfNeurons()
+NeuronContainer::numOfNeurons()
 {
   size();
 }
 
 std::vector<int>
-VecNeuron::numOfCons()
+NeuronContainer::numOfCons()
 {
   std::vector<int> nIds;
   foreach(NeuronPtr itrNeuron, *this)
@@ -36,7 +36,7 @@ VecNeuron::numOfCons()
 }
 
 std::vector<int>
-VecNeuron::getId()
+NeuronContainer::getId()
 {
   std::vector<int> nIds;
   foreach(NeuronPtr itrNeuron, *this)
@@ -47,7 +47,7 @@ VecNeuron::getId()
 }
 
 void
-VecNeuron::setId(std::vector<int> nIds)
+NeuronContainer::setId(std::vector<int> nIds)
 {
   std::vector<int>::iterator itrId(nIds.begin());
 foreach(NeuronPtr itrNeuron, *this)
@@ -57,7 +57,7 @@ foreach(NeuronPtr itrNeuron, *this)
 }
 
 std::vector<std::vector<int> >
-VecNeuron::getConId()
+NeuronContainer::getConId()
 {
   std::vector < std::vector<int> > result;
   foreach(NeuronPtr itrNeuron, *this)
@@ -68,7 +68,7 @@ VecNeuron::getConId()
 }
 
 std::vector<std::vector<double> > // Don't forget the blank space between "> >"
-VecNeuron::getWeight()
+NeuronContainer::getWeight()
 {
   std::vector < std::vector<double> > result;
   foreach(NeuronPtr itrNeuron, *this)
@@ -78,10 +78,10 @@ VecNeuron::getWeight()
   return result;
 }
 
-std::vector<VecNeuron>
-VecNeuron::getFrom()
+std::vector<NeuronContainer>
+NeuronContainer::getFrom()
 {
-  std::vector < VecNeuron > result;
+  std::vector < NeuronContainer > result;
   foreach(NeuronPtr itrNeuron, *this)
     {
       result.push_back( itrNeuron->getFrom() );
@@ -90,9 +90,9 @@ VecNeuron::getFrom()
 }
 
 void
-VecNeuron::setFrom(std::vector<VecNeuron> neuronArray)
+NeuronContainer::setFrom(std::vector<NeuronContainer> neuronArray)
 {
-  std::vector<VecNeuron>::iterator itrArray(neuronArray.begin());
+  std::vector<NeuronContainer>::iterator itrArray(neuronArray.begin());
 foreach(NeuronPtr itrNeuron, *this)
   {
     itrNeuron->setFrom(*itrArray);
@@ -101,7 +101,7 @@ foreach(NeuronPtr itrNeuron, *this)
 }
 
 void
-VecNeuron::setWeight(std::vector<std::vector<double> > value)
+NeuronContainer::setWeight(std::vector<std::vector<double> > value)
 {
   std::vector<std::vector<double> >::iterator itrValue(value.begin());
 foreach(NeuronPtr itrNeuron, *this)
