@@ -35,14 +35,14 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<a xlink:href="class_vec_con.html" target="_top" xlink:title="A vector of connections.">
+<a xlink:href="class_con_container.html" target="_top" xlink:title="A vector of connections.">
 <polygon fill="white" stroke="black" points="90,-273 90,-473 192,-473 192,-273 90,-273"/>
-<text text-anchor="middle" x="141" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">VecCon</text>
+<text text-anchor="middle" x="141" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">ConContainer</text>
 <polyline fill="none" stroke="black" points="90,-454 192,-454 "/>
 <text text-anchor="middle" x="141" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="90,-435 192,-435 "/>
-<text text-anchor="start" x="98" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">+ VecCon()</text>
-<text text-anchor="start" x="98" y="-411" font-family="Helvetica,sans-Serif" font-size="10.00">+ VecCon()</text>
+<text text-anchor="start" x="98" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">+ ConContainer()</text>
+<text text-anchor="start" x="98" y="-411" font-family="Helvetica,sans-Serif" font-size="10.00">+ ConContainer()</text>
 <text text-anchor="start" x="98" y="-400" font-family="Helvetica,sans-Serif" font-size="10.00">+ numOfCons()</text>
 <text text-anchor="start" x="98" y="-389" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 <text text-anchor="start" x="98" y="-378" font-family="Helvetica,sans-Serif" font-size="10.00">+ buildAndAppend()</text>

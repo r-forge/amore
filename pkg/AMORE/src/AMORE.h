@@ -50,7 +50,6 @@ typedef boost::shared_ptr<NeuronContainer> NeuronContainerPtr;
 
 #include "Con.h"
 #include "Container.h"
-
 #include "ConContainer.h"
 #include "Neuron.h"
 #include "NeuronContainer.h"

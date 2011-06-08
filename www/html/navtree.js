@@ -5,11 +5,11 @@ var NAVTREE =
     [ "Class List", "annotated.html", [
       [ "CompareId", "struct_compare_id.html", null ],
       [ "Con", "class_con.html", null ],
+      [ "ConContainer", "class_con_container.html", null ],
       [ "Container< T >", "class_container.html", null ],
       [ "Neuron", "class_neuron.html", null ],
-      [ "VecCon", "class_vec_con.html", null ],
-      [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ],
-      [ "VecNeuron", "class_vec_neuron.html", null ]
+      [ "NeuronContainer", "class_neuron_container.html", null ],
+      [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
@@ -17,10 +17,10 @@ var NAVTREE =
       [ "Con", "class_con.html", null ],
       [ "Container< T >", "class_container.html", null ],
       [ "Container< Con >", "class_container.html", [
-        [ "VecCon", "class_vec_con.html", null ]
+        [ "ConContainer", "class_con_container.html", null ]
       ] ],
       [ "Container< Neuron >", "class_container.html", [
-        [ "VecNeuron", "class_vec_neuron.html", null ]
+        [ "NeuronContainer", "class_neuron_container.html", null ]
       ] ],
       [ "Neuron", "class_neuron.html", null ],
       [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]

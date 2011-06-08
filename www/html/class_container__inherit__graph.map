@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="11,369,136,666"/>
-<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="160,369,304,666"/>
-<area shape="rect" id="node5" href="$class_vec_con.html" title="A vector of connections." alt="" coords="5,718,141,986"/>
-<area shape="rect" id="node9" href="$class_vec_neuron.html" title="A vector of neurons." alt="" coords="168,733,296,971"/>
+<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="13,369,139,666"/>
+<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="165,369,309,666"/>
+<area shape="rect" id="node5" href="$class_con_container.html" title="A vector of connections." alt="" coords="5,718,141,986"/>
+<area shape="rect" id="node9" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="165,733,312,971"/>
 </map>
