@@ -26,19 +26,19 @@ Con::Con() :
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  * \param w The new value (double) to be set in the \ref weight field.
  */
-Con::Con(NeuronPtr from, double weight) :
-  from(from), weight(weight)
+Con::Con(NeuronPtr neuronPtr, double value) :
+  from(neuronPtr), weight(value)
 {
 }
-;
+
 
 //! Constructor
 /*
  * Constructor, from=f, weight=0
  * \param f A pointer to the neuron that is to be inserted in the \ref from field.
  */
-Con::Con(NeuronPtr from) :
-  from(from), weight(0)
+Con::Con(NeuronPtr neuronPtr) :
+  from(neuronPtr), weight(0)
 {
 }
 ;
@@ -97,9 +97,9 @@ Con::getFrom()
  * \sa getFrom and getId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
  */
 void
-Con::setFrom(NeuronPtr from_)
+Con::setFrom(NeuronPtr neuronPtr)
 {
-  from = from_;
+  from = neuronPtr;
 }
 
 //! A getter of the Id of the Neuron pointed by the from field.
@@ -124,10 +124,10 @@ Con::setFrom(NeuronPtr from_)
 int
 Con::getId()
 {
-  if (from.use_count() != 0)
+  if (from.use_count() > 0)
     {
-      NeuronPtr ptNeuron(from);
-      return (ptNeuron->getId());
+      NeuronPtr neuronPtr(from);
+      return (neuronPtr->getId());
     }
   else
     {
@@ -186,9 +186,9 @@ Con::getWeight()
  * \sa getWeight and the unit test files (e.g. runit.Cpp.Con.R)
  */
 void
-Con::setWeight(double w)
+Con::setWeight(double value)
 {
-  weight = w;
+  weight = value;
 }
 
 //! Pretty print of the Con information

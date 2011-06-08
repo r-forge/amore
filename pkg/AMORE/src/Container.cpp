@@ -68,9 +68,9 @@ template<typename T>
  */
 template<typename T>
   void
-  Container<T>::push_back(boost::shared_ptr<T> TsharedPtr)
+  Container<T>::push_back(boost::shared_ptr<T> element)
   {
-    collection.push_back(TsharedPtr);
+    collection.push_back(element);
   }
 ;
 
@@ -265,11 +265,11 @@ template<typename T>
  */
 template<typename T>
   void
-  Container<T>::store(std::vector<boost::shared_ptr<T> > v)
+  Container<T>::store(std::vector<boost::shared_ptr<T> > collectionT)
   {
-    collection = v;
+    collection = collectionT;
   }
-;
+
 
 //! Returns the size or length of the vector
 /*!
@@ -306,6 +306,16 @@ template<typename T>
   {
     return( collection.empty() );
   }
+
+
+
+template<typename T>
+  void
+  Container<T>::clear()
+  {
+    collection.clear();
+  }
+
 
 
 template<typename T>

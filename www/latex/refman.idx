@@ -47,22 +47,24 @@
 \indexentry{append@{append}!Container@{Container}|hyperpage}{23}
 \indexentry{Container@{Container}!begin@{begin}|hyperpage}{25}
 \indexentry{begin@{begin}!Container@{Container}|hyperpage}{25}
-\indexentry{Container@{Container}!empty@{empty}|hyperpage}{25}
-\indexentry{empty@{empty}!Container@{Container}|hyperpage}{25}
+\indexentry{Container@{Container}!clear@{clear}|hyperpage}{25}
+\indexentry{clear@{clear}!Container@{Container}|hyperpage}{25}
+\indexentry{Container@{Container}!empty@{empty}|hyperpage}{26}
+\indexentry{empty@{empty}!Container@{Container}|hyperpage}{26}
 \indexentry{Container@{Container}!end@{end}|hyperpage}{26}
 \indexentry{end@{end}!Container@{Container}|hyperpage}{26}
-\indexentry{Container@{Container}!load@{load}|hyperpage}{26}
-\indexentry{load@{load}!Container@{Container}|hyperpage}{26}
-\indexentry{Container@{Container}!operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}|hyperpage}{27}
-\indexentry{operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}!Container@{Container}|hyperpage}{27}
+\indexentry{Container@{Container}!load@{load}|hyperpage}{27}
+\indexentry{load@{load}!Container@{Container}|hyperpage}{27}
+\indexentry{Container@{Container}!operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}|hyperpage}{28}
+\indexentry{operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}!Container@{Container}|hyperpage}{28}
 \indexentry{Container@{Container}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{28}
 \indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!Container@{Container}|hyperpage}{28}
 \indexentry{Container@{Container}!reserve@{reserve}|hyperpage}{29}
 \indexentry{reserve@{reserve}!Container@{Container}|hyperpage}{29}
-\indexentry{Container@{Container}!resize@{resize}|hyperpage}{29}
-\indexentry{resize@{resize}!Container@{Container}|hyperpage}{29}
-\indexentry{Container@{Container}!show@{show}|hyperpage}{29}
-\indexentry{show@{show}!Container@{Container}|hyperpage}{29}
+\indexentry{Container@{Container}!resize@{resize}|hyperpage}{30}
+\indexentry{resize@{resize}!Container@{Container}|hyperpage}{30}
+\indexentry{Container@{Container}!show@{show}|hyperpage}{30}
+\indexentry{show@{show}!Container@{Container}|hyperpage}{30}
 \indexentry{Container@{Container}!size@{size}|hyperpage}{31}
 \indexentry{size@{size}!Container@{Container}|hyperpage}{31}
 \indexentry{Container@{Container}!store@{store}|hyperpage}{32}
@@ -147,37 +149,51 @@
 \indexentry{VecNeuron@{VecNeuron}!VecNeuron@{VecNeuron}|hyperpage}{69}
 \indexentry{VecNeuron@{VecNeuron}!$\sim $VecNeuron@{$\sim $VecNeuron}|hyperpage}{69}
 \indexentry{$\sim $VecNeuron@{$\sim $VecNeuron}!VecNeuron@{VecNeuron}|hyperpage}{69}
+\indexentry{VecNeuron@{VecNeuron}!getConId@{getConId}|hyperpage}{70}
+\indexentry{getConId@{getConId}!VecNeuron@{VecNeuron}|hyperpage}{70}
+\indexentry{VecNeuron@{VecNeuron}!getFrom@{getFrom}|hyperpage}{70}
+\indexentry{getFrom@{getFrom}!VecNeuron@{VecNeuron}|hyperpage}{70}
 \indexentry{VecNeuron@{VecNeuron}!getId@{getId}|hyperpage}{70}
 \indexentry{getId@{getId}!VecNeuron@{VecNeuron}|hyperpage}{70}
-\indexentry{VecNeuron@{VecNeuron}!numOfNeurons@{numOfNeurons}|hyperpage}{70}
-\indexentry{numOfNeurons@{numOfNeurons}!VecNeuron@{VecNeuron}|hyperpage}{70}
-\indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{71}
-\indexentry{AMORE.h@{AMORE.h}!foreach@{foreach}|hyperpage}{72}
-\indexentry{foreach@{foreach}!AMORE.h@{AMORE.h}|hyperpage}{72}
-\indexentry{AMORE.h@{AMORE.h}!size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}|hyperpage}{72}
-\indexentry{size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}!AMORE.h@{AMORE.h}|hyperpage}{72}
-\indexentry{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}|hyperpage}{72}
-\indexentry{ConPtr@{ConPtr}!AMORE.h@{AMORE.h}|hyperpage}{72}
-\indexentry{AMORE.h@{AMORE.h}!ContainerConPtr@{ContainerConPtr}|hyperpage}{72}
-\indexentry{ContainerConPtr@{ContainerConPtr}!AMORE.h@{AMORE.h}|hyperpage}{72}
-\indexentry{AMORE.h@{AMORE.h}!ContainerNeuronPtr@{ContainerNeuronPtr}|hyperpage}{72}
-\indexentry{ContainerNeuronPtr@{ContainerNeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{72}
-\indexentry{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}|hyperpage}{73}
-\indexentry{NeuronPtr@{NeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{73}
-\indexentry{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}|hyperpage}{73}
-\indexentry{NeuronWeakPtr@{NeuronWeakPtr}!AMORE.h@{AMORE.h}|hyperpage}{73}
-\indexentry{AMORE.h@{AMORE.h}!VecConPtr@{VecConPtr}|hyperpage}{73}
-\indexentry{VecConPtr@{VecConPtr}!AMORE.h@{AMORE.h}|hyperpage}{73}
-\indexentry{AMORE.h@{AMORE.h}!VecNeuronPtr@{VecNeuronPtr}|hyperpage}{73}
-\indexentry{VecNeuronPtr@{VecNeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{73}
-\indexentry{pkg/AMORE/src/Con.cpp@{pkg/AMORE/src/Con.cpp}|hyperpage}{73}
-\indexentry{pkg/AMORE/src/Con.h@{pkg/AMORE/src/Con.h}|hyperpage}{74}
-\indexentry{pkg/AMORE/src/Container.cpp@{pkg/AMORE/src/Container.cpp}|hyperpage}{75}
-\indexentry{pkg/AMORE/src/Container.h@{pkg/AMORE/src/Container.h}|hyperpage}{75}
-\indexentry{pkg/AMORE/src/Neuron.cpp@{pkg/AMORE/src/Neuron.cpp}|hyperpage}{75}
-\indexentry{pkg/AMORE/src/Neuron.h@{pkg/AMORE/src/Neuron.h}|hyperpage}{77}
-\indexentry{pkg/AMORE/src/VecCon.cpp@{pkg/AMORE/src/VecCon.cpp}|hyperpage}{77}
-\indexentry{pkg/AMORE/src/VecCon.h@{pkg/AMORE/src/VecCon.h}|hyperpage}{78}
-\indexentry{pkg/AMORE/src/VecMLPneuron.h@{pkg/AMORE/src/VecMLPneuron.h}|hyperpage}{78}
-\indexentry{pkg/AMORE/src/VecNeuron.cpp@{pkg/AMORE/src/VecNeuron.cpp}|hyperpage}{79}
-\indexentry{pkg/AMORE/src/VecNeuron.h@{pkg/AMORE/src/VecNeuron.h}|hyperpage}{79}
+\indexentry{VecNeuron@{VecNeuron}!getWeight@{getWeight}|hyperpage}{70}
+\indexentry{getWeight@{getWeight}!VecNeuron@{VecNeuron}|hyperpage}{70}
+\indexentry{VecNeuron@{VecNeuron}!numOfCons@{numOfCons}|hyperpage}{70}
+\indexentry{numOfCons@{numOfCons}!VecNeuron@{VecNeuron}|hyperpage}{70}
+\indexentry{VecNeuron@{VecNeuron}!numOfNeurons@{numOfNeurons}|hyperpage}{71}
+\indexentry{numOfNeurons@{numOfNeurons}!VecNeuron@{VecNeuron}|hyperpage}{71}
+\indexentry{VecNeuron@{VecNeuron}!setFrom@{setFrom}|hyperpage}{71}
+\indexentry{setFrom@{setFrom}!VecNeuron@{VecNeuron}|hyperpage}{71}
+\indexentry{VecNeuron@{VecNeuron}!setId@{setId}|hyperpage}{71}
+\indexentry{setId@{setId}!VecNeuron@{VecNeuron}|hyperpage}{71}
+\indexentry{VecNeuron@{VecNeuron}!setWeight@{setWeight}|hyperpage}{72}
+\indexentry{setWeight@{setWeight}!VecNeuron@{VecNeuron}|hyperpage}{72}
+\indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{73}
+\indexentry{AMORE.h@{AMORE.h}!foreach@{foreach}|hyperpage}{74}
+\indexentry{foreach@{foreach}!AMORE.h@{AMORE.h}|hyperpage}{74}
+\indexentry{AMORE.h@{AMORE.h}!size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}|hyperpage}{74}
+\indexentry{size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}!AMORE.h@{AMORE.h}|hyperpage}{74}
+\indexentry{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}|hyperpage}{74}
+\indexentry{ConPtr@{ConPtr}!AMORE.h@{AMORE.h}|hyperpage}{74}
+\indexentry{AMORE.h@{AMORE.h}!ContainerConPtr@{ContainerConPtr}|hyperpage}{74}
+\indexentry{ContainerConPtr@{ContainerConPtr}!AMORE.h@{AMORE.h}|hyperpage}{74}
+\indexentry{AMORE.h@{AMORE.h}!ContainerNeuronPtr@{ContainerNeuronPtr}|hyperpage}{74}
+\indexentry{ContainerNeuronPtr@{ContainerNeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{74}
+\indexentry{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}|hyperpage}{75}
+\indexentry{NeuronPtr@{NeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{75}
+\indexentry{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}|hyperpage}{75}
+\indexentry{NeuronWeakPtr@{NeuronWeakPtr}!AMORE.h@{AMORE.h}|hyperpage}{75}
+\indexentry{AMORE.h@{AMORE.h}!VecConPtr@{VecConPtr}|hyperpage}{75}
+\indexentry{VecConPtr@{VecConPtr}!AMORE.h@{AMORE.h}|hyperpage}{75}
+\indexentry{AMORE.h@{AMORE.h}!VecNeuronPtr@{VecNeuronPtr}|hyperpage}{75}
+\indexentry{VecNeuronPtr@{VecNeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{75}
+\indexentry{pkg/AMORE/src/Con.cpp@{pkg/AMORE/src/Con.cpp}|hyperpage}{75}
+\indexentry{pkg/AMORE/src/Con.h@{pkg/AMORE/src/Con.h}|hyperpage}{76}
+\indexentry{pkg/AMORE/src/Container.cpp@{pkg/AMORE/src/Container.cpp}|hyperpage}{77}
+\indexentry{pkg/AMORE/src/Container.h@{pkg/AMORE/src/Container.h}|hyperpage}{77}
+\indexentry{pkg/AMORE/src/Neuron.cpp@{pkg/AMORE/src/Neuron.cpp}|hyperpage}{77}
+\indexentry{pkg/AMORE/src/Neuron.h@{pkg/AMORE/src/Neuron.h}|hyperpage}{79}
+\indexentry{pkg/AMORE/src/VecCon.cpp@{pkg/AMORE/src/VecCon.cpp}|hyperpage}{79}
+\indexentry{pkg/AMORE/src/VecCon.h@{pkg/AMORE/src/VecCon.h}|hyperpage}{80}
+\indexentry{pkg/AMORE/src/VecMLPneuron.h@{pkg/AMORE/src/VecMLPneuron.h}|hyperpage}{80}
+\indexentry{pkg/AMORE/src/VecNeuron.cpp@{pkg/AMORE/src/VecNeuron.cpp}|hyperpage}{81}
+\indexentry{pkg/AMORE/src/VecNeuron.h@{pkg/AMORE/src/VecNeuron.h}|hyperpage}{81}

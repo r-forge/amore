@@ -46,13 +46,13 @@ typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_conta
 \item 
 std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a9161a87726434f8955398137c647947c}{load} ()
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
-void \hyperlink{class_container_aadc7faacbf43540e46144319f7369a3e}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$)
+void \hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ collectionT)
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 size\_\-type \hyperlink{class_container_a842c3d9eca81b78b59112fde9707b091}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
 \begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
-void \hyperlink{class_container_ae763eb37b721d401327c97016fb2fa54}{append} (\hyperlink{class_container}{Container}$<$ T $>$ v)
+void \hyperlink{class_container_a86d42cf807e073724bd2f8e08dcdfefa}{append} (\hyperlink{class_container}{Container}$<$ T $>$ containerT)
 \begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
 \begin{DoxyCompactList}\small\item\em Pretty print of the Container$<$T$>$ \end{DoxyCompactList}\item 
@@ -63,6 +63,8 @@ void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int
 void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
 \item 
 bool \hyperlink{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{empty} ()
+\item 
+void \hyperlink{class_container_aab0690d44c8e04614cea46935ff49e7a}{clear} ()
 \item 
 boost::shared\_\-ptr$<$ T $>$ \& \hyperlink{class_container_aed3c227120a6a745fa9adfb25c3dd225}{operator\mbox{[}$\,$\mbox{]}} (size\_\-type offset)
 \end{DoxyCompactItemize}
@@ -145,7 +147,7 @@ Definition at line 14 of file Container.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_container_ae763eb37b721d401327c97016fb2fa54}{
+\hypertarget{class_container_a86d42cf807e073724bd2f8e08dcdfefa}{
 \index{Container@{Container}!append@{append}}
 \index{append@{append}!Container@{Container}}
 \subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::append (
@@ -153,7 +155,7 @@ Definition at line 14 of file Container.cpp.
 \item[{{\bf Container}$<$ T $>$}]{v}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_ae763eb37b721d401327c97016fb2fa54}
+\label{class_container_a86d42cf807e073724bd2f8e08dcdfefa}
 
 
 Appends a Container$<$T$>$ object. 
@@ -220,7 +222,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_container_aadc7faacbf43540e46144319f7369a3e}{Container::store} , \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{Container::store} , \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -244,7 +246,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=300pt]{class_container_ae763eb37b721d401327c97016fb2fa54_cgraph}
+\includegraphics[width=300pt]{class_container_a86d42cf807e073724bd2f8e08dcdfefa_cgraph}
 \end{center}
 \end{figure}
 
@@ -284,6 +286,25 @@ Here is the caller graph for this function:
 \end{figure}
 
 
+\hypertarget{class_container_aab0690d44c8e04614cea46935ff49e7a}{
+\index{Container@{Container}!clear@{clear}}
+\index{clear@{clear}!Container@{Container}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Container}$<$ T $>$::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aab0690d44c8e04614cea46935ff49e7a}
+
+
+Definition at line 314 of file Container.cpp.
+
+
+\begin{DoxyCode}
+  {
+    collection.clear();
+  }
+\end{DoxyCode}
 \hypertarget{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{
 \index{Container@{Container}!empty@{empty}}
 \index{empty@{empty}!Container@{Container}}
@@ -309,8 +330,7 @@ Referenced by VecCon::buildAndAppend(), and VecCon::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -410,7 +430,7 @@ The collection vector.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_container_aadc7faacbf43540e46144319f7369a3e}{store} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{store} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -433,7 +453,7 @@ Definition at line 254 of file Container.cpp.
 \label{class_container_aed3c227120a6a745fa9adfb25c3dd225}
 
 
-Definition at line 313 of file Container.cpp.
+Definition at line 323 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -446,7 +466,7 @@ Definition at line 313 of file Container.cpp.
 \index{push\_\-back@{push\_\-back}!Container@{Container}}
 \subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
 \begin{DoxyParamCaption}
-\item[{boost::shared\_\-ptr$<$ T $>$}]{TsharedPtr}
+\item[{boost::shared\_\-ptr$<$ T $>$}]{element}
 \end{DoxyParamCaption}
 )}}
 \label{class_container_afd87c69cb799ed7b434c29090083a285}
@@ -510,13 +530,12 @@ Referenced by VecCon::getFrom().
 
 \begin{DoxyCode}
   {
-    collection.push_back(TsharedPtr);
+    collection.push_back(element);
   }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -550,8 +569,7 @@ Referenced by VecCon::getFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -710,15 +728,15 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{class_container_aadc7faacbf43540e46144319f7369a3e}{
+\hypertarget{class_container_a601371159ddfee9ab29b676207a0cf75}{
 \index{Container@{Container}!store@{store}}
 \index{store@{store}!Container@{Container}}
 \subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::store (
 \begin{DoxyParamCaption}
-\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{v}
+\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{collectionT}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_aadc7faacbf43540e46144319f7369a3e}
+\label{class_container_a601371159ddfee9ab29b676207a0cf75}
 
 
 collection field accessor function 
@@ -738,7 +756,7 @@ Definition at line 268 of file Container.cpp.
 
 \begin{DoxyCode}
   {
-    collection = v;
+    collection = collectionT;
   }
 \end{DoxyCode}
 \hypertarget{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{

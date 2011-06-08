@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035     <a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">load</a>();
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037     <span class="keywordtype">void</span>
-<a name="l00038"></a>00038     <a class="code" href="class_container.html#aadc7faacbf43540e46144319f7369a3e" title="collection field accessor function">store</a>(<span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;);
+<a name="l00038"></a>00038     <a class="code" href="class_container.html#a601371159ddfee9ab29b676207a0cf75" title="collection field accessor function">store</a>(<span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; collectionT);
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040     <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
 <a name="l00041"></a>00041     <a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>();
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00044"></a>00044     <a class="code" href="class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection.">push_back</a>(boost::shared_ptr&lt;T&gt; element);
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046     <span class="keywordtype">void</span>
-<a name="l00047"></a>00047     <a class="code" href="class_container.html#ae763eb37b721d401327c97016fb2fa54" title="Appends a Container&lt;T&gt; object.">append</a>(<a class="code" href="class_container.html">Container&lt;T&gt;</a> v);
+<a name="l00047"></a>00047     <a class="code" href="class_container.html#a86d42cf807e073724bd2f8e08dcdfefa" title="Appends a Container&lt;T&gt; object.">append</a>(<a class="code" href="class_container.html">Container&lt;T&gt;</a> containerT);
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049     <span class="keywordtype">bool</span>
 <a name="l00050"></a>00050     <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
@@ -144,18 +144,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00061"></a>00061     <span class="keywordtype">bool</span>
 <a name="l00062"></a>00062     <a class="code" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">empty</a>();
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064     boost::shared_ptr&lt;T&gt; &amp;
-<a name="l00065"></a>00065     <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">operator[]</a>(<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset);
+<a name="l00064"></a>00064     <span class="keywordtype">void</span>
+<a name="l00065"></a>00065     <a class="code" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">clear</a>();
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067   };
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="preprocessor">#endif </span><span class="comment">/* CONTAINER_H_ */</span>
+<a name="l00067"></a>00067     boost::shared_ptr&lt;T&gt; &amp;
+<a name="l00068"></a>00068     <a class="code" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">operator[]</a>(<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> offset);
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070   };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="preprocessor">#endif </span><span class="comment">/* CONTAINER_H_ */</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_8h.html">Container.h</a>      </li>
-      <li class="footer">Generated on Wed Jun 8 2011 01:21:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jun 8 2011 02:52:43 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

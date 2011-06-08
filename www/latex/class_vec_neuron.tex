@@ -42,7 +42,21 @@ Collaboration diagram for VecNeuron:
 \item 
 int \hyperlink{class_vec_neuron_a3bade484bdea1bec20aa6bb0b977d259}{numOfNeurons} ()
 \item 
+std::vector$<$ int $>$ \hyperlink{class_vec_neuron_a70b0a6f571c1737a6a1d1f6c831fa585}{numOfCons} ()
+\item 
 std::vector$<$ int $>$ \hyperlink{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}{getId} ()
+\item 
+void \hyperlink{class_vec_neuron_a552e694e9ec6a2bc6afc3dfa37ed1a46}{setId} (std::vector$<$ int $>$ nIds)
+\item 
+std::vector$<$ std::vector$<$ int $>$ $>$ \hyperlink{class_vec_neuron_a90a0279a43adde8619add1fc24f2be0d}{getConId} ()
+\item 
+std::vector$<$ std::vector$<$ double $>$ $>$ \hyperlink{class_vec_neuron_a7d8e5973473abd6395e6651d6a3cd72e}{getWeight} ()
+\item 
+std::vector$<$ \hyperlink{class_vec_neuron}{VecNeuron} $>$ \hyperlink{class_vec_neuron_a03fd78d7a064de1ce6509d19cd9d5b58}{getFrom} ()
+\item 
+void \hyperlink{class_vec_neuron_ab1b2fe596ccf959fa86dfd84844aa81a}{setFrom} (std::vector$<$ \hyperlink{class_vec_neuron}{VecNeuron} $>$ neuronArray)
+\item 
+void \hyperlink{class_vec_neuron_ad8a9e6c5a28170c1278a8612bfac706a}{setWeight} (std::vector$<$ std::vector$<$ double $>$ $>$ value)
 \end{DoxyCompactItemize}
 
 
@@ -90,7 +104,7 @@ Definition at line 12 of file VecNeuron.cpp.
 
 \begin{DoxyCode}
                                                     :
-  Container<Neuron>(collection)
+  Container<Neuron> (collection)
 {
 }
 \end{DoxyCode}
@@ -115,6 +129,54 @@ Definition at line 17 of file VecNeuron.cpp.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_vec_neuron_a90a0279a43adde8619add1fc24f2be0d}{
+\index{VecNeuron@{VecNeuron}!getConId@{getConId}}
+\index{getConId@{getConId}!VecNeuron@{VecNeuron}}
+\subsubsection[{getConId}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ int $>$ $>$ VecNeuron::getConId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a90a0279a43adde8619add1fc24f2be0d}
+
+
+Definition at line 60 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector < std::vector<int> > result;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      result.push_back( itrNeuron->getConId() );
+    }
+  return result;
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a03fd78d7a064de1ce6509d19cd9d5b58}{
+\index{VecNeuron@{VecNeuron}!getFrom@{getFrom}}
+\index{getFrom@{getFrom}!VecNeuron@{VecNeuron}}
+\subsubsection[{getFrom}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf VecNeuron} $>$ VecNeuron::getFrom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a03fd78d7a064de1ce6509d19cd9d5b58}
+
+
+Definition at line 82 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector < VecNeuron > result;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      result.push_back( itrNeuron->getFrom() );
+    }
+  return result;
+}
+\end{DoxyCode}
 \hypertarget{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}{
 \index{VecNeuron@{VecNeuron}!getId@{getId}}
 \index{getId@{getId}!VecNeuron@{VecNeuron}}
@@ -126,15 +188,64 @@ Definition at line 17 of file VecNeuron.cpp.
 \label{class_vec_neuron_ab9cf35c1f6b087e0cabfe5294186397c}
 
 
+Definition at line 39 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<int> nIds;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      nIds.push_back( itrNeuron->getId() );
+    }
+  return nIds;
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a7d8e5973473abd6395e6651d6a3cd72e}{
+\index{VecNeuron@{VecNeuron}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!VecNeuron@{VecNeuron}}
+\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ double $>$ $>$ VecNeuron::getWeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a7d8e5973473abd6395e6651d6a3cd72e}
+
+
+Definition at line 71 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector < std::vector<double> > result;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      result.push_back( itrNeuron->getWeight() );
+    }
+  return result;
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a70b0a6f571c1737a6a1d1f6c831fa585}{
+\index{VecNeuron@{VecNeuron}!numOfCons@{numOfCons}}
+\index{numOfCons@{numOfCons}!VecNeuron@{VecNeuron}}
+\subsubsection[{numOfCons}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ int $>$ VecNeuron::numOfCons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a70b0a6f571c1737a6a1d1f6c831fa585}
+
+
 Definition at line 28 of file VecNeuron.cpp.
 
 
 \begin{DoxyCode}
-                {
+{
   std::vector<int> nIds;
-  foreach(NeuronPtr itrNeuron, *this){
-    nIds.push_back( itrNeuron->getId() );
-  }
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      nIds.push_back( itrNeuron->numOfCons() );
+    }
   return nIds;
 }
 \end{DoxyCode}
@@ -163,8 +274,7 @@ References Container$<$ Neuron $>$::size().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -173,6 +283,77 @@ Here is the call graph for this function:
 \end{figure}
 
 
+\hypertarget{class_vec_neuron_ab1b2fe596ccf959fa86dfd84844aa81a}{
+\index{VecNeuron@{VecNeuron}!setFrom@{setFrom}}
+\index{setFrom@{setFrom}!VecNeuron@{VecNeuron}}
+\subsubsection[{setFrom}]{\setlength{\rightskip}{0pt plus 5cm}void VecNeuron::setFrom (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf VecNeuron} $>$}]{neuronArray}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_ab1b2fe596ccf959fa86dfd84844aa81a}
+
+
+Definition at line 93 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<VecNeuron>::iterator itrArray(neuronArray.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setFrom(*itrArray);
+    itrArray++;
+  }
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_a552e694e9ec6a2bc6afc3dfa37ed1a46}{
+\index{VecNeuron@{VecNeuron}!setId@{setId}}
+\index{setId@{setId}!VecNeuron@{VecNeuron}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}void VecNeuron::setId (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ int $>$}]{nIds}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_a552e694e9ec6a2bc6afc3dfa37ed1a46}
+
+
+Definition at line 50 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<int>::iterator itrId(nIds.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setId(*itrId);
+  }
+}
+\end{DoxyCode}
+\hypertarget{class_vec_neuron_ad8a9e6c5a28170c1278a8612bfac706a}{
+\index{VecNeuron@{VecNeuron}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!VecNeuron@{VecNeuron}}
+\subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}void VecNeuron::setWeight (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ std::vector$<$ double $>$ $>$}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_vec_neuron_ad8a9e6c5a28170c1278a8612bfac706a}
+
+
+Definition at line 104 of file VecNeuron.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<std::vector<double> >::iterator itrValue(value.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setWeight(*itrValue);
+    itrValue++;
+  }
+}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

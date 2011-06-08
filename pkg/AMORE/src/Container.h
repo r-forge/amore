@@ -35,7 +35,7 @@ template<typename T>
     load();
 
     void
-    store(typename std::vector<boost::shared_ptr<T> >);
+    store(typename std::vector<boost::shared_ptr<T> > collectionT);
 
     size_type
     size();
@@ -44,7 +44,7 @@ template<typename T>
     push_back(boost::shared_ptr<T> element);
 
     void
-    append(Container<T> v);
+    append(Container<T> containerT);
 
     bool
     show();
@@ -60,6 +60,9 @@ template<typename T>
 
     bool
     empty();
+
+    void
+    clear();
 
     boost::shared_ptr<T> &
     operator[](size_type offset);
