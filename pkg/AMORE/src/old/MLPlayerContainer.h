@@ -1,0 +1,1 @@
+class MLPlayerContainer : public Container<MLPlayer> {};

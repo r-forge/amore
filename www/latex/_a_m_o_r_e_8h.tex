@@ -21,8 +21,7 @@
 {\ttfamily \#include \char`\"{}ConContainer.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}NeuronContainer.cpp\char`\"{}}\par
-Include dependency graph for AMORE.h:
-\nopagebreak
+Include dependency graph for AMORE.h:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -52,6 +51,10 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyper
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_con_container}{ConContainer} $>$ \hyperlink{_a_m_o_r_e_8h_a12fa6814670892b8e70b57d93c999323}{ConContainerPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron_container}{NeuronContainer} $>$ \hyperlink{_a_m_o_r_e_8h_a23aedc5b485b7eeabdf6be68146c3599}{NeuronContainerPtr}
+\item 
+typedef std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$::iterator \hyperlink{_a_m_o_r_e_8h_ad078671e849859e6841fe59c932067f5}{NeuronContainer\_\-iterator}
+\item 
+typedef std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$::const\_\-iterator \hyperlink{_a_m_o_r_e_8h_aac7ebfe62ebc9c8933b145f6a1562540}{NeuronContainer\_\-const\_\-iterator}
 \end{DoxyCompactItemize}
 
 
@@ -112,6 +115,24 @@ Definition at line 46 of file AMORE.h.
 
 
 Definition at line 47 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_aac7ebfe62ebc9c8933b145f6a1562540}{
+\index{AMORE.h@{AMORE.h}!NeuronContainer\_\-const\_\-iterator@{NeuronContainer\_\-const\_\-iterator}}
+\index{NeuronContainer\_\-const\_\-iterator@{NeuronContainer\_\-const\_\-iterator}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronContainer\_\-const\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf NeuronPtr}$>$::const\_\-iterator {\bf NeuronContainer\_\-const\_\-iterator}}}
+\label{_a_m_o_r_e_8h_aac7ebfe62ebc9c8933b145f6a1562540}
+
+
+Definition at line 52 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_ad078671e849859e6841fe59c932067f5}{
+\index{AMORE.h@{AMORE.h}!NeuronContainer\_\-iterator@{NeuronContainer\_\-iterator}}
+\index{NeuronContainer\_\-iterator@{NeuronContainer\_\-iterator}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronContainer\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf NeuronPtr}$>$::iterator {\bf NeuronContainer\_\-iterator}}}
+\label{_a_m_o_r_e_8h_ad078671e849859e6841fe59c932067f5}
+
+
+Definition at line 51 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a23aedc5b485b7eeabdf6be68146c3599}{
 \index{AMORE.h@{AMORE.h}!NeuronContainerPtr@{NeuronContainerPtr}}

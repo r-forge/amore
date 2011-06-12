@@ -7,9 +7,15 @@ var NAVTREE =
       [ "Con", "class_con.html", null ],
       [ "ConContainer", "class_con_container.html", null ],
       [ "Container< T >", "class_container.html", null ],
+      [ "MLPlayer", "class_m_l_player.html", null ],
+      [ "MLPlayerContainer", "class_m_l_player_container.html", null ],
+      [ "MLPneuralNet", "class_m_l_pneural_net.html", null ],
+      [ "MLPneuron", "class_m_l_pneuron.html", null ],
+      [ "MLPneuronContainer", "class_m_l_pneuron_container.html", null ],
+      [ "NeuralNet", "class_neural_net.html", null ],
       [ "Neuron", "class_neuron.html", null ],
       [ "NeuronContainer", "class_neuron_container.html", null ],
-      [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
+      [ "RBFneuralNet", "class_r_b_fneural_net.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
@@ -19,26 +25,45 @@ var NAVTREE =
       [ "Container< Con >", "class_container.html", [
         [ "ConContainer", "class_con_container.html", null ]
       ] ],
-      [ "Container< Neuron >", "class_container.html", [
-        [ "NeuronContainer", "class_neuron_container.html", null ]
+      [ "Container< MLPlayer >", "class_container.html", [
+        [ "MLPlayerContainer", "class_m_l_player_container.html", null ]
       ] ],
-      [ "Neuron", "class_neuron.html", null ],
-      [ "vecMLPneuron", "classvec_m_l_pneuron.html", null ]
+      [ "Container< Neuron >", "class_container.html", [
+        [ "NeuronContainer", "class_neuron_container.html", [
+          [ "MLPneuronContainer", "class_m_l_pneuron_container.html", [
+            [ "MLPlayer", "class_m_l_player.html", null ]
+          ] ]
+        ] ]
+      ] ],
+      [ "NeuralNet", "class_neural_net.html", [
+        [ "MLPneuralNet", "class_m_l_pneural_net.html", null ],
+        [ "RBFneuralNet", "class_r_b_fneural_net.html", null ]
+      ] ],
+      [ "Neuron", "class_neuron.html", [
+        [ "MLPneuron", "class_m_l_pneuron.html", null ]
+      ] ]
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
       [ "pkg/AMORE/src/AMORE.h", "_a_m_o_r_e_8h.html", null ],
       [ "pkg/AMORE/src/Con.cpp", "_con_8cpp.html", null ],
       [ "pkg/AMORE/src/Con.h", "_con_8h.html", null ],
+      [ "pkg/AMORE/src/ConContainer.cpp", "_con_container_8cpp.html", null ],
+      [ "pkg/AMORE/src/ConContainer.h", "_con_container_8h.html", null ],
       [ "pkg/AMORE/src/Container.cpp", "_container_8cpp.html", null ],
       [ "pkg/AMORE/src/Container.h", "_container_8h.html", null ],
+      [ "pkg/AMORE/src/MLPlayer.h", "_m_l_player_8h.html", null ],
+      [ "pkg/AMORE/src/MLPlayerContainer.h", "_m_l_player_container_8h.html", null ],
+      [ "pkg/AMORE/src/MLPneuralNet.h", "_m_l_pneural_net_8h.html", null ],
+      [ "pkg/AMORE/src/MLPneuralNetFactory.cpp", "_m_l_pneural_net_factory_8cpp.html", null ],
+      [ "pkg/AMORE/src/MLPneuron.h", "_m_l_pneuron_8h.html", null ],
+      [ "pkg/AMORE/src/MLPneuronContainer.h", "_m_l_pneuron_container_8h.html", null ],
+      [ "pkg/AMORE/src/NeuralNet.h", "_neural_net_8h.html", null ],
       [ "pkg/AMORE/src/Neuron.cpp", "_neuron_8cpp.html", null ],
       [ "pkg/AMORE/src/Neuron.h", "_neuron_8h.html", null ],
-      [ "pkg/AMORE/src/VecCon.cpp", "_vec_con_8cpp.html", null ],
-      [ "pkg/AMORE/src/VecCon.h", "_vec_con_8h.html", null ],
-      [ "pkg/AMORE/src/VecMLPneuron.h", "_vec_m_l_pneuron_8h.html", null ],
-      [ "pkg/AMORE/src/VecNeuron.cpp", "_vec_neuron_8cpp.html", null ],
-      [ "pkg/AMORE/src/VecNeuron.h", "_vec_neuron_8h.html", null ]
+      [ "pkg/AMORE/src/NeuronContainer.cpp", "_neuron_container_8cpp.html", null ],
+      [ "pkg/AMORE/src/NeuronContainer.h", "_neuron_container_8h.html", null ],
+      [ "pkg/AMORE/src/RBFneuralNet.h", "_r_b_fneural_net_8h.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]
   ] ]

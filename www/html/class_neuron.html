@@ -92,10 +92,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="_neuron_8h_source.html">Neuron.h</a>&gt;</code></p>
 <div class="dynheader">
+Inheritance diagram for Neuron:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron__inherit__graph.svg" width="123" height="419" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
 Collaboration diagram for Neuron:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron__coll__graph.svg" width="468" height="1840" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron__coll__graph.svg" width="468" height="1766" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_neuron-members.html">List of all members.</a></p>
@@ -108,7 +112,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a94a250ce7e167760e593979b899745b1">~Neuron</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">setId</a> (int value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_neuron_container.html">NeuronContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a66862d729f68bc25d11af331f7a1fc51">getFrom</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aac7d538b4a5087f730ba80f19852bced">getConId</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a3349c0a2053e35afa5b7036bb816f8c6">getWeight</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ac8129f5de3ec1c143f40d507b6843649">setFrom</a> (<a class="el" href="class_neuron_container.html">NeuronContainer</a> neuronContainer)</td></tr>
@@ -126,7 +129,7 @@ Private Attributes</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A class to handle the information contained in a general <a class="el" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>. </p>
-<p>A general class for neurons. The MLPneuron and RBFneuron classes will specialize this general class </p>
+<p>A general class for neurons. The <a class="el" href="class_m_l_pneuron.html">MLPneuron</a> and RBFneuron classes will specialize this general class </p>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00016">16</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -243,9 +246,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00048">48</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00043">43</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00095">ConContainer::getId()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_con_container_8cpp_source.html#l00093">ConContainer::getId()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#a387ac09ab154d21c5ad597d32b32dbc2" title="Getter of the Id values of the vector of Cons.">getId</a>();
 }
@@ -253,39 +256,7 @@ Private Attributes</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_aac7d538b4a5087f730ba80f19852bced_cgraph.svg" width="758" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a66862d729f68bc25d11af331f7a1fc51"></a><!-- doxytag: member="Neuron::getFrom" ref="a66862d729f68bc25d11af331f7a1fc51" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_neuron_container.html">NeuronContainer</a> Neuron::getFrom </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00042">42</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
-
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00321">ConContainer::getFrom()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-  <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#a705da30e27c1022561e32c59ce81da5e" title="Getter of the from field of the Con objects related to ConContainer.">getFrom</a>();
-}
-</pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a66862d729f68bc25d11af331f7a1fc51_cgraph.svg" width="771" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_aac7d538b4a5087f730ba80f19852bced_cgraph.svg" width="758" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -309,7 +280,7 @@ Here is the call graph for this function:</div>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00022">Id</a>.</p>
 
-<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00078">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00105">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00073">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00100">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>;
 }
@@ -337,21 +308,13 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00054">54</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00049">49</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00209">ConContainer::getWeight()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#a9a460c0aa4154c29caff4777607b43c1" title="Getter of the weight field of the Con objects related to ConContainer.">getWeight</a>();
+  <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.getWeight();
 }
 </pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a3349c0a2053e35afa5b7036bb816f8c6_cgraph.svg" width="792" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="ae447dce39ed04581609a83d742b585d1"></a><!-- doxytag: member="Neuron::numOfCons" ref="ae447dce39ed04581609a83d742b585d1" args="()" -->
@@ -368,11 +331,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00072">72</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00067">67</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00054">ConContainer::numOfCons()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_con_container_8cpp_source.html#l00052">ConContainer::numOfCons()</a>.</p>
 
-<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00078">show()</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00073">show()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object.">numOfCons</a>();
 }
@@ -380,8 +343,7 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_ae447dce39ed04581609a83d742b585d1_cgraph.svg" width="587" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_ae447dce39ed04581609a83d742b585d1_cgraph.svg" width="587" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -409,9 +371,9 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00060">60</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00055">55</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00376">ConContainer::setFrom()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_con_container_8cpp_source.html#l00333">ConContainer::setFrom()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#aa7f1bbd910afe9c4241e8bd4d5fbc497" title="Setter of the from fields of the Con objects related to ConContainer.">setFrom</a>(neuronContainer);
 }
@@ -419,8 +381,7 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_ac8129f5de3ec1c143f40d507b6843649_cgraph.svg" width="542" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_ac8129f5de3ec1c143f40d507b6843649_cgraph.svg" width="542" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -465,9 +426,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00066">66</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00061">61</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00264">ConContainer::setWeight()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, and <a class="el" href="_con_container_8cpp_source.html#l00270">ConContainer::setWeight()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <a class="code" href="class_neuron.html#a1e92229eb19c3f322e118bdf23b9844e" title="A vector of input connections.">con</a>.<a class="code" href="class_con_container.html#a36dc3c4d86e63eda0a1e9ba17179c0f9" title="Setter of the weight field of the Con objects related to ConContainer.">setWeight</a>(nWeights);
 }
@@ -475,8 +436,7 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a93b27c179c576758ff437b9273b95041_cgraph.svg" width="563" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_a93b27c179c576758ff437b9273b95041_cgraph.svg" width="563" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -496,9 +456,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00078">78</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00073">73</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00030">getId()</a>, <a class="el" href="_neuron_8cpp_source.html#l00072">numOfCons()</a>, and <a class="el" href="_container_8cpp_source.html#l00122">Container&lt; T &gt;::show()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00030">getId()</a>, <a class="el" href="_neuron_8cpp_source.html#l00067">numOfCons()</a>, and <a class="el" href="_container_8cpp_source.html#l00122">Container&lt; T &gt;::show()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a>();
   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
@@ -527,8 +487,7 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a255c3597520c730d798218f7174eff1b_cgraph.svg" width="739" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_a255c3597520c730d798218f7174eff1b_cgraph.svg" width="739" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -548,9 +507,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00105">105</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00100">100</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00030">getId()</a>, and <a class="el" href="_vec_con_8cpp_source.html#l00689">ConContainer::validate()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00029">con</a>, <a class="el" href="_neuron_8cpp_source.html#l00030">getId()</a>, and <a class="el" href="_con_container_8cpp_source.html#l00645">ConContainer::validate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   BEGIN_RCPP
   <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a>() == NA_INTEGER ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ Neuron::validate]: Error, Id is NA.&quot;</span>);
@@ -562,8 +521,7 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a95327aa80a9ec949491f214a0c159b5a_cgraph.svg" width="952" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neuron_a95327aa80a9ec949491f214a0c159b5a_cgraph.svg" width="952" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -585,7 +543,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00029">29</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00048">getConId()</a>, <a class="el" href="_neuron_8cpp_source.html#l00042">getFrom()</a>, <a class="el" href="_neuron_8cpp_source.html#l00054">getWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00072">numOfCons()</a>, <a class="el" href="_neuron_8cpp_source.html#l00060">setFrom()</a>, <a class="el" href="_neuron_8cpp_source.html#l00066">setWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00078">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00105">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_neuron_8cpp_source.html#l00043">getConId()</a>, <a class="el" href="_neuron_8cpp_source.html#l00049">getWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00067">numOfCons()</a>, <a class="el" href="_neuron_8cpp_source.html#l00055">setFrom()</a>, <a class="el" href="_neuron_8cpp_source.html#l00061">setWeight()</a>, <a class="el" href="_neuron_8cpp_source.html#l00073">show()</a>, and <a class="el" href="_neuron_8cpp_source.html#l00100">validate()</a>.</p>
 
 </div>
 </div>
@@ -633,7 +591,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neuron.html">Neuron</a>      </li>
-      <li class="footer">Generated on Wed Jun 8 2011 11:12:57 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jun 11 2011 22:28:04 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

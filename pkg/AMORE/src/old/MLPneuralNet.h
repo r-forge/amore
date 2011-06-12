@@ -1,0 +1,1 @@
+class MLPneuralNet : public NeuralNet {  MLPlayerContainer nLayers;};

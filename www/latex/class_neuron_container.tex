@@ -1,0 +1,415 @@
+\hypertarget{class_neuron_container}{
+\section{NeuronContainer Class Reference}
+\label{class_neuron_container}\index{NeuronContainer@{NeuronContainer}}
+}
+
+
+A vector of neurons.  
+
+
+
+
+{\ttfamily \#include $<$NeuronContainer.h$>$}
+
+
+
+Inheritance diagram for NeuronContainer:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_neuron_container__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for NeuronContainer:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_neuron_container__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_a_m_o_r_e_8h_ad078671e849859e6841fe59c932067f5}{NeuronContainer\_\-iterator} \hyperlink{class_neuron_container_abf81356adaea3bfc64aa03777e9a8def}{iterator}
+\item 
+typedef \hyperlink{_a_m_o_r_e_8h_aac7ebfe62ebc9c8933b145f6a1562540}{NeuronContainer\_\-const\_\-iterator} \hyperlink{class_neuron_container_a41749602f05e7610da7f0f1fd59f5442}{const\_\-iterator}
+\item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}{value\_\-type}
+\item 
+typedef \hyperlink{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}{value\_\-type} const \& \hyperlink{class_neuron_container_a468ffbb00b15553f73da46dd62c91c8d}{const\_\-reference}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_neuron_container_a9b22029b084f7446d2dfafc2e8f89700}{NeuronContainer} ()
+\item 
+\hyperlink{class_neuron_container_a85e1e7946db7317179adbe359dc4ac39}{NeuronContainer} (std::vector$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ neuronContainer)
+\item 
+\hyperlink{class_neuron_container_a908e984efdd9dc08b507c95b23b295dd}{$\sim$NeuronContainer} ()
+\item 
+int \hyperlink{class_neuron_container_a37132392f025c0358d2f47a03bb4854f}{numOfNeurons} ()
+\item 
+std::vector$<$ int $>$ \hyperlink{class_neuron_container_a70c5fd8e735b04c48b29cc17b77ff301}{numOfCons} ()
+\item 
+std::vector$<$ int $>$ \hyperlink{class_neuron_container_a2ca2c86b3a0517636b1a0b3debfd158d}{getId} ()
+\item 
+void \hyperlink{class_neuron_container_a17c57249055e5de605e9663384ca48ce}{setId} (std::vector$<$ int $>$ nIds)
+\item 
+std::vector$<$ std::vector$<$ int $>$ $>$ \hyperlink{class_neuron_container_ad3ce88ba0e1beba4b60bac38c1cd2ccd}{getConId} ()
+\item 
+std::vector$<$ std::vector$<$ double $>$ $>$ \hyperlink{class_neuron_container_ad11f5391b58f32b6db45f31fdc4927e7}{getWeight} ()
+\item 
+std::vector$<$ \hyperlink{class_neuron_container}{NeuronContainer} $>$ \hyperlink{class_neuron_container_a3a0ea5632f0dfbf3159db657d6de84db}{getFrom} ()
+\item 
+void \hyperlink{class_neuron_container_a058524958a0fe0dfd946d9e7f4003310}{setFrom} (std::vector$<$ \hyperlink{class_neuron_container}{NeuronContainer} $>$ neuronArray)
+\item 
+void \hyperlink{class_neuron_container_a54d5bfaf428ab9bc66aac79c312ab997}{setWeight} (std::vector$<$ std::vector$<$ double $>$ $>$ value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A vector of neurons. 
+
+The vecNeuron class provides a simple class for a vector of neurons. It's named after the R equivalent Reference Class. 
+
+Definition at line 17 of file NeuronContainer.h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_neuron_container_a41749602f05e7610da7f0f1fd59f5442}{
+\index{NeuronContainer@{NeuronContainer}!const\_\-iterator@{const\_\-iterator}}
+\index{const\_\-iterator@{const\_\-iterator}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{const\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf NeuronContainer\_\-const\_\-iterator} {\bf NeuronContainer::const\_\-iterator}}}
+\label{class_neuron_container_a41749602f05e7610da7f0f1fd59f5442}
+
+
+Reimplemented from \hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{Container$<$ Neuron $>$}.
+
+
+
+Definition at line 23 of file NeuronContainer.h.
+
+\hypertarget{class_neuron_container_a468ffbb00b15553f73da46dd62c91c8d}{
+\index{NeuronContainer@{NeuronContainer}!const\_\-reference@{const\_\-reference}}
+\index{const\_\-reference@{const\_\-reference}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{const\_\-reference}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf value\_\-type} const\& {\bf NeuronContainer::const\_\-reference}}}
+\label{class_neuron_container_a468ffbb00b15553f73da46dd62c91c8d}
+
+
+Reimplemented from \hyperlink{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{Container$<$ Neuron $>$}.
+
+
+
+Definition at line 27 of file NeuronContainer.h.
+
+\hypertarget{class_neuron_container_abf81356adaea3bfc64aa03777e9a8def}{
+\index{NeuronContainer@{NeuronContainer}!iterator@{iterator}}
+\index{iterator@{iterator}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf NeuronContainer\_\-iterator} {\bf NeuronContainer::iterator}}}
+\label{class_neuron_container_abf81356adaea3bfc64aa03777e9a8def}
+
+
+Reimplemented from \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{Container$<$ Neuron $>$}.
+
+
+
+Definition at line 21 of file NeuronContainer.h.
+
+\hypertarget{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}{
+\index{NeuronContainer@{NeuronContainer}!value\_\-type@{value\_\-type}}
+\index{value\_\-type@{value\_\-type}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{value\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf Neuron}$>$ {\bf NeuronContainer::value\_\-type}}}
+\label{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}
+
+
+Reimplemented from \hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{Container$<$ Neuron $>$}.
+
+
+
+Definition at line 25 of file NeuronContainer.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_neuron_container_a9b22029b084f7446d2dfafc2e8f89700}{
+\index{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}}
+\index{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{NeuronContainer}]{\setlength{\rightskip}{0pt plus 5cm}NeuronContainer::NeuronContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a9b22029b084f7446d2dfafc2e8f89700}
+
+
+Definition at line 8 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a85e1e7946db7317179adbe359dc4ac39}{
+\index{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}}
+\index{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{NeuronContainer}]{\setlength{\rightskip}{0pt plus 5cm}NeuronContainer::NeuronContainer (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf NeuronPtr} $>$}]{neuronContainer}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a85e1e7946db7317179adbe359dc4ac39}
+
+
+Definition at line 12 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+                                                                :
+  Container<Neuron> (collection)
+{
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a908e984efdd9dc08b507c95b23b295dd}{
+\index{NeuronContainer@{NeuronContainer}!$\sim$NeuronContainer@{$\sim$NeuronContainer}}
+\index{$\sim$NeuronContainer@{$\sim$NeuronContainer}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{$\sim$NeuronContainer}]{\setlength{\rightskip}{0pt plus 5cm}NeuronContainer::$\sim$NeuronContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a908e984efdd9dc08b507c95b23b295dd}
+
+
+Definition at line 17 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_neuron_container_ad3ce88ba0e1beba4b60bac38c1cd2ccd}{
+\index{NeuronContainer@{NeuronContainer}!getConId@{getConId}}
+\index{getConId@{getConId}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{getConId}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ int $>$ $>$ NeuronContainer::getConId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_ad3ce88ba0e1beba4b60bac38c1cd2ccd}
+
+
+Definition at line 60 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector < std::vector<int> > result;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      result.push_back( itrNeuron->getConId() );
+    }
+  return result;
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a3a0ea5632f0dfbf3159db657d6de84db}{
+\index{NeuronContainer@{NeuronContainer}!getFrom@{getFrom}}
+\index{getFrom@{getFrom}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{getFrom}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf NeuronContainer}$>$ NeuronContainer::getFrom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a3a0ea5632f0dfbf3159db657d6de84db}
+\hypertarget{class_neuron_container_a2ca2c86b3a0517636b1a0b3debfd158d}{
+\index{NeuronContainer@{NeuronContainer}!getId@{getId}}
+\index{getId@{getId}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ int $>$ NeuronContainer::getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a2ca2c86b3a0517636b1a0b3debfd158d}
+
+
+Reimplemented in \hyperlink{class_m_l_pneuron_container_a91f7def6fa9ee973b95f673642b2c586}{MLPneuronContainer}.
+
+
+
+Definition at line 39 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<int> nIds;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      nIds.push_back( itrNeuron->getId() );
+    }
+  return nIds;
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_ad11f5391b58f32b6db45f31fdc4927e7}{
+\index{NeuronContainer@{NeuronContainer}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ double $>$ $>$ NeuronContainer::getWeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_ad11f5391b58f32b6db45f31fdc4927e7}
+
+
+Definition at line 71 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector < std::vector<double> > result;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      result.push_back( itrNeuron->getWeight() );
+    }
+  return result;
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a70c5fd8e735b04c48b29cc17b77ff301}{
+\index{NeuronContainer@{NeuronContainer}!numOfCons@{numOfCons}}
+\index{numOfCons@{numOfCons}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{numOfCons}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ int $>$ NeuronContainer::numOfCons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a70c5fd8e735b04c48b29cc17b77ff301}
+
+
+Definition at line 28 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<int> nIds;
+  foreach(NeuronPtr itrNeuron, *this)
+    {
+      nIds.push_back( itrNeuron->numOfCons() );
+    }
+  return nIds;
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a37132392f025c0358d2f47a03bb4854f}{
+\index{NeuronContainer@{NeuronContainer}!numOfNeurons@{numOfNeurons}}
+\index{numOfNeurons@{numOfNeurons}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{numOfNeurons}]{\setlength{\rightskip}{0pt plus 5cm}int NeuronContainer::numOfNeurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a37132392f025c0358d2f47a03bb4854f}
+
+
+Definition at line 22 of file NeuronContainer.cpp.
+
+
+
+References Container$<$ Neuron $>$::size().
+
+
+\begin{DoxyCode}
+{
+  size();
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_neuron_container_a37132392f025c0358d2f47a03bb4854f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_neuron_container_a058524958a0fe0dfd946d9e7f4003310}{
+\index{NeuronContainer@{NeuronContainer}!setFrom@{setFrom}}
+\index{setFrom@{setFrom}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{setFrom}]{\setlength{\rightskip}{0pt plus 5cm}void NeuronContainer::setFrom (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ {\bf NeuronContainer} $>$}]{neuronArray}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a058524958a0fe0dfd946d9e7f4003310}
+
+
+Definition at line 83 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<NeuronContainer>::iterator itrArray(neuronArray.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setFrom(*itrArray);
+    itrArray++;
+  }
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a17c57249055e5de605e9663384ca48ce}{
+\index{NeuronContainer@{NeuronContainer}!setId@{setId}}
+\index{setId@{setId}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}void NeuronContainer::setId (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ int $>$}]{nIds}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a17c57249055e5de605e9663384ca48ce}
+
+
+Definition at line 50 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<int>::iterator itrId(nIds.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setId(*itrId);
+  }
+}
+\end{DoxyCode}
+\hypertarget{class_neuron_container_a54d5bfaf428ab9bc66aac79c312ab997}{
+\index{NeuronContainer@{NeuronContainer}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!NeuronContainer@{NeuronContainer}}
+\subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}void NeuronContainer::setWeight (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ std::vector$<$ double $>$ $>$}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_neuron_container_a54d5bfaf428ab9bc66aac79c312ab997}
+
+
+Definition at line 94 of file NeuronContainer.cpp.
+
+
+\begin{DoxyCode}
+{
+  std::vector<std::vector<double> >::iterator itrValue(value.begin());
+foreach(NeuronPtr itrNeuron, *this)
+  {
+    itrNeuron->setWeight(*itrValue);
+    itrValue++;
+  }
+}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/\hyperlink{_neuron_container_8h}{NeuronContainer.h}\item 
+pkg/AMORE/src/\hyperlink{_neuron_container_8cpp}{NeuronContainer.cpp}\end{DoxyCompactItemize}

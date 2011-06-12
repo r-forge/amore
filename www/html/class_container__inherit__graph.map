@@ -1,6 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="13,369,139,666"/>
-<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="165,369,309,666"/>
-<area shape="rect" id="node5" href="$class_con_container.html" title="A vector of connections." alt="" coords="5,718,141,986"/>
-<area shape="rect" id="node9" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="165,733,312,971"/>
+<area shape="rect" id="node3" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="5,369,160,666"/>
+<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="184,369,309,666"/>
+<area shape="rect" id="node11" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="333,369,477,666"/>
+<area shape="rect" id="node5" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="17,799,148,876"/>
+<area shape="rect" id="node9" href="$class_con_container.html" title="A vector of connections." alt="" coords="187,733,307,942"/>
+<area shape="rect" id="node13" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="332,718,479,957"/>
+<area shape="rect" id="node15" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="333,1009,477,1101"/>
+<area shape="rect" id="node17" href="$class_m_l_player.html" title="{MLPlayer\n||}" alt="" coords="368,1152,443,1229"/>
 </map>
