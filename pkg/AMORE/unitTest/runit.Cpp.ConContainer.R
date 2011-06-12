@@ -82,6 +82,7 @@ test.ConContainer.Cpp.numOfCons.show <- function() {
 ###############################################################################
 test.ConContainer.Cpp.BuildAppend <- function() {	
 ###############################################################################
+
 incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 testCode <- "
 			// Data set up
@@ -107,6 +108,134 @@ testCode <- "
 testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 result <- testCodefun()
 checkEquals(result, c( 10, 20, 30))
+# file647ac73d.cpp:54: error: invalid use of incomplete type 'struct NeuronContainer'
+# file647ac73d.cpp:37: error: forward declaration of 'struct NeuronContainer'
+# In file included from file647ac73d.cpp:58:
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:40: error: 'struct NeuronContainer::iterator' has not been declared
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:41: error: 'struct NeuronContainer::iterator' has not been declared
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:45: error: expected ';' before 'std'
+# In file included from file647ac73d.cpp:64:
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.cpp:146: error: no 'bool ConContainer::buildAndAppend(__gnu_cxx::__normal_iterator<boost::shared_ptr<Neuron>*, std::vector<boost::shared_ptr<Neuron>, std::allocator<boost::shared_ptr<Neuron> > > >, __gnu_cxx::__normal_iterator<boost::shared_ptr<Neuron>*, std::vector<boost::shared_ptr<Neuron>, std::allocator<boost::shared_ptr<Neuron> > > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >)' member function declared in class 'ConContainer'
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.cpp:215: error: prototype for 'std::vector<double, std::allocator<double> > ConContainer::getWeight()' does not match any in class 'ConContainer'
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:49: error: candidate is: std::vector<double, std::allocator<double> > ConContainer::getWeight(std::vector<int, std::allocator<int> >)
+# make: *** [file647ac73d.o] Error 1
+# 
+# ERROR(s) during compilation: source code errors or compiler configuration errors!
+# 
+# Program source:
+#   1: #include <Rcpp.h>
+#   2: 
+#   3: /*! \mainpage The AMORE++ package
+#   4:  *
+#   5:  * \section intro_sec Introduction
+#   6:  *
+#   7:  * Here you will find the documentation of the C++ component of the AMORE++ R package.
+#   8:  * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
+#   9:  *
+#  10:  * \section motiv_sec Motivation
+#  11:  *
+#  12:  * Since the release of the previous version of the AMORE many things have changed in the R programming world.
+#  13:  * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
+#  14:  *
+#  15:  * \section RoadMap Road Map
+#  16:  * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
+#  17:  *
+#  18:  */
+#  19: 
+#  20: #include <iostream>
+#  21: #include <sstream>
+#  22: #include <algorithm>
+#  23: #include <vector>
+#  24: #include <iterator>
+#  25: #include <boost/shared_ptr.hpp>
+#  26: #include <boost/weak_ptr.hpp>
+#  27: #include <boost/foreach.hpp>
+#  28: #include <Rcpp.h>
+#  29: 
+#  30: using namespace Rcpp;
+#  31: 
+#  32: class Con;
+#  33: template<typename T>
+#  34:   class Container;
+#  35: class ConContainer;
+#  36: class Neuron;
+#  37: class NeuronContainer;
+#  38: 
+#  39: #define foreach         BOOST_FOREACH
+#  40: 
+#  41: #ifndef size_type
+#  42: #define size_type unsigned int
+#  43: #endif
+#  44: 
+#  45: 
+#  46: 
+#  47: typedef boost::shared_ptr<Con> ConPtr;
+#  48: typedef boost::shared_ptr<Neuron> NeuronPtr;
+#  49: typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
+#  50: typedef boost::shared_ptr<Container<Con> > ContainerConPtr;
+#  51: typedef boost::shared_ptr<Container<Neuron> > ContainerNeuronPtr;
+#  52: typedef boost::shared_ptr<ConContainer> ConContainerPtr;
+#  53: typedef boost::shared_ptr<NeuronContainer> NeuronContainerPtr;
+#  54: typedef std::vector<NeuronPtr>::iterator NeuronContainer::iterator;
+#  55: 
+#  56: #include "Con.h"
+#  57: #include "Container.h"
+#  58: #include "ConContainer.h"
+#  59: #include "Neuron.h"
+#  60: #include "NeuronContainer.h"
+#  61: 
+#  62: #include "Con.cpp"
+#  63: #include "Container.cpp"
+#  64: #include "ConContainer.cpp"
+#  65: #include "Neuron.cpp"
+#  66: #include "NeuronContainer.cpp"
+#  67: 
+#  68: 
+#  69: using namespace Rcpp;
+#  70: extern "C" {
+#  71:   SEXP file647ac73d (  );
+#  72: }
+#  73: 
+#  74: SEXP file647ac73d (  ) {
+#  75: 
+#  76: 			// Data set up
+#  77: 				std::vector<int> result;
+#  78: 				NeuronContainer neuronContainer;
+#  79: 				ConContainerPtr	conContainerPtr( new ConContainer() );
+#  80: 				ConPtr	ptC;
+#  81: 				NeuronPtr ptN;
+#  82: 				int ids[]= {10, 20, 30};
+#  83: 				std::vector<double> nWeights;
+#  84: 				nWeights.push_back(12.3);
+#  85: 				nWeights.push_back(1.2);
+#  86: 				nWeights.push_back(2.1);
+#  87: 				for (int i=0; i<=2 ; i++) {				// Let's create a vector with three neurons
+#  88: 					ptN.reset( new Neuron( ids[i] ) ); 	
+#  89: 					neuronContainer.push_back(ptN);
+#  90: 				}
+#  91: 				conContainerPtr->buildAndAppend(neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );			 
+#  92: 			// Test	
+#  93: 				result=conContainerPtr->getId();
+#  94: 				return wrap(result);
+#  95: 		
+#  96:   Rf_warning("your C program does not return anything!");
+#  97:   return R_NilValue;
+#  98: }
+# Error en compileCode(f, code, language, verbose) : 
+#   Compilation ERROR, function(s)/method(s) not created! file647ac73d.cpp:54: error: invalid use of incomplete type 'struct NeuronContainer'
+# file647ac73d.cpp:37: error: forward declaration of 'struct NeuronContainer'
+# In file included from file647ac73d.cpp:58:
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:40: error: 'struct NeuronContainer::iterator' has not been declared
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:41: error: 'struct NeuronContainer::iterator' has not been declared
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.h:45: error: expected ';' before 'std'
+# In file included from file647ac73d.cpp:64:
+# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ConContainer.cpp:146: error: no 'bool ConContainer::buildAndAppend(__gnu_cxx::__normal_iterator<boost::shared_ptr<Neuron>*, std::vector<boost::shared_pt
+# Adem'as: Mensajes de aviso perdidos
+# comando ejecutado '/Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB file647ac73d.cpp 2> file647ac73d.cpp.err.txt' tiene estatus 1 
+# Error: no se pudo encontrar la funci'on "testCodefun"
+# Error en all.equal(target, current, tolerance = tolerance, ...) : 
+#   objeto 'result' no encontrado
+
 # [1] TRUE
 }
 

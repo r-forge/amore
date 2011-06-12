@@ -1,0 +1,3 @@
+class RBFneuralNet : public NeuralNet {
+
+};

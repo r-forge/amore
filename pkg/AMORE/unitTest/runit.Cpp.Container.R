@@ -130,7 +130,7 @@ test.Container.Cpp.Constructor_collectionAsArgument<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ContainerNeuronPtr	ptShneuronContainer( new Container<Neuron>() );
 				ContainerConPtr		conContainerPtr( new Container<Con>() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
@@ -138,11 +138,11 @@ test.Container.Cpp.Constructor_collectionAsArgument<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					ptN.reset( new Neuron( id ) ); 	
-					neuronContainerPtr->push_back(ptN);
+					ptShneuronContainer->push_back(ptN);
 				}
 
 				int i=0;
-				foreach ( NeuronPtr itr , *neuronContainerPtr ) {			// and a vector with three connections
+				foreach ( NeuronPtr itr , *ptShneuronContainer ) {			// and a vector with three connections
 					ptC.reset( new Con( itr, weights[i++]) );  	
 					conContainerPtr->push_back(ptC);	
 				}
@@ -177,7 +177,7 @@ test.Container.Cpp.validate.show<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+			ContainerNeuronPtr	ptShneuronContainer( new Container<Neuron>() );
 			ContainerConPtr	conContainerPtr( new Container<Con>() );
 			ConPtr	ptC;
 			NeuronPtr ptN;
@@ -185,10 +185,10 @@ test.Container.Cpp.validate.show<- function() {
 			double weights[] = {1.13, 2.22, 3.33 };
 			foreach (int id, ids){  			// Let's create a vector with three neurons
 				ptN.reset( new Neuron( id ) ); 	
-				neuronContainerPtr->push_back(ptN);
+				ptShneuronContainer->push_back(ptN);
 			}
 			int i=0;
-			foreach ( NeuronPtr itr , *neuronContainerPtr ) {			// and a vector with three connections
+			foreach ( NeuronPtr itr , *ptShneuronContainer ) {			// and a vector with three connections
 				ptC.reset( new Con( itr, weights[i++]) );  	
 				conContainerPtr->push_back(ptC);	
 			}
@@ -216,7 +216,7 @@ test.Container.Cpp.push_back<- function() {
 	testCode <- "
 			// Data set up
 				std::vector<int> result;
-				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ContainerNeuronPtr	ptShneuronContainer( new Container<Neuron>() );
 				ContainerConPtr	conContainerPtr( new Container<Con>() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
@@ -225,11 +225,11 @@ test.Container.Cpp.push_back<- function() {
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					ptN.reset( new Neuron( id ) ); 	
-					neuronContainerPtr->push_back(ptN);
+					ptShneuronContainer->push_back(ptN);
 				}
 
 				int i=0;
-				foreach ( NeuronPtr itr , *neuronContainerPtr ) {			// and a vector with three connections
+				foreach ( NeuronPtr itr , *ptShneuronContainer ) {			// and a vector with three connections
 					ptC.reset( new Con( itr, weights[i++]) );  	
 					conContainerPtr->push_back(ptC);	
 				}
@@ -253,7 +253,7 @@ test.Container.Cpp.size<- function() {
 	testCode <- "
 		// Data set up
 				std::vector<int> result;
-				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ContainerNeuronPtr	ptShneuronContainer( new Container<Neuron>() );
 				ContainerConPtr	conContainerPtr( new Container<Con>() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
@@ -262,11 +262,11 @@ test.Container.Cpp.size<- function() {
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					ptN.reset( new Neuron( id ) ); 	
-					neuronContainerPtr->push_back(ptN);
+					ptShneuronContainer->push_back(ptN);
 				}
 
 				int i=0;
-				foreach ( NeuronPtr itr , *neuronContainerPtr ) {			// and a vector with three connections
+				foreach ( NeuronPtr itr , *ptShneuronContainer ) {			// and a vector with three connections
 					ptC.reset( new Con( itr, weights[i++]) );  	
 					conContainerPtr->push_back(ptC);	
 					result.push_back(conContainerPtr->size());
@@ -289,7 +289,7 @@ test.Container.Cpp.store.load<- function() {
 	// Data set up
 				std::vector<int> result;
 				std::vector<ConPtr> vcA, vcB;
-				ContainerNeuronPtr	neuronContainerPtr( new Container<Neuron>() );
+				ContainerNeuronPtr	ptShneuronContainer( new Container<Neuron>() );
 				ContainerConPtr	conContainerPtr( new Container<Con>() );
 				ConPtr	ptC;
 				NeuronPtr ptN;
@@ -297,11 +297,11 @@ test.Container.Cpp.store.load<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					ptN.reset( new Neuron( id ) ); 	
-					neuronContainerPtr->push_back(ptN);
+					ptShneuronContainer->push_back(ptN);
 				}
 
 				int i=0;
-				foreach( NeuronPtr itr, *neuronContainerPtr) {				// and a vector with three connections
+				foreach( NeuronPtr itr, *ptShneuronContainer) {				// and a vector with three connections
 					ptC.reset( new Con( itr , weights[i++]) );  	
 					vcA.push_back(ptC);			 
 				}			 
@@ -328,7 +328,7 @@ test.Container.Cpp.append<- function() {
 	// Data set up
 				std::vector<int> 	result;
 				std::vector<ConPtr>	vcA, vcB;
-				ContainerNeuronPtr	neuronContainerPtr(new Container<Neuron>() );
+				ContainerNeuronPtr	ptShneuronContainer(new Container<Neuron>() );
 				ContainerConPtr		conContainerPtrA(	new Container<Con>() );
 				ContainerConPtr		conContainerPtrB(	new Container<Con>() );
 				ConPtr				ptC;
@@ -338,16 +338,16 @@ test.Container.Cpp.append<- function() {
 	
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					ptN.reset( new Neuron( id ) ); 	
-					neuronContainerPtr->push_back(ptN);
+					ptShneuronContainer->push_back(ptN);
 				}
 	
 				for (int i=0; i<=2 ; i++) {				// A vector with three connections
-					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShneuronContainer->load().at(i), weights[i]) );  	
 					conContainerPtrA->push_back(ptC);			 
 				}			 
 
 				for (int i=3; i<=5 ; i++) {				// Another vector with three connections
-					ptC.reset( new Con( neuronContainerPtr->load().at(i), weights[i]) );  	
+					ptC.reset( new Con( ptShneuronContainer->load().at(i), weights[i]) );  	
 					conContainerPtrB->push_back(ptC);			 
 				}			 
 	// Test

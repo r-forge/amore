@@ -8,8 +8,7 @@
 
 
 
-Inheritance diagram for Container$<$ T $>$:
-\nopagebreak
+Inheritance diagram for Container$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,6 +30,10 @@ Collaboration diagram for Container$<$ T $>$:\nopagebreak
 typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator}
 \item 
 typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator} \hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator}
+\item 
+typedef boost::shared\_\-ptr$<$ T $>$ \hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{value\_\-type}
+\item 
+typedef \hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{value\_\-type} const \& \hyperlink{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{const\_\-reference}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -49,7 +52,7 @@ void \hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{store} (typen
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 size\_\-type \hyperlink{class_container_a842c3d9eca81b78b59112fde9707b091}{size} ()
 \begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
-void \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ element)
+void \hyperlink{class_container_a1f00050a4bd892699f05f8528afcea2e}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ const \&\hyperlink{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{const\_\-reference})
 \begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
 void \hyperlink{class_container_a86d42cf807e073724bd2f8e08dcdfefa}{append} (\hyperlink{class_container}{Container}$<$ T $>$ containerT)
 \begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
@@ -91,7 +94,24 @@ Definition at line 12 of file Container.h.
 \label{class_container_a5eabadaffdd508cb623c955eb0af1518}
 
 
+Reimplemented in \hyperlink{class_con_container_ac314ee4e351b3a5f595cd1de74fb3b5e}{ConContainer}, and \hyperlink{class_neuron_container_a41749602f05e7610da7f0f1fd59f5442}{NeuronContainer}.
+
+
+
 Definition at line 22 of file Container.h.
+
+\hypertarget{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{
+\index{Container@{Container}!const\_\-reference@{const\_\-reference}}
+\index{const\_\-reference@{const\_\-reference}!Container@{Container}}
+\subsubsection[{const\_\-reference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef {\bf value\_\-type} const\& {\bf Container}$<$ T $>$::{\bf const\_\-reference}}}
+\label{class_container_a8dd7ae9d0687e11d873f98206e961ac1}
+
+
+Reimplemented in \hyperlink{class_con_container_ac644eca2f5ee432a6070fd1d397b3741}{ConContainer}, and \hyperlink{class_neuron_container_a468ffbb00b15553f73da46dd62c91c8d}{NeuronContainer}.
+
+
+
+Definition at line 26 of file Container.h.
 
 \hypertarget{class_container_afe880028d8304353129f47cd1d28c20a}{
 \index{Container@{Container}!iterator@{iterator}}
@@ -100,7 +120,24 @@ Definition at line 22 of file Container.h.
 \label{class_container_afe880028d8304353129f47cd1d28c20a}
 
 
+Reimplemented in \hyperlink{class_con_container_a5dc8aab66a22fc25b7e700b51265b577}{ConContainer}, and \hyperlink{class_neuron_container_abf81356adaea3bfc64aa03777e9a8def}{NeuronContainer}.
+
+
+
 Definition at line 19 of file Container.h.
+
+\hypertarget{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{
+\index{Container@{Container}!value\_\-type@{value\_\-type}}
+\index{value\_\-type@{value\_\-type}!Container@{Container}}
+\subsubsection[{value\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef boost::shared\_\-ptr$<$T$>$ {\bf Container}$<$ T $>$::{\bf value\_\-type}}}
+\label{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}
+
+
+Reimplemented in \hyperlink{class_con_container_a08881a149e3a285eba67a4c8cff92a9e}{ConContainer}, and \hyperlink{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}{NeuronContainer}.
+
+
+
+Definition at line 24 of file Container.h.
 
 
 
@@ -175,12 +212,12 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
         // Data set up
                                 std::vector<int> result;
                                 std::vector<ConPtr> vcA, vcB;
-                                ContainerNeuronPtr      ptShvNeuron( new 
+                                ContainerNeuronPtr      neuronContainerPtr( new 
       Container<Neuron>() );
-                                ContainerConPtr ptShvConA( new Container<Con>() )
-      ;
-                                ContainerConPtr ptShvConB( new Container<Con>() )
-      ;
+                                ContainerConPtr conContainerPtrA( new 
+      Container<Con>() );
+                                ContainerConPtr conContainerPtrB( new 
+      Container<Con>() );
                                 ConPtr  ptC;
                                 NeuronPtr ptN;
                                 int ids[]= {1, 2, 3, 4, 5, 6};
@@ -189,24 +226,24 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
                                 for (int i=0; i<=5 ; i++) {                             /
       / Let's create a vector with six neurons
                                         ptN.reset( new Neuron( ids[i] ) );
-                                        ptShvNeuron->push_back(ptN);
+                                        neuronContainerPtr->push_back(ptN);
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / A vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load().a
-      t(i), weights[i]) );
-                                        ptShvConA->push_back(ptC);
+                                        ptC.reset( new Con( neuronContainerPtr->l
+      oad().at(i), weights[i]) );
+                                        conContainerPtrA->push_back(ptC);
                                 }
                                 for (int i=3; i<=5 ; i++) {                             /
       / Another vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load().a
-      t(i), weights[i]) );
-                                        ptShvConB->push_back(ptC);
+                                        ptC.reset( new Con( neuronContainerPtr->l
+      oad().at(i), weights[i]) );
+                                        conContainerPtrB->push_back(ptC);
                                 }
         // Test
-                                ptShvConA->append(*ptShvConB);
-                                ptShvConA->validate();
-                                ptShvConA->show() ;
+                                conContainerPtrA->append(*conContainerPtrB);
+                                conContainerPtrA->validate();
+                                conContainerPtrA->show() ;
 
         // After execution of the code above, the output at the R terminal would 
       display:
@@ -221,7 +258,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{Container::store} , \hyperlink{class_container_afd87c69cb799ed7b434c29090083a285}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{Container::store} , \hyperlink{class_container_a1f00050a4bd892699f05f8528afcea2e}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -274,8 +311,7 @@ Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -318,7 +354,7 @@ Definition at line 303 of file Container.cpp.
 
 
 
-Referenced by ConContainer::buildAndAppend(), and ConContainer::setFrom().
+Referenced by ConContainer::setFrom().
 
 
 \begin{DoxyCode}
@@ -328,8 +364,7 @@ Referenced by ConContainer::buildAndAppend(), and ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -396,10 +431,10 @@ The collection vector.
                 // Data set up
                                 std::vector<int> result;
                                 std::vector<ConPtr> vcA, vcB;
-                                ContainerNeuronPtr      ptShvNeuron( new 
+                                ContainerNeuronPtr      neuronContainerPtr( new 
       Container<Neuron>() );
-                                ContainerConPtr ptShvCon( new Container<Con>() );
-      
+                                ContainerConPtr conContainerPtr( new 
+      Container<Con>() );
                                 ConPtr  ptC;
                                 NeuronPtr ptN;
                                 int ids[]= {10, 20, 30};
@@ -407,17 +442,17 @@ The collection vector.
                                 for (int i=0; i<=2 ; i++) {                             /
       / Let's create a vector with three neurons
                                         ptN.reset( new Neuron( ids[i] ) );
-                                        ptShvNeuron->push_back(ptN);
+                                        neuronContainerPtr->push_back(ptN);
                                 }
                                 for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                        ptC.reset( new Con( ptShvNeuron->load().a
-      t(i), weights[i]) );
+                                        ptC.reset( new Con( neuronContainerPtr->l
+      oad().at(i), weights[i]) );
                                         vcA.push_back(ptC);
                                 }
                 // Test
-                        ptShvCon->store(vcA);
-                        vcB = ptShvCon->load();
+                        conContainerPtr->store(vcA);
+                        vcB = conContainerPtr->load();
                         for (int i=0; i<=2 ; i++) {                                     /
       / get Ids. Container does not have getId defined
                                         result.push_back( vcB.at(i)->getId());
@@ -459,15 +494,15 @@ Definition at line 317 of file Container.cpp.
     return collection[offset];
   }
 \end{DoxyCode}
-\hypertarget{class_container_afd87c69cb799ed7b434c29090083a285}{
+\hypertarget{class_container_a1f00050a4bd892699f05f8528afcea2e}{
 \index{Container@{Container}!push\_\-back@{push\_\-back}}
 \index{push\_\-back@{push\_\-back}!Container@{Container}}
 \subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
 \begin{DoxyParamCaption}
-\item[{boost::shared\_\-ptr$<$ T $>$}]{element}
+\item[{boost::shared\_\-ptr$<$ T $>$ const \&}]{const\_\-reference}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_afd87c69cb799ed7b434c29090083a285}
+\label{class_container_a1f00050a4bd892699f05f8528afcea2e}
 
 
 Append a shared\_\-ptr at the end of collection. 
@@ -484,7 +519,7 @@ Implements push\_\-back for the \hyperlink{class_container}{Container} class
                 //================
                 // Data set up
                         Neuron N1, N2, N3;
-                        Container<Con> MyConContainer;
+                        Container<Con> conContainer;
                         std::vector<ConPtr> vc;
                         std::vector<int> result;
                         N1.setId(10);
@@ -493,18 +528,18 @@ Implements push\_\-back for the \hyperlink{class_container}{Container} class
                 // Test
                         ConPtr ptCon( new Con(&N1, 1.13) );     // Create new Con
        and initialize ptCon
-                        MyConContainer.push_back(ptCon);                                /
+                        conContainer.push_back(ptCon);                          /
       / push_back
                         ptCon.reset(  new Con(&N2, 2.22) );             // create
        new Con and assign to ptCon
-                        MyConContainer.push_back(ptCon);                                /
+                        conContainer.push_back(ptCon);                          /
       / push_back
                         ptCon.reset(  new Con(&N3, 3.33) );             // create
        new Con and assign to ptCon
-                        MyConContainer.push_back(ptCon);                                /
+                        conContainer.push_back(ptCon);                          /
       / push_back
 
-                        vc = MyConContainer.load();
+                        vc = conContainer.load();
 
                         result.push_back(vc.at(0)->getId());
                         result.push_back(vc.at(1)->getId());
@@ -522,27 +557,11 @@ C++ documentation for std::vector::push\_\-back and the unit test files, e.g., r
 Definition at line 71 of file Container.cpp.
 
 
-
-Referenced by ConContainer::getFrom().
-
-
 \begin{DoxyCode}
   {
-    collection.push_back(element);
+    collection.push_back(const_reference);
   }
 \end{DoxyCode}
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_container_afd87c69cb799ed7b434c29090083a285_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
 \index{Container@{Container}!reserve@{reserve}}
 \index{reserve@{reserve}!Container@{Container}}
@@ -557,27 +576,11 @@ Here is the caller graph for this function:
 Definition at line 296 of file Container.cpp.
 
 
-
-Referenced by ConContainer::getFrom().
-
-
 \begin{DoxyCode}
   {
     collection.reserve(n);
   }
 \end{DoxyCode}
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_container_aa3cbae68ebeed649c52eb3805a30fb75_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
 \index{Container@{Container}!resize@{resize}}
 \index{resize@{resize}!Container@{Container}}
@@ -619,9 +622,9 @@ $\ast$
                 //Usage example:
                 //================
                 // Data set up
-                        ContainerNeuronPtr      ptShvNeuron( new 
+                        ContainerNeuronPtr      neuronContainerPtr( new 
       Container<Neuron>() );
-                        ContainerConPtr ptShvCon( new Container<Con>() );
+                        ContainerConPtr conContainerPtr( new Container<Con>() );
                         ConPtr  ptC;
                         NeuronPtr ptN;
                         int ids[]= {10, 20, 30};
@@ -630,18 +633,18 @@ $\ast$
                         for (int i=0; i<=2 ; i++) {                             /
       / Let's create a vector with three neurons
                                 ptN.reset( new Neuron( ids[i] ) );
-                                ptShvNeuron->push_back(ptN);
+                                neuronContainerPtr->push_back(ptN);
                         }
 
                         for (int i=0; i<=2 ; i++) {                             /
       / and a vector with three connections
-                                ptC.reset( new Con( ptShvNeuron->load().at(i), we
-      ights[i]) );
-                                ptShvCon->push_back(ptC);
+                                ptC.reset( new Con( neuronContainerPtr->load().at
+      (i), weights[i]) );
+                                conContainerPtr->push_back(ptC);
                         }
 
                 // Test
-                        ptShvCon->show() ;
+                        conContainerPtr->show() ;
 
                 // The output at the R terminal would display:
                 //
@@ -708,7 +711,7 @@ Definition at line 281 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append(), ConContainer::buildAndAppend(), and ConContainer::setFrom().
+Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
 
 
 \begin{DoxyCode}
@@ -718,8 +721,7 @@ Referenced by Container$<$ T $>$::append(), ConContainer::buildAndAppend(), and 
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

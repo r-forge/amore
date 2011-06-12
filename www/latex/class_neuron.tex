@@ -13,8 +13,16 @@ A class to handle the information contained in a general \hyperlink{class_neuron
 
 
 
-Collaboration diagram for Neuron:
-\nopagebreak
+Inheritance diagram for Neuron:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_neuron__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Neuron:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,8 +43,6 @@ Collaboration diagram for Neuron:
 int \hyperlink{class_neuron_ad9211d55ea50ad6dfbd2676b9e2335e4}{getId} ()
 \item 
 void \hyperlink{class_neuron_aa93290c13b40c5b07d92f272a0a2ce63}{setId} (int value)
-\item 
-\hyperlink{class_neuron_container}{NeuronContainer} \hyperlink{class_neuron_a66862d729f68bc25d11af331f7a1fc51}{getFrom} ()
 \item 
 std::vector$<$ int $>$ \hyperlink{class_neuron_aac7d538b4a5087f730ba80f19852bced}{getConId} ()
 \item 
@@ -66,7 +72,7 @@ double \hyperlink{class_neuron_ada029047646c36e525a6a1b77cafc03c}{outputValue}
 \subsection{Detailed Description}
 A class to handle the information contained in a general \hyperlink{class_neuron}{Neuron}. 
 
-A general class for neurons. The MLPneuron and RBFneuron classes will specialize this general class 
+A general class for neurons. The \hyperlink{class_m_l_pneuron}{MLPneuron} and RBFneuron classes will specialize this general class 
 
 Definition at line 16 of file Neuron.h.
 
@@ -166,7 +172,7 @@ Definition at line 25 of file Neuron.cpp.
 \label{class_neuron_aac7d538b4a5087f730ba80f19852bced}
 
 
-Definition at line 48 of file Neuron.cpp.
+Definition at line 43 of file Neuron.cpp.
 
 
 
@@ -180,47 +186,11 @@ References con, and ConContainer::getId().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=400pt]{class_neuron_aac7d538b4a5087f730ba80f19852bced_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_neuron_a66862d729f68bc25d11af331f7a1fc51}{
-\index{Neuron@{Neuron}!getFrom@{getFrom}}
-\index{getFrom@{getFrom}!Neuron@{Neuron}}
-\subsubsection[{getFrom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronContainer} Neuron::getFrom (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_neuron_a66862d729f68bc25d11af331f7a1fc51}
-
-
-Definition at line 42 of file Neuron.cpp.
-
-
-
-References con, and ConContainer::getFrom().
-
-
-\begin{DoxyCode}
-{
-  return con.getFrom();
-}
-\end{DoxyCode}
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_neuron_a66862d729f68bc25d11af331f7a1fc51_cgraph}
 \end{center}
 \end{figure}
 
@@ -274,11 +244,11 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_neuron_a3349c0a2053e35afa5b7036bb816f8c6}
 
 
-Definition at line 54 of file Neuron.cpp.
+Definition at line 49 of file Neuron.cpp.
 
 
 
-References con, and ConContainer::getWeight().
+References con.
 
 
 \begin{DoxyCode}
@@ -286,18 +256,6 @@ References con, and ConContainer::getWeight().
   return con.getWeight();
 }
 \end{DoxyCode}
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_neuron_a3349c0a2053e35afa5b7036bb816f8c6_cgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_neuron_ae447dce39ed04581609a83d742b585d1}{
 \index{Neuron@{Neuron}!numOfCons@{numOfCons}}
 \index{numOfCons@{numOfCons}!Neuron@{Neuron}}
@@ -309,7 +267,7 @@ Here is the call graph for this function:
 \label{class_neuron_ae447dce39ed04581609a83d742b585d1}
 
 
-Definition at line 72 of file Neuron.cpp.
+Definition at line 67 of file Neuron.cpp.
 
 
 
@@ -327,8 +285,7 @@ Referenced by show().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -359,7 +316,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_neuron_ac8129f5de3ec1c143f40d507b6843649}
 
 
-Definition at line 60 of file Neuron.cpp.
+Definition at line 55 of file Neuron.cpp.
 
 
 
@@ -373,8 +330,7 @@ References con, and ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -417,7 +373,7 @@ References Id.
 \label{class_neuron_a93b27c179c576758ff437b9273b95041}
 
 
-Definition at line 66 of file Neuron.cpp.
+Definition at line 61 of file Neuron.cpp.
 
 
 
@@ -431,8 +387,7 @@ References con, and ConContainer::setWeight().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -452,7 +407,7 @@ Here is the call graph for this function:
 \label{class_neuron_a255c3597520c730d798218f7174eff1b}
 
 
-Definition at line 78 of file Neuron.cpp.
+Definition at line 73 of file Neuron.cpp.
 
 
 
@@ -487,8 +442,7 @@ References con, getId(), numOfCons(), and Container$<$ T $>$::show().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -508,7 +462,7 @@ Here is the call graph for this function:
 \label{class_neuron_a95327aa80a9ec949491f214a0c159b5a}
 
 
-Definition at line 105 of file Neuron.cpp.
+Definition at line 100 of file Neuron.cpp.
 
 
 
@@ -527,8 +481,7 @@ References con, getId(), and ConContainer::validate().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -555,7 +508,7 @@ Definition at line 29 of file Neuron.h.
 
 
 
-Referenced by getConId(), getFrom(), getWeight(), numOfCons(), setFrom(), setWeight(), show(), and validate().
+Referenced by getConId(), getWeight(), numOfCons(), setFrom(), setWeight(), show(), and validate().
 
 \hypertarget{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{
 \index{Neuron@{Neuron}!Id@{Id}}
