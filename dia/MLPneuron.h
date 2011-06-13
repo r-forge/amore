@@ -8,5 +8,6 @@ protected:
   // Operations
 public:
   void show ();
+  bool validate ();
 };
 

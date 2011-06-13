@@ -6,19 +6,18 @@
 	testCode <- "
 		//Test
 				NeuronPtr ptN(new Neuron());	
-				ptN->show();			
+				ptN->show();	
+				Container<Con>::const_iterator firstCon, lastCon;
+				ptN->const_iterators(firstCon, lastCon);		
+				int numOfCons = lastCon - firstCon;
 				return	Rcpp::List::create(	Rcpp::Named(\"Id\") = ptN->getId(),
-                        		  			Rcpp::Named(\"numOfCons\") = ptN->numOfCons(),
-                          					Rcpp::Named(\"ConIdSize\") = ptN->getConId().size(),
-											Rcpp::Named(\"WeightSize\") = ptN->getWeight().size()
+                        		  			Rcpp::Named(\"numOfCons\") = numOfCons
 										);
 	"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkTrue(is.na(result$Id))
 	checkEquals(result$numOfCons, 0)
-	checkEquals(result$ConIdSize, 0)
-	checkEquals(result$WeightSize,0)
 	# 
 	# ------------------------
 	# 
@@ -27,8 +26,6 @@
 	# 
 	#  No connections defined
 	# ------------------------
-	# [1] TRUE
-	# [1] TRUE
 	# [1] TRUE
 	# [1] TRUE
 }
@@ -41,19 +38,18 @@ test.Neuron.Cpp.Constructor_IdNumericConMissing <- function() {
 	testCode <- "
 		//Test
 			NeuronPtr ptN(new Neuron(12));	
-			ptN->show();			
+			ptN->show();	
+			Container<Con>::const_iterator firstCon, lastCon;
+			ptN->const_iterators(firstCon, lastCon);		
+			int numOfCons = lastCon - firstCon;
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 		= ptN->getId(),
-										Rcpp::Named(\"numOfCons\") 	= ptN->numOfCons(),
-										Rcpp::Named(\"ConIdSize\") 	= ptN->getConId().size(),
-										Rcpp::Named(\"WeightSize\") = ptN->getWeight().size()
-		);
+										Rcpp::Named(\"numOfCons\") 	= numOfCons
+									);
 		"
 testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 result <- testCodefun()
 checkEquals(result$Id, 12)
 checkEquals(result$numOfCons, 0)
-checkEquals(result$ConIdSize, 0)
-checkEquals(result$WeightSize,0)
 # 
 # ------------------------
 # 
@@ -64,8 +60,7 @@ checkEquals(result$WeightSize,0)
 # ------------------------
 # [1] TRUE
 # [1] TRUE
-# [1] TRUE
-# [1] TRUE
+
 }
  
 
@@ -77,7 +72,7 @@ test.Neuron.Cpp.Constructor_FullArgumentList <- function() {
 		// Data set up
 				int ids[]= {1, 2, 3};
 				double weights[]= {0.11, 0.22, 0.33};
-				NeuronContainer neuronContainer;
+				Container<Neuron> neuronContainer;
 				std::vector<double> nWeights;
 				NeuronPtr ptNeuron;
 				for (int i=0; i<=2; i++) {
@@ -88,20 +83,32 @@ test.Neuron.Cpp.Constructor_FullArgumentList <- function() {
 				ConContainerPtr vcPt(new ConContainer());
 				vcPt->buildAndAppend( neuronContainer.begin(), neuronContainer.end(), nWeights.begin(), nWeights.end() );
 		// Test	
-				NeuronPtr ptN(new Neuron(123, *vcPt));
+				NeuronPtr ptN(new Neuron(123, vcPt->begin(), vcPt->end() ));
 				ptN->show();
+
+				Container<Con>::const_iterator firstCon, lastCon;
+				ptN->const_iterators(firstCon, lastCon);		
+				int numOfCons = lastCon - firstCon;
+				
+				std::vector<int> nIds;
+				nWeights.clear();
+				for( Container<Con>::const_iterator itrCon(firstCon) ;itrCon!=lastCon; ++itrCon) {
+					nIds.push_back( (*itrCon)->getId() );
+					nWeights.push_back( (*itrCon)->getWeight());
+				}
+
 				return	Rcpp::List::create(	Rcpp::Named(\"Id\") = ptN->getId(),
-				Rcpp::Named(\"numOfCons\") = ptN->numOfCons(),
-				Rcpp::Named(\"ConId\") = ptN->getConId(),
-				Rcpp::Named(\"Weight\") = ptN->getWeight()
+				Rcpp::Named(\"numOfCons\") = numOfCons,
+				Rcpp::Named(\"nIds\") = nIds,
+				Rcpp::Named(\"nWeights\") = nWeights
 				);
 				"
 		testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 		result <- testCodefun()	
 		checkEquals(result$Id, 123)
 		checkEquals(result$numOfCons, 3)
-		checkEquals(result$ConId, c(1, 2, 3))
-		checkEquals(result$Weight, c(0.11, 0.22, 0.33))
+		checkEquals(result$nIds, c(1, 2, 3))
+		checkEquals(result$nWeights, c(0.11, 0.22, 0.33))
 		# 
 		# ------------------------
 		# 

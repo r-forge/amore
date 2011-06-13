@@ -1,7 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="199,5,297,32"/>
-<area shape="rect" id="node5" href="$class_con_container.html#aac12a3d3604db9ff715503816109470c" title="Object validator." alt="" coords="171,56,325,83"/>
-<area shape="rect" id="node7" href="$class_con_container.html#a387ac09ab154d21c5ad597d32b32dbc2" title="Getter of the Id values of the vector of Cons." alt="" coords="373,56,512,83"/>
-<area shape="rect" id="node9" href="$class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object." alt="" coords="561,56,740,83"/>
-<area shape="rect" id="node11" href="$class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Container\&lt; Con \&gt;::size" alt="" coords="789,56,947,83"/>
+<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="176,5,283,32"/>
 </map>

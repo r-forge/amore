@@ -1,7 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="179,5,277,32"/>
-<area shape="rect" id="node5" href="$class_neuron.html#ae447dce39ed04581609a83d742b585d1" title="Neuron::numOfCons" alt="" coords="157,56,299,83"/>
-<area shape="rect" id="node11" href="$class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;" alt="" coords="171,107,285,133"/>
-<area shape="rect" id="node7" href="$class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object." alt="" coords="348,56,527,83"/>
-<area shape="rect" id="node9" href="$class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Container\&lt; Con \&gt;::size" alt="" coords="576,56,733,83"/>
+<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="168,5,275,32"/>
+<area shape="rect" id="node5" href="$class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;" alt="" coords="160,56,283,83"/>
+<area shape="rect" id="node7" href="$class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector." alt="" coords="165,107,278,133"/>
 </map>

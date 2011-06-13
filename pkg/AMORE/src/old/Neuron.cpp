@@ -13,18 +13,14 @@ Neuron::Neuron() :
 }
 
 Neuron::Neuron(int Id) :
-  Id(Id), outputValue(0.0)
+  Id(Id), con()
 {
 }
 
-Neuron::Neuron(int Id, ConContainer con) :
-  Id(Id), con(con), outputValue(0.0)
-{
-}
-
-Neuron::~Neuron()
-{
-}
+//Neuron::Neuron(int Id, ConContainer con) :
+//  Id(Id), con(con), outputValue(0.0)
+//{
+//}
 
 int
 Neuron::getId()
@@ -39,35 +35,12 @@ Neuron::setId(int value)
 }
 
 
-std::vector<int>
-Neuron::getConId()
-{
-  return con.getId();
-}
-
-std::vector<double>
-Neuron::getWeight()
-{
-  return con.getWeight();
-}
-
-bool
-Neuron::setFrom(NeuronContainer neuronContainer)
-{
-  con.setFrom(neuronContainer);
-}
-
-bool
-Neuron::setWeight(std::vector<double> nWeights)
-{
-  con.setWeight(nWeights);
-}
-
-int
-Neuron::numOfCons()
-{
-  return con.numOfCons();
-}
+//void
+//Neuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
+//{
+//   first=con.begin();
+//    last=con.end();
+//}
 
 bool
 Neuron::show()
@@ -83,13 +56,13 @@ Neuron::show()
       Rprintf("\n Id: %d", id);
     }
   Rprintf("\n------------------------\n");
-  if (numOfCons() == 0)
+  if (nCons.size() == 0)
     {
       Rprintf("\n No connections defined");
     }
   else
     {
-      con.show();
+      nCons.show();
     }
   Rprintf("\n------------------------\n");
   return true;
@@ -101,8 +74,7 @@ Neuron::validate()
 {
   BEGIN_RCPP
   if (getId() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Error, Id is NA.");
-  con.validate();
+  nCons.validate();
   return (TRUE);
-  END_RCPP
-}
+END_RCPP}
 

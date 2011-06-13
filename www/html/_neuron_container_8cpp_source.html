@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: pkg/AMORE/src/NeuronContainer.cpp Source File</title>
+<title>AMORE++: pkg/AMORE/src/old/NeuronContainer.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">pkg/AMORE/src/NeuronContainer.cpp</div>  </div>
+<div class="title">pkg/AMORE/src/old/NeuronContainer.cpp</div>  </div>
 </div>
 <div class="contents">
 <a href="_neuron_container_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 }
 <a name="l00011"></a>00011 
 <a name="l00012"></a><a class="code" href="class_neuron_container.html#a85e1e7946db7317179adbe359dc4ac39">00012</a> <a class="code" href="class_neuron_container.html#a9b22029b084f7446d2dfafc2e8f89700">NeuronContainer::NeuronContainer</a>(std::vector&lt;NeuronPtr&gt; collection) :
-<a name="l00013"></a>00013   <a class="code" href="class_container.html">Container</a>&lt;<a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>&gt; (collection)
+<a name="l00013"></a>00013   <a class="code" href="class_container.html" title="class Container -">Container</a>&lt;<a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>&gt; (collection)
 <a name="l00014"></a>00014 {
 <a name="l00015"></a>00015 }
 <a name="l00016"></a>00016 
@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a><a class="code" href="class_neuron_container.html#a70c5fd8e735b04c48b29cc17b77ff301">00028</a> <a class="code" href="class_neuron_container.html#a70c5fd8e735b04c48b29cc17b77ff301">NeuronContainer::numOfCons</a>()
 <a name="l00029"></a>00029 {
 <a name="l00030"></a>00030   std::vector&lt;int&gt; nIds;
-<a name="l00031"></a>00031   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00031"></a>00031   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00032"></a>00032     {
 <a name="l00033"></a>00033       nIds.push_back( itrNeuron-&gt;numOfCons() );
 <a name="l00034"></a>00034     }
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a><a class="code" href="class_neuron_container.html#a2ca2c86b3a0517636b1a0b3debfd158d">00039</a> <a class="code" href="class_neuron_container.html#a2ca2c86b3a0517636b1a0b3debfd158d">NeuronContainer::getId</a>()
 <a name="l00040"></a>00040 {
 <a name="l00041"></a>00041   std::vector&lt;int&gt; nIds;
-<a name="l00042"></a>00042   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00042"></a>00042   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00043"></a>00043     {
 <a name="l00044"></a>00044       nIds.push_back( itrNeuron-&gt;getId() );
 <a name="l00045"></a>00045     }
@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a><a class="code" href="class_neuron_container.html#a17c57249055e5de605e9663384ca48ce">00050</a> <a class="code" href="class_neuron_container.html#a17c57249055e5de605e9663384ca48ce">NeuronContainer::setId</a>(std::vector&lt;int&gt; nIds)
 <a name="l00051"></a>00051 {
 <a name="l00052"></a>00052   std::vector&lt;int&gt;::iterator itrId(nIds.begin());
-<a name="l00053"></a>00053 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00053"></a>00053 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00054"></a>00054   {
 <a name="l00055"></a>00055     itrNeuron-&gt;setId(*itrId);
 <a name="l00056"></a>00056   }
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a><a class="code" href="class_neuron_container.html#ad3ce88ba0e1beba4b60bac38c1cd2ccd">00060</a> <a class="code" href="class_neuron_container.html#ad3ce88ba0e1beba4b60bac38c1cd2ccd">NeuronContainer::getConId</a>()
 <a name="l00061"></a>00061 {
 <a name="l00062"></a>00062   std::vector &lt; std::vector&lt;int&gt; &gt; result;
-<a name="l00063"></a>00063   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00063"></a>00063   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00064"></a>00064     {
 <a name="l00065"></a>00065       result.push_back( itrNeuron-&gt;getConId() );
 <a name="l00066"></a>00066     }
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00071"></a><a class="code" href="class_neuron_container.html#ad11f5391b58f32b6db45f31fdc4927e7">00071</a> <a class="code" href="class_neuron_container.html#ad11f5391b58f32b6db45f31fdc4927e7">NeuronContainer::getWeight</a>()
 <a name="l00072"></a>00072 {
 <a name="l00073"></a>00073   std::vector &lt; std::vector&lt;double&gt; &gt; result;
-<a name="l00074"></a>00074   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00074"></a>00074   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00075"></a>00075     {
 <a name="l00076"></a>00076       result.push_back( itrNeuron-&gt;getWeight() );
 <a name="l00077"></a>00077     }
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a><a class="code" href="class_neuron_container.html#a058524958a0fe0dfd946d9e7f4003310">00083</a> <a class="code" href="class_neuron_container.html#a058524958a0fe0dfd946d9e7f4003310">NeuronContainer::setFrom</a>(std::vector&lt;NeuronContainer&gt; neuronArray)
 <a name="l00084"></a>00084 {
 <a name="l00085"></a>00085   std::vector&lt;NeuronContainer&gt;::iterator itrArray(neuronArray.begin());
-<a name="l00086"></a>00086 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00086"></a>00086 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00087"></a>00087   {
 <a name="l00088"></a>00088     itrNeuron-&gt;setFrom(*itrArray);
 <a name="l00089"></a>00089     itrArray++;
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a><a class="code" href="class_neuron_container.html#a54d5bfaf428ab9bc66aac79c312ab997">00094</a> <a class="code" href="class_neuron_container.html#a54d5bfaf428ab9bc66aac79c312ab997">NeuronContainer::setWeight</a>(std::vector&lt;std::vector&lt;double&gt; &gt; value)
 <a name="l00095"></a>00095 {
 <a name="l00096"></a>00096   std::vector&lt;std::vector&lt;double&gt; &gt;<a class="code" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">::iterator</a> itrValue(value.begin());
-<a name="l00097"></a>00097 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
+<a name="l00097"></a>00097 <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a> itrNeuron, *<span class="keyword">this</span>)
 <a name="l00098"></a>00098   {
 <a name="l00099"></a>00099     itrNeuron-&gt;setWeight(*itrValue);
 <a name="l00100"></a>00100     itrValue++;
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_neuron_container_8cpp.html">NeuronContainer.cpp</a>      </li>
-      <li class="footer">Generated on Sat Jun 11 2011 22:28:02 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

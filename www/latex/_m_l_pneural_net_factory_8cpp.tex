@@ -1,4 +1,56 @@
 \hypertarget{_m_l_pneural_net_factory_8cpp}{
-\section{pkg/AMORE/src/MLPneuralNetFactory.cpp File Reference}
-\label{_m_l_pneural_net_factory_8cpp}\index{pkg/AMORE/src/MLPneuralNetFactory.cpp@{pkg/AMORE/src/MLPneuralNetFactory.cpp}}
+\section{pkg/AMORE/src/old/MLPneuralNetFactory.cpp File Reference}
+\label{_m_l_pneural_net_factory_8cpp}\index{pkg/AMORE/src/old/MLPneuralNetFactory.cpp@{pkg/AMORE/src/old/MLPneuralNetFactory.cpp}}
 }
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_l_pneural_net}{MLPneuralNet} \hyperlink{_m_l_pneural_net_factory_8cpp_aa56001acecd72b1ceee345044a82ea15}{CreateMLPneuralNet} (std::vector$<$ int $>$ numberOfNeuronsPerLayer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_m_l_pneural_net_factory_8cpp_aa56001acecd72b1ceee345044a82ea15}{
+\index{MLPneuralNetFactory.cpp@{MLPneuralNetFactory.cpp}!CreateMLPneuralNet@{CreateMLPneuralNet}}
+\index{CreateMLPneuralNet@{CreateMLPneuralNet}!MLPneuralNetFactory.cpp@{MLPneuralNetFactory.cpp}}
+\subsubsection[{CreateMLPneuralNet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MLPneuralNet} CreateMLPneuralNet (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ int $>$}]{numberOfNeuronsPerLayer}
+\end{DoxyParamCaption}
+)}}
+\label{_m_l_pneural_net_factory_8cpp_aa56001acecd72b1ceee345044a82ea15}
+
+
+Definition at line 2 of file MLPneuralNetFactory.cpp.
+
+
+\begin{DoxyCode}
+{
+
+  net = new MLPNeuralNet();
+
+  MLPlayerPtr mlpLayerPtr;
+
+  std::vector<int> idx;
+
+foreach (int n, numberOfNeuronsPerLayer)
+  {
+    for (int i=1; i<=n; ++i)
+      {
+        idx.push_back(i);
+      }
+    mlpLayerPtr.reset(new MLPlayer( idx ) );
+    net.nLayers.push_back(mlpLayerPtr);
+  }
+
+
+
+for (int i=1; i<=; ++i)
+  {
+
+    mlpPtr->buildAndAppend();
+
+  }
+
+}
+\end{DoxyCode}

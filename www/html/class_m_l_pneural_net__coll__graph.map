@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_neural_net.html" title="{NeuralNet\n||+ train()\l}" alt="" coords="49,1203,132,1280"/>
-<area shape="rect" id="node4" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="157,1203,296,1280"/>
-<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="147,854,307,1151"/>
+<area shape="rect" id="node2" href="$class_neural_net.html" title="{NeuralNet\n||+ train()\l}" alt="" coords="43,1640,127,1717"/>
+<area shape="rect" id="node4" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="152,1640,291,1717"/>
+<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ Container()\l+ Container()\l+ buildAndAppend()\l+ push_back()\l+ push_back()\l+ erase()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ reserve()\l+ reserve()\l+ resize()\l+ resize()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ insert()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ load()\l+ store()\l+ append()\l+ operator[]()\l}" alt="" coords="141,1072,301,1589"/>
 <area shape="rect" id="node10" title="STL class." alt="" coords="201,147,319,224"/>
-<area shape="rect" id="node14" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="275,491,385,789"/>
+<area shape="rect" id="node14" href="$class_container.html" title="class Container &#45;" alt="" coords="261,491,408,1008"/>
 </map>

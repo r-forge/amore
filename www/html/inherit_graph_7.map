@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_neuron.html" title="A class to handle the information contained in a general Neuron." alt="" coords="5,5,69,32"/>
-<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="MLPneuron" alt="" coords="117,5,205,32"/>
+<area shape="rect" id="node1" href="$class_neuron.html" title="class Neuron &#45;" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="MLPneuron" alt="" coords="120,5,211,32"/>
 </map>
