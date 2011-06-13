@@ -10,5 +10,6 @@ protected:
 public:
   /// 	
   void show ();
+  bool validate ();
 };
 

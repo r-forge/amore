@@ -82,60 +82,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="_a_m_o_r_e_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;sstream&gt;</span>
-<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;algorithm&gt;</span>
-<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;iterator&gt;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;boost/weak_ptr.hpp&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;boost/foreach.hpp&gt;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;Rcpp.h&gt;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">using namespace </span>Rcpp;
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">class </span><a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>;
-<a name="l00031"></a>00031 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00032"></a>00032   <span class="keyword">class </span><a class="code" href="class_container.html">Container</a>;
-<a name="l00033"></a>00033 <span class="keyword">class </span><a class="code" href="class_con_container.html" title="A vector of connections.">ConContainer</a>;
-<a name="l00034"></a>00034 <span class="keyword">class </span><a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>;
-<a name="l00035"></a>00035 <span class="keyword">class </span><a class="code" href="class_neuron_container.html" title="A vector of neurons.">NeuronContainer</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="_a_m_o_r_e_8h.html#a85d9ac269eba33293361f4ed7c2a697b">00037</a> <span class="preprocessor">#define foreach         BOOST_FOREACH</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span>
-<a name="l00039"></a>00039 <span class="preprocessor">#ifndef size_type</span>
-<a name="l00040"></a><a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define size_type unsigned int</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>
-<a name="l00043"></a><a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">00043</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Con&gt; <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>;
-<a name="l00044"></a><a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">00044</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>;
-<a name="l00045"></a><a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">00045</a> <span class="keyword">typedef</span> boost::weak_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a>;
-<a name="l00046"></a><a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">00046</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Container&lt;Con&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#abba1e8416cee9fc9974360ef2d79220c">ContainerConPtr</a>;
-<a name="l00047"></a><a class="code" href="_a_m_o_r_e_8h.html#a51de806b5fb3f72d5ba606754815d3c2">00047</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Container&lt;Neuron&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#a51de806b5fb3f72d5ba606754815d3c2">ContainerNeuronPtr</a>;
-<a name="l00048"></a><a class="code" href="_a_m_o_r_e_8h.html#a12fa6814670892b8e70b57d93c999323">00048</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;ConContainer&gt; <a class="code" href="_a_m_o_r_e_8h.html#a12fa6814670892b8e70b57d93c999323">ConContainerPtr</a>;
-<a name="l00049"></a><a class="code" href="_a_m_o_r_e_8h.html#a23aedc5b485b7eeabdf6be68146c3599">00049</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;NeuronContainer&gt; <a class="code" href="_a_m_o_r_e_8h.html#a23aedc5b485b7eeabdf6be68146c3599">NeuronContainerPtr</a>;
-<a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="_a_m_o_r_e_8h.html#ad078671e849859e6841fe59c932067f5">00051</a> <span class="keyword">typedef</span> std::vector&lt;NeuronPtr&gt;::iterator <a class="code" href="_a_m_o_r_e_8h.html#ad078671e849859e6841fe59c932067f5">NeuronContainer_iterator</a>;
-<a name="l00052"></a><a class="code" href="_a_m_o_r_e_8h.html#aac7ebfe62ebc9c8933b145f6a1562540">00052</a> <span class="keyword">typedef</span> std::vector&lt;NeuronPtr&gt;::const_iterator <a class="code" href="_a_m_o_r_e_8h.html#aac7ebfe62ebc9c8933b145f6a1562540">NeuronContainer_const_iterator</a>;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#include &quot;<a class="code" href="_con_8h.html">Con.h</a>&quot;</span>
-<a name="l00055"></a>00055 <span class="preprocessor">#include &quot;<a class="code" href="_container_8h.html">Container.h</a>&quot;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">#include &quot;<a class="code" href="_con_container_8h.html">ConContainer.h</a>&quot;</span>
-<a name="l00057"></a>00057 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8h.html">Neuron.h</a>&quot;</span>
-<a name="l00058"></a>00058 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_container_8h.html">NeuronContainer.h</a>&quot;</span>
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#include &quot;<a class="code" href="_con_8cpp.html">Con.cpp</a>&quot;</span>
-<a name="l00061"></a>00061 <span class="preprocessor">#include &quot;<a class="code" href="_container_8cpp.html">Container.cpp</a>&quot;</span>
-<a name="l00062"></a>00062 <span class="preprocessor">#include &quot;<a class="code" href="_con_container_8cpp.html">ConContainer.cpp</a>&quot;</span>
-<a name="l00063"></a>00063 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8cpp.html">Neuron.cpp</a>&quot;</span>
-<a name="l00064"></a>00064 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_container_8cpp.html">NeuronContainer.cpp</a>&quot;</span>
-<a name="l00065"></a>00065 
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;iterator&gt;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;boost/weak_ptr.hpp&gt;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;boost/foreach.hpp&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;Rcpp.h&gt;</span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">using namespace </span>Rcpp;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="keyword">class </span><a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>;
+<a name="l00046"></a>00046 <span class="keyword">class </span><a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>;
+<a name="l00047"></a>00047 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_container.html" title="class Container -">Container</a>;
+<a name="l00048"></a>00048 
+<a name="l00049"></a><a class="code" href="_a_m_o_r_e_8h.html#a85d9ac269eba33293361f4ed7c2a697b">00049</a> <span class="preprocessor">#define foreach         BOOST_FOREACH</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span>
+<a name="l00051"></a>00051 <span class="preprocessor">#ifndef size_type</span>
+<a name="l00052"></a><a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define size_type unsigned int</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>
+<a name="l00055"></a><a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">00055</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Con &gt; <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a>;
+<a name="l00056"></a><a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">00056</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Neuron &gt; <a class="code" href="_a_m_o_r_e_8h.html#a1948728c64a74ecbdc50c0f0e43ecfd1">NeuronPtr</a>;
+<a name="l00057"></a><a class="code" href="_a_m_o_r_e_8h.html#a2b3f3195ce02beb24d1860c2f8087ac3">00057</a> <span class="keyword">typedef</span> boost::weak_ptr &lt; Neuron &gt; <a class="code" href="_a_m_o_r_e_8h.html#a2b3f3195ce02beb24d1860c2f8087ac3">NeuronWeakPtr</a>;
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="_a_m_o_r_e_8h.html#ab6e40b9ca7a2d33862618d3bd3fcfd9c">00059</a> <span class="keyword">typedef</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>  <a class="code" href="_a_m_o_r_e_8h.html#ab6e40b9ca7a2d33862618d3bd3fcfd9c">ConContainer</a>;
+<a name="l00060"></a><a class="code" href="_a_m_o_r_e_8h.html#a4bb57d66a8b49c2e068725a39a1c6287">00060</a> <span class="keyword">typedef</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>  <a class="code" href="_a_m_o_r_e_8h.html#a4bb57d66a8b49c2e068725a39a1c6287">NeuronContainer</a>;
+<a name="l00061"></a>00061 
+<a name="l00062"></a><a class="code" href="_a_m_o_r_e_8h.html#a36205bc9da3f58511319ae429910198b">00062</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; ConContainer &gt; <a class="code" href="_a_m_o_r_e_8h.html#a36205bc9da3f58511319ae429910198b">ConContainerPtr</a>;
+<a name="l00063"></a><a class="code" href="_a_m_o_r_e_8h.html#abe8127292789cb794d90f66893a1dae1">00063</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; NeuronContainer &gt; <a class="code" href="_a_m_o_r_e_8h.html#abe8127292789cb794d90f66893a1dae1">NeuronContainerPtr</a>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="_a_m_o_r_e_8h.html#aab1c4f5418602f6b9b8ba3e90a3d3035">00065</a> <span class="keyword">typedef</span> std::vector&lt;boost::shared_ptr&lt;Con&gt; &gt;<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">::iterator</a> <a class="code" href="_a_m_o_r_e_8h.html#aab1c4f5418602f6b9b8ba3e90a3d3035">ConContainer_iterator</a>;
+<a name="l00066"></a><a class="code" href="_a_m_o_r_e_8h.html#a85925eb72ca6e9144033b200c466dae2">00066</a> <span class="keyword">typedef</span> std::vector&lt;boost::shared_ptr&lt;Con&gt; &gt;<a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">::const_iterator</a> <a class="code" href="_a_m_o_r_e_8h.html#a85925eb72ca6e9144033b200c466dae2">ConContainer_const_iterator</a>;
+<a name="l00067"></a><a class="code" href="_a_m_o_r_e_8h.html#a36be90b8d9f454d85104cd4a44467e00">00067</a> <span class="keyword">typedef</span> std::vector&lt;boost::shared_ptr&lt;Neuron&gt; &gt;<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">::iterator</a> <a class="code" href="_a_m_o_r_e_8h.html#a36be90b8d9f454d85104cd4a44467e00">NeuronContainer_iterator</a>;
+<a name="l00068"></a><a class="code" href="_a_m_o_r_e_8h.html#af3f69a84a2f298d29ab490ec36f6d247">00068</a> <span class="keyword">typedef</span> std::vector&lt;boost::shared_ptr&lt;Neuron&gt; &gt;<a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">::const_iterator</a> <a class="code" href="_a_m_o_r_e_8h.html#af3f69a84a2f298d29ab490ec36f6d247">NeuronContainer_const_iterator</a>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 <span class="preprocessor">#include &quot;Con.h&quot;</span>
+<a name="l00071"></a>00071 <span class="preprocessor">#include &quot;Container.h&quot;</span>
+<a name="l00072"></a>00072 <span class="preprocessor">#include &quot;Neuron.h&quot;</span>
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#include &quot;Con.cpp&quot;</span>
+<a name="l00075"></a>00075 <span class="preprocessor">#include &quot;Container.cpp&quot;</span>
+<a name="l00076"></a>00076 <span class="preprocessor">#include &quot;Neuron.cpp&quot;</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_a_m_o_r_e_8h.html">AMORE.h</a>      </li>
-      <li class="footer">Generated on Sat Jun 11 2011 22:28:02 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

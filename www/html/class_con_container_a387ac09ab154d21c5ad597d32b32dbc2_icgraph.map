@@ -1,5 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_neuron.html#aac7d538b4a5087f730ba80f19852bced" title="Neuron::getConId" alt="" coords="208,5,331,32"/>
-<area shape="rect" id="node5" href="$class_con_container.html#aac12a3d3604db9ff715503816109470c" title="Object validator." alt="" coords="192,56,347,83"/>
-<area shape="rect" id="node7" href="$class_neuron.html#a95327aa80a9ec949491f214a0c159b5a" title="Neuron::validate" alt="" coords="396,56,511,83"/>
+<area shape="rect" id="node3" href="$class_con_container.html#aac12a3d3604db9ff715503816109470c" title="Object validator." alt="" coords="200,5,363,32"/>
 </map>

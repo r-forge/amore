@@ -3,5 +3,6 @@ class NeuralNet {
   // Operations
 public:
   void show ();
+  bool validate ();
 };
 

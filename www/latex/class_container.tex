@@ -4,11 +4,17 @@
 }
 
 
+class \hyperlink{class_container}{Container} -\/  
+
+
+
+
 {\ttfamily \#include $<$Container.h$>$}
 
 
 
-Inheritance diagram for Container$<$ T $>$:\nopagebreak
+Inheritance diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,7 +23,8 @@ Inheritance diagram for Container$<$ T $>$:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Container$<$ T $>$:\nopagebreak
+Collaboration diagram for Container$<$ T $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,6 +33,14 @@ Collaboration diagram for Container$<$ T $>$:\nopagebreak
 \end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
+\item 
+typedef boost::shared\_\-ptr$<$ T $>$ \hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{value\_\-type}
+\item 
+typedef boost::shared\_\-ptr$<$ T $>$ const \& \hyperlink{class_container_a9aaab0502055ee85ce5d3633fbca2675}{const\_\-reference}
+\item 
+typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator}
+\item 
+typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator} \hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator}
 \item 
 typedef std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator}
 \item 
@@ -40,26 +55,56 @@ typedef \hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{value\_\-t
 \item 
 \hyperlink{class_container_ab17ce1f67243b28abcd4c8113a72524c}{Container} ()
 \item 
-\hyperlink{class_container_a161e09c0c1cbe40429df228f7db63972}{Container} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection})
+\hyperlink{class_container_a50bd420b4bf50e613882112ac73de796}{Container} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} first, typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} last)
+\item 
+bool \hyperlink{class_container_afeba0e92ae041e241e5dbc882225315e}{buildAndAppend} (\hyperlink{_a_m_o_r_e_8h_a36be90b8d9f454d85104cd4a44467e00}{NeuronContainer\_\-iterator} firstNeuron, \hyperlink{_a_m_o_r_e_8h_a36be90b8d9f454d85104cd4a44467e00}{NeuronContainer\_\-iterator} lastNeuron, std::vector$<$ double $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} firstWeight, std::vector$<$ double $>$::\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} lastWeight)
+\item 
+void \hyperlink{class_container_a3c543f72952c30d3eda5202815833f98}{push\_\-back} (\hyperlink{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{value\_\-type} const \&\hyperlink{class_container_a9aaab0502055ee85ce5d3633fbca2675}{const\_\-reference})
+\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
+void \hyperlink{class_container_a7a34b07b4e412ba1e999389065b8edb8}{erase} (\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} first, \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} last)
 \item 
 \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_ac5e2a75311f6e6a690ca67603490ddb1}{begin} ()
 \item 
 \hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a266eabe62963d6909d3aca7f105e203e}{end} ()
+\item 
+void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
+\item 
+void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
+\item 
+void \hyperlink{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{empty} ()
+\item 
+size\_\-type \hyperlink{class_container_a842c3d9eca81b78b59112fde9707b091}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_container_aab0690d44c8e04614cea46935ff49e7a}{clear} ()
+\item 
+void \hyperlink{class_container_a9c0320e9873286ea5a3b70c2ce29bdf4}{insert} (\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} position, \hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator} first, \hyperlink{class_container_a5eabadaffdd508cb623c955eb0af1518}{const\_\-iterator} last)
+\item 
+void \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
+\begin{DoxyCompactList}\small\item\em Pretty print of the Container$<$T$>$ \end{DoxyCompactList}\item 
+bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
+\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
+\hyperlink{class_container_ab17ce1f67243b28abcd4c8113a72524c}{Container} ()
+\item 
+\hyperlink{class_container_a1ed1d5384e85f713e40bfb539e23c9ce}{Container} (std::vector$<$ value $>$ first, std::vector$<$ value $>$ last)
+\item 
+\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{begin} ()
+\item 
+\hyperlink{class_container_afe880028d8304353129f47cd1d28c20a}{iterator} \hyperlink{class_container_a769250b7546b782007f1adaba8a07336}{end} ()
 \item 
 std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a9161a87726434f8955398137c647947c}{load} ()
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 void \hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{store} (typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ collectionT)
 \begin{DoxyCompactList}\small\item\em collection field accessor function \end{DoxyCompactList}\item 
 size\_\-type \hyperlink{class_container_a842c3d9eca81b78b59112fde9707b091}{size} ()
-\begin{DoxyCompactList}\small\item\em Returns the size or length of the vector. \end{DoxyCompactList}\item 
-void \hyperlink{class_container_a1f00050a4bd892699f05f8528afcea2e}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ const \&\hyperlink{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{const\_\-reference})
-\begin{DoxyCompactList}\small\item\em Append a shared\_\-ptr at the end of collection. \end{DoxyCompactList}\item 
+\item 
+void \hyperlink{class_container_a1f00050a4bd892699f05f8528afcea2e}{push\_\-back} (boost::shared\_\-ptr$<$ T $>$ const \&\hyperlink{class_container_a9aaab0502055ee85ce5d3633fbca2675}{const\_\-reference})
+\item 
 void \hyperlink{class_container_a86d42cf807e073724bd2f8e08dcdfefa}{append} (\hyperlink{class_container}{Container}$<$ T $>$ containerT)
 \begin{DoxyCompactList}\small\item\em Appends a Container$<$T$>$ object. \end{DoxyCompactList}\item 
 bool \hyperlink{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{show} ()
-\begin{DoxyCompactList}\small\item\em Pretty print of the Container$<$T$>$ \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{validate} ()
-\begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{reserve} (int n)
 \item 
 void \hyperlink{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{resize} (int n)
@@ -73,16 +118,16 @@ boost::shared\_\-ptr$<$ T $>$ \& \hyperlink{class_container_aed3c227120a6a745fa9
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection}
+std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ \hyperlink{class_container_a80e0663ccf6d358b15d0064d855a8e7b}{collection}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$class Container$<$ T $>$}
 
+class \hyperlink{class_container}{Container} -\/ 
 
-
-Definition at line 12 of file Container.h.
+Definition at line 13 of file Container.h.
 
 
 
@@ -98,7 +143,33 @@ Reimplemented in \hyperlink{class_con_container_ac314ee4e351b3a5f595cd1de74fb3b5
 
 
 
+Definition at line 21 of file Container.h.
+
+\hypertarget{class_container_a5eabadaffdd508cb623c955eb0af1518}{
+\index{Container@{Container}!const\_\-iterator@{const\_\-iterator}}
+\index{const\_\-iterator@{const\_\-iterator}!Container@{Container}}
+\subsubsection[{const\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$::{\bf const\_\-iterator} {\bf Container}$<$ T $>$::{\bf const\_\-iterator}}}
+\label{class_container_a5eabadaffdd508cb623c955eb0af1518}
+
+
+Reimplemented in \hyperlink{class_con_container_ac314ee4e351b3a5f595cd1de74fb3b5e}{ConContainer}, and \hyperlink{class_neuron_container_a41749602f05e7610da7f0f1fd59f5442}{NeuronContainer}.
+
+
+
 Definition at line 22 of file Container.h.
+
+\hypertarget{class_container_a9aaab0502055ee85ce5d3633fbca2675}{
+\index{Container@{Container}!const\_\-reference@{const\_\-reference}}
+\index{const\_\-reference@{const\_\-reference}!Container@{Container}}
+\subsubsection[{const\_\-reference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef boost::shared\_\-ptr$<$T$>$ const\& {\bf Container}$<$ T $>$::{\bf const\_\-reference}}}
+\label{class_container_a9aaab0502055ee85ce5d3633fbca2675}
+
+
+Reimplemented in \hyperlink{class_con_container_ac644eca2f5ee432a6070fd1d397b3741}{ConContainer}, and \hyperlink{class_neuron_container_a468ffbb00b15553f73da46dd62c91c8d}{NeuronContainer}.
+
+
+
+Definition at line 18 of file Container.h.
 
 \hypertarget{class_container_a8dd7ae9d0687e11d873f98206e961ac1}{
 \index{Container@{Container}!const\_\-reference@{const\_\-reference}}
@@ -126,6 +197,19 @@ Reimplemented in \hyperlink{class_con_container_a5dc8aab66a22fc25b7e700b51265b57
 
 Definition at line 19 of file Container.h.
 
+\hypertarget{class_container_afe880028d8304353129f47cd1d28c20a}{
+\index{Container@{Container}!iterator@{iterator}}
+\index{iterator@{iterator}!Container@{Container}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$::{\bf iterator} {\bf Container}$<$ T $>$::{\bf iterator}}}
+\label{class_container_afe880028d8304353129f47cd1d28c20a}
+
+
+Reimplemented in \hyperlink{class_con_container_a5dc8aab66a22fc25b7e700b51265b577}{ConContainer}, and \hyperlink{class_neuron_container_abf81356adaea3bfc64aa03777e9a8def}{NeuronContainer}.
+
+
+
+Definition at line 19 of file Container.h.
+
 \hypertarget{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{
 \index{Container@{Container}!value\_\-type@{value\_\-type}}
 \index{value\_\-type@{value\_\-type}!Container@{Container}}
@@ -138,6 +222,19 @@ Reimplemented in \hyperlink{class_con_container_a08881a149e3a285eba67a4c8cff92a9
 
 
 Definition at line 24 of file Container.h.
+
+\hypertarget{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}{
+\index{Container@{Container}!value\_\-type@{value\_\-type}}
+\index{value\_\-type@{value\_\-type}!Container@{Container}}
+\subsubsection[{value\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef boost::shared\_\-ptr$<$T$>$ {\bf Container}$<$ T $>$::{\bf value\_\-type}}}
+\label{class_container_aa44714b9a736d2cfd2e01a87ad1c001b}
+
+
+Reimplemented in \hyperlink{class_con_container_a08881a149e3a285eba67a4c8cff92a9e}{ConContainer}, and \hyperlink{class_neuron_container_ac067345f1d27a5b04e4d9487b319ccaa}{NeuronContainer}.
+
+
+
+Definition at line 17 of file Container.h.
 
 
 
@@ -160,26 +257,51 @@ Definition at line 9 of file Container.cpp.
   {
   }
 \end{DoxyCode}
-\hypertarget{class_container_a161e09c0c1cbe40429df228f7db63972}{
+\hypertarget{class_container_a50bd420b4bf50e613882112ac73de796}{
 \index{Container@{Container}!Container@{Container}}
 \index{Container@{Container}!Container@{Container}}
 \subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Container}$<$ T $>$::{\bf Container} (
 \begin{DoxyParamCaption}
-\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$}]{collection}
+\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::{\bf iterator}}]{first, }
+\item[{typename std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$::{\bf iterator}}]{last}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_a161e09c0c1cbe40429df228f7db63972}
+\label{class_container_a50bd420b4bf50e613882112ac73de796}
 
 
 Definition at line 14 of file Container.cpp.
 
 
+
+References Container$<$ T $>$::collection.
+
+
 \begin{DoxyCode}
-                                                          :
-    collection(collection)
+                                                            :
+    collection()
   {
+    collection.insert(collection.begin(), first, last);
   }
 \end{DoxyCode}
+\hypertarget{class_container_ab17ce1f67243b28abcd4c8113a72524c}{
+\index{Container@{Container}!Container@{Container}}
+\index{Container@{Container}!Container@{Container}}
+\subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Container}$<$ T $>$::{\bf Container} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ab17ce1f67243b28abcd4c8113a72524c}
+\hypertarget{class_container_a1ed1d5384e85f713e40bfb539e23c9ce}{
+\index{Container@{Container}!Container@{Container}}
+\index{Container@{Container}!Container@{Container}}
+\subsubsection[{Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Container}$<$ T $>$::{\bf Container} (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ value $>$}]{first, }
+\item[{std::vector$<$ value $>$}]{last}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a1ed1d5384e85f713e40bfb539e23c9ce}
 
 
 \subsection{Member Function Documentation}
@@ -258,7 +380,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{Container::store} , \hyperlink{class_container_a1f00050a4bd892699f05f8528afcea2e}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
+\hyperlink{class_container_a601371159ddfee9ab29b676207a0cf75}{Container::store} , \hyperlink{class_container_a3c543f72952c30d3eda5202815833f98}{Container::push\_\-back} and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
@@ -297,11 +419,11 @@ Here is the call graph for this function:\nopagebreak
 \label{class_container_ac5e2a75311f6e6a690ca67603490ddb1}
 
 
-Definition at line 22 of file Container.cpp.
+Definition at line 24 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
+Referenced by Container$<$ T $>$::append(), Neuron::const\_\-iterators(), Neuron::iterators(), Neuron::Neuron(), and ConContainer::setFrom().
 
 
 \begin{DoxyCode}
@@ -311,15 +433,71 @@ Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_container_ac5e2a75311f6e6a690ca67603490ddb1_icgraph}
+\includegraphics[width=334pt]{class_container_ac5e2a75311f6e6a690ca67603490ddb1_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{class_container_a9ad6802d12bf5f48400bc346de37ad0f}{
+\index{Container@{Container}!begin@{begin}}
+\index{begin@{begin}!Container@{Container}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a9ad6802d12bf5f48400bc346de37ad0f}
+\hypertarget{class_container_afeba0e92ae041e241e5dbc882225315e}{
+\index{Container@{Container}!buildAndAppend@{buildAndAppend}}
+\index{buildAndAppend@{buildAndAppend}!Container@{Container}}
+\subsubsection[{buildAndAppend}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Container}$<$ T $>$::buildAndAppend (
+\begin{DoxyParamCaption}
+\item[{{\bf NeuronContainer\_\-iterator}}]{firstNeuron, }
+\item[{{\bf NeuronContainer\_\-iterator}}]{lastNeuron, }
+\item[{std::vector$<$ double $>$::{\bf iterator}}]{firstWeight, }
+\item[{std::vector$<$ double $>$::{\bf iterator}}]{lastWeight}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_afeba0e92ae041e241e5dbc882225315e}
+
+
+Definition at line 207 of file Container.cpp.
+
+
+\begin{DoxyCode}
+{
+  BEGIN_RCPP
+
+  bool emptyNeuronContainer = (firstNeuron==lastNeuron);
+  if (emptyNeuronContainer)
+    {
+      throw std::range_error(
+          "[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");
+    }
+
+  bool differentSize = (lastNeuron - firstNeuron) != (lastWeight - firstWeight);
+  if (differentSize)
+    {
+      throw std::range_error(
+          "[ConContainer::buildAndAppend]: Error, neuronContainer.size() != nWeig
+      hts.size()");
+    }
+
+  reserve(size() + (lastNeuron - firstNeuron));
+  ConPtr ptCon;
+  while (firstNeuron != lastNeuron)
+    {
+      ptCon.reset(new Con(*firstNeuron++, *firstWeight++));
+      push_back(ptCon);
+    }
+  return true;
+END_RCPP}
+\end{DoxyCode}
 \hypertarget{class_container_aab0690d44c8e04614cea46935ff49e7a}{
 \index{Container@{Container}!clear@{clear}}
 \index{clear@{clear}!Container@{Container}}
@@ -331,7 +509,7 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_container_aab0690d44c8e04614cea46935ff49e7a}
 
 
-Definition at line 310 of file Container.cpp.
+Definition at line 191 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -339,6 +517,15 @@ Definition at line 310 of file Container.cpp.
     collection.clear();
   }
 \end{DoxyCode}
+\hypertarget{class_container_aab0690d44c8e04614cea46935ff49e7a}{
+\index{Container@{Container}!clear@{clear}}
+\index{clear@{clear}!Container@{Container}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aab0690d44c8e04614cea46935ff49e7a}
 \hypertarget{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{
 \index{Container@{Container}!empty@{empty}}
 \index{empty@{empty}!Container@{Container}}
@@ -350,7 +537,7 @@ Definition at line 310 of file Container.cpp.
 \label{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}
 
 
-Definition at line 303 of file Container.cpp.
+Definition at line 184 of file Container.cpp.
 
 
 
@@ -364,15 +551,25 @@ Referenced by ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_container_ab8e09c25f519687468ef5b9f0fae9b3e_icgraph}
+\includegraphics[width=336pt]{class_container_ab8e09c25f519687468ef5b9f0fae9b3e_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}{
+\index{Container@{Container}!empty@{empty}}
+\index{empty@{empty}!Container@{Container}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Container}$<$ T $>$::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ab8e09c25f519687468ef5b9f0fae9b3e}
 \hypertarget{class_container_a266eabe62963d6909d3aca7f105e203e}{
 \index{Container@{Container}!end@{end}}
 \index{end@{end}!Container@{Container}}
@@ -384,11 +581,11 @@ Here is the caller graph for this function:\nopagebreak
 \label{class_container_a266eabe62963d6909d3aca7f105e203e}
 
 
-Definition at line 29 of file Container.cpp.
+Definition at line 31 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append().
+Referenced by Container$<$ T $>$::append(), Neuron::const\_\-iterators(), and Neuron::iterators().
 
 
 \begin{DoxyCode}
@@ -398,11 +595,58 @@ Referenced by Container$<$ T $>$::append().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=292pt]{class_container_a266eabe62963d6909d3aca7f105e203e_icgraph}
+\includegraphics[width=326pt]{class_container_a266eabe62963d6909d3aca7f105e203e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_container_a769250b7546b782007f1adaba8a07336}{
+\index{Container@{Container}!end@{end}}
+\index{end@{end}!Container@{Container}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf iterator} {\bf Container}$<$ T $>$::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a769250b7546b782007f1adaba8a07336}
+\hypertarget{class_container_a7a34b07b4e412ba1e999389065b8edb8}{
+\index{Container@{Container}!erase@{erase}}
+\index{erase@{erase}!Container@{Container}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{first, }
+\item[{{\bf iterator}}]{last}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a7a34b07b4e412ba1e999389065b8edb8}
+\hypertarget{class_container_a9c0320e9873286ea5a3b70c2ce29bdf4}{
+\index{Container@{Container}!insert@{insert}}
+\index{insert@{insert}!Container@{Container}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{position, }
+\item[{{\bf const\_\-iterator}}]{first, }
+\item[{{\bf const\_\-iterator}}]{last}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a9c0320e9873286ea5a3b70c2ce29bdf4}
+
+
+Referenced by Neuron::Neuron().
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_container_a9c0320e9873286ea5a3b70c2ce29bdf4_icgraph}
 \end{center}
 \end{figure}
 
@@ -420,7 +664,7 @@ Here is the caller graph for this function:\nopagebreak
 
 collection field accessor function 
 
-This method allows access to the data stored in the \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection} field. \begin{DoxyReturn}{Returns}
+This method allows access to the data stored in the \hyperlink{class_container_a80e0663ccf6d358b15d0064d855a8e7b}{collection} field. \begin{DoxyReturn}{Returns}
 The collection vector.
 \end{DoxyReturn}
 
@@ -494,15 +738,15 @@ Definition at line 317 of file Container.cpp.
     return collection[offset];
   }
 \end{DoxyCode}
-\hypertarget{class_container_a1f00050a4bd892699f05f8528afcea2e}{
+\hypertarget{class_container_a3c543f72952c30d3eda5202815833f98}{
 \index{Container@{Container}!push\_\-back@{push\_\-back}}
 \index{push\_\-back@{push\_\-back}!Container@{Container}}
-\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Container}$<$ T $>$::push\_\-back (
 \begin{DoxyParamCaption}
-\item[{boost::shared\_\-ptr$<$ T $>$ const \&}]{const\_\-reference}
+\item[{{\bf value\_\-type} const \&}]{const\_\-reference}
 \end{DoxyParamCaption}
 )}}
-\label{class_container_a1f00050a4bd892699f05f8528afcea2e}
+\label{class_container_a3c543f72952c30d3eda5202815833f98}
 
 
 Append a shared\_\-ptr at the end of collection. 
@@ -554,7 +798,7 @@ C++ documentation for std::vector::push\_\-back and the unit test files, e.g., r
 \end{DoxySeeAlso}
 
 
-Definition at line 71 of file Container.cpp.
+Definition at line 73 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -562,6 +806,24 @@ Definition at line 71 of file Container.cpp.
     collection.push_back(const_reference);
   }
 \end{DoxyCode}
+\hypertarget{class_container_a1f00050a4bd892699f05f8528afcea2e}{
+\index{Container@{Container}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!Container@{Container}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::push\_\-back (
+\begin{DoxyParamCaption}
+\item[{boost::shared\_\-ptr$<$ T $>$ const \&}]{const\_\-reference}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a1f00050a4bd892699f05f8528afcea2e}
+\hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
+\index{Container@{Container}!reserve@{reserve}}
+\index{reserve@{reserve}!Container@{Container}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::reserve (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
 \hypertarget{class_container_aa3cbae68ebeed649c52eb3805a30fb75}{
 \index{Container@{Container}!reserve@{reserve}}
 \index{reserve@{reserve}!Container@{Container}}
@@ -573,7 +835,7 @@ Definition at line 71 of file Container.cpp.
 \label{class_container_aa3cbae68ebeed649c52eb3805a30fb75}
 
 
-Definition at line 296 of file Container.cpp.
+Definition at line 177 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -581,6 +843,15 @@ Definition at line 296 of file Container.cpp.
     collection.reserve(n);
   }
 \end{DoxyCode}
+\hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
+\index{Container@{Container}!resize@{resize}}
+\index{resize@{resize}!Container@{Container}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Container}$<$ T $>$::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ab77ce6f8173bd47c4cf46643317dffdb}
 \hypertarget{class_container_ab77ce6f8173bd47c4cf46643317dffdb}{
 \index{Container@{Container}!resize@{resize}}
 \index{resize@{resize}!Container@{Container}}
@@ -592,7 +863,7 @@ Definition at line 296 of file Container.cpp.
 \label{class_container_ab77ce6f8173bd47c4cf46643317dffdb}
 
 
-Definition at line 289 of file Container.cpp.
+Definition at line 170 of file Container.cpp.
 
 
 \begin{DoxyCode}
@@ -613,7 +884,7 @@ Definition at line 289 of file Container.cpp.
 
 Pretty print of the Container$<$T$>$ 
 
-This method outputs in the R terminal the contents of \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{Container::collection}. \begin{DoxyReturn}{Returns}
+This method outputs in the R terminal the contents of \hyperlink{class_container_a80e0663ccf6d358b15d0064d855a8e7b}{Container::collection}. \begin{DoxyReturn}{Returns}
 true in case everything works without throwing an exception
 \end{DoxyReturn}
 $\ast$ 
@@ -660,7 +931,7 @@ The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
 \end{DoxySeeAlso}
 
 
-Definition at line 122 of file Container.cpp.
+Definition at line 124 of file Container.cpp.
 
 
 
@@ -674,12 +945,11 @@ Referenced by Neuron::show().
     // for( auto x : collection)        { x.show(); }
     // Waiting for C++0x
 
-    foreach (typename boost::shared_ptr<T> itr, *this)
-      {
-        itr->show();
-      }
-    return true;
-  }
+foreach  (typename boost::shared_ptr<T> itr, *this)
+    {
+      itr->show();
+    }
+}
 \end{DoxyCode}
 
 
@@ -692,6 +962,15 @@ Here is the caller graph for this function:\nopagebreak
 \end{figure}
 
 
+\hypertarget{class_container_ad72379ee222b073a5eecec7fc1bedfc2}{
+\index{Container@{Container}!show@{show}}
+\index{show@{show}!Container@{Container}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Container}$<$ T $>$::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_ad72379ee222b073a5eecec7fc1bedfc2}
 \hypertarget{class_container_a842c3d9eca81b78b59112fde9707b091}{
 \index{Container@{Container}!size@{size}}
 \index{size@{size}!Container@{Container}}
@@ -707,11 +986,11 @@ Returns the size or length of the vector.
 
 This method returns the size of the vector. In the classes derived from Container$<$T$>$ this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. 
 
-Definition at line 281 of file Container.cpp.
+Definition at line 162 of file Container.cpp.
 
 
 
-Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
+Referenced by Container$<$ T $>$::append(), ConContainer::setFrom(), and Neuron::show().
 
 
 \begin{DoxyCode}
@@ -721,15 +1000,25 @@ Referenced by Container$<$ T $>$::append(), and ConContainer::setFrom().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:\nopagebreak
+Here is the caller graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_container_a842c3d9eca81b78b59112fde9707b091_icgraph}
+\includegraphics[width=326pt]{class_container_a842c3d9eca81b78b59112fde9707b091_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{class_container_a842c3d9eca81b78b59112fde9707b091}{
+\index{Container@{Container}!size@{size}}
+\index{size@{size}!Container@{Container}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\_\-type {\bf Container}$<$ T $>$::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_a842c3d9eca81b78b59112fde9707b091}
 \hypertarget{class_container_a601371159ddfee9ab29b676207a0cf75}{
 \index{Container@{Container}!store@{store}}
 \index{store@{store}!Container@{Container}}
@@ -743,7 +1032,7 @@ Here is the caller graph for this function:\nopagebreak
 
 collection field accessor function 
 
-This method sets the value of the data stored in the \hyperlink{class_container_a6cc12233bceb7d72709320d2c57e3398}{collection} field. 
+This method sets the value of the data stored in the \hyperlink{class_container_a80e0663ccf6d358b15d0064d855a8e7b}{collection} field. 
 \begin{DoxyParams}{Parameters}
 {\em v} & The vector of smart pointers to be stored in the collection field \\
 \hline
@@ -795,21 +1084,40 @@ Definition at line 144 of file Container.cpp.
     return true;
   }
 \end{DoxyCode}
+\hypertarget{class_container_aa99a036fd0fe6d6b82ba558157e557d3}{
+\index{Container@{Container}!validate@{validate}}
+\index{validate@{validate}!Container@{Container}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Container}$<$ T $>$::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_aa99a036fd0fe6d6b82ba558157e557d3}
+
+
+Reimplemented in \hyperlink{class_con_container_aac12a3d3604db9ff715503816109470c}{ConContainer}.
+
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_container_a6cc12233bceb7d72709320d2c57e3398}{
+\hypertarget{class_container_a80e0663ccf6d358b15d0064d855a8e7b}{
 \index{Container@{Container}!collection@{collection}}
 \index{collection@{collection}!Container@{Container}}
-\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$boost::shared\_\-ptr$<$T$>$ $>$ {\bf Container}$<$ T $>$::{\bf collection}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_container_a6cc12233bceb7d72709320d2c57e3398}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std::vector$<$ boost::shared\_\-ptr$<$ T $>$ $>$ {\bf Container}$<$ T $>$::{\bf collection}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_container_a80e0663ccf6d358b15d0064d855a8e7b}
 
 
-Definition at line 15 of file Container.h.
+Definition at line 23 of file Container.h.
+
+
+
+Referenced by Container$<$ T $>$::Container().
 
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
 pkg/AMORE/src/\hyperlink{_container_8h}{Container.h}\item 
-pkg/AMORE/src/\hyperlink{_container_8cpp}{Container.cpp}\end{DoxyCompactItemize}
+pkg/AMORE/src/old/\hyperlink{old_2_container_8h}{Container.h}\item 
+pkg/AMORE/src/\hyperlink{_container_8cpp}{Container.cpp}\item 
+pkg/AMORE/src/old/\hyperlink{old_2_container_8cpp}{Container.cpp}\end{DoxyCompactItemize}

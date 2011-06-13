@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: pkg/AMORE/src/MLPneuralNetFactory.cpp File Reference</title>
+<title>AMORE++: pkg/AMORE/src/old/MLPneuralNetFactory.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -77,20 +77,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">pkg/AMORE/src/MLPneuralNetFactory.cpp File Reference</div>  </div>
+<div class="title">pkg/AMORE/src/old/MLPneuralNetFactory.cpp File Reference</div>  </div>
 </div>
 <div class="contents">
 
 <p><a href="_m_l_pneural_net_factory_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_l_pneural_net.html">MLPneuralNet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_m_l_pneural_net_factory_8cpp.html#aa56001acecd72b1ceee345044a82ea15">CreateMLPneuralNet</a> (std::vector&lt; int &gt; numberOfNeuronsPerLayer)</td></tr>
 </table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="aa56001acecd72b1ceee345044a82ea15"></a><!-- doxytag: member="MLPneuralNetFactory.cpp::CreateMLPneuralNet" ref="aa56001acecd72b1ceee345044a82ea15" args="(std::vector&lt; int &gt; numberOfNeuronsPerLayer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_l_pneural_net.html">MLPneuralNet</a> CreateMLPneuralNet </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>numberOfNeuronsPerLayer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_m_l_pneural_net_factory_8cpp_source.html#l00002">2</a> of file <a class="el" href="_m_l_pneural_net_factory_8cpp_source.html">MLPneuralNetFactory.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+
+  net = <span class="keyword">new</span> MLPNeuralNet();
+
+  MLPlayerPtr mlpLayerPtr;
+
+  std::vector&lt;int&gt; idx;
+
+<span class="keywordflow">foreach</span> (<span class="keywordtype">int</span> n, numberOfNeuronsPerLayer)
+  {
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt;=n; ++i)
+      {
+        idx.push_back(i);
+      }
+    mlpLayerPtr.reset(<span class="keyword">new</span> <a class="code" href="class_m_l_player.html">MLPlayer</a>( idx ) );
+    net.nLayers.push_back(mlpLayerPtr);
+  }
+
+
+
+<span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt;=; ++i)
+  {
+
+    mlpPtr-&gt;buildAndAppend();
+
+  }
+
+}
+</pre></div>
+</div>
+</div>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_m_l_pneural_net_factory_8cpp.html">MLPneuralNetFactory.cpp</a>      </li>
-      <li class="footer">Generated on Sat Jun 11 2011 22:28:02 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

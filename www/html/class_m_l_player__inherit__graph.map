@@ -1,6 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="7,1009,151,1101"/>
-<area shape="rect" id="node4" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="5,718,152,957"/>
-<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="7,369,151,666"/>
-<area shape="rect" id="node8" href="$class_container.html" title="{Container\&lt; T \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ size()\l+ push_back()\l+ append()\l+ show()\l+ validate()\l+ reserve()\l+ resize()\l+ empty()\l+ clear()\l+ operator[]()\l}" alt="" coords="24,6,133,303"/>
+<area shape="rect" id="node2" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="17,1750,167,1842"/>
+<area shape="rect" id="node4" href="$class_neuron_container.html" title="{NeuronContainer\&lt; MLP \&gt;\n||+ NeuronContainer()\l+ NeuronContainer()\l+ ~NeuronContainer()\l+ numOfNeurons()\l+ numOfCons()\l+ getId()\l+ setId()\l+ getConId()\l+ getWeight()\l+ getFrom()\l+ setFrom()\l+ setWeight()\l}" alt="" coords="5,1459,179,1698"/>
+<area shape="rect" id="node6" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="14,1155,169,1394"/>
+<area shape="rect" id="node8" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ Container()\l+ Container()\l+ buildAndAppend()\l+ push_back()\l+ push_back()\l+ erase()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ reserve()\l+ reserve()\l+ resize()\l+ resize()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ insert()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ load()\l+ store()\l+ append()\l+ operator[]()\l}" alt="" coords="19,587,165,1104"/>
+<area shape="rect" id="node10" href="$class_container.html" title="class Container &#45;" alt="" coords="19,5,165,523"/>
 </map>

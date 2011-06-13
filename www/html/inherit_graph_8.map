@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_neuron.html" title="A class to handle the information contained in a general Neuron." alt="" coords="5,5,69,32"/>
-<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="MLPneuron" alt="" coords="117,5,205,32"/>
+<area shape="rect" id="node1" href="$class_neuron_container.html" title="NeuronContainer\&lt; MLP \&gt;" alt="" coords="6,5,181,32"/>
+<area shape="rect" id="node3" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="230,5,381,32"/>
+<area shape="rect" id="node5" href="$class_m_l_player.html" title="MLPlayer" alt="" coords="430,5,509,32"/>
 </map>
