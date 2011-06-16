@@ -8,56 +8,52 @@
 #include "Neuron.h"
 
 Neuron::Neuron() :
-  Id(NA_INTEGER), nCons()
+  d_Id(NA_INTEGER) //, nCons()
 {
 }
 
 Neuron::Neuron(int Id) :
-  Id(Id), nCons()
+  d_Id(Id)//, nCons()
 {
 }
 
+#if 0
 Neuron::Neuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::const_iterator lastCon ) :
-  Id(Id), nCons()
+  d_Id(Id)//, nCons()
 {
 
-  nCons.insert(nCons.begin(), firstCon, lastCon);
+//  nCons.insert(nCons.begin(), firstCon, lastCon);
 
 }
 
-int
-Neuron::getId()
+#endif
+
+int&
+Neuron::Id()
 {
-  return Id;
+  return d_Id;
 }
 
-void
-Neuron::setId(int value)
-{
-  Id = value;
-}
-
-
-void
-Neuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
+#if 0
+void Neuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
 {
    first=nCons.begin();
     last=nCons.end();
 }
 
 
-void
-Neuron::const_iterators(Container<Con>::const_iterator & first, Container<Con>::const_iterator & last)
+// void Neuron::const_iterators(Container<Con>::const_iterator & first, Container<Con>::const_iterator & last)
 {
    first=nCons.begin();
     last=nCons.end();
 }
 
+#endif
 
 void
 Neuron::show()
 {
-  int id = getId();
+  int id = Id();
   Rprintf("\n------------------------\n");
   if (id == NA_INTEGER)
     {
@@ -68,6 +64,7 @@ Neuron::show()
       Rprintf("\n Id: %d", id);
     }
   Rprintf("\n------------------------\n");
+#if 0
 
   if (nCons.size() == 0)
     {
@@ -78,13 +75,14 @@ Neuron::show()
       nCons.show();
     }
   Rprintf("\n------------------------\n");
- }
+#endif
+}
 
 bool
 Neuron::validate()
 {
   BEGIN_RCPP
-  if (getId() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Error, Id is NA.");
+  if (Id() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Error, Id is NA.");
  // nCons.validate();
   return (TRUE);
 END_RCPP}

@@ -1,39 +1,32 @@
 #ifndef CON_H_
 #define CON_H_
-class Con
-{
-  // Attributes
-protected:
-  NeuronWeakPtr from;
-  double weight;
-  // Operations
-public:
-  Con();
+/// class Con -
+class
+Con  {
 
-  Con(NeuronPtr neuronPtr);
+    // Attributes
+  protected:
 
-  Con(NeuronPtr neuronPtr, double weight);
+    Neuron& d_neuron;
 
-  NeuronPtr
-  getFrom();
+    double d_weight;
 
-  int
-  getId();
+    // Operations
+  public:
 
-  double
-  getWeight();
+    Con (Neuron& neuron);
 
-  void
-  setFrom(NeuronPtr neuronPtr);
+    Con (Neuron& neuron, double weight);
 
-  void
-  setWeight(double weight);
+    Neuron& neuron ();
 
-  void
-  show();
+    int Id ();
 
-  bool
-  validate();
-};
+    double& weight ();
+
+    void show ();
+
+    bool validate ();
+  };
 
 #endif // CON_H_

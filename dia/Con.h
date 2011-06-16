@@ -2,18 +2,16 @@
 class Con {
   // Attributes
 protected:
-  NeuronWeakPtr from;
-  double weight;
+  Neuron& d_neuron;
+  double d_weight;
   // Operations
 public:
   Con ();
-  Con (NeuronPtr neuronPtr);
-  Con (NeuronPtr neuronPtr, double weight);
-  NeuronPtr getFrom ();
-  int getId ();
-  double getWeight ();
-  void setFrom (NeuronPtr neuronPtr);
-  void setWeight (double weight);
+  Con (Neuron& neuron);
+  Con (Neuron& neuron, double weight);
+  Neuron& neuron ();
+  int Id ();
+  double& weight ();
   void show ();
   bool validate ();
 };
