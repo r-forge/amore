@@ -5,6 +5,8 @@
  *      Author: mcasl
  */
 
+
+
 #ifndef CONTAINER_H_
 #define CONTAINER_H_
 
@@ -14,30 +16,49 @@ template<typename T>
   {
     // Attributes
   public:
-    typedef typename boost::shared_ptr<T> value_type;
-    typedef boost::shared_ptr<T> const & const_reference;
-    typedef typename std::vector<boost::shared_ptr<T> >::iterator iterator;
-    typedef typename std::vector<boost::shared_ptr<T> >::const_iterator
+    typedef T value_type;
+    typedef T const & const_reference;
+    typedef typename std::vector< T >::iterator iterator;
+    typedef typename std::vector< T >::const_iterator
         const_iterator;
   protected:
-    std::vector<boost::shared_ptr<T> > collection;
+    std::vector< T > collection;
     // Operations
   public:
 
     Container();
 
-    Container(typename std::vector<boost::shared_ptr<T> >::iterator first,
-        typename std::vector<boost::shared_ptr<T> >::iterator last);
-
-
+    Container(typename std::vector< T >::iterator first,
+        typename std::vector< T >::iterator last);
+#if 0
     bool
     buildAndAppend(NeuronContainer_iterator firstNeuron,
         NeuronContainer_iterator lastNeuron,
         std::vector<double>::iterator firstWeight,
         std::vector<double>::iterator lastWeight);
 
+    bool
+      buildAndAppend(NeuronContainer_iterator firstNeuron,
+          NeuronContainer_iterator lastNeuron);
+
+
+    bool
+    buildAndAppend(std::vector<int>::iterator firstId,
+        std::vector<int>::iterator lastId, ConContainer_iterator firstCon,
+        ConContainer_iterator lastCon);
+
+
+
+
+    bool
+    buildAndAppend(std::vector<int>::iterator firstId,
+        std::vector<int>::iterator lastId);
+
+#endif
+
+
     void
-    push_back(value_type const & const_reference);
+    push_back(value_type  reference);
 
     void
     erase(iterator first, iterator last);

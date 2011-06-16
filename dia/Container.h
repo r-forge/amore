@@ -1,6 +1,8 @@
+#include "ContainerInterface.h"
+
 /// class Container - 
 template <typename T>
-class Container {
+class Container : public ContainerInterface {
   // Attributes
 public:
   typedef typename boost::shared_ptr<T> value_type;
@@ -13,17 +15,20 @@ protected:
 public:
   Container ();
   Container (typename std::vector< boost::shared_ptr<T> >::iterator first, typename std::vector< boost::shared_ptr<T> >::iterator last);
-  template <typename Type1, typename Type2> void buildAndAppend (Type1 first1, Type1 last1, Type2 first2, Type2 last2);
+  template <typename Type1, typename Type2> void buildAndAppend (std::vector<int>::iterator firstId, std::vector<int>::iterator lastId, ConContainer_iterator firstCon, ConContainer_iterator lastCon);
   void push_back (value_type const & const_reference);
+  void insert (iterator position, iterator first, iterator last);
   void erase (iterator first, iterator last);
   iterator begin ();
   iterator end ();
   void reserve (int n);
   void resize (int n);
-  void empty ();
+  bool empty ();
   size_type size ();
   void clear ();
   void show ();
   bool validate ();
+  bool buildAndAppend (NeuronContainer_iterator firstNeuron, NeuronContainer_iterator lastNeuron);
+  bool buildAndAppend (NeuronContainer_iterator firstNeuron, NeuronContainer_iterator lastNeuron, std::vector<double>::iterator firstWeight, std::vector<double>::iterator lastWeight);
 };
 

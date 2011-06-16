@@ -16,6 +16,7 @@ public:
   int getId ();
   void setId (int Id);
   void iterators (Container<Con>::iterator & first, Container<Con>::iterator & last);
+  void const_iterators (Container<Con>::iterator & first, Container<Con>::iterator & last);
   void show ();
   bool validate ();
 };

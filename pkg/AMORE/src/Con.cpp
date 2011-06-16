@@ -10,14 +10,6 @@
 //=========================================================================================================
 
 
-//! Default Constructor
-/*
- * Default constructor, from.use_count==0L, weight=0
- */
-Con::Con() :
-  weight(0), from()
-{
-}
 
 
 //! Constructor
@@ -25,8 +17,8 @@ Con::Con() :
  * Constructor, from=neuronPtr, weight=0
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  */
-Con::Con(NeuronPtr neuronPtr) :
-  from(neuronPtr), weight(0)
+Con::Con(Neuron& neuron) :
+  d_neuron(neuron), d_weight(0)
 {
 }
 
@@ -37,8 +29,8 @@ Con::Con(NeuronPtr neuronPtr) :
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  * \param weight The new value (double) to be set in the \ref weight field.
  */
-Con::Con(NeuronPtr neuronPtr, double weight) :
-  from(neuronPtr), weight(weight)
+Con::Con(Neuron& neuron, double weight) :
+  d_neuron(neuron), d_weight(weight)
 {
 }
 
@@ -63,10 +55,10 @@ Con::Con(NeuronPtr neuronPtr, double weight) :
  *
  * \sa getId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-NeuronPtr
-Con::getFrom()
+Neuron&
+Con::neuron()
 {
-  return (from.lock());
+  return d_neuron;
 }
 
 
@@ -91,46 +83,9 @@ Con::getFrom()
  * \sa getFrom, setFrom and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
 int
-Con::getId()
+Con::Id()
 {
-  if (from.use_count() > 0)
-    {
-      NeuronPtr neuronPtr(from);
-      return (neuronPtr->getId());
-    }
-  else
-    {
-      return (NA_INTEGER);
-    }
-}
-
-
-
-//! %from field accessor.
-/*! This method sets the value of the \ref from field with the address used as parameter.
- * \param f A pointer to the neuron that is to be inserted in the \ref from field.
- *
- *  \code
- *	//================
- *	//Usage example:
- *	//================
- *	// Data set up
- * 			NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set to 1
- *			ConPtr ptShCon( new Con() );
- *			ptShCon->setFrom( ptShNeuron );
- *	// Test
- *			ptShNeuron = ptShCon->getFrom() ;
- *			int result = ptShNeuron->getId();
- *
- * 	// Now, result is equal to 1
- * 	\endcode
- *
- * \sa getFrom and getId contain usage examples. For further examples see the unit test files, e.g., runit.Cpp.Con.R
- */
-void
-Con::setFrom(NeuronPtr neuronPtr)
-{
-  from = neuronPtr;
+      return d_neuron.Id();
 }
 
 
@@ -156,39 +111,12 @@ Con::setFrom(NeuronPtr neuronPtr)
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-double
-Con::getWeight()
+double&
+Con::weight()
 {
-  return (weight);
+  return d_weight;
 }
 
-//! %weight field accessor.
-/*! This method sets the value of the \ref weight field.
- * \param w The new value (double) to be set in the \ref weight field.
- *
- * \code
- *  //================
- *  //Usage example:
- *  //================
- *  // Data set up
- *			std::vector<double> result;
- *			NeuronPtr ptShNeuron ( new Neuron(16) ); 		// Neuron Id is set to 16
- *			ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from points to ptShNeuron and weight is set to 12.4
- *			result.push_back(ptShCon->getWeight());
- *	// Test
- *			ptShCon->setWeight(2.2);
- *			result.push_back(ptShCon->getWeight());
- *
- *	// Now, result is a numeric vector that contains the values 12.4 and 2.2 .
- * \endcode
- *
- * \sa getWeight and the unit test files (e.g. runit.Cpp.Con.R)
- */
-void
-Con::setWeight(double value)
-{
-  weight = value;
-}
 
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.
@@ -198,14 +126,14 @@ Con::setWeight(double value)
 void
 Con::show()
 {
-  int id = getId();
+  int id = Id();
   if (id == NA_INTEGER)
     {
       Rprintf("From: NA\t Invalid Connection \n");
     }
   else
     {
-      Rprintf("From:\t %d \t Weight= \t %lf \n", id, getWeight());
+      Rprintf("From:\t %d \t Weight= \t %lf \n", id, d_weight);
     }
 }
 
@@ -219,8 +147,8 @@ bool
 Con::validate()
 {
   BEGIN_RCPP
-  if (! R_FINITE(getWeight()) ) throw std::range_error("weight is not finite.");
-  if (getId() == NA_INTEGER)
+  if (! R_FINITE(d_weight) ) throw std::range_error("weight is not finite.");
+  if (Id() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);
 END_RCPP}
