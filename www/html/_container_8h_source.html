@@ -88,81 +88,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#ifndef CONTAINER_H_</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define CONTAINER_H_</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00012"></a>00012 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00013"></a><a class="code" href="class_container.html">00013</a>   <span class="keyword">class </span><a class="code" href="class_container.html" title="class Container -">Container</a>
-<a name="l00014"></a>00014   {
-<a name="l00015"></a>00015     <span class="comment">// Attributes</span>
-<a name="l00016"></a>00016   <span class="keyword">public</span>:
-<a name="l00017"></a><a class="code" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">00017</a>     <span class="keyword">typedef</span> <span class="keyword">typename</span> boost::shared_ptr&lt;T&gt; <a class="code" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a>;
-<a name="l00018"></a><a class="code" href="class_container.html#a9aaab0502055ee85ce5d3633fbca2675">00018</a>     <span class="keyword">typedef</span> boost::shared_ptr&lt;T&gt; <span class="keyword">const</span> &amp; <a class="code" href="class_container.html#a9aaab0502055ee85ce5d3633fbca2675">const_reference</a>;
-<a name="l00019"></a><a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">00019</a>     <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">::iterator</a> <a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>;
-<a name="l00020"></a>00020     <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;<a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">::const_iterator</a>
-<a name="l00021"></a><a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">00021</a>         <a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a>;
-<a name="l00022"></a>00022   <span class="keyword">protected</span>:
-<a name="l00023"></a><a class="code" href="class_container.html#a80e0663ccf6d358b15d0064d855a8e7b">00023</a>     std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; <a class="code" href="class_container.html#a80e0663ccf6d358b15d0064d855a8e7b">collection</a>;
-<a name="l00024"></a>00024     <span class="comment">// Operations</span>
-<a name="l00025"></a>00025   <span class="keyword">public</span>:
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027     <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a>();
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#ifndef CONTAINER_H_</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define CONTAINER_H_</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00014"></a>00014 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00015"></a><a class="code" href="class_container.html">00015</a>   <span class="keyword">class </span><a class="code" href="class_container.html" title="class Container -">Container</a>
+<a name="l00016"></a>00016   {
+<a name="l00017"></a>00017     <span class="comment">// Attributes</span>
+<a name="l00018"></a>00018   <span class="keyword">public</span>:
+<a name="l00019"></a><a class="code" href="class_container.html#a24a639b35c00a4c3c374276820316980">00019</a>     <span class="keyword">typedef</span> T <a class="code" href="class_container.html#a24a639b35c00a4c3c374276820316980">value_type</a>;
+<a name="l00020"></a><a class="code" href="class_container.html#a7e2266ede94e447a142aec67b2e56267">00020</a>     <span class="keyword">typedef</span> T <span class="keyword">const</span> &amp; <a class="code" href="class_container.html#a7e2266ede94e447a142aec67b2e56267">const_reference</a>;
+<a name="l00021"></a><a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">00021</a>     <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt; T &gt;::iterator <a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a>;
+<a name="l00022"></a>00022     <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt; T &gt;::const_iterator
+<a name="l00023"></a><a class="code" href="class_container.html#a208f5653c556533bad1e9454210516d1">00023</a>         <a class="code" href="class_container.html#a208f5653c556533bad1e9454210516d1">const_iterator</a>;
+<a name="l00024"></a>00024   <span class="keyword">protected</span>:
+<a name="l00025"></a><a class="code" href="class_container.html#a67d3456948d7bb2e905f64f75a52d5a9">00025</a>     std::vector&lt; T &gt; <a class="code" href="class_container.html#a67d3456948d7bb2e905f64f75a52d5a9">collection</a>;
+<a name="l00026"></a>00026     <span class="comment">// Operations</span>
+<a name="l00027"></a>00027   <span class="keyword">public</span>:
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a>(<span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> first,
-<a name="l00030"></a>00030         <span class="keyword">typename</span> std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> last);
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <span class="keywordtype">bool</span>
-<a name="l00034"></a>00034     <a class="code" href="class_container.html#afeba0e92ae041e241e5dbc882225315e">buildAndAppend</a>(<a class="code" href="_a_m_o_r_e_8h.html#a36be90b8d9f454d85104cd4a44467e00">NeuronContainer_iterator</a> firstNeuron,
-<a name="l00035"></a>00035         <a class="code" href="_a_m_o_r_e_8h.html#a36be90b8d9f454d85104cd4a44467e00">NeuronContainer_iterator</a> lastNeuron,
-<a name="l00036"></a>00036         std::vector&lt;double&gt;::iterator firstWeight,
-<a name="l00037"></a>00037         std::vector&lt;double&gt;::iterator lastWeight);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keywordtype">void</span>
-<a name="l00040"></a>00040     <a class="code" href="class_container.html#a3c543f72952c30d3eda5202815833f98" title="Append a shared_ptr at the end of collection.">push_back</a>(<a class="code" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a> <span class="keyword">const</span> &amp; <a class="code" href="class_container.html#a9aaab0502055ee85ce5d3633fbca2675">const_reference</a>);
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <span class="keywordtype">void</span>
-<a name="l00043"></a>00043     <a class="code" href="class_container.html#a7a34b07b4e412ba1e999389065b8edb8">erase</a>(<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> first, <a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> last);
+<a name="l00029"></a>00029     <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a>();
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a>(<span class="keyword">typename</span> std::vector&lt; T &gt;::iterator first,
+<a name="l00032"></a>00032         <span class="keyword">typename</span> std::vector&lt; T &gt;::iterator last);
+<a name="l00033"></a>00033 <span class="preprocessor">#if 0</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>    <span class="keywordtype">bool</span>
+<a name="l00035"></a>00035     buildAndAppend(NeuronContainer_iterator firstNeuron,
+<a name="l00036"></a>00036         NeuronContainer_iterator lastNeuron,
+<a name="l00037"></a>00037         std::vector&lt;double&gt;::iterator firstWeight,
+<a name="l00038"></a>00038         std::vector&lt;double&gt;::iterator lastWeight);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordtype">bool</span>
+<a name="l00041"></a>00041       buildAndAppend(NeuronContainer_iterator firstNeuron,
+<a name="l00042"></a>00042           NeuronContainer_iterator lastNeuron);
+<a name="l00043"></a>00043 
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>
-<a name="l00046"></a>00046     <a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>();
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>
-<a name="l00049"></a>00049     <a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>();
+<a name="l00045"></a>00045     <span class="keywordtype">bool</span>
+<a name="l00046"></a>00046     buildAndAppend(std::vector&lt;int&gt;::iterator firstId,
+<a name="l00047"></a>00047         std::vector&lt;int&gt;::iterator lastId, ConContainer_iterator firstCon,
+<a name="l00048"></a>00048         ConContainer_iterator lastCon);
+<a name="l00049"></a>00049 
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="keywordtype">void</span>
-<a name="l00052"></a>00052     <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<span class="keywordtype">int</span> n);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     <span class="keywordtype">void</span>
-<a name="l00055"></a>00055     <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">resize</a>(<span class="keywordtype">int</span> n);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="keywordtype">bool</span>
+<a name="l00054"></a>00054     buildAndAppend(std::vector&lt;int&gt;::iterator firstId,
+<a name="l00055"></a>00055         std::vector&lt;int&gt;::iterator lastId);
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="keywordtype">void</span>
-<a name="l00058"></a>00058     <a class="code" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">empty</a>();
+<a name="l00057"></a>00057 <span class="preprocessor">#endif</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
-<a name="l00061"></a>00061     <a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>();
+<a name="l00060"></a>00060     <span class="keywordtype">void</span>
+<a name="l00061"></a>00061     <a class="code" href="class_container.html#a26c7ca72ac911286e61c021adbc8e906" title="Append a shared_ptr at the end of collection.">push_back</a>(<a class="code" href="class_neuron.html" title="class Neuron -">value_type</a>  reference);
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063     <span class="keywordtype">void</span>
-<a name="l00064"></a>00064     <a class="code" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">clear</a>();
+<a name="l00064"></a>00064     <a class="code" href="class_container.html#a7a34b07b4e412ba1e999389065b8edb8">erase</a>(<a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a> first, <a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a> last);
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="keywordtype">void</span>
-<a name="l00067"></a>00067     <a class="code" href="class_container.html#a9c0320e9873286ea5a3b70c2ce29bdf4">insert</a>(<a class="code" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> position, <a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a> first, <a class="code" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a> last);
+<a name="l00066"></a>00066     <a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a>
+<a name="l00067"></a>00067     <a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>();
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069     <span class="keywordtype">void</span>
-<a name="l00070"></a>00070     <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
+<a name="l00069"></a>00069     <a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a>
+<a name="l00070"></a>00070     <a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>();
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     <span class="keywordtype">bool</span>
-<a name="l00073"></a>00073     <a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3" title="Object validator.">validate</a>();
-<a name="l00074"></a>00074   };
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076 <span class="preprocessor">#endif </span><span class="comment">/* CONTAINER_H_ */</span>
+<a name="l00072"></a>00072     <span class="keywordtype">void</span>
+<a name="l00073"></a>00073     <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<span class="keywordtype">int</span> n);
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keywordtype">void</span>
+<a name="l00076"></a>00076     <a class="code" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">resize</a>(<span class="keywordtype">int</span> n);
 <a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="keywordtype">void</span>
+<a name="l00079"></a>00079     <a class="code" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">empty</a>();
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00082"></a>00082     <a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>();
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     <span class="keywordtype">void</span>
+<a name="l00085"></a>00085     <a class="code" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">clear</a>();
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087     <span class="keywordtype">void</span>
+<a name="l00088"></a>00088     <a class="code" href="class_container.html#a9c0320e9873286ea5a3b70c2ce29bdf4">insert</a>(<a class="code" href="class_container.html#ac8d71ccca12921e0c7c640ed89306abb">iterator</a> position, <a class="code" href="class_container.html#a208f5653c556533bad1e9454210516d1">const_iterator</a> first, <a class="code" href="class_container.html#a208f5653c556533bad1e9454210516d1">const_iterator</a> last);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordtype">void</span>
+<a name="l00091"></a>00091     <a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keywordtype">bool</span>
+<a name="l00094"></a>00094     <a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3" title="Object validator.">validate</a>();
+<a name="l00095"></a>00095   };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="preprocessor">#endif </span><span class="comment">/* CONTAINER_H_ */</span>
+<a name="l00098"></a>00098 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_8h.html">Container.h</a>      </li>
-      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jun 16 2011 20:59:08 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

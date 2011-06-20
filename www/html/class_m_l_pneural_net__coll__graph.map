@@ -1,7 +1,22 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_neural_net.html" title="{NeuralNet\n||+ train()\l}" alt="" coords="43,1640,127,1717"/>
-<area shape="rect" id="node4" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="152,1640,291,1717"/>
-<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ Container()\l+ Container()\l+ buildAndAppend()\l+ push_back()\l+ push_back()\l+ erase()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ reserve()\l+ reserve()\l+ resize()\l+ resize()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ insert()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ load()\l+ store()\l+ append()\l+ operator[]()\l}" alt="" coords="141,1072,301,1589"/>
-<area shape="rect" id="node10" title="STL class." alt="" coords="201,147,319,224"/>
-<area shape="rect" id="node14" href="$class_container.html" title="class Container &#45;" alt="" coords="261,491,408,1008"/>
+<area shape="rect" id="node2" href="$class_neural_net.html" title="class NeuralNet &#45;" alt="" coords="843,5421,936,5528"/>
+<area shape="rect" id="node5" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="960,5436,1099,5513"/>
+<area shape="rect" id="node7" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="485,4912,645,5371"/>
+<area shape="rect" id="node9" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="121,4638,335,4847"/>
+<area shape="rect" id="node13" href="$class_m_l_player.html" title="{MLPlayer\n||}" alt="" coords="427,4496,505,4573"/>
+<area shape="rect" id="node15" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="614,4170,764,4262"/>
+<area shape="rect" id="node17" href="$class_neuron_container.html" title="{NeuronContainer\&lt; MLP \&gt;\n||+ NeuronContainer()\l+ NeuronContainer()\l+ ~NeuronContainer()\l+ numOfNeurons()\l+ numOfCons()\l+ getId()\l+ setId()\l+ getConId()\l+ getWeight()\l+ getFrom()\l+ setFrom()\l+ setWeight()\l}" alt="" coords="630,3683,804,3922"/>
+<area shape="rect" id="node19" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="718,3379,873,3618"/>
+<area shape="rect" id="node21" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="879,2856,1025,3315"/>
+<area shape="rect" id="node67" href="$class_layer.html" title="class Layer &#45;" alt="" coords="997,3453,1091,3545"/>
+<area shape="rect" id="node23" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="782,2582,983,2791"/>
+<area shape="rect" id="node27" href="$class_neuron.html" title="class Neuron &#45;" alt="" coords="419,2085,536,2456"/>
+<area shape="rect" id="node29" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="413,1501,541,1960"/>
+<area shape="rect" id="node31" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="283,1042,465,1251"/>
+<area shape="rect" id="node35" title="STL class." alt="" coords="911,293,1029,371"/>
+<area shape="rect" id="node41" href="$class_con.html" title="class Con &#45;" alt="" coords="5,147,115,517"/>
+<area shape="rect" id="node44" href="$class_container.html" title="class Container &#45;" alt="" coords="798,917,927,1376"/>
+<area shape="rect" id="node61" href="$class_container.html" title="{Container\&lt; Layer \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="1302,3987,1439,4445"/>
+<area shape="rect" id="node46" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="662,582,828,791"/>
+<area shape="rect" id="node63" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="1547,3698,1737,3907"/>
 </map>

@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ Container()\l+ Container()\l+ buildAndAppend()\l+ push_back()\l+ push_back()\l+ erase()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ reserve()\l+ reserve()\l+ resize()\l+ resize()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ insert()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ load()\l+ store()\l+ append()\l+ operator[]()\l}" alt="" coords="5,587,165,1104"/>
-<area shape="rect" id="node4" href="$class_container.html" title="class Container &#45;" alt="" coords="12,5,159,523"/>
+<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="92,789,252,1248"/>
+<area shape="rect" id="node4" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="5,391,219,601"/>
+<area shape="rect" id="node6" href="$class_container.html" title="class Container &#45;" alt="" coords="243,267,372,725"/>
+<area shape="rect" id="node8" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="225,6,391,215"/>
 </map>
