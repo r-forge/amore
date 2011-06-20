@@ -1,11 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/transitional.dtd">
-<html><head><title>RUNIT TEST PROTOCOL--Thu Jun 16 03:49:05 2011</title>
+<html><head><title>RUNIT TEST PROTOCOL--Mon Jun 20 15:57:58 2011</title>
 </head>
-<body><h1 TRUE>RUNIT TEST PROTOCOL--Thu Jun 16 03:49:05 2011</h1>
-<p>Number of test functions: 134</p>
-<p style=color:red>Number of errors: 20</p>
-<p>Number of failures: 0</p>
+<body><h1 TRUE>RUNIT TEST PROTOCOL--Mon Jun 20 15:57:58 2011</h1>
+<p>Number of test functions: 131</p>
+<p style=color:red>Number of errors: 14</p>
+<p style=color:red>Number of failures: 1</p>
 <hr>
 <h3 TRUE>2 Test suites</h3>
 <table border="1" width="60%" >
@@ -15,9 +15,9 @@
 <th width="20%">Failures</th>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests">AMORE C++ Classes Unit Tests</a></td>
-<td>29</td>
-<td bgcolor="red">20</td>
-<td>0</td>
+<td>26</td>
+<td bgcolor="red">14</td>
+<td bgcolor="red">1</td>
 </tr>
 <tr><td><a href="#AMORE Reference Classes Unit Tests">AMORE Reference Classes Unit Tests</a></td>
 <td>105</td>
@@ -31,583 +31,341 @@
 <tr><th width="30%">Test suite : test function</th>
 <th width="70%">message</th>
 </tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_ConContainer_NeuronAndWeight">AMORE C++ Classes Unit Tests : test.Container.Cpp.BuildAppend_ConContainer_NeuronAndWeight</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1f4f1414.cpp: In function 'SEXPREC* file1f4f1414()':
-file1f4f1414.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file1f4f1414.cpp:82: error: expected `;' before 'conContainerPtr'
-file1f4f1414.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file1f4f1414.cpp:83: error: expected `;' before 'neuronPtr'
-file1f4f1414.cpp:90: error: 'neuronPtr' was not declared in this scope
-file1f4f1414.cpp:94: error: 'conContainerPtr' was not declared in this scope
-file1f4f1414.cpp:95: error: 'conContainer' was not declared in this scope
-file1f4f1414.cpp:95: error: 'ConPtr' was not declared in this scope
-file1f4f1414.cpp:95: error: expected `;' before 'itrCon'
-file1f4f1414.cpp:96: error: 'itrCon' was not declared in this scope
-make: *** [file1f4f1414.o] Error 1
-</td>
-</tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_ConContainer_noWeights">AMORE C++ Classes Unit Tests : test.Container.Cpp.BuildAppend_ConContainer_noWeights</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! fileaf3d1b.cpp: In function 'SEXPREC* fileaf3d1b()':
-fileaf3d1b.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-fileaf3d1b.cpp:82: error: expected `;' before 'conContainerPtr'
-fileaf3d1b.cpp:83: error: 'NeuronPtr' was not declared in this scope
-fileaf3d1b.cpp:83: error: expected `;' before 'neuronPtr'
-fileaf3d1b.cpp:86: error: 'neuronPtr' was not declared in this scope
-fileaf3d1b.cpp:90: error: 'conContainerPtr' was not declared in this scope
-fileaf3d1b.cpp:91: error: 'ConPtr' was not declared in this scope
-fileaf3d1b.cpp:91: error: expected `;' before 'itrCon'
-fileaf3d1b.cpp:92: error: 'itrCon' was not declared in this scope
-make: *** [fileaf3d1b.o] Error 1
-</td>
-</tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_NeuronContainer_">AMORE C++ Classes Unit Tests : test.Container.Cpp.BuildAppend_NeuronContainer_</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file70d4b7f6.cpp: In function 'SEXPREC* file70d4b7f6()':
-file70d4b7f6.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file70d4b7f6.cpp:82: error: expected `;' before 'conContainerPtr'
-file70d4b7f6.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file70d4b7f6.cpp:83: error: expected `;' before 'neuronPtr'
-file70d4b7f6.cpp:87: error: 'class NeuronContainer' has no member named 'buildAndAppend'
-file70d4b7f6.cpp:87: error: 'conContainerPtr' was not declared in this scope
-file70d4b7f6.cpp:89: error: expected `;' before 'itrNeuron'
-file70d4b7f6.cpp:90: error: 'itrNeuron' was not declared in this scope
-file70d4b7f6.cpp:99: error: 'class NeuronContainer' has no member named 'buildAndAppend'
-file70d4b7f6.cpp:101: error: expected `;' before 'itrNeuron'
-file70d4b7f6.cpp:102: error: 'itrNeuron' was not declared in this scope
-make: *** [file70d4b7f6.o] Error 1
-</td>
-</tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_IteratorsAsArgument">AMORE C++ Classes Unit Tests : test.Container.Cpp.Constructor_IteratorsAsArgument</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h: In member function 'Con& Con::operator=(const Con&)':
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:5:   instantiated from 'void std::vector<_Tp, _Alloc>::_M_insert_aux(__gnu_cxx::__normal_iterator<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type::pointer, std::vector<_Tp, _Alloc> >, const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]'
-/usr/include/c++/4.2.1/bits/stl_vector.h:608:   instantiated from 'void std::vector<_Tp, _Alloc>::push_back(const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]'
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:75:   instantiated from 'void Container<T>::push_back(const T&) [with T = Con]'
-file206a592d.cpp:89:   instantiated from here
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:5: error: non-static reference member 'Neuron& Con::d_neuron', can't use default assignment operator
-/usr/include/c++/4.2.1/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_insert_aux(__gnu_cxx::__normal_iterator<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type::pointer, std::vector<_Tp, _Alloc> >, const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]':
-/usr/include/c++/4.2.1/bits/vector.tcc:256: note: synthesized method 'Con& Con::operator=(const Con&)' first required here 
-make: *** [file206a592d.o] Error 1
-</td>
-</tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.push_back">AMORE C++ Classes Unit Tests : test.Container.Cpp.push_back</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file2604a9fb.cpp: In function 'SEXPREC* file2604a9fb()':
-file2604a9fb.cpp:81: error: 'NeuronContainerPtr' was not declared in this scope
-file2604a9fb.cpp:81: error: expected `;' before 'ptNeuronContainer'
-file2604a9fb.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file2604a9fb.cpp:82: error: expected `;' before 'conContainerPtr'
-file2604a9fb.cpp:83: error: 'ConPtr' was not declared in this scope
-file2604a9fb.cpp:83: error: expected `;' before 'ptC'
-file2604a9fb.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file2604a9fb.cpp:84: error: expected `;' before 'ptN'
-file2604a9fb.cpp:89: error: 'ptN' was not declared in this scope
-file2604a9fb.cpp:90: error: 'ptNeuronContainer' was not declared in this scope
-file2604a9fb.cpp:94: error: 'ptNeuronContainer' was not declared in this scope
-file2604a9fb.cpp:94: error: expected `;' before 'itr'
-file2604a9fb.cpp:95: error: 'ptC' was not declared in this scope
-file2604a9fb.cpp:95: error: 'itr' was not declared in this scope
-file2604a9fb.cpp:96: error: 'conContainerPtr' was not declared in this scope
-file2604a9fb.cpp:99: error: 'conContainerPtr' was not declared in this scope
-file2604a9fb.cpp:99: error: expected `;' before 'itr'
-file2604a9fb.cpp:100: error: 'itr' was not declared in this scope
-make: *** [file2604a9fb.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file60258804.cpp: In function 'SEXPREC* file60258804()':
+file60258804.cpp:96: error: 'NeuronContainerPtr' was not declared in this scope
+file60258804.cpp:96: error: expected `;' before 'ptNeuronContainer'
+file60258804.cpp:97: error: 'ConContainerPtr' was not declared in this scope
+file60258804.cpp:97: error: expected `;' before 'conContainerPtr'
+file60258804.cpp:105: error: 'ptNeuronContainer' was not declared in this scope
+file60258804.cpp:109: error: 'ptNeuronContainer' was not declared in this scope
+file60258804.cpp:110: error: no matching function for call to 'Con::Con(NeuronPtr&, double&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:28: note: candidates are: Con::Con(Neuron&, double)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:17: note:                 Con::Con(Neuron&)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/dia/Con.h:3: note:                 Con::Con(const Con&)
+file60258804.cpp:111: error: 'conContainerPtr' was not declared in this scope
+file60258804.cpp:114: error: 'conContainerPtr' was not declared in this scope
+file60258804.cpp:115: error: 'class Con' has no member named 'getId'
+make: *** [file60258804.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.size">AMORE C++ Classes Unit Tests : test.Container.Cpp.size</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file7c33b13c.cpp: In function 'SEXPREC* file7c33b13c()':
-file7c33b13c.cpp:81: error: 'NeuronContainerPtr' was not declared in this scope
-file7c33b13c.cpp:81: error: expected `;' before 'ptNeuronContainer'
-file7c33b13c.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file7c33b13c.cpp:82: error: expected `;' before 'conContainerPtr'
-file7c33b13c.cpp:83: error: 'ConPtr' was not declared in this scope
-file7c33b13c.cpp:83: error: expected `;' before 'ptC'
-file7c33b13c.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file7c33b13c.cpp:84: error: expected `;' before 'ptN'
-file7c33b13c.cpp:89: error: 'ptN' was not declared in this scope
-file7c33b13c.cpp:90: error: 'ptNeuronContainer' was not declared in this scope
-file7c33b13c.cpp:94: error: 'ptNeuronContainer' was not declared in this scope
-file7c33b13c.cpp:94: error: expected `;' before 'itr'
-file7c33b13c.cpp:95: error: 'ptC' was not declared in this scope
-file7c33b13c.cpp:95: error: 'itr' was not declared in this scope
-file7c33b13c.cpp:96: error: 'conContainerPtr' was not declared in this scope
-make: *** [file7c33b13c.o] Error 1
-</td>
-</tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.validate.show">AMORE C++ Classes Unit Tests : test.Container.Cpp.validate.show</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file25b919d8.cpp: In function 'SEXPREC* file25b919d8()':
-file25b919d8.cpp:80: error: 'NeuronContainerPtr' was not declared in this scope
-file25b919d8.cpp:80: error: expected `;' before 'ptNeuronContainer'
-file25b919d8.cpp:81: error: 'ConContainerPtr' was not declared in this scope
-file25b919d8.cpp:81: error: expected `;' before 'conContainerPtr'
-file25b919d8.cpp:82: error: 'ConPtr' was not declared in this scope
-file25b919d8.cpp:82: error: expected `;' before 'ptC'
-file25b919d8.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file25b919d8.cpp:83: error: expected `;' before 'ptN'
-file25b919d8.cpp:87: error: 'ptN' was not declared in this scope
-file25b919d8.cpp:88: error: 'ptNeuronContainer' was not declared in this scope
-file25b919d8.cpp:91: error: 'ptNeuronContainer' was not declared in this scope
-file25b919d8.cpp:91: error: expected `;' before 'itr'
-file25b919d8.cpp:92: error: 'ptC' was not declared in this scope
-file25b919d8.cpp:92: error: 'itr' was not declared in this scope
-file25b919d8.cpp:93: error: 'conContainerPtr' was not declared in this scope
-file25b919d8.cpp:97: error: 'conContainerPtr' was not declared in this scope
-make: *** [file25b919d8.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file4238fca.cpp: In function 'SEXPREC* file4238fca()':
+file4238fca.cpp:96: error: 'NeuronContainerPtr' was not declared in this scope
+file4238fca.cpp:96: error: expected `;' before 'ptNeuronContainer'
+file4238fca.cpp:97: error: 'ConContainerPtr' was not declared in this scope
+file4238fca.cpp:97: error: expected `;' before 'conContainerPtr'
+file4238fca.cpp:105: error: 'ptNeuronContainer' was not declared in this scope
+file4238fca.cpp:109: error: 'ptNeuronContainer' was not declared in this scope
+file4238fca.cpp:110: error: no matching function for call to 'Con::Con(NeuronPtr&, double&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:28: note: candidates are: Con::Con(Neuron&, double)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:17: note:                 Con::Con(Neuron&)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/dia/Con.h:3: note:                 Con::Con(const Con&)
+file4238fca.cpp:111: error: 'conContainerPtr' was not declared in this scope
+make: *** [file4238fca.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_EmptyArgumentList">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.Constructor_EmptyArgumentList</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1b4fc741.cpp: In function 'SEXPREC* file1b4fc741()':
-file1b4fc741.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file1b4fc741.cpp:80: error: expected `;' before 'ptN'
-file1b4fc741.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file1b4fc741.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file4775807f.cpp: In function 'SEXPREC* file4775807f()':
+file4775807f.cpp:97: error: 'const_iterator' is not a member of 'Container<Con>'
+file4775807f.cpp:97: error: expected `;' before 'firstCon'
+file4775807f.cpp:98: error: 'class Neuron' has no member named 'const_iterators'
+file4775807f.cpp:98: error: 'firstCon' was not declared in this scope
+file4775807f.cpp:98: error: 'lastCon' was not declared in this scope
+file4775807f.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file4775807f.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_FullArgumentList">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.Constructor_FullArgumentList</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file12a28a69.cpp: In function 'SEXPREC* file12a28a69()':
-file12a28a69.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file12a28a69.cpp:84: error: expected `;' before 'ptNeuron'
-file12a28a69.cpp:86: error: 'ptNeuron' was not declared in this scope
-file12a28a69.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file12a28a69.cpp:90: error: expected `;' before 'vcPt'
-file12a28a69.cpp:91: error: 'vcPt' was not declared in this scope
-file12a28a69.cpp:93: error: expected `;' before 'ptN'
-file12a28a69.cpp:94: error: 'ptN' was not declared in this scope
-file12a28a69.cpp:103: error: base operand of '->' has non-pointer type 'const Con'
-file12a28a69.cpp:104: error: base operand of '->' has non-pointer type 'const Con'
-make: *** [file12a28a69.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file7347367f.cpp: In function 'SEXPREC* file7347367f()':
+file7347367f.cpp:102: error: no matching function for call to 'Container<Neuron>::push_back(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:68: note: candidates are: void Container<T>::push_back(const T&) [with T = Neuron]
+file7347367f.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file7347367f.cpp:105: error: expected `;' before 'vcPt'
+file7347367f.cpp:106: error: 'vcPt' was not declared in this scope
+file7347367f.cpp:106: error: 'class Container<Neuron>' has no member named 'begin'
+file7347367f.cpp:106: error: 'class Container<Neuron>' has no member named 'end'
+file7347367f.cpp:111: error: 'const_iterator' is not a member of 'Container<Con>'
+file7347367f.cpp:111: error: expected `;' before 'firstCon'
+file7347367f.cpp:112: error: 'class Neuron' has no member named 'const_iterators'
+file7347367f.cpp:112: error: 'firstCon' was not declared in this scope
+file7347367f.cpp:112: error: 'lastCon' was not declared in this scope
+file7347367f.cpp:117: error: 'const_iterator' is not a member of 'Container<Con>'
+file7347367f.cpp:117: error: expected `;' before 'itrCon'
+file7347367f.cpp:117: error: 'itrCon' was not declared in this scope
+file7347367f.cpp:122: error: 'class Neuron' has no member named 'getId'
+make: *** [file7347367f.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_IdNumericConMissing">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.Constructor_IdNumericConMissing</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file6d2cfd0d.cpp: In function 'SEXPREC* file6d2cfd0d()':
-file6d2cfd0d.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file6d2cfd0d.cpp:80: error: expected `;' before 'ptN'
-file6d2cfd0d.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file6d2cfd0d.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file484b06f9.cpp: In function 'SEXPREC* file484b06f9()':
+file484b06f9.cpp:97: error: 'const_iterator' is not a member of 'Container<Con>'
+file484b06f9.cpp:97: error: expected `;' before 'firstCon'
+file484b06f9.cpp:98: error: 'class Neuron' has no member named 'const_iterators'
+file484b06f9.cpp:98: error: 'firstCon' was not declared in this scope
+file484b06f9.cpp:98: error: 'lastCon' was not declared in this scope
+file484b06f9.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file484b06f9.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_EmptyCon">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.Validate_EmptyCon</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file2499987a.cpp: In function 'SEXPREC* file2499987a()':
-file2499987a.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file2499987a.cpp:80: error: expected `;' before 'ptN'
-file2499987a.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file2499987a.o] Error 1
-</td>
-</tr>
-<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_IdIsNa">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.Validate_IdIsNa</a></td>
-<td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file5fe9845b.cpp: In function 'SEXPREC* file5fe9845b()':
-file5fe9845b.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file5fe9845b.cpp:80: error: expected `;' before 'ptN'
-file5fe9845b.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file5fe9845b.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file35b6ea83.cpp: In function 'SEXPREC* file35b6ea83()':
+file35b6ea83.cpp:96: error: 'class Neuron' has no member named 'setId'
+file35b6ea83.cpp:98: error: 'class Neuron' has no member named 'getId'
+make: *** [file35b6ea83.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getConId">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.getConId</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file5bf0a38e.cpp: In function 'SEXPREC* file5bf0a38e()':
-file5bf0a38e.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file5bf0a38e.cpp:82: error: template argument 1 is invalid
-file5bf0a38e.cpp:82: error: template argument 2 is invalid
-file5bf0a38e.cpp:82: error: invalid type in declaration before ';' token
-file5bf0a38e.cpp:84: error: expected `;' before 'ptNeuron'
-file5bf0a38e.cpp:86: error: 'ptNeuron' was not declared in this scope
-file5bf0a38e.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file5bf0a38e.cpp:90: error: expected `;' before 'vcPt'
-file5bf0a38e.cpp:91: error: 'vcPt' was not declared in this scope
-file5bf0a38e.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:92: error: expected `;' before 'ptN'
-file5bf0a38e.cpp:93: error: 'ptN' was not declared in this scope
-make: *** [file5bf0a38e.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file42e7372f.cpp: In function 'SEXPREC* file42e7372f()':
+file42e7372f.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file42e7372f.cpp:105: error: expected `;' before 'vcPt'
+file42e7372f.cpp:106: error: 'vcPt' was not declared in this scope
+file42e7372f.cpp:110: error: 'class Neuron' has no member named 'getConId'
+make: *** [file42e7372f.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getFrom">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.getFrom</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1381eeca.cpp: In function 'SEXPREC* file1381eeca()':
-file1381eeca.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file1381eeca.cpp:84: error: expected `;' before 'ptNeuron'
-file1381eeca.cpp:86: error: 'ptNeuron' was not declared in this scope
-file1381eeca.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file1381eeca.cpp:90: error: expected `;' before 'vcPt'
-file1381eeca.cpp:91: error: 'vcPt' was not declared in this scope
-file1381eeca.cpp:92: error: 'ptNeuron' was not declared in this scope
-file1381eeca.cpp:96: error: 'class NeuronContainer' has no member named 'getId'
-make: *** [file1381eeca.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file59d810f9.cpp: In function 'SEXPREC* file59d810f9()':
+file59d810f9.cpp:102: error: no matching function for call to 'Container<Neuron>::push_back(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:68: note: candidates are: void Container<T>::push_back(const T&) [with T = Neuron]
+file59d810f9.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file59d810f9.cpp:105: error: expected `;' before 'vcPt'
+file59d810f9.cpp:106: error: 'vcPt' was not declared in this scope
+file59d810f9.cpp:106: error: 'class NeuronContainer' has no member named 'begin'
+file59d810f9.cpp:106: error: 'class NeuronContainer' has no member named 'end'
+file59d810f9.cpp:110: error: 'class Neuron' has no member named 'getFrom'
+file59d810f9.cpp:111: error: 'class NeuronContainer' has no member named 'getId'
+make: *** [file59d810f9.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getId">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.getId</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file376419c7.cpp: In function 'SEXPREC* file376419c7()':
-file376419c7.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file376419c7.cpp:82: error: expected `;' before 'ptN'
-file376419c7.cpp:83: error: 'ptN' was not declared in this scope
-make: *** [file376419c7.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file78427983.cpp: In function 'SEXPREC* file78427983()':
+file78427983.cpp:98: error: 'class Neuron' has no member named 'getId'
+file78427983.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file78427983.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getWeight">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.getWeight</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! filecd8743a.cpp: In function 'SEXPREC* filecd8743a()':
-filecd8743a.cpp:82: error: 'NeuronPtr' was not declared in this scope
-filecd8743a.cpp:82: error: template argument 1 is invalid
-filecd8743a.cpp:82: error: template argument 2 is invalid
-filecd8743a.cpp:82: error: invalid type in declaration before ';' token
-filecd8743a.cpp:84: error: expected `;' before 'ptNeuron'
-filecd8743a.cpp:86: error: 'ptNeuron' was not declared in this scope
-filecd8743a.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-filecd8743a.cpp:90: error: expected `;' before 'vcPt'
-filecd8743a.cpp:91: error: 'vcPt' was not declared in this scope
-filecd8743a.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:93: error: expected `;' before 'ptN'
-filecd8743a.cpp:94: error: 'ptN' was not declared in this scope
-make: *** [filecd8743a.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file5437c523.cpp: In function 'SEXPREC* file5437c523()':
+file5437c523.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file5437c523.cpp:105: error: expected `;' before 'vcPt'
+file5437c523.cpp:106: error: 'vcPt' was not declared in this scope
+file5437c523.cpp:110: error: 'class Neuron' has no member named 'getWeight'
+make: *** [file5437c523.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.numOfCons">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.numOfCons</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file56b6926c.cpp: In function 'SEXPREC* file56b6926c()':
-file56b6926c.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file56b6926c.cpp:82: error: template argument 1 is invalid
-file56b6926c.cpp:82: error: template argument 2 is invalid
-file56b6926c.cpp:82: error: invalid type in declaration before ';' token
-file56b6926c.cpp:84: error: expected `;' before 'ptNeuron'
-file56b6926c.cpp:86: error: 'ptNeuron' was not declared in this scope
-file56b6926c.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file56b6926c.cpp:90: error: expected `;' before 'vcPt'
-file56b6926c.cpp:91: error: 'vcPt' was not declared in this scope
-file56b6926c.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:92: error: expected `;' before 'ptN'
-file56b6926c.cpp:94: error: 'ptN' was not declared in this scope
-make: *** [file56b6926c.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file196fa807.cpp: In function 'SEXPREC* file196fa807()':
+file196fa807.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file196fa807.cpp:105: error: expected `;' before 'vcPt'
+file196fa807.cpp:106: error: 'vcPt' was not declared in this scope
+file196fa807.cpp:109: error: 'class Neuron' has no member named 'numOfCons'
+make: *** [file196fa807.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setFrom">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.setFrom</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file6c471ced.cpp: In function 'SEXPREC* file6c471ced()':
-file6c471ced.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file6c471ced.cpp:82: error: template argument 1 is invalid
-file6c471ced.cpp:82: error: template argument 2 is invalid
-file6c471ced.cpp:82: error: invalid type in declaration before ';' token
-file6c471ced.cpp:85: error: expected `;' before 'ptNeuron'
-file6c471ced.cpp:87: error: 'ptNeuron' was not declared in this scope
-file6c471ced.cpp:88: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:92: error: 'ConContainerPtr' was not declared in this scope
-file6c471ced.cpp:92: error: expected `;' before 'vcPt'
-file6c471ced.cpp:93: error: 'vcPt' was not declared in this scope
-file6c471ced.cpp:93: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:93: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:95: error: expected `;' before 'ptN'
-file6c471ced.cpp:96: error: request for member 'clear' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:98: error: 'ptNeuron' was not declared in this scope
-file6c471ced.cpp:99: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:102: error: 'ptN' was not declared in this scope
-make: *** [file6c471ced.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file7180709c.cpp: In function 'SEXPREC* file7180709c()':
+file7180709c.cpp:107: error: 'ConContainerPtr' was not declared in this scope
+file7180709c.cpp:107: error: expected `;' before 'vcPt'
+file7180709c.cpp:108: error: 'vcPt' was not declared in this scope
+file7180709c.cpp:117: error: 'class Neuron' has no member named 'setFrom'
+file7180709c.cpp:119: error: 'class Neuron' has no member named 'getConId'
+make: *** [file7180709c.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setId">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.setId</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file30bc4324.cpp: In function 'SEXPREC* file30bc4324()':
-file30bc4324.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file30bc4324.cpp:82: error: expected `;' before 'ptN'
-file30bc4324.cpp:83: error: 'ptN' was not declared in this scope
-make: *** [file30bc4324.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file27614bfb.cpp: In function 'SEXPREC* file27614bfb()':
+file27614bfb.cpp:98: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:99: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:100: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:101: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:102: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:103: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:104: error: 'class Neuron' has no member named 'getId'
+make: *** [file27614bfb.o] Error 1
 </td>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setWeight">AMORE C++ Classes Unit Tests : test.Neuron.Cpp.setWeight</a></td>
 <td>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file17dc097b.cpp: In function 'SEXPREC* file17dc097b()':
-file17dc097b.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file17dc097b.cpp:82: error: template argument 1 is invalid
-file17dc097b.cpp:82: error: template argument 2 is invalid
-file17dc097b.cpp:82: error: invalid type in declaration before ';' token
-file17dc097b.cpp:85: error: expected `;' before 'ptNeuron'
-file17dc097b.cpp:87: error: 'ptNeuron' was not declared in this scope
-file17dc097b.cpp:88: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:92: error: 'ConContainerPtr' was not declared in this scope
-file17dc097b.cpp:92: error: expected `;' before 'vcPt'
-file17dc097b.cpp:93: error: 'vcPt' was not declared in this scope
-file17dc097b.cpp:93: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:93: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:95: error: expected `;' before 'ptN'
-file17dc097b.cpp:101: error: 'ptN' was not declared in this scope
-make: *** [file17dc097b.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file64c35fef.cpp: In function 'SEXPREC* file64c35fef()':
+file64c35fef.cpp:107: error: 'ConContainerPtr' was not declared in this scope
+file64c35fef.cpp:107: error: expected `;' before 'vcPt'
+file64c35fef.cpp:108: error: 'vcPt' was not declared in this scope
+file64c35fef.cpp:116: error: 'class Neuron' has no member named 'setWeight'
+file64c35fef.cpp:118: error: 'class Neuron' has no member named 'getWeight'
+make: *** [file64c35fef.o] Error 1
+</td>
+</tr>
+</table>
+<hr>
+<h3 TRUE>Failures</h3>
+<table border="1" width="100%" >
+<tr><th width="30%">Test suite : test function</th>
+<th width="70%">message</th>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.show">AMORE C++ Classes Unit Tests : test.Container.Cpp.show</a></td>
+<td>Error in checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (0, 3) differ
 </td>
 </tr>
 </table>
 <hr>
 <h3 TRUE>Details</h3>
 <p><a name="AMORE C++ Classes Unit Tests"><h5 TRUE>Test Suite: AMORE C++ Classes Unit Tests</h5>
-</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.Cpp.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Con.R?root=amore">Test file: runit.Cpp.Con.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor_FullArgumentList">test.Con.Cpp.Constructor_FullArgumentList: (2 checks) ... OK (2.82 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor_SingleArgument">test.Con.Cpp.Constructor_SingleArgument: (2 checks) ... OK (2.6 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Id">test.Con.Cpp.Id: (1 checks) ... OK (2.47 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.neuron">test.Con.Cpp.neuron: (1 checks) ... OK (2.48 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.show">test.Con.Cpp.show: (1 checks) ... OK (2.5 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_from">test.Con.Cpp.validate_from: (1 checks) ... OK (2.46 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_weight">test.Con.Cpp.validate_weight: (1 checks) ... OK (2.46 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.weight">test.Con.Cpp.weight: (1 checks) ... OK (2.56 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Container.R?root=amore">Test file: runit.Cpp.Container.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_ConContainer_NeuronAndWeight"><u style=color:red>test.Container.Cpp.BuildAppend_ConContainer_NeuronAndWeight: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1f4f1414.cpp: In function 'SEXPREC* file1f4f1414()':
-file1f4f1414.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file1f4f1414.cpp:82: error: expected `;' before 'conContainerPtr'
-file1f4f1414.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file1f4f1414.cpp:83: error: expected `;' before 'neuronPtr'
-file1f4f1414.cpp:90: error: 'neuronPtr' was not declared in this scope
-file1f4f1414.cpp:94: error: 'conContainerPtr' was not declared in this scope
-file1f4f1414.cpp:95: error: 'conContainer' was not declared in this scope
-file1f4f1414.cpp:95: error: 'ConPtr' was not declared in this scope
-file1f4f1414.cpp:95: error: expected `;' before 'itrCon'
-file1f4f1414.cpp:96: error: 'itrCon' was not declared in this scope
-make: *** [file1f4f1414.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_ConContainer_noWeights"><u style=color:red>test.Container.Cpp.BuildAppend_ConContainer_noWeights: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! fileaf3d1b.cpp: In function 'SEXPREC* fileaf3d1b()':
-fileaf3d1b.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-fileaf3d1b.cpp:82: error: expected `;' before 'conContainerPtr'
-fileaf3d1b.cpp:83: error: 'NeuronPtr' was not declared in this scope
-fileaf3d1b.cpp:83: error: expected `;' before 'neuronPtr'
-fileaf3d1b.cpp:86: error: 'neuronPtr' was not declared in this scope
-fileaf3d1b.cpp:90: error: 'conContainerPtr' was not declared in this scope
-fileaf3d1b.cpp:91: error: 'ConPtr' was not declared in this scope
-fileaf3d1b.cpp:91: error: expected `;' before 'itrCon'
-fileaf3d1b.cpp:92: error: 'itrCon' was not declared in this scope
-make: *** [fileaf3d1b.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.BuildAppend_NeuronContainer_"><u style=color:red>test.Container.Cpp.BuildAppend_NeuronContainer_: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file70d4b7f6.cpp: In function 'SEXPREC* file70d4b7f6()':
-file70d4b7f6.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file70d4b7f6.cpp:82: error: expected `;' before 'conContainerPtr'
-file70d4b7f6.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file70d4b7f6.cpp:83: error: expected `;' before 'neuronPtr'
-file70d4b7f6.cpp:87: error: 'class NeuronContainer' has no member named 'buildAndAppend'
-file70d4b7f6.cpp:87: error: 'conContainerPtr' was not declared in this scope
-file70d4b7f6.cpp:89: error: expected `;' before 'itrNeuron'
-file70d4b7f6.cpp:90: error: 'itrNeuron' was not declared in this scope
-file70d4b7f6.cpp:99: error: 'class NeuronContainer' has no member named 'buildAndAppend'
-file70d4b7f6.cpp:101: error: expected `;' before 'itrNeuron'
-file70d4b7f6.cpp:102: error: 'itrNeuron' was not declared in this scope
-make: *** [file70d4b7f6.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_EmptyArgumentList">test.Container.Cpp.Constructor_EmptyArgumentList: (1 checks) ... OK (2.5 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_IteratorsAsArgument"><u style=color:red>test.Container.Cpp.Constructor_IteratorsAsArgument: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h: In member function 'Con& Con::operator=(const Con&)':
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:5:   instantiated from 'void std::vector<_Tp, _Alloc>::_M_insert_aux(__gnu_cxx::__normal_iterator<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type::pointer, std::vector<_Tp, _Alloc> >, const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]'
-/usr/include/c++/4.2.1/bits/stl_vector.h:608:   instantiated from 'void std::vector<_Tp, _Alloc>::push_back(const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]'
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:75:   instantiated from 'void Container<T>::push_back(const T&) [with T = Con]'
-file206a592d.cpp:89:   instantiated from here
-/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.h:5: error: non-static reference member 'Neuron& Con::d_neuron', can't use default assignment operator
-/usr/include/c++/4.2.1/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_insert_aux(__gnu_cxx::__normal_iterator<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type::pointer, std::vector<_Tp, _Alloc> >, const _Tp&) [with _Tp = Con, _Alloc = std::allocator<Con>]':
-/usr/include/c++/4.2.1/bits/vector.tcc:256: note: synthesized method 'Con& Con::operator=(const Con&)' first required here 
-make: *** [file206a592d.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.push_back"><u style=color:red>test.Container.Cpp.push_back: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file2604a9fb.cpp: In function 'SEXPREC* file2604a9fb()':
-file2604a9fb.cpp:81: error: 'NeuronContainerPtr' was not declared in this scope
-file2604a9fb.cpp:81: error: expected `;' before 'ptNeuronContainer'
-file2604a9fb.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file2604a9fb.cpp:82: error: expected `;' before 'conContainerPtr'
-file2604a9fb.cpp:83: error: 'ConPtr' was not declared in this scope
-file2604a9fb.cpp:83: error: expected `;' before 'ptC'
-file2604a9fb.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file2604a9fb.cpp:84: error: expected `;' before 'ptN'
-file2604a9fb.cpp:89: error: 'ptN' was not declared in this scope
-file2604a9fb.cpp:90: error: 'ptNeuronContainer' was not declared in this scope
-file2604a9fb.cpp:94: error: 'ptNeuronContainer' was not declared in this scope
-file2604a9fb.cpp:94: error: expected `;' before 'itr'
-file2604a9fb.cpp:95: error: 'ptC' was not declared in this scope
-file2604a9fb.cpp:95: error: 'itr' was not declared in this scope
-file2604a9fb.cpp:96: error: 'conContainerPtr' was not declared in this scope
-file2604a9fb.cpp:99: error: 'conContainerPtr' was not declared in this scope
-file2604a9fb.cpp:99: error: expected `;' before 'itr'
-file2604a9fb.cpp:100: error: 'itr' was not declared in this scope
-make: *** [file2604a9fb.o] Error 1
+</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.Cpp.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Con.R?root=amore">Test file: runit.Cpp.Con.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor_FullArgumentList">test.Con.Cpp.Constructor_FullArgumentList: (2 checks) ... OK (8.57 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor_SingleArgument">test.Con.Cpp.Constructor_SingleArgument: (2 checks) ... OK (2.6 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Id">test.Con.Cpp.Id: (1 checks) ... OK (2.72 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.neuron">test.Con.Cpp.neuron: (1 checks) ... OK (2.52 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.show">test.Con.Cpp.show: (1 checks) ... OK (2.53 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_from">test.Con.Cpp.validate_from: (1 checks) ... OK (2.51 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_weight">test.Con.Cpp.validate_weight: (1 checks) ... OK (2.53 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.weight">test.Con.Cpp.weight: (1 checks) ... OK (2.6 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Container.R?root=amore">Test file: runit.Cpp.Container.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_EmptyArgumentList">test.Container.Cpp.Constructor_EmptyArgumentList: (1 checks) ... OK (2.67 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.push_back"><u style=color:red>test.Container.Cpp.push_back: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file60258804.cpp: In function 'SEXPREC* file60258804()':
+file60258804.cpp:96: error: 'NeuronContainerPtr' was not declared in this scope
+file60258804.cpp:96: error: expected `;' before 'ptNeuronContainer'
+file60258804.cpp:97: error: 'ConContainerPtr' was not declared in this scope
+file60258804.cpp:97: error: expected `;' before 'conContainerPtr'
+file60258804.cpp:105: error: 'ptNeuronContainer' was not declared in this scope
+file60258804.cpp:109: error: 'ptNeuronContainer' was not declared in this scope
+file60258804.cpp:110: error: no matching function for call to 'Con::Con(NeuronPtr&, double&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:28: note: candidates are: Con::Con(Neuron&, double)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:17: note:                 Con::Con(Neuron&)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/dia/Con.h:3: note:                 Con::Con(const Con&)
+file60258804.cpp:111: error: 'conContainerPtr' was not declared in this scope
+file60258804.cpp:114: error: 'conContainerPtr' was not declared in this scope
+file60258804.cpp:115: error: 'class Con' has no member named 'getId'
+make: *** [file60258804.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.show"><u style=color:red>test.Container.Cpp.show: FAILURE !! (check number 1)  </u></a>Error in checkEquals(result, c(10, 20, 30)) : 
+  Numeric: lengths (0, 3) differ
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.size"><u style=color:red>test.Container.Cpp.size: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file7c33b13c.cpp: In function 'SEXPREC* file7c33b13c()':
-file7c33b13c.cpp:81: error: 'NeuronContainerPtr' was not declared in this scope
-file7c33b13c.cpp:81: error: expected `;' before 'ptNeuronContainer'
-file7c33b13c.cpp:82: error: 'ConContainerPtr' was not declared in this scope
-file7c33b13c.cpp:82: error: expected `;' before 'conContainerPtr'
-file7c33b13c.cpp:83: error: 'ConPtr' was not declared in this scope
-file7c33b13c.cpp:83: error: expected `;' before 'ptC'
-file7c33b13c.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file7c33b13c.cpp:84: error: expected `;' before 'ptN'
-file7c33b13c.cpp:89: error: 'ptN' was not declared in this scope
-file7c33b13c.cpp:90: error: 'ptNeuronContainer' was not declared in this scope
-file7c33b13c.cpp:94: error: 'ptNeuronContainer' was not declared in this scope
-file7c33b13c.cpp:94: error: expected `;' before 'itr'
-file7c33b13c.cpp:95: error: 'ptC' was not declared in this scope
-file7c33b13c.cpp:95: error: 'itr' was not declared in this scope
-file7c33b13c.cpp:96: error: 'conContainerPtr' was not declared in this scope
-make: *** [file7c33b13c.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.validate.show"><u style=color:red>test.Container.Cpp.validate.show: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file25b919d8.cpp: In function 'SEXPREC* file25b919d8()':
-file25b919d8.cpp:80: error: 'NeuronContainerPtr' was not declared in this scope
-file25b919d8.cpp:80: error: expected `;' before 'ptNeuronContainer'
-file25b919d8.cpp:81: error: 'ConContainerPtr' was not declared in this scope
-file25b919d8.cpp:81: error: expected `;' before 'conContainerPtr'
-file25b919d8.cpp:82: error: 'ConPtr' was not declared in this scope
-file25b919d8.cpp:82: error: expected `;' before 'ptC'
-file25b919d8.cpp:83: error: 'NeuronPtr' was not declared in this scope
-file25b919d8.cpp:83: error: expected `;' before 'ptN'
-file25b919d8.cpp:87: error: 'ptN' was not declared in this scope
-file25b919d8.cpp:88: error: 'ptNeuronContainer' was not declared in this scope
-file25b919d8.cpp:91: error: 'ptNeuronContainer' was not declared in this scope
-file25b919d8.cpp:91: error: expected `;' before 'itr'
-file25b919d8.cpp:92: error: 'ptC' was not declared in this scope
-file25b919d8.cpp:92: error: 'itr' was not declared in this scope
-file25b919d8.cpp:93: error: 'conContainerPtr' was not declared in this scope
-file25b919d8.cpp:97: error: 'conContainerPtr' was not declared in this scope
-make: *** [file25b919d8.o] Error 1
-<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Neuron.R?root=amore">Test file: runit.Cpp.Neuron.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_EmptyArgumentList"><u style=color:red>test.Neuron.Cpp.Constructor_EmptyArgumentList: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1b4fc741.cpp: In function 'SEXPREC* file1b4fc741()':
-file1b4fc741.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file1b4fc741.cpp:80: error: expected `;' before 'ptN'
-file1b4fc741.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file1b4fc741.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file4238fca.cpp: In function 'SEXPREC* file4238fca()':
+file4238fca.cpp:96: error: 'NeuronContainerPtr' was not declared in this scope
+file4238fca.cpp:96: error: expected `;' before 'ptNeuronContainer'
+file4238fca.cpp:97: error: 'ConContainerPtr' was not declared in this scope
+file4238fca.cpp:97: error: expected `;' before 'conContainerPtr'
+file4238fca.cpp:105: error: 'ptNeuronContainer' was not declared in this scope
+file4238fca.cpp:109: error: 'ptNeuronContainer' was not declared in this scope
+file4238fca.cpp:110: error: no matching function for call to 'Con::Con(NeuronPtr&, double&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:28: note: candidates are: Con::Con(Neuron&, double)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Con.cpp:17: note:                 Con::Con(Neuron&)
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/dia/Con.h:3: note:                 Con::Con(const Con&)
+file4238fca.cpp:111: error: 'conContainerPtr' was not declared in this scope
+make: *** [file4238fca.o] Error 1
+<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ContainerIterator.R?root=amore">Test file: runit.Cpp.ContainerIterator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.Constructor">test.ContainerIterator.Cpp.Constructor: (1 checks) ... OK (2.79 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Neuron.R?root=amore">Test file: runit.Cpp.Neuron.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_EmptyArgumentList"><u style=color:red>test.Neuron.Cpp.Constructor_EmptyArgumentList: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file4775807f.cpp: In function 'SEXPREC* file4775807f()':
+file4775807f.cpp:97: error: 'const_iterator' is not a member of 'Container<Con>'
+file4775807f.cpp:97: error: expected `;' before 'firstCon'
+file4775807f.cpp:98: error: 'class Neuron' has no member named 'const_iterators'
+file4775807f.cpp:98: error: 'firstCon' was not declared in this scope
+file4775807f.cpp:98: error: 'lastCon' was not declared in this scope
+file4775807f.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file4775807f.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_FullArgumentList"><u style=color:red>test.Neuron.Cpp.Constructor_FullArgumentList: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file12a28a69.cpp: In function 'SEXPREC* file12a28a69()':
-file12a28a69.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file12a28a69.cpp:84: error: expected `;' before 'ptNeuron'
-file12a28a69.cpp:86: error: 'ptNeuron' was not declared in this scope
-file12a28a69.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file12a28a69.cpp:90: error: expected `;' before 'vcPt'
-file12a28a69.cpp:91: error: 'vcPt' was not declared in this scope
-file12a28a69.cpp:93: error: expected `;' before 'ptN'
-file12a28a69.cpp:94: error: 'ptN' was not declared in this scope
-file12a28a69.cpp:103: error: base operand of '->' has non-pointer type 'const Con'
-file12a28a69.cpp:104: error: base operand of '->' has non-pointer type 'const Con'
-make: *** [file12a28a69.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file7347367f.cpp: In function 'SEXPREC* file7347367f()':
+file7347367f.cpp:102: error: no matching function for call to 'Container<Neuron>::push_back(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:68: note: candidates are: void Container<T>::push_back(const T&) [with T = Neuron]
+file7347367f.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file7347367f.cpp:105: error: expected `;' before 'vcPt'
+file7347367f.cpp:106: error: 'vcPt' was not declared in this scope
+file7347367f.cpp:106: error: 'class Container<Neuron>' has no member named 'begin'
+file7347367f.cpp:106: error: 'class Container<Neuron>' has no member named 'end'
+file7347367f.cpp:111: error: 'const_iterator' is not a member of 'Container<Con>'
+file7347367f.cpp:111: error: expected `;' before 'firstCon'
+file7347367f.cpp:112: error: 'class Neuron' has no member named 'const_iterators'
+file7347367f.cpp:112: error: 'firstCon' was not declared in this scope
+file7347367f.cpp:112: error: 'lastCon' was not declared in this scope
+file7347367f.cpp:117: error: 'const_iterator' is not a member of 'Container<Con>'
+file7347367f.cpp:117: error: expected `;' before 'itrCon'
+file7347367f.cpp:117: error: 'itrCon' was not declared in this scope
+file7347367f.cpp:122: error: 'class Neuron' has no member named 'getId'
+make: *** [file7347367f.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Constructor_IdNumericConMissing"><u style=color:red>test.Neuron.Cpp.Constructor_IdNumericConMissing: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file6d2cfd0d.cpp: In function 'SEXPREC* file6d2cfd0d()':
-file6d2cfd0d.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file6d2cfd0d.cpp:80: error: expected `;' before 'ptN'
-file6d2cfd0d.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file6d2cfd0d.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file484b06f9.cpp: In function 'SEXPREC* file484b06f9()':
+file484b06f9.cpp:97: error: 'const_iterator' is not a member of 'Container<Con>'
+file484b06f9.cpp:97: error: expected `;' before 'firstCon'
+file484b06f9.cpp:98: error: 'class Neuron' has no member named 'const_iterators'
+file484b06f9.cpp:98: error: 'firstCon' was not declared in this scope
+file484b06f9.cpp:98: error: 'lastCon' was not declared in this scope
+file484b06f9.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file484b06f9.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_EmptyCon"><u style=color:red>test.Neuron.Cpp.Validate_EmptyCon: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file2499987a.cpp: In function 'SEXPREC* file2499987a()':
-file2499987a.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file2499987a.cpp:80: error: expected `;' before 'ptN'
-file2499987a.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file2499987a.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_IdIsNa"><u style=color:red>test.Neuron.Cpp.Validate_IdIsNa: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file5fe9845b.cpp: In function 'SEXPREC* file5fe9845b()':
-file5fe9845b.cpp:80: error: 'NeuronPtr' was not declared in this scope
-file5fe9845b.cpp:80: error: expected `;' before 'ptN'
-file5fe9845b.cpp:81: error: 'ptN' was not declared in this scope
-make: *** [file5fe9845b.o] Error 1
-<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getConId"><u style=color:red>test.Neuron.Cpp.getConId: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file5bf0a38e.cpp: In function 'SEXPREC* file5bf0a38e()':
-file5bf0a38e.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file5bf0a38e.cpp:82: error: template argument 1 is invalid
-file5bf0a38e.cpp:82: error: template argument 2 is invalid
-file5bf0a38e.cpp:82: error: invalid type in declaration before ';' token
-file5bf0a38e.cpp:84: error: expected `;' before 'ptNeuron'
-file5bf0a38e.cpp:86: error: 'ptNeuron' was not declared in this scope
-file5bf0a38e.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file5bf0a38e.cpp:90: error: expected `;' before 'vcPt'
-file5bf0a38e.cpp:91: error: 'vcPt' was not declared in this scope
-file5bf0a38e.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file5bf0a38e.cpp:92: error: expected `;' before 'ptN'
-file5bf0a38e.cpp:93: error: 'ptN' was not declared in this scope
-make: *** [file5bf0a38e.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file35b6ea83.cpp: In function 'SEXPREC* file35b6ea83()':
+file35b6ea83.cpp:96: error: 'class Neuron' has no member named 'setId'
+file35b6ea83.cpp:98: error: 'class Neuron' has no member named 'getId'
+make: *** [file35b6ea83.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_IdIsNa">test.Neuron.Cpp.Validate_IdIsNa: (1 checks) ... OK (2.62 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getConId"><u style=color:red>test.Neuron.Cpp.getConId: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file42e7372f.cpp: In function 'SEXPREC* file42e7372f()':
+file42e7372f.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file42e7372f.cpp:105: error: expected `;' before 'vcPt'
+file42e7372f.cpp:106: error: 'vcPt' was not declared in this scope
+file42e7372f.cpp:110: error: 'class Neuron' has no member named 'getConId'
+make: *** [file42e7372f.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getFrom"><u style=color:red>test.Neuron.Cpp.getFrom: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file1381eeca.cpp: In function 'SEXPREC* file1381eeca()':
-file1381eeca.cpp:84: error: 'NeuronPtr' was not declared in this scope
-file1381eeca.cpp:84: error: expected `;' before 'ptNeuron'
-file1381eeca.cpp:86: error: 'ptNeuron' was not declared in this scope
-file1381eeca.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file1381eeca.cpp:90: error: expected `;' before 'vcPt'
-file1381eeca.cpp:91: error: 'vcPt' was not declared in this scope
-file1381eeca.cpp:92: error: 'ptNeuron' was not declared in this scope
-file1381eeca.cpp:96: error: 'class NeuronContainer' has no member named 'getId'
-make: *** [file1381eeca.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file59d810f9.cpp: In function 'SEXPREC* file59d810f9()':
+file59d810f9.cpp:102: error: no matching function for call to 'Container<Neuron>::push_back(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Container.cpp:68: note: candidates are: void Container<T>::push_back(const T&) [with T = Neuron]
+file59d810f9.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file59d810f9.cpp:105: error: expected `;' before 'vcPt'
+file59d810f9.cpp:106: error: 'vcPt' was not declared in this scope
+file59d810f9.cpp:106: error: 'class NeuronContainer' has no member named 'begin'
+file59d810f9.cpp:106: error: 'class NeuronContainer' has no member named 'end'
+file59d810f9.cpp:110: error: 'class Neuron' has no member named 'getFrom'
+file59d810f9.cpp:111: error: 'class NeuronContainer' has no member named 'getId'
+make: *** [file59d810f9.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getId"><u style=color:red>test.Neuron.Cpp.getId: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file376419c7.cpp: In function 'SEXPREC* file376419c7()':
-file376419c7.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file376419c7.cpp:82: error: expected `;' before 'ptN'
-file376419c7.cpp:83: error: 'ptN' was not declared in this scope
-make: *** [file376419c7.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file78427983.cpp: In function 'SEXPREC* file78427983()':
+file78427983.cpp:98: error: 'class Neuron' has no member named 'getId'
+file78427983.cpp:100: error: 'class Neuron' has no member named 'getId'
+make: *** [file78427983.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getWeight"><u style=color:red>test.Neuron.Cpp.getWeight: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! filecd8743a.cpp: In function 'SEXPREC* filecd8743a()':
-filecd8743a.cpp:82: error: 'NeuronPtr' was not declared in this scope
-filecd8743a.cpp:82: error: template argument 1 is invalid
-filecd8743a.cpp:82: error: template argument 2 is invalid
-filecd8743a.cpp:82: error: invalid type in declaration before ';' token
-filecd8743a.cpp:84: error: expected `;' before 'ptNeuron'
-filecd8743a.cpp:86: error: 'ptNeuron' was not declared in this scope
-filecd8743a.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-filecd8743a.cpp:90: error: expected `;' before 'vcPt'
-filecd8743a.cpp:91: error: 'vcPt' was not declared in this scope
-filecd8743a.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-filecd8743a.cpp:93: error: expected `;' before 'ptN'
-filecd8743a.cpp:94: error: 'ptN' was not declared in this scope
-make: *** [filecd8743a.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file5437c523.cpp: In function 'SEXPREC* file5437c523()':
+file5437c523.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file5437c523.cpp:105: error: expected `;' before 'vcPt'
+file5437c523.cpp:106: error: 'vcPt' was not declared in this scope
+file5437c523.cpp:110: error: 'class Neuron' has no member named 'getWeight'
+make: *** [file5437c523.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.numOfCons"><u style=color:red>test.Neuron.Cpp.numOfCons: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file56b6926c.cpp: In function 'SEXPREC* file56b6926c()':
-file56b6926c.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file56b6926c.cpp:82: error: template argument 1 is invalid
-file56b6926c.cpp:82: error: template argument 2 is invalid
-file56b6926c.cpp:82: error: invalid type in declaration before ';' token
-file56b6926c.cpp:84: error: expected `;' before 'ptNeuron'
-file56b6926c.cpp:86: error: 'ptNeuron' was not declared in this scope
-file56b6926c.cpp:87: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:90: error: 'ConContainerPtr' was not declared in this scope
-file56b6926c.cpp:90: error: expected `;' before 'vcPt'
-file56b6926c.cpp:91: error: 'vcPt' was not declared in this scope
-file56b6926c.cpp:91: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:91: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file56b6926c.cpp:92: error: expected `;' before 'ptN'
-file56b6926c.cpp:94: error: 'ptN' was not declared in this scope
-make: *** [file56b6926c.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file196fa807.cpp: In function 'SEXPREC* file196fa807()':
+file196fa807.cpp:105: error: 'ConContainerPtr' was not declared in this scope
+file196fa807.cpp:105: error: expected `;' before 'vcPt'
+file196fa807.cpp:106: error: 'vcPt' was not declared in this scope
+file196fa807.cpp:109: error: 'class Neuron' has no member named 'numOfCons'
+make: *** [file196fa807.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setFrom"><u style=color:red>test.Neuron.Cpp.setFrom: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file6c471ced.cpp: In function 'SEXPREC* file6c471ced()':
-file6c471ced.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file6c471ced.cpp:82: error: template argument 1 is invalid
-file6c471ced.cpp:82: error: template argument 2 is invalid
-file6c471ced.cpp:82: error: invalid type in declaration before ';' token
-file6c471ced.cpp:85: error: expected `;' before 'ptNeuron'
-file6c471ced.cpp:87: error: 'ptNeuron' was not declared in this scope
-file6c471ced.cpp:88: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:92: error: 'ConContainerPtr' was not declared in this scope
-file6c471ced.cpp:92: error: expected `;' before 'vcPt'
-file6c471ced.cpp:93: error: 'vcPt' was not declared in this scope
-file6c471ced.cpp:93: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:93: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:95: error: expected `;' before 'ptN'
-file6c471ced.cpp:96: error: request for member 'clear' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:98: error: 'ptNeuron' was not declared in this scope
-file6c471ced.cpp:99: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file6c471ced.cpp:102: error: 'ptN' was not declared in this scope
-make: *** [file6c471ced.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file7180709c.cpp: In function 'SEXPREC* file7180709c()':
+file7180709c.cpp:107: error: 'ConContainerPtr' was not declared in this scope
+file7180709c.cpp:107: error: expected `;' before 'vcPt'
+file7180709c.cpp:108: error: 'vcPt' was not declared in this scope
+file7180709c.cpp:117: error: 'class Neuron' has no member named 'setFrom'
+file7180709c.cpp:119: error: 'class Neuron' has no member named 'getConId'
+make: *** [file7180709c.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setId"><u style=color:red>test.Neuron.Cpp.setId: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file30bc4324.cpp: In function 'SEXPREC* file30bc4324()':
-file30bc4324.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file30bc4324.cpp:82: error: expected `;' before 'ptN'
-file30bc4324.cpp:83: error: 'ptN' was not declared in this scope
-make: *** [file30bc4324.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file27614bfb.cpp: In function 'SEXPREC* file27614bfb()':
+file27614bfb.cpp:98: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:99: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:100: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:101: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:102: error: 'class Neuron' has no member named 'getId'
+file27614bfb.cpp:103: error: 'class Neuron' has no member named 'setId'
+file27614bfb.cpp:104: error: 'class Neuron' has no member named 'getId'
+make: *** [file27614bfb.o] Error 1
 <br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setWeight"><u style=color:red>test.Neuron.Cpp.setWeight: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
-  Compilation ERROR, function(s)/method(s) not created! file17dc097b.cpp: In function 'SEXPREC* file17dc097b()':
-file17dc097b.cpp:82: error: 'NeuronPtr' was not declared in this scope
-file17dc097b.cpp:82: error: template argument 1 is invalid
-file17dc097b.cpp:82: error: template argument 2 is invalid
-file17dc097b.cpp:82: error: invalid type in declaration before ';' token
-file17dc097b.cpp:85: error: expected `;' before 'ptNeuron'
-file17dc097b.cpp:87: error: 'ptNeuron' was not declared in this scope
-file17dc097b.cpp:88: error: request for member 'push_back' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:92: error: 'ConContainerPtr' was not declared in this scope
-file17dc097b.cpp:92: error: expected `;' before 'vcPt'
-file17dc097b.cpp:93: error: 'vcPt' was not declared in this scope
-file17dc097b.cpp:93: error: request for member 'begin' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:93: error: request for member 'end' in 'neuronContainer', which is of non-class type 'int'
-file17dc097b.cpp:95: error: expected `;' before 'ptN'
-file17dc097b.cpp:101: error: 'ptN' was not declared in this scope
-make: *** [file17dc097b.o] Error 1
+  Compilation ERROR, function(s)/method(s) not created! file64c35fef.cpp: In function 'SEXPREC* file64c35fef()':
+file64c35fef.cpp:107: error: 'ConContainerPtr' was not declared in this scope
+file64c35fef.cpp:107: error: expected `;' before 'vcPt'
+file64c35fef.cpp:108: error: 'vcPt' was not declared in this scope
+file64c35fef.cpp:116: error: 'class Neuron' has no member named 'setWeight'
+file64c35fef.cpp:118: error: 'class Neuron' has no member named 'getWeight'
+make: *** [file64c35fef.o] Error 1
 <br/></li></ul></li></ul><hr>
 <p><a name="AMORE Reference Classes Unit Tests"><h5 TRUE>Test Suite: AMORE Reference Classes Unit Tests</h5>
-</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.RC.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.Con.R?root=amore">Test file: runit.RC.Con.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getFrom_fromIsNeuron">test.gCon.getFrom_fromIsNeuron: (6 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getFrom_fromIsNumeric">test.gCon.getFrom_fromIsNumeric: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getWeight">test.gCon.getWeight: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.new_fromIsNeuron">test.gCon.new_fromIsNeuron: (9 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.new_fromIsNumeric">test.gCon.new_fromIsNumeric: (4 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.setFrom">test.gCon.setFrom: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.setWeight">test.gCon.setWeight: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.show">test.gCon.show: (1 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.validate">test.gCon.validate: (5 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.MLPneuron.R?root=amore">Test file: runit.RC.MLPneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.new">test.gMLPneuron.new: (5 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.show">test.gMLPneuron.show: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.validate">test.gMLPneuron.validate: (1 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.Neuron.R?root=amore">Test file: runit.RC.Neuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.addCon">test.gNeuron.addCon: (4 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.deleteCon">test.gNeuron.deleteCon: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getCon">test.gNeuron.getCon: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getConId_fromIsNeuron">test.gNeuron.getConId_fromIsNeuron: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getConId_fromIsNumeric">test.gNeuron.getConId_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getFrom_fromIsNeuron">test.gNeuron.getFrom_fromIsNeuron: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getFrom_fromIsNumeric">test.gNeuron.getFrom_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getWeight">test.gNeuron.getWeight: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.new">test.gNeuron.new: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.numOfCons">test.gNeuron.numOfCons: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setCon">test.gNeuron.setCon: (2 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setFrom">test.gNeuron.setFrom: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setId.getId">test.gNeuron.setId.getId: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setWeight">test.gNeuron.setWeight: (3 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.show">test.gNeuron.show: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.validate">test.gNeuron.validate: (3 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.RBFneuron.R?root=amore">Test file: runit.RC.RBFneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.new">test.gRBFneuron.new: (3 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.show">test.gRBFneuron.show: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.validate">test.gRBFneuron.validate: (2 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listAMORE.R?root=amore">Test file: runit.RC.listAMORE.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.append">test.gListAMORE.append: (4 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.load">test.gListAMORE.load: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.new">test.gListAMORE.new: (7 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.push_back">test.gListAMORE.push_back: (4 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.show">test.gListAMORE.show: (1 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.store">test.gListAMORE.store: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.validate">test.gListAMORE.validate: (4 checks) ... OK (0 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listCon.R?root=amore">Test file: runit.RC.listCon.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.buildAndAppend_fromIsNeuron">test.gListCon.buildAndAppend_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.buildAndAppend_fromIsNumeric">test.gListCon.buildAndAppend_fromIsNumeric: (4 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.delete">test.gListCon.delete: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getFrom_fromIsNeuron">test.gListCon.getFrom_fromIsNeuron: (2 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getFrom_fromIsNumeric">test.gListCon.getFrom_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getId_fromIsNeuron">test.gListCon.getId_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getId_fromIsNumeric">test.gListCon.getId_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getWeight_fromIsNeuron">test.gListCon.getWeight_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getWeight_fromIsNumeric">test.gListCon.getWeight_fromIsNumeric: (2 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.new">test.gListCon.new: (1 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.numOfCons">test.gListCon.numOfCons: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.push_back">test.gListCon.push_back: (6 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.select">test.gListCon.select: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.setFrom">test.gListCon.setFrom: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.setWeight">test.gListCon.setWeight: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.show">test.gListCon.show: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.validate">test.gListCon.validate: (1 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listLayer.R?root=amore">Test file: runit.RC.listLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.delete">test.gListLayer.delete: (3 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.getId">test.gListLayer.getId: (1 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.new_fromIsNeuron">test.gListLayer.new_fromIsNeuron: (4 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.new_fromIsNumeric">test.gListLayer.new_fromIsNumeric: (4 checks) ... OK (0.15 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.numOfLayers">test.gListLayer.numOfLayers: (1 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.select">test.gListLayer.select: (1 checks) ... OK (0.06 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listMLPlayer.R?root=amore">Test file: runit.RC.listMLPlayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPlayer.R_test.glistMLPlayer.validate">test.glistMLPlayer.validate: (3 checks) ... OK (0.15 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listMLPneuron.R?root=amore">Test file: runit.RC.listMLPneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.buildAndAppend_fromIsNeuron">test.gListMLPneuron.buildAndAppend_fromIsNeuron: (11 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.buildAndAppend_fromIsNumeric">test.gListMLPneuron.buildAndAppend_fromIsNumeric: (9 checks) ... OK (0.1 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.new">test.gListMLPneuron.new: (15 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.setBias.getBias">test.gListMLPneuron.setBias.getBias: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.show">test.gListMLPneuron.show: (1 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.validate">test.gListMLPneuron.validate: (1 checks) ... OK (0.03 seconds)<br/></a></li></ul></li></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listNeuron.R?root=amore">Test file: runit.RC.listNeuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.delete">test.gListNeuron.delete: (5 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getFrom_fromIsNumeric">test.gListNeuron.getFrom_fromIsNumeric: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getId_fromIsNeuron">test.gListNeuron.getId_fromIsNeuron: (4 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getId_fromIsNumeric">test.gListNeuron.getId_fromIsNumeric: (4 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.is.regular">test.gListNeuron.is.regular: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.new.push_back.numberOfNeurons.numOfCons">test.gListNeuron.new.push_back.numberOfNeurons.numOfCons: (7 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.select">test.gListNeuron.select: (3 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setFrom.getFrom">test.gListNeuron.setFrom.getFrom: (3 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setId.getId">test.gListNeuron.setId.getId: (3 checks) ... OK (0.03 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setWeight.getWeight">test.gListNeuron.setWeight.getWeight: (5 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.show">test.gListNeuron.show: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.validate">test.gListNeuron.validate: (2 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listRBFlayer.R?root=amore">Test file: runit.RC.listRBFlayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFlayer.R_test.gListRBFlayer.validate">test.gListRBFlayer.validate: (10 checks) ... OK (0.17 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listRBFneuron.R?root=amore">Test file: runit.RC.listRBFneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.buildAndAppend">test.gListRBFneuron.buildAndAppend: (10 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.new">test.gListRBFneuron.new: (17 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.setAltitude.getAltitude">test.gListRBFneuron.setAltitude.getAltitude: (2 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.setWidth.getWidth">test.gListRBFneuron.setWidth.getWidth: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.show">test.gListRBFneuron.show: (1 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.validate">test.gListRBFneuron.validate: (1 checks) ... OK (0.03 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.mlpLayer.R?root=amore">Test file: runit.RC.mlpLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.append">test.gmlpLayer.append: (3 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.delete">test.gmlpLayer.delete: (3 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.is.regular">test.gmlpLayer.is.regular: (4 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.new">test.gmlpLayer.new: (9 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.numOfCons">test.gmlpLayer.numOfCons: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setAndGetWeight">test.gmlpLayer.setAndGetWeight: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setFrom.getFrom">test.gmlpLayer.setFrom.getFrom: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setId.getId">test.gmlpLayer.setId.getId: (5 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.validate">test.gmlpLayer.validate: (4 checks) ... OK (0.04 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.rbfLayer.R?root=amore">Test file: runit.RC.rbfLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.append">test.grbfLayer.append: (9 checks) ... OK (0.2 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.delete">test.grbfLayer.delete: (3 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.is.regular">test.grbfLayer.is.regular: (4 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.new">test.grbfLayer.new: (11 checks) ... OK (0.11 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.numOfCons">test.grbfLayer.numOfCons: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setFrom.getFrom">test.grbfLayer.setFrom.getFrom: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setId.getId">test.grbfLayer.setId.getId: (4 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setWeight.getWeight">test.grbfLayer.setWeight.getWeight: (6 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.validate">test.grbfLayer.validate: (4 checks) ... OK (0.05 seconds)<br/></a></li></ul></li></ul><hr>
+</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.RC.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.Con.R?root=amore">Test file: runit.RC.Con.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getFrom_fromIsNeuron">test.gCon.getFrom_fromIsNeuron: (6 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getFrom_fromIsNumeric">test.gCon.getFrom_fromIsNumeric: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.getWeight">test.gCon.getWeight: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.new_fromIsNeuron">test.gCon.new_fromIsNeuron: (9 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.new_fromIsNumeric">test.gCon.new_fromIsNumeric: (4 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.setFrom">test.gCon.setFrom: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.setWeight">test.gCon.setWeight: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.show">test.gCon.show: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Con.R_test.gCon.validate">test.gCon.validate: (5 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.MLPneuron.R?root=amore">Test file: runit.RC.MLPneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.new">test.gMLPneuron.new: (5 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.show">test.gMLPneuron.show: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.MLPneuron.R_test.gMLPneuron.validate">test.gMLPneuron.validate: (1 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.Neuron.R?root=amore">Test file: runit.RC.Neuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.addCon">test.gNeuron.addCon: (4 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.deleteCon">test.gNeuron.deleteCon: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getCon">test.gNeuron.getCon: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getConId_fromIsNeuron">test.gNeuron.getConId_fromIsNeuron: (2 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getConId_fromIsNumeric">test.gNeuron.getConId_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getFrom_fromIsNeuron">test.gNeuron.getFrom_fromIsNeuron: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getFrom_fromIsNumeric">test.gNeuron.getFrom_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.getWeight">test.gNeuron.getWeight: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.new">test.gNeuron.new: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.numOfCons">test.gNeuron.numOfCons: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setCon">test.gNeuron.setCon: (2 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setFrom">test.gNeuron.setFrom: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setId.getId">test.gNeuron.setId.getId: (3 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.setWeight">test.gNeuron.setWeight: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.show">test.gNeuron.show: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.Neuron.R_test.gNeuron.validate">test.gNeuron.validate: (3 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.RBFneuron.R?root=amore">Test file: runit.RC.RBFneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.new">test.gRBFneuron.new: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.show">test.gRBFneuron.show: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.RBFneuron.R_test.gRBFneuron.validate">test.gRBFneuron.validate: (2 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listAMORE.R?root=amore">Test file: runit.RC.listAMORE.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.append">test.gListAMORE.append: (4 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.load">test.gListAMORE.load: (2 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.new">test.gListAMORE.new: (7 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.push_back">test.gListAMORE.push_back: (4 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.show">test.gListAMORE.show: (1 checks) ... OK (0 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.store">test.gListAMORE.store: (3 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listAMORE.R_test.gListAMORE.validate">test.gListAMORE.validate: (4 checks) ... OK (0 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listCon.R?root=amore">Test file: runit.RC.listCon.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.buildAndAppend_fromIsNeuron">test.gListCon.buildAndAppend_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.buildAndAppend_fromIsNumeric">test.gListCon.buildAndAppend_fromIsNumeric: (4 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.delete">test.gListCon.delete: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getFrom_fromIsNeuron">test.gListCon.getFrom_fromIsNeuron: (2 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getFrom_fromIsNumeric">test.gListCon.getFrom_fromIsNumeric: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getId_fromIsNeuron">test.gListCon.getId_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getId_fromIsNumeric">test.gListCon.getId_fromIsNumeric: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getWeight_fromIsNeuron">test.gListCon.getWeight_fromIsNeuron: (3 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.getWeight_fromIsNumeric">test.gListCon.getWeight_fromIsNumeric: (2 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.new">test.gListCon.new: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.numOfCons">test.gListCon.numOfCons: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.push_back">test.gListCon.push_back: (6 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.select">test.gListCon.select: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.setFrom">test.gListCon.setFrom: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.setWeight">test.gListCon.setWeight: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.show">test.gListCon.show: (1 checks) ... OK (0.01 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listCon.R_test.gListCon.validate">test.gListCon.validate: (1 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listLayer.R?root=amore">Test file: runit.RC.listLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.delete">test.gListLayer.delete: (3 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.getId">test.gListLayer.getId: (1 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.new_fromIsNeuron">test.gListLayer.new_fromIsNeuron: (4 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.new_fromIsNumeric">test.gListLayer.new_fromIsNumeric: (4 checks) ... OK (0.15 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.numOfLayers">test.gListLayer.numOfLayers: (1 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listLayer.R_test.gListLayer.select">test.gListLayer.select: (1 checks) ... OK (0.06 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listMLPlayer.R?root=amore">Test file: runit.RC.listMLPlayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPlayer.R_test.glistMLPlayer.validate">test.glistMLPlayer.validate: (3 checks) ... OK (0.15 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listMLPneuron.R?root=amore">Test file: runit.RC.listMLPneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.buildAndAppend_fromIsNeuron">test.gListMLPneuron.buildAndAppend_fromIsNeuron: (11 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.buildAndAppend_fromIsNumeric">test.gListMLPneuron.buildAndAppend_fromIsNumeric: (9 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.new">test.gListMLPneuron.new: (15 checks) ... OK (0.03 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.setBias.getBias">test.gListMLPneuron.setBias.getBias: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.show">test.gListMLPneuron.show: (1 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listMLPneuron.R_test.gListMLPneuron.validate">test.gListMLPneuron.validate: (1 checks) ... OK (0.03 seconds)<br/></a></li></ul></li></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listNeuron.R?root=amore">Test file: runit.RC.listNeuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.delete">test.gListNeuron.delete: (5 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getFrom_fromIsNumeric">test.gListNeuron.getFrom_fromIsNumeric: (2 checks) ... OK (0.03 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getId_fromIsNeuron">test.gListNeuron.getId_fromIsNeuron: (4 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.getId_fromIsNumeric">test.gListNeuron.getId_fromIsNumeric: (4 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.is.regular">test.gListNeuron.is.regular: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.new.push_back.numberOfNeurons.numOfCons">test.gListNeuron.new.push_back.numberOfNeurons.numOfCons: (7 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.select">test.gListNeuron.select: (3 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setFrom.getFrom">test.gListNeuron.setFrom.getFrom: (3 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setId.getId">test.gListNeuron.setId.getId: (3 checks) ... OK (0.03 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.setWeight.getWeight">test.gListNeuron.setWeight.getWeight: (5 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.show">test.gListNeuron.show: (1 checks) ... OK (0.02 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listNeuron.R_test.gListNeuron.validate">test.gListNeuron.validate: (2 checks) ... OK (0.01 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listRBFlayer.R?root=amore">Test file: runit.RC.listRBFlayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFlayer.R_test.gListRBFlayer.validate">test.gListRBFlayer.validate: (10 checks) ... OK (0.17 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.listRBFneuron.R?root=amore">Test file: runit.RC.listRBFneuron.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.buildAndAppend">test.gListRBFneuron.buildAndAppend: (10 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.new">test.gListRBFneuron.new: (17 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.setAltitude.getAltitude">test.gListRBFneuron.setAltitude.getAltitude: (2 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.setWidth.getWidth">test.gListRBFneuron.setWidth.getWidth: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.show">test.gListRBFneuron.show: (1 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.listRBFneuron.R_test.gListRBFneuron.validate">test.gListRBFneuron.validate: (1 checks) ... OK (0.03 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.mlpLayer.R?root=amore">Test file: runit.RC.mlpLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.append">test.gmlpLayer.append: (3 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.delete">test.gmlpLayer.delete: (3 checks) ... OK (0.03 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.is.regular">test.gmlpLayer.is.regular: (4 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.new">test.gmlpLayer.new: (9 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.numOfCons">test.gmlpLayer.numOfCons: (2 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setAndGetWeight">test.gmlpLayer.setAndGetWeight: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setFrom.getFrom">test.gmlpLayer.setFrom.getFrom: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.setId.getId">test.gmlpLayer.setId.getId: (5 checks) ... OK (0.05 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.mlpLayer.R_test.gmlpLayer.validate">test.gmlpLayer.validate: (4 checks) ... OK (0.04 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.RC.rbfLayer.R?root=amore">Test file: runit.RC.rbfLayer.R</a><ul><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.append">test.grbfLayer.append: (9 checks) ... OK (0.2 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.delete">test.grbfLayer.delete: (3 checks) ... OK (0.04 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.is.regular">test.grbfLayer.is.regular: (4 checks) ... OK (0.09 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.new">test.grbfLayer.new: (11 checks) ... OK (0.11 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.numOfCons">test.grbfLayer.numOfCons: (2 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setFrom.getFrom">test.grbfLayer.setFrom.getFrom: (6 checks) ... OK (0.08 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setId.getId">test.grbfLayer.setId.getId: (4 checks) ... OK (0.06 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.setWeight.getWeight">test.grbfLayer.setWeight.getWeight: (6 checks) ... OK (0.07 seconds)<br/></a></li><li><a name="AMORE Reference Classes Unit Tests_._pkg_AMORE_unitTest_runit.RC.rbfLayer.R_test.grbfLayer.validate">test.grbfLayer.validate: (4 checks) ... OK (0.05 seconds)<br/></a></li></ul></li></ul><hr>
 <table border="0" width="80%" >
 <tr><th>Name</th>
 <th>Value</th>

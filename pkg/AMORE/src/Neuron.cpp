@@ -5,7 +5,7 @@
  *      Author: mcasl
  */
 
-#include "Neuron.h"
+#include "dia/Neuron.h"
 
 Neuron::Neuron() :
   d_Id(NA_INTEGER) //, nCons()
@@ -28,7 +28,7 @@ Neuron::Neuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::
 
 #endif
 
-int&
+int
 Neuron::Id()
 {
   return d_Id;

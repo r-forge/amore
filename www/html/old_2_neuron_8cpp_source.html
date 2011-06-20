@@ -106,15 +106,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 <span class="comment">//}</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="keywordtype">int</span>
-<a name="l00026"></a>00026 <a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">Neuron::getId</a>()
+<a name="l00026"></a><a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">00026</a> <a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">Neuron::getId</a>()
 <a name="l00027"></a>00027 {
-<a name="l00028"></a>00028   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>;
+<a name="l00028"></a>00028   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#afeb9899e815fd0f56e28eb0bc1f965a8">Id</a>;
 <a name="l00029"></a>00029 }
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="keywordtype">void</span>
-<a name="l00032"></a>00032 <a class="code" href="class_neuron.html#a6eb17a0d297b8c65170911aff37ba968">Neuron::setId</a>(<span class="keywordtype">int</span> value)
+<a name="l00032"></a><a class="code" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">00032</a> <a class="code" href="class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63">Neuron::setId</a>(<span class="keywordtype">int</span> value)
 <a name="l00033"></a>00033 {
-<a name="l00034"></a>00034   <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a> = value;
+<a name="l00034"></a>00034   <a class="code" href="class_neuron.html#afeb9899e815fd0f56e28eb0bc1f965a8">Id</a> = value;
 <a name="l00035"></a>00035 }
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 
@@ -139,13 +139,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056       Rprintf(<span class="stringliteral">&quot;\n Id: %d&quot;</span>, <span class="keywordtype">id</span>);
 <a name="l00057"></a>00057     }
 <a name="l00058"></a>00058   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
-<a name="l00059"></a>00059   <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#a43be99a10c4508a8f7f3182129a3ab21">nCons</a>.<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Returns the size or length of the vector.">size</a>() == 0)
+<a name="l00059"></a>00059   <span class="keywordflow">if</span> (nCons.size() == 0)
 <a name="l00060"></a>00060     {
 <a name="l00061"></a>00061       Rprintf(<span class="stringliteral">&quot;\n No connections defined&quot;</span>);
 <a name="l00062"></a>00062     }
 <a name="l00063"></a>00063   <span class="keywordflow">else</span>
 <a name="l00064"></a>00064     {
-<a name="l00065"></a>00065       <a class="code" href="class_neuron.html#a43be99a10c4508a8f7f3182129a3ab21">nCons</a>.<a class="code" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2" title="Pretty print of the Container&lt;T&gt;">show</a>();
+<a name="l00065"></a>00065       nCons.show();
 <a name="l00066"></a>00066     }
 <a name="l00067"></a>00067   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
 <a name="l00068"></a>00068   <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00074"></a>00074 {
 <a name="l00075"></a>00075   BEGIN_RCPP
 <a name="l00076"></a>00076   <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4">getId</a>() == NA_INTEGER ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ Neuron::validate]: Error, Id is NA.&quot;</span>);
-<a name="l00077"></a>00077   <a class="code" href="class_neuron.html#a43be99a10c4508a8f7f3182129a3ab21">nCons</a>.<a class="code" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3" title="Object validator.">validate</a>();
+<a name="l00077"></a>00077   nCons.validate();
 <a name="l00078"></a>00078   <span class="keywordflow">return</span> (TRUE);
 <a name="l00079"></a>00079 END_RCPP}
 <a name="l00080"></a>00080 
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="old_2_neuron_8cpp.html">Neuron.cpp</a>      </li>
-      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 20 2011 15:56:11 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

@@ -1,4 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_container.html" title="Container\&lt; Con \&gt;" alt="" coords="5,5,131,32"/>
-<area shape="rect" id="node3" href="$class_con_container.html" title="A vector of connections." alt="" coords="179,5,280,32"/>
+<area shape="rect" id="node1" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="5,81,171,108"/>
+<area shape="rect" id="node3" href="$class_container.html" title="class Container &#45;" alt="" coords="243,5,354,32"/>
+<area shape="rect" id="node5" href="$class_container.html" title="Container\&lt; Con \&gt;" alt="" coords="235,56,363,83"/>
+<area shape="rect" id="node9" href="$class_container.html" title="Container\&lt; MLPlayer \&gt;" alt="" coords="219,107,379,133"/>
+<area shape="rect" id="node13" href="$class_container.html" title="Container\&lt; Neuron \&gt;" alt="" coords="225,157,372,184"/>
+<area shape="rect" id="node7" href="$class_con_container.html" title="A vector of connections." alt="" coords="443,56,549,83"/>
+<area shape="rect" id="node11" href="$class_m_l_player_container.html" title="MLPlayerContainer" alt="" coords="427,107,565,133"/>
+<area shape="rect" id="node15" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="433,157,559,184"/>
 </map>

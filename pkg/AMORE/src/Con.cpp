@@ -5,12 +5,9 @@
  *      Author: mcasl
  */
 
-#include "Con.h"
-#include "Neuron.h"
+#include "dia/Con.h"
+#include "dia/Neuron.h"
 //=========================================================================================================
-
-
-
 
 //! Constructor
 /*
@@ -18,10 +15,9 @@
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  */
 Con::Con(Neuron& neuron) :
-  d_neuron(neuron), d_weight(0)
+  d_neuron( boost::ref(neuron) ), d_weight(0)
 {
 }
-
 
 //! Constructor
 /*
@@ -30,10 +26,9 @@ Con::Con(Neuron& neuron) :
  * \param weight The new value (double) to be set in the \ref weight field.
  */
 Con::Con(Neuron& neuron, double weight) :
-  d_neuron(neuron), d_weight(weight)
+  d_neuron(boost::ref(neuron)), d_weight(weight)
 {
 }
-
 
 //! %from field accessor.
 /*! This method allows access to the address stored in the private \ref from field (a pointer to a Neuron object).*
@@ -61,8 +56,6 @@ Con::neuron()
   return d_neuron;
 }
 
-
-
 //! A getter of the Id of the Neuron pointed by the from field.
 /*! This method gets the Id of the Neuron referred to by the \ref from field
  * \return The value of the Id (an integer).
@@ -85,9 +78,8 @@ Con::neuron()
 int
 Con::Id()
 {
-      return d_neuron.Id();
+  return d_neuron.get().Id();
 }
-
 
 //! %weight field accessor.
 /*! This method allows access to the value stored in the private field \ref weight
@@ -116,7 +108,6 @@ Con::weight()
 {
   return d_weight;
 }
-
 
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.
@@ -147,7 +138,7 @@ bool
 Con::validate()
 {
   BEGIN_RCPP
-  if (! R_FINITE(d_weight) ) throw std::range_error("weight is not finite.");
+  if (! R_FINITE(weight()) ) throw std::range_error("weight is not finite.");
   if (Id() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);

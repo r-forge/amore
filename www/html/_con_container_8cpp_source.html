@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 }
 <a name="l00011"></a>00011 
 <a name="l00012"></a><a class="code" href="class_con_container.html#a69e83fdaf298e23758fe7ead2fe488b9">00012</a> <a class="code" href="class_con_container.html#aec4578b20ba3509e450bfbc9851d3393">ConContainer::ConContainer</a>(std::vector&lt;ConPtr&gt; collection) :
-<a name="l00013"></a>00013   <a class="code" href="class_container.html" title="class Container -">Container</a>&lt;<a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>&gt; (collection) <span class="comment">// Call to Base constructor</span>
+<a name="l00013"></a>00013   <a class="code" href="class_container.html" title="class Container -">Container</a>&lt;<a class="code" href="class_con.html" title="class Con -">Con</a>&gt; (collection) <span class="comment">// Call to Base constructor</span>
 <a name="l00014"></a>00014 {
 <a name="l00015"></a>00015 }
 <a name="l00016"></a>00016 
@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094 {
 <a name="l00095"></a>00095   std::vector&lt;int&gt; result;
 <a name="l00096"></a>00096   result.reserve(<a class="code" href="class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object.">numOfCons</a>());
-<a name="l00097"></a>00097   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> itr, *<span class="keyword">this</span>)
+<a name="l00097"></a>00097   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>)
 <a name="l00098"></a>00098     {
 <a name="l00099"></a>00099       result.push_back(itr-&gt;getId());
 <a name="l00100"></a>00100     }
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103 
 <a name="l00105"></a>00105 
 <a name="l00142"></a>00142 <span class="keywordtype">bool</span>
-<a name="l00143"></a>00143 <a class="code" href="class_container.html#afeba0e92ae041e241e5dbc882225315e">ConContainer::buildAndAppend</a>(NeuronContainerIterator firstNeuron,
+<a name="l00143"></a>00143 ConContainer::buildAndAppend(NeuronContainerIterator firstNeuron,
 <a name="l00144"></a>00144     NeuronContainerIterator lastNeuron,
 <a name="l00145"></a>00145     std::vector&lt;double&gt;::iterator firstWeight,
 <a name="l00146"></a>00146     std::vector&lt;double&gt;::iterator lastWeight)
@@ -142,11 +142,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00163"></a>00163     }
 <a name="l00164"></a>00164 
 <a name="l00165"></a>00165   <a class="code" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a>(<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091">size</a>() + (lastNeuron - firstNeuron));
-<a name="l00166"></a>00166   <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> ptCon;
+<a name="l00166"></a>00166   <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon;
 <a name="l00167"></a>00167   <span class="keywordflow">while</span> (firstNeuron != lastNeuron)
 <a name="l00168"></a>00168     {
-<a name="l00169"></a>00169       ptCon.reset(<span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>(*firstNeuron++, *firstWeight++));
-<a name="l00170"></a>00170       <a class="code" href="class_container.html#a3c543f72952c30d3eda5202815833f98">push_back</a>(ptCon);
+<a name="l00169"></a>00169       ptCon.reset(<span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(*firstNeuron++, *firstWeight++));
+<a name="l00170"></a>00170       <a class="code" href="class_container.html#ace7da25fd798b831d475b37fb58a9d78">push_back</a>(ptCon);
 <a name="l00171"></a>00171     }
 <a name="l00172"></a>00172   <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00173"></a>00173 END_RCPP}
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00216"></a>00216 {
 <a name="l00217"></a>00217   std::vector&lt;double&gt; result;
 <a name="l00218"></a>00218   result.reserve(<a class="code" href="class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object.">numOfCons</a>());
-<a name="l00219"></a>00219   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> itr, *<span class="keyword">this</span>)
+<a name="l00219"></a>00219   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>)
 <a name="l00220"></a>00220     {
 <a name="l00221"></a>00221       result.push_back( itr-&gt;getWeight() );
 <a name="l00222"></a>00222     }
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00278"></a>00278           <span class="stringliteral">&quot;[C++ ConContainer::setWeight]: Error, nWeights.size() != collection.size()&quot;</span>);
 <a name="l00279"></a>00279     }
 <a name="l00280"></a>00280   std::vector&lt;double&gt;::iterator itrWeight = nWeights.begin();
-<a name="l00281"></a>00281   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> itr, *<span class="keyword">this</span>)
+<a name="l00281"></a>00281   <span class="keywordflow">foreach</span> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr, *<span class="keyword">this</span>)
 <a name="l00282"></a>00282     {
 <a name="l00283"></a>00283       itr-&gt;setWeight( *itrWeight );
 <a name="l00284"></a>00284       itrWeight++;
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00341"></a>00341           <span class="stringliteral">&quot;[C++ ConContainer::setFrom]: Error, neuronContainer.size() != collection.size()&quot;</span>);
 <a name="l00342"></a>00342     }
 <a name="l00343"></a>00343   std::vector&lt;NeuronPtr&gt;::iterator itrNeuron = neuronContainer.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>();
-<a name="l00344"></a>00344   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> itr , *<span class="keyword">this</span>)
+<a name="l00344"></a>00344   <span class="keywordflow">foreach</span>(<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> itr , *<span class="keyword">this</span>)
 <a name="l00345"></a>00345     {
 <a name="l00346"></a>00346       itr-&gt;setFrom( *itrNeuron );
 <a name="l00347"></a>00347       itrNeuron++;
@@ -211,21 +211,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00353"></a>00353 {
 <a name="l00354"></a>00354 
 <a name="l00355"></a>00355   <span class="keywordtype">bool</span>
-<a name="l00356"></a><a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">00356</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> a, <span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> b)
+<a name="l00356"></a><a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">00356</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> a, <span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> b)
 <a name="l00357"></a>00357   {
 <a name="l00358"></a>00358     <span class="keywordflow">return</span> a-&gt;getId() &lt; b-&gt;getId();
 <a name="l00359"></a>00359   }
 <a name="l00360"></a>00360   ;
 <a name="l00361"></a>00361 
 <a name="l00362"></a>00362   <span class="keywordtype">bool</span>
-<a name="l00363"></a><a class="code" href="struct_compare_id.html#af99b7dae8a94fccd1da8078cb1788f13">00363</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> a, <span class="keyword">const</span> <span class="keywordtype">int</span> b)
+<a name="l00363"></a><a class="code" href="struct_compare_id.html#af99b7dae8a94fccd1da8078cb1788f13">00363</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> a, <span class="keyword">const</span> <span class="keywordtype">int</span> b)
 <a name="l00364"></a>00364   {
 <a name="l00365"></a>00365     <span class="keywordflow">return</span> a-&gt;getId() &lt; b;
 <a name="l00366"></a>00366   }
 <a name="l00367"></a>00367   ;
 <a name="l00368"></a>00368 
 <a name="l00369"></a>00369   <span class="keywordtype">bool</span>
-<a name="l00370"></a><a class="code" href="struct_compare_id.html#a052ddbeca61d5edc795f33290b7af112">00370</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> a, <span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#aec013d6637f08d6d33ffa90a4c802b9a">ConPtr</a> b)
+<a name="l00370"></a><a class="code" href="struct_compare_id.html#a052ddbeca61d5edc795f33290b7af112">00370</a>   <a class="code" href="struct_compare_id.html#abc68f7bc4aafb243e126fbd35c36c7c2">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> a, <span class="keyword">const</span> <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> b)
 <a name="l00371"></a>00371   {
 <a name="l00372"></a>00372     <span class="keywordflow">return</span> a &lt; b-&gt;getId();
 <a name="l00373"></a>00373   }
@@ -252,10 +252,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00458"></a>00458 }
 <a name="l00459"></a>00459 
 <a name="l00461"></a>00461 
-<a name="l00504"></a>00504 <a class="code" href="_a_m_o_r_e_8h.html#a36205bc9da3f58511319ae429910198b">ConContainerPtr</a>
+<a name="l00504"></a>00504 ConContainerPtr
 <a name="l00505"></a><a class="code" href="class_con_container.html#a7fb490683bd4733cae3c6428bad9328c">00505</a> <a class="code" href="class_con_container.html#a7fb490683bd4733cae3c6428bad9328c" title="Selects the specified elements from the vecCom object.">ConContainer::select</a>(std::vector&lt;int&gt; nIds)
 <a name="l00506"></a>00506 {
-<a name="l00507"></a>00507   <a class="code" href="_a_m_o_r_e_8h.html#a36205bc9da3f58511319ae429910198b">ConContainerPtr</a> result(<span class="keyword">new</span> <a class="code" href="class_con_container.html" title="A vector of connections.">ConContainer</a>);
+<a name="l00507"></a>00507   ConContainerPtr result(<span class="keyword">new</span> <a class="code" href="class_con_container.html" title="A vector of connections.">ConContainer</a>);
 <a name="l00508"></a>00508   result-&gt;reserve(<a class="code" href="class_container.html#a842c3d9eca81b78b59112fde9707b091">size</a>());
 <a name="l00509"></a>00509   sort(<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>(), <a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>(), <a class="code" href="struct_compare_id.html">CompareId</a>());
 <a name="l00510"></a>00510   sort(nIds.begin(), nIds.end());
@@ -302,7 +302,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_con_container_8cpp.html">ConContainer.cpp</a>      </li>
-      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 20 2011 15:56:11 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -312,7 +312,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

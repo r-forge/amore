@@ -97,9 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 {
 <a name="l00019"></a>00019 <span class="keyword">public</span>:
 <a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">00021</a>   <span class="keyword">typedef</span> <a class="code" href="_a_m_o_r_e_8h.html#a36be90b8d9f454d85104cd4a44467e00">NeuronContainer_iterator</a> <a class="code" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">iterator</a>;
+<a name="l00021"></a><a class="code" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">00021</a>   <span class="keyword">typedef</span> NeuronContainer_iterator <a class="code" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">iterator</a>;
 <a name="l00022"></a>00022 
-<a name="l00023"></a><a class="code" href="class_neuron_container.html#a41749602f05e7610da7f0f1fd59f5442">00023</a>   <span class="keyword">typedef</span> <a class="code" href="_a_m_o_r_e_8h.html#af3f69a84a2f298d29ab490ec36f6d247">NeuronContainer_const_iterator</a> <a class="code" href="class_neuron_container.html#a41749602f05e7610da7f0f1fd59f5442">const_iterator</a>;
+<a name="l00023"></a><a class="code" href="class_neuron_container.html#a41749602f05e7610da7f0f1fd59f5442">00023</a>   <span class="keyword">typedef</span> NeuronContainer_const_iterator <a class="code" href="class_neuron_container.html#a41749602f05e7610da7f0f1fd59f5442">const_iterator</a>;
 <a name="l00024"></a>00024 
 <a name="l00025"></a><a class="code" href="class_neuron_container.html#ac067345f1d27a5b04e4d9487b319ccaa">00025</a>   <span class="keyword">typedef</span> boost::shared_ptr&lt;Neuron&gt; <a class="code" href="class_neuron_container.html#ac067345f1d27a5b04e4d9487b319ccaa">value_type</a>;
 <a name="l00026"></a>00026 
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00070"></a>00070   <a class="code" href="class_neuron_container.html#a54d5bfaf428ab9bc66aac79c312ab997">setWeight</a>(std::vector&lt;double&gt; value, std::vector&lt;int&gt; FROM);
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072   <span class="keywordtype">void</span>
-<a name="l00073"></a>00073   <a class="code" href="class_container.html#a7a34b07b4e412ba1e999389065b8edb8">erase</a>(std::vector&lt;int&gt; FROM); <span class="comment">// Move it to Container</span>
+<a name="l00073"></a>00073   erase(std::vector&lt;int&gt; FROM); <span class="comment">// Move it to Container</span>
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075   <a class="code" href="class_con_container.html" title="A vector of connections.">ConContainer</a>
 <a name="l00076"></a>00076   select(std::vector&lt;int&gt; FROM); <span class="comment">// Move it to Container</span>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_neuron_container_8h.html">NeuronContainer.h</a>      </li>
-      <li class="footer">Generated on Mon Jun 13 2011 18:20:30 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jun 20 2011 15:56:11 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

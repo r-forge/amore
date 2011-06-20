@@ -5,32 +5,27 @@
  *      Author: mcasl
  */
 
+#include "dia/Container.h"
+
 template<typename T>
   Container<T>::Container()
   {
+
   }
 
 template<typename T>
-  Container<T>::Container(
-      typename std::vector< T >::iterator first,
-      typename std::vector< T >::iterator last) :
-    collection()
+  Container<T>::~Container()
   {
-    collection.insert(collection.begin(), first, last);
   }
 
 template<typename T>
-  typename std::vector< T >::iterator
-  Container<T>::begin()
+  boost::shared_ptr<IteratorInterface<T> >
+  Container<T>::createIterator()
   {
-    return collection.begin();
-  }
-
-template<typename T>
-  typename std::vector< T >::iterator
-  Container<T>::end()
-  {
-    return collection.end();
+    boost::shared_ptr< ContainerIterator<T> > containerIteratorPtr( new ContainerIterator<T> ());
+    containerIteratorPtr->d_container = this;
+    containerIteratorPtr->d_iterator = collection.begin();
+    return containerIteratorPtr;
   }
 
 //! Append a shared_ptr at the end of collection
@@ -70,11 +65,10 @@ template<typename T>
  */
 template<typename T>
   void
-  Container<T>::push_back( T  reference)
+  Container<T>::push_back(T const & reference)
   {
     collection.push_back(reference);
   }
-;
 
 //! Pretty print of the Container<T>
 /*! This method outputs in the R terminal the contents of Container::collection.
@@ -124,13 +118,13 @@ template<typename T>
   Container<T>::show()
   {
 
+    for (typename std::vector<T>::iterator itr(collection.begin()); itr
+        != collection.end(); ++itr)
+      {
+        itr->show();
+      }
 
-foreach  ( T itr, *this)
-    {
-      itr.show();
-    }
-
-}
+  }
 
 //! Object validator
 /*! This method checks the object for internal coherence.
@@ -141,9 +135,10 @@ template<typename T>
   bool
   Container<T>::validate()
   {
-    foreach ( T itr, *this)
+    for (typename std::vector<T>::iterator itr(collection.begin()); itr
+        != collection.end(); ++itr)
       {
-        itr.validate();
+        itr->validate();
       }
     return true;
   }
@@ -164,10 +159,10 @@ template<typename T>
 ;
 
 template<typename T>
-  void
-  Container<T>::resize(int n)
+  bool
+  Container<T>::empty()
   {
-    collection.resize(n);
+    return (collection.empty());
   }
 
 template<typename T>
@@ -179,31 +174,18 @@ template<typename T>
 
 template<typename T>
   void
-  Container<T>::empty()
-  {
-    return (collection.empty());
-  }
-
-template<typename T>
-  void
   Container<T>::clear()
   {
     collection.clear();
   }
 
-template<typename T>
-  void
-  Container<T>::insert(Container<T>::iterator position,
-      Container<T>::const_iterator first, Container<T>::const_iterator last)
-  {
-    collection.insert(position, first, last);
-  }
 #if 0
+
 template<typename T>
-  bool
-  Container<T>::buildAndAppend(std::vector<int>::iterator firstId,
-      std::vector<int>::iterator lastId, ConContainer_iterator firstCon,
-      ConContainer_iterator lastCon)
+bool
+Container<T>::buildAndAppend(std::vector<int>::iterator firstId,
+    std::vector<int>::iterator lastId, ConContainer_iterator firstCon,
+    ConContainer_iterator lastCon)
 
   {
     BEGIN_RCPP
@@ -224,14 +206,12 @@ template<typename T>
         ++firstId;
       }
     return true;
-END_RCPP}
-
-
+    END_RCPP}
 
 template<typename T>
-  bool
-  Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
-      NeuronContainer_iterator lastNeuron)
+bool
+Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
+    NeuronContainer_iterator lastNeuron)
 
   {
     BEGIN_RCPP
@@ -251,17 +231,14 @@ template<typename T>
         push_back(conPtr);
       }
     return true;
-END_RCPP}
-
-
-
+    END_RCPP}
 
 template<typename T>
-  bool
-  Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
-      NeuronContainer_iterator lastNeuron,
-      std::vector<double>::iterator firstWeight,
-      std::vector<double>::iterator lastWeight)
+bool
+Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
+    NeuronContainer_iterator lastNeuron,
+    std::vector<double>::iterator firstWeight,
+    std::vector<double>::iterator lastWeight)
 
   {
     BEGIN_RCPP
@@ -289,6 +266,6 @@ template<typename T>
         push_back(ptCon);
       }
     return true;
-END_RCPP}
+    END_RCPP}
 
 #endif

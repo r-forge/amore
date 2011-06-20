@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_neuron.html#ad9211d55ea50ad6dfbd2676b9e2335e4" title="Neuron::getId" alt="" coords="149,5,256,32"/>
+<area shape="rect" id="node5" href="$class_neuron.html#aa93290c13b40c5b07d92f272a0a2ce63" title="Neuron::setId" alt="" coords="149,56,256,83"/>
+<area shape="rect" id="node7" href="$class_neuron.html#a255c3597520c730d798218f7174eff1b" title="Neuron::show" alt="" coords="149,107,256,133"/>
+<area shape="rect" id="node9" href="$class_neuron.html#a95327aa80a9ec949491f214a0c159b5a" title="Neuron::validate" alt="" coords="141,157,264,184"/>
+</map>

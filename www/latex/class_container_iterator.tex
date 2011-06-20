@@ -1,0 +1,267 @@
+\hypertarget{class_container_iterator}{
+\section{ContainerIterator$<$ T $>$ Class Template Reference}
+\label{class_container_iterator}\index{ContainerIterator@{ContainerIterator}}
+}
+
+
+class \hyperlink{class_container_iterator}{ContainerIterator} -\/  
+
+
+
+
+{\ttfamily \#include $<$ContainerIterator.h$>$}
+
+
+
+Inheritance diagram for ContainerIterator$<$ T $>$:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_container_iterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ContainerIterator$<$ T $>$:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_container_iterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_container_iterator_a5cc7e5a75c276e224706891547e3cf24}{ContainerIterator} ()
+\item 
+\hyperlink{class_container_iterator_a448896907e42b5676b9cccd0b59e0e43}{$\sim$ContainerIterator} ()
+\item 
+void \hyperlink{class_container_iterator_a98924935aa2d0b5f1d3bdbb8b3bc0a69}{first} ()
+\item 
+void \hyperlink{class_container_iterator_ae9996be7cbe4ada65c214372da509049}{next} ()
+\item 
+bool \hyperlink{class_container_iterator_a533dcd7d4c59663c0ae99f67f4b5e9c6}{isDone} ()
+\item 
+T \hyperlink{class_container_iterator_a088e991e5eade5740290342a49d71467}{currentItem} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_container}{Container}$<$ T $>$ $\ast$ \hyperlink{class_container_iterator_a572dccca78e6c158c4366c13a4447be5}{d\_\-container}
+\item 
+std::vector$<$ T $>$::iterator \hyperlink{class_container_iterator_a129eade25e86d86d07e1bbb29dd961d6}{d\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_container_iterator_a65d024049df91b92de00b0d6830aa657}{Container$<$ T $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class ContainerIterator$<$ T $>$}
+
+class \hyperlink{class_container_iterator}{ContainerIterator} -\/ 
+
+Definition at line 6 of file ContainerIterator.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_container_iterator_a5cc7e5a75c276e224706891547e3cf24}{
+\index{ContainerIterator@{ContainerIterator}!ContainerIterator@{ContainerIterator}}
+\index{ContainerIterator@{ContainerIterator}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{ContainerIterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf ContainerIterator}$<$ T $>$::{\bf ContainerIterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_iterator_a5cc7e5a75c276e224706891547e3cf24}
+
+
+Definition at line 4 of file ContainerIterator.cpp.
+
+
+\begin{DoxyCode}
+  {
+  }
+\end{DoxyCode}
+\hypertarget{class_container_iterator_a448896907e42b5676b9cccd0b59e0e43}{
+\index{ContainerIterator@{ContainerIterator}!$\sim$ContainerIterator@{$\sim$ContainerIterator}}
+\index{$\sim$ContainerIterator@{$\sim$ContainerIterator}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{$\sim$ContainerIterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf ContainerIterator}$<$ T $>$::$\sim${\bf ContainerIterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_container_iterator_a448896907e42b5676b9cccd0b59e0e43}
+
+
+Definition at line 9 of file ContainerIterator.cpp.
+
+
+\begin{DoxyCode}
+  {
+  }
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_container_iterator_a088e991e5eade5740290342a49d71467}{
+\index{ContainerIterator@{ContainerIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{currentItem}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf ContainerIterator}$<$ T $>$::currentItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_container_iterator_a088e991e5eade5740290342a49d71467}
+
+
+Implements \hyperlink{class_iterator_interface_a1724076d202e22aefd13325c06a91033}{IteratorInterface$<$ T $>$}.
+
+
+
+Definition at line 37 of file ContainerIterator.cpp.
+
+
+
+References ContainerIterator$<$ T $>$::d\_\-iterator.
+
+
+\begin{DoxyCode}
+  {
+    return *d_iterator;
+  }
+\end{DoxyCode}
+\hypertarget{class_container_iterator_a98924935aa2d0b5f1d3bdbb8b3bc0a69}{
+\index{ContainerIterator@{ContainerIterator}!first@{first}}
+\index{first@{first}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf ContainerIterator}$<$ T $>$::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_container_iterator_a98924935aa2d0b5f1d3bdbb8b3bc0a69}
+
+
+Implements \hyperlink{class_iterator_interface_a0376168477377aad0442f89bb0f28d2b}{IteratorInterface$<$ T $>$}.
+
+
+
+Definition at line 15 of file ContainerIterator.cpp.
+
+
+
+References ContainerIterator$<$ T $>$::d\_\-container, and ContainerIterator$<$ T $>$::d\_\-iterator.
+
+
+\begin{DoxyCode}
+  {
+    d_iterator = d_container->collection.begin();
+  }
+\end{DoxyCode}
+\hypertarget{class_container_iterator_a533dcd7d4c59663c0ae99f67f4b5e9c6}{
+\index{ContainerIterator@{ContainerIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{isDone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf ContainerIterator}$<$ T $>$::isDone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_container_iterator_a533dcd7d4c59663c0ae99f67f4b5e9c6}
+
+
+Implements \hyperlink{class_iterator_interface_a8b405842b32836c6b3587bf26f09a0d4}{IteratorInterface$<$ T $>$}.
+
+
+
+Definition at line 29 of file ContainerIterator.cpp.
+
+
+
+References ContainerIterator$<$ T $>$::d\_\-container, and ContainerIterator$<$ T $>$::d\_\-iterator.
+
+
+\begin{DoxyCode}
+  {
+    bool IteratorIsDone(d_iterator == d_container->collection.end());
+    return IteratorIsDone;
+  }
+\end{DoxyCode}
+\hypertarget{class_container_iterator_ae9996be7cbe4ada65c214372da509049}{
+\index{ContainerIterator@{ContainerIterator}!next@{next}}
+\index{next@{next}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf ContainerIterator}$<$ T $>$::next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_container_iterator_ae9996be7cbe4ada65c214372da509049}
+
+
+Implements \hyperlink{class_iterator_interface_aec2d9693127c9909bc6fc2732bfe5bac}{IteratorInterface$<$ T $>$}.
+
+
+
+Definition at line 22 of file ContainerIterator.cpp.
+
+
+
+References ContainerIterator$<$ T $>$::d\_\-iterator.
+
+
+\begin{DoxyCode}
+  {
+    ++d_iterator;
+  }
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_container_iterator_a65d024049df91b92de00b0d6830aa657}{
+\index{ContainerIterator@{ContainerIterator}!Container$<$ T $>$@{Container$<$ T $>$}}
+\index{Container$<$ T $>$@{Container$<$ T $>$}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{Container$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ friend class {\bf Container}$<$ T $>$\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_container_iterator_a65d024049df91b92de00b0d6830aa657}
+
+
+Definition at line 13 of file ContainerIterator.h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_container_iterator_a572dccca78e6c158c4366c13a4447be5}{
+\index{ContainerIterator@{ContainerIterator}!d\_\-container@{d\_\-container}}
+\index{d\_\-container@{d\_\-container}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{d\_\-container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Container}$<$T$>$$\ast$ {\bf ContainerIterator}$<$ T $>$::{\bf d\_\-container}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_container_iterator_a572dccca78e6c158c4366c13a4447be5}
+
+
+Definition at line 9 of file ContainerIterator.h.
+
+
+
+Referenced by ContainerIterator$<$ T $>$::first(), and ContainerIterator$<$ T $>$::isDone().
+
+\hypertarget{class_container_iterator_a129eade25e86d86d07e1bbb29dd961d6}{
+\index{ContainerIterator@{ContainerIterator}!d\_\-iterator@{d\_\-iterator}}
+\index{d\_\-iterator@{d\_\-iterator}!ContainerIterator@{ContainerIterator}}
+\subsubsection[{d\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$T$>$::iterator {\bf ContainerIterator}$<$ T $>$::{\bf d\_\-iterator}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_container_iterator_a129eade25e86d86d07e1bbb29dd961d6}
+
+
+Definition at line 10 of file ContainerIterator.h.
+
+
+
+Referenced by ContainerIterator$<$ T $>$::currentItem(), ContainerIterator$<$ T $>$::first(), ContainerIterator$<$ T $>$::isDone(), and ContainerIterator$<$ T $>$::next().
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/dia/\hyperlink{_container_iterator_8h}{ContainerIterator.h}\item 
+pkg/AMORE/src/\hyperlink{_container_iterator_8cpp}{ContainerIterator.cpp}\end{DoxyCompactItemize}

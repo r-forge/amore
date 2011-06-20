@@ -1,7 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_container.html#a86d42cf807e073724bd2f8e08dcdfefa" title="Appends a Container&lt;T&gt; object." alt="" coords="193,5,327,32"/>
-<area shape="rect" id="node5" href="$class_neuron.html#af8810437bb06adacf4c6e4eb15293d36" title="Neuron::const_iterators" alt="" coords="177,56,343,83"/>
-<area shape="rect" id="node7" href="$class_neuron.html#a017ef6451c019cb31e65ace87151184e" title="Neuron::iterators" alt="" coords="197,107,323,133"/>
-<area shape="rect" id="node9" href="$class_neuron.html#ae611283a65aeb48cc9691211ca8926d7" title="Neuron::Neuron" alt="" coords="201,157,319,184"/>
-<area shape="rect" id="node11" href="$class_con_container.html#aa7f1bbd910afe9c4241e8bd4d5fbc497" title="Setter of the from fields of the Con objects related to ConContainer." alt="" coords="177,208,343,235"/>
+<area shape="rect" id="node3" href="$class_container.html#a86d42cf807e073724bd2f8e08dcdfefa" title="Appends a Container&lt;T&gt; object." alt="" coords="191,5,326,32"/>
+<area shape="rect" id="node5" href="$class_con_container.html#aa7f1bbd910afe9c4241e8bd4d5fbc497" title="Setter of the from fields of the Con objects related to ConContainer." alt="" coords="176,56,341,83"/>
 </map>

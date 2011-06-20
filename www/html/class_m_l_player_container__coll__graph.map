@@ -1,5 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ Container()\l+ Container()\l+ Container()\l+ Container()\l+ buildAndAppend()\l+ push_back()\l+ push_back()\l+ erase()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ reserve()\l+ reserve()\l+ resize()\l+ resize()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ insert()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ load()\l+ store()\l+ append()\l+ operator[]()\l}" alt="" coords="141,1072,301,1589"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="201,147,319,224"/>
-<area shape="rect" id="node10" href="$class_container.html" title="class Container &#45;" alt="" coords="261,491,408,1008"/>
+<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="295,4459,455,4917"/>
+<area shape="rect" id="node4" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="81,4185,295,4394"/>
+<area shape="rect" id="node8" href="$class_m_l_player.html" title="{MLPlayer\n||}" alt="" coords="417,4043,495,4120"/>
+<area shape="rect" id="node10" href="$class_m_l_pneuron_container.html" title="A vector of connections." alt="" coords="387,3899,537,3991"/>
+<area shape="rect" id="node12" href="$class_neuron_container.html" title="{NeuronContainer\&lt; MLP \&gt;\n||+ NeuronContainer()\l+ NeuronContainer()\l+ ~NeuronContainer()\l+ numOfNeurons()\l+ numOfCons()\l+ getId()\l+ setId()\l+ getConId()\l+ getWeight()\l+ getFrom()\l+ setFrom()\l+ setWeight()\l}" alt="" coords="386,3609,560,3847"/>
+<area shape="rect" id="node14" href="$class_neuron_container.html" title="A vector of neurons." alt="" coords="438,3305,593,3543"/>
+<area shape="rect" id="node16" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="443,2795,589,3253"/>
+<area shape="rect" id="node18" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="371,2521,572,2730"/>
+<area shape="rect" id="node22" href="$class_neuron.html" title="class Neuron &#45;" alt="" coords="771,2085,888,2456"/>
+<area shape="rect" id="node24" href="$class_container.html" title="{Container\&lt; Con \&gt;\n|# collection\l# collection\l|+ Container()\l+ Container()\l+ Container()\l+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l}" alt="" coords="765,1501,893,1960"/>
+<area shape="rect" id="node26" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="807,1042,989,1251"/>
+<area shape="rect" id="node30" title="STL class." alt="" coords="781,293,899,371"/>
+<area shape="rect" id="node36" href="$class_con.html" title="class Con &#45;" alt="" coords="1193,147,1303,517"/>
+<area shape="rect" id="node39" href="$class_container.html" title="class Container &#45;" alt="" coords="545,917,673,1376"/>
+<area shape="rect" id="node41" href="$class_container_interface.html" title="class ContainerInterface &#45;" alt="" coords="635,582,801,791"/>
 </map>
