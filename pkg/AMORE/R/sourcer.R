@@ -2,9 +2,8 @@
 
 require("inline")
 require("Rcpp")
-
 require("RUnit")
-# Loading required package: RUnit
+
 
 rm(list=ls(all.names=TRUE))
 
