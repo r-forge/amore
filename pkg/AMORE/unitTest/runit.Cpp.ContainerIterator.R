@@ -34,8 +34,6 @@ require("RUnit")
 	result <- testCodefun()
 	checkEquals(result, c(10,20,30))
 	
-	# [1] TRUE
-
 	
 	# [1] TRUE
 
