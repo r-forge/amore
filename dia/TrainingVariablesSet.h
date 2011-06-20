@@ -1,4 +1,0 @@
-/// class TrainingVariablesSet - 
-class TrainingVariablesSet {
-};
-
