@@ -81,45 +81,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">pkg/AMORE/src/ContainerIterator.cpp</div>  </div>
 </div>
 <div class="contents">
-<a href="_container_iterator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_container_iterator_8h.html">dia/ContainerIterator.h</a>&quot;</span>
+<a href="_container_iterator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;dia/ContainerIterator.h&quot;</span>
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00004"></a><a class="code" href="class_container_iterator.html#a5cc7e5a75c276e224706891547e3cf24">00004</a>   <a class="code" href="class_container_iterator.html#a5cc7e5a75c276e224706891547e3cf24">ContainerIterator&lt;T&gt;::ContainerIterator</a>()
+<a name="l00004"></a>00004   ContainerIterator&lt;T&gt;::ContainerIterator()
 <a name="l00005"></a>00005   {
 <a name="l00006"></a>00006   }
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00009"></a><a class="code" href="class_container_iterator.html#a448896907e42b5676b9cccd0b59e0e43">00009</a>   <a class="code" href="class_container_iterator.html#a448896907e42b5676b9cccd0b59e0e43">ContainerIterator&lt;T&gt;::~ContainerIterator</a>()
+<a name="l00009"></a>00009   ContainerIterator&lt;T&gt;::~ContainerIterator()
 <a name="l00010"></a>00010   {
 <a name="l00011"></a>00011   }
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00014"></a>00014   <span class="keywordtype">void</span>
-<a name="l00015"></a><a class="code" href="class_container_iterator.html#a98924935aa2d0b5f1d3bdbb8b3bc0a69">00015</a>   <a class="code" href="class_container_iterator.html#a98924935aa2d0b5f1d3bdbb8b3bc0a69">ContainerIterator&lt;T&gt;::first</a>()
+<a name="l00015"></a>00015   ContainerIterator&lt;T&gt;::first()
 <a name="l00016"></a>00016   {
-<a name="l00017"></a>00017     <a class="code" href="class_container_iterator.html#a129eade25e86d86d07e1bbb29dd961d6">d_iterator</a> = <a class="code" href="class_container_iterator.html#a572dccca78e6c158c4366c13a4447be5">d_container</a>-&gt;collection.begin();
+<a name="l00017"></a>00017     d_iterator = d_container-&gt;collection.begin();
 <a name="l00018"></a>00018   }
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00021"></a>00021   <span class="keywordtype">void</span>
-<a name="l00022"></a><a class="code" href="class_container_iterator.html#ae9996be7cbe4ada65c214372da509049">00022</a>   <a class="code" href="class_container_iterator.html#ae9996be7cbe4ada65c214372da509049">ContainerIterator&lt;T&gt;::next</a>()
+<a name="l00022"></a>00022   ContainerIterator&lt;T&gt;::next()
 <a name="l00023"></a>00023   {
-<a name="l00024"></a>00024     ++<a class="code" href="class_container_iterator.html#a129eade25e86d86d07e1bbb29dd961d6">d_iterator</a>;
+<a name="l00024"></a>00024     ++d_iterator;
 <a name="l00025"></a>00025   }
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00028"></a>00028   <span class="keywordtype">bool</span>
-<a name="l00029"></a><a class="code" href="class_container_iterator.html#a533dcd7d4c59663c0ae99f67f4b5e9c6">00029</a>   <a class="code" href="class_container_iterator.html#a533dcd7d4c59663c0ae99f67f4b5e9c6">ContainerIterator&lt;T&gt;::isDone</a>()
+<a name="l00029"></a>00029   ContainerIterator&lt;T&gt;::isDone()
 <a name="l00030"></a>00030   {
-<a name="l00031"></a>00031     <span class="keywordtype">bool</span> IteratorIsDone(<a class="code" href="class_container_iterator.html#a129eade25e86d86d07e1bbb29dd961d6">d_iterator</a> == <a class="code" href="class_container_iterator.html#a572dccca78e6c158c4366c13a4447be5">d_container</a>-&gt;collection.end());
+<a name="l00031"></a>00031     <span class="keywordtype">bool</span> IteratorIsDone(d_iterator == d_container-&gt;collection.end());
 <a name="l00032"></a>00032     <span class="keywordflow">return</span> IteratorIsDone;
 <a name="l00033"></a>00033   }
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00036"></a>00036   T
-<a name="l00037"></a><a class="code" href="class_container_iterator.html#a088e991e5eade5740290342a49d71467">00037</a>   <a class="code" href="class_container_iterator.html#a088e991e5eade5740290342a49d71467">ContainerIterator&lt;T&gt;::currentItem</a>()
+<a name="l00037"></a>00037   ContainerIterator&lt;T&gt;::currentItem()
 <a name="l00038"></a>00038   {
-<a name="l00039"></a>00039     <span class="keywordflow">return</span> *<a class="code" href="class_container_iterator.html#a129eade25e86d86d07e1bbb29dd961d6">d_iterator</a>;
+<a name="l00039"></a>00039     <span class="keywordflow">return</span> *d_iterator;
 <a name="l00040"></a>00040   }
 <a name="l00041"></a>00041 
 </pre></div></div>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_iterator_8cpp.html">ContainerIterator.cpp</a>      </li>
-      <li class="footer">Generated on Mon Jun 20 2011 15:56:11 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 13 2011 23:19:04 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

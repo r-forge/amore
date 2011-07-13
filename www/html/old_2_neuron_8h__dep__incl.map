@@ -1,5 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$dia_2_m_l_pneuron_8h.html" title="pkg/AMORE/src/dia/MLPneuron.h" alt="" coords="5,80,227,107"/>
-<area shape="rect" id="node5" href="$_r_b_fneuron_8h.html" title="pkg/AMORE/src/dia/RBFneuron.h" alt="" coords="251,80,473,107"/>
-<area shape="rect" id="node7" href="$old_2_neuron_8cpp.html" title="pkg/AMORE/src/old/Neuron.cpp" alt="" coords="498,80,712,107"/>
+<area shape="rect" id="node3" href="$_simple_neuron_8h.html" title="pkg/AMORE/src/dia/SimpleNeuron.h" alt="" coords="5,80,245,107"/>
+<area shape="rect" id="node5" href="$old_2_neuron_8cpp.html" title="pkg/AMORE/src/old/Neuron.cpp" alt="" coords="270,80,484,107"/>
 </map>

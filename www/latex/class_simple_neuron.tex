@@ -1,0 +1,202 @@
+\hypertarget{class_simple_neuron}{
+\section{SimpleNeuron Class Reference}
+\label{class_simple_neuron}\index{SimpleNeuron@{SimpleNeuron}}
+}
+
+
+class \hyperlink{class_simple_neuron}{SimpleNeuron} -\/  
+
+
+
+
+{\ttfamily \#include $<$SimpleNeuron.h$>$}
+
+
+
+Inheritance diagram for SimpleNeuron:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_simple_neuron__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SimpleNeuron:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{class_simple_neuron__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}{SimpleNeuron} ()
+\item 
+\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_simple_neuron_a2ed8cdd977472afaecca2c6b27c6beef}{getId} ()
+\item 
+void \hyperlink{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{setId} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id})
+\item 
+void \hyperlink{class_simple_neuron_a8c39b00a2f52ec952ee32c71000de7cb}{setPredictBehavior} (\hyperlink{class_predict_behavior}{PredictBehavior} \&predictBehavior)
+\item 
+void \hyperlink{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}{setTrainingBehavior} (\hyperlink{class_training_behavior}{TrainingBehavior} \&trainingBehavior)
+\item 
+void \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{predict} ()
+\item 
+void \hyperlink{class_simple_neuron_ac2dfa64ef339acc860102e864c60d433}{adjustParameters} ()
+\item 
+void \hyperlink{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{show} ()
+\item 
+bool \hyperlink{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}{validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}{d\_\-Id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_simple_neuron}{SimpleNeuron} -\/ 
+
+Definition at line 5 of file SimpleNeuron.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}{
+\index{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}}
+\index{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{SimpleNeuron}]{\setlength{\rightskip}{0pt plus 5cm}SimpleNeuron::SimpleNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simple_neuron_ac2dfa64ef339acc860102e864c60d433}{
+\index{SimpleNeuron@{SimpleNeuron}!adjustParameters@{adjustParameters}}
+\index{adjustParameters@{adjustParameters}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{adjustParameters}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::adjustParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_ac2dfa64ef339acc860102e864c60d433}
+
+
+Implements \hyperlink{class_neuron_acd0bd3149386b9448e85c698f1847366}{Neuron}.
+
+\hypertarget{class_simple_neuron_a2ed8cdd977472afaecca2c6b27c6beef}{
+\index{SimpleNeuron@{SimpleNeuron}!getId@{getId}}
+\index{getId@{getId}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler} SimpleNeuron::getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a2ed8cdd977472afaecca2c6b27c6beef}
+
+
+Implements \hyperlink{class_neuron_a33467fa5a6ed662976ac8c745acfb275}{Neuron}.
+
+\hypertarget{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{
+\index{SimpleNeuron@{SimpleNeuron}!predict@{predict}}
+\index{predict@{predict}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::predict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}
+
+
+Implements \hyperlink{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{Neuron}.
+
+\hypertarget{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{
+\index{SimpleNeuron@{SimpleNeuron}!setId@{setId}}
+\index{setId@{setId}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setId (
+\begin{DoxyParamCaption}
+\item[{{\bf Handler}}]{Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}
+
+
+Implements \hyperlink{class_neuron_ae58936b5582b9da04596a9c29fbace98}{Neuron}.
+
+\hypertarget{class_simple_neuron_a8c39b00a2f52ec952ee32c71000de7cb}{
+\index{SimpleNeuron@{SimpleNeuron}!setPredictBehavior@{setPredictBehavior}}
+\index{setPredictBehavior@{setPredictBehavior}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setPredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setPredictBehavior (
+\begin{DoxyParamCaption}
+\item[{{\bf PredictBehavior} \&}]{predictBehavior}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a8c39b00a2f52ec952ee32c71000de7cb}
+
+
+Implements \hyperlink{class_neuron_a9156cdf9561b7d69fc49d1c1733e078b}{Neuron}.
+
+\hypertarget{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}{
+\index{SimpleNeuron@{SimpleNeuron}!setTrainingBehavior@{setTrainingBehavior}}
+\index{setTrainingBehavior@{setTrainingBehavior}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setTrainingBehavior}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setTrainingBehavior (
+\begin{DoxyParamCaption}
+\item[{{\bf TrainingBehavior} \&}]{trainingBehavior}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}
+
+
+Implements \hyperlink{class_neuron_a536c2a29eba7649db1b3f872017a550c}{Neuron}.
+
+\hypertarget{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{
+\index{SimpleNeuron@{SimpleNeuron}!show@{show}}
+\index{show@{show}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}
+
+
+Implements \hyperlink{class_neuron_a8eefdb3d7b0cf6c42d79ed83d94a7c3c}{Neuron}.
+
+\hypertarget{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}{
+\index{SimpleNeuron@{SimpleNeuron}!validate@{validate}}
+\index{validate@{validate}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}bool SimpleNeuron::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}
+
+
+Implements \hyperlink{class_neuron_a2953fb8e98aea1c74c4f796412644e11}{Neuron}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}{
+\index{SimpleNeuron@{SimpleNeuron}!d\_\-Id@{d\_\-Id}}
+\index{d\_\-Id@{d\_\-Id}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{d\_\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf SimpleNeuron::d\_\-Id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}
+
+
+Definition at line 8 of file SimpleNeuron.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/dia/\hyperlink{_simple_neuron_8h}{SimpleNeuron.h}\end{DoxyCompactItemize}

@@ -22,7 +22,11 @@ test.Con.Cpp.Constructor_SingleArgument <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 0)
+	
 	# From:	 1 	 Weight= 	 0.000000 
+	# [1] TRUE
+	# [1] TRUE
+# From:	 1 	 Weight= 	 0.000000 
 	# [1] TRUE
 	# [1] TRUE
 }
@@ -34,11 +38,10 @@ test.Con.Cpp.Constructor_FullArgumentList <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- " 
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(1) ) ;
+			NeuronPtr neuronPtr ( new Neuron(1) ) ;
 			Con con( *neuronPtr , 4.5 );
 			con.show();
-			con.validate();
-			int result=con.Id();
+			con.validate();	
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= con.Id(),
 										Rcpp::Named(\"weight\") = con.weight()
 									);
@@ -53,21 +56,41 @@ test.Con.Cpp.Constructor_FullArgumentList <- function() {
 }
 
 ###############################################################################
-test.Con.Cpp.neuron <- function() {	
+test.Con.Cpp.getNeuron <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			boost::shared_ptr<Neuron> neuronPtr1 ( new Neuron(1) ) ;
-			boost::shared_ptr<Neuron> neuronPtr2 ( new Neuron(2) ) ;
-			Con con( *neuronPtr1 );  
-			return wrap(con.neuron().Id());
+			NeuronPtr neuronPtr1 ( new Neuron(1) ) ;
+			Con con( *neuronPtr1 );
+			return wrap(con.getNeuron().Id());
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
-	checkEquals(result, 1)
+	checkEquals(result, c(1,2)) 
 	# [1] TRUE
 }
 
+
+###############################################################################
+test.Con.Cpp.setNeuron <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			NeuronPtr neuronPtr1 ( new Neuron(1) ) ;
+			NeuronPtr neuronPtr2 ( new Neuron(2) ) ;
+			Con con( *neuronPtr1 );
+			
+			std::vector<double> result;
+			result.push_back(con.getNeuron().Id());
+			con.setNeuron(neuronPtr2);
+			result.push_back(con.getNeuron().Id());  
+			return wrap(result);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun()
+	checkEquals(result, c(1,2)) 
+	# [1] TRUE
+}
 
 
 ###############################################################################
@@ -75,7 +98,7 @@ test.Con.Cpp.Id <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(9) ) ;
+			NeuronPtr neuronPtr ( new Neuron(9) ) ;
 			Con con( *neuronPtr );  	// d_neuron points to neuron and weight is set to 0
 			return wrap(con.Id());
 			'
@@ -90,7 +113,7 @@ test.Con.Cpp.weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(16) ) ;
+			NeuronPtr neuronPtr ( new Neuron(16) ) ;
 			Con con( *neuronPtr , 12.4);
 			std::vector<double> result;
 			result.push_back(con.weight());
@@ -112,7 +135,7 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(16) ) ;
+			NeuronPtr neuronPtr ( new Neuron(16) ) ;
 			Con con( *neuronPtr, 12.4 ); 
 			con.show();
 			return wrap(true);
@@ -129,7 +152,7 @@ test.Con.Cpp.validate_weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(16) ) ;
+			NeuronPtr  neuronPtr ( new Neuron(16) ) ;
 			Con con( *neuronPtr, 12.4/0.0 );  		
 			con.validate();
 			return wrap(true);
@@ -148,7 +171,7 @@ test.Con.Cpp.validate_from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			boost::shared_ptr<Neuron> neuronPtr ( new Neuron(NA_INTEGER) ) ;
+			NeuronPtr neuronPtr ( new Neuron(NA_INTEGER) ) ;
 			Con con( *neuronPtr, 12.4 ); 
 			con.validate();
 			return wrap(true);

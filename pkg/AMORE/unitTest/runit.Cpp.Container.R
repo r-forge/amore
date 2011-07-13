@@ -12,13 +12,12 @@ test.Container.Cpp.Constructor_EmptyArgumentList<- function() {
 	testCode <- "
 			// Test
 			Container<Con> conContainer;
-			ContainerInterface<Con>* containerInterfacePtr (& conContainer);
-			containerInterfacePtr->validate();		
-			return wrap(containerInterfacePtr->size());			"
+			ContainerInterface<Con>* containerPtr (& conContainer);
+			containerPtr->validate();		
+			return wrap(containerPtr->size());			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
 	checkEquals(result, 0)
-	# [1] TRUE
 
 }
 

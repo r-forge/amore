@@ -95,21 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;boost/ref.hpp&gt;</code><br/>
 <code>#include &lt;Rcpp.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="dia_2_con_8h_source.html">dia/Con.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_iterator_interface_8h_source.html">dia/IteratorInterface.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_container_interface_8h_source.html">dia/ContainerInterface.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dia_2_container_8h_source.html">dia/Container.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_container_iterator_8h_source.html">dia/ContainerIterator.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dia_2_neuron_8h_source.html">dia/Neuron.h</a>&quot;</code><br/>
 <code>#include &quot;Con.cpp&quot;</code><br/>
-<code>#include &quot;<a class="el" href="container_interface_8cpp_source.html">ContainerInterface.cpp</a>&quot;</code><br/>
-<code>#include &quot;Container.cpp&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_iterator_interface_8cpp_source.html">IteratorInterface.cpp</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_container_iterator_8cpp_source.html">ContainerIterator.cpp</a>&quot;</code><br/>
-<code>#include &quot;Neuron.cpp&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AMORE.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="2466" height="262" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="1386" height="112" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -121,11 +111,22 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>&#160;&#160;&#160;unsigned int</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+boost::reference_wrapper<br class="typebreak"/>
+&lt; <a class="el" href="class_predict_behavior.html">PredictBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">PredictBehaviorRef</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+boost::reference_wrapper<br class="typebreak"/>
+&lt; <a class="el" href="class_training_behavior.html">TrainingBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">TrainingBehaviorRef</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
 boost::reference_wrapper<br class="typebreak"/>
 &lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ae4f8e0af6c35f16f9f1d3588d8915cf6">NeuronRef</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="class_con.html">Con</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
+&lt; IteratorInterface&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a837b3fc5a49a44aff8ad5493537b6ba1">NeuronIteratorInterfacePtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
+&lt; IteratorInterface&lt; <a class="el" href="class_con.html">Con</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#acab5b7b99e0a6bdc2020b9631f910b28">ConIteratorInterfacePtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="class_con.html">Con</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ab6e40b9ca7a2d33862618d3bd3fcfd9c">ConContainer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a4bb57d66a8b49c2e068725a39a1c6287">NeuronContainer</a></td></tr>
 </table>
@@ -156,7 +157,7 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00058">58</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00056">56</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -172,7 +173,22 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00074">74</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00079">79</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acab5b7b99e0a6bdc2020b9631f910b28"></a><!-- doxytag: member="AMORE.h::ConIteratorInterfacePtr" ref="acab5b7b99e0a6bdc2020b9631f910b28" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt; IteratorInterface&lt;<a class="el" href="class_con.html">Con</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#acab5b7b99e0a6bdc2020b9631f910b28">ConIteratorInterfacePtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00066">66</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -187,7 +203,22 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00063">63</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00064">64</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc871abb71cff6655b8172ee7240b8ef"></a><!-- doxytag: member="AMORE.h::Handler" ref="abc871abb71cff6655b8172ee7240b8ef" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00059">59</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +233,22 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00075">75</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00080">80</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a837b3fc5a49a44aff8ad5493537b6ba1"></a><!-- doxytag: member="AMORE.h::NeuronIteratorInterfacePtr" ref="a837b3fc5a49a44aff8ad5493537b6ba1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt; IteratorInterface&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; &gt; <a class="el" href="_a_m_o_r_e_8h.html#a837b3fc5a49a44aff8ad5493537b6ba1">NeuronIteratorInterfacePtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00065">65</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -217,7 +263,7 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00062">62</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00063">63</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
 </div>
@@ -232,6 +278,36 @@ boost::reference_wrapper<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00062">62</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff87e1c27cc15df9f3364b7cf29c85ea"></a><!-- doxytag: member="AMORE.h::PredictBehaviorRef" ref="aff87e1c27cc15df9f3364b7cf29c85ea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::reference_wrapper&lt;<a class="el" href="class_predict_behavior.html">PredictBehavior</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">PredictBehaviorRef</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00060">60</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2efd5ce2c834a4c9e92cd98bbb887225"></a><!-- doxytag: member="AMORE.h::TrainingBehaviorRef" ref="a2efd5ce2c834a4c9e92cd98bbb887225" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::reference_wrapper&lt;<a class="el" href="class_training_behavior.html">TrainingBehavior</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">TrainingBehaviorRef</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
 <p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00061">61</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
 
 </div>
@@ -241,7 +317,7 @@ boost::reference_wrapper<br class="typebreak"/>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_a_m_o_r_e_8h.html">AMORE.h</a>      </li>
-      <li class="footer">Generated on Mon Jun 20 2011 15:56:11 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 13 2011 23:19:04 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
