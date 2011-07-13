@@ -51,9 +51,16 @@ Con::Con(Neuron& neuron, double weight) :
  * \sa getId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
 Neuron&
-Con::neuron()
+Con::getNeuron()
 {
   return d_neuron;
+}
+
+
+void
+Con::setNeuron(Neuron& neuron)
+{
+  d_neuron=boost::ref(neuron);
 }
 
 //! A getter of the Id of the Neuron pointed by the from field.
@@ -104,10 +111,18 @@ Con::Id()
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
 double&
-Con::weight()
+Con::getWeight()
 {
   return d_weight;
 }
+
+
+void
+Con::setWeight(double weight)
+{
+  d_weight=weight;
+}
+
 
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.

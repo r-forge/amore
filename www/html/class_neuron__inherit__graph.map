@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="class MLPneuron &#45;" alt="" coords="17,424,111,531"/>
-<area shape="rect" id="node6" href="$class_r_b_fneuron.html" title="class RBFneuron &#45;" alt="" coords="135,424,228,531"/>
+<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="{MLPneuron\n|&#45; bias\l|}" alt="" coords="5,541,96,619"/>
+<area shape="rect" id="node5" href="$class_simple_neuron.html" title="class SimpleNeuron &#45;" alt="" coords="121,483,287,677"/>
 </map>

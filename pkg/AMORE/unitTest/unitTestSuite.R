@@ -32,8 +32,10 @@ testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 		rngNormalKind = "Kinderman-Ramage"
 )
 
-testResult <- runTestSuite(list( 	testsuite.AMORECppClasses
-								,	testsuite.AMORErefClasses
+testResult <- runTestSuite(list( 
+				testsuite.AMORErefClasses
+ 				testsuite.AMORECppClasses
+					
 								))
 						
 printHTMLProtocol(testResult, file=testFile, testFileToLinkMap = testFileToSFLinkMap)

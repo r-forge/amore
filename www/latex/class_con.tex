@@ -14,22 +14,28 @@ class \hyperlink{class_con}{Con} -\/
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_con_a61621054cc1ee979385c81207ee0bceb}{Con} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a7fab3ece0e894f44f31d10a21b1d49c7}{Con} (\hyperlink{class_neuron}{Neuron} \&neuron)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_con_ad0b1e0d1eefd2296b23a2cfea04fc559}{Con} (\hyperlink{class_neuron}{Neuron} \&neuron, double \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight})
+\hyperlink{class_con_ad0b1e0d1eefd2296b23a2cfea04fc559}{Con} (\hyperlink{class_neuron}{Neuron} \&neuron, double \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_neuron}{Neuron} \& \hyperlink{class_con_abf5ebf50b0357f418adb6d9fd6d671f1}{neuron} ()
-\begin{DoxyCompactList}\small\item\em from field accessor. \end{DoxyCompactList}\item 
-int \hyperlink{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}{Id} ()
+\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}{Id} ()
 \begin{DoxyCompactList}\small\item\em A getter of the Id of the \hyperlink{class_neuron}{Neuron} pointed by the from field. \end{DoxyCompactList}\item 
-double \& \hyperlink{class_con_a96b1b0389be5f86d706ac9baf8fe5c49}{weight} ()
+\hyperlink{class_neuron}{Neuron} \& \hyperlink{class_con_a2209567efd330a58825b5068a421afe1}{getNeuron} ()
+\begin{DoxyCompactList}\small\item\em from field accessor. \end{DoxyCompactList}\item 
+void \hyperlink{class_con_ae372f50a253a424376959fb6ee8f083b}{setNeuron} (\hyperlink{class_neuron}{Neuron} \&neuron)
 \item 
+double \hyperlink{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{getWeight} ()
+\begin{DoxyCompactList}\small\item\em weight field accessor. \end{DoxyCompactList}\item 
+void \hyperlink{class_con_acf3b130556e25414cd525d469b275239}{setWeight} (double \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight})
+\begin{DoxyCompactList}\small\item\em weight field accessor. \end{DoxyCompactList}\item 
 void \hyperlink{class_con_ab85838575b5e01f3b8073136f2102922}{show} ()
 \begin{DoxyCompactList}\small\item\em Pretty print of the \hyperlink{class_con}{Con} information. \end{DoxyCompactList}\item 
 bool \hyperlink{class_con_af5f836a7b0988b3d9113589b2959d5e6}{validate} ()
 \begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a61621054cc1ee979385c81207ee0bceb}{Con} ()
-\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\item 
 \hyperlink{class_con_a9cebcd0e50b00f70e962997a8343cbb5}{Con} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a24c0cd2e7eea23c3a0c9435c6a238a14}{Con} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr, double value)
@@ -43,26 +49,23 @@ void \hyperlink{class_con_a927378392a3ee1fe958b1670cb72e61d}{setFrom} (\hyperlin
 int \hyperlink{class_con_ad12ce81a557eadb2a00b10d5b5f4adb6}{getId} ()
 \begin{DoxyCompactList}\small\item\em A getter of the Id of the \hyperlink{class_neuron}{Neuron} pointed by the from field. \end{DoxyCompactList}\item 
 double \hyperlink{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{getWeight} ()
-\begin{DoxyCompactList}\small\item\em weight field accessor. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{setWeight} (double value)
-\begin{DoxyCompactList}\small\item\em weight field accessor. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{class_con_ab85838575b5e01f3b8073136f2102922}{show} ()
 \item 
 bool \hyperlink{class_con_af5f836a7b0988b3d9113589b2959d5e6}{validate} ()
 \end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}{NeuronRef} \hyperlink{class_con_aad857bd289343ecff2153acc852f34f0}{d\_\-neuron}
 \item 
 double \hyperlink{class_con_a41e043e0dfb126f3bdacbbd8caf33672}{d\_\-weight}
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
 \item 
 NeuronWeakPtr \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{from}
 \begin{DoxyCompactList}\small\item\em A smart pointer to the \hyperlink{class_neuron}{Neuron} used as input during simulation or training. \end{DoxyCompactList}\item 
-double \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight}
+double \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight}
 \begin{DoxyCompactList}\small\item\em A double variable that contains the weight of the connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -71,13 +74,37 @@ class \hyperlink{class_con}{Con} -\/
 
 A class to handle the information needed to describe an input connection.
 
-The \hyperlink{class_con}{Con} class provides a simple class for a connection described by a pair of values: a pointer to a \hyperlink{class_neuron}{Neuron} object used as the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{from} field and the \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} used to propagate the value of that \hyperlink{class_neuron}{Neuron} object. 
+The \hyperlink{class_con}{Con} class provides a simple class for a connection described by a pair of values: a pointer to a \hyperlink{class_neuron}{Neuron} object used as the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{from} field and the \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} used to propagate the value of that \hyperlink{class_neuron}{Neuron} object. 
 
 Definition at line 3 of file Con.h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_con_a61621054cc1ee979385c81207ee0bceb}{
+\index{Con@{Con}!Con@{Con}}
+\index{Con@{Con}!Con@{Con}}
+\subsubsection[{Con}]{\setlength{\rightskip}{0pt plus 5cm}Con::Con (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_a61621054cc1ee979385c81207ee0bceb}
+
+
+Default Constructor. 
+
+
+
+Definition at line 17 of file Con.cpp.
+
+
+\begin{DoxyCode}
+         :
+  weight(0), from()
+{
+}
+\end{DoxyCode}
 \hypertarget{class_con_a7fab3ece0e894f44f31d10a21b1d49c7}{
 \index{Con@{Con}!Con@{Con}}
 \index{Con@{Con}!Con@{Con}}
@@ -136,21 +163,6 @@ Definition at line 28 of file Con.cpp.
 \end{DoxyParamCaption}
 )}}
 \label{class_con_a61621054cc1ee979385c81207ee0bceb}
-
-
-Default Constructor. 
-
-
-
-Definition at line 17 of file Con.cpp.
-
-
-\begin{DoxyCode}
-         :
-  weight(0), from()
-{
-}
-\end{DoxyCode}
 \hypertarget{class_con_a9cebcd0e50b00f70e962997a8343cbb5}{
 \index{Con@{Con}!Con@{Con}}
 \index{Con@{Con}!Con@{Con}}
@@ -334,146 +346,15 @@ References from.
     }
 }
 \end{DoxyCode}
-\hypertarget{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{
-\index{Con@{Con}!getWeight@{getWeight}}
-\index{getWeight@{getWeight}!Con@{Con}}
-\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}double Con::getWeight (
+\hypertarget{class_con_a2209567efd330a58825b5068a421afe1}{
+\index{Con@{Con}!getNeuron@{getNeuron}}
+\index{getNeuron@{getNeuron}!Con@{Con}}
+\subsubsection[{getNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron} \& Con::getNeuron (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}
-\label{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}
-
-
-weight field accessor. 
-
-This method allows access to the value stored in the private field \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} \begin{DoxyReturn}{Returns}
-The value of \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} (double)
-\end{DoxyReturn}
-
-\begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
-  // Data set up
-                        std::vector<double> result;
-                        NeuronPtr ptShNeuron ( new Neuron(16) );                /
-      / Neuron Id is set to 16
-                        ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from poi
-      nts to ptShNeuron and weight is set to 12.4
-        // Test
-                        result.push_back( ptShCon->getWeight() );
-                        ptShCon->setWeight(2.2);
-                        result.push_back( ptShCon->getWeight() );
-
-        // Now, result is a numeric vector that contains the values 12.4 and 2.2 
-      .
-\end{DoxyCode}
-
-
-\begin{DoxySeeAlso}{See also}
-\hyperlink{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
-\end{DoxySeeAlso}
-
-
-Definition at line 158 of file Con.cpp.
-
-
-
-References weight().
-
-
-\begin{DoxyCode}
-{
-  return (weight);
-}
-\end{DoxyCode}
-
-
-Here is the call graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=280pt]{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}{
-\index{Con@{Con}!Id@{Id}}
-\index{Id@{Id}!Con@{Con}}
-\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int Con::Id (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}
-
-
-A getter of the Id of the \hyperlink{class_neuron}{Neuron} pointed by the from field. 
-
-This method gets the Id of the \hyperlink{class_neuron}{Neuron} referred to by the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{from} field \begin{DoxyReturn}{Returns}
-The value of the Id (an integer).
-\end{DoxyReturn}
-
-\begin{DoxyCode}
-      //================
-      //Usage example:
-      //================
-      // Data set up
-                      NeuronPtr ptShNeuron ( new Neuron(16) );        // Neuron I
-      d is set to 16
-                      ConPtr ptShCon( new Con(ptShNeuron) );          // from poi
-      nts to ptShNeuron and weight is set to 0
-      // Test
-                      int result = ptShCon->getId();
-
-      // Now, result is equal to 16.
-\end{DoxyCode}
-
-
-\begin{DoxySeeAlso}{See also}
-\hyperlink{class_con_a0c126eb4479324b156768e0810723423}{getFrom}, \hyperlink{class_con_a927378392a3ee1fe958b1670cb72e61d}{setFrom} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
-\end{DoxySeeAlso}
-
-
-Definition at line 79 of file Con.cpp.
-
-
-
-References d\_\-neuron.
-
-
-
-Referenced by show(), and validate().
-
-
-\begin{DoxyCode}
-{
-  return d_neuron.get().Id();
-}
-\end{DoxyCode}
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=244pt]{class_con_aee0a0b6c5beff6e227f9ebf33af2d209_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_con_abf5ebf50b0357f418adb6d9fd6d671f1}{
-\index{Con@{Con}!neuron@{neuron}}
-\index{neuron@{neuron}!Con@{Con}}
-\subsubsection[{neuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron} \& Con::neuron (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_con_abf5ebf50b0357f418adb6d9fd6d671f1}
+\label{class_con_a2209567efd330a58825b5068a421afe1}
 
 
 from field accessor. 
@@ -516,6 +397,134 @@ References d\_\-neuron.
   return d_neuron;
 }
 \end{DoxyCode}
+\hypertarget{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{
+\index{Con@{Con}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!Con@{Con}}
+\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}double Con::getWeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}
+
+
+weight field accessor. 
+
+This method allows access to the value stored in the private field \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} \begin{DoxyReturn}{Returns}
+The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (double)
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+  //================
+  //Usage example:
+  //================
+  // Data set up
+                        std::vector<double> result;
+                        NeuronPtr ptShNeuron ( new Neuron(16) );                /
+      / Neuron Id is set to 16
+                        ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from poi
+      nts to ptShNeuron and weight is set to 12.4
+        // Test
+                        result.push_back( ptShCon->getWeight() );
+                        ptShCon->setWeight(2.2);
+                        result.push_back( ptShCon->getWeight() );
+
+        // Now, result is a numeric vector that contains the values 12.4 and 2.2 
+      .
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_con_acf3b130556e25414cd525d469b275239}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 114 of file Con.cpp.
+
+
+
+References d\_\-weight.
+
+
+\begin{DoxyCode}
+{
+  return d_weight;
+}
+\end{DoxyCode}
+\hypertarget{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{
+\index{Con@{Con}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!Con@{Con}}
+\subsubsection[{getWeight}]{\setlength{\rightskip}{0pt plus 5cm}double Con::getWeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}
+\hypertarget{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}{
+\index{Con@{Con}!Id@{Id}}
+\index{Id@{Id}!Con@{Con}}
+\subsubsection[{Id}]{\setlength{\rightskip}{0pt plus 5cm}int Con::Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_aee0a0b6c5beff6e227f9ebf33af2d209}
+
+
+A getter of the Id of the \hyperlink{class_neuron}{Neuron} pointed by the from field. 
+
+This method gets the Id of the \hyperlink{class_neuron}{Neuron} referred to by the \hyperlink{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{from} field \begin{DoxyReturn}{Returns}
+The value of the Id (an integer).
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+      //================
+      //Usage example:
+      //================
+      // Data set up
+                      NeuronPtr ptShNeuron ( new Neuron(16) );        // Neuron I
+      d is set to 16
+                      ConPtr ptShCon( new Con(ptShNeuron) );          // from poi
+      nts to ptShNeuron and weight is set to 0
+      // Test
+                      int result = ptShCon->getId();
+
+      // Now, result is equal to 16.
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_con_a0c126eb4479324b156768e0810723423}{getFrom}, \hyperlink{class_con_a927378392a3ee1fe958b1670cb72e61d}{setFrom} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
+\end{DoxySeeAlso}
+
+
+Definition at line 86 of file Con.cpp.
+
+
+
+References d\_\-neuron.
+
+
+
+Referenced by show(), and validate().
+
+
+\begin{DoxyCode}
+{
+  return d_neuron.get().Id();
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_con_aee0a0b6c5beff6e227f9ebf33af2d209_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_con_a927378392a3ee1fe958b1670cb72e61d}{
 \index{Con@{Con}!setFrom@{setFrom}}
 \index{setFrom@{setFrom}!Con@{Con}}
@@ -569,7 +578,30 @@ References from.
   from = neuronPtr;
 }
 \end{DoxyCode}
-\hypertarget{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{
+\hypertarget{class_con_ae372f50a253a424376959fb6ee8f083b}{
+\index{Con@{Con}!setNeuron@{setNeuron}}
+\index{setNeuron@{setNeuron}!Con@{Con}}
+\subsubsection[{setNeuron}]{\setlength{\rightskip}{0pt plus 5cm}void Con::setNeuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Neuron} \&}]{neuron}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_ae372f50a253a424376959fb6ee8f083b}
+
+
+Definition at line 61 of file Con.cpp.
+
+
+
+References d\_\-neuron.
+
+
+\begin{DoxyCode}
+{
+  d_neuron=boost::ref(neuron);
+}
+\end{DoxyCode}
+\hypertarget{class_con_acf3b130556e25414cd525d469b275239}{
 \index{Con@{Con}!setWeight@{setWeight}}
 \index{setWeight@{setWeight}!Con@{Con}}
 \subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}void Con::setWeight (
@@ -577,14 +609,14 @@ References from.
 \item[{double}]{value}
 \end{DoxyParamCaption}
 )}}
-\label{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}
+\label{class_con_acf3b130556e25414cd525d469b275239}
 
 
 weight field accessor. 
 
-This method sets the value of the \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} field. 
+This method sets the value of the \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} field. 
 \begin{DoxyParams}{Parameters}
-{\em w} & The new value (double) to be set in the \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} field.\\
+{\em w} & The new value (double) to be set in the \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} field.\\
 \hline
 \end{DoxyParams}
 
@@ -613,38 +645,27 @@ This method sets the value of the \hyperlink{class_con_a73953750d4503346ed1ba83f
 \end{DoxySeeAlso}
 
 
-Definition at line 186 of file Con.cpp.
+Definition at line 121 of file Con.cpp.
 
 
 
-References weight().
+References d\_\-weight, and weight.
 
 
 \begin{DoxyCode}
 {
-  weight = value;
+  d_weight=weight;
 }
 \end{DoxyCode}
-
-
-Here is the call graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=280pt]{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_con_ab85838575b5e01f3b8073136f2102922}{
-\index{Con@{Con}!show@{show}}
-\index{show@{show}!Con@{Con}}
-\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}bool Con::show (
+\hypertarget{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{
+\index{Con@{Con}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!Con@{Con}}
+\subsubsection[{setWeight}]{\setlength{\rightskip}{0pt plus 5cm}void Con::setWeight (
 \begin{DoxyParamCaption}
-{}
+\item[{double}]{value}
 \end{DoxyParamCaption}
 )}}
-\label{class_con_ab85838575b5e01f3b8073136f2102922}
+\label{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}
 \hypertarget{class_con_ab85838575b5e01f3b8073136f2102922}{
 \index{Con@{Con}!show@{show}}
 \index{show@{show}!Con@{Con}}
@@ -662,11 +683,11 @@ This method outputs in the R terminal the contents of the \hyperlink{class_con}{
 true in case everything works without throwing an exception 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for usage examples. 
+\hyperlink{class_con_acf3b130556e25414cd525d469b275239}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for usage examples. 
 \end{DoxySeeAlso}
 
 
-Definition at line 118 of file Con.cpp.
+Definition at line 133 of file Con.cpp.
 
 
 
@@ -688,8 +709,7 @@ References d\_\-weight, and Id().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -698,6 +718,15 @@ Here is the call graph for this function:
 \end{figure}
 
 
+\hypertarget{class_con_ab85838575b5e01f3b8073136f2102922}{
+\index{Con@{Con}!show@{show}}
+\index{show@{show}!Con@{Con}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}bool Con::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_con_ab85838575b5e01f3b8073136f2102922}
 \hypertarget{class_con_af5f836a7b0988b3d9113589b2959d5e6}{
 \index{Con@{Con}!validate@{validate}}
 \index{validate@{validate}!Con@{Con}}
@@ -721,11 +750,11 @@ true in case the checks are Ok.
 \end{DoxyExceptions}
 
 
-Definition at line 138 of file Con.cpp.
+Definition at line 153 of file Con.cpp.
 
 
 
-References Id(), and weight().
+References Id(), and weight.
 
 
 \begin{DoxyCode}
@@ -744,7 +773,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph}
+\includegraphics[width=244pt]{class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph}
 \end{center}
 \end{figure}
 
@@ -758,37 +787,13 @@ Here is the call graph for this function:
 \end{DoxyParamCaption}
 )}}
 \label{class_con_af5f836a7b0988b3d9113589b2959d5e6}
-\hypertarget{class_con_a96b1b0389be5f86d706ac9baf8fe5c49}{
-\index{Con@{Con}!weight@{weight}}
-\index{weight@{weight}!Con@{Con}}
-\subsubsection[{weight}]{\setlength{\rightskip}{0pt plus 5cm}double\& {\bf Con::weight} (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_con_a96b1b0389be5f86d706ac9baf8fe5c49}
-
-
-Referenced by getWeight(), setWeight(), and validate().
-
-
-
-Here is the caller graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=280pt]{class_con_a96b1b0389be5f86d706ac9baf8fe5c49_icgraph}
-\end{center}
-\end{figure}
-
-
 
 
 \subsection{Member Data Documentation}
 \hypertarget{class_con_aad857bd289343ecff2153acc852f34f0}{
 \index{Con@{Con}!d\_\-neuron@{d\_\-neuron}}
 \index{d\_\-neuron@{d\_\-neuron}!Con@{Con}}
-\subsubsection[{d\_\-neuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronRef} {\bf Con::d\_\-neuron}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{d\_\-neuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronRef} {\bf Con::d\_\-neuron}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{class_con_aad857bd289343ecff2153acc852f34f0}
 
 
@@ -796,12 +801,12 @@ Definition at line 6 of file Con.h.
 
 
 
-Referenced by Id(), and neuron().
+Referenced by getNeuron(), Id(), and setNeuron().
 
 \hypertarget{class_con_a41e043e0dfb126f3bdacbbd8caf33672}{
 \index{Con@{Con}!d\_\-weight@{d\_\-weight}}
 \index{d\_\-weight@{d\_\-weight}!Con@{Con}}
-\subsubsection[{d\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Con::d\_\-weight}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{d\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Con::d\_\-weight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{class_con_a41e043e0dfb126f3bdacbbd8caf33672}
 
 
@@ -809,7 +814,7 @@ Definition at line 7 of file Con.h.
 
 
 
-Referenced by show().
+Referenced by getWeight(), setWeight(), and show().
 
 \hypertarget{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{
 \index{Con@{Con}!from@{from}}
@@ -828,49 +833,22 @@ Definition at line 22 of file Con.h.
 
 Referenced by getFrom(), getId(), and setFrom().
 
-\hypertarget{class_con_a73953750d4503346ed1ba83fdd82f016}{
+\hypertarget{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{
 \index{Con@{Con}!weight@{weight}}
 \index{weight@{weight}!Con@{Con}}
-\subsubsection[{weight}]{\setlength{\rightskip}{0pt plus 5cm}double \& {\bf Con::weight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_con_a73953750d4503346ed1ba83fdd82f016}
+\subsubsection[{weight}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Con::weight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_con_a7f46485ba5b41971ea38641f9e7d1be0}
 
 
 A double variable that contains the weight of the connection. 
 
-weight field accessor.
-
-The \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} field contains the factor by which the output value of the \hyperlink{class_neuron}{Neuron} addressed by the from field is multiplied during simulation or training.
-
-This method allows access to the value stored in the private field \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} \begin{DoxyReturn}{Returns}
-The value of \hyperlink{class_con_a73953750d4503346ed1ba83fdd82f016}{weight} (double)
-\end{DoxyReturn}
-
-\begin{DoxyCode}
-  //================
-  //Usage example:
-  //================
-  // Data set up
-                        std::vector<double> result;
-                        NeuronPtr ptShNeuron ( new Neuron(16) );                /
-      / Neuron Id is set to 16
-                        ConPtr ptShCon( new Con(ptShNeuron, 12.4) );  // from poi
-      nts to ptShNeuron and weight is set to 12.4
-        // Test
-                        result.push_back( ptShCon->getWeight() );
-                        ptShCon->setWeight(2.2);
-                        result.push_back( ptShCon->getWeight() );
-
-        // Now, result is a numeric vector that contains the values 12.4 and 2.2 
-      .
-\end{DoxyCode}
-
-
-\begin{DoxySeeAlso}{See also}
-\hyperlink{class_con_ad5c1a25a2ded72999bf5293f5e55d7d9}{setWeight} and the unit test files, e.g., runit.Cpp.Con.R, for further examples. 
-\end{DoxySeeAlso}
-
+The \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} field contains the factor by which the output value of the \hyperlink{class_neuron}{Neuron} addressed by the from field is multiplied during simulation or training. 
 
 Definition at line 27 of file Con.h.
+
+
+
+Referenced by setWeight(), and validate().
 
 
 

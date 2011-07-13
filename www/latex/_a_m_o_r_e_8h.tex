@@ -13,17 +13,7 @@
 {\ttfamily \#include $<$boost/ref.hpp$>$}\par
 {\ttfamily \#include $<$Rcpp.h$>$}\par
 {\ttfamily \#include \char`\"{}dia/Con.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}dia/IteratorInterface.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}dia/ContainerInterface.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}dia/Container.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}dia/ContainerIterator.h\char`\"{}}\par
-{\ttfamily \#include \char`\"{}dia/Neuron.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Con.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}ContainerInterface.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}Container.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}IteratorInterface.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}ContainerIterator.cpp\char`\"{}}\par
-{\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
 Include dependency graph for AMORE.h:
 \nopagebreak
 \begin{figure}[H]
@@ -42,11 +32,21 @@ Include dependency graph for AMORE.h:
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+typedef int \hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler}
+\item 
+typedef boost::reference\_\-wrapper$<$ \hyperlink{class_predict_behavior}{PredictBehavior} $>$ \hyperlink{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}{PredictBehaviorRef}
+\item 
+typedef boost::reference\_\-wrapper$<$ \hyperlink{class_training_behavior}{TrainingBehavior} $>$ \hyperlink{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}{TrainingBehaviorRef}
+\item 
 typedef boost::reference\_\-wrapper$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}{NeuronRef}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ IteratorInterface$<$ \hyperlink{class_neuron}{Neuron} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_a837b3fc5a49a44aff8ad5493537b6ba1}{NeuronIteratorInterfacePtr}
+\item 
+typedef boost::shared\_\-ptr$<$ IteratorInterface$<$ \hyperlink{class_con}{Con} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_acab5b7b99e0a6bdc2020b9631f910b28}{ConIteratorInterfacePtr}
 \item 
 typedef \hyperlink{class_container}{Container}$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{_a_m_o_r_e_8h_ab6e40b9ca7a2d33862618d3bd3fcfd9c}{ConContainer}
 \item 
@@ -71,7 +71,7 @@ Definition at line 53 of file AMORE.h.
 \label{_a_m_o_r_e_8h_adead3ef83e9181db3b1d4d7d098a18c0}
 
 
-Definition at line 58 of file AMORE.h.
+Definition at line 56 of file AMORE.h.
 
 
 
@@ -83,7 +83,16 @@ Definition at line 58 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ab6e40b9ca7a2d33862618d3bd3fcfd9c}
 
 
-Definition at line 74 of file AMORE.h.
+Definition at line 79 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_acab5b7b99e0a6bdc2020b9631f910b28}{
+\index{AMORE.h@{AMORE.h}!ConIteratorInterfacePtr@{ConIteratorInterfacePtr}}
+\index{ConIteratorInterfacePtr@{ConIteratorInterfacePtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{ConIteratorInterfacePtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ IteratorInterface$<${\bf Con}$>$ $>$ {\bf ConIteratorInterfacePtr}}}
+\label{_a_m_o_r_e_8h_acab5b7b99e0a6bdc2020b9631f910b28}
+
+
+Definition at line 66 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{
 \index{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}}
@@ -92,7 +101,16 @@ Definition at line 74 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}
 
 
-Definition at line 63 of file AMORE.h.
+Definition at line 64 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{
+\index{AMORE.h@{AMORE.h}!Handler@{Handler}}
+\index{Handler@{Handler}!AMORE.h@{AMORE.h}}
+\subsubsection[{Handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf Handler}}}
+\label{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}
+
+
+Definition at line 59 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a4bb57d66a8b49c2e068725a39a1c6287}{
 \index{AMORE.h@{AMORE.h}!NeuronContainer@{NeuronContainer}}
@@ -101,7 +119,16 @@ Definition at line 63 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a4bb57d66a8b49c2e068725a39a1c6287}
 
 
-Definition at line 75 of file AMORE.h.
+Definition at line 80 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_a837b3fc5a49a44aff8ad5493537b6ba1}{
+\index{AMORE.h@{AMORE.h}!NeuronIteratorInterfacePtr@{NeuronIteratorInterfacePtr}}
+\index{NeuronIteratorInterfacePtr@{NeuronIteratorInterfacePtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronIteratorInterfacePtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ IteratorInterface$<${\bf Neuron}$>$ $>$ {\bf NeuronIteratorInterfacePtr}}}
+\label{_a_m_o_r_e_8h_a837b3fc5a49a44aff8ad5493537b6ba1}
+
+
+Definition at line 65 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{
 \index{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}}
@@ -110,13 +137,31 @@ Definition at line 75 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}
 
 
-Definition at line 62 of file AMORE.h.
+Definition at line 63 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}{
 \index{AMORE.h@{AMORE.h}!NeuronRef@{NeuronRef}}
 \index{NeuronRef@{NeuronRef}!AMORE.h@{AMORE.h}}
 \subsubsection[{NeuronRef}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::reference\_\-wrapper$<${\bf Neuron}$>$ {\bf NeuronRef}}}
 \label{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}
+
+
+Definition at line 62 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}{
+\index{AMORE.h@{AMORE.h}!PredictBehaviorRef@{PredictBehaviorRef}}
+\index{PredictBehaviorRef@{PredictBehaviorRef}!AMORE.h@{AMORE.h}}
+\subsubsection[{PredictBehaviorRef}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::reference\_\-wrapper$<${\bf PredictBehavior}$>$ {\bf PredictBehaviorRef}}}
+\label{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}
+
+
+Definition at line 60 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}{
+\index{AMORE.h@{AMORE.h}!TrainingBehaviorRef@{TrainingBehaviorRef}}
+\index{TrainingBehaviorRef@{TrainingBehaviorRef}!AMORE.h@{AMORE.h}}
+\subsubsection[{TrainingBehaviorRef}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::reference\_\-wrapper$<${\bf TrainingBehavior}$>$ {\bf TrainingBehaviorRef}}}
+\label{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}
 
 
 Definition at line 61 of file AMORE.h.
