@@ -7,7 +7,6 @@ private:
   double d_weight;
   // Operations
 public:
-  Con ();
   Con (Neuron& neuron);
   Con (Neuron& neuron, double weight);
   Handler Id ();

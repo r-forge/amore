@@ -2,6 +2,8 @@ rm pkg/AMORE/src/dia/*
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-Con.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-Container.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-Neuron.dia
+dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-NeuralFactory.dia
+dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-NeuralCreator.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-PredictBehavior.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-TrainingBehavior.dia
 

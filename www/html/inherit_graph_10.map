@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_predict_behavior.html" title="class PredictBehavior &#45;" alt="" coords="5,31,125,57"/>
-<area shape="rect" id="node3" href="$class_m_l_pbehavior.html" title="class MLPbehavior &#45;" alt="" coords="174,5,277,32"/>
-<area shape="rect" id="node5" href="$class_r_b_fbehavior.html" title="class RBFbehavior &#45;" alt="" coords="174,56,277,83"/>
+<area shape="rect" id="node1" href="$class_neuron.html" title="class Neuron &#45;" alt="" coords="5,31,72,57"/>
+<area shape="rect" id="node3" href="$class_m_l_pneuron.html" title="MLPneuron" alt="" coords="129,5,220,32"/>
+<area shape="rect" id="node5" href="$class_simple_neuron.html" title="class SimpleNeuron &#45;" alt="" coords="120,56,229,83"/>
 </map>

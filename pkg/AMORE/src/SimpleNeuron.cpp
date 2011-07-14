@@ -1,24 +1,20 @@
 /*
- * Neuron.cpp
+ * SimpleNeuron.cpp
  *
  *  Created on: 25/05/2011
  *      Author: mcasl
  */
 
-#include "dia/Neuron.h"
+#include "dia/SimpleNeuron.h"
 
-Neuron::Neuron() :
+SimpleNeuron::SimpleNeuron() :
   d_Id(NA_INTEGER) //, nCons()
 {
 }
 
-Neuron::Neuron(int Id) :
-  d_Id(Id)//, nCons()
-{
-}
 
 #if 0
-Neuron::Neuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::const_iterator lastCon ) :
+SimpleNeuron::SimpleNeuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::const_iterator lastCon ) :
   d_Id(Id)//, nCons()
 {
 
@@ -28,21 +24,30 @@ Neuron::Neuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::
 
 #endif
 
-int
-Neuron::Id()
+Handler
+SimpleNeuron::getId()
 {
   return d_Id;
 }
 
+
+
+void
+SimpleNeuron::setId(Handler Id)
+{
+   d_Id=Id;
+}
+
+
 #if 0
-void Neuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
+void SimpleNeuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
 {
    first=nCons.begin();
     last=nCons.end();
 }
 
 
-// void Neuron::const_iterators(Container<Con>::const_iterator & first, Container<Con>::const_iterator & last)
+// void SimpleNeuron::const_iterators(Container<Con>::const_iterator & first, Container<Con>::const_iterator & last)
 {
    first=nCons.begin();
     last=nCons.end();
@@ -51,9 +56,9 @@ void Neuron::iterators(Container<Con>::iterator & first, Container<Con>::iterato
 #endif
 
 void
-Neuron::show()
+SimpleNeuron::show()
 {
-  int id = Id();
+  int id = getId();
   Rprintf("\n------------------------\n");
   if (id == NA_INTEGER)
     {
@@ -79,10 +84,10 @@ Neuron::show()
 }
 
 bool
-Neuron::validate()
+SimpleNeuron::validate()
 {
   BEGIN_RCPP
-  if (Id() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Error, Id is NA.");
+  if (getId() == NA_INTEGER ) throw std::range_error("[C++ SimpleNeuron::validate]: Error, Id is NA.");
  // nCons.validate();
   return (TRUE);
 END_RCPP}
