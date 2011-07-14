@@ -1,1 +1,0 @@
-class MLPlayer : public MLPneuronContainer {};
