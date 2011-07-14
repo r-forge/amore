@@ -13,7 +13,7 @@ public:
   virtual void setTrainingBehavior (TrainingBehavior& trainingBehavior) = 0;
   virtual void predict () = 0;
   virtual void adjustParameters () = 0;
-  virtual void show() () = 0;
+  virtual void show () = 0;
   virtual bool validate () = 0;
 };
 

@@ -85,7 +85,7 @@ Con::setNeuron(Neuron& neuron)
 int
 Con::Id()
 {
-  return d_neuron.get().Id();
+  return d_neuron.get().getId();
 }
 
 //! %weight field accessor.
@@ -110,7 +110,7 @@ Con::Id()
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
-double&
+double
 Con::getWeight()
 {
   return d_weight;
@@ -139,7 +139,7 @@ Con::show()
     }
   else
     {
-      Rprintf("From:\t %d \t Weight= \t %lf \n", id, d_weight);
+      Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight() );
     }
 }
 
@@ -153,7 +153,7 @@ bool
 Con::validate()
 {
   BEGIN_RCPP
-  if (! R_FINITE(weight()) ) throw std::range_error("weight is not finite.");
+  if (! R_FINITE(getWeight()) ) throw std::range_error("weight is not finite.");
   if (Id() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);
