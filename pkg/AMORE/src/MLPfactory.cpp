@@ -22,6 +22,13 @@ MLPfactory::makeCon(Neuron& neuron)
   return conPtr;
 }
 
+ConPtr
+MLPfactory::makeCon(Neuron& neuron, double weight)
+{
+  ConPtr conPtr(new Con(neuron, weight));
+  return conPtr;
+}
+
 NeuronPtr
 MLPfactory::makeNeuron()
 {

@@ -7,6 +7,7 @@ class MLPfactory : public NeuralFactory {
 public:
   MLPfactory ();
   ConPtr makeCon (Neuron& neuron);
+  ConPtr makeCon (Neuron& neuron, double weight);
   NeuronPtr makeNeuron ();
 };
 
