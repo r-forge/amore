@@ -14,8 +14,6 @@ class \hyperlink{class_con}{Con} -\/
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_con_a61621054cc1ee979385c81207ee0bceb}{Con} ()
-\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a7fab3ece0e894f44f31d10a21b1d49c7}{Con} (\hyperlink{class_neuron}{Neuron} \&neuron)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_ad0b1e0d1eefd2296b23a2cfea04fc559}{Con} (\hyperlink{class_neuron}{Neuron} \&neuron, double \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight})
@@ -35,7 +33,7 @@ void \hyperlink{class_con_ab85838575b5e01f3b8073136f2102922}{show} ()
 bool \hyperlink{class_con_af5f836a7b0988b3d9113589b2959d5e6}{validate} ()
 \begin{DoxyCompactList}\small\item\em Object validator. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a61621054cc1ee979385c81207ee0bceb}{Con} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a9cebcd0e50b00f70e962997a8343cbb5}{Con} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_con_a24c0cd2e7eea23c3a0c9435c6a238a14}{Con} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr, double value)
@@ -81,30 +79,6 @@ Definition at line 3 of file Con.h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_con_a61621054cc1ee979385c81207ee0bceb}{
-\index{Con@{Con}!Con@{Con}}
-\index{Con@{Con}!Con@{Con}}
-\subsubsection[{Con}]{\setlength{\rightskip}{0pt plus 5cm}Con::Con (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_con_a61621054cc1ee979385c81207ee0bceb}
-
-
-Default Constructor. 
-
-
-
-Definition at line 17 of file Con.cpp.
-
-
-\begin{DoxyCode}
-         :
-  weight(0), from()
-{
-}
-\end{DoxyCode}
 \hypertarget{class_con_a7fab3ece0e894f44f31d10a21b1d49c7}{
 \index{Con@{Con}!Con@{Con}}
 \index{Con@{Con}!Con@{Con}}
@@ -120,7 +94,7 @@ Constructor.
 
 
 
-Definition at line 17 of file Con.cpp.
+Definition at line 19 of file Con.cpp.
 
 
 \begin{DoxyCode}
@@ -145,7 +119,7 @@ Constructor.
 
 
 
-Definition at line 28 of file Con.cpp.
+Definition at line 30 of file Con.cpp.
 
 
 \begin{DoxyCode}
@@ -163,6 +137,21 @@ Definition at line 28 of file Con.cpp.
 \end{DoxyParamCaption}
 )}}
 \label{class_con_a61621054cc1ee979385c81207ee0bceb}
+
+
+Default Constructor. 
+
+
+
+Definition at line 17 of file Con.cpp.
+
+
+\begin{DoxyCode}
+         :
+  weight(0), from()
+{
+}
+\end{DoxyCode}
 \hypertarget{class_con_a9cebcd0e50b00f70e962997a8343cbb5}{
 \index{Con@{Con}!Con@{Con}}
 \index{Con@{Con}!Con@{Con}}
@@ -385,7 +374,7 @@ A pointer to the \hyperlink{class_neuron}{Neuron} object referred to by the \hyp
 \end{DoxySeeAlso}
 
 
-Definition at line 54 of file Con.cpp.
+Definition at line 56 of file Con.cpp.
 
 
 
@@ -439,11 +428,15 @@ The value of \hyperlink{class_con_a7f46485ba5b41971ea38641f9e7d1be0}{weight} (do
 \end{DoxySeeAlso}
 
 
-Definition at line 114 of file Con.cpp.
+Definition at line 116 of file Con.cpp.
 
 
 
 References d\_\-weight.
+
+
+
+Referenced by show(), and validate().
 
 
 \begin{DoxyCode}
@@ -451,6 +444,17 @@ References d\_\-weight.
   return d_weight;
 }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2}{
 \index{Con@{Con}!getWeight@{getWeight}}
 \index{getWeight@{getWeight}!Con@{Con}}
@@ -498,7 +502,7 @@ The value of the Id (an integer).
 \end{DoxySeeAlso}
 
 
-Definition at line 86 of file Con.cpp.
+Definition at line 88 of file Con.cpp.
 
 
 
@@ -511,7 +515,7 @@ Referenced by show(), and validate().
 
 \begin{DoxyCode}
 {
-  return d_neuron.get().Id();
+  return d_neuron.get().getId();
 }
 \end{DoxyCode}
 
@@ -589,7 +593,7 @@ References from.
 \label{class_con_ae372f50a253a424376959fb6ee8f083b}
 
 
-Definition at line 61 of file Con.cpp.
+Definition at line 63 of file Con.cpp.
 
 
 
@@ -645,7 +649,7 @@ This method sets the value of the \hyperlink{class_con_a7f46485ba5b41971ea38641f
 \end{DoxySeeAlso}
 
 
-Definition at line 121 of file Con.cpp.
+Definition at line 123 of file Con.cpp.
 
 
 
@@ -687,11 +691,11 @@ true in case everything works without throwing an exception
 \end{DoxySeeAlso}
 
 
-Definition at line 133 of file Con.cpp.
+Definition at line 135 of file Con.cpp.
 
 
 
-References d\_\-weight, and Id().
+References getWeight(), and Id().
 
 
 \begin{DoxyCode}
@@ -703,17 +707,18 @@ References d\_\-weight, and Id().
     }
   else
     {
-      Rprintf("From:\t %d \t Weight= \t %lf \n", id, d_weight);
+      Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight() );
     }
 }
 \end{DoxyCode}
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=232pt]{class_con_ab85838575b5e01f3b8073136f2102922_cgraph}
+\includegraphics[width=272pt]{class_con_ab85838575b5e01f3b8073136f2102922_cgraph}
 \end{center}
 \end{figure}
 
@@ -750,17 +755,17 @@ true in case the checks are Ok.
 \end{DoxyExceptions}
 
 
-Definition at line 153 of file Con.cpp.
+Definition at line 155 of file Con.cpp.
 
 
 
-References Id(), and weight.
+References getWeight(), and Id().
 
 
 \begin{DoxyCode}
 {
   BEGIN_RCPP
-  if (! R_FINITE(weight()) ) throw std::range_error("weight is not finite.");
+  if (! R_FINITE(getWeight()) ) throw std::range_error("weight is not finite.");
   if (Id() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);
@@ -773,7 +778,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph}
+\includegraphics[width=284pt]{class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph}
 \end{center}
 \end{figure}
 
@@ -814,7 +819,7 @@ Definition at line 7 of file Con.h.
 
 
 
-Referenced by getWeight(), setWeight(), and show().
+Referenced by getWeight(), and setWeight().
 
 \hypertarget{class_con_a7c05f90dff56fd26c1fa0f042bba67a6}{
 \index{Con@{Con}!from@{from}}
@@ -848,7 +853,7 @@ Definition at line 27 of file Con.h.
 
 
 
-Referenced by setWeight(), and validate().
+Referenced by setWeight().
 
 
 

@@ -96,8 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a61621054cc1ee979385c81207ee0bceb">Con</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="#a61621054cc1ee979385c81207ee0bceb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a7fab3ece0e894f44f31d10a21b1d49c7">Con</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a7fab3ece0e894f44f31d10a21b1d49c7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#ad0b1e0d1eefd2296b23a2cfea04fc559">Con</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron, double <a class="el" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0">weight</a>)</td></tr>
@@ -116,6 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#af5f836a7b0988b3d9113589b2959d5e6">validate</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Object validator.  <a href="#af5f836a7b0988b3d9113589b2959d5e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a61621054cc1ee979385c81207ee0bceb">Con</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="#a61621054cc1ee979385c81207ee0bceb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a9cebcd0e50b00f70e962997a8343cbb5">Con</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a9cebcd0e50b00f70e962997a8343cbb5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_con.html#a24c0cd2e7eea23c3a0c9435c6a238a14">Con</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr, double value)</td></tr>
@@ -148,30 +147,6 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="dia_2_con_8h_source.html#l00003">3</a> of file <a class="el" href="dia_2_con_8h_source.html">Con.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a61621054cc1ee979385c81207ee0bceb"></a><!-- doxytag: member="Con::Con" ref="a61621054cc1ee979385c81207ee0bceb" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Con::Con </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Default Constructor. </p>
-
-<p>Definition at line <a class="el" href="old_2_con_8cpp_source.html#l00017">17</a> of file <a class="el" href="old_2_con_8cpp_source.html">Con.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">         :
-  <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(0), <a class="code" href="class_con.html#a7c05f90dff56fd26c1fa0f042bba67a6" title="A smart pointer to the Neuron used as input during simulation or training.">from</a>()
-{
-}
-</pre></div>
-</div>
-</div>
 <a class="anchor" id="a7fab3ece0e894f44f31d10a21b1d49c7"></a><!-- doxytag: member="Con::Con" ref="a7fab3ece0e894f44f31d10a21b1d49c7" args="(Neuron &amp;neuron)" -->
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +164,7 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00017">17</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00019">19</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                       :
   <a class="code" href="class_con.html#aad857bd289343ecff2153acc852f34f0">d_neuron</a>( boost::ref(neuron) ), <a class="code" href="class_con.html#a41e043e0dfb126f3bdacbbd8caf33672">d_weight</a>(0)
 {
@@ -224,7 +199,7 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00028">28</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00030">30</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                                      :
   <a class="code" href="class_con.html#aad857bd289343ecff2153acc852f34f0">d_neuron</a>(boost::ref(neuron)), <a class="code" href="class_con.html#a41e043e0dfb126f3bdacbbd8caf33672">d_weight</a>(<a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>)
 {
@@ -246,6 +221,14 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Default Constructor. </p>
+
+<p>Definition at line <a class="el" href="old_2_con_8cpp_source.html#l00017">17</a> of file <a class="el" href="old_2_con_8cpp_source.html">Con.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">         :
+  <a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>(0), <a class="code" href="class_con.html#a7c05f90dff56fd26c1fa0f042bba67a6" title="A smart pointer to the Neuron used as input during simulation or training.">from</a>()
+{
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a9cebcd0e50b00f70e962997a8343cbb5"></a><!-- doxytag: member="Con::Con" ref="a9cebcd0e50b00f70e962997a8343cbb5" args="(NeuronPtr neuronPtr)" -->
@@ -446,7 +429,7 @@ Private Attributes</h2></td></tr>
         <span class="comment">// Now, result is equal to 1.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_con.html#ad12ce81a557eadb2a00b10d5b5f4adb6" title="A getter of the Id of the Neuron pointed by the from field.">getId</a> and the unit test files, e.g., runit.Cpp.Con.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00054">54</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00056">56</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
 <p>References <a class="el" href="dia_2_con_8h_source.html#l00006">d_neuron</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -487,13 +470,22 @@ Private Attributes</h2></td></tr>
         <span class="comment">// Now, result is a numeric vector that contains the values 12.4 and 2.2 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_con.html#acf3b130556e25414cd525d469b275239" title="weight field accessor.">setWeight</a> and the unit test files, e.g., runit.Cpp.Con.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00114">114</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00116">116</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
 <p>References <a class="el" href="dia_2_con_8h_source.html#l00007">d_weight</a>.</p>
+
+<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00135">show()</a>, and <a class="el" href="_con_8cpp_source.html#l00155">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordflow">return</span> <a class="code" href="class_con.html#a41e043e0dfb126f3bdacbbd8caf33672">d_weight</a>;
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_con_a385c5bf6eb9e2ffc94c5b427c287ccb2_icgraph.svg" width="270" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a385c5bf6eb9e2ffc94c5b427c287ccb2"></a><!-- doxytag: member="Con::getWeight" ref="a385c5bf6eb9e2ffc94c5b427c287ccb2" args="()" -->
@@ -541,13 +533,13 @@ Private Attributes</h2></td></tr>
       <span class="comment">// Now, result is equal to 16.</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_con.html#a0c126eb4479324b156768e0810723423" title="from field accessor.">getFrom</a>, <a class="el" href="class_con.html#a927378392a3ee1fe958b1670cb72e61d" title="from field accessor.">setFrom</a> and the unit test files, e.g., runit.Cpp.Con.R, for further examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00086">86</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00088">88</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
 <p>References <a class="el" href="dia_2_con_8h_source.html#l00006">d_neuron</a>.</p>
 
-<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00133">show()</a>, and <a class="el" href="_con_8cpp_source.html#l00153">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00135">show()</a>, and <a class="el" href="_con_8cpp_source.html#l00155">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  <span class="keywordflow">return</span> <a class="code" href="class_con.html#aad857bd289343ecff2153acc852f34f0">d_neuron</a>.get().Id();
+  <span class="keywordflow">return</span> <a class="code" href="class_con.html#aad857bd289343ecff2153acc852f34f0">d_neuron</a>.get().getId();
 }
 </pre></div>
 <p><div class="dynheader">
@@ -620,7 +612,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00061">61</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00063">63</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
 <p>References <a class="el" href="dia_2_con_8h_source.html#l00006">d_neuron</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -667,7 +659,7 @@ Here is the caller graph for this function:</div>
         <span class="comment">// Now, result is a numeric vector that contains the values 12.4 and 2.2 .</span>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a> and the unit test files (e.g. runit.Cpp.Con.R) </dd></dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00121">121</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00123">123</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
 <p>References <a class="el" href="dia_2_con_8h_source.html#l00007">d_weight</a>, and <a class="el" href="old_2_con_8h_source.html#l00027">weight</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -712,9 +704,9 @@ Here is the caller graph for this function:</div>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true in case everything works without throwing an exception </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_con.html#acf3b130556e25414cd525d469b275239" title="weight field accessor.">setWeight</a> and the unit test files, e.g., runit.Cpp.Con.R, for usage examples. </dd></dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00133">133</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00135">135</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
-<p>References <a class="el" href="dia_2_con_8h_source.html#l00007">d_weight</a>, and <a class="el" href="_con_8cpp_source.html#l00086">Id()</a>.</p>
+<p>References <a class="el" href="_con_8cpp_source.html#l00116">getWeight()</a>, and <a class="el" href="_con_8cpp_source.html#l00088">Id()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="class_con.html#aee0a0b6c5beff6e227f9ebf33af2d209" title="A getter of the Id of the Neuron pointed by the from field.">Id</a>();
   <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == NA_INTEGER)
@@ -723,14 +715,15 @@ Here is the caller graph for this function:</div>
     }
   <span class="keywordflow">else</span>
     {
-      Rprintf(<span class="stringliteral">&quot;From:\t %d \t Weight= \t %lf \n&quot;</span>, <span class="keywordtype">id</span>, <a class="code" href="class_con.html#a41e043e0dfb126f3bdacbbd8caf33672">d_weight</a>);
+      Rprintf(<span class="stringliteral">&quot;From:\t %d \t Weight= \t %lf \n&quot;</span>, <span class="keywordtype">id</span> , <a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>() );
     }
 }
 </pre></div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_con_ab85838575b5e01f3b8073136f2102922_cgraph.svg" width="214" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_con_ab85838575b5e01f3b8073136f2102922_cgraph.svg" width="267" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -776,12 +769,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00153">153</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_con_8cpp_source.html#l00155">155</a> of file <a class="el" href="_con_8cpp_source.html">Con.cpp</a>.</p>
 
-<p>References <a class="el" href="_con_8cpp_source.html#l00086">Id()</a>, and <a class="el" href="old_2_con_8h_source.html#l00027">weight</a>.</p>
+<p>References <a class="el" href="_con_8cpp_source.html#l00116">getWeight()</a>, and <a class="el" href="_con_8cpp_source.html#l00088">Id()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   BEGIN_RCPP
-  <span class="keywordflow">if</span> (! R_FINITE(<a class="code" href="class_con.html#a7f46485ba5b41971ea38641f9e7d1be0" title="A double variable that contains the weight of the connection.">weight</a>()) ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;weight is not finite.&quot;</span>);
+  <span class="keywordflow">if</span> (! R_FINITE(<a class="code" href="class_con.html#a385c5bf6eb9e2ffc94c5b427c287ccb2" title="weight field accessor.">getWeight</a>()) ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;weight is not finite.&quot;</span>);
   <span class="keywordflow">if</span> (<a class="code" href="class_con.html#aee0a0b6c5beff6e227f9ebf33af2d209" title="A getter of the Id of the Neuron pointed by the from field.">Id</a>() == NA_INTEGER)
     <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;fromId is not finite.&quot;</span>);
   <span class="keywordflow">return</span> (<span class="keyword">true</span>);
@@ -790,7 +783,7 @@ END_RCPP}
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph.svg" width="230" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_con_af5f836a7b0988b3d9113589b2959d5e6_cgraph.svg" width="283" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </p>
@@ -827,7 +820,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="dia_2_con_8h_source.html#l00006">6</a> of file <a class="el" href="dia_2_con_8h_source.html">Con.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00054">getNeuron()</a>, <a class="el" href="_con_8cpp_source.html#l00086">Id()</a>, and <a class="el" href="_con_8cpp_source.html#l00061">setNeuron()</a>.</p>
+<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00056">getNeuron()</a>, <a class="el" href="_con_8cpp_source.html#l00088">Id()</a>, and <a class="el" href="_con_8cpp_source.html#l00063">setNeuron()</a>.</p>
 
 </div>
 </div>
@@ -844,7 +837,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="dia_2_con_8h_source.html#l00007">7</a> of file <a class="el" href="dia_2_con_8h_source.html">Con.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00114">getWeight()</a>, <a class="el" href="_con_8cpp_source.html#l00121">setWeight()</a>, and <a class="el" href="_con_8cpp_source.html#l00133">show()</a>.</p>
+<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00116">getWeight()</a>, and <a class="el" href="_con_8cpp_source.html#l00123">setWeight()</a>.</p>
 
 </div>
 </div>
@@ -884,7 +877,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="old_2_con_8h_source.html#l00027">27</a> of file <a class="el" href="old_2_con_8h_source.html">Con.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00121">setWeight()</a>, and <a class="el" href="_con_8cpp_source.html#l00153">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_con_8cpp_source.html#l00123">setWeight()</a>.</p>
 
 </div>
 </div>
@@ -899,7 +892,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_con.html">Con</a>      </li>
-      <li class="footer">Generated on Wed Jul 13 2011 23:19:06 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 14 2011 19:12:30 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

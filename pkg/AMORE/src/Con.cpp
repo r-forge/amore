@@ -9,11 +9,13 @@
 #include "dia/Neuron.h"
 //=========================================================================================================
 
+
 //! Constructor
 /*
  * Constructor, from=neuronPtr, weight=0
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  */
+
 Con::Con(Neuron& neuron) :
   d_neuron( boost::ref(neuron) ), d_weight(0)
 {

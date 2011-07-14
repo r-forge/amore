@@ -1,0 +1,158 @@
+\hypertarget{class_simple_neural_creator}{
+\section{SimpleNeuralCreator Class Reference}
+\label{class_simple_neural_creator}\index{SimpleNeuralCreator@{SimpleNeuralCreator}}
+}
+
+
+class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/  
+
+
+
+
+{\ttfamily \#include $<$SimpleNeuralCreator.h$>$}
+
+
+
+Inheritance diagram for SimpleNeuralCreator:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_simple_neural_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SimpleNeuralCreator:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_simple_neural_creator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{SimpleNeuralCreator} ()
+\item 
+\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}{createCon} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory, \hyperlink{class_neuron}{Neuron} \&neuron)
+\item 
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}{createNeuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/ 
+
+Definition at line 5 of file SimpleNeuralCreator.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{SimpleNeuralCreator}]{\setlength{\rightskip}{0pt plus 5cm}SimpleNeuralCreator::SimpleNeuralCreator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}
+
+
+Definition at line 15 of file SimpleNeuralCreator.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}}
+\index{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{createCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConPtr} SimpleNeuralCreator::createCon (
+\begin{DoxyParamCaption}
+\item[{{\bf NeuralFactory} \&}]{neuralFactory, }
+\item[{{\bf Neuron} \&}]{neuron}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}
+
+
+Implements \hyperlink{class_neural_creator_a9febc7917fd1264703d969cb3373eefc}{NeuralCreator}.
+
+
+
+Definition at line 21 of file SimpleNeuralCreator.cpp.
+
+
+
+References NeuralFactory::makeCon().
+
+
+\begin{DoxyCode}
+{
+  return neuralFactory.makeCon(neuron);
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}}
+\index{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} SimpleNeuralCreator::createNeuron (
+\begin{DoxyParamCaption}
+\item[{{\bf NeuralFactory} \&}]{neuralFactory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}
+
+
+Implements \hyperlink{class_neural_creator_a3ce00f2434e765fadcfc57b8d7c152e5}{NeuralCreator}.
+
+
+
+Definition at line 28 of file SimpleNeuralCreator.cpp.
+
+
+
+References NeuralFactory::makeNeuron().
+
+
+\begin{DoxyCode}
+{
+  return neuralFactory.makeNeuron();
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pkg/AMORE/src/dia/\hyperlink{_simple_neural_creator_8h}{SimpleNeuralCreator.h}\item 
+pkg/AMORE/src/\hyperlink{_simple_neural_creator_8cpp}{SimpleNeuralCreator.cpp}\end{DoxyCompactItemize}

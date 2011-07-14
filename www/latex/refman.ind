@@ -7,13 +7,13 @@
   \item {$\sim $Iterator}
     \subitem {Iterator}, \hyperpage{72}
   \item {$\sim $Neuron}
-    \subitem {Neuron}, \hyperpage{95}
+    \subitem {Neuron}, \hyperpage{100}
   \item {$\sim $NeuronContainer}
-    \subitem {NeuronContainer}, \hyperpage{102}
+    \subitem {NeuronContainer}, \hyperpage{107}
   \item {$\sim $SimpleContainer}
-    \subitem {SimpleContainer}, \hyperpage{114}
+    \subitem {SimpleContainer}, \hyperpage{121}
   \item {$\sim $SimpleContainerIterator}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
 
   \indexspace
 
@@ -32,22 +32,22 @@
     \subitem {BatchBehavior}, \hyperpage{19}
     \subitem {BATCHgd}, \hyperpage{21}
     \subitem {BATCHgdwm}, \hyperpage{24}
-    \subitem {Neuron}, \hyperpage{95}
-    \subitem {SimpleNeuron}, \hyperpage{124}
-    \subitem {TrainingBehavior}, \hyperpage{126}
+    \subitem {TrainingBehavior}, \hyperpage{139}
   \item {AMORE.h}
-    \subitem {ConContainer}, \hyperpage{128}
-    \subitem {ConIteratorInterfacePtr}, \hyperpage{128}
-    \subitem {ConPtr}, \hyperpage{128}
-    \subitem {foreach}, \hyperpage{128}
-    \subitem {Handler}, \hyperpage{128}
-    \subitem {NeuronContainer}, \hyperpage{128}
-    \subitem {NeuronIteratorInterfacePtr}, \hyperpage{129}
-    \subitem {NeuronPtr}, \hyperpage{129}
-    \subitem {NeuronRef}, \hyperpage{129}
-    \subitem {PredictBehaviorRef}, \hyperpage{129}
-    \subitem {size\_\discretionary {-}{}{}type}, \hyperpage{128}
-    \subitem {TrainingBehaviorRef}, \hyperpage{129}
+    \subitem {ConContainer}, \hyperpage{142}
+    \subitem {ConIteratorPtr}, \hyperpage{142}
+    \subitem {ConPtr}, \hyperpage{143}
+    \subitem {foreach}, \hyperpage{142}
+    \subitem {Handler}, \hyperpage{143}
+    \subitem {NeuralCreatorPtr}, \hyperpage{143}
+    \subitem {NeuralFactoryPtr}, \hyperpage{143}
+    \subitem {NeuronContainer}, \hyperpage{143}
+    \subitem {NeuronIteratorPtr}, \hyperpage{143}
+    \subitem {NeuronPtr}, \hyperpage{143}
+    \subitem {NeuronRef}, \hyperpage{143}
+    \subitem {PredictBehaviorRef}, \hyperpage{143}
+    \subitem {size\_\discretionary {-}{}{}type}, \hyperpage{142}
+    \subitem {TrainingBehaviorRef}, \hyperpage{143}
   \item {append}
     \subitem {Container}, \hyperpage{59}
 
@@ -64,15 +64,15 @@
   \item {begin}
     \subitem {Container}, \hyperpage{61}
   \item {bias}
-    \subitem {MLPneuron}, \hyperpage{87}
+    \subitem {MLPneuron}, \hyperpage{89}
   \item {buildAndAppend}
-    \subitem {MLPneuronContainer}, \hyperpage{90}
+    \subitem {MLPneuronContainer}, \hyperpage{92}
 
   \indexspace
 
   \item {clear}
     \subitem {Container}, \hyperpage{61, 62}
-    \subitem {SimpleContainer}, \hyperpage{114}
+    \subitem {SimpleContainer}, \hyperpage{121}
   \item {collection}
     \subitem {Container}, \hyperpage{70}
   \item {CompareId}, \hyperpage{25}
@@ -81,23 +81,23 @@
     \subitem {$\sim $Con}, \hyperpage{29}
     \subitem {Con}, \hyperpage{28}
     \subitem {d\_\discretionary {-}{}{}neuron}, \hyperpage{36}
-    \subitem {d\_\discretionary {-}{}{}weight}, \hyperpage{36}
-    \subitem {from}, \hyperpage{36}
+    \subitem {d\_\discretionary {-}{}{}weight}, \hyperpage{37}
+    \subitem {from}, \hyperpage{37}
     \subitem {getFrom}, \hyperpage{29}
     \subitem {getId}, \hyperpage{30}
     \subitem {getNeuron}, \hyperpage{30}
     \subitem {getWeight}, \hyperpage{31, 32}
     \subitem {Id}, \hyperpage{32}
     \subitem {setFrom}, \hyperpage{33}
-    \subitem {setNeuron}, \hyperpage{33}
-    \subitem {setWeight}, \hyperpage{34}
-    \subitem {show}, \hyperpage{34, 35}
-    \subitem {validate}, \hyperpage{35, 36}
+    \subitem {setNeuron}, \hyperpage{34}
+    \subitem {setWeight}, \hyperpage{34, 35}
+    \subitem {show}, \hyperpage{35}
+    \subitem {validate}, \hyperpage{36}
     \subitem {weight}, \hyperpage{37}
   \item {con}
-    \subitem {Neuron}, \hyperpage{97}
+    \subitem {Neuron}, \hyperpage{103}
   \item {ConContainer}, \hyperpage{37}
-    \subitem {AMORE.h}, \hyperpage{128}
+    \subitem {AMORE.h}, \hyperpage{142}
     \subitem {ConContainer}, \hyperpage{41}
     \subitem {const\_\discretionary {-}{}{}iterator}, \hyperpage{40}
     \subitem {const\_\discretionary {-}{}{}reference}, \hyperpage{40}
@@ -110,18 +110,18 @@
     \subitem {setWeight}, \hyperpage{50, 51}
     \subitem {validate}, \hyperpage{53}
     \subitem {value\_\discretionary {-}{}{}type}, \hyperpage{41}
-  \item {ConIteratorInterfacePtr}
-    \subitem {AMORE.h}, \hyperpage{128}
+  \item {ConIteratorPtr}
+    \subitem {AMORE.h}, \hyperpage{142}
   \item {ConPtr}
-    \subitem {AMORE.h}, \hyperpage{128}
+    \subitem {AMORE.h}, \hyperpage{143}
   \item {const\_\discretionary {-}{}{}iterator}
     \subitem {ConContainer}, \hyperpage{40}
     \subitem {Container}, \hyperpage{58}
-    \subitem {NeuronContainer}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{106}
   \item {const\_\discretionary {-}{}{}reference}
     \subitem {ConContainer}, \hyperpage{40}
     \subitem {Container}, \hyperpage{58}
-    \subitem {NeuronContainer}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{106}
   \item {Container}, \hyperpage{54}
     \subitem {$\sim $Container}, \hyperpage{59}
     \subitem {append}, \hyperpage{59}
@@ -144,54 +144,56 @@
     \subitem {store}, \hyperpage{69}
     \subitem {validate}, \hyperpage{69}
     \subitem {value\_\discretionary {-}{}{}type}, \hyperpage{58}
+  \item {createCon}
+    \subitem {NeuralCreator}, \hyperpage{93}
+    \subitem {SimpleNeuralCreator}, \hyperpage{131}
   \item {createIterator}
     \subitem {Container}, \hyperpage{62}
-    \subitem {SimpleContainer}, \hyperpage{115}
+    \subitem {SimpleContainer}, \hyperpage{122}
   \item {CreateMLPneuralNet}
-    \subitem {MLPneuralNetFactory.cpp}, \hyperpage{148}
+    \subitem {MLPneuralNetFactory.cpp}, \hyperpage{168}
+  \item {createNeuron}
+    \subitem {NeuralCreator}, \hyperpage{93}
+    \subitem {SimpleNeuralCreator}, \hyperpage{131}
   \item {currentItem}
     \subitem {Iterator}, \hyperpage{72}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
 
   \indexspace
 
   \item {d\_\discretionary {-}{}{}accumulator}
     \subitem {MLPbehavior}, \hyperpage{75}
-    \subitem {RBFbehavior}, \hyperpage{109}
+    \subitem {RBFbehavior}, \hyperpage{114}
   \item {d\_\discretionary {-}{}{}altitude}
-    \subitem {RBFbehavior}, \hyperpage{109}
+    \subitem {RBFbehavior}, \hyperpage{114}
   \item {d\_\discretionary {-}{}{}bias}
     \subitem {MLPbehavior}, \hyperpage{75}
   \item {d\_\discretionary {-}{}{}collection}
-    \subitem {SimpleContainer}, \hyperpage{117}
+    \subitem {SimpleContainer}, \hyperpage{124}
   \item {d\_\discretionary {-}{}{}container}
-    \subitem {SimpleContainerIterator}, \hyperpage{121}
+    \subitem {SimpleContainerIterator}, \hyperpage{128}
   \item {d\_\discretionary {-}{}{}Id}
-    \subitem {SimpleNeuron}, \hyperpage{125}
+    \subitem {SimpleNeuron}, \hyperpage{138}
   \item {d\_\discretionary {-}{}{}iterator}
-    \subitem {SimpleContainerIterator}, \hyperpage{121}
+    \subitem {SimpleContainerIterator}, \hyperpage{128}
   \item {d\_\discretionary {-}{}{}nCons}
     \subitem {MLPbehavior}, \hyperpage{75}
-    \subitem {RBFbehavior}, \hyperpage{109}
+    \subitem {RBFbehavior}, \hyperpage{114}
   \item {d\_\discretionary {-}{}{}neuron}
     \subitem {Con}, \hyperpage{36}
   \item {d\_\discretionary {-}{}{}output}
     \subitem {MLPbehavior}, \hyperpage{75}
-    \subitem {RBFbehavior}, \hyperpage{109}
-  \item {d\_\discretionary {-}{}{}predictBehavior}
-    \subitem {Neuron}, \hyperpage{98}
-  \item {d\_\discretionary {-}{}{}trainingBehavior}
-    \subitem {Neuron}, \hyperpage{98}
+    \subitem {RBFbehavior}, \hyperpage{114}
   \item {d\_\discretionary {-}{}{}weight}
-    \subitem {Con}, \hyperpage{36}
+    \subitem {Con}, \hyperpage{37}
   \item {d\_\discretionary {-}{}{}width}
-    \subitem {RBFbehavior}, \hyperpage{109}
+    \subitem {RBFbehavior}, \hyperpage{114}
 
   \indexspace
 
   \item {empty}
     \subitem {Container}, \hyperpage{62}
-    \subitem {SimpleContainer}, \hyperpage{115}
+    \subitem {SimpleContainer}, \hyperpage{122}
   \item {end}
     \subitem {Container}, \hyperpage{63}
   \item {erase}
@@ -201,47 +203,47 @@
 
   \item {first}
     \subitem {Iterator}, \hyperpage{72}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
   \item {foreach}
-    \subitem {AMORE.h}, \hyperpage{128}
+    \subitem {AMORE.h}, \hyperpage{142}
   \item {from}
-    \subitem {Con}, \hyperpage{36}
+    \subitem {Con}, \hyperpage{37}
 
   \indexspace
 
   \item {getConId}
-    \subitem {Neuron}, \hyperpage{95}
-    \subitem {NeuronContainer}, \hyperpage{102}
+    \subitem {Neuron}, \hyperpage{100}
+    \subitem {NeuronContainer}, \hyperpage{107}
   \item {getFrom}
     \subitem {Con}, \hyperpage{29}
-    \subitem {NeuronContainer}, \hyperpage{103}
+    \subitem {NeuronContainer}, \hyperpage{108}
   \item {getId}
     \subitem {Con}, \hyperpage{30}
     \subitem {ConContainer}, \hyperpage{43}
-    \subitem {MLPneuronContainer}, \hyperpage{90}
-    \subitem {Neuron}, \hyperpage{95}
-    \subitem {NeuronContainer}, \hyperpage{103}
-    \subitem {SimpleNeuron}, \hyperpage{124}
+    \subitem {MLPneuronContainer}, \hyperpage{92}
+    \subitem {Neuron}, \hyperpage{100}
+    \subitem {NeuronContainer}, \hyperpage{108}
+    \subitem {SimpleNeuron}, \hyperpage{135}
   \item {getNeuron}
     \subitem {Con}, \hyperpage{30}
   \item {getWeight}
     \subitem {Con}, \hyperpage{31, 32}
-    \subitem {Neuron}, \hyperpage{95}
-    \subitem {NeuronContainer}, \hyperpage{103}
+    \subitem {Neuron}, \hyperpage{100}
+    \subitem {NeuronContainer}, \hyperpage{108}
 
   \indexspace
 
   \item {Handler}
-    \subitem {AMORE.h}, \hyperpage{128}
+    \subitem {AMORE.h}, \hyperpage{143}
 
   \indexspace
 
   \item {Id}
     \subitem {Con}, \hyperpage{32}
-    \subitem {Neuron}, \hyperpage{98}
+    \subitem {Neuron}, \hyperpage{103}
   \item {isDone}
     \subitem {Iterator}, \hyperpage{72}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
   \item {Iterator}, \hyperpage{70}
     \subitem {$\sim $Iterator}, \hyperpage{72}
     \subitem {currentItem}, \hyperpage{72}
@@ -252,7 +254,7 @@
   \item {iterator}
     \subitem {ConContainer}, \hyperpage{41}
     \subitem {Container}, \hyperpage{58}
-    \subitem {NeuronContainer}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{106}
 
   \indexspace
 
@@ -261,84 +263,99 @@
 
   \indexspace
 
+  \item {makeCon}
+    \subitem {MLPfactory}, \hyperpage{78}
+    \subitem {NeuralFactory}, \hyperpage{95}
+    \subitem {RBFfactory}, \hyperpage{116}
+  \item {makeNeuron}
+    \subitem {MLPfactory}, \hyperpage{78}
+    \subitem {NeuralFactory}, \hyperpage{95}
+    \subitem {RBFfactory}, \hyperpage{116}
   \item {MLPbehavior}, \hyperpage{72}
     \subitem {d\_\discretionary {-}{}{}accumulator}, \hyperpage{75}
     \subitem {d\_\discretionary {-}{}{}bias}, \hyperpage{75}
     \subitem {d\_\discretionary {-}{}{}nCons}, \hyperpage{75}
     \subitem {d\_\discretionary {-}{}{}output}, \hyperpage{75}
     \subitem {predict}, \hyperpage{75}
-  \item {MLPlayer}, \hyperpage{76}
-  \item {MLPlayerContainer}, \hyperpage{79}
-  \item {MLPneuralNet}, \hyperpage{82}
-    \subitem {nLayers}, \hyperpage{84}
+  \item {MLPfactory}, \hyperpage{76}
+    \subitem {makeCon}, \hyperpage{78}
+    \subitem {makeNeuron}, \hyperpage{78}
+    \subitem {MLPfactory}, \hyperpage{77}
+  \item {MLPlayer}, \hyperpage{78}
+  \item {MLPlayerContainer}, \hyperpage{81}
+  \item {MLPneuralNet}, \hyperpage{84}
+    \subitem {nLayers}, \hyperpage{86}
   \item {MLPneuralNetFactory.cpp}
-    \subitem {CreateMLPneuralNet}, \hyperpage{148}
-  \item {MLPneuron}, \hyperpage{84}
-    \subitem {bias}, \hyperpage{87}
-  \item {MLPneuronContainer}, \hyperpage{87}
-    \subitem {buildAndAppend}, \hyperpage{90}
-    \subitem {getId}, \hyperpage{90}
+    \subitem {CreateMLPneuralNet}, \hyperpage{168}
+  \item {MLPneuron}, \hyperpage{86}
+    \subitem {bias}, \hyperpage{89}
+  \item {MLPneuronContainer}, \hyperpage{89}
+    \subitem {buildAndAppend}, \hyperpage{92}
+    \subitem {getId}, \hyperpage{92}
 
   \indexspace
 
-  \item {NeuralNet}, \hyperpage{90}
-    \subitem {train}, \hyperpage{91}
-  \item {Neuron}, \hyperpage{91}
-    \subitem {$\sim $Neuron}, \hyperpage{95}
-    \subitem {adjustParameters}, \hyperpage{95}
-    \subitem {con}, \hyperpage{97}
-    \subitem {d\_\discretionary {-}{}{}predictBehavior}, \hyperpage{98}
-    \subitem {d\_\discretionary {-}{}{}trainingBehavior}, 
-		\hyperpage{98}
-    \subitem {getConId}, \hyperpage{95}
-    \subitem {getId}, \hyperpage{95}
-    \subitem {getWeight}, \hyperpage{95}
-    \subitem {Id}, \hyperpage{98}
-    \subitem {Neuron}, \hyperpage{95}
-    \subitem {numOfCons}, \hyperpage{96}
-    \subitem {outputValue}, \hyperpage{98}
-    \subitem {predict}, \hyperpage{96}
-    \subitem {setFrom}, \hyperpage{96}
-    \subitem {setId}, \hyperpage{96}
-    \subitem {setPredictBehavior}, \hyperpage{96}
-    \subitem {setTrainingBehavior}, \hyperpage{96}
-    \subitem {setWeight}, \hyperpage{96}
-    \subitem {show}, \hyperpage{96, 97}
-    \subitem {validate}, \hyperpage{97}
-  \item {NeuronContainer}, \hyperpage{98}
-    \subitem {$\sim $NeuronContainer}, \hyperpage{102}
-    \subitem {AMORE.h}, \hyperpage{128}
-    \subitem {const\_\discretionary {-}{}{}iterator}, \hyperpage{101}
-    \subitem {const\_\discretionary {-}{}{}reference}, \hyperpage{101}
-    \subitem {getConId}, \hyperpage{102}
-    \subitem {getFrom}, \hyperpage{103}
-    \subitem {getId}, \hyperpage{103}
-    \subitem {getWeight}, \hyperpage{103}
-    \subitem {iterator}, \hyperpage{101}
-    \subitem {NeuronContainer}, \hyperpage{102}
-    \subitem {numOfCons}, \hyperpage{103}
-    \subitem {numOfNeurons}, \hyperpage{103}
-    \subitem {setFrom}, \hyperpage{104}
-    \subitem {setId}, \hyperpage{104}
-    \subitem {setWeight}, \hyperpage{104}
-    \subitem {value\_\discretionary {-}{}{}type}, \hyperpage{102}
-  \item {NeuronIteratorInterfacePtr}
-    \subitem {AMORE.h}, \hyperpage{129}
+  \item {NeuralCreator}, \hyperpage{92}
+    \subitem {createCon}, \hyperpage{93}
+    \subitem {createNeuron}, \hyperpage{93}
+  \item {NeuralCreatorPtr}
+    \subitem {AMORE.h}, \hyperpage{143}
+  \item {NeuralFactory}, \hyperpage{94}
+    \subitem {makeCon}, \hyperpage{95}
+    \subitem {makeNeuron}, \hyperpage{95}
+  \item {NeuralFactoryPtr}
+    \subitem {AMORE.h}, \hyperpage{143}
+  \item {NeuralNet}, \hyperpage{96}
+    \subitem {train}, \hyperpage{96}
+  \item {Neuron}, \hyperpage{97}
+    \subitem {$\sim $Neuron}, \hyperpage{100}
+    \subitem {con}, \hyperpage{103}
+    \subitem {getConId}, \hyperpage{100}
+    \subitem {getId}, \hyperpage{100}
+    \subitem {getWeight}, \hyperpage{100}
+    \subitem {Id}, \hyperpage{103}
+    \subitem {Neuron}, \hyperpage{99, 100}
+    \subitem {numOfCons}, \hyperpage{101}
+    \subitem {outputValue}, \hyperpage{103}
+    \subitem {setFrom}, \hyperpage{101}
+    \subitem {setId}, \hyperpage{101}
+    \subitem {setWeight}, \hyperpage{101}
+    \subitem {show}, \hyperpage{101, 102}
+    \subitem {validate}, \hyperpage{102}
+  \item {NeuronContainer}, \hyperpage{103}
+    \subitem {$\sim $NeuronContainer}, \hyperpage{107}
+    \subitem {AMORE.h}, \hyperpage{143}
+    \subitem {const\_\discretionary {-}{}{}iterator}, \hyperpage{106}
+    \subitem {const\_\discretionary {-}{}{}reference}, \hyperpage{106}
+    \subitem {getConId}, \hyperpage{107}
+    \subitem {getFrom}, \hyperpage{108}
+    \subitem {getId}, \hyperpage{108}
+    \subitem {getWeight}, \hyperpage{108}
+    \subitem {iterator}, \hyperpage{106}
+    \subitem {NeuronContainer}, \hyperpage{107}
+    \subitem {numOfCons}, \hyperpage{108}
+    \subitem {numOfNeurons}, \hyperpage{108}
+    \subitem {setFrom}, \hyperpage{109}
+    \subitem {setId}, \hyperpage{109}
+    \subitem {setWeight}, \hyperpage{109}
+    \subitem {value\_\discretionary {-}{}{}type}, \hyperpage{107}
+  \item {NeuronIteratorPtr}
+    \subitem {AMORE.h}, \hyperpage{143}
   \item {NeuronPtr}
-    \subitem {AMORE.h}, \hyperpage{129}
+    \subitem {AMORE.h}, \hyperpage{143}
   \item {NeuronRef}
-    \subitem {AMORE.h}, \hyperpage{129}
+    \subitem {AMORE.h}, \hyperpage{143}
   \item {next}
     \subitem {Iterator}, \hyperpage{72}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
   \item {nLayers}
-    \subitem {MLPneuralNet}, \hyperpage{84}
+    \subitem {MLPneuralNet}, \hyperpage{86}
   \item {numOfCons}
     \subitem {ConContainer}, \hyperpage{45}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {NeuronContainer}, \hyperpage{103}
+    \subitem {Neuron}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{108}
   \item {numOfNeurons}
-    \subitem {NeuronContainer}, \hyperpage{103}
+    \subitem {NeuronContainer}, \hyperpage{108}
 
   \indexspace
 
@@ -350,79 +367,88 @@
     \subitem {BATCHgd}, \hyperpage{22}
     \subitem {BATCHgdwm}, \hyperpage{25}
   \item {outputValue}
-    \subitem {Neuron}, \hyperpage{98}
+    \subitem {Neuron}, \hyperpage{103}
 
   \indexspace
 
-  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{127}
-  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{129}
-  \item {pkg/AMORE/src/Container.cpp}, \hyperpage{131}
-  \item {pkg/AMORE/src/containerInterface.cpp}, \hyperpage{131}
-  \item {pkg/AMORE/src/ContainerIterator.cpp}, \hyperpage{132}
-  \item {pkg/AMORE/src/dia/AdaptBehavior.h}, \hyperpage{132}
-  \item {pkg/AMORE/src/dia/ADAPTgd.h}, \hyperpage{133}
-  \item {pkg/AMORE/src/dia/ADAPTgdwm.h}, \hyperpage{134}
-  \item {pkg/AMORE/src/dia/BatchBehavior.h}, \hyperpage{135}
-  \item {pkg/AMORE/src/dia/BATCHgd.h}, \hyperpage{136}
-  \item {pkg/AMORE/src/dia/BATCHgdwm.h}, \hyperpage{137}
-  \item {pkg/AMORE/src/dia/Con.h}, \hyperpage{138}
-  \item {pkg/AMORE/src/dia/Container.h}, \hyperpage{139}
-  \item {pkg/AMORE/src/dia/Iterator.h}, \hyperpage{140}
-  \item {pkg/AMORE/src/dia/MLPbehavior.h}, \hyperpage{141}
-  \item {pkg/AMORE/src/dia/Neuron.h}, \hyperpage{142}
-  \item {pkg/AMORE/src/dia/PredictBehavior.h}, \hyperpage{143}
-  \item {pkg/AMORE/src/dia/RBFbehavior.h}, \hyperpage{143}
-  \item {pkg/AMORE/src/dia/SimpleContainer.h}, \hyperpage{144}
-  \item {pkg/AMORE/src/dia/SimpleContainerIterator.h}, \hyperpage{145}
-  \item {pkg/AMORE/src/dia/SimpleNeuron.h}, \hyperpage{145}
-  \item {pkg/AMORE/src/dia/TrainingBehavior.h}, \hyperpage{146}
-  \item {pkg/AMORE/src/IteratorInterface.cpp}, \hyperpage{146}
-  \item {pkg/AMORE/src/Neuron.cpp}, \hyperpage{147}
-  \item {pkg/AMORE/src/old/Con.cpp}, \hyperpage{130}
-  \item {pkg/AMORE/src/old/Con.h}, \hyperpage{138}
-  \item {pkg/AMORE/src/old/ConContainer.cpp}, \hyperpage{147}
-  \item {pkg/AMORE/src/old/ConContainer.h}, \hyperpage{148}
-  \item {pkg/AMORE/src/old/Container.cpp}, \hyperpage{131}
-  \item {pkg/AMORE/src/old/Container.h}, \hyperpage{140}
-  \item {pkg/AMORE/src/old/MLPlayer.h}, \hyperpage{148}
-  \item {pkg/AMORE/src/old/MLPlayerContainer.h}, \hyperpage{148}
-  \item {pkg/AMORE/src/old/MLPneuralNet.h}, \hyperpage{148}
-  \item {pkg/AMORE/src/old/MLPneuralNetFactory.cpp}, \hyperpage{148}
-  \item {pkg/AMORE/src/old/MLPneuron.h}, \hyperpage{149}
-  \item {pkg/AMORE/src/old/MLPneuronContainer.h}, \hyperpage{149}
-  \item {pkg/AMORE/src/old/NeuralNet.h}, \hyperpage{149}
-  \item {pkg/AMORE/src/old/Neuron.cpp}, \hyperpage{147}
-  \item {pkg/AMORE/src/old/Neuron.h}, \hyperpage{142}
-  \item {pkg/AMORE/src/old/NeuronContainer.cpp}, \hyperpage{150}
-  \item {pkg/AMORE/src/old/NeuronContainer.h}, \hyperpage{150}
-  \item {pkg/AMORE/src/old/RBFneuralNet.h}, \hyperpage{150}
+  \item {pkg/AMORE/src/AMORE.h}, \hyperpage{141}
+  \item {pkg/AMORE/src/Con.cpp}, \hyperpage{144}
+  \item {pkg/AMORE/src/Container.cpp}, \hyperpage{145}
+  \item {pkg/AMORE/src/containerInterface.cpp}, \hyperpage{145}
+  \item {pkg/AMORE/src/ContainerIterator.cpp}, \hyperpage{146}
+  \item {pkg/AMORE/src/dia/AdaptBehavior.h}, \hyperpage{146}
+  \item {pkg/AMORE/src/dia/ADAPTgd.h}, \hyperpage{147}
+  \item {pkg/AMORE/src/dia/ADAPTgdwm.h}, \hyperpage{148}
+  \item {pkg/AMORE/src/dia/BatchBehavior.h}, \hyperpage{149}
+  \item {pkg/AMORE/src/dia/BATCHgd.h}, \hyperpage{150}
+  \item {pkg/AMORE/src/dia/BATCHgdwm.h}, \hyperpage{151}
+  \item {pkg/AMORE/src/dia/Con.h}, \hyperpage{152}
+  \item {pkg/AMORE/src/dia/Container.h}, \hyperpage{153}
+  \item {pkg/AMORE/src/dia/Iterator.h}, \hyperpage{154}
+  \item {pkg/AMORE/src/dia/MLPbehavior.h}, \hyperpage{155}
+  \item {pkg/AMORE/src/dia/MLPfactory.h}, \hyperpage{155}
+  \item {pkg/AMORE/src/dia/NeuralCreator.h}, \hyperpage{157}
+  \item {pkg/AMORE/src/dia/NeuralFactory.h}, \hyperpage{158}
+  \item {pkg/AMORE/src/dia/Neuron.h}, \hyperpage{159}
+  \item {pkg/AMORE/src/dia/PredictBehavior.h}, \hyperpage{161}
+  \item {pkg/AMORE/src/dia/RBFbehavior.h}, \hyperpage{161}
+  \item {pkg/AMORE/src/dia/RBFfactory.h}, \hyperpage{162}
+  \item {pkg/AMORE/src/dia/SimpleContainer.h}, \hyperpage{162}
+  \item {pkg/AMORE/src/dia/SimpleContainerIterator.h}, \hyperpage{163}
+  \item {pkg/AMORE/src/dia/SimpleNeuralCreator.h}, \hyperpage{164}
+  \item {pkg/AMORE/src/dia/SimpleNeuron.h}, \hyperpage{165}
+  \item {pkg/AMORE/src/dia/TrainingBehavior.h}, \hyperpage{166}
+  \item {pkg/AMORE/src/IteratorInterface.cpp}, \hyperpage{166}
+  \item {pkg/AMORE/src/MLPfactory.cpp}, \hyperpage{166}
+  \item {pkg/AMORE/src/old/Con.cpp}, \hyperpage{144}
+  \item {pkg/AMORE/src/old/Con.h}, \hyperpage{152}
+  \item {pkg/AMORE/src/old/ConContainer.cpp}, \hyperpage{167}
+  \item {pkg/AMORE/src/old/ConContainer.h}, \hyperpage{167}
+  \item {pkg/AMORE/src/old/Container.cpp}, \hyperpage{145}
+  \item {pkg/AMORE/src/old/Container.h}, \hyperpage{154}
+  \item {pkg/AMORE/src/old/MLPlayer.h}, \hyperpage{168}
+  \item {pkg/AMORE/src/old/MLPlayerContainer.h}, \hyperpage{168}
+  \item {pkg/AMORE/src/old/MLPneuralNet.h}, \hyperpage{168}
+  \item {pkg/AMORE/src/old/MLPneuralNetFactory.cpp}, \hyperpage{168}
+  \item {pkg/AMORE/src/old/MLPneuron.h}, \hyperpage{169}
+  \item {pkg/AMORE/src/old/MLPneuronContainer.h}, \hyperpage{169}
+  \item {pkg/AMORE/src/old/NeuralNet.h}, \hyperpage{169}
+  \item {pkg/AMORE/src/old/Neuron.cpp}, \hyperpage{169}
+  \item {pkg/AMORE/src/old/Neuron.h}, \hyperpage{160}
+  \item {pkg/AMORE/src/old/NeuronContainer.cpp}, \hyperpage{170}
+  \item {pkg/AMORE/src/old/NeuronContainer.h}, \hyperpage{170}
+  \item {pkg/AMORE/src/old/RBFneuralNet.h}, \hyperpage{170}
+  \item {pkg/AMORE/src/SimpleNeuralCreator.cpp}, \hyperpage{170}
+  \item {pkg/AMORE/src/SimpleNeuron.cpp}, \hyperpage{171}
   \item {predict}
     \subitem {MLPbehavior}, \hyperpage{75}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {PredictBehavior}, \hyperpage{106}
-    \subitem {RBFbehavior}, \hyperpage{109}
-    \subitem {SimpleNeuron}, \hyperpage{124}
-  \item {PredictBehavior}, \hyperpage{105}
-    \subitem {predict}, \hyperpage{106}
+    \subitem {PredictBehavior}, \hyperpage{111}
+    \subitem {RBFbehavior}, \hyperpage{114}
+  \item {PredictBehavior}, \hyperpage{110}
+    \subitem {predict}, \hyperpage{111}
   \item {PredictBehaviorRef}
-    \subitem {AMORE.h}, \hyperpage{129}
+    \subitem {AMORE.h}, \hyperpage{143}
   \item {push\_\discretionary {-}{}{}back}
     \subitem {Container}, \hyperpage{64, 65}
-    \subitem {SimpleContainer}, \hyperpage{115}
+    \subitem {SimpleContainer}, \hyperpage{122}
 
   \indexspace
 
-  \item {RBFbehavior}, \hyperpage{106}
-    \subitem {d\_\discretionary {-}{}{}accumulator}, \hyperpage{109}
-    \subitem {d\_\discretionary {-}{}{}altitude}, \hyperpage{109}
-    \subitem {d\_\discretionary {-}{}{}nCons}, \hyperpage{109}
-    \subitem {d\_\discretionary {-}{}{}output}, \hyperpage{109}
-    \subitem {d\_\discretionary {-}{}{}width}, \hyperpage{109}
-    \subitem {predict}, \hyperpage{109}
-  \item {RBFneuralNet}, \hyperpage{110}
+  \item {RBFbehavior}, \hyperpage{111}
+    \subitem {d\_\discretionary {-}{}{}accumulator}, \hyperpage{114}
+    \subitem {d\_\discretionary {-}{}{}altitude}, \hyperpage{114}
+    \subitem {d\_\discretionary {-}{}{}nCons}, \hyperpage{114}
+    \subitem {d\_\discretionary {-}{}{}output}, \hyperpage{114}
+    \subitem {d\_\discretionary {-}{}{}width}, \hyperpage{114}
+    \subitem {predict}, \hyperpage{114}
+  \item {RBFfactory}, \hyperpage{115}
+    \subitem {makeCon}, \hyperpage{116}
+    \subitem {makeNeuron}, \hyperpage{116}
+    \subitem {RBFfactory}, \hyperpage{116}
+  \item {RBFneuralNet}, \hyperpage{117}
   \item {reserve}
     \subitem {Container}, \hyperpage{66}
-    \subitem {SimpleContainer}, \hyperpage{116}
+    \subitem {SimpleContainer}, \hyperpage{123}
   \item {resize}
     \subitem {Container}, \hyperpage{67}
 
@@ -433,99 +459,93 @@
   \item {setFrom}
     \subitem {Con}, \hyperpage{33}
     \subitem {ConContainer}, \hyperpage{48}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {NeuronContainer}, \hyperpage{104}
+    \subitem {Neuron}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{109}
   \item {setId}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {NeuronContainer}, \hyperpage{104}
-    \subitem {SimpleNeuron}, \hyperpage{124}
+    \subitem {Neuron}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{109}
+    \subitem {SimpleNeuron}, \hyperpage{136}
   \item {setNeuron}
-    \subitem {Con}, \hyperpage{33}
-  \item {setPredictBehavior}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {SimpleNeuron}, \hyperpage{124}
-  \item {setTrainingBehavior}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {SimpleNeuron}, \hyperpage{125}
-  \item {setWeight}
     \subitem {Con}, \hyperpage{34}
-    \subitem {ConContainer}, \hyperpage{50, 51}
-    \subitem {Neuron}, \hyperpage{96}
-    \subitem {NeuronContainer}, \hyperpage{104}
-  \item {show}
+  \item {setWeight}
     \subitem {Con}, \hyperpage{34, 35}
+    \subitem {ConContainer}, \hyperpage{50, 51}
+    \subitem {Neuron}, \hyperpage{101}
+    \subitem {NeuronContainer}, \hyperpage{109}
+  \item {show}
+    \subitem {Con}, \hyperpage{35}
     \subitem {Container}, \hyperpage{67}
-    \subitem {Neuron}, \hyperpage{96, 97}
-    \subitem {SimpleContainer}, \hyperpage{116}
-    \subitem {SimpleNeuron}, \hyperpage{125}
-  \item {SimpleContainer}, \hyperpage{111}
-    \subitem {$\sim $SimpleContainer}, \hyperpage{114}
-    \subitem {clear}, \hyperpage{114}
-    \subitem {createIterator}, \hyperpage{115}
-    \subitem {d\_\discretionary {-}{}{}collection}, \hyperpage{117}
-    \subitem {empty}, \hyperpage{115}
-    \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{115}
-    \subitem {reserve}, \hyperpage{116}
-    \subitem {show}, \hyperpage{116}
-    \subitem {SimpleContainer}, \hyperpage{114}
-    \subitem {SimpleContainerIterator$<$ T $>$}, \hyperpage{117}
-    \subitem {size}, \hyperpage{117}
-    \subitem {validate}, \hyperpage{117}
+    \subitem {Neuron}, \hyperpage{101, 102}
+    \subitem {SimpleContainer}, \hyperpage{123}
+    \subitem {SimpleNeuron}, \hyperpage{136}
+  \item {SimpleContainer}, \hyperpage{118}
+    \subitem {$\sim $SimpleContainer}, \hyperpage{121}
+    \subitem {clear}, \hyperpage{121}
+    \subitem {createIterator}, \hyperpage{122}
+    \subitem {d\_\discretionary {-}{}{}collection}, \hyperpage{124}
+    \subitem {empty}, \hyperpage{122}
+    \subitem {push\_\discretionary {-}{}{}back}, \hyperpage{122}
+    \subitem {reserve}, \hyperpage{123}
+    \subitem {show}, \hyperpage{123}
+    \subitem {SimpleContainer}, \hyperpage{121}
+    \subitem {SimpleContainerIterator$<$ T $>$}, \hyperpage{124}
+    \subitem {size}, \hyperpage{124}
+    \subitem {validate}, \hyperpage{124}
   \item {SimpleContainer$<$ T $>$}
-    \subitem {SimpleContainerIterator}, \hyperpage{121}
-  \item {SimpleContainerIterator}, \hyperpage{118}
-    \subitem {$\sim $SimpleContainerIterator}, \hyperpage{120}
-    \subitem {currentItem}, \hyperpage{120}
-    \subitem {d\_\discretionary {-}{}{}container}, \hyperpage{121}
-    \subitem {d\_\discretionary {-}{}{}iterator}, \hyperpage{121}
-    \subitem {first}, \hyperpage{120}
-    \subitem {isDone}, \hyperpage{120}
-    \subitem {next}, \hyperpage{120}
-    \subitem {SimpleContainer$<$ T $>$}, \hyperpage{121}
-    \subitem {SimpleContainerIterator}, \hyperpage{120}
+    \subitem {SimpleContainerIterator}, \hyperpage{128}
+  \item {SimpleContainerIterator}, \hyperpage{125}
+    \subitem {$\sim $SimpleContainerIterator}, \hyperpage{127}
+    \subitem {currentItem}, \hyperpage{127}
+    \subitem {d\_\discretionary {-}{}{}container}, \hyperpage{128}
+    \subitem {d\_\discretionary {-}{}{}iterator}, \hyperpage{128}
+    \subitem {first}, \hyperpage{127}
+    \subitem {isDone}, \hyperpage{127}
+    \subitem {next}, \hyperpage{127}
+    \subitem {SimpleContainer$<$ T $>$}, \hyperpage{128}
+    \subitem {SimpleContainerIterator}, \hyperpage{127}
   \item {SimpleContainerIterator$<$ T $>$}
-    \subitem {SimpleContainer}, \hyperpage{117}
-  \item {SimpleNeuron}, \hyperpage{121}
-    \subitem {adjustParameters}, \hyperpage{124}
-    \subitem {d\_\discretionary {-}{}{}Id}, \hyperpage{125}
-    \subitem {getId}, \hyperpage{124}
-    \subitem {predict}, \hyperpage{124}
-    \subitem {setId}, \hyperpage{124}
-    \subitem {setPredictBehavior}, \hyperpage{124}
-    \subitem {setTrainingBehavior}, \hyperpage{125}
-    \subitem {show}, \hyperpage{125}
-    \subitem {SimpleNeuron}, \hyperpage{124}
-    \subitem {validate}, \hyperpage{125}
+    \subitem {SimpleContainer}, \hyperpage{124}
+  \item {SimpleNeuralCreator}, \hyperpage{128}
+    \subitem {createCon}, \hyperpage{131}
+    \subitem {createNeuron}, \hyperpage{131}
+    \subitem {SimpleNeuralCreator}, \hyperpage{130}
+  \item {SimpleNeuron}, \hyperpage{132}
+    \subitem {d\_\discretionary {-}{}{}Id}, \hyperpage{138}
+    \subitem {getId}, \hyperpage{135}
+    \subitem {setId}, \hyperpage{136}
+    \subitem {show}, \hyperpage{136}
+    \subitem {SimpleNeuron}, \hyperpage{135}
+    \subitem {validate}, \hyperpage{137}
   \item {size}
     \subitem {Container}, \hyperpage{68}
-    \subitem {SimpleContainer}, \hyperpage{117}
+    \subitem {SimpleContainer}, \hyperpage{124}
   \item {size\_\discretionary {-}{}{}type}
-    \subitem {AMORE.h}, \hyperpage{128}
+    \subitem {AMORE.h}, \hyperpage{142}
   \item {store}
     \subitem {Container}, \hyperpage{69}
 
   \indexspace
 
   \item {train}
-    \subitem {NeuralNet}, \hyperpage{91}
-  \item {TrainingBehavior}, \hyperpage{125}
-    \subitem {adjustParameters}, \hyperpage{126}
+    \subitem {NeuralNet}, \hyperpage{96}
+  \item {TrainingBehavior}, \hyperpage{138}
+    \subitem {adjustParameters}, \hyperpage{139}
   \item {TrainingBehaviorRef}
-    \subitem {AMORE.h}, \hyperpage{129}
+    \subitem {AMORE.h}, \hyperpage{143}
 
   \indexspace
 
   \item {validate}
-    \subitem {Con}, \hyperpage{35, 36}
+    \subitem {Con}, \hyperpage{36}
     \subitem {ConContainer}, \hyperpage{53}
     \subitem {Container}, \hyperpage{69}
-    \subitem {Neuron}, \hyperpage{97}
-    \subitem {SimpleContainer}, \hyperpage{117}
-    \subitem {SimpleNeuron}, \hyperpage{125}
+    \subitem {Neuron}, \hyperpage{102}
+    \subitem {SimpleContainer}, \hyperpage{124}
+    \subitem {SimpleNeuron}, \hyperpage{137}
   \item {value\_\discretionary {-}{}{}type}
     \subitem {ConContainer}, \hyperpage{41}
     \subitem {Container}, \hyperpage{58}
-    \subitem {NeuronContainer}, \hyperpage{102}
+    \subitem {NeuronContainer}, \hyperpage{107}
 
   \indexspace
 

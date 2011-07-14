@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: pkg/AMORE/src/Neuron.cpp Source File</title>
+<title>AMORE++: pkg/AMORE/src/old/Neuron.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">pkg/AMORE/src/Neuron.cpp</div>  </div>
+<div class="title">pkg/AMORE/src/old/Neuron.cpp</div>  </div>
 </div>
 <div class="contents">
 <a href="_neuron_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -88,94 +88,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="dia_2_neuron_8h.html">dia/Neuron.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;Neuron.h&quot;</span>
 <a name="l00009"></a>00009 
 <a name="l00010"></a><a class="code" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">00010</a> <a class="code" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron::Neuron</a>() :
-<a name="l00011"></a>00011   d_Id(NA_INTEGER) <span class="comment">//, nCons()</span>
+<a name="l00011"></a>00011   Id(NA_INTEGER), con()
 <a name="l00012"></a>00012 {
 <a name="l00013"></a>00013 }
 <a name="l00014"></a>00014 
 <a name="l00015"></a><a class="code" href="class_neuron.html#a05698a11ac18b6cee34d18f63681ddcc">00015</a> <a class="code" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron::Neuron</a>(<span class="keywordtype">int</span> Id) :
-<a name="l00016"></a>00016   d_Id(Id)<span class="comment">//, nCons()</span>
+<a name="l00016"></a>00016   Id(Id), con()
 <a name="l00017"></a>00017 {
 <a name="l00018"></a>00018 }
 <a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="preprocessor">#if 0</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><a class="code" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron::Neuron</a>(<span class="keywordtype">int</span> Id, <a class="code" href="class_container.html" title="class Container -">Container&lt;Con&gt;::const_iterator</a> firstCon, <a class="code" href="class_container.html" title="class Container -">Container&lt;Con&gt;::const_iterator</a> lastCon ) :
-<a name="l00022"></a>00022   d_Id(Id)<span class="comment">//, nCons()</span>
-<a name="l00023"></a>00023 {
+<a name="l00020"></a>00020 <span class="comment">//Neuron::Neuron(int Id, ConContainer con) :</span>
+<a name="l00021"></a>00021 <span class="comment">//  Id(Id), con(con), outputValue(0.0)</span>
+<a name="l00022"></a>00022 <span class="comment">//{</span>
+<a name="l00023"></a>00023 <span class="comment">//}</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="comment">//  nCons.insert(nCons.begin(), firstCon, lastCon);</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 }
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#endif</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00031"></a>00031 <span class="keywordtype">int</span>
-<a name="l00032"></a>00032 <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Neuron::Id</a>()
+<a name="l00025"></a>00025 <span class="keywordtype">int</span>
+<a name="l00026"></a><a class="code" href="class_neuron.html#a33467fa5a6ed662976ac8c745acfb275">00026</a> <a class="code" href="class_neuron.html#a33467fa5a6ed662976ac8c745acfb275">Neuron::getId</a>()
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>;
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keywordtype">void</span>
+<a name="l00032"></a><a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">00032</a> <a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">Neuron::setId</a>(<span class="keywordtype">int</span> value)
 <a name="l00033"></a>00033 {
-<a name="l00034"></a>00034   <span class="keywordflow">return</span> d_Id;
+<a name="l00034"></a>00034   <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a> = value;
 <a name="l00035"></a>00035 }
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#if 0</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="keywordtype">void</span> Neuron::iterators(<a class="code" href="class_container.html" title="class Container -">Container&lt;Con&gt;::iterator</a> &amp; first, <a class="code" href="class_container.html" title="class Container -">Container&lt;Con&gt;::iterator</a> &amp; last)
-<a name="l00039"></a>00039 {
-<a name="l00040"></a>00040    first=nCons.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>();
-<a name="l00041"></a>00041     last=nCons.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>();
-<a name="l00042"></a>00042 }
-<a name="l00043"></a>00043 
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="comment">//void</span>
+<a name="l00039"></a>00039 <span class="comment">//Neuron::iterators(Container&lt;Con&gt;::iterator &amp; first, Container&lt;Con&gt;::iterator &amp; last)</span>
+<a name="l00040"></a>00040 <span class="comment">//{</span>
+<a name="l00041"></a>00041 <span class="comment">//   first=con.begin();</span>
+<a name="l00042"></a>00042 <span class="comment">//    last=con.end();</span>
+<a name="l00043"></a>00043 <span class="comment">//}</span>
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="comment">// void Neuron::const_iterators(Container&lt;Con&gt;::const_iterator &amp; first, Container&lt;Con&gt;::const_iterator &amp; last)</span>
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047    first=nCons.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>();
-<a name="l00048"></a>00048     last=nCons.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>();
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="preprocessor">#endif</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a>00053 <span class="keywordtype">void</span>
-<a name="l00054"></a><a class="code" href="class_neuron.html#a8eefdb3d7b0cf6c42d79ed83d94a7c3c">00054</a> <a class="code" href="class_neuron.html#a8eefdb3d7b0cf6c42d79ed83d94a7c3c">Neuron::show</a>()
-<a name="l00055"></a>00055 {
-<a name="l00056"></a>00056   <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>();
-<a name="l00057"></a>00057   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
-<a name="l00058"></a>00058   <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == NA_INTEGER)
-<a name="l00059"></a>00059     {
-<a name="l00060"></a>00060       Rprintf(<span class="stringliteral">&quot;\n Id: NA, Invalid neuron Id&quot;</span>);
-<a name="l00061"></a>00061     }
-<a name="l00062"></a>00062   <span class="keywordflow">else</span>
-<a name="l00063"></a>00063     {
-<a name="l00064"></a>00064       Rprintf(<span class="stringliteral">&quot;\n Id: %d&quot;</span>, <span class="keywordtype">id</span>);
-<a name="l00065"></a>00065     }
-<a name="l00066"></a>00066   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
-<a name="l00067"></a>00067 <span class="preprocessor">#if 0</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>
-<a name="l00069"></a>00069   <span class="keywordflow">if</span> (nCons.size() == 0)
-<a name="l00070"></a>00070     {
-<a name="l00071"></a>00071       Rprintf(<span class="stringliteral">&quot;\n No connections defined&quot;</span>);
-<a name="l00072"></a>00072     }
-<a name="l00073"></a>00073   <span class="keywordflow">else</span>
-<a name="l00074"></a>00074     {
-<a name="l00075"></a>00075       nCons.show();
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
-<a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>}
+<a name="l00045"></a>00045 <span class="keywordtype">bool</span>
+<a name="l00046"></a><a class="code" href="class_neuron.html#ac00de42d7b409ebe14fb9c67cb38a326">00046</a> <a class="code" href="class_neuron.html#ac00de42d7b409ebe14fb9c67cb38a326">Neuron::show</a>()
+<a name="l00047"></a>00047 {
+<a name="l00048"></a>00048   <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="class_neuron.html#a33467fa5a6ed662976ac8c745acfb275">getId</a>();
+<a name="l00049"></a>00049   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+<a name="l00050"></a>00050   <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == NA_INTEGER)
+<a name="l00051"></a>00051     {
+<a name="l00052"></a>00052       Rprintf(<span class="stringliteral">&quot;\n Id: NA, Invalid neuron Id&quot;</span>);
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054   <span class="keywordflow">else</span>
+<a name="l00055"></a>00055     {
+<a name="l00056"></a>00056       Rprintf(<span class="stringliteral">&quot;\n Id: %d&quot;</span>, <span class="keywordtype">id</span>);
+<a name="l00057"></a>00057     }
+<a name="l00058"></a>00058   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+<a name="l00059"></a>00059   <span class="keywordflow">if</span> (nCons.size() == 0)
+<a name="l00060"></a>00060     {
+<a name="l00061"></a>00061       Rprintf(<span class="stringliteral">&quot;\n No connections defined&quot;</span>);
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063   <span class="keywordflow">else</span>
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065       nCons.show();
+<a name="l00066"></a>00066     }
+<a name="l00067"></a>00067   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
+<a name="l00068"></a>00068   <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="keywordtype">bool</span>
+<a name="l00073"></a><a class="code" href="class_neuron.html#a2953fb8e98aea1c74c4f796412644e11">00073</a> <a class="code" href="class_neuron.html#a2953fb8e98aea1c74c4f796412644e11">Neuron::validate</a>()
+<a name="l00074"></a>00074 {
+<a name="l00075"></a>00075   BEGIN_RCPP
+<a name="l00076"></a>00076   <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#a33467fa5a6ed662976ac8c745acfb275">getId</a>() == NA_INTEGER ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ Neuron::validate]: Error, Id is NA.&quot;</span>);
+<a name="l00077"></a>00077   nCons.validate();
+<a name="l00078"></a>00078   <span class="keywordflow">return</span> (TRUE);
+<a name="l00079"></a>00079 END_RCPP}
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keywordtype">bool</span>
-<a name="l00082"></a><a class="code" href="class_neuron.html#a2953fb8e98aea1c74c4f796412644e11">00082</a> <a class="code" href="class_neuron.html#a2953fb8e98aea1c74c4f796412644e11">Neuron::validate</a>()
-<a name="l00083"></a>00083 {
-<a name="l00084"></a>00084   BEGIN_RCPP
-<a name="l00085"></a>00085   <span class="keywordflow">if</span> (<a class="code" href="class_neuron.html#a72bb327a7c5c865e6748a4e074ce0680" title="An integer variable with the Neuron Id.">Id</a>() == NA_INTEGER ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ Neuron::validate]: Error, Id is NA.&quot;</span>);
-<a name="l00086"></a>00086  <span class="comment">// nCons.validate();</span>
-<a name="l00087"></a>00087   <span class="keywordflow">return</span> (TRUE);
-<a name="l00088"></a>00088 END_RCPP}
-<a name="l00089"></a>00089 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_neuron_8cpp.html">Neuron.cpp</a>      </li>
-      <li class="footer">Generated on Wed Jul 13 2011 23:19:04 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 14 2011 19:12:28 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -18,7 +18,7 @@ Inheritance diagram for Neuron:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{class_neuron__inherit__graph}
+\includegraphics[width=265pt]{class_neuron__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -38,15 +38,7 @@ virtual \hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hy
 \item 
 virtual void \hyperlink{class_neuron_ae58936b5582b9da04596a9c29fbace98}{setId} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{Id})=0
 \item 
-virtual void \hyperlink{class_neuron_a9156cdf9561b7d69fc49d1c1733e078b}{setPredictBehavior} (\hyperlink{class_predict_behavior}{PredictBehavior} \&predictBehavior)=0
-\item 
-virtual void \hyperlink{class_neuron_a536c2a29eba7649db1b3f872017a550c}{setTrainingBehavior} (\hyperlink{class_training_behavior}{TrainingBehavior} \&trainingBehavior)=0
-\item 
-virtual void \hyperlink{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{predict} ()=0
-\item 
-virtual void \hyperlink{class_neuron_acd0bd3149386b9448e85c698f1847366}{adjustParameters} ()=0
-\item 
-virtual void \hyperlink{class_neuron_a8eefdb3d7b0cf6c42d79ed83d94a7c3c}{show} ()()=0
+virtual void \hyperlink{class_neuron_ac00de42d7b409ebe14fb9c67cb38a326}{show} ()=0
 \item 
 virtual bool \hyperlink{class_neuron_a2953fb8e98aea1c74c4f796412644e11}{validate} ()=0
 \item 
@@ -75,13 +67,6 @@ int \hyperlink{class_neuron_ae447dce39ed04581609a83d742b585d1}{numOfCons} ()
 bool \hyperlink{class_neuron_a255c3597520c730d798218f7174eff1b}{show} ()
 \item 
 bool \hyperlink{class_neuron_a95327aa80a9ec949491f214a0c159b5a}{validate} ()
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}{PredictBehaviorRef} \hyperlink{class_neuron_a6bdb3e83c3b897560dcd84a3ca0f0eb9}{d\_\-predictBehavior}
-\item 
-\hyperlink{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}{TrainingBehaviorRef} \hyperlink{class_neuron_a0580299ae79817ffe24f5d0f9bd26a68}{d\_\-trainingBehavior}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -122,7 +107,7 @@ Definition at line 10 of file Neuron.cpp.
 
 \begin{DoxyCode}
                :
-  d_Id(NA_INTEGER) //, nCons()
+  Id(NA_INTEGER), con()
 {
 }
 \end{DoxyCode}
@@ -142,7 +127,7 @@ Definition at line 15 of file Neuron.cpp.
 
 \begin{DoxyCode}
                      :
-  d_Id(Id)//, nCons()
+  Id(Id), con()
 {
 }
 \end{DoxyCode}
@@ -168,19 +153,6 @@ Definition at line 15 of file Neuron.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_neuron_acd0bd3149386b9448e85c698f1847366}{
-\index{Neuron@{Neuron}!adjustParameters@{adjustParameters}}
-\index{adjustParameters@{adjustParameters}!Neuron@{Neuron}}
-\subsubsection[{adjustParameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::adjustParameters (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_acd0bd3149386b9448e85c698f1847366}
-
-
-Implemented in \hyperlink{class_simple_neuron_ac2dfa64ef339acc860102e864c60d433}{SimpleNeuron}.
-
 \hypertarget{class_neuron_acb4a225069611af4aa1723170e196e82}{
 \index{Neuron@{Neuron}!getConId@{getConId}}
 \index{getConId@{getConId}!Neuron@{Neuron}}
@@ -225,11 +197,27 @@ Definition at line 26 of file Neuron.cpp.
 References Id.
 
 
+
+Referenced by show(), and validate().
+
+
 \begin{DoxyCode}
 {
   return Id;
 }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_neuron_a33467fa5a6ed662976ac8c745acfb275_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_neuron_a8c0ab449acb35177af8d89651e49f357}{
 \index{Neuron@{Neuron}!getWeight@{getWeight}}
 \index{getWeight@{getWeight}!Neuron@{Neuron}}
@@ -248,19 +236,6 @@ References Id.
 \end{DoxyParamCaption}
 )}}
 \label{class_neuron_ae447dce39ed04581609a83d742b585d1}
-\hypertarget{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{
-\index{Neuron@{Neuron}!predict@{predict}}
-\index{predict@{predict}!Neuron@{Neuron}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}
-
-
-Implemented in \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{SimpleNeuron}.
-
 \hypertarget{class_neuron_ac8129f5de3ec1c143f40d507b6843649}{
 \index{Neuron@{Neuron}!setFrom@{setFrom}}
 \index{setFrom@{setFrom}!Neuron@{Neuron}}
@@ -270,19 +245,6 @@ Implemented in \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}
 \end{DoxyParamCaption}
 )}}
 \label{class_neuron_ac8129f5de3ec1c143f40d507b6843649}
-\hypertarget{class_neuron_aa93290c13b40c5b07d92f272a0a2ce63}{
-\index{Neuron@{Neuron}!setId@{setId}}
-\index{setId@{setId}!Neuron@{Neuron}}
-\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron::setId (
-\begin{DoxyParamCaption}
-\item[{int}]{value}
-\end{DoxyParamCaption}
-)}}
-\label{class_neuron_aa93290c13b40c5b07d92f272a0a2ce63}
-
-
-Reimplemented in \hyperlink{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{SimpleNeuron}.
-
 \hypertarget{class_neuron_ae58936b5582b9da04596a9c29fbace98}{
 \index{Neuron@{Neuron}!setId@{setId}}
 \index{setId@{setId}!Neuron@{Neuron}}
@@ -310,31 +272,18 @@ References Id.
   Id = value;
 }
 \end{DoxyCode}
-\hypertarget{class_neuron_a9156cdf9561b7d69fc49d1c1733e078b}{
-\index{Neuron@{Neuron}!setPredictBehavior@{setPredictBehavior}}
-\index{setPredictBehavior@{setPredictBehavior}!Neuron@{Neuron}}
-\subsubsection[{setPredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::setPredictBehavior (
+\hypertarget{class_neuron_aa93290c13b40c5b07d92f272a0a2ce63}{
+\index{Neuron@{Neuron}!setId@{setId}}
+\index{setId@{setId}!Neuron@{Neuron}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}void Neuron::setId (
 \begin{DoxyParamCaption}
-\item[{{\bf PredictBehavior} \&}]{predictBehavior}
+\item[{int}]{value}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a9156cdf9561b7d69fc49d1c1733e078b}
+)}}
+\label{class_neuron_aa93290c13b40c5b07d92f272a0a2ce63}
 
 
-Implemented in \hyperlink{class_simple_neuron_a8c39b00a2f52ec952ee32c71000de7cb}{SimpleNeuron}.
-
-\hypertarget{class_neuron_a536c2a29eba7649db1b3f872017a550c}{
-\index{Neuron@{Neuron}!setTrainingBehavior@{setTrainingBehavior}}
-\index{setTrainingBehavior@{setTrainingBehavior}!Neuron@{Neuron}}
-\subsubsection[{setTrainingBehavior}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::setTrainingBehavior (
-\begin{DoxyParamCaption}
-\item[{{\bf TrainingBehavior} \&}]{trainingBehavior}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a536c2a29eba7649db1b3f872017a550c}
-
-
-Implemented in \hyperlink{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}{SimpleNeuron}.
+Reimplemented in \hyperlink{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{SimpleNeuron}.
 
 \hypertarget{class_neuron_a93b27c179c576758ff437b9273b95041}{
 \index{Neuron@{Neuron}!setWeight@{setWeight}}
@@ -345,7 +294,7 @@ Implemented in \hyperlink{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}
 \end{DoxyParamCaption}
 )}}
 \label{class_neuron_a93b27c179c576758ff437b9273b95041}
-\hypertarget{class_neuron_a8eefdb3d7b0cf6c42d79ed83d94a7c3c}{
+\hypertarget{class_neuron_ac00de42d7b409ebe14fb9c67cb38a326}{
 \index{Neuron@{Neuron}!show@{show}}
 \index{show@{show}!Neuron@{Neuron}}
 \subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}bool Neuron::show (
@@ -353,23 +302,23 @@ Implemented in \hyperlink{class_simple_neuron_a00e47ccebbc56c146aef75b5d29a192a}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a8eefdb3d7b0cf6c42d79ed83d94a7c3c}
+\label{class_neuron_ac00de42d7b409ebe14fb9c67cb38a326}
 
 
 Implemented in \hyperlink{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{SimpleNeuron}.
 
 
 
-Definition at line 54 of file Neuron.cpp.
+Definition at line 46 of file Neuron.cpp.
 
 
 
-References Id.
+References getId().
 
 
 \begin{DoxyCode}
 {
-  int id = Id();
+  int id = getId();
   Rprintf("\n------------------------\n");
   if (id == NA_INTEGER)
     {
@@ -380,8 +329,6 @@ References Id.
       Rprintf("\n Id: %d", id);
     }
   Rprintf("\n------------------------\n");
-#if 0
-
   if (nCons.size() == 0)
     {
       Rprintf("\n No connections defined");
@@ -391,9 +338,22 @@ References Id.
       nCons.show();
     }
   Rprintf("\n------------------------\n");
-#endif
+  return true;
+
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_neuron_ac00de42d7b409ebe14fb9c67cb38a326_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_neuron_a255c3597520c730d798218f7174eff1b}{
 \index{Neuron@{Neuron}!show@{show}}
 \index{show@{show}!Neuron@{Neuron}}
@@ -422,22 +382,34 @@ Implemented in \hyperlink{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}
 
 
 
-Definition at line 82 of file Neuron.cpp.
+Definition at line 73 of file Neuron.cpp.
 
 
 
-References Id.
+References getId().
 
 
 \begin{DoxyCode}
 {
   BEGIN_RCPP
-  if (Id() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Error,
-       Id is NA.");
- // nCons.validate();
+  if (getId() == NA_INTEGER ) throw std::range_error("[C++ Neuron::validate]: Err
+      or, Id is NA.");
+  nCons.validate();
   return (TRUE);
 END_RCPP}
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_neuron_a2953fb8e98aea1c74c4f796412644e11_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_neuron_a95327aa80a9ec949491f214a0c159b5a}{
 \index{Neuron@{Neuron}!validate@{validate}}
 \index{validate@{validate}!Neuron@{Neuron}}
@@ -467,24 +439,6 @@ A vector of input connections.
 
 Definition at line 29 of file Neuron.h.
 
-\hypertarget{class_neuron_a6bdb3e83c3b897560dcd84a3ca0f0eb9}{
-\index{Neuron@{Neuron}!d\_\-predictBehavior@{d\_\-predictBehavior}}
-\index{d\_\-predictBehavior@{d\_\-predictBehavior}!Neuron@{Neuron}}
-\subsubsection[{d\_\-predictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PredictBehaviorRef} {\bf Neuron::d\_\-predictBehavior}}}
-\label{class_neuron_a6bdb3e83c3b897560dcd84a3ca0f0eb9}
-
-
-Definition at line 6 of file Neuron.h.
-
-\hypertarget{class_neuron_a0580299ae79817ffe24f5d0f9bd26a68}{
-\index{Neuron@{Neuron}!d\_\-trainingBehavior@{d\_\-trainingBehavior}}
-\index{d\_\-trainingBehavior@{d\_\-trainingBehavior}!Neuron@{Neuron}}
-\subsubsection[{d\_\-trainingBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TrainingBehaviorRef} {\bf Neuron::d\_\-trainingBehavior}}}
-\label{class_neuron_a0580299ae79817ffe24f5d0f9bd26a68}
-
-
-Definition at line 7 of file Neuron.h.
-
 \hypertarget{class_neuron_a72bb327a7c5c865e6748a4e074ce0680}{
 \index{Neuron@{Neuron}!Id@{Id}}
 \index{Id@{Id}!Neuron@{Neuron}}
@@ -500,7 +454,7 @@ Definition at line 22 of file Neuron.h.
 
 
 
-Referenced by getId(), setId(), show(), and validate().
+Referenced by getId(), SimpleNeuron::setId(), and setId().
 
 \hypertarget{class_neuron_ada029047646c36e525a6a1b77cafc03c}{
 \index{Neuron@{Neuron}!outputValue@{outputValue}}
@@ -517,5 +471,4 @@ The documentation for this class was generated from the following files:\begin{D
 \item 
 pkg/AMORE/src/dia/\hyperlink{dia_2_neuron_8h}{Neuron.h}\item 
 pkg/AMORE/src/old/\hyperlink{old_2_neuron_8h}{Neuron.h}\item 
-pkg/AMORE/src/\hyperlink{_neuron_8cpp}{Neuron.cpp}\item 
-pkg/AMORE/src/old/\hyperlink{old_2_neuron_8cpp}{Neuron.cpp}\end{DoxyCompactItemize}
+pkg/AMORE/src/old/\hyperlink{_neuron_8cpp}{Neuron.cpp}\end{DoxyCompactItemize}

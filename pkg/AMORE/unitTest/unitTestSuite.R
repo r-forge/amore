@@ -33,7 +33,7 @@ testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 )
 
 testResult <- runTestSuite(list( 
-				testsuite.AMORErefClasses
+				testsuite.AMORErefClasses,
  				testsuite.AMORECppClasses
 					
 								))
