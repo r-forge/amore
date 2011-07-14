@@ -1,1 +1,0 @@
-class MLPneuron : public Neuron {  int bias;};
