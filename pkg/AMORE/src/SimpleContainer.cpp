@@ -14,13 +14,17 @@ template<typename T>
   }
 
 template<typename T>
+  SimpleContainer<T>::~SimpleContainer()
+  {
+
+  }
+template<typename T>
   boost::shared_ptr<Iterator<T> >
   SimpleContainer<T>::createIterator()
   {
-    boost::shared_ptr < Iterator<T> > iteratorPtr(
-        new SimpleContainerIterator<T> ());
+    boost::shared_ptr < SimpleContainerIterator<T> > iteratorPtr(  new SimpleContainerIterator<T> ());
     iteratorPtr->d_container = this;
-    iteratorPtr->d_iterator = d_collection.begin();
+    iteratorPtr->d_current= 0;
     return iteratorPtr;
   }
 
@@ -59,6 +63,15 @@ template<typename T>
  *
  * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
+
+template<typename T>
+  T
+  SimpleContainer<T>::at(size_type element)
+  {
+  return d_collection.at(element);
+  }
+
+
 template<typename T>
   void
   SimpleContainer<T>::push_back(T const & reference)
@@ -113,13 +126,10 @@ template<typename T>
   void
   SimpleContainer<T>::show()
   {
-
-    for (typename std::vector<T>::iterator itr(d_collection.begin()); itr
-        != d_collection.end(); ++itr)
-      {
-        itr->show();
+      boost::shared_ptr< Iterator <T> >  itr = createIterator();
+      for ( itr->first(); !itr->isDone(); itr->next() ) {
+         itr->currentItem()->show();
       }
-
   }
 
 //! Object validator
@@ -131,12 +141,11 @@ template<typename T>
   bool
   SimpleContainer<T>::validate()
   {
-    for (typename std::vector<T>::iterator itr(d_collection.begin()); itr
-        != d_collection.end(); ++itr)
-      {
-        itr->validate();
-      }
-    return true;
+     boost::shared_ptr< Iterator <T> >  itr = createIterator();
+     for ( itr->first(); !itr->isDone(); itr->next() ) {
+        itr->currentItem()->validate();
+     }
+  return true;
   }
 ;
 
@@ -174,94 +183,3 @@ template<typename T>
   {
   d_collection.clear();
   }
-
-#if 0
-
-template<typename T>
-bool
-SimpleContainer<T>::buildAndAppend(std::vector<int>::iterator firstId,
-    std::vector<int>::iterator lastId, ConContainer_iterator firstCon,
-    ConContainer_iterator lastCon)
-
-  {
-    BEGIN_RCPP
-
-    bool emptyIdContainer = (firstId==lastId);
-    if (emptyIdContainer)
-      {
-        throw std::range_error(
-            "[NeuronContainer::BuildAndAppend]: Error, Id container is empty");
-      }
-
-    reserve(size() + (lastId - firstId));
-    NeuronPtr neuronPtr;
-    while (firstId != lastId)
-      {
-        neuronPtr.reset(new Neuron(*firstId, firstCon, lastCon));
-        push_back(neuronPtr);
-        ++firstId;
-      }
-    return true;
-    END_RCPP}
-
-template<typename T>
-bool
-SimpleContainer<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
-    NeuronContainer_iterator lastNeuron)
-
-  {
-    BEGIN_RCPP
-
-    bool emptyNeuronContainer = (firstNeuron==lastNeuron);
-    if (emptyNeuronContainer)
-      {
-        throw std::range_error(
-            "[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");
-      }
-
-    reserve(size() + (lastNeuron - firstNeuron));
-    ConPtr conPtr;
-    while (firstNeuron != lastNeuron)
-      {
-        conPtr.reset(new Con(*firstNeuron++, 0.0 ));
-        push_back(conPtr);
-      }
-    return true;
-    END_RCPP}
-
-template<typename T>
-bool
-SimpleContainer<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
-    NeuronContainer_iterator lastNeuron,
-    std::vector<double>::iterator firstWeight,
-    std::vector<double>::iterator lastWeight)
-
-  {
-    BEGIN_RCPP
-
-    bool emptyNeuronContainer = (firstNeuron==lastNeuron);
-    if (emptyNeuronContainer)
-      {
-        throw std::range_error(
-            "[ConContainer::BuildAndAppend]: Error, neuronContainer is empty");
-      }
-
-    bool differentSize = (lastNeuron - firstNeuron) != (lastWeight
-        - firstWeight);
-    if (differentSize)
-      {
-        throw std::range_error(
-            "[ConContainer::buildAndAppend]: Error, neuronContainer.size() != nWeights.size()");
-      }
-
-    reserve(size() + (lastNeuron - firstNeuron));
-    ConPtr ptCon;
-    while (firstNeuron != lastNeuron)
-      {
-        ptCon.reset(new Con(*firstNeuron++, *firstWeight++));
-        push_back(ptCon);
-      }
-    return true;
-    END_RCPP}
-
-#endif

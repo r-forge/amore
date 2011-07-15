@@ -9,8 +9,10 @@ test.Con.Cpp.Constructor_SingleArgument <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(1);
+			
 			Con con( *neuronPtr ); 
 			con.show();
 			con.validate();	
@@ -34,8 +36,10 @@ test.Con.Cpp.Constructor_FullArgumentList <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- " 
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(1);
+	
 			Con con( *neuronPtr , 4.5 );
 			con.show();
 			con.validate();	
@@ -57,10 +61,12 @@ test.Con.Cpp.getNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(12);
-			Con con( *neuronPtr );
-			return wrap(con.getNeuron().getId());
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr) ); 
+	
+			return wrap(conPtr->getNeuron().getId());
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
@@ -74,27 +80,27 @@ test.Con.Cpp.setNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronPtr neuronPtr1 ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr1( neuralFactoryPtr->makeNeuron() );
 			neuronPtr1->setId(12);
-			Con con( *neuronPtr1 );
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr1) ); 
 	
 			std::vector<double> result;
-			result.push_back(con.Id());
-			con.show();
-			NeuronPtr neuronPtr2 ( new SimpleNeuron() ) ;
+			result.push_back(conPtr->Id());
+			conPtr->show();
+			NeuronPtr neuronPtr2( neuralFactoryPtr->makeNeuron() );
 			neuronPtr2->setId(21);
-			con.setNeuron(*neuronPtr2);
-			con.show();
-			result.push_back(con.Id());  
+			conPtr->setNeuron(*neuronPtr2);
+			conPtr->show();
+			result.push_back(conPtr->Id());  
 			return wrap(result);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result, c(12,21)) 
-# From:	 12 	 Weight= 	 0.000000 
-# From:	 21 	 Weight= 	 0.000000 
-# [1] TRUE
-
+	# From:	 12 	 Weight= 	 0.000000 
+	# From:	 21 	 Weight= 	 0.000000 
+	# [1] TRUE
 }
 
 
@@ -103,10 +109,12 @@ test.Con.Cpp.Id <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(9);
-			Con con( *neuronPtr );  	// d_neuron points to neuron and weight is set to 0
-			return wrap(con.Id());
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr) ); 
+	
+			return wrap(conPtr->Id());
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
@@ -119,10 +127,12 @@ test.Con.Cpp.getWeight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(16);
-			Con con( *neuronPtr, 12.4);
-			return wrap(con.getWeight());
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
+	
+			return wrap(conPtr->getWeight());
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun()
@@ -135,13 +145,14 @@ test.Con.Cpp.setWeight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronPtr neuronPtr ( new SimpleNeuron() ) ;
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(16);
-			Con con( *neuronPtr, 12.4);
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
 			std::vector<double> result;
-			result.push_back(con.getWeight());
-			con.setWeight(2.2);
-			result.push_back(con.getWeight());
+			result.push_back(conPtr->getWeight());
+			conPtr->setWeight(2.2);
+			result.push_back(conPtr->getWeight());
 			return wrap(result);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -159,16 +170,19 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronPtr neuronPtr ( new Neuron(16) ) ;
-			Con con( *neuronPtr, 12.4 ); 
-			con.show();
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			neuronPtr->setId(16);
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
+	
+			conPtr->show();
 			return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkTrue(result)
-# From:	 16 	 Weight= 	 12.400000 
-# [1] TRUE
+	# From:	 16 	 Weight= 	 12.400000 
+	# [1] TRUE
 }
 
 ###############################################################################
@@ -176,9 +190,12 @@ test.Con.Cpp.validate_weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuronPtr  neuronPtr ( new Neuron(16) ) ;
-			Con con( *neuronPtr, 12.4/0.0 );  		
-			con.validate();
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			neuronPtr->setId(16);
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4/0.0) ); 
+		
+			conPtr->validate();
 			return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,
@@ -195,9 +212,12 @@ test.Con.Cpp.validate_from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuronPtr neuronPtr ( new Neuron(NA_INTEGER) ) ;
-			Con con( *neuronPtr, 12.4 ); 
-			con.validate();
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			neuronPtr->setId(NA_INTEGER);
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 2.7) ); 
+		
+			conPtr->validate();
 			return wrap(true);
 			'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode,

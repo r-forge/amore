@@ -18,7 +18,7 @@ Inheritance diagram for MLPfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{class_m_l_pfactory__inherit__graph}
+\includegraphics[width=214pt]{class_m_l_pfactory__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,17 +28,26 @@ Collaboration diagram for MLPfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{class_m_l_pfactory__coll__graph}
+\includegraphics[width=214pt]{class_m_l_pfactory__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_m_l_pfactory_a61dfce37d0344c58e275e8508b0a474c}{MLPfactory} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_m_l_pfactory_a3df7c74068372a88ec529d8844938d88}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron)
+\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_m_l_pfactory_a479b674ed4e63bb1178c091325c2cd61}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron)
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{makeNeuron} ()
+\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_m_l_pfactory_a18c3770c3cb2ed6c3cb402cb814b209c}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron, double weight)
+\item 
+\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} $>$ $\ast$ \hyperlink{class_m_l_pfactory_a62ea35a5b7ce5f139f91b2c3edd4ad61}{makeConContainer} ()
+\item 
+\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{makeNeuronContainer} ()
+\item 
+\hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b}{makeNeuron} ()
 \end{DoxyCompactItemize}
 
 
@@ -71,18 +80,18 @@ Definition at line 13 of file MLPfactory.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_m_l_pfactory_a3df7c74068372a88ec529d8844938d88}{
+\hypertarget{class_m_l_pfactory_a479b674ed4e63bb1178c091325c2cd61}{
 \index{MLPfactory@{MLPfactory}!makeCon@{makeCon}}
 \index{makeCon@{makeCon}!MLPfactory@{MLPfactory}}
-\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConPtr} MLPfactory::makeCon (
+\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con} $\ast$ MLPfactory::makeCon (
 \begin{DoxyParamCaption}
 \item[{{\bf Neuron} \&}]{neuron}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_m_l_pfactory_a3df7c74068372a88ec529d8844938d88}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a479b674ed4e63bb1178c091325c2cd61}
 
 
-Implements \hyperlink{class_neural_factory_a2e156aff271f0c6c134a8bad7d164f73}{NeuralFactory}.
+Implements \hyperlink{class_neural_factory_ad7dacdd1ed0994f4a55612bd2d45ada2}{NeuralFactory}.
 
 
 
@@ -91,32 +100,100 @@ Definition at line 19 of file MLPfactory.cpp.
 
 \begin{DoxyCode}
 {
-  ConPtr conPtr(new Con(neuron));
-  return conPtr;
+  return new Con(neuron);
 }
 \end{DoxyCode}
-\hypertarget{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{
-\index{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}}
-\index{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}}
-\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} MLPfactory::makeNeuron (
+\hypertarget{class_m_l_pfactory_a18c3770c3cb2ed6c3cb402cb814b209c}{
+\index{MLPfactory@{MLPfactory}!makeCon@{makeCon}}
+\index{makeCon@{makeCon}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con} $\ast$ MLPfactory::makeCon (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Neuron} \&}]{neuron, }
+\item[{double}]{weight}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a18c3770c3cb2ed6c3cb402cb814b209c}
 
 
-Implements \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{NeuralFactory}.
+Implements \hyperlink{class_neural_factory_a1f466a7f82020767cda89ae48a9852b7}{NeuralFactory}.
 
 
 
-Definition at line 26 of file MLPfactory.cpp.
+Definition at line 25 of file MLPfactory.cpp.
 
 
 \begin{DoxyCode}
 {
-  NeuronPtr neuronPtr(new SimpleNeuron());
-  return neuronPtr;
+  return new Con(neuron, weight);
+}
+\end{DoxyCode}
+\hypertarget{class_m_l_pfactory_a62ea35a5b7ce5f139f91b2c3edd4ad61}{
+\index{MLPfactory@{MLPfactory}!makeConContainer@{makeConContainer}}
+\index{makeConContainer@{makeConContainer}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeConContainer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Container}$<$ {\bf ConPtr} $>$ $\ast$ MLPfactory::makeConContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a62ea35a5b7ce5f139f91b2c3edd4ad61}
+
+
+Implements \hyperlink{class_neural_factory_a0446aa979904fc0c5f6cda9bf1044100}{NeuralFactory}.
+
+
+
+Definition at line 31 of file MLPfactory.cpp.
+
+
+\begin{DoxyCode}
+{
+  return new SimpleContainer<ConPtr> ;
+}
+\end{DoxyCode}
+\hypertarget{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b}{
+\index{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}}
+\index{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron} $\ast$ MLPfactory::makeNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b}
+
+
+Implements \hyperlink{class_neural_factory_a656b7663182769bcfd5ce5940e03b7cd}{NeuralFactory}.
+
+
+
+Definition at line 46 of file MLPfactory.cpp.
+
+
+\begin{DoxyCode}
+{
+  return new SimpleNeuron();
+}
+\end{DoxyCode}
+\hypertarget{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{
+\index{MLPfactory@{MLPfactory}!makeNeuronContainer@{makeNeuronContainer}}
+\index{makeNeuronContainer@{makeNeuronContainer}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeNeuronContainer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Container}$<$ {\bf NeuronPtr} $>$ $\ast$ MLPfactory::makeNeuronContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}
+
+
+Implements \hyperlink{class_neural_factory_a1f56d9485fe3669a79d5d5dc70be65af}{NeuralFactory}.
+
+
+
+Definition at line 38 of file MLPfactory.cpp.
+
+
+\begin{DoxyCode}
+{
+  return new SimpleContainer<NeuronPtr> ;
 }
 \end{DoxyCode}
 

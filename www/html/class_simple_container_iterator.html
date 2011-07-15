@@ -96,12 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for SimpleContainerIterator&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_container_iterator__inherit__graph.svg" width="211" height="376" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_simple_container_iterator__inherit__graph.svg" width="211" height="376" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SimpleContainerIterator&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_container_iterator__coll__graph.svg" width="211" height="376" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_simple_container_iterator__coll__graph.svg" width="211" height="376" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_simple_container_iterator-members.html">List of all members.</a></p>
@@ -119,7 +121,7 @@ Private Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html">Container</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container_iterator.html#a179c3b6ee590cd5476d6dee1c7b9a90e">d_container</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container_iterator.html#ad5523f803739cceb9f42701bca99aef5">d_iterator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container_iterator.html#af3eda3b215741021fb668d573cf344f3">SimpleContainer&lt; T &gt;</a></td></tr>
@@ -148,6 +150,10 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00004">4</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+  }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a4f1d34a0c187f4359885755372b6aa79"></a><!-- doxytag: member="SimpleContainerIterator::~SimpleContainerIterator" ref="a4f1d34a0c187f4359885755372b6aa79" args="()" -->
@@ -166,6 +172,10 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00009">9</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+  }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -187,6 +197,19 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="class_iterator.html#a1fce5bc9b2218407b5cedf2a0ba3131b">Iterator&lt; T &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00037">37</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordflow">if</span> (<a class="code" href="class_simple_container_iterator.html#a91352e803f39fb58d9312d9d866842c8">isDone</a>())
+      {
+         <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds&quot;</span>);
+      }
+    <span class="keywordflow">else</span>
+      {
+        <span class="keywordflow">return</span> <a class="code" href="class_simple_container_iterator.html#a179c3b6ee590cd5476d6dee1c7b9a90e">d_container</a>-&gt;at(<a class="code" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a>);
+      }
+
+  }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a71b26d5acddcab75ca0386c187fd2bbc"></a><!-- doxytag: member="SimpleContainerIterator::first" ref="a71b26d5acddcab75ca0386c187fd2bbc" args="()" -->
@@ -207,6 +230,11 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="class_iterator.html#a6f13cc79a1574086c63ce4ddba1d3d9f">Iterator&lt; T &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00015">15</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <a class="code" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a> = 0;
+  }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a91352e803f39fb58d9312d9d866842c8"></a><!-- doxytag: member="SimpleContainerIterator::isDone" ref="a91352e803f39fb58d9312d9d866842c8" args="()" -->
@@ -227,6 +255,12 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="class_iterator.html#a8e7b414c641f4f0838ff8bd6ba954b7a">Iterator&lt; T &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00029">29</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    <span class="keywordtype">bool</span> IteratorIsDone(<a class="code" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a> == <a class="code" href="class_simple_container_iterator.html#a179c3b6ee590cd5476d6dee1c7b9a90e">d_container</a>-&gt;size());
+    <span class="keywordflow">return</span> IteratorIsDone;
+  }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a11274af2bc4dc9930f983b7b246d8f87"></a><!-- doxytag: member="SimpleContainerIterator::next" ref="a11274af2bc4dc9930f983b7b246d8f87" args="()" -->
@@ -247,6 +281,11 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="class_iterator.html#a94a7b0c50676cd9ee924eddece41d8d4">Iterator&lt; T &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="_simple_container_iterator_8cpp_source.html#l00022">22</a> of file <a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">  {
+    ++<a class="code" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a>;
+  }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -285,14 +324,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad5523f803739cceb9f42701bca99aef5"></a><!-- doxytag: member="SimpleContainerIterator::d_iterator" ref="ad5523f803739cceb9f42701bca99aef5" args="" -->
+<a class="anchor" id="a0e03fa66760ef1cb70ed2a357299605f"></a><!-- doxytag: member="SimpleContainerIterator::d_current" ref="a0e03fa66760ef1cb70ed2a357299605f" args="" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;T&gt;::iterator <a class="el" href="class_simple_container_iterator.html">SimpleContainerIterator</a>&lt; T &gt;::<a class="el" href="class_simple_container_iterator.html#ad5523f803739cceb9f42701bca99aef5">d_iterator</a><code> [private]</code></td>
+          <td class="memname">size_type <a class="el" href="class_simple_container_iterator.html">SimpleContainerIterator</a>&lt; T &gt;::<a class="el" href="class_simple_container_iterator.html#a0e03fa66760ef1cb70ed2a357299605f">d_current</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -302,15 +341,16 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>pkg/AMORE/src/dia/<a class="el" href="_simple_container_iterator_8h_source.html">SimpleContainerIterator.h</a></li>
+<li>pkg/AMORE/src/<a class="el" href="_simple_container_iterator_8cpp_source.html">SimpleContainerIterator.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_simple_container_iterator.html">SimpleContainerIterator</a>      </li>
-      <li class="footer">Generated on Thu Jul 14 2011 19:12:31 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 15 2011 22:09:14 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

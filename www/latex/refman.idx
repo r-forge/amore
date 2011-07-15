@@ -24,454 +24,268 @@
 \indexentry{adjustParameters@{adjustParameters}!BATCHgdwm@{BATCHgdwm}|hyperpage}{24}
 \indexentry{BATCHgdwm@{BATCHgdwm}!outputDerivative@{outputDerivative}|hyperpage}{25}
 \indexentry{outputDerivative@{outputDerivative}!BATCHgdwm@{BATCHgdwm}|hyperpage}{25}
-\indexentry{CompareId@{CompareId}|hyperpage}{25}
-\indexentry{CompareId@{CompareId}!operator()@{operator()}|hyperpage}{25}
-\indexentry{operator()@{operator()}!CompareId@{CompareId}|hyperpage}{25}
-\indexentry{CompareId@{CompareId}!operator()@{operator()}|hyperpage}{25}
-\indexentry{operator()@{operator()}!CompareId@{CompareId}|hyperpage}{25}
-\indexentry{CompareId@{CompareId}!operator()@{operator()}|hyperpage}{25}
-\indexentry{operator()@{operator()}!CompareId@{CompareId}|hyperpage}{25}
-\indexentry{CompareId@{CompareId}!operator()@{operator()}|hyperpage}{26}
-\indexentry{operator()@{operator()}!CompareId@{CompareId}|hyperpage}{26}
-\indexentry{Con@{Con}|hyperpage}{26}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!Con@{Con}|hyperpage}{28}
-\indexentry{Con@{Con}!$\sim $Con@{$\sim $Con}|hyperpage}{29}
-\indexentry{$\sim $Con@{$\sim $Con}!Con@{Con}|hyperpage}{29}
-\indexentry{Con@{Con}!getFrom@{getFrom}|hyperpage}{29}
-\indexentry{getFrom@{getFrom}!Con@{Con}|hyperpage}{29}
-\indexentry{Con@{Con}!getId@{getId}|hyperpage}{30}
-\indexentry{getId@{getId}!Con@{Con}|hyperpage}{30}
-\indexentry{Con@{Con}!getNeuron@{getNeuron}|hyperpage}{30}
-\indexentry{getNeuron@{getNeuron}!Con@{Con}|hyperpage}{30}
-\indexentry{Con@{Con}!getWeight@{getWeight}|hyperpage}{31}
-\indexentry{getWeight@{getWeight}!Con@{Con}|hyperpage}{31}
-\indexentry{Con@{Con}!getWeight@{getWeight}|hyperpage}{32}
-\indexentry{getWeight@{getWeight}!Con@{Con}|hyperpage}{32}
-\indexentry{Con@{Con}!Id@{Id}|hyperpage}{32}
-\indexentry{Id@{Id}!Con@{Con}|hyperpage}{32}
-\indexentry{Con@{Con}!setFrom@{setFrom}|hyperpage}{33}
-\indexentry{setFrom@{setFrom}!Con@{Con}|hyperpage}{33}
-\indexentry{Con@{Con}!setNeuron@{setNeuron}|hyperpage}{34}
-\indexentry{setNeuron@{setNeuron}!Con@{Con}|hyperpage}{34}
-\indexentry{Con@{Con}!setWeight@{setWeight}|hyperpage}{34}
-\indexentry{setWeight@{setWeight}!Con@{Con}|hyperpage}{34}
-\indexentry{Con@{Con}!setWeight@{setWeight}|hyperpage}{35}
-\indexentry{setWeight@{setWeight}!Con@{Con}|hyperpage}{35}
-\indexentry{Con@{Con}!show@{show}|hyperpage}{35}
-\indexentry{show@{show}!Con@{Con}|hyperpage}{35}
-\indexentry{Con@{Con}!show@{show}|hyperpage}{35}
-\indexentry{show@{show}!Con@{Con}|hyperpage}{35}
-\indexentry{Con@{Con}!validate@{validate}|hyperpage}{36}
-\indexentry{validate@{validate}!Con@{Con}|hyperpage}{36}
-\indexentry{Con@{Con}!validate@{validate}|hyperpage}{36}
-\indexentry{validate@{validate}!Con@{Con}|hyperpage}{36}
-\indexentry{Con@{Con}!d\_\discretionary {-}{}{}neuron@{d\_\discretionary {-}{}{}neuron}|hyperpage}{36}
-\indexentry{d\_\discretionary {-}{}{}neuron@{d\_\discretionary {-}{}{}neuron}!Con@{Con}|hyperpage}{36}
-\indexentry{Con@{Con}!d\_\discretionary {-}{}{}weight@{d\_\discretionary {-}{}{}weight}|hyperpage}{37}
-\indexentry{d\_\discretionary {-}{}{}weight@{d\_\discretionary {-}{}{}weight}!Con@{Con}|hyperpage}{37}
-\indexentry{Con@{Con}!from@{from}|hyperpage}{37}
-\indexentry{from@{from}!Con@{Con}|hyperpage}{37}
-\indexentry{Con@{Con}!weight@{weight}|hyperpage}{37}
-\indexentry{weight@{weight}!Con@{Con}|hyperpage}{37}
-\indexentry{ConContainer@{ConContainer}|hyperpage}{37}
-\indexentry{ConContainer@{ConContainer}!const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}|hyperpage}{40}
-\indexentry{const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}!ConContainer@{ConContainer}|hyperpage}{40}
-\indexentry{ConContainer@{ConContainer}!const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}|hyperpage}{40}
-\indexentry{const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}!ConContainer@{ConContainer}|hyperpage}{40}
-\indexentry{ConContainer@{ConContainer}!iterator@{iterator}|hyperpage}{41}
-\indexentry{iterator@{iterator}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}|hyperpage}{41}
-\indexentry{value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!erase@{erase}|hyperpage}{41}
-\indexentry{erase@{erase}!ConContainer@{ConContainer}|hyperpage}{41}
-\indexentry{ConContainer@{ConContainer}!getId@{getId}|hyperpage}{43}
-\indexentry{getId@{getId}!ConContainer@{ConContainer}|hyperpage}{43}
-\indexentry{ConContainer@{ConContainer}!numOfCons@{numOfCons}|hyperpage}{45}
-\indexentry{numOfCons@{numOfCons}!ConContainer@{ConContainer}|hyperpage}{45}
-\indexentry{ConContainer@{ConContainer}!select@{select}|hyperpage}{46}
-\indexentry{select@{select}!ConContainer@{ConContainer}|hyperpage}{46}
-\indexentry{ConContainer@{ConContainer}!setFrom@{setFrom}|hyperpage}{48}
-\indexentry{setFrom@{setFrom}!ConContainer@{ConContainer}|hyperpage}{48}
-\indexentry{ConContainer@{ConContainer}!setWeight@{setWeight}|hyperpage}{50}
-\indexentry{setWeight@{setWeight}!ConContainer@{ConContainer}|hyperpage}{50}
-\indexentry{ConContainer@{ConContainer}!setWeight@{setWeight}|hyperpage}{51}
-\indexentry{setWeight@{setWeight}!ConContainer@{ConContainer}|hyperpage}{51}
-\indexentry{ConContainer@{ConContainer}!validate@{validate}|hyperpage}{53}
-\indexentry{validate@{validate}!ConContainer@{ConContainer}|hyperpage}{53}
-\indexentry{Container@{Container}|hyperpage}{54}
-\indexentry{Container@{Container}!const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}|hyperpage}{58}
-\indexentry{const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}!Container@{Container}|hyperpage}{58}
-\indexentry{Container@{Container}!const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}|hyperpage}{58}
-\indexentry{const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}!Container@{Container}|hyperpage}{58}
-\indexentry{Container@{Container}!iterator@{iterator}|hyperpage}{58}
-\indexentry{iterator@{iterator}!Container@{Container}|hyperpage}{58}
-\indexentry{Container@{Container}!value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}|hyperpage}{58}
-\indexentry{value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}!Container@{Container}|hyperpage}{58}
-\indexentry{Container@{Container}!$\sim $Container@{$\sim $Container}|hyperpage}{59}
-\indexentry{$\sim $Container@{$\sim $Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!append@{append}|hyperpage}{59}
-\indexentry{append@{append}!Container@{Container}|hyperpage}{59}
-\indexentry{Container@{Container}!begin@{begin}|hyperpage}{61}
-\indexentry{begin@{begin}!Container@{Container}|hyperpage}{61}
-\indexentry{Container@{Container}!clear@{clear}|hyperpage}{61}
-\indexentry{clear@{clear}!Container@{Container}|hyperpage}{61}
-\indexentry{Container@{Container}!clear@{clear}|hyperpage}{62}
-\indexentry{clear@{clear}!Container@{Container}|hyperpage}{62}
-\indexentry{Container@{Container}!createIterator@{createIterator}|hyperpage}{62}
-\indexentry{createIterator@{createIterator}!Container@{Container}|hyperpage}{62}
-\indexentry{Container@{Container}!empty@{empty}|hyperpage}{62}
-\indexentry{empty@{empty}!Container@{Container}|hyperpage}{62}
-\indexentry{Container@{Container}!empty@{empty}|hyperpage}{62}
-\indexentry{empty@{empty}!Container@{Container}|hyperpage}{62}
-\indexentry{Container@{Container}!end@{end}|hyperpage}{63}
-\indexentry{end@{end}!Container@{Container}|hyperpage}{63}
-\indexentry{Container@{Container}!load@{load}|hyperpage}{63}
-\indexentry{load@{load}!Container@{Container}|hyperpage}{63}
-\indexentry{Container@{Container}!operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}|hyperpage}{64}
-\indexentry{operator\unhbox \voidb@x \hbox {[}\unhbox \voidb@x \hbox {]}@{operator[]}!Container@{Container}|hyperpage}{64}
-\indexentry{Container@{Container}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{64}
-\indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!Container@{Container}|hyperpage}{64}
-\indexentry{Container@{Container}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{65}
-\indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!Container@{Container}|hyperpage}{65}
-\indexentry{Container@{Container}!reserve@{reserve}|hyperpage}{66}
-\indexentry{reserve@{reserve}!Container@{Container}|hyperpage}{66}
-\indexentry{Container@{Container}!reserve@{reserve}|hyperpage}{66}
-\indexentry{reserve@{reserve}!Container@{Container}|hyperpage}{66}
-\indexentry{Container@{Container}!resize@{resize}|hyperpage}{67}
-\indexentry{resize@{resize}!Container@{Container}|hyperpage}{67}
-\indexentry{Container@{Container}!show@{show}|hyperpage}{67}
-\indexentry{show@{show}!Container@{Container}|hyperpage}{67}
-\indexentry{Container@{Container}!show@{show}|hyperpage}{67}
-\indexentry{show@{show}!Container@{Container}|hyperpage}{67}
-\indexentry{Container@{Container}!size@{size}|hyperpage}{68}
-\indexentry{size@{size}!Container@{Container}|hyperpage}{68}
-\indexentry{Container@{Container}!size@{size}|hyperpage}{68}
-\indexentry{size@{size}!Container@{Container}|hyperpage}{68}
-\indexentry{Container@{Container}!store@{store}|hyperpage}{69}
-\indexentry{store@{store}!Container@{Container}|hyperpage}{69}
-\indexentry{Container@{Container}!validate@{validate}|hyperpage}{69}
-\indexentry{validate@{validate}!Container@{Container}|hyperpage}{69}
-\indexentry{Container@{Container}!validate@{validate}|hyperpage}{69}
-\indexentry{validate@{validate}!Container@{Container}|hyperpage}{69}
-\indexentry{Container@{Container}!collection@{collection}|hyperpage}{70}
-\indexentry{collection@{collection}!Container@{Container}|hyperpage}{70}
-\indexentry{Iterator@{Iterator}|hyperpage}{70}
-\indexentry{Iterator@{Iterator}!$\sim $Iterator@{$\sim $Iterator}|hyperpage}{72}
-\indexentry{$\sim $Iterator@{$\sim $Iterator}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!currentItem@{currentItem}|hyperpage}{72}
-\indexentry{currentItem@{currentItem}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!first@{first}|hyperpage}{72}
-\indexentry{first@{first}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!isDone@{isDone}|hyperpage}{72}
-\indexentry{isDone@{isDone}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{Iterator@{Iterator}!next@{next}|hyperpage}{72}
-\indexentry{next@{next}!Iterator@{Iterator}|hyperpage}{72}
-\indexentry{MLPbehavior@{MLPbehavior}|hyperpage}{72}
-\indexentry{MLPbehavior@{MLPbehavior}!predict@{predict}|hyperpage}{75}
-\indexentry{predict@{predict}!MLPbehavior@{MLPbehavior}|hyperpage}{75}
-\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}|hyperpage}{75}
-\indexentry{d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}!MLPbehavior@{MLPbehavior}|hyperpage}{75}
-\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}bias@{d\_\discretionary {-}{}{}bias}|hyperpage}{75}
-\indexentry{d\_\discretionary {-}{}{}bias@{d\_\discretionary {-}{}{}bias}!MLPbehavior@{MLPbehavior}|hyperpage}{75}
-\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}|hyperpage}{75}
-\indexentry{d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}!MLPbehavior@{MLPbehavior}|hyperpage}{75}
-\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}|hyperpage}{75}
-\indexentry{d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}!MLPbehavior@{MLPbehavior}|hyperpage}{75}
-\indexentry{MLPfactory@{MLPfactory}|hyperpage}{76}
-\indexentry{MLPfactory@{MLPfactory}!MLPfactory@{MLPfactory}|hyperpage}{77}
-\indexentry{MLPfactory@{MLPfactory}!MLPfactory@{MLPfactory}|hyperpage}{77}
-\indexentry{MLPfactory@{MLPfactory}!makeCon@{makeCon}|hyperpage}{78}
-\indexentry{makeCon@{makeCon}!MLPfactory@{MLPfactory}|hyperpage}{78}
-\indexentry{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}|hyperpage}{78}
-\indexentry{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}|hyperpage}{78}
-\indexentry{MLPlayer@{MLPlayer}|hyperpage}{78}
-\indexentry{MLPlayerContainer@{MLPlayerContainer}|hyperpage}{81}
-\indexentry{MLPneuralNet@{MLPneuralNet}|hyperpage}{84}
-\indexentry{MLPneuralNet@{MLPneuralNet}!nLayers@{nLayers}|hyperpage}{86}
-\indexentry{nLayers@{nLayers}!MLPneuralNet@{MLPneuralNet}|hyperpage}{86}
-\indexentry{MLPneuron@{MLPneuron}|hyperpage}{86}
-\indexentry{MLPneuron@{MLPneuron}!bias@{bias}|hyperpage}{89}
-\indexentry{bias@{bias}!MLPneuron@{MLPneuron}|hyperpage}{89}
-\indexentry{MLPneuronContainer@{MLPneuronContainer}|hyperpage}{89}
-\indexentry{MLPneuronContainer@{MLPneuronContainer}!buildAndAppend@{buildAndAppend}|hyperpage}{92}
-\indexentry{buildAndAppend@{buildAndAppend}!MLPneuronContainer@{MLPneuronContainer}|hyperpage}{92}
-\indexentry{MLPneuronContainer@{MLPneuronContainer}!getId@{getId}|hyperpage}{92}
-\indexentry{getId@{getId}!MLPneuronContainer@{MLPneuronContainer}|hyperpage}{92}
-\indexentry{NeuralCreator@{NeuralCreator}|hyperpage}{92}
-\indexentry{NeuralCreator@{NeuralCreator}!createCon@{createCon}|hyperpage}{93}
-\indexentry{createCon@{createCon}!NeuralCreator@{NeuralCreator}|hyperpage}{93}
-\indexentry{NeuralCreator@{NeuralCreator}!createNeuron@{createNeuron}|hyperpage}{93}
-\indexentry{createNeuron@{createNeuron}!NeuralCreator@{NeuralCreator}|hyperpage}{93}
-\indexentry{NeuralFactory@{NeuralFactory}|hyperpage}{94}
-\indexentry{NeuralFactory@{NeuralFactory}!makeCon@{makeCon}|hyperpage}{95}
-\indexentry{makeCon@{makeCon}!NeuralFactory@{NeuralFactory}|hyperpage}{95}
-\indexentry{NeuralFactory@{NeuralFactory}!makeNeuron@{makeNeuron}|hyperpage}{95}
-\indexentry{makeNeuron@{makeNeuron}!NeuralFactory@{NeuralFactory}|hyperpage}{95}
-\indexentry{NeuralNet@{NeuralNet}|hyperpage}{96}
-\indexentry{NeuralNet@{NeuralNet}!train@{train}|hyperpage}{96}
-\indexentry{train@{train}!NeuralNet@{NeuralNet}|hyperpage}{96}
-\indexentry{Neuron@{Neuron}|hyperpage}{97}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{99}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{99}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{99}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{99}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!$\sim $Neuron@{$\sim $Neuron}|hyperpage}{100}
-\indexentry{$\sim $Neuron@{$\sim $Neuron}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!getConId@{getConId}|hyperpage}{100}
-\indexentry{getConId@{getConId}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!getId@{getId}|hyperpage}{100}
-\indexentry{getId@{getId}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!getId@{getId}|hyperpage}{100}
-\indexentry{getId@{getId}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!getWeight@{getWeight}|hyperpage}{100}
-\indexentry{getWeight@{getWeight}!Neuron@{Neuron}|hyperpage}{100}
-\indexentry{Neuron@{Neuron}!numOfCons@{numOfCons}|hyperpage}{101}
-\indexentry{numOfCons@{numOfCons}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!setFrom@{setFrom}|hyperpage}{101}
-\indexentry{setFrom@{setFrom}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!setId@{setId}|hyperpage}{101}
-\indexentry{setId@{setId}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!setId@{setId}|hyperpage}{101}
-\indexentry{setId@{setId}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!setWeight@{setWeight}|hyperpage}{101}
-\indexentry{setWeight@{setWeight}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!show@{show}|hyperpage}{101}
-\indexentry{show@{show}!Neuron@{Neuron}|hyperpage}{101}
-\indexentry{Neuron@{Neuron}!show@{show}|hyperpage}{102}
-\indexentry{show@{show}!Neuron@{Neuron}|hyperpage}{102}
-\indexentry{Neuron@{Neuron}!validate@{validate}|hyperpage}{102}
-\indexentry{validate@{validate}!Neuron@{Neuron}|hyperpage}{102}
-\indexentry{Neuron@{Neuron}!validate@{validate}|hyperpage}{102}
-\indexentry{validate@{validate}!Neuron@{Neuron}|hyperpage}{102}
-\indexentry{Neuron@{Neuron}!con@{con}|hyperpage}{103}
-\indexentry{con@{con}!Neuron@{Neuron}|hyperpage}{103}
-\indexentry{Neuron@{Neuron}!Id@{Id}|hyperpage}{103}
-\indexentry{Id@{Id}!Neuron@{Neuron}|hyperpage}{103}
-\indexentry{Neuron@{Neuron}!outputValue@{outputValue}|hyperpage}{103}
-\indexentry{outputValue@{outputValue}!Neuron@{Neuron}|hyperpage}{103}
-\indexentry{NeuronContainer@{NeuronContainer}|hyperpage}{103}
-\indexentry{NeuronContainer@{NeuronContainer}!const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}|hyperpage}{106}
-\indexentry{const\_\discretionary {-}{}{}iterator@{const\_\discretionary {-}{}{}iterator}!NeuronContainer@{NeuronContainer}|hyperpage}{106}
-\indexentry{NeuronContainer@{NeuronContainer}!const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}|hyperpage}{106}
-\indexentry{const\_\discretionary {-}{}{}reference@{const\_\discretionary {-}{}{}reference}!NeuronContainer@{NeuronContainer}|hyperpage}{106}
-\indexentry{NeuronContainer@{NeuronContainer}!iterator@{iterator}|hyperpage}{106}
-\indexentry{iterator@{iterator}!NeuronContainer@{NeuronContainer}|hyperpage}{106}
-\indexentry{NeuronContainer@{NeuronContainer}!value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}|hyperpage}{107}
-\indexentry{value\_\discretionary {-}{}{}type@{value\_\discretionary {-}{}{}type}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!$\sim $NeuronContainer@{$\sim $NeuronContainer}|hyperpage}{107}
-\indexentry{$\sim $NeuronContainer@{$\sim $NeuronContainer}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!getConId@{getConId}|hyperpage}{107}
-\indexentry{getConId@{getConId}!NeuronContainer@{NeuronContainer}|hyperpage}{107}
-\indexentry{NeuronContainer@{NeuronContainer}!getFrom@{getFrom}|hyperpage}{108}
-\indexentry{getFrom@{getFrom}!NeuronContainer@{NeuronContainer}|hyperpage}{108}
-\indexentry{NeuronContainer@{NeuronContainer}!getId@{getId}|hyperpage}{108}
-\indexentry{getId@{getId}!NeuronContainer@{NeuronContainer}|hyperpage}{108}
-\indexentry{NeuronContainer@{NeuronContainer}!getWeight@{getWeight}|hyperpage}{108}
-\indexentry{getWeight@{getWeight}!NeuronContainer@{NeuronContainer}|hyperpage}{108}
-\indexentry{NeuronContainer@{NeuronContainer}!numOfCons@{numOfCons}|hyperpage}{108}
-\indexentry{numOfCons@{numOfCons}!NeuronContainer@{NeuronContainer}|hyperpage}{108}
-\indexentry{NeuronContainer@{NeuronContainer}!numOfNeurons@{numOfNeurons}|hyperpage}{108}
-\indexentry{numOfNeurons@{numOfNeurons}!NeuronContainer@{NeuronContainer}|hyperpage}{108}
-\indexentry{NeuronContainer@{NeuronContainer}!setFrom@{setFrom}|hyperpage}{109}
-\indexentry{setFrom@{setFrom}!NeuronContainer@{NeuronContainer}|hyperpage}{109}
-\indexentry{NeuronContainer@{NeuronContainer}!setId@{setId}|hyperpage}{109}
-\indexentry{setId@{setId}!NeuronContainer@{NeuronContainer}|hyperpage}{109}
-\indexentry{NeuronContainer@{NeuronContainer}!setWeight@{setWeight}|hyperpage}{109}
-\indexentry{setWeight@{setWeight}!NeuronContainer@{NeuronContainer}|hyperpage}{109}
-\indexentry{PredictBehavior@{PredictBehavior}|hyperpage}{110}
-\indexentry{PredictBehavior@{PredictBehavior}!predict@{predict}|hyperpage}{111}
-\indexentry{predict@{predict}!PredictBehavior@{PredictBehavior}|hyperpage}{111}
-\indexentry{RBFbehavior@{RBFbehavior}|hyperpage}{111}
-\indexentry{RBFbehavior@{RBFbehavior}!predict@{predict}|hyperpage}{114}
-\indexentry{predict@{predict}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}|hyperpage}{114}
-\indexentry{d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}altitude@{d\_\discretionary {-}{}{}altitude}|hyperpage}{114}
-\indexentry{d\_\discretionary {-}{}{}altitude@{d\_\discretionary {-}{}{}altitude}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}|hyperpage}{114}
-\indexentry{d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}|hyperpage}{114}
-\indexentry{d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}width@{d\_\discretionary {-}{}{}width}|hyperpage}{114}
-\indexentry{d\_\discretionary {-}{}{}width@{d\_\discretionary {-}{}{}width}!RBFbehavior@{RBFbehavior}|hyperpage}{114}
-\indexentry{RBFfactory@{RBFfactory}|hyperpage}{115}
-\indexentry{RBFfactory@{RBFfactory}!RBFfactory@{RBFfactory}|hyperpage}{116}
-\indexentry{RBFfactory@{RBFfactory}!RBFfactory@{RBFfactory}|hyperpage}{116}
-\indexentry{RBFfactory@{RBFfactory}!makeCon@{makeCon}|hyperpage}{116}
-\indexentry{makeCon@{makeCon}!RBFfactory@{RBFfactory}|hyperpage}{116}
-\indexentry{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}|hyperpage}{116}
-\indexentry{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}|hyperpage}{116}
-\indexentry{RBFneuralNet@{RBFneuralNet}|hyperpage}{117}
-\indexentry{SimpleContainer@{SimpleContainer}|hyperpage}{118}
-\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{121}
-\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{121}
-\indexentry{SimpleContainer@{SimpleContainer}!$\sim $SimpleContainer@{$\sim $SimpleContainer}|hyperpage}{121}
-\indexentry{$\sim $SimpleContainer@{$\sim $SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{121}
-\indexentry{SimpleContainer@{SimpleContainer}!clear@{clear}|hyperpage}{121}
-\indexentry{clear@{clear}!SimpleContainer@{SimpleContainer}|hyperpage}{121}
-\indexentry{SimpleContainer@{SimpleContainer}!createIterator@{createIterator}|hyperpage}{122}
-\indexentry{createIterator@{createIterator}!SimpleContainer@{SimpleContainer}|hyperpage}{122}
-\indexentry{SimpleContainer@{SimpleContainer}!empty@{empty}|hyperpage}{122}
-\indexentry{empty@{empty}!SimpleContainer@{SimpleContainer}|hyperpage}{122}
-\indexentry{SimpleContainer@{SimpleContainer}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{122}
-\indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!SimpleContainer@{SimpleContainer}|hyperpage}{122}
-\indexentry{SimpleContainer@{SimpleContainer}!reserve@{reserve}|hyperpage}{123}
-\indexentry{reserve@{reserve}!SimpleContainer@{SimpleContainer}|hyperpage}{123}
-\indexentry{SimpleContainer@{SimpleContainer}!show@{show}|hyperpage}{123}
-\indexentry{show@{show}!SimpleContainer@{SimpleContainer}|hyperpage}{123}
-\indexentry{SimpleContainer@{SimpleContainer}!size@{size}|hyperpage}{124}
-\indexentry{size@{size}!SimpleContainer@{SimpleContainer}|hyperpage}{124}
-\indexentry{SimpleContainer@{SimpleContainer}!validate@{validate}|hyperpage}{124}
-\indexentry{validate@{validate}!SimpleContainer@{SimpleContainer}|hyperpage}{124}
-\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainerIterator$<$ T $>$@{SimpleContainerIterator$<$ T $>$}|hyperpage}{124}
-\indexentry{SimpleContainerIterator$<$ T $>$@{SimpleContainerIterator$<$ T $>$}!SimpleContainer@{SimpleContainer}|hyperpage}{124}
-\indexentry{SimpleContainer@{SimpleContainer}!d\_\discretionary {-}{}{}collection@{d\_\discretionary {-}{}{}collection}|hyperpage}{124}
-\indexentry{d\_\discretionary {-}{}{}collection@{d\_\discretionary {-}{}{}collection}!SimpleContainer@{SimpleContainer}|hyperpage}{124}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{125}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!$\sim $SimpleContainerIterator@{$\sim $SimpleContainerIterator}|hyperpage}{127}
-\indexentry{$\sim $SimpleContainerIterator@{$\sim $SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!currentItem@{currentItem}|hyperpage}{127}
-\indexentry{currentItem@{currentItem}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!first@{first}|hyperpage}{127}
-\indexentry{first@{first}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!isDone@{isDone}|hyperpage}{127}
-\indexentry{isDone@{isDone}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!next@{next}|hyperpage}{127}
-\indexentry{next@{next}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{127}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}|hyperpage}{128}
-\indexentry{SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{128}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}|hyperpage}{128}
-\indexentry{d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{128}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}iterator@{d\_\discretionary {-}{}{}iterator}|hyperpage}{128}
-\indexentry{d\_\discretionary {-}{}{}iterator@{d\_\discretionary {-}{}{}iterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{128}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{128}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{130}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{130}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}|hyperpage}{131}
-\indexentry{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{131}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}|hyperpage}{131}
-\indexentry{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{131}
-\indexentry{SimpleNeuron@{SimpleNeuron}|hyperpage}{132}
-\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{135}
-\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{135}
-\indexentry{SimpleNeuron@{SimpleNeuron}!getId@{getId}|hyperpage}{135}
-\indexentry{getId@{getId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{135}
-\indexentry{SimpleNeuron@{SimpleNeuron}!setId@{setId}|hyperpage}{136}
-\indexentry{setId@{setId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{136}
-\indexentry{SimpleNeuron@{SimpleNeuron}!show@{show}|hyperpage}{136}
-\indexentry{show@{show}!SimpleNeuron@{SimpleNeuron}|hyperpage}{136}
-\indexentry{SimpleNeuron@{SimpleNeuron}!validate@{validate}|hyperpage}{137}
-\indexentry{validate@{validate}!SimpleNeuron@{SimpleNeuron}|hyperpage}{137}
-\indexentry{SimpleNeuron@{SimpleNeuron}!d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}|hyperpage}{138}
-\indexentry{d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}!SimpleNeuron@{SimpleNeuron}|hyperpage}{138}
-\indexentry{TrainingBehavior@{TrainingBehavior}|hyperpage}{138}
-\indexentry{TrainingBehavior@{TrainingBehavior}!adjustParameters@{adjustParameters}|hyperpage}{139}
-\indexentry{adjustParameters@{adjustParameters}!TrainingBehavior@{TrainingBehavior}|hyperpage}{139}
-\indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{141}
-\indexentry{AMORE.h@{AMORE.h}!foreach@{foreach}|hyperpage}{142}
-\indexentry{foreach@{foreach}!AMORE.h@{AMORE.h}|hyperpage}{142}
-\indexentry{AMORE.h@{AMORE.h}!size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}|hyperpage}{142}
-\indexentry{size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}!AMORE.h@{AMORE.h}|hyperpage}{142}
-\indexentry{AMORE.h@{AMORE.h}!ConContainer@{ConContainer}|hyperpage}{142}
-\indexentry{ConContainer@{ConContainer}!AMORE.h@{AMORE.h}|hyperpage}{142}
-\indexentry{AMORE.h@{AMORE.h}!ConIteratorPtr@{ConIteratorPtr}|hyperpage}{142}
-\indexentry{ConIteratorPtr@{ConIteratorPtr}!AMORE.h@{AMORE.h}|hyperpage}{142}
-\indexentry{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}|hyperpage}{143}
-\indexentry{ConPtr@{ConPtr}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!Handler@{Handler}|hyperpage}{143}
-\indexentry{Handler@{Handler}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuralCreatorPtr@{NeuralCreatorPtr}|hyperpage}{143}
-\indexentry{NeuralCreatorPtr@{NeuralCreatorPtr}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuralFactoryPtr@{NeuralFactoryPtr}|hyperpage}{143}
-\indexentry{NeuralFactoryPtr@{NeuralFactoryPtr}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuronContainer@{NeuronContainer}|hyperpage}{143}
-\indexentry{NeuronContainer@{NeuronContainer}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuronIteratorPtr@{NeuronIteratorPtr}|hyperpage}{143}
-\indexentry{NeuronIteratorPtr@{NeuronIteratorPtr}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}|hyperpage}{143}
-\indexentry{NeuronPtr@{NeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!NeuronRef@{NeuronRef}|hyperpage}{143}
-\indexentry{NeuronRef@{NeuronRef}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!PredictBehaviorRef@{PredictBehaviorRef}|hyperpage}{143}
-\indexentry{PredictBehaviorRef@{PredictBehaviorRef}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{AMORE.h@{AMORE.h}!TrainingBehaviorRef@{TrainingBehaviorRef}|hyperpage}{143}
-\indexentry{TrainingBehaviorRef@{TrainingBehaviorRef}!AMORE.h@{AMORE.h}|hyperpage}{143}
-\indexentry{pkg/AMORE/src/Con.cpp@{pkg/AMORE/src/Con.cpp}|hyperpage}{144}
-\indexentry{pkg/AMORE/src/old/Con.cpp@{pkg/AMORE/src/old/Con.cpp}|hyperpage}{144}
-\indexentry{pkg/AMORE/src/Container.cpp@{pkg/AMORE/src/Container.cpp}|hyperpage}{145}
-\indexentry{pkg/AMORE/src/old/Container.cpp@{pkg/AMORE/src/old/Container.cpp}|hyperpage}{145}
-\indexentry{pkg/AMORE/src/containerInterface.cpp@{pkg/AMORE/src/containerInterface.cpp}|hyperpage}{145}
-\indexentry{pkg/AMORE/src/ContainerIterator.cpp@{pkg/AMORE/src/ContainerIterator.cpp}|hyperpage}{146}
-\indexentry{pkg/AMORE/src/dia/AdaptBehavior.h@{pkg/AMORE/src/dia/AdaptBehavior.h}|hyperpage}{146}
-\indexentry{pkg/AMORE/src/dia/ADAPTgd.h@{pkg/AMORE/src/dia/ADAPTgd.h}|hyperpage}{147}
-\indexentry{pkg/AMORE/src/dia/ADAPTgdwm.h@{pkg/AMORE/src/dia/ADAPTgdwm.h}|hyperpage}{148}
-\indexentry{pkg/AMORE/src/dia/BatchBehavior.h@{pkg/AMORE/src/dia/BatchBehavior.h}|hyperpage}{149}
-\indexentry{pkg/AMORE/src/dia/BATCHgd.h@{pkg/AMORE/src/dia/BATCHgd.h}|hyperpage}{150}
-\indexentry{pkg/AMORE/src/dia/BATCHgdwm.h@{pkg/AMORE/src/dia/BATCHgdwm.h}|hyperpage}{151}
-\indexentry{pkg/AMORE/src/dia/Con.h@{pkg/AMORE/src/dia/Con.h}|hyperpage}{152}
-\indexentry{pkg/AMORE/src/old/Con.h@{pkg/AMORE/src/old/Con.h}|hyperpage}{152}
-\indexentry{pkg/AMORE/src/dia/Container.h@{pkg/AMORE/src/dia/Container.h}|hyperpage}{153}
-\indexentry{pkg/AMORE/src/old/Container.h@{pkg/AMORE/src/old/Container.h}|hyperpage}{154}
-\indexentry{pkg/AMORE/src/dia/Iterator.h@{pkg/AMORE/src/dia/Iterator.h}|hyperpage}{154}
-\indexentry{pkg/AMORE/src/dia/MLPbehavior.h@{pkg/AMORE/src/dia/MLPbehavior.h}|hyperpage}{155}
-\indexentry{pkg/AMORE/src/dia/MLPfactory.h@{pkg/AMORE/src/dia/MLPfactory.h}|hyperpage}{155}
-\indexentry{pkg/AMORE/src/dia/NeuralCreator.h@{pkg/AMORE/src/dia/NeuralCreator.h}|hyperpage}{157}
-\indexentry{pkg/AMORE/src/dia/NeuralFactory.h@{pkg/AMORE/src/dia/NeuralFactory.h}|hyperpage}{158}
-\indexentry{pkg/AMORE/src/dia/Neuron.h@{pkg/AMORE/src/dia/Neuron.h}|hyperpage}{159}
-\indexentry{pkg/AMORE/src/old/Neuron.h@{pkg/AMORE/src/old/Neuron.h}|hyperpage}{160}
-\indexentry{pkg/AMORE/src/dia/PredictBehavior.h@{pkg/AMORE/src/dia/PredictBehavior.h}|hyperpage}{161}
-\indexentry{pkg/AMORE/src/dia/RBFbehavior.h@{pkg/AMORE/src/dia/RBFbehavior.h}|hyperpage}{161}
-\indexentry{pkg/AMORE/src/dia/RBFfactory.h@{pkg/AMORE/src/dia/RBFfactory.h}|hyperpage}{162}
-\indexentry{pkg/AMORE/src/dia/SimpleContainer.h@{pkg/AMORE/src/dia/SimpleContainer.h}|hyperpage}{162}
-\indexentry{pkg/AMORE/src/dia/SimpleContainerIterator.h@{pkg/AMORE/src/dia/SimpleContainerIterator.h}|hyperpage}{163}
-\indexentry{pkg/AMORE/src/dia/SimpleNeuralCreator.h@{pkg/AMORE/src/dia/SimpleNeuralCreator.h}|hyperpage}{164}
-\indexentry{pkg/AMORE/src/dia/SimpleNeuron.h@{pkg/AMORE/src/dia/SimpleNeuron.h}|hyperpage}{165}
-\indexentry{pkg/AMORE/src/dia/TrainingBehavior.h@{pkg/AMORE/src/dia/TrainingBehavior.h}|hyperpage}{166}
-\indexentry{pkg/AMORE/src/IteratorInterface.cpp@{pkg/AMORE/src/IteratorInterface.cpp}|hyperpage}{166}
-\indexentry{pkg/AMORE/src/MLPfactory.cpp@{pkg/AMORE/src/MLPfactory.cpp}|hyperpage}{166}
-\indexentry{pkg/AMORE/src/old/ConContainer.cpp@{pkg/AMORE/src/old/ConContainer.cpp}|hyperpage}{167}
-\indexentry{pkg/AMORE/src/old/ConContainer.h@{pkg/AMORE/src/old/ConContainer.h}|hyperpage}{167}
-\indexentry{pkg/AMORE/src/old/MLPlayer.h@{pkg/AMORE/src/old/MLPlayer.h}|hyperpage}{168}
-\indexentry{pkg/AMORE/src/old/MLPlayerContainer.h@{pkg/AMORE/src/old/MLPlayerContainer.h}|hyperpage}{168}
-\indexentry{pkg/AMORE/src/old/MLPneuralNet.h@{pkg/AMORE/src/old/MLPneuralNet.h}|hyperpage}{168}
-\indexentry{pkg/AMORE/src/old/MLPneuralNetFactory.cpp@{pkg/AMORE/src/old/MLPneuralNetFactory.cpp}|hyperpage}{168}
-\indexentry{MLPneuralNetFactory.cpp@{MLPneuralNetFactory.cpp}!CreateMLPneuralNet@{CreateMLPneuralNet}|hyperpage}{168}
-\indexentry{CreateMLPneuralNet@{CreateMLPneuralNet}!MLPneuralNetFactory.cpp@{MLPneuralNetFactory.cpp}|hyperpage}{168}
-\indexentry{pkg/AMORE/src/old/MLPneuron.h@{pkg/AMORE/src/old/MLPneuron.h}|hyperpage}{169}
-\indexentry{pkg/AMORE/src/old/MLPneuronContainer.h@{pkg/AMORE/src/old/MLPneuronContainer.h}|hyperpage}{169}
-\indexentry{pkg/AMORE/src/old/NeuralNet.h@{pkg/AMORE/src/old/NeuralNet.h}|hyperpage}{169}
-\indexentry{pkg/AMORE/src/old/Neuron.cpp@{pkg/AMORE/src/old/Neuron.cpp}|hyperpage}{169}
-\indexentry{pkg/AMORE/src/old/NeuronContainer.cpp@{pkg/AMORE/src/old/NeuronContainer.cpp}|hyperpage}{170}
-\indexentry{pkg/AMORE/src/old/NeuronContainer.h@{pkg/AMORE/src/old/NeuronContainer.h}|hyperpage}{170}
-\indexentry{pkg/AMORE/src/old/RBFneuralNet.h@{pkg/AMORE/src/old/RBFneuralNet.h}|hyperpage}{170}
-\indexentry{pkg/AMORE/src/SimpleNeuralCreator.cpp@{pkg/AMORE/src/SimpleNeuralCreator.cpp}|hyperpage}{170}
-\indexentry{pkg/AMORE/src/SimpleNeuron.cpp@{pkg/AMORE/src/SimpleNeuron.cpp}|hyperpage}{171}
+\indexentry{Con@{Con}|hyperpage}{25}
+\indexentry{Con@{Con}!Con@{Con}|hyperpage}{26}
+\indexentry{Con@{Con}!Con@{Con}|hyperpage}{26}
+\indexentry{Con@{Con}!Con@{Con}|hyperpage}{26}
+\indexentry{Con@{Con}!Con@{Con}|hyperpage}{26}
+\indexentry{Con@{Con}!getNeuron@{getNeuron}|hyperpage}{26}
+\indexentry{getNeuron@{getNeuron}!Con@{Con}|hyperpage}{26}
+\indexentry{Con@{Con}!getWeight@{getWeight}|hyperpage}{27}
+\indexentry{getWeight@{getWeight}!Con@{Con}|hyperpage}{27}
+\indexentry{Con@{Con}!Id@{Id}|hyperpage}{28}
+\indexentry{Id@{Id}!Con@{Con}|hyperpage}{28}
+\indexentry{Con@{Con}!setNeuron@{setNeuron}|hyperpage}{29}
+\indexentry{setNeuron@{setNeuron}!Con@{Con}|hyperpage}{29}
+\indexentry{Con@{Con}!setWeight@{setWeight}|hyperpage}{29}
+\indexentry{setWeight@{setWeight}!Con@{Con}|hyperpage}{29}
+\indexentry{Con@{Con}!show@{show}|hyperpage}{29}
+\indexentry{show@{show}!Con@{Con}|hyperpage}{29}
+\indexentry{Con@{Con}!validate@{validate}|hyperpage}{30}
+\indexentry{validate@{validate}!Con@{Con}|hyperpage}{30}
+\indexentry{Con@{Con}!d\_\discretionary {-}{}{}neuron@{d\_\discretionary {-}{}{}neuron}|hyperpage}{31}
+\indexentry{d\_\discretionary {-}{}{}neuron@{d\_\discretionary {-}{}{}neuron}!Con@{Con}|hyperpage}{31}
+\indexentry{Con@{Con}!d\_\discretionary {-}{}{}weight@{d\_\discretionary {-}{}{}weight}|hyperpage}{31}
+\indexentry{d\_\discretionary {-}{}{}weight@{d\_\discretionary {-}{}{}weight}!Con@{Con}|hyperpage}{31}
+\indexentry{Container@{Container}|hyperpage}{31}
+\indexentry{Container@{Container}!$\sim $Container@{$\sim $Container}|hyperpage}{33}
+\indexentry{$\sim $Container@{$\sim $Container}!Container@{Container}|hyperpage}{33}
+\indexentry{Container@{Container}!Container@{Container}|hyperpage}{33}
+\indexentry{Container@{Container}!Container@{Container}|hyperpage}{33}
+\indexentry{Container@{Container}!at@{at}|hyperpage}{33}
+\indexentry{at@{at}!Container@{Container}|hyperpage}{33}
+\indexentry{Container@{Container}!clear@{clear}|hyperpage}{33}
+\indexentry{clear@{clear}!Container@{Container}|hyperpage}{33}
+\indexentry{Container@{Container}!createIterator@{createIterator}|hyperpage}{34}
+\indexentry{createIterator@{createIterator}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!empty@{empty}|hyperpage}{34}
+\indexentry{empty@{empty}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{34}
+\indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!reserve@{reserve}|hyperpage}{34}
+\indexentry{reserve@{reserve}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!show@{show}|hyperpage}{34}
+\indexentry{show@{show}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!size@{size}|hyperpage}{34}
+\indexentry{size@{size}!Container@{Container}|hyperpage}{34}
+\indexentry{Container@{Container}!validate@{validate}|hyperpage}{34}
+\indexentry{validate@{validate}!Container@{Container}|hyperpage}{34}
+\indexentry{Iterator@{Iterator}|hyperpage}{35}
+\indexentry{Iterator@{Iterator}!$\sim $Iterator@{$\sim $Iterator}|hyperpage}{36}
+\indexentry{$\sim $Iterator@{$\sim $Iterator}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!currentItem@{currentItem}|hyperpage}{36}
+\indexentry{currentItem@{currentItem}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!first@{first}|hyperpage}{36}
+\indexentry{first@{first}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!isDone@{isDone}|hyperpage}{36}
+\indexentry{isDone@{isDone}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{Iterator@{Iterator}!next@{next}|hyperpage}{36}
+\indexentry{next@{next}!Iterator@{Iterator}|hyperpage}{36}
+\indexentry{MLPbehavior@{MLPbehavior}|hyperpage}{37}
+\indexentry{MLPbehavior@{MLPbehavior}!predict@{predict}|hyperpage}{39}
+\indexentry{predict@{predict}!MLPbehavior@{MLPbehavior}|hyperpage}{39}
+\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}|hyperpage}{39}
+\indexentry{d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}!MLPbehavior@{MLPbehavior}|hyperpage}{39}
+\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}bias@{d\_\discretionary {-}{}{}bias}|hyperpage}{39}
+\indexentry{d\_\discretionary {-}{}{}bias@{d\_\discretionary {-}{}{}bias}!MLPbehavior@{MLPbehavior}|hyperpage}{39}
+\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}|hyperpage}{39}
+\indexentry{d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}!MLPbehavior@{MLPbehavior}|hyperpage}{39}
+\indexentry{MLPbehavior@{MLPbehavior}!d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}|hyperpage}{39}
+\indexentry{d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}!MLPbehavior@{MLPbehavior}|hyperpage}{39}
+\indexentry{MLPfactory@{MLPfactory}|hyperpage}{40}
+\indexentry{MLPfactory@{MLPfactory}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!makeCon@{makeCon}|hyperpage}{42}
+\indexentry{makeCon@{makeCon}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!makeCon@{makeCon}|hyperpage}{42}
+\indexentry{makeCon@{makeCon}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!makeConContainer@{makeConContainer}|hyperpage}{42}
+\indexentry{makeConContainer@{makeConContainer}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}|hyperpage}{42}
+\indexentry{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}|hyperpage}{42}
+\indexentry{MLPfactory@{MLPfactory}!makeNeuronContainer@{makeNeuronContainer}|hyperpage}{43}
+\indexentry{makeNeuronContainer@{makeNeuronContainer}!MLPfactory@{MLPfactory}|hyperpage}{43}
+\indexentry{NeuralCreator@{NeuralCreator}|hyperpage}{43}
+\indexentry{NeuralCreator@{NeuralCreator}!createCon@{createCon}|hyperpage}{44}
+\indexentry{createCon@{createCon}!NeuralCreator@{NeuralCreator}|hyperpage}{44}
+\indexentry{NeuralCreator@{NeuralCreator}!createNeuron@{createNeuron}|hyperpage}{44}
+\indexentry{createNeuron@{createNeuron}!NeuralCreator@{NeuralCreator}|hyperpage}{44}
+\indexentry{NeuralFactory@{NeuralFactory}|hyperpage}{45}
+\indexentry{NeuralFactory@{NeuralFactory}!makeCon@{makeCon}|hyperpage}{46}
+\indexentry{makeCon@{makeCon}!NeuralFactory@{NeuralFactory}|hyperpage}{46}
+\indexentry{NeuralFactory@{NeuralFactory}!makeCon@{makeCon}|hyperpage}{46}
+\indexentry{makeCon@{makeCon}!NeuralFactory@{NeuralFactory}|hyperpage}{46}
+\indexentry{NeuralFactory@{NeuralFactory}!makeConContainer@{makeConContainer}|hyperpage}{46}
+\indexentry{makeConContainer@{makeConContainer}!NeuralFactory@{NeuralFactory}|hyperpage}{46}
+\indexentry{NeuralFactory@{NeuralFactory}!makeNeuron@{makeNeuron}|hyperpage}{46}
+\indexentry{makeNeuron@{makeNeuron}!NeuralFactory@{NeuralFactory}|hyperpage}{46}
+\indexentry{NeuralFactory@{NeuralFactory}!makeNeuronContainer@{makeNeuronContainer}|hyperpage}{47}
+\indexentry{makeNeuronContainer@{makeNeuronContainer}!NeuralFactory@{NeuralFactory}|hyperpage}{47}
+\indexentry{Neuron@{Neuron}|hyperpage}{47}
+\indexentry{Neuron@{Neuron}!getId@{getId}|hyperpage}{48}
+\indexentry{getId@{getId}!Neuron@{Neuron}|hyperpage}{48}
+\indexentry{Neuron@{Neuron}!setId@{setId}|hyperpage}{48}
+\indexentry{setId@{setId}!Neuron@{Neuron}|hyperpage}{48}
+\indexentry{Neuron@{Neuron}!show@{show}|hyperpage}{49}
+\indexentry{show@{show}!Neuron@{Neuron}|hyperpage}{49}
+\indexentry{Neuron@{Neuron}!validate@{validate}|hyperpage}{49}
+\indexentry{validate@{validate}!Neuron@{Neuron}|hyperpage}{49}
+\indexentry{PredictBehavior@{PredictBehavior}|hyperpage}{49}
+\indexentry{PredictBehavior@{PredictBehavior}!predict@{predict}|hyperpage}{50}
+\indexentry{predict@{predict}!PredictBehavior@{PredictBehavior}|hyperpage}{50}
+\indexentry{RBFbehavior@{RBFbehavior}|hyperpage}{50}
+\indexentry{RBFbehavior@{RBFbehavior}!predict@{predict}|hyperpage}{53}
+\indexentry{predict@{predict}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}|hyperpage}{53}
+\indexentry{d\_\discretionary {-}{}{}accumulator@{d\_\discretionary {-}{}{}accumulator}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}altitude@{d\_\discretionary {-}{}{}altitude}|hyperpage}{53}
+\indexentry{d\_\discretionary {-}{}{}altitude@{d\_\discretionary {-}{}{}altitude}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}|hyperpage}{53}
+\indexentry{d\_\discretionary {-}{}{}nCons@{d\_\discretionary {-}{}{}nCons}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}|hyperpage}{53}
+\indexentry{d\_\discretionary {-}{}{}output@{d\_\discretionary {-}{}{}output}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFbehavior@{RBFbehavior}!d\_\discretionary {-}{}{}width@{d\_\discretionary {-}{}{}width}|hyperpage}{53}
+\indexentry{d\_\discretionary {-}{}{}width@{d\_\discretionary {-}{}{}width}!RBFbehavior@{RBFbehavior}|hyperpage}{53}
+\indexentry{RBFfactory@{RBFfactory}|hyperpage}{54}
+\indexentry{RBFfactory@{RBFfactory}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!makeCon@{makeCon}|hyperpage}{56}
+\indexentry{makeCon@{makeCon}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!makeCon@{makeCon}|hyperpage}{56}
+\indexentry{makeCon@{makeCon}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!makeConContainer@{makeConContainer}|hyperpage}{56}
+\indexentry{makeConContainer@{makeConContainer}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}|hyperpage}{56}
+\indexentry{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{RBFfactory@{RBFfactory}!makeNeuronContainer@{makeNeuronContainer}|hyperpage}{56}
+\indexentry{makeNeuronContainer@{makeNeuronContainer}!RBFfactory@{RBFfactory}|hyperpage}{56}
+\indexentry{SimpleContainer@{SimpleContainer}|hyperpage}{56}
+\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{59}
+\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{59}
+\indexentry{SimpleContainer@{SimpleContainer}!$\sim $SimpleContainer@{$\sim $SimpleContainer}|hyperpage}{59}
+\indexentry{$\sim $SimpleContainer@{$\sim $SimpleContainer}!SimpleContainer@{SimpleContainer}|hyperpage}{59}
+\indexentry{SimpleContainer@{SimpleContainer}!at@{at}|hyperpage}{60}
+\indexentry{at@{at}!SimpleContainer@{SimpleContainer}|hyperpage}{60}
+\indexentry{SimpleContainer@{SimpleContainer}!clear@{clear}|hyperpage}{61}
+\indexentry{clear@{clear}!SimpleContainer@{SimpleContainer}|hyperpage}{61}
+\indexentry{SimpleContainer@{SimpleContainer}!createIterator@{createIterator}|hyperpage}{61}
+\indexentry{createIterator@{createIterator}!SimpleContainer@{SimpleContainer}|hyperpage}{61}
+\indexentry{SimpleContainer@{SimpleContainer}!empty@{empty}|hyperpage}{61}
+\indexentry{empty@{empty}!SimpleContainer@{SimpleContainer}|hyperpage}{61}
+\indexentry{SimpleContainer@{SimpleContainer}!push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}|hyperpage}{61}
+\indexentry{push\_\discretionary {-}{}{}back@{push\_\discretionary {-}{}{}back}!SimpleContainer@{SimpleContainer}|hyperpage}{61}
+\indexentry{SimpleContainer@{SimpleContainer}!reserve@{reserve}|hyperpage}{62}
+\indexentry{reserve@{reserve}!SimpleContainer@{SimpleContainer}|hyperpage}{62}
+\indexentry{SimpleContainer@{SimpleContainer}!show@{show}|hyperpage}{62}
+\indexentry{show@{show}!SimpleContainer@{SimpleContainer}|hyperpage}{62}
+\indexentry{SimpleContainer@{SimpleContainer}!size@{size}|hyperpage}{63}
+\indexentry{size@{size}!SimpleContainer@{SimpleContainer}|hyperpage}{63}
+\indexentry{SimpleContainer@{SimpleContainer}!validate@{validate}|hyperpage}{63}
+\indexentry{validate@{validate}!SimpleContainer@{SimpleContainer}|hyperpage}{63}
+\indexentry{SimpleContainer@{SimpleContainer}!SimpleContainerIterator$<$ T $>$@{SimpleContainerIterator$<$ T $>$}|hyperpage}{64}
+\indexentry{SimpleContainerIterator$<$ T $>$@{SimpleContainerIterator$<$ T $>$}!SimpleContainer@{SimpleContainer}|hyperpage}{64}
+\indexentry{SimpleContainer@{SimpleContainer}!d\_\discretionary {-}{}{}collection@{d\_\discretionary {-}{}{}collection}|hyperpage}{64}
+\indexentry{d\_\discretionary {-}{}{}collection@{d\_\discretionary {-}{}{}collection}!SimpleContainer@{SimpleContainer}|hyperpage}{64}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{64}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{67}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{67}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!$\sim $SimpleContainerIterator@{$\sim $SimpleContainerIterator}|hyperpage}{67}
+\indexentry{$\sim $SimpleContainerIterator@{$\sim $SimpleContainerIterator}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{67}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!currentItem@{currentItem}|hyperpage}{67}
+\indexentry{currentItem@{currentItem}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{67}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!first@{first}|hyperpage}{68}
+\indexentry{first@{first}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!isDone@{isDone}|hyperpage}{68}
+\indexentry{isDone@{isDone}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!next@{next}|hyperpage}{68}
+\indexentry{next@{next}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}|hyperpage}{69}
+\indexentry{SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}|hyperpage}{69}
+\indexentry{d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}current@{d\_\discretionary {-}{}{}current}|hyperpage}{69}
+\indexentry{d\_\discretionary {-}{}{}current@{d\_\discretionary {-}{}{}current}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{69}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}|hyperpage}{72}
+\indexentry{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{72}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}|hyperpage}{72}
+\indexentry{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{72}
+\indexentry{SimpleNeuron@{SimpleNeuron}|hyperpage}{73}
+\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!getId@{getId}|hyperpage}{75}
+\indexentry{getId@{getId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!setId@{setId}|hyperpage}{75}
+\indexentry{setId@{setId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!show@{show}|hyperpage}{76}
+\indexentry{show@{show}!SimpleNeuron@{SimpleNeuron}|hyperpage}{76}
+\indexentry{SimpleNeuron@{SimpleNeuron}!validate@{validate}|hyperpage}{76}
+\indexentry{validate@{validate}!SimpleNeuron@{SimpleNeuron}|hyperpage}{76}
+\indexentry{SimpleNeuron@{SimpleNeuron}!d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}|hyperpage}{77}
+\indexentry{d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}!SimpleNeuron@{SimpleNeuron}|hyperpage}{77}
+\indexentry{TrainingBehavior@{TrainingBehavior}|hyperpage}{77}
+\indexentry{TrainingBehavior@{TrainingBehavior}!adjustParameters@{adjustParameters}|hyperpage}{78}
+\indexentry{adjustParameters@{adjustParameters}!TrainingBehavior@{TrainingBehavior}|hyperpage}{78}
+\indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{79}
+\indexentry{AMORE.h@{AMORE.h}!foreach@{foreach}|hyperpage}{80}
+\indexentry{foreach@{foreach}!AMORE.h@{AMORE.h}|hyperpage}{80}
+\indexentry{AMORE.h@{AMORE.h}!size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}|hyperpage}{80}
+\indexentry{size\_\discretionary {-}{}{}type@{size\_\discretionary {-}{}{}type}!AMORE.h@{AMORE.h}|hyperpage}{80}
+\indexentry{AMORE.h@{AMORE.h}!ConContainerPtr@{ConContainerPtr}|hyperpage}{81}
+\indexentry{ConContainerPtr@{ConContainerPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!ConIteratorPtr@{ConIteratorPtr}|hyperpage}{81}
+\indexentry{ConIteratorPtr@{ConIteratorPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}|hyperpage}{81}
+\indexentry{ConPtr@{ConPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!Handler@{Handler}|hyperpage}{81}
+\indexentry{Handler@{Handler}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuralCreatorPtr@{NeuralCreatorPtr}|hyperpage}{81}
+\indexentry{NeuralCreatorPtr@{NeuralCreatorPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuralFactoryPtr@{NeuralFactoryPtr}|hyperpage}{81}
+\indexentry{NeuralFactoryPtr@{NeuralFactoryPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuronContainerPtr@{NeuronContainerPtr}|hyperpage}{81}
+\indexentry{NeuronContainerPtr@{NeuronContainerPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuronIteratorPtr@{NeuronIteratorPtr}|hyperpage}{81}
+\indexentry{NeuronIteratorPtr@{NeuronIteratorPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}|hyperpage}{81}
+\indexentry{NeuronPtr@{NeuronPtr}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!NeuronRef@{NeuronRef}|hyperpage}{81}
+\indexentry{NeuronRef@{NeuronRef}!AMORE.h@{AMORE.h}|hyperpage}{81}
+\indexentry{AMORE.h@{AMORE.h}!PredictBehaviorRef@{PredictBehaviorRef}|hyperpage}{82}
+\indexentry{PredictBehaviorRef@{PredictBehaviorRef}!AMORE.h@{AMORE.h}|hyperpage}{82}
+\indexentry{AMORE.h@{AMORE.h}!TrainingBehaviorRef@{TrainingBehaviorRef}|hyperpage}{82}
+\indexentry{TrainingBehaviorRef@{TrainingBehaviorRef}!AMORE.h@{AMORE.h}|hyperpage}{82}
+\indexentry{pkg/AMORE/src/Con.cpp@{pkg/AMORE/src/Con.cpp}|hyperpage}{82}
+\indexentry{pkg/AMORE/src/Container.cpp@{pkg/AMORE/src/Container.cpp}|hyperpage}{83}
+\indexentry{pkg/AMORE/src/dia/AdaptBehavior.h@{pkg/AMORE/src/dia/AdaptBehavior.h}|hyperpage}{84}
+\indexentry{pkg/AMORE/src/dia/ADAPTgd.h@{pkg/AMORE/src/dia/ADAPTgd.h}|hyperpage}{85}
+\indexentry{pkg/AMORE/src/dia/ADAPTgdwm.h@{pkg/AMORE/src/dia/ADAPTgdwm.h}|hyperpage}{86}
+\indexentry{pkg/AMORE/src/dia/BatchBehavior.h@{pkg/AMORE/src/dia/BatchBehavior.h}|hyperpage}{86}
+\indexentry{pkg/AMORE/src/dia/BATCHgd.h@{pkg/AMORE/src/dia/BATCHgd.h}|hyperpage}{87}
+\indexentry{pkg/AMORE/src/dia/BATCHgdwm.h@{pkg/AMORE/src/dia/BATCHgdwm.h}|hyperpage}{88}
+\indexentry{pkg/AMORE/src/dia/Con.h@{pkg/AMORE/src/dia/Con.h}|hyperpage}{90}
+\indexentry{pkg/AMORE/src/dia/Container.h@{pkg/AMORE/src/dia/Container.h}|hyperpage}{90}
+\indexentry{pkg/AMORE/src/dia/Iterator.h@{pkg/AMORE/src/dia/Iterator.h}|hyperpage}{91}
+\indexentry{pkg/AMORE/src/dia/MLPbehavior.h@{pkg/AMORE/src/dia/MLPbehavior.h}|hyperpage}{91}
+\indexentry{pkg/AMORE/src/dia/MLPfactory.h@{pkg/AMORE/src/dia/MLPfactory.h}|hyperpage}{92}
+\indexentry{pkg/AMORE/src/dia/NeuralCreator.h@{pkg/AMORE/src/dia/NeuralCreator.h}|hyperpage}{94}
+\indexentry{pkg/AMORE/src/dia/NeuralFactory.h@{pkg/AMORE/src/dia/NeuralFactory.h}|hyperpage}{95}
+\indexentry{pkg/AMORE/src/dia/Neuron.h@{pkg/AMORE/src/dia/Neuron.h}|hyperpage}{96}
+\indexentry{pkg/AMORE/src/dia/PredictBehavior.h@{pkg/AMORE/src/dia/PredictBehavior.h}|hyperpage}{97}
+\indexentry{pkg/AMORE/src/dia/RBFbehavior.h@{pkg/AMORE/src/dia/RBFbehavior.h}|hyperpage}{97}
+\indexentry{pkg/AMORE/src/dia/RBFfactory.h@{pkg/AMORE/src/dia/RBFfactory.h}|hyperpage}{98}
+\indexentry{pkg/AMORE/src/dia/SimpleContainer.h@{pkg/AMORE/src/dia/SimpleContainer.h}|hyperpage}{98}
+\indexentry{pkg/AMORE/src/dia/SimpleContainerIterator.h@{pkg/AMORE/src/dia/SimpleContainerIterator.h}|hyperpage}{99}
+\indexentry{pkg/AMORE/src/dia/SimpleNeuralCreator.h@{pkg/AMORE/src/dia/SimpleNeuralCreator.h}|hyperpage}{100}
+\indexentry{pkg/AMORE/src/dia/SimpleNeuron.h@{pkg/AMORE/src/dia/SimpleNeuron.h}|hyperpage}{101}
+\indexentry{pkg/AMORE/src/dia/TrainingBehavior.h@{pkg/AMORE/src/dia/TrainingBehavior.h}|hyperpage}{103}
+\indexentry{pkg/AMORE/src/Iterator.cpp@{pkg/AMORE/src/Iterator.cpp}|hyperpage}{103}
+\indexentry{pkg/AMORE/src/MLPfactory.cpp@{pkg/AMORE/src/MLPfactory.cpp}|hyperpage}{104}
+\indexentry{pkg/AMORE/src/SimpleContainer.cpp@{pkg/AMORE/src/SimpleContainer.cpp}|hyperpage}{105}
+\indexentry{pkg/AMORE/src/SimpleContainerIterator.cpp@{pkg/AMORE/src/SimpleContainerIterator.cpp}|hyperpage}{106}
+\indexentry{pkg/AMORE/src/SimpleNeuralCreator.cpp@{pkg/AMORE/src/SimpleNeuralCreator.cpp}|hyperpage}{107}
+\indexentry{pkg/AMORE/src/SimpleNeuron.cpp@{pkg/AMORE/src/SimpleNeuron.cpp}|hyperpage}{108}

@@ -7,7 +7,7 @@ class SimpleContainerIterator : public Iterator<T> {
   // Attributes
 private:
   Container<T>* d_container;
-  typename std::vector<T>::iterator d_iterator;
+  size_type d_current;
   // Operations
 public:
 friend class SimpleContainer<T>; 

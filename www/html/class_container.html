@@ -80,10 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Container&lt; T &gt; Class Template Reference</div>  </div>
 </div>
@@ -92,74 +90,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>class <a class="el" href="class_container.html" title="class Container -">Container</a> -  
  <a href="class_container.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="dia_2_container_8h_source.html">Container.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_container_8h_source.html">Container.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Container&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container__inherit__graph.svg" width="691" height="1832" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Container&lt; T &gt;:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container__coll__graph.svg" width="298" height="880" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container__inherit__graph.svg" width="319" height="523" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_container-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
-&lt; boost::shared_ptr&lt; T &gt;<br class="typebreak"/>
- &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
-&lt; boost::shared_ptr&lt; T &gt;<br class="typebreak"/>
- &gt;::<a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a8dd7ae9d0687e11d873f98206e961ac1">const_reference</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5b3440c3177017d2d6a190724e7078ec">~Container</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a1cfd60c48bf7ac7d0c6e323c8fa3d1da">createIterator</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b">push_back</a> (T const &amp;<a class="el" href="class_container.html#a8dd7ae9d0687e11d873f98206e961ac1">const_reference</a>)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a shared_ptr at the end of collection.  <a href="#adc177ce7c428ded8788bc66fb829db8b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a39dd135ff6d4ba1bb3785100e266a748">reserve</a> (int n)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aeb0ba9c87519ae6b7036d72589948755">empty</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a359f34bc418575b474184cbe3f33527e">size</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size or length of the vector.  <a href="#a359f34bc418575b474184cbe3f33527e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a3c98faf8d85775ce5deb9db00fc11b18">clear</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ada156e5601bc75549e64ea4befb136f0">show</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty print of the Container&lt;T&gt;  <a href="#ada156e5601bc75549e64ea4befb136f0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#acfdc5456a2fc854d1830a8a351567928">validate</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Object validator.  <a href="#acfdc5456a2fc854d1830a8a351567928"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a1ed1d5384e85f713e40bfb539e23c9ce">Container</a> (std::vector&lt; value &gt; first, std::vector&lt; value &gt; last)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
-&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a9161a87726434f8955398137c647947c">load</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">collection field accessor function  <a href="#a9161a87726434f8955398137c647947c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a601371159ddfee9ab29b676207a0cf75">store</a> (typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; collectionT)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">collection field accessor function  <a href="#a601371159ddfee9ab29b676207a0cf75"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a842c3d9eca81b78b59112fde9707b091">size</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a1f00050a4bd892699f05f8528afcea2e">push_back</a> (boost::shared_ptr&lt; T &gt; const &amp;<a class="el" href="class_container.html#a8dd7ae9d0687e11d873f98206e961ac1">const_reference</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a shared_ptr at the end of collection.  <a href="#a1f00050a4bd892699f05f8528afcea2e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a86d42cf807e073724bd2f8e08dcdfefa">append</a> (<a class="el" href="class_container.html">Container</a>&lt; T &gt; containerT)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a Container&lt;T&gt; object.  <a href="#a86d42cf807e073724bd2f8e08dcdfefa"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ad72379ee222b073a5eecec7fc1bedfc2">show</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aa99a036fd0fe6d6b82ba558157e557d3">validate</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aa3cbae68ebeed649c52eb3805a30fb75">reserve</a> (int n)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab77ce6f8173bd47c4cf46643317dffdb">resize</a> (int n)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e">empty</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aab0690d44c8e04614cea46935ff49e7a">clear</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aed3c227120a6a745fa9adfb25c3dd225">operator[]</a> (size_type offset)</td></tr>
+&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a18a0a70153781d3d94526bc09fcbedb8">createIterator</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a8aed06783f7cd0749f796c64e64626e7">at</a> (size_type element)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a12ffe2d2dbbcd78b6b293756004bd6e0">push_back</a> (T const &amp;const_reference)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5f70fb0d821a8db9a0733aafe9ef35ac">reserve</a> (int n)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a123dcd25b363ab92ac8bfa8b4c4061a4">empty</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a1eebc7b5cbb0c574cb1aef87c2ddba36">size</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ac27f3554d6ac6ecb227ead060ff1f8a2">clear</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5ee85af656e60863a7e4c1f7f9c484f4">show</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#abbd8ca2714a550351442f4410cf5736d">validate</a> ()=0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
-&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
@@ -167,85 +123,8 @@ class Container&lt; T &gt;</h3>
 
 <p>class <a class="el" href="class_container.html" title="class Container -">Container</a> - </p>
 
-<p>Definition at line <a class="el" href="dia_2_container_8h_source.html#l00005">5</a> of file <a class="el" href="dia_2_container_8h_source.html">Container.h</a>.</p>
-</div><hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="a5eabadaffdd508cb623c955eb0af1518"></a><!-- doxytag: member="Container::const_iterator" ref="a5eabadaffdd508cb623c955eb0af1518" args="" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::<a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html#a5eabadaffdd508cb623c955eb0af1518">const_iterator</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_con_container.html#ac314ee4e351b3a5f595cd1de74fb3b5e">ConContainer</a>, and <a class="el" href="class_neuron_container.html#a41749602f05e7610da7f0f1fd59f5442">NeuronContainer</a>.</p>
-
-<p>Definition at line <a class="el" href="old_2_container_8h_source.html#l00022">22</a> of file <a class="el" href="old_2_container_8h_source.html">Container.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8dd7ae9d0687e11d873f98206e961ac1"></a><!-- doxytag: member="Container::const_reference" ref="a8dd7ae9d0687e11d873f98206e961ac1" args="" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a> const&amp; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html#a8dd7ae9d0687e11d873f98206e961ac1">const_reference</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_con_container.html#ac644eca2f5ee432a6070fd1d397b3741">ConContainer</a>, and <a class="el" href="class_neuron_container.html#a468ffbb00b15553f73da46dd62c91c8d">NeuronContainer</a>.</p>
-
-<p>Definition at line <a class="el" href="old_2_container_8h_source.html#l00026">26</a> of file <a class="el" href="old_2_container_8h_source.html">Container.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afe880028d8304353129f47cd1d28c20a"></a><!-- doxytag: member="Container::iterator" ref="afe880028d8304353129f47cd1d28c20a" args="" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::vector&lt;boost::shared_ptr&lt;T&gt; &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_con_container.html#a5dc8aab66a22fc25b7e700b51265b577">ConContainer</a>, and <a class="el" href="class_neuron_container.html#abf81356adaea3bfc64aa03777e9a8def">NeuronContainer</a>.</p>
-
-<p>Definition at line <a class="el" href="old_2_container_8h_source.html#l00019">19</a> of file <a class="el" href="old_2_container_8h_source.html">Container.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa44714b9a736d2cfd2e01a87ad1c001b"></a><!-- doxytag: member="Container::value_type" ref="aa44714b9a736d2cfd2e01a87ad1c001b" args="" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::shared_ptr&lt;T&gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html#aa44714b9a736d2cfd2e01a87ad1c001b">value_type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_con_container.html#a08881a149e3a285eba67a4c8cff92a9e">ConContainer</a>, and <a class="el" href="class_neuron_container.html#ac067345f1d27a5b04e4d9487b319ccaa">NeuronContainer</a>.</p>
-
-<p>Definition at line <a class="el" href="old_2_container_8h_source.html#l00024">24</a> of file <a class="el" href="old_2_container_8h_source.html">Container.h</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<p>Definition at line <a class="el" href="_container_8h_source.html#l00005">5</a> of file <a class="el" href="_container_8h_source.html">Container.h</a>.</p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5b3440c3177017d2d6a190724e7078ec"></a><!-- doxytag: member="Container::~Container" ref="a5b3440c3177017d2d6a190724e7078ec" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +141,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00017">17</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00020">20</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">  {
   }
 </pre></div>
@@ -284,184 +163,42 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00011">11</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00014">14</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">  {
-
   }
 </pre></div>
-</div>
-</div>
-<a class="anchor" id="ab17ce1f67243b28abcd4c8113a72524c"></a><!-- doxytag: member="Container::Container" ref="ab17ce1f67243b28abcd4c8113a72524c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html">Container</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1ed1d5384e85f713e40bfb539e23c9ce"></a><!-- doxytag: member="Container::Container" ref="a1ed1d5384e85f713e40bfb539e23c9ce" args="(std::vector&lt; value &gt; first, std::vector&lt; value &gt; last)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html">Container</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; value &gt;&#160;</td>
-          <td class="paramname"><em>first</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; value &gt;&#160;</td>
-          <td class="paramname"><em>last</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a86d42cf807e073724bd2f8e08dcdfefa"></a><!-- doxytag: member="Container::append" ref="a86d42cf807e073724bd2f8e08dcdfefa" args="(Container&lt; T &gt; containerT)" -->
+<a class="anchor" id="a8aed06783f7cd0749f796c64e64626e7"></a><!-- doxytag: member="Container::at" ref="a8aed06783f7cd0749f796c64e64626e7" args="(size_type element)=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::append </td>
+          <td class="memname">virtual T <a class="el" href="class_container.html">Container</a>&lt; T &gt;::at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_container.html">Container</a>&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Appends a Container&lt;T&gt; object. </p>
-<p>This method inserts the collection field of a second object at the end of the collection field of the calling object. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>The Container&lt;T&gt; object to be added to the current one </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.Container.R, for usage examples.</dd></dl>
-<div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
-        <span class="comment">//Usage example:</span>
-        <span class="comment">//================</span>
-        <span class="comment">// Data set up</span>
-                                std::vector&lt;int&gt; result;
-                                std::vector&lt;ConPtr&gt; vcA, vcB;
-                                ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                                ContainerConPtr conContainerPtrA( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
-                                ContainerConPtr conContainerPtrB( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
-                                <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
-                                <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
-                                <span class="keywordtype">int</span> ids[]= {1, 2, 3, 4, 5, 6};
-                                <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3.6 };
-                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=5 ; i++) {                             <span class="comment">// Let&#39;s create a vector with six neurons</span>
-                                        ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
-                                }
-                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// A vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
-                                        conContainerPtrA-&gt;push_back(ptC);
-                                }
-                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=3; i&lt;=5 ; i++) {                             <span class="comment">// Another vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
-                                        conContainerPtrB-&gt;push_back(ptC);
-                                }
-        <span class="comment">// Test</span>
-                                conContainerPtrA-&gt;append(*conContainerPtrB);
-                                conContainerPtrA-&gt;validate();
-                                conContainerPtrA-&gt;show() ;
-
-        <span class="comment">// After execution of the code above, the output at the R terminal would display:</span>
-        <span class="comment">//</span>
-        <span class="comment">//  From:        1       Weight=         1.130000</span>
-        <span class="comment">//      From:    2       Weight=         2.220000</span>
-        <span class="comment">//      From:    3       Weight=         3.330000</span>
-        <span class="comment">//      From:    4       Weight=         5.600000</span>
-        <span class="comment">//      From:    5       Weight=         4.200000</span>
-        <span class="comment">//      From:    6       Weight=         3.600000</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#a601371159ddfee9ab29b676207a0cf75" title="collection field accessor function">Container::store</a> , <a class="el" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">Container::push_back</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00207">207</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-
-<p>References <a class="el" href="old_2_container_8cpp_source.html#l00022">Container&lt; T &gt;::begin()</a>, <a class="el" href="old_2_container_8cpp_source.html#l00029">Container&lt; T &gt;::end()</a>, and <a class="el" href="_container_8cpp_source.html#l00155">Container&lt; T &gt;::size()</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a39dd135ff6d4ba1bb3785100e266a748">reserve</a>(<a class="code" href="class_container.html#a359f34bc418575b474184cbe3f33527e" title="Returns the size or length of the vector.">size</a>() + v.<a class="code" href="class_container.html#a359f34bc418575b474184cbe3f33527e" title="Returns the size or length of the vector.">size</a>());
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.insert(<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>(), v.<a class="code" href="class_container.html#ac5e2a75311f6e6a690ca67603490ddb1">begin</a>(), v.<a class="code" href="class_container.html#a266eabe62963d6909d3aca7f105e203e">end</a>());
-  }
-</pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container_a86d42cf807e073724bd2f8e08dcdfefa_cgraph.svg" width="318" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
+<p>Implemented in <a class="el" href="class_simple_container.html#a2e8f56f3af1e0ffb1fcd54d05d82c477">SimpleContainer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac5e2a75311f6e6a690ca67603490ddb1"></a><!-- doxytag: member="Container::begin" ref="ac5e2a75311f6e6a690ca67603490ddb1" args="()" -->
+<a class="anchor" id="ac27f3554d6ac6ecb227ead060ff1f8a2"></a><!-- doxytag: member="Container::clear" ref="ac27f3554d6ac6ecb227ead060ff1f8a2" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00022">22</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="old_2_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>, and <a class="el" href="_con_container_8cpp_source.html#l00333">ConContainer::setFrom()</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin();
-  }
-</pre></div>
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container_ac5e2a75311f6e6a690ca67603490ddb1_icgraph.svg" width="347" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3c98faf8d85775ce5deb9db00fc11b18"></a><!-- doxytag: member="Container::clear" ref="a3c98faf8d85775ce5deb9db00fc11b18" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::clear </td>
+          <td class="memname">virtual void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -472,41 +209,16 @@ template&lt;typename T &gt; </div>
 
 <p>Implemented in <a class="el" href="class_simple_container.html#ae3ee6cb18f1dd33ab5de4f9854ce245f">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00177">177</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.clear();
-  }
-</pre></div>
 </div>
 </div>
-<a class="anchor" id="aab0690d44c8e04614cea46935ff49e7a"></a><!-- doxytag: member="Container::clear" ref="aab0690d44c8e04614cea46935ff49e7a" args="()" -->
+<a class="anchor" id="a18a0a70153781d3d94526bc09fcbedb8"></a><!-- doxytag: member="Container::createIterator" ref="a18a0a70153781d3d94526bc09fcbedb8" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::clear </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#ae3ee6cb18f1dd33ab5de4f9854ce245f">SimpleContainer&lt; T &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1cfd60c48bf7ac7d0c6e323c8fa3d1da"></a><!-- doxytag: member="Container::createIterator" ref="a1cfd60c48bf7ac7d0c6e323c8fa3d1da" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::shared_ptr&lt; IteratorInterface&lt; T &gt; &gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::createIterator </td>
+          <td class="memname">virtual boost::shared_ptr&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt;T&gt; &gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::createIterator </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -515,26 +227,18 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_simple_container.html#a4e46f5cb32231deaf9aa9bb7f871d09e">SimpleContainer&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_simple_container.html#ab7593f37ea162a6d6408f1dac1f7ae41">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00023">23</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    boost::shared_ptr&lt; ContainerIterator&lt;T&gt; &gt; containerIteratorPtr( <span class="keyword">new</span> ContainerIterator&lt;T&gt; ());
-    containerIteratorPtr-&gt;d_container = <span class="keyword">this</span>;
-    containerIteratorPtr-&gt;d_iterator = <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin();
-    <span class="keywordflow">return</span> containerIteratorPtr;
-  }
-</pre></div>
 </div>
 </div>
-<a class="anchor" id="aeb0ba9c87519ae6b7036d72589948755"></a><!-- doxytag: member="Container::empty" ref="aeb0ba9c87519ae6b7036d72589948755" args="()=0" -->
+<a class="anchor" id="a123dcd25b363ab92ac8bfa8b4c4061a4"></a><!-- doxytag: member="Container::empty" ref="a123dcd25b363ab92ac8bfa8b4c4061a4" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::empty </td>
+          <td class="memname">virtual bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -545,303 +249,37 @@ template&lt;typename T &gt; </div>
 
 <p>Implemented in <a class="el" href="class_simple_container.html#ac2966f33796f69c290a84361a578ed08">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00163">163</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_con_container_8cpp_source.html#l00333">ConContainer::setFrom()</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> (<a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.empty());
-  }
-</pre></div>
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container_aeb0ba9c87519ae6b7036d72589948755_icgraph.svg" width="352" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="ab8e09c25f519687468ef5b9f0fae9b3e"></a><!-- doxytag: member="Container::empty" ref="ab8e09c25f519687468ef5b9f0fae9b3e" args="()" -->
+<a class="anchor" id="a12ffe2d2dbbcd78b6b293756004bd6e0"></a><!-- doxytag: member="Container::push_back" ref="a12ffe2d2dbbcd78b6b293756004bd6e0" args="(T const &amp;const_reference)=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::empty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#ac2966f33796f69c290a84361a578ed08">SimpleContainer&lt; T &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a266eabe62963d6909d3aca7f105e203e"></a><!-- doxytag: member="Container::end" ref="a266eabe62963d6909d3aca7f105e203e" args="()" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;::<a class="el" href="class_container.html#afe880028d8304353129f47cd1d28c20a">iterator</a> <a class="el" href="class_container.html">Container</a>&lt; T &gt;::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00029">29</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="old_2_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.end();
-  }
-</pre></div>
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container_a266eabe62963d6909d3aca7f105e203e_icgraph.svg" width="307" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a9161a87726434f8955398137c647947c"></a><!-- doxytag: member="Container::load" ref="a9161a87726434f8955398137c647947c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::load </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>collection field accessor function </p>
-<p>This method allows access to the data stored in the <a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a> field. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The collection vector.</dd></dl>
-<div class="fragment"><pre class="fragment">        <span class="comment">//================</span>
-        <span class="comment">//Usage example:</span>
-        <span class="comment">//================</span>
-                <span class="comment">// Data set up</span>
-                                std::vector&lt;int&gt; result;
-                                std::vector&lt;ConPtr&gt; vcA, vcB;
-                                ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                                ContainerConPtr conContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
-                                <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
-                                <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
-                                <span class="keywordtype">int</span> ids[]= {10, 20, 30};
-                                <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33 };
-                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
-                                        ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
-                                }
-                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
-                                        vcA.push_back(ptC);
-                                }
-                <span class="comment">// Test</span>
-                        conContainerPtr-&gt;store(vcA);
-                        vcB = conContainerPtr-&gt;load();
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                                     <span class="comment">// get Ids. Container does not have getId defined</span>
-                                        result.push_back( vcB.at(i)-&gt;getId());
-                        }
-
-                <span class="comment">// Now, result is an integer vector with values 10, 20, 30.</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#a601371159ddfee9ab29b676207a0cf75" title="collection field accessor function">store</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00254">254</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>;
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="aed3c227120a6a745fa9adfb25c3dd225"></a><!-- doxytag: member="Container::operator[]" ref="aed3c227120a6a745fa9adfb25c3dd225" args="(size_type offset)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::shared_ptr&lt; T &gt; &amp; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">size_type&#160;</td>
-          <td class="paramname"><em>offset</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00317">317</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>[offset];
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="adc177ce7c428ded8788bc66fb829db8b"></a><!-- doxytag: member="Container::push_back" ref="adc177ce7c428ded8788bc66fb829db8b" args="(T const &amp;const_reference)=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::push_back </td>
+          <td class="memname">virtual void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::push_back </td>
           <td>(</td>
           <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>reference</em></td><td>)</td>
+          <td class="paramname"><em>const_reference</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Append a shared_ptr at the end of collection. </p>
-<p>Implements push_back for the <a class="el" href="class_container.html" title="class Container -">Container</a> class </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">TsharedPtr</td><td>A shared_ptr pointer to be inserted at the end of collection</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><pre class="fragment">                <span class="comment">//================</span>
-                <span class="comment">//Usage example:</span>
-                <span class="comment">//================</span>
-                <span class="comment">// Data set up</span>
-                        <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a> N1, N2, N3;
-                        <a class="code" href="class_container.html">Container&lt;Con&gt;</a> conContainer;
-                        std::vector&lt;ConPtr&gt; vc;
-                        std::vector&lt;int&gt; result;
-                        N1.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(10);
-                        N2.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(20);
-                        N3.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(30);
-                <span class="comment">// Test</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N1, 1.13) );     <span class="comment">// Create new Con and initialize ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-                        ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N2, 2.22) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-                        ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N3, 3.33) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-
-                        vc = conContainer.<a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">load</a>();
-
-                        result.push_back(vc.at(0)-&gt;getId());
-                        result.push_back(vc.at(1)-&gt;getId());
-                        result.push_back(vc.at(2)-&gt;getId());
-        <span class="comment">// After execution of this code, result contains a numeric vector with values 10, 20 and 30.</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd>C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
 <p>Implemented in <a class="el" href="class_simple_container.html#a53466966297b3f0a707e025b3721004a">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00068">68</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.push_back(reference);
-  }
-</pre></div>
 </div>
 </div>
-<a class="anchor" id="a1f00050a4bd892699f05f8528afcea2e"></a><!-- doxytag: member="Container::push_back" ref="a1f00050a4bd892699f05f8528afcea2e" args="(boost::shared_ptr&lt; T &gt; const &amp;const_reference)" -->
+<a class="anchor" id="a5f70fb0d821a8db9a0733aafe9ef35ac"></a><!-- doxytag: member="Container::reserve" ref="a5f70fb0d821a8db9a0733aafe9ef35ac" args="(int n)=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype">boost::shared_ptr&lt; T &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>const_reference</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Append a shared_ptr at the end of collection. </p>
-<p>Implements push_back for the <a class="el" href="class_container.html" title="class Container -">Container</a> class </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">TsharedPtr</td><td>A shared_ptr pointer to be inserted at the end of collection</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><pre class="fragment">                <span class="comment">//================</span>
-                <span class="comment">//Usage example:</span>
-                <span class="comment">//================</span>
-                <span class="comment">// Data set up</span>
-                        <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a> N1, N2, N3;
-                        <a class="code" href="class_container.html">Container&lt;Con&gt;</a> conContainer;
-                        std::vector&lt;ConPtr&gt; vc;
-                        std::vector&lt;int&gt; result;
-                        N1.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(10);
-                        N2.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(20);
-                        N3.<a class="code" href="class_neuron.html#ae58936b5582b9da04596a9c29fbace98">setId</a>(30);
-                <span class="comment">// Test</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> ptCon( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N1, 1.13) );     <span class="comment">// Create new Con and initialize ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-                        ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N2, 2.22) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-                        ptCon.reset(  <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>(&amp;N3, 3.33) );             <span class="comment">// create new Con and assign to ptCon</span>
-                        conContainer.<a class="code" href="class_container.html#adc177ce7c428ded8788bc66fb829db8b" title="Append a shared_ptr at the end of collection.">push_back</a>(ptCon);                          <span class="comment">// push_back</span>
-
-                        vc = conContainer.<a class="code" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">load</a>();
-
-                        result.push_back(vc.at(0)-&gt;getId());
-                        result.push_back(vc.at(1)-&gt;getId());
-                        result.push_back(vc.at(2)-&gt;getId());
-        <span class="comment">// After execution of this code, result contains a numeric vector with values 10, 20 and 30.</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd>C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00071">71</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.push_back(<a class="code" href="class_container.html#a8dd7ae9d0687e11d873f98206e961ac1">const_reference</a>);
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="aa3cbae68ebeed649c52eb3805a30fb75"></a><!-- doxytag: member="Container::reserve" ref="aa3cbae68ebeed649c52eb3805a30fb75" args="(int n)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::reserve </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#a4bca44e6a9cef9d57627218c0a180d8a">SimpleContainer&lt; T &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a39dd135ff6d4ba1bb3785100e266a748"></a><!-- doxytag: member="Container::reserve" ref="a39dd135ff6d4ba1bb3785100e266a748" args="(int n)=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::reserve </td>
+          <td class="memname">virtual void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::reserve </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -853,65 +291,16 @@ template&lt;typename T &gt; </div>
 
 <p>Implemented in <a class="el" href="class_simple_container.html#a4bca44e6a9cef9d57627218c0a180d8a">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00170">170</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.reserve(n);
-  }
-</pre></div>
 </div>
 </div>
-<a class="anchor" id="ab77ce6f8173bd47c4cf46643317dffdb"></a><!-- doxytag: member="Container::resize" ref="ab77ce6f8173bd47c4cf46643317dffdb" args="(int n)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::resize </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00289">289</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.resize(n);
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ad72379ee222b073a5eecec7fc1bedfc2"></a><!-- doxytag: member="Container::show" ref="ad72379ee222b073a5eecec7fc1bedfc2" args="()" -->
+<a class="anchor" id="a5ee85af656e60863a7e4c1f7f9c484f4"></a><!-- doxytag: member="Container::show" ref="a5ee85af656e60863a7e4c1f7f9c484f4" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::show </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#af4d591e2c3a44ae016e01e3d07d1e9ac">SimpleContainer&lt; T &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ada156e5601bc75549e64ea4befb136f0"></a><!-- doxytag: member="Container::show" ref="ada156e5601bc75549e64ea4befb136f0" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::show </td>
+          <td class="memname">virtual void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::show </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -919,86 +308,19 @@ template&lt;typename T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Pretty print of the Container&lt;T&gt; </p>
-<p>This method outputs in the R terminal the contents of <a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">Container::collection</a>. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true in case everything works without throwing an exception</dd></dl>
-<p>* </p>
-<div class="fragment"><pre class="fragment">                <span class="comment">//================</span>
-                <span class="comment">//Usage example:</span>
-                <span class="comment">//================</span>
-                <span class="comment">// Data set up</span>
-                        ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
-                        ContainerConPtr conContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Con&gt;</a>() );
-                        <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
-                        <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
-                        <span class="keywordtype">int</span> ids[]= {10, 20, 30};
-                        <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33 };
-
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
-                                ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                                neuronContainerPtr-&gt;push_back(ptN);
-                        }
-
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
-                                conContainerPtr-&gt;push_back(ptC);
-                        }
-
-                <span class="comment">// Test</span>
-                        conContainerPtr-&gt;show() ;
-
-                <span class="comment">// The output at the R terminal would display:</span>
-                <span class="comment">//</span>
-                <span class="comment">//      # From:  10      Weight=         1.130000</span>
-                <span class="comment">//      # From:  20      Weight=         2.220000</span>
-                <span class="comment">//      # From:  30      Weight=         3.330000</span>
-                <span class="comment">//</span>
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_simple_container.html#af4d591e2c3a44ae016e01e3d07d1e9ac">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00118">118</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-
-    <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr(<a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin()); itr
-        != <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.end(); ++itr)
-      {
-        itr-&gt;show();
-      }
-
-  }
-</pre></div>
 </div>
 </div>
-<a class="anchor" id="a842c3d9eca81b78b59112fde9707b091"></a><!-- doxytag: member="Container::size" ref="a842c3d9eca81b78b59112fde9707b091" args="()" -->
+<a class="anchor" id="a1eebc7b5cbb0c574cb1aef87c2ddba36"></a><!-- doxytag: member="Container::size" ref="a1eebc7b5cbb0c574cb1aef87c2ddba36" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_type <a class="el" href="class_container.html">Container</a>&lt; T &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#a2fdb3580e1728e6e2ba6ef77c0bce63e">SimpleContainer&lt; T &gt;</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a359f34bc418575b474184cbe3f33527e"></a><!-- doxytag: member="Container::size" ref="a359f34bc418575b474184cbe3f33527e" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">size_type <a class="el" href="class_container.html">Container</a>&lt; T &gt;::size </td>
+          <td class="memname">virtual size_type <a class="el" href="class_container.html">Container</a>&lt; T &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -1006,90 +328,19 @@ template&lt;typename T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Returns the size or length of the vector. </p>
-<p>This method returns the size of the vector. In the classes derived from Container&lt;T&gt; this is aliased as numOfCons, numOfNeurons and numOfLayers. The unit test files, e.g., runit.Cpp.Container.R, for usage examples. </p>
 
 <p>Implemented in <a class="el" href="class_simple_container.html#a2fdb3580e1728e6e2ba6ef77c0bce63e">SimpleContainer&lt; T &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00155">155</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="old_2_container_8cpp_source.html#l00207">Container&lt; T &gt;::append()</a>, and <a class="el" href="_con_container_8cpp_source.html#l00333">ConContainer::setFrom()</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">return</span> <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.size();
-  }
-</pre></div>
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_container_a359f34bc418575b474184cbe3f33527e_icgraph.svg" width="339" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="a601371159ddfee9ab29b676207a0cf75"></a><!-- doxytag: member="Container::store" ref="a601371159ddfee9ab29b676207a0cf75" args="(typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; collectionT)" -->
+<a class="anchor" id="abbd8ca2714a550351442f4410cf5736d"></a><!-- doxytag: member="Container::validate" ref="abbd8ca2714a550351442f4410cf5736d" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_container.html">Container</a>&lt; T &gt;::store </td>
-          <td>(</td>
-          <td class="paramtype">typename std::vector&lt; boost::shared_ptr&lt; T &gt; &gt;&#160;</td>
-          <td class="paramname"><em>collectionT</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>collection field accessor function </p>
-<p>This method sets the value of the data stored in the <a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a> field. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>The vector of smart pointers to be stored in the collection field </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_container.html#a9161a87726434f8955398137c647947c" title="collection field accessor function">load</a> and the unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
-<p>Definition at line <a class="el" href="old_2_container_8cpp_source.html#l00268">268</a> of file <a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a> = collectionT;
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="aa99a036fd0fe6d6b82ba558157e557d3"></a><!-- doxytag: member="Container::validate" ref="aa99a036fd0fe6d6b82ba558157e557d3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::validate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_simple_container.html#ac7cae8eaac2dc0a69138b65f679bd16a">SimpleContainer&lt; T &gt;</a>, and <a class="el" href="class_con_container.html#aac12a3d3604db9ff715503816109470c">ConContainer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acfdc5456a2fc854d1830a8a351567928"></a><!-- doxytag: member="Container::validate" ref="acfdc5456a2fc854d1830a8a351567928" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::validate </td>
+          <td class="memname">virtual bool <a class="el" href="class_container.html">Container</a>&lt; T &gt;::validate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -1098,54 +349,20 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Object validator. </p>
-<p>This method checks the object for internal coherence. This method calls the validate method for each element in collection, </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>The unit test files, e.g., runit.Cpp.Container.R, for usage examples. </dd></dl>
-
-<p>Implemented in <a class="el" href="class_simple_container.html#ac7cae8eaac2dc0a69138b65f679bd16a">SimpleContainer&lt; T &gt;</a>, and <a class="el" href="class_con_container.html#aac12a3d3604db9ff715503816109470c">ConContainer</a>.</p>
-
-<p>Definition at line <a class="el" href="_container_8cpp_source.html#l00136">136</a> of file <a class="el" href="_container_8cpp_source.html">Container.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">  {
-    <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::vector&lt;T&gt;::iterator itr(<a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.begin()); itr
-        != <a class="code" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a>.end(); ++itr)
-      {
-        itr-&gt;validate();
-      }
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-  }
-</pre></div>
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a6cc12233bceb7d72709320d2c57e3398"></a><!-- doxytag: member="Container::collection" ref="a6cc12233bceb7d72709320d2c57e3398" args="" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;boost::shared_ptr&lt;T&gt; &gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::<a class="el" href="class_container.html#a6cc12233bceb7d72709320d2c57e3398">collection</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="old_2_container_8h_source.html#l00015">15</a> of file <a class="el" href="old_2_container_8h_source.html">Container.h</a>.</p>
+<p>Implemented in <a class="el" href="class_simple_container.html#ac7cae8eaac2dc0a69138b65f679bd16a">SimpleContainer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>pkg/AMORE/src/dia/<a class="el" href="dia_2_container_8h_source.html">Container.h</a></li>
-<li>pkg/AMORE/src/old/<a class="el" href="old_2_container_8h_source.html">Container.h</a></li>
+<li>pkg/AMORE/src/dia/<a class="el" href="_container_8h_source.html">Container.h</a></li>
 <li>pkg/AMORE/src/<a class="el" href="_container_8cpp_source.html">Container.cpp</a></li>
-<li>pkg/AMORE/src/old/<a class="el" href="old_2_container_8cpp_source.html">Container.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_container.html">Container</a>      </li>
-      <li class="footer">Generated on Thu Jul 14 2011 19:12:30 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 15 2011 22:09:14 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

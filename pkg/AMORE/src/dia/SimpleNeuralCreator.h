@@ -6,7 +6,7 @@ class SimpleNeuralCreator : public NeuralCreator {
   // Operations
 public:
   SimpleNeuralCreator ();
-  ConPtr createCon (NeuralFactory& neuralFactory, Neuron& neuron);
-  NeuronPtr createNeuron (NeuralFactory& neuralFactory);
+  Con* createCon (NeuralFactory& neuralFactory, Neuron& neuron);
+  Neuron* createNeuron (NeuralFactory& neuralFactory);
 };
 

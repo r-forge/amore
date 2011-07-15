@@ -17,14 +17,14 @@ SimpleNeuralCreator::SimpleNeuralCreator()
 }
 ;
 
-ConPtr
+Con*
 SimpleNeuralCreator::createCon(NeuralFactory& neuralFactory, Neuron& neuron)
 {
   return neuralFactory.makeCon(neuron);
 }
 
 
-NeuronPtr
+Neuron*
 SimpleNeuralCreator::createNeuron(NeuralFactory& neuralFactory)
 {
   return neuralFactory.makeNeuron();

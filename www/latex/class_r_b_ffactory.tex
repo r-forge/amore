@@ -18,7 +18,7 @@ Inheritance diagram for RBFfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{class_r_b_ffactory__inherit__graph}
+\includegraphics[width=214pt]{class_r_b_ffactory__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,17 +28,26 @@ Collaboration diagram for RBFfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=170pt]{class_r_b_ffactory__coll__graph}
+\includegraphics[width=214pt]{class_r_b_ffactory__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_r_b_ffactory_af6d7b55c1c157b296f211c46f253f546}{RBFfactory} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_r_b_ffactory_a2e83beed580f5e85ccec5fcad2e87345}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron)
+\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_r_b_ffactory_ac492116058009f39b10252afc121c225}{makeCon} (\hyperlink{class_neuron}{Neuron} $\ast$neuron, double weight)
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}{makeNeuron} ()
+\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_r_b_ffactory_a0cb9bbdd1726e28de699eceba731808b}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron)
+\item 
+\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} $>$ $\ast$ \hyperlink{class_r_b_ffactory_a844c8fdc315958fdb084194f0b900c68}{makeConContainer} ()
+\item 
+\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_r_b_ffactory_a92fc16863bf60ebd93be1f108ce95ad6}{makeNeuronContainer} ()
+\item 
+\hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_r_b_ffactory_aa3514a25f378fa5e677970018d2ce65e}{makeNeuron} ()
 \end{DoxyCompactItemize}
 
 
@@ -62,31 +71,67 @@ Definition at line 5 of file RBFfactory.h.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_r_b_ffactory_a2e83beed580f5e85ccec5fcad2e87345}{
+\hypertarget{class_r_b_ffactory_ac492116058009f39b10252afc121c225}{
 \index{RBFfactory@{RBFfactory}!makeCon@{makeCon}}
 \index{makeCon@{makeCon}!RBFfactory@{RBFfactory}}
-\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConPtr} RBFfactory::makeCon (
+\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con}$\ast$ RBFfactory::makeCon (
+\begin{DoxyParamCaption}
+\item[{{\bf Neuron} $\ast$}]{neuron, }
+\item[{double}]{weight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_r_b_ffactory_ac492116058009f39b10252afc121c225}
+\hypertarget{class_r_b_ffactory_a0cb9bbdd1726e28de699eceba731808b}{
+\index{RBFfactory@{RBFfactory}!makeCon@{makeCon}}
+\index{makeCon@{makeCon}!RBFfactory@{RBFfactory}}
+\subsubsection[{makeCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con}$\ast$ RBFfactory::makeCon (
 \begin{DoxyParamCaption}
 \item[{{\bf Neuron} \&}]{neuron}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_r_b_ffactory_a2e83beed580f5e85ccec5fcad2e87345}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_r_b_ffactory_a0cb9bbdd1726e28de699eceba731808b}
 
 
-Implements \hyperlink{class_neural_factory_a2e156aff271f0c6c134a8bad7d164f73}{NeuralFactory}.
+Implements \hyperlink{class_neural_factory_ad7dacdd1ed0994f4a55612bd2d45ada2}{NeuralFactory}.
 
-\hypertarget{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}{
-\index{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}}
-\index{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}}
-\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} RBFfactory::makeNeuron (
+\hypertarget{class_r_b_ffactory_a844c8fdc315958fdb084194f0b900c68}{
+\index{RBFfactory@{RBFfactory}!makeConContainer@{makeConContainer}}
+\index{makeConContainer@{makeConContainer}!RBFfactory@{RBFfactory}}
+\subsubsection[{makeConContainer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Container}$<${\bf ConPtr}$>$$\ast$ RBFfactory::makeConContainer (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_r_b_ffactory_a844c8fdc315958fdb084194f0b900c68}
 
 
-Implements \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{NeuralFactory}.
+Implements \hyperlink{class_neural_factory_a0446aa979904fc0c5f6cda9bf1044100}{NeuralFactory}.
+
+\hypertarget{class_r_b_ffactory_aa3514a25f378fa5e677970018d2ce65e}{
+\index{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}}
+\index{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}}
+\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron}$\ast$ RBFfactory::makeNeuron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_r_b_ffactory_aa3514a25f378fa5e677970018d2ce65e}
+
+
+Implements \hyperlink{class_neural_factory_a656b7663182769bcfd5ce5940e03b7cd}{NeuralFactory}.
+
+\hypertarget{class_r_b_ffactory_a92fc16863bf60ebd93be1f108ce95ad6}{
+\index{RBFfactory@{RBFfactory}!makeNeuronContainer@{makeNeuronContainer}}
+\index{makeNeuronContainer@{makeNeuronContainer}!RBFfactory@{RBFfactory}}
+\subsubsection[{makeNeuronContainer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Container}$<${\bf NeuronPtr}$>$$\ast$ RBFfactory::makeNeuronContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_r_b_ffactory_a92fc16863bf60ebd93be1f108ce95ad6}
+
+
+Implements \hyperlink{class_neural_factory_a1f56d9485fe3669a79d5d5dc70be65af}{NeuralFactory}.
 
 
 

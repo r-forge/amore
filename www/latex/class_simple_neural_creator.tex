@@ -13,8 +13,7 @@ class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/
 
 
 
-Inheritance diagram for SimpleNeuralCreator:
-\nopagebreak
+Inheritance diagram for SimpleNeuralCreator:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,8 +22,7 @@ Inheritance diagram for SimpleNeuralCreator:
 \end{figure}
 
 
-Collaboration diagram for SimpleNeuralCreator:
-\nopagebreak
+Collaboration diagram for SimpleNeuralCreator:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -36,9 +34,9 @@ Collaboration diagram for SimpleNeuralCreator:
 \item 
 \hyperlink{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{SimpleNeuralCreator} ()
 \item 
-\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}{createCon} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory, \hyperlink{class_neuron}{Neuron} \&neuron)
+\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}{createCon} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory, \hyperlink{class_neuron}{Neuron} \&neuron)
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}{createNeuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
+\hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}{createNeuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
 \end{DoxyCompactItemize}
 
 
@@ -71,19 +69,19 @@ Definition at line 15 of file SimpleNeuralCreator.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}{
+\hypertarget{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}{
 \index{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}}
 \index{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}}
-\subsubsection[{createCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConPtr} SimpleNeuralCreator::createCon (
+\subsubsection[{createCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con} $\ast$ SimpleNeuralCreator::createCon (
 \begin{DoxyParamCaption}
 \item[{{\bf NeuralFactory} \&}]{neuralFactory, }
 \item[{{\bf Neuron} \&}]{neuron}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21}
+\label{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}
 
 
-Implements \hyperlink{class_neural_creator_a9febc7917fd1264703d969cb3373eefc}{NeuralCreator}.
+Implements \hyperlink{class_neural_creator_aa493bedc52c2988c404f62c61790358d}{NeuralCreator}.
 
 
 
@@ -106,23 +104,23 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_simple_neural_creator_ad6aa4e727d70a8b34a2e7f07fef3fb21_cgraph}
+\includegraphics[width=400pt]{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}{
+\hypertarget{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}{
 \index{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}}
 \index{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}}
-\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} SimpleNeuralCreator::createNeuron (
+\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron} $\ast$ SimpleNeuralCreator::createNeuron (
 \begin{DoxyParamCaption}
 \item[{{\bf NeuralFactory} \&}]{neuralFactory}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392}
+\label{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}
 
 
-Implements \hyperlink{class_neural_creator_a3ce00f2434e765fadcfc57b8d7c152e5}{NeuralCreator}.
+Implements \hyperlink{class_neural_creator_a1963031f6a1b3ba77ff6a23708790b51}{NeuralCreator}.
 
 
 
@@ -145,7 +143,7 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_simple_neural_creator_aaca21e8cd3b34dc79ab8c395e890e392_cgraph}
+\includegraphics[width=400pt]{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378_cgraph}
 \end{center}
 \end{figure}
 
