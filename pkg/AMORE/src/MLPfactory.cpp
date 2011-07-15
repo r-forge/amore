@@ -34,16 +34,32 @@ MLPfactory::makeConContainer()
 }
 
 
-Container<NeuronPtr>*
-MLPfactory::makeNeuronContainer()
+PredictBehavior*
+MLPfactory::makePredictBehavior()
 {
-  return new SimpleContainer<NeuronPtr> ;
+  MLPbehavior* mlpBehavior( new MLPbehavior() );
+  mlpBehavior->d_bias=0.0;
+  mlpBehavior->d_output=0.0;
+  mlpBehavior->d_accumulator=0.0;
+  mlpBehavior->d_nCons.reset(makeConContainer());
+  return  mlpBehavior;
 }
-
 
 
 Neuron*
 MLPfactory::makeNeuron()
 {
-  return new SimpleNeuron();
+  Neuron* ptNeuron ( new SimpleNeuron() );
+  ptNeuron->setPredictBehavior( makePredictBehavior() );
+
+
+  return ptNeuron;
+}
+
+
+
+Container<NeuronPtr>*
+MLPfactory::makeNeuronContainer()
+{
+  return new SimpleContainer<NeuronPtr> ;
 }

@@ -9,8 +9,9 @@ public:
 private:
   Con* makeCon (Neuron& neuron);
   Con* makeCon (Neuron& neuron, double weight);
+  PredictBehavior* makePredictBehavior ();
   Container<ConPtr>* makeConContainer ();
-  Container<NeuronPtr>* makeNeuronContainer ();
   Neuron* makeNeuron ();
+  Container<NeuronPtr>* makeNeuronContainer ();
 };
 

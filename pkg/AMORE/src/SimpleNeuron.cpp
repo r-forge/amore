@@ -13,17 +13,6 @@ SimpleNeuron::SimpleNeuron() :
 }
 
 
-#if 0
-SimpleNeuron::SimpleNeuron(int Id, Container<Con>::const_iterator firstCon, Container<Con>::const_iterator lastCon ) :
-  d_Id(Id)//, nCons()
-{
-
-//  nCons.insert(nCons.begin(), firstCon, lastCon);
-
-}
-
-#endif
-
 Handler
 SimpleNeuron::getId()
 {
@@ -39,21 +28,13 @@ SimpleNeuron::setId(Handler Id)
 }
 
 
-#if 0
-void SimpleNeuron::iterators(Container<Con>::iterator & first, Container<Con>::iterator & last)
+
+void
+SimpleNeuron::setPredictBehavior(PredictBehavior* predictBehavior)
 {
-   first=nCons.begin();
-    last=nCons.end();
+   d_predictBehavior.reset(predictBehavior);
 }
 
-
-// void SimpleNeuron::const_iterators(Container<Con>::const_iterator & first, Container<Con>::const_iterator & last)
-{
-   first=nCons.begin();
-    last=nCons.end();
-}
-
-#endif
 
 void
 SimpleNeuron::show()
@@ -69,18 +50,8 @@ SimpleNeuron::show()
       Rprintf("\n Id: %d", id);
     }
   Rprintf("\n------------------------\n");
-#if 0
+  d_predictBehavior->show();
 
-  if (nCons.size() == 0)
-    {
-      Rprintf("\n No connections defined");
-    }
-  else
-    {
-      nCons.show();
-    }
-  Rprintf("\n------------------------\n");
-#endif
 }
 
 bool

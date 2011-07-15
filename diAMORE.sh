@@ -13,6 +13,8 @@ sed -e '/public:/ a\
 friend class SimpleContainerIterator<T>; ' -i ""  pkg/AMORE/src/dia/SimpleContainer.h 
 sed -e '/public:/ a\
 friend class SimpleContainer<T>; ' -i ""  pkg/AMORE/src/dia/SimpleContainerIterator.h 
+sed -e '/public:/ a\
+friend class MLPfactory; ' -i ""  pkg/AMORE/src/dia/MLPbehavior.h 
 
 sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  pkg/AMORE/src/dia/Neuron.h 
 
