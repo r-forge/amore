@@ -11,8 +11,8 @@ public:
   SimpleNeuron ();
   Handler getId ();
   void setId (Handler Id);
-  // void setPredictBehavior (PredictBehavior& predictBehavior);
-  // void setTrainingBehavior (TrainingBehavior& trainingBehavior);
+  void setPredictBehavior (PredictBehavior* predictBehavior);
+  // void setTrainingBehavior (TrainingBehavior* trainingBehavior);
   // void predict ();
   // void adjustParameters ();
   void show ();

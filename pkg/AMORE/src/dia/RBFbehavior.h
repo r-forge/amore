@@ -8,10 +8,11 @@ private:
   double d_width;
   double d_altitude;
   double d_output;
-  Container<Con> d_nCons;
+  ConContainerPtr d_nCons;
   double d_accumulator;
   // Operations
 public:
   void predict ();
+  void show ();
 };
 

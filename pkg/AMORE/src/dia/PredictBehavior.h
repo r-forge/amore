@@ -4,6 +4,7 @@
 class PredictBehavior {
   // Operations
 public:
-  void predict ();
+  virtual void predict () = 0;
+  virtual void show () = 0;
 };
 
