@@ -8,24 +8,20 @@
 #include "dia/Container.h"
 
 template<typename T>
-  Container<T>::Container()
+  SimpleContainer<T>::SimpleContainer()
   {
 
   }
 
 template<typename T>
-  Container<T>::~Container()
+  boost::shared_ptr<Iterator<T> >
+  SimpleContainer<T>::createIterator()
   {
-  }
-
-template<typename T>
-  boost::shared_ptr<IteratorInterface<T> >
-  Container<T>::createIterator()
-  {
-    boost::shared_ptr< ContainerIterator<T> > containerIteratorPtr( new ContainerIterator<T> ());
-    containerIteratorPtr->d_container = this;
-    containerIteratorPtr->d_iterator = collection.begin();
-    return containerIteratorPtr;
+    boost::shared_ptr < Iterator<T> > iteratorPtr(
+        new SimpleContainerIterator<T> ());
+    iteratorPtr->d_container = this;
+    iteratorPtr->d_iterator = d_collection.begin();
+    return iteratorPtr;
   }
 
 //! Append a shared_ptr at the end of collection
@@ -65,12 +61,12 @@ template<typename T>
  */
 template<typename T>
   void
-  Container<T>::push_back(T const & reference)
+  SimpleContainer<T>::push_back(T const & reference)
   {
-    collection.push_back(reference);
+  d_collection.push_back(reference);
   }
 
-//! Pretty print of the Container<T>
+//! Pretty print of the SimpleContainer<T>
 /*! This method outputs in the R terminal the contents of Container::collection.
  * \return true in case everything works without throwing an exception
  *
@@ -115,11 +111,11 @@ template<typename T>
  */
 template<typename T>
   void
-  Container<T>::show()
+  SimpleContainer<T>::show()
   {
 
-    for (typename std::vector<T>::iterator itr(collection.begin()); itr
-        != collection.end(); ++itr)
+    for (typename std::vector<T>::iterator itr(d_collection.begin()); itr
+        != d_collection.end(); ++itr)
       {
         itr->show();
       }
@@ -133,10 +129,10 @@ template<typename T>
  */
 template<typename T>
   bool
-  Container<T>::validate()
+  SimpleContainer<T>::validate()
   {
-    for (typename std::vector<T>::iterator itr(collection.begin()); itr
-        != collection.end(); ++itr)
+    for (typename std::vector<T>::iterator itr(d_collection.begin()); itr
+        != d_collection.end(); ++itr)
       {
         itr->validate();
       }
@@ -147,43 +143,43 @@ template<typename T>
 //! Returns the size or length of the vector
 /*!
  *  This method returns the size of the vector.
- *  In the classes derived from Container<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
+ *  In the classes derived from SimpleContainer<T> this is aliased as numOfCons, numOfNeurons and numOfLayers.
  * 	The unit test files, e.g., runit.Cpp.Container.R, for usage examples.
  */
 template<typename T>
   size_type
-  Container<T>::size()
+  SimpleContainer<T>::size()
   {
-    return collection.size();
+    return d_collection.size();
   }
 ;
 
 template<typename T>
   bool
-  Container<T>::empty()
+  SimpleContainer<T>::empty()
   {
-    return (collection.empty());
+    return (d_collection.empty());
   }
 
 template<typename T>
   void
-  Container<T>::reserve(int n)
+  SimpleContainer<T>::reserve(int n)
   {
-    collection.reserve(n);
+  d_collection.reserve(n);
   }
 
 template<typename T>
   void
-  Container<T>::clear()
+  SimpleContainer<T>::clear()
   {
-    collection.clear();
+  d_collection.clear();
   }
 
 #if 0
 
 template<typename T>
 bool
-Container<T>::buildAndAppend(std::vector<int>::iterator firstId,
+SimpleContainer<T>::buildAndAppend(std::vector<int>::iterator firstId,
     std::vector<int>::iterator lastId, ConContainer_iterator firstCon,
     ConContainer_iterator lastCon)
 
@@ -210,7 +206,7 @@ Container<T>::buildAndAppend(std::vector<int>::iterator firstId,
 
 template<typename T>
 bool
-Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
+SimpleContainer<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
     NeuronContainer_iterator lastNeuron)
 
   {
@@ -235,7 +231,7 @@ Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
 
 template<typename T>
 bool
-Container<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
+SimpleContainer<T>::buildAndAppend(NeuronContainer_iterator firstNeuron,
     NeuronContainer_iterator lastNeuron,
     std::vector<double>::iterator firstWeight,
     std::vector<double>::iterator lastWeight)
