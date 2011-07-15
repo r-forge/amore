@@ -36,14 +36,7 @@ template<typename T>
   T
   SimpleContainerIterator<T>::currentItem()
   {
-    if (isDone())
-      {
-         throw std::range_error("SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds");
-      }
-    else
-      {
-        return d_container->at(d_current);
-      }
-
+      if (isDone()) throw std::range_error("SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds");
+      return d_container->at(d_current);
   }
 

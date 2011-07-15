@@ -13,8 +13,7 @@ class \hyperlink{class_simple_container_iterator}{SimpleContainerIterator} -\/
 
 
 
-Inheritance diagram for SimpleContainerIterator$<$ T $>$:
-\nopagebreak
+Inheritance diagram for SimpleContainerIterator$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,8 +22,7 @@ Inheritance diagram for SimpleContainerIterator$<$ T $>$:
 \end{figure}
 
 
-Collaboration diagram for SimpleContainerIterator$<$ T $>$:
-\nopagebreak
+Collaboration diagram for SimpleContainerIterator$<$ T $>$:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,16 +130,9 @@ Definition at line 37 of file SimpleContainerIterator.cpp.
 
 \begin{DoxyCode}
   {
-    if (isDone())
-      {
-         throw std::range_error("SimpleContainerIterator::currentItem  Error: Ite
-      ratorOutOfBounds");
-      }
-    else
-      {
-        return d_container->at(d_current);
-      }
-
+      if (isDone()) throw std::range_error("SimpleContainerIterator::currentItem 
+       Error: IteratorOutOfBounds");
+      return d_container->at(d_current);
   }
 \end{DoxyCode}
 \hypertarget{class_simple_container_iterator_a71b26d5acddcab75ca0386c187fd2bbc}{
