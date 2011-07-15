@@ -4,7 +4,7 @@
 class NeuralCreator {
   // Operations
 public:
-  virtual ConPtr createCon (NeuralFactory& neuralFactory, Neuron& neuron) = 0;
-  virtual NeuronPtr createNeuron (NeuralFactory& neuralFactory) = 0;
+  virtual Con* createCon (NeuralFactory& neuralFactory, Neuron& neuron) = 0;
+  virtual Neuron* createNeuron (NeuralFactory& neuralFactory) = 0;
 };
 

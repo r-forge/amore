@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_container.html" title="Container\&lt; MLPlayer \&gt;" alt="" coords="5,5,165,32"/>
-<area shape="rect" id="node3" href="$class_m_l_player_container.html" title="MLPlayerContainer" alt="" coords="213,5,352,32"/>
+<area shape="rect" id="node1" href="$class_neural_creator.html" title="class NeuralCreator &#45;" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node3" href="$class_simple_neural_creator.html" title="class SimpleNeuralCreator &#45;" alt="" coords="161,5,311,32"/>
 </map>

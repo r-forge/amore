@@ -6,7 +6,11 @@ class RBFfactory : public NeuralFactory {
   // Operations
 public:
   RBFfactory ();
-  ConPtr makeCon (Neuron& neuron);
-  NeuronPtr makeNeuron ();
+private:
+  Con* makeCon (Neuron* neuron, double weight);
+  Con* makeCon (Neuron& neuron);
+  Container<ConPtr>* makeConContainer ();
+  Container<NeuronPtr>* makeNeuronContainer ();
+  Neuron* makeNeuron ();
 };
 

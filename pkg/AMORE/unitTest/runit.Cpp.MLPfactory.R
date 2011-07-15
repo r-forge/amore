@@ -5,16 +5,39 @@
 
 
 ###############################################################################
+test.MLPfactory.Cpp.makeNeuron <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			neuronPtr->setId(1);
+			neuronPtr->show();
+			neuronPtr->validate();	
+			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= neuronPtr->getId()
+			);
+			"
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun()
+	checkEquals(result$Id, 1)
+	# 
+	# ------------------------
+	# 
+	#  Id: 1
+	# ------------------------
+	# [1] TRUE
+}
+
+
+###############################################################################
 test.MLPfactory.Cpp.makeCon <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr(new MLPfactory());
-			NeuralCreatorPtr neuralCreatorPtr(new SimpleNeuralCreator());
-
-			NeuronPtr neuronPtr=neuralCreatorPtr->createNeuron( *neuralFactoryPtr);
+			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(1);
-			ConPtr conPtr=neuralCreatorPtr->createCon( *neuralFactoryPtr, *neuronPtr ); 
+			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr) ); 
 			conPtr->show();
 			conPtr->validate();	
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= conPtr->Id(),
@@ -28,7 +51,5 @@ test.MLPfactory.Cpp.makeCon <- function() {
 	# From:	 1 	 Weight= 	 0.000000 
 	# [1] TRUE
 	# [1] TRUE
-
-
 }
 

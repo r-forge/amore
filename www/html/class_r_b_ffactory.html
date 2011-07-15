@@ -80,7 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">RBFfactory Class Reference</div>  </div>
 </div>
@@ -93,13 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for RBFfactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_r_b_ffactory__inherit__graph.svg" width="131" height="259" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_r_b_ffactory__inherit__graph.svg" width="190" height="347" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for RBFfactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_r_b_ffactory__coll__graph.svg" width="131" height="259" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_r_b_ffactory__coll__graph.svg" width="190" height="347" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -108,8 +109,13 @@ Collaboration diagram for RBFfactory:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#af6d7b55c1c157b296f211c46f253f546">RBFfactory</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a2e83beed580f5e85ccec5fcad2e87345">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a91640e950fd3cea89cecf53517f42cef">makeNeuron</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_con.html">Con</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#ac492116058009f39b10252afc121c225">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> *neuron, double weight)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_con.html">Con</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a0cb9bbdd1726e28de699eceba731808b">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a844c8fdc315958fdb084194f0b900c68">makeConContainer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a92fc16863bf60ebd93be1f108ce95ad6">makeNeuronContainer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_neuron.html">Neuron</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#aa3514a25f378fa5e677970018d2ce65e">makeNeuron</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_r_b_ffactory.html" title="class RBFfactory -">RBFfactory</a> - </p>
@@ -133,40 +139,103 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2e83beed580f5e85ccec5fcad2e87345"></a><!-- doxytag: member="RBFfactory::makeCon" ref="a2e83beed580f5e85ccec5fcad2e87345" args="(Neuron &amp;neuron)" -->
+<a class="anchor" id="ac492116058009f39b10252afc121c225"></a><!-- doxytag: member="RBFfactory::makeCon" ref="ac492116058009f39b10252afc121c225" args="(Neuron *neuron, double weight)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> RBFfactory::makeCon </td>
+          <td class="memname"><a class="el" href="class_con.html">Con</a>* RBFfactory::makeCon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_neuron.html">Neuron</a> *&#160;</td>
+          <td class="paramname"><em>neuron</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0cb9bbdd1726e28de699eceba731808b"></a><!-- doxytag: member="RBFfactory::makeCon" ref="a0cb9bbdd1726e28de699eceba731808b" args="(Neuron &amp;neuron)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_con.html">Con</a>* RBFfactory::makeCon </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_neuron.html">Neuron</a> &amp;&#160;</td>
           <td class="paramname"><em>neuron</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [private, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="class_neural_factory.html#a2e156aff271f0c6c134a8bad7d164f73">NeuralFactory</a>.</p>
+<p>Implements <a class="el" href="class_neural_factory.html#ad7dacdd1ed0994f4a55612bd2d45ada2">NeuralFactory</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a91640e950fd3cea89cecf53517f42cef"></a><!-- doxytag: member="RBFfactory::makeNeuron" ref="a91640e950fd3cea89cecf53517f42cef" args="()" -->
+<a class="anchor" id="a844c8fdc315958fdb084194f0b900c68"></a><!-- doxytag: member="RBFfactory::makeConContainer" ref="a844c8fdc315958fdb084194f0b900c68" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> RBFfactory::makeNeuron </td>
+          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt;<a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&gt;* RBFfactory::makeConContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [private, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="class_neural_factory.html#a7921519c79b2fb0a5868661fe934f694">NeuralFactory</a>.</p>
+<p>Implements <a class="el" href="class_neural_factory.html#a0446aa979904fc0c5f6cda9bf1044100">NeuralFactory</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3514a25f378fa5e677970018d2ce65e"></a><!-- doxytag: member="RBFfactory::makeNeuron" ref="aa3514a25f378fa5e677970018d2ce65e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_neuron.html">Neuron</a>* RBFfactory::makeNeuron </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_factory.html#a656b7663182769bcfd5ce5940e03b7cd">NeuralFactory</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92fc16863bf60ebd93be1f108ce95ad6"></a><!-- doxytag: member="RBFfactory::makeNeuronContainer" ref="a92fc16863bf60ebd93be1f108ce95ad6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_container.html">Container</a>&lt;<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&gt;* RBFfactory::makeNeuronContainer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_factory.html#a1f56d9485fe3669a79d5d5dc70be65af">NeuralFactory</a>.</p>
 
 </div>
 </div>
@@ -178,7 +247,7 @@ Public Member Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_r_b_ffactory.html">RBFfactory</a>      </li>
-      <li class="footer">Generated on Thu Jul 14 2011 19:12:31 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 15 2011 22:09:14 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

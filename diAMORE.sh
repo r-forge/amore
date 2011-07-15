@@ -14,3 +14,5 @@ friend class SimpleContainerIterator<T>; ' -i ""  pkg/AMORE/src/dia/SimpleContai
 sed -e '/public:/ a\
 friend class SimpleContainer<T>; ' -i ""  pkg/AMORE/src/dia/SimpleContainerIterator.h 
 
+sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  pkg/AMORE/src/dia/Neuron.h 
+

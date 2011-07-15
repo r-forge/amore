@@ -1,41 +1,49 @@
-#include "dia/ContainerIterator.h"
+#include "dia/SimpleContainerIterator.h"
 
 template<typename T>
-  ContainerIterator<T>::ContainerIterator()
+  SimpleContainerIterator<T>::SimpleContainerIterator()
   {
   }
 
 template<typename T>
-  ContainerIterator<T>::~ContainerIterator()
+  SimpleContainerIterator<T>::~SimpleContainerIterator()
   {
-  }
-
-template<typename T>
-  void
-  ContainerIterator<T>::first()
-  {
-    d_iterator = d_container->collection.begin();
   }
 
 template<typename T>
   void
-  ContainerIterator<T>::next()
+  SimpleContainerIterator<T>::first()
   {
-    ++d_iterator;
+    d_current = 0;
+  }
+
+template<typename T>
+  void
+  SimpleContainerIterator<T>::next()
+  {
+    ++d_current;
   }
 
 template<typename T>
   bool
-  ContainerIterator<T>::isDone()
+  SimpleContainerIterator<T>::isDone()
   {
-    bool IteratorIsDone(d_iterator == d_container->collection.end());
+    bool IteratorIsDone(d_current == d_container->size());
     return IteratorIsDone;
   }
 
 template<typename T>
   T
-  ContainerIterator<T>::currentItem()
+  SimpleContainerIterator<T>::currentItem()
   {
-    return *d_iterator;
+    if (isDone())
+      {
+         throw std::range_error("SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds");
+      }
+    else
+      {
+        return d_container->at(d_current);
+      }
+
   }
 

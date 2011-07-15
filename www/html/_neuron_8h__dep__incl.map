@@ -1,3 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="5,80,187,107"/>
+<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="5,229,187,256"/>
+<area shape="rect" id="node5" href="$_simple_neuron_8h.html" title="pkg/AMORE/src/dia/SimpleNeuron.h" alt="" coords="29,80,269,107"/>
+<area shape="rect" id="node11" href="$_con_8cpp.html" title="pkg/AMORE/src/Con.cpp" alt="" coords="315,155,488,181"/>
+<area shape="rect" id="node8" href="$_simple_neuron_8cpp.html" title="pkg/AMORE/src/SimpleNeuron.cpp" alt="" coords="56,155,291,181"/>
 </map>

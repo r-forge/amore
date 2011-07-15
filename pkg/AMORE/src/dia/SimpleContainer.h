@@ -13,6 +13,7 @@ friend class SimpleContainerIterator<T>;
   SimpleContainer ();
   ~SimpleContainer ();
 private:
+  T at (size_type element);
    boost::shared_ptr< Iterator<T> > createIterator ();
   void push_back (T const & const_reference);
   void reserve (int n);

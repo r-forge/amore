@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<a xlink:href="dia_2_con_8h.html" target="_top" xlink:title="dia/Con.h">
+<a xlink:href="_con_8h.html" target="_top" xlink:title="dia/Con.h">
 <polygon fill="white" stroke="black" points="-0.5,-0.5 -0.5,-19.5 58.5,-19.5 58.5,-0.5 -0.5,-0.5"/>
 <text text-anchor="middle" x="29" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">dia/Con.h</text>
 </a>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="dia_2_neuron_8h.html" target="_top" xlink:title="dia/Neuron.h">
+<a xlink:href="_neuron_8h.html" target="_top" xlink:title="dia/Neuron.h">
 <polygon fill="white" stroke="black" points="77,-0.5 77,-19.5 151,-19.5 151,-0.5 77,-0.5"/>
 <text text-anchor="middle" x="114" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">dia/Neuron.h</text>
 </a>
