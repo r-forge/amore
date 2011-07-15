@@ -174,33 +174,33 @@
 \contentsline {subsubsection}{\numberline {5.19.3.2}first}{68}{subsubsection.5.19.3.2}
 \contentsline {subsubsection}{\numberline {5.19.3.3}isDone}{68}{subsubsection.5.19.3.3}
 \contentsline {subsubsection}{\numberline {5.19.3.4}next}{68}{subsubsection.5.19.3.4}
-\contentsline {subsection}{\numberline {5.19.4}Friends And Related Function Documentation}{69}{subsection.5.19.4}
-\contentsline {subsubsection}{\numberline {5.19.4.1}SimpleContainer$<$ T $>$}{69}{subsubsection.5.19.4.1}
+\contentsline {subsection}{\numberline {5.19.4}Friends And Related Function Documentation}{68}{subsection.5.19.4}
+\contentsline {subsubsection}{\numberline {5.19.4.1}SimpleContainer$<$ T $>$}{68}{subsubsection.5.19.4.1}
 \contentsline {subsection}{\numberline {5.19.5}Member Data Documentation}{69}{subsection.5.19.5}
 \contentsline {subsubsection}{\numberline {5.19.5.1}d\_\discretionary {-}{}{}container}{69}{subsubsection.5.19.5.1}
 \contentsline {subsubsection}{\numberline {5.19.5.2}d\_\discretionary {-}{}{}current}{69}{subsubsection.5.19.5.2}
 \contentsline {section}{\numberline {5.20}SimpleNeuralCreator Class Reference}{69}{section.5.20}
-\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{71}{subsection.5.20.1}
-\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{71}{subsection.5.20.2}
-\contentsline {subsubsection}{\numberline {5.20.2.1}SimpleNeuralCreator}{71}{subsubsection.5.20.2.1}
-\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{72}{subsection.5.20.3}
-\contentsline {subsubsection}{\numberline {5.20.3.1}createCon}{72}{subsubsection.5.20.3.1}
-\contentsline {subsubsection}{\numberline {5.20.3.2}createNeuron}{72}{subsubsection.5.20.3.2}
-\contentsline {section}{\numberline {5.21}SimpleNeuron Class Reference}{73}{section.5.21}
-\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{74}{subsection.5.21.1}
-\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{75}{subsection.5.21.2}
-\contentsline {subsubsection}{\numberline {5.21.2.1}SimpleNeuron}{75}{subsubsection.5.21.2.1}
-\contentsline {subsection}{\numberline {5.21.3}Member Function Documentation}{75}{subsection.5.21.3}
-\contentsline {subsubsection}{\numberline {5.21.3.1}getId}{75}{subsubsection.5.21.3.1}
-\contentsline {subsubsection}{\numberline {5.21.3.2}setId}{75}{subsubsection.5.21.3.2}
-\contentsline {subsubsection}{\numberline {5.21.3.3}show}{76}{subsubsection.5.21.3.3}
-\contentsline {subsubsection}{\numberline {5.21.3.4}validate}{76}{subsubsection.5.21.3.4}
-\contentsline {subsection}{\numberline {5.21.4}Member Data Documentation}{77}{subsection.5.21.4}
-\contentsline {subsubsection}{\numberline {5.21.4.1}d\_\discretionary {-}{}{}Id}{77}{subsubsection.5.21.4.1}
-\contentsline {section}{\numberline {5.22}TrainingBehavior Class Reference}{77}{section.5.22}
-\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{78}{subsection.5.22.1}
-\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{78}{subsection.5.22.2}
-\contentsline {subsubsection}{\numberline {5.22.2.1}adjustParameters}{78}{subsubsection.5.22.2.1}
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{70}{subsection.5.20.1}
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{70}{subsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.2.1}SimpleNeuralCreator}{70}{subsubsection.5.20.2.1}
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{71}{subsection.5.20.3}
+\contentsline {subsubsection}{\numberline {5.20.3.1}createCon}{71}{subsubsection.5.20.3.1}
+\contentsline {subsubsection}{\numberline {5.20.3.2}createNeuron}{71}{subsubsection.5.20.3.2}
+\contentsline {section}{\numberline {5.21}SimpleNeuron Class Reference}{72}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{73}{subsection.5.21.1}
+\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{74}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}SimpleNeuron}{74}{subsubsection.5.21.2.1}
+\contentsline {subsection}{\numberline {5.21.3}Member Function Documentation}{74}{subsection.5.21.3}
+\contentsline {subsubsection}{\numberline {5.21.3.1}getId}{74}{subsubsection.5.21.3.1}
+\contentsline {subsubsection}{\numberline {5.21.3.2}setId}{74}{subsubsection.5.21.3.2}
+\contentsline {subsubsection}{\numberline {5.21.3.3}show}{75}{subsubsection.5.21.3.3}
+\contentsline {subsubsection}{\numberline {5.21.3.4}validate}{75}{subsubsection.5.21.3.4}
+\contentsline {subsection}{\numberline {5.21.4}Member Data Documentation}{76}{subsection.5.21.4}
+\contentsline {subsubsection}{\numberline {5.21.4.1}d\_\discretionary {-}{}{}Id}{76}{subsubsection.5.21.4.1}
+\contentsline {section}{\numberline {5.22}TrainingBehavior Class Reference}{76}{section.5.22}
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{77}{subsection.5.22.1}
+\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{77}{subsection.5.22.2}
+\contentsline {subsubsection}{\numberline {5.22.2.1}adjustParameters}{77}{subsubsection.5.22.2.1}
 \contentsline {chapter}{\numberline {6}File Documentation}{79}{chapter.6}
 \contentsline {section}{\numberline {6.1}pkg/AMORE/src/AMORE.h File Reference}{79}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Define Documentation}{80}{subsection.6.1.1}

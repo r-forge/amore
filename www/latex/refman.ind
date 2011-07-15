@@ -26,7 +26,7 @@
     \subitem {BatchBehavior}, \hyperpage{19}
     \subitem {BATCHgd}, \hyperpage{21}
     \subitem {BATCHgdwm}, \hyperpage{24}
-    \subitem {TrainingBehavior}, \hyperpage{78}
+    \subitem {TrainingBehavior}, \hyperpage{77}
   \item {AMORE.h}
     \subitem {ConContainerPtr}, \hyperpage{81}
     \subitem {ConIteratorPtr}, \hyperpage{81}
@@ -93,13 +93,13 @@
     \subitem {validate}, \hyperpage{34}
   \item {createCon}
     \subitem {NeuralCreator}, \hyperpage{44}
-    \subitem {SimpleNeuralCreator}, \hyperpage{72}
+    \subitem {SimpleNeuralCreator}, \hyperpage{71}
   \item {createIterator}
     \subitem {Container}, \hyperpage{34}
     \subitem {SimpleContainer}, \hyperpage{61}
   \item {createNeuron}
     \subitem {NeuralCreator}, \hyperpage{44}
-    \subitem {SimpleNeuralCreator}, \hyperpage{72}
+    \subitem {SimpleNeuralCreator}, \hyperpage{71}
   \item {currentItem}
     \subitem {Iterator}, \hyperpage{36}
     \subitem {SimpleContainerIterator}, \hyperpage{67}
@@ -120,7 +120,7 @@
   \item {d\_\discretionary {-}{}{}current}
     \subitem {SimpleContainerIterator}, \hyperpage{69}
   \item {d\_\discretionary {-}{}{}Id}
-    \subitem {SimpleNeuron}, \hyperpage{77}
+    \subitem {SimpleNeuron}, \hyperpage{76}
   \item {d\_\discretionary {-}{}{}nCons}
     \subitem {MLPbehavior}, \hyperpage{39}
     \subitem {RBFbehavior}, \hyperpage{53}
@@ -152,7 +152,7 @@
 
   \item {getId}
     \subitem {Neuron}, \hyperpage{48}
-    \subitem {SimpleNeuron}, \hyperpage{75}
+    \subitem {SimpleNeuron}, \hyperpage{74}
   \item {getNeuron}
     \subitem {Con}, \hyperpage{26}
   \item {getWeight}
@@ -316,7 +316,7 @@
 
   \item {setId}
     \subitem {Neuron}, \hyperpage{48}
-    \subitem {SimpleNeuron}, \hyperpage{75}
+    \subitem {SimpleNeuron}, \hyperpage{74}
   \item {setNeuron}
     \subitem {Con}, \hyperpage{29}
   \item {setWeight}
@@ -326,7 +326,7 @@
     \subitem {Container}, \hyperpage{34}
     \subitem {Neuron}, \hyperpage{49}
     \subitem {SimpleContainer}, \hyperpage{62}
-    \subitem {SimpleNeuron}, \hyperpage{76}
+    \subitem {SimpleNeuron}, \hyperpage{75}
   \item {SimpleContainer}, \hyperpage{56}
     \subitem {$\sim $SimpleContainer}, \hyperpage{59}
     \subitem {at}, \hyperpage{60}
@@ -342,7 +342,7 @@
     \subitem {size}, \hyperpage{63}
     \subitem {validate}, \hyperpage{63}
   \item {SimpleContainer$<$ T $>$}
-    \subitem {SimpleContainerIterator}, \hyperpage{69}
+    \subitem {SimpleContainerIterator}, \hyperpage{68}
   \item {SimpleContainerIterator}, \hyperpage{64}
     \subitem {$\sim $SimpleContainerIterator}, \hyperpage{67}
     \subitem {currentItem}, \hyperpage{67}
@@ -351,21 +351,21 @@
     \subitem {first}, \hyperpage{68}
     \subitem {isDone}, \hyperpage{68}
     \subitem {next}, \hyperpage{68}
-    \subitem {SimpleContainer$<$ T $>$}, \hyperpage{69}
+    \subitem {SimpleContainer$<$ T $>$}, \hyperpage{68}
     \subitem {SimpleContainerIterator}, \hyperpage{67}
   \item {SimpleContainerIterator$<$ T $>$}
     \subitem {SimpleContainer}, \hyperpage{64}
   \item {SimpleNeuralCreator}, \hyperpage{69}
-    \subitem {createCon}, \hyperpage{72}
-    \subitem {createNeuron}, \hyperpage{72}
-    \subitem {SimpleNeuralCreator}, \hyperpage{71}
-  \item {SimpleNeuron}, \hyperpage{73}
-    \subitem {d\_\discretionary {-}{}{}Id}, \hyperpage{77}
-    \subitem {getId}, \hyperpage{75}
-    \subitem {setId}, \hyperpage{75}
-    \subitem {show}, \hyperpage{76}
-    \subitem {SimpleNeuron}, \hyperpage{75}
-    \subitem {validate}, \hyperpage{76}
+    \subitem {createCon}, \hyperpage{71}
+    \subitem {createNeuron}, \hyperpage{71}
+    \subitem {SimpleNeuralCreator}, \hyperpage{70}
+  \item {SimpleNeuron}, \hyperpage{72}
+    \subitem {d\_\discretionary {-}{}{}Id}, \hyperpage{76}
+    \subitem {getId}, \hyperpage{74}
+    \subitem {setId}, \hyperpage{74}
+    \subitem {show}, \hyperpage{75}
+    \subitem {SimpleNeuron}, \hyperpage{74}
+    \subitem {validate}, \hyperpage{75}
   \item {size}
     \subitem {Container}, \hyperpage{34}
     \subitem {SimpleContainer}, \hyperpage{63}
@@ -374,8 +374,8 @@
 
   \indexspace
 
-  \item {TrainingBehavior}, \hyperpage{77}
-    \subitem {adjustParameters}, \hyperpage{78}
+  \item {TrainingBehavior}, \hyperpage{76}
+    \subitem {adjustParameters}, \hyperpage{77}
   \item {TrainingBehaviorRef}
     \subitem {AMORE.h}, \hyperpage{82}
 
@@ -386,6 +386,6 @@
     \subitem {Container}, \hyperpage{34}
     \subitem {Neuron}, \hyperpage{49}
     \subitem {SimpleContainer}, \hyperpage{63}
-    \subitem {SimpleNeuron}, \hyperpage{76}
+    \subitem {SimpleNeuron}, \hyperpage{75}
 
 \end{theindex}

@@ -201,35 +201,35 @@
 \indexentry{isDone@{isDone}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
 \indexentry{SimpleContainerIterator@{SimpleContainerIterator}!next@{next}|hyperpage}{68}
 \indexentry{next@{next}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
-\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}|hyperpage}{69}
-\indexentry{SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
+\indexentry{SimpleContainerIterator@{SimpleContainerIterator}!SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}|hyperpage}{68}
+\indexentry{SimpleContainer$<$ T $>$@{SimpleContainer$<$ T $>$}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{68}
 \indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}|hyperpage}{69}
 \indexentry{d\_\discretionary {-}{}{}container@{d\_\discretionary {-}{}{}container}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
 \indexentry{SimpleContainerIterator@{SimpleContainerIterator}!d\_\discretionary {-}{}{}current@{d\_\discretionary {-}{}{}current}|hyperpage}{69}
 \indexentry{d\_\discretionary {-}{}{}current@{d\_\discretionary {-}{}{}current}!SimpleContainerIterator@{SimpleContainerIterator}|hyperpage}{69}
 \indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{69}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}|hyperpage}{72}
-\indexentry{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{72}
-\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}|hyperpage}{72}
-\indexentry{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{72}
-\indexentry{SimpleNeuron@{SimpleNeuron}|hyperpage}{73}
-\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
-\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
-\indexentry{SimpleNeuron@{SimpleNeuron}!getId@{getId}|hyperpage}{75}
-\indexentry{getId@{getId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
-\indexentry{SimpleNeuron@{SimpleNeuron}!setId@{setId}|hyperpage}{75}
-\indexentry{setId@{setId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
-\indexentry{SimpleNeuron@{SimpleNeuron}!show@{show}|hyperpage}{76}
-\indexentry{show@{show}!SimpleNeuron@{SimpleNeuron}|hyperpage}{76}
-\indexentry{SimpleNeuron@{SimpleNeuron}!validate@{validate}|hyperpage}{76}
-\indexentry{validate@{validate}!SimpleNeuron@{SimpleNeuron}|hyperpage}{76}
-\indexentry{SimpleNeuron@{SimpleNeuron}!d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}|hyperpage}{77}
-\indexentry{d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}!SimpleNeuron@{SimpleNeuron}|hyperpage}{77}
-\indexentry{TrainingBehavior@{TrainingBehavior}|hyperpage}{77}
-\indexentry{TrainingBehavior@{TrainingBehavior}!adjustParameters@{adjustParameters}|hyperpage}{78}
-\indexentry{adjustParameters@{adjustParameters}!TrainingBehavior@{TrainingBehavior}|hyperpage}{78}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{70}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{70}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}|hyperpage}{71}
+\indexentry{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
+\indexentry{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}|hyperpage}{71}
+\indexentry{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}|hyperpage}{71}
+\indexentry{SimpleNeuron@{SimpleNeuron}|hyperpage}{72}
+\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{74}
+\indexentry{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}|hyperpage}{74}
+\indexentry{SimpleNeuron@{SimpleNeuron}!getId@{getId}|hyperpage}{74}
+\indexentry{getId@{getId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{74}
+\indexentry{SimpleNeuron@{SimpleNeuron}!setId@{setId}|hyperpage}{74}
+\indexentry{setId@{setId}!SimpleNeuron@{SimpleNeuron}|hyperpage}{74}
+\indexentry{SimpleNeuron@{SimpleNeuron}!show@{show}|hyperpage}{75}
+\indexentry{show@{show}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!validate@{validate}|hyperpage}{75}
+\indexentry{validate@{validate}!SimpleNeuron@{SimpleNeuron}|hyperpage}{75}
+\indexentry{SimpleNeuron@{SimpleNeuron}!d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}|hyperpage}{76}
+\indexentry{d\_\discretionary {-}{}{}Id@{d\_\discretionary {-}{}{}Id}!SimpleNeuron@{SimpleNeuron}|hyperpage}{76}
+\indexentry{TrainingBehavior@{TrainingBehavior}|hyperpage}{76}
+\indexentry{TrainingBehavior@{TrainingBehavior}!adjustParameters@{adjustParameters}|hyperpage}{77}
+\indexentry{adjustParameters@{adjustParameters}!TrainingBehavior@{TrainingBehavior}|hyperpage}{77}
 \indexentry{pkg/AMORE/src/AMORE.h@{pkg/AMORE/src/AMORE.h}|hyperpage}{79}
 \indexentry{AMORE.h@{AMORE.h}!foreach@{foreach}|hyperpage}{80}
 \indexentry{foreach@{foreach}!AMORE.h@{AMORE.h}|hyperpage}{80}

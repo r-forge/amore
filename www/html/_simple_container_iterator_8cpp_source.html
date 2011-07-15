@@ -119,23 +119,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036   T
 <a name="l00037"></a><a class="code" href="class_simple_container_iterator.html#ad65642e6d9540b58193e7a40f1688fc7">00037</a>   <a class="code" href="class_simple_container_iterator.html#ad65642e6d9540b58193e7a40f1688fc7">SimpleContainerIterator&lt;T&gt;::currentItem</a>()
 <a name="l00038"></a>00038   {
-<a name="l00039"></a>00039     <span class="keywordflow">if</span> (isDone())
-<a name="l00040"></a>00040       {
-<a name="l00041"></a>00041          <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds&quot;</span>);
-<a name="l00042"></a>00042       }
-<a name="l00043"></a>00043     <span class="keywordflow">else</span>
-<a name="l00044"></a>00044       {
-<a name="l00045"></a>00045         <span class="keywordflow">return</span> d_container-&gt;at(d_current);
-<a name="l00046"></a>00046       }
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048   }
-<a name="l00049"></a>00049 
+<a name="l00039"></a>00039       <span class="keywordflow">if</span> (isDone()) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds&quot;</span>);
+<a name="l00040"></a>00040       <span class="keywordflow">return</span> d_container-&gt;at(d_current);
+<a name="l00041"></a>00041   }
+<a name="l00042"></a>00042 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_simple_container_iterator_8cpp.html">SimpleContainerIterator.cpp</a>      </li>
-      <li class="footer">Generated on Fri Jul 15 2011 22:09:13 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 15 2011 23:10:21 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
