@@ -13,31 +13,30 @@ class \hyperlink{class_m_l_pbehavior}{MLPbehavior} -\/
 
 
 
-Inheritance diagram for MLPbehavior:\nopagebreak
+Inheritance diagram for MLPbehavior:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=172pt]{class_m_l_pbehavior__inherit__graph}
+\includegraphics[width=170pt]{class_m_l_pbehavior__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for MLPbehavior:\nopagebreak
+Collaboration diagram for MLPbehavior:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=600pt]{class_m_l_pbehavior__coll__graph}
+\includegraphics[width=170pt]{class_m_l_pbehavior__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{predict} ()
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
 \item 
-double \hyperlink{class_m_l_pbehavior_a5e3dcaba201554283d27d58c6aa3ea82}{d\_\-accumulator}
+void \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{show} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -46,7 +45,14 @@ double \hyperlink{class_m_l_pbehavior_a6206785c5c3f838a0538f9f77fa7a25a}{d\_\-bi
 \item 
 double \hyperlink{class_m_l_pbehavior_a1a2045f66e72cd110227735ac0930900}{d\_\-output}
 \item 
-\hyperlink{class_container}{Container}$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{class_m_l_pbehavior_aee18277595dce9c3fa640d267fb919e0}{d\_\-nCons}
+\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_m_l_pbehavior_acb6e9681f06195ba1dd63bbafaa51d68}{d\_\-nCons}
+\item 
+double \hyperlink{class_m_l_pbehavior_a5e3dcaba201554283d27d58c6aa3ea82}{d\_\-accumulator}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_m_l_pbehavior_a1aa48940238b9487734e590ffab33a1b}{MLPfactory}
 \end{DoxyCompactItemize}
 
 
@@ -65,11 +71,71 @@ Definition at line 5 of file MLPbehavior.h.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
 \label{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}
 
 
-Reimplemented from \hyperlink{class_predict_behavior_a696ac4324187caeef5d186eda965466f}{PredictBehavior}.
+Implements \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{PredictBehavior}.
+
+
+
+Definition at line 15 of file MLPbehavior.cpp.
+
+
+\begin{DoxyCode}
+{
+
+}
+\end{DoxyCode}
+\hypertarget{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{
+\index{MLPbehavior@{MLPbehavior}!show@{show}}
+\index{show@{show}!MLPbehavior@{MLPbehavior}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void MLPbehavior::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}
+
+
+Implements \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{PredictBehavior}.
+
+
+
+Definition at line 22 of file MLPbehavior.cpp.
+
+
+
+References d\_\-bias, d\_\-nCons, and d\_\-output.
+
+
+\begin{DoxyCode}
+{
+  Rprintf("\n bias: %lf", d_bias);
+  Rprintf("\n output: %lf", d_output);
+  Rprintf("\n------------------------\n");
+ if (d_nCons->size() == 0)
+   {
+     Rprintf("\n No connections defined");
+   }
+ else
+   {
+     d_nCons->show();
+   }
+ Rprintf("\n------------------------\n");
+}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_m_l_pbehavior_a1aa48940238b9487734e590ffab33a1b}{
+\index{MLPbehavior@{MLPbehavior}!MLPfactory@{MLPfactory}}
+\index{MLPfactory@{MLPfactory}!MLPbehavior@{MLPbehavior}}
+\subsubsection[{MLPfactory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf MLPfactory}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_m_l_pbehavior_a1aa48940238b9487734e590ffab33a1b}
+
+
+Definition at line 14 of file MLPbehavior.h.
 
 
 
@@ -77,11 +143,15 @@ Reimplemented from \hyperlink{class_predict_behavior_a696ac4324187caeef5d186eda9
 \hypertarget{class_m_l_pbehavior_a5e3dcaba201554283d27d58c6aa3ea82}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-accumulator@{d\_\-accumulator}}
 \index{d\_\-accumulator@{d\_\-accumulator}!MLPbehavior@{MLPbehavior}}
-\subsubsection[{d\_\-accumulator}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf MLPbehavior::d\_\-accumulator}}}
+\subsubsection[{d\_\-accumulator}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf MLPbehavior::d\_\-accumulator}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{class_m_l_pbehavior_a5e3dcaba201554283d27d58c6aa3ea82}
 
 
-Definition at line 8 of file MLPbehavior.h.
+Definition at line 11 of file MLPbehavior.h.
+
+
+
+Referenced by MLPfactory::makePredictBehavior().
 
 \hypertarget{class_m_l_pbehavior_a6206785c5c3f838a0538f9f77fa7a25a}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-bias@{d\_\-bias}}
@@ -90,16 +160,24 @@ Definition at line 8 of file MLPbehavior.h.
 \label{class_m_l_pbehavior_a6206785c5c3f838a0538f9f77fa7a25a}
 
 
-Definition at line 10 of file MLPbehavior.h.
+Definition at line 8 of file MLPbehavior.h.
 
-\hypertarget{class_m_l_pbehavior_aee18277595dce9c3fa640d267fb919e0}{
+
+
+Referenced by MLPfactory::makePredictBehavior(), and show().
+
+\hypertarget{class_m_l_pbehavior_acb6e9681f06195ba1dd63bbafaa51d68}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-nCons@{d\_\-nCons}}
 \index{d\_\-nCons@{d\_\-nCons}!MLPbehavior@{MLPbehavior}}
-\subsubsection[{d\_\-nCons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Container}$<${\bf Con}$>$ {\bf MLPbehavior::d\_\-nCons}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_m_l_pbehavior_aee18277595dce9c3fa640d267fb919e0}
+\subsubsection[{d\_\-nCons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConContainerPtr} {\bf MLPbehavior::d\_\-nCons}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_m_l_pbehavior_acb6e9681f06195ba1dd63bbafaa51d68}
 
 
-Definition at line 12 of file MLPbehavior.h.
+Definition at line 10 of file MLPbehavior.h.
+
+
+
+Referenced by MLPfactory::makePredictBehavior(), and show().
 
 \hypertarget{class_m_l_pbehavior_a1a2045f66e72cd110227735ac0930900}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-output@{d\_\-output}}
@@ -108,10 +186,15 @@ Definition at line 12 of file MLPbehavior.h.
 \label{class_m_l_pbehavior_a1a2045f66e72cd110227735ac0930900}
 
 
-Definition at line 11 of file MLPbehavior.h.
+Definition at line 9 of file MLPbehavior.h.
 
 
 
-The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+Referenced by MLPfactory::makePredictBehavior(), and show().
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-pkg/AMORE/src/dia/\hyperlink{_m_l_pbehavior_8h}{MLPbehavior.h}\end{DoxyCompactItemize}
+pkg/AMORE/src/dia/\hyperlink{_m_l_pbehavior_8h}{MLPbehavior.h}\item 
+pkg/AMORE/src/\hyperlink{_m_l_pbehavior_8cpp}{MLPbehavior.cpp}\end{DoxyCompactItemize}

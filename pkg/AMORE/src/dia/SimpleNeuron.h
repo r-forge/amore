@@ -9,11 +9,14 @@ private:
   // Operations
 public:
   SimpleNeuron ();
+private:
+  double getOutput ();
+  void setOutput (double output);
   Handler getId ();
   void setId (Handler Id);
-  void setPredictBehavior (PredictBehavior* predictBehavior);
-  // void setTrainingBehavior (TrainingBehavior* trainingBehavior);
-  // void predict ();
+  void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
+  // void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr);
+  void predict ();
   // void adjustParameters ();
   void show ();
   bool validate ();

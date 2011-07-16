@@ -14,5 +14,7 @@ public:
 friend class MLPfactory; 
   void predict ();
   void show ();
+  double getOutput ();
+  void setOutput (double output);
 };
 

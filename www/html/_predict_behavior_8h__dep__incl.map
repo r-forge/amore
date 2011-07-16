@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_m_l_pbehavior_8h.html" title="pkg/AMORE/src/dia/MLPbehavior.h" alt="" coords="5,80,237,107"/>
-<area shape="rect" id="node5" href="$_r_b_fbehavior_8h.html" title="pkg/AMORE/src/dia/RBFbehavior.h" alt="" coords="262,80,495,107"/>
+<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="5,229,187,256"/>
+<area shape="rect" id="node5" href="$_m_l_pbehavior_8h.html" title="pkg/AMORE/src/dia/MLPbehavior.h" alt="" coords="31,80,264,107"/>
+<area shape="rect" id="node8" href="$_m_l_pbehavior_8cpp.html" title="pkg/AMORE/src/MLPbehavior.cpp" alt="" coords="134,155,361,181"/>
+<area shape="rect" id="node12" href="$_r_b_fbehavior_8h.html" title="pkg/AMORE/src/dia/RBFbehavior.h" alt="" coords="341,80,573,107"/>
 </map>
