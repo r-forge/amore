@@ -13,7 +13,8 @@ class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/
 
 
 
-Inheritance diagram for SimpleNeuralCreator:\nopagebreak
+Inheritance diagram for SimpleNeuralCreator:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +23,8 @@ Inheritance diagram for SimpleNeuralCreator:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for SimpleNeuralCreator:\nopagebreak
+Collaboration diagram for SimpleNeuralCreator:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,9 +36,7 @@ Collaboration diagram for SimpleNeuralCreator:\nopagebreak
 \item 
 \hyperlink{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{SimpleNeuralCreator} ()
 \item 
-\hyperlink{class_con}{Con} $\ast$ \hyperlink{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}{createCon} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory, \hyperlink{class_neuron}{Neuron} \&neuron)
-\item 
-\hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}{createNeuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}{createNeuron} (\hyperlink{_a_m_o_r_e_8h_ac4ad88962955479bfc426da9ce4571d2}{NeuralFactoryPtr} neuralFactoryPtr)
 \end{DoxyCompactItemize}
 
 
@@ -69,83 +69,29 @@ Definition at line 15 of file SimpleNeuralCreator.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}{
-\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createCon@{createCon}}
-\index{createCon@{createCon}!SimpleNeuralCreator@{SimpleNeuralCreator}}
-\subsubsection[{createCon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Con} $\ast$ SimpleNeuralCreator::createCon (
-\begin{DoxyParamCaption}
-\item[{{\bf NeuralFactory} \&}]{neuralFactory, }
-\item[{{\bf Neuron} \&}]{neuron}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87}
-
-
-Implements \hyperlink{class_neural_creator_aa493bedc52c2988c404f62c61790358d}{NeuralCreator}.
-
-
-
-Definition at line 21 of file SimpleNeuralCreator.cpp.
-
-
-
-References NeuralFactory::makeCon().
-
-
-\begin{DoxyCode}
-{
-  return neuralFactory.makeCon(neuron);
-}
-\end{DoxyCode}
-
-
-Here is the call graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_simple_neural_creator_a5348f4b7f6b4a02a68f37e6504adbc87_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}{
+\hypertarget{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}{
 \index{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}}
 \index{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}}
-\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Neuron} $\ast$ SimpleNeuralCreator::createNeuron (
+\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} SimpleNeuralCreator::createNeuron (
 \begin{DoxyParamCaption}
-\item[{{\bf NeuralFactory} \&}]{neuralFactory}
+\item[{{\bf NeuralFactoryPtr}}]{neuralFactoryPtr}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378}
+\label{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}
 
 
-Implements \hyperlink{class_neural_creator_a1963031f6a1b3ba77ff6a23708790b51}{NeuralCreator}.
-
-
-
-Definition at line 28 of file SimpleNeuralCreator.cpp.
+Implements \hyperlink{class_neural_creator_abfff3986cb184e493107692eab3dc678}{NeuralCreator}.
 
 
 
-References NeuralFactory::makeNeuron().
+Definition at line 22 of file SimpleNeuralCreator.cpp.
 
 
 \begin{DoxyCode}
 {
-  return neuralFactory.makeNeuron();
+  return neuralFactoryPtr->makeNeuron();
 }
 \end{DoxyCode}
-
-
-Here is the call graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_simple_neural_creator_a10ead035477d8e04fee2cdfc7743f378_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
