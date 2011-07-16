@@ -27,6 +27,10 @@ Inheritance diagram for PredictBehavior:
 virtual void \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{predict} ()=0
 \item 
 virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{show} ()=0
+\item 
+virtual double \hyperlink{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}{getOutput} ()=0
+\item 
+virtual void \hyperlink{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}{setOutput} (double output)=0
 \end{DoxyCompactItemize}
 
 
@@ -38,6 +42,19 @@ Definition at line 4 of file PredictBehavior.h.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}{
+\index{PredictBehavior@{PredictBehavior}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{getOutput}]{\setlength{\rightskip}{0pt plus 5cm}virtual double PredictBehavior::getOutput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}
+
+
+Implemented in \hyperlink{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a9faeb38a3db00dd07fb29e012eb03b0c}{RBFbehavior}.
+
 \hypertarget{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
 \index{PredictBehavior@{PredictBehavior}!predict@{predict}}
 \index{predict@{predict}!PredictBehavior@{PredictBehavior}}
@@ -50,6 +67,19 @@ Definition at line 4 of file PredictBehavior.h.
 
 
 Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
+
+\hypertarget{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}{
+\index{PredictBehavior@{PredictBehavior}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{setOutput}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::setOutput (
+\begin{DoxyParamCaption}
+\item[{double}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}
+
+
+Implemented in \hyperlink{class_m_l_pbehavior_a96424b39aa598ffec0baf5a53efe0ff8}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a691b3a38f3b7b3a663c5380e32d2a777}{RBFbehavior}.
 
 \hypertarget{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
 \index{PredictBehavior@{PredictBehavior}!show@{show}}

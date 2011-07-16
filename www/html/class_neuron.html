@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Neuron:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neuron__inherit__graph.svg" width="174" height="347" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_neuron__inherit__graph.svg" width="174" height="435" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -102,9 +102,12 @@ Inheritance diagram for Neuron:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a43ac0c8461c610bb2b82017d597435e3">getOutput</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#aae94f78cfa7ed3ce4935f23a3a585f95">setOutput</a> (double output)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a1a34edd39fba70be1d18219d5e9e1eea">getId</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a65331c891ac34a344d0bb791073a8dd9">setId</a> (<a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a31eac774003a5f4fdca375d021b712fa">setPredictBehavior</a> (<a class="el" href="class_predict_behavior.html">PredictBehavior</a> *predictBehavior)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#af21848d0ef33bec5587e4c2702c83e3f">setPredictBehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a7181d8d0a5f9b0e4ff39410785f087e9">predict</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ae18a86f9b67c63a6fcb28c813b47a38d">show</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a37f57f44fefa328ea0b7ab32b52c853e">validate</a> ()=0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -134,6 +137,42 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a43ac0c8461c610bb2b82017d597435e3"></a><!-- doxytag: member="Neuron::getOutput" ref="a43ac0c8461c610bb2b82017d597435e3" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Neuron::getOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_neuron.html#ae5a325412827ad1f63e2a75f82023267">SimpleNeuron</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7181d8d0a5f9b0e4ff39410785f087e9"></a><!-- doxytag: member="Neuron::predict" ref="a7181d8d0a5f9b0e4ff39410785f087e9" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Neuron::predict </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_neuron.html#a232e6c3a7205372e3ccb7e93f26c58b6">SimpleNeuron</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a65331c891ac34a344d0bb791073a8dd9"></a><!-- doxytag: member="Neuron::setId" ref="a65331c891ac34a344d0bb791073a8dd9" args="(Handler Id)=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -153,32 +192,41 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a31eac774003a5f4fdca375d021b712fa"></a><!-- doxytag: member="Neuron::setPredictBehavior" ref="a31eac774003a5f4fdca375d021b712fa" args="(PredictBehavior *predictBehavior)=0" -->
+<a class="anchor" id="aae94f78cfa7ed3ce4935f23a3a585f95"></a><!-- doxytag: member="Neuron::setOutput" ref="aae94f78cfa7ed3ce4935f23a3a585f95" args="(double output)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Neuron::setPredictBehavior </td>
+          <td class="memname">virtual void Neuron::setOutput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_predict_behavior.html">PredictBehavior</a> *&#160;</td>
-          <td class="paramname"><em>predictBehavior</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_simple_neuron.html#a2f30831cc6f0fd2d4180269ce3fb3346">SimpleNeuron</a>.</p>
+<p>Implemented in <a class="el" href="class_simple_neuron.html#af59d76e80aea2bb224b817390f083bf9">SimpleNeuron</a>.</p>
 
-<p>Referenced by <a class="el" href="_m_l_pfactory_8cpp_source.html#l00050">MLPfactory::makeNeuron()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_neuron_a31eac774003a5f4fdca375d021b712fa_icgraph.svg" width="427" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-</p>
+<a class="anchor" id="af21848d0ef33bec5587e4c2702c83e3f"></a><!-- doxytag: member="Neuron::setPredictBehavior" ref="af21848d0ef33bec5587e4c2702c83e3f" args="(PredictBehaviorPtr predictBehaviorPtr)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Neuron::setPredictBehavior </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td>
+          <td class="paramname"><em>predictBehaviorPtr</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_neuron.html#a8f230b4566e85adda71c7e0633d8a20d">SimpleNeuron</a>.</p>
 
 </div>
 </div>
@@ -232,7 +280,7 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00006">6</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00033">SimpleNeuron::setPredictBehavior()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00040">SimpleNeuron::show()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00017">SimpleNeuron::getOutput()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00048">SimpleNeuron::predict()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00024">SimpleNeuron::setOutput()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00055">SimpleNeuron::setPredictBehavior()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00062">SimpleNeuron::show()</a>.</p>
 
 </div>
 </div>
@@ -244,7 +292,7 @@ Here is the caller graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neuron.html">Neuron</a>      </li>
-      <li class="footer">Generated on Sat Jul 16 2011 10:54:06 for AMORE++ by&#160;
+      <li class="footer">Generated on Sun Jul 17 2011 01:25:52 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

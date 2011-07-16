@@ -132,7 +132,6 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 										Rcpp::Named(\"outputN4\") = neuronPtrOutput->getOutput()
 			);
 			"
-	#	TODO neuron->predict();
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()	
 	checkEquals(result$outputN1, 4)
@@ -140,61 +139,6 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	checkEquals(result$outputN3, 4)
 	checkEquals(result$outputN4, 5)
 	
-	# 
-	# ------------------------
-	# 
-	#  Id: 1
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 4.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 2
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 2.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 3
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 4.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 4
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 5.000000
-	# ------------------------
-	# From:	 1 	 Weight= 	 0.250000 
-	# From:	 2 	 Weight= 	 0.500000 
-	# From:	 3 	 Weight= 	 0.750000 
-	# 
-	# ------------------------
-	# [1] TRUE
-	# [1] TRUE
-	# [1] TRUE
-	# [1] TRUE
-
 		
 	
 }

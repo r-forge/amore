@@ -37,6 +37,10 @@ Collaboration diagram for MLPbehavior:
 void \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{predict} ()
 \item 
 void \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{show} ()
+\item 
+double \hyperlink{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}{getOutput} ()
+\item 
+void \hyperlink{class_m_l_pbehavior_a96424b39aa598ffec0baf5a53efe0ff8}{setOutput} (double output)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -64,6 +68,33 @@ Definition at line 5 of file MLPbehavior.h.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}{
+\index{MLPbehavior@{MLPbehavior}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!MLPbehavior@{MLPbehavior}}
+\subsubsection[{getOutput}]{\setlength{\rightskip}{0pt plus 5cm}double MLPbehavior::getOutput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}
+
+
+Implements \hyperlink{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}{PredictBehavior}.
+
+
+
+Definition at line 54 of file MLPbehavior.cpp.
+
+
+
+References d\_\-output.
+
+
+\begin{DoxyCode}
+{
+      return d_output;
+}
+\end{DoxyCode}
 \hypertarget{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{
 \index{MLPbehavior@{MLPbehavior}!predict@{predict}}
 \index{predict@{predict}!MLPbehavior@{MLPbehavior}}
@@ -82,9 +113,48 @@ Implements \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
 Definition at line 15 of file MLPbehavior.cpp.
 
 
+
+References d\_\-accumulator, d\_\-nCons, and d\_\-output.
+
+
 \begin{DoxyCode}
 {
+       d_accumulator = 0.0;
+       ConIteratorPtr  conIterator = d_nCons->createIterator();
+       for ( conIterator->first(); !conIterator->isDone(); conIterator->next() ) 
+      {
+          d_accumulator += conIterator->currentItem()->getWeight()  *  conIterato
+      r->currentItem()->getNeuron().getOutput() ;
+       }
+       d_output=d_accumulator; // Still needs an activation function
 
+}
+\end{DoxyCode}
+\hypertarget{class_m_l_pbehavior_a96424b39aa598ffec0baf5a53efe0ff8}{
+\index{MLPbehavior@{MLPbehavior}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!MLPbehavior@{MLPbehavior}}
+\subsubsection[{setOutput}]{\setlength{\rightskip}{0pt plus 5cm}void MLPbehavior::setOutput (
+\begin{DoxyParamCaption}
+\item[{double}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_m_l_pbehavior_a96424b39aa598ffec0baf5a53efe0ff8}
+
+
+Implements \hyperlink{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}{PredictBehavior}.
+
+
+
+Definition at line 47 of file MLPbehavior.cpp.
+
+
+
+References d\_\-output.
+
+
+\begin{DoxyCode}
+{
+       d_output=output;
 }
 \end{DoxyCode}
 \hypertarget{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{
@@ -102,7 +172,7 @@ Implements \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
 
 
 
-Definition at line 22 of file MLPbehavior.cpp.
+Definition at line 28 of file MLPbehavior.cpp.
 
 
 
@@ -151,7 +221,7 @@ Definition at line 11 of file MLPbehavior.h.
 
 
 
-Referenced by MLPfactory::makePredictBehavior().
+Referenced by MLPfactory::makePredictBehavior(), and predict().
 
 \hypertarget{class_m_l_pbehavior_a6206785c5c3f838a0538f9f77fa7a25a}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-bias@{d\_\-bias}}
@@ -177,7 +247,7 @@ Definition at line 10 of file MLPbehavior.h.
 
 
 
-Referenced by MLPfactory::makePredictBehavior(), and show().
+Referenced by MLPfactory::makePredictBehavior(), predict(), and show().
 
 \hypertarget{class_m_l_pbehavior_a1a2045f66e72cd110227735ac0930900}{
 \index{MLPbehavior@{MLPbehavior}!d\_\-output@{d\_\-output}}
@@ -190,7 +260,7 @@ Definition at line 9 of file MLPbehavior.h.
 
 
 
-Referenced by MLPfactory::makePredictBehavior(), and show().
+Referenced by getOutput(), MLPfactory::makePredictBehavior(), predict(), setOutput(), and show().
 
 
 
