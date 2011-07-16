@@ -33,7 +33,7 @@ test.Neuron.Cpp.getId <- function() {
 		// Test
 			std::vector<Handler> result;
 			result.push_back( neuronPtr->getId() ) ;
-			neuronPtr.reset(neuralFactoryPtr->makeNeuron() );	
+			neuronPtr = neuralFactoryPtr->makeNeuron() ;	
 			neuronPtr->setId(12);
 			result.push_back( neuronPtr->getId() ) ;			
 			return wrap(result);

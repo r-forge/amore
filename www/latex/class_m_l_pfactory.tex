@@ -13,7 +13,8 @@ class \hyperlink{class_m_l_pfactory}{MLPfactory} -\/
 
 
 
-Inheritance diagram for MLPfactory:\nopagebreak
+Inheritance diagram for MLPfactory:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +23,8 @@ Inheritance diagram for MLPfactory:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for MLPfactory:\nopagebreak
+Collaboration diagram for MLPfactory:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,11 +43,13 @@ Collaboration diagram for MLPfactory:\nopagebreak
 \item 
 \hyperlink{class_con}{Con} $\ast$ \hyperlink{class_m_l_pfactory_a18c3770c3cb2ed6c3cb402cb814b209c}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron, double weight)
 \item 
+\hyperlink{class_predict_behavior}{PredictBehavior} $\ast$ \hyperlink{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881}{makePredictBehavior} ()
+\item 
 \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} $>$ $\ast$ \hyperlink{class_m_l_pfactory_a62ea35a5b7ce5f139f91b2c3edd4ad61}{makeConContainer} ()
 \item 
-\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{makeNeuronContainer} ()
-\item 
 \hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b}{makeNeuron} ()
+\item 
+\hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{makeNeuronContainer} ()
 \end{DoxyCompactItemize}
 
 
@@ -143,11 +147,27 @@ Implements \hyperlink{class_neural_factory_a0446aa979904fc0c5f6cda9bf1044100}{Ne
 Definition at line 31 of file MLPfactory.cpp.
 
 
+
+Referenced by makePredictBehavior().
+
+
 \begin{DoxyCode}
 {
   return new SimpleContainer<ConPtr> ;
 }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_a62ea35a5b7ce5f139f91b2c3edd4ad61_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b}{
 \index{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}}
 \index{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}}
@@ -163,14 +183,34 @@ Implements \hyperlink{class_neural_factory_a656b7663182769bcfd5ce5940e03b7cd}{Ne
 
 
 
-Definition at line 46 of file MLPfactory.cpp.
+Definition at line 50 of file MLPfactory.cpp.
+
+
+
+References makePredictBehavior(), and Neuron::setPredictBehavior().
 
 
 \begin{DoxyCode}
 {
-  return new SimpleNeuron();
+  Neuron* ptNeuron ( new SimpleNeuron() );
+  ptNeuron->setPredictBehavior( makePredictBehavior() );
+
+
+  return ptNeuron;
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_ac39058170421f03dfd88c2ced318f46b_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{
 \index{MLPfactory@{MLPfactory}!makeNeuronContainer@{makeNeuronContainer}}
 \index{makeNeuronContainer@{makeNeuronContainer}!MLPfactory@{MLPfactory}}
@@ -186,7 +226,7 @@ Implements \hyperlink{class_neural_factory_a1f56d9485fe3669a79d5d5dc70be65af}{Ne
 
 
 
-Definition at line 38 of file MLPfactory.cpp.
+Definition at line 62 of file MLPfactory.cpp.
 
 
 \begin{DoxyCode}
@@ -194,6 +234,66 @@ Definition at line 38 of file MLPfactory.cpp.
   return new SimpleContainer<NeuronPtr> ;
 }
 \end{DoxyCode}
+\hypertarget{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881}{
+\index{MLPfactory@{MLPfactory}!makePredictBehavior@{makePredictBehavior}}
+\index{makePredictBehavior@{makePredictBehavior}!MLPfactory@{MLPfactory}}
+\subsubsection[{makePredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PredictBehavior} $\ast$ MLPfactory::makePredictBehavior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881}
+
+
+Implements \hyperlink{class_neural_factory_ab84ed5dd9e48d8416ba6fb4aa3910629}{NeuralFactory}.
+
+
+
+Definition at line 38 of file MLPfactory.cpp.
+
+
+
+References MLPbehavior::d\_\-accumulator, MLPbehavior::d\_\-bias, MLPbehavior::d\_\-nCons, MLPbehavior::d\_\-output, and makeConContainer().
+
+
+
+Referenced by makeNeuron().
+
+
+\begin{DoxyCode}
+{
+  MLPbehavior* mlpBehavior( new MLPbehavior() );
+  mlpBehavior->d_bias=0.0;
+  mlpBehavior->d_output=0.0;
+  mlpBehavior->d_accumulator=0.0;
+  mlpBehavior->d_nCons.reset(makeConContainer());
+  return  mlpBehavior;
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881_icgraph}
+\end{center}
+\end{figure}
+
+
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

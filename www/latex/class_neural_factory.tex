@@ -13,7 +13,8 @@ class \hyperlink{class_neural_factory}{NeuralFactory} -\/
 
 
 
-Inheritance diagram for NeuralFactory:\nopagebreak
+Inheritance diagram for NeuralFactory:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,9 +30,11 @@ virtual \hyperlink{class_con}{Con} $\ast$ \hyperlink{class_neural_factory_a1f466
 \item 
 virtual \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} $>$ $\ast$ \hyperlink{class_neural_factory_a0446aa979904fc0c5f6cda9bf1044100}{makeConContainer} ()=0
 \item 
-virtual \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_neural_factory_a1f56d9485fe3669a79d5d5dc70be65af}{makeNeuronContainer} ()=0
+virtual \hyperlink{class_predict_behavior}{PredictBehavior} $\ast$ \hyperlink{class_neural_factory_ab84ed5dd9e48d8416ba6fb4aa3910629}{makePredictBehavior} ()=0
 \item 
 virtual \hyperlink{class_neuron}{Neuron} $\ast$ \hyperlink{class_neural_factory_a656b7663182769bcfd5ce5940e03b7cd}{makeNeuron} ()=0
+\item 
+virtual \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $\ast$ \hyperlink{class_neural_factory_a1f56d9485fe3669a79d5d5dc70be65af}{makeNeuronContainer} ()=0
 \end{DoxyCompactItemize}
 
 
@@ -138,6 +141,19 @@ Here is the caller graph for this function:\nopagebreak
 
 
 Implemented in \hyperlink{class_m_l_pfactory_a18bbb914f7b974c0f8c5dd3913f6dd1c}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a92fc16863bf60ebd93be1f108ce95ad6}{RBFfactory}.
+
+\hypertarget{class_neural_factory_ab84ed5dd9e48d8416ba6fb4aa3910629}{
+\index{NeuralFactory@{NeuralFactory}!makePredictBehavior@{makePredictBehavior}}
+\index{makePredictBehavior@{makePredictBehavior}!NeuralFactory@{NeuralFactory}}
+\subsubsection[{makePredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf PredictBehavior}$\ast$ NeuralFactory::makePredictBehavior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_factory_ab84ed5dd9e48d8416ba6fb4aa3910629}
+
+
+Implemented in \hyperlink{class_m_l_pfactory_a2734e70d1b260ec88975474d77abf881}{MLPfactory}, and \hyperlink{class_r_b_ffactory_aefceec70c73e403c2034bc155ae857ad}{RBFfactory}.
 
 
 

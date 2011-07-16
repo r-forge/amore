@@ -7,11 +7,12 @@ class RBFfactory : public NeuralFactory {
 public:
   RBFfactory ();
 private:
-  Con* makeCon (Neuron* neuron, double weight);
-  Con* makeCon (Neuron& neuron);
-  Container<ConPtr>* makeConContainer ();
-  PredictBehavior* makePredictBehavior ();
-  Neuron* makeNeuron ();
-  Container<NeuronPtr>* makeNeuronContainer ();
+  ConPtr makeCon (Neuron* neuron, double weight);
+  ConPtr makeCon (Neuron& neuron);
+  ConContainerPtr makeConContainer ();
+  PredictBehaviorPtr makePredictBehavior ();
+  PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr);
+  NeuronPtr makeNeuron ();
+  NeuronContainerPtr makeNeuronContainer ();
 };
 

@@ -15,51 +15,71 @@ MLPfactory::MLPfactory()
 }
 ;
 
-Con*
+ConPtr
 MLPfactory::makeCon(Neuron& neuron)
 {
-  return new Con(neuron);
+  ConPtr conPtr( new Con(neuron) );
+  return conPtr;
 }
 
-Con*
+ConPtr
 MLPfactory::makeCon(Neuron& neuron, double weight)
 {
-  return new Con(neuron, weight);
+  ConPtr conPtr( new Con(neuron, weight) );
+  return conPtr;
 }
 
-Container<ConPtr>*
+ConContainerPtr
 MLPfactory::makeConContainer()
 {
-  return new SimpleContainer<ConPtr> ;
+  ConContainerPtr conContainerPtr( new SimpleContainer<ConPtr> );
+  return conContainerPtr;
 }
 
 
-PredictBehavior*
+PredictBehaviorPtr
 MLPfactory::makePredictBehavior()
+{
+
+  MLPbehavior* mlpBehavior( new MLPbehavior() );
+  mlpBehavior->d_bias=0.0;
+  mlpBehavior->d_output=0.0;
+  mlpBehavior->d_accumulator=0.0;
+  mlpBehavior->d_nCons=makeConContainer();
+
+  PredictBehaviorPtr predictBehavior( mlpBehavior);
+  return  predictBehavior;
+}
+
+
+PredictBehaviorPtr
+MLPfactory::makePredictBehavior(ConContainerPtr conContainerPtr)
 {
   MLPbehavior* mlpBehavior( new MLPbehavior() );
   mlpBehavior->d_bias=0.0;
   mlpBehavior->d_output=0.0;
   mlpBehavior->d_accumulator=0.0;
-  mlpBehavior->d_nCons.reset(makeConContainer());
-  return  mlpBehavior;
+  mlpBehavior->d_nCons=conContainerPtr;
+
+  PredictBehaviorPtr predictBehavior( mlpBehavior);
+  return  predictBehavior;
+
 }
 
 
-Neuron*
+NeuronPtr
 MLPfactory::makeNeuron()
 {
-  Neuron* ptNeuron ( new SimpleNeuron() );
-  ptNeuron->setPredictBehavior( makePredictBehavior() );
-
-
-  return ptNeuron;
+  NeuronPtr neuronPtr( new SimpleNeuron() );
+  neuronPtr->setPredictBehavior( makePredictBehavior() );
+  return neuronPtr;
 }
 
 
 
-Container<NeuronPtr>*
+NeuronContainerPtr
 MLPfactory::makeNeuronContainer()
 {
-  return new SimpleContainer<NeuronPtr> ;
+  NeuronContainerPtr neuronContainerPtr(new SimpleContainer<NeuronPtr>);
+  return neuronContainerPtr ;
 }

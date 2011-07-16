@@ -66,6 +66,7 @@ var NAVTREE =
       [ "pkg/AMORE/src/Con.cpp", "_con_8cpp.html", null ],
       [ "pkg/AMORE/src/Container.cpp", "_container_8cpp.html", null ],
       [ "pkg/AMORE/src/Iterator.cpp", "_iterator_8cpp.html", null ],
+      [ "pkg/AMORE/src/MLPbehavior.cpp", "_m_l_pbehavior_8cpp.html", null ],
       [ "pkg/AMORE/src/MLPfactory.cpp", "_m_l_pfactory_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleContainer.cpp", "_simple_container_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleContainerIterator.cpp", "_simple_container_iterator_8cpp.html", null ],

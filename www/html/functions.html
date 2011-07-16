@@ -179,8 +179,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_simple_neuron.html#ad87b0b67c7f8bfe5377313c1e3fac60c">SimpleNeuron</a>
 </li>
 <li>d_nCons
-: <a class="el" href="class_m_l_pbehavior.html#aee18277595dce9c3fa640d267fb919e0">MLPbehavior</a>
-, <a class="el" href="class_r_b_fbehavior.html#a9a73da1fba335fd346706ded6166f3f1">RBFbehavior</a>
+: <a class="el" href="class_m_l_pbehavior.html#acb6e9681f06195ba1dd63bbafaa51d68">MLPbehavior</a>
+, <a class="el" href="class_r_b_fbehavior.html#aee0030c63fc36e3cb5ffac67dbaa77d5">RBFbehavior</a>
 </li>
 <li>d_neuron
 : <a class="el" href="class_con.html#aad857bd289343ecff2153acc852f34f0">Con</a>
@@ -188,6 +188,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>d_output
 : <a class="el" href="class_r_b_fbehavior.html#a73826fb24b1ef473ea546babbb4bdbd2">RBFbehavior</a>
 , <a class="el" href="class_m_l_pbehavior.html#a1a2045f66e72cd110227735ac0930900">MLPbehavior</a>
+</li>
+<li>d_predictBehavior
+: <a class="el" href="class_neuron.html#a2522e221f58c84bd3a1c32647da4a411">Neuron</a>
 </li>
 <li>d_weight
 : <a class="el" href="class_con.html#a41e043e0dfb126f3bdacbbd8caf33672">Con</a>
@@ -256,17 +259,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_m_l_pfactory.html#a62ea35a5b7ce5f139f91b2c3edd4ad61">MLPfactory</a>
 </li>
 <li>makeNeuron()
-: <a class="el" href="class_neural_factory.html#a656b7663182769bcfd5ce5940e03b7cd">NeuralFactory</a>
-, <a class="el" href="class_m_l_pfactory.html#ac39058170421f03dfd88c2ced318f46b">MLPfactory</a>
+: <a class="el" href="class_m_l_pfactory.html#ac39058170421f03dfd88c2ced318f46b">MLPfactory</a>
+, <a class="el" href="class_neural_factory.html#a656b7663182769bcfd5ce5940e03b7cd">NeuralFactory</a>
 , <a class="el" href="class_r_b_ffactory.html#aa3514a25f378fa5e677970018d2ce65e">RBFfactory</a>
 </li>
 <li>makeNeuronContainer()
-: <a class="el" href="class_m_l_pfactory.html#a18bbb914f7b974c0f8c5dd3913f6dd1c">MLPfactory</a>
-, <a class="el" href="class_r_b_ffactory.html#a92fc16863bf60ebd93be1f108ce95ad6">RBFfactory</a>
+: <a class="el" href="class_r_b_ffactory.html#a92fc16863bf60ebd93be1f108ce95ad6">RBFfactory</a>
+, <a class="el" href="class_m_l_pfactory.html#a18bbb914f7b974c0f8c5dd3913f6dd1c">MLPfactory</a>
 , <a class="el" href="class_neural_factory.html#a1f56d9485fe3669a79d5d5dc70be65af">NeuralFactory</a>
+</li>
+<li>makePredictBehavior()
+: <a class="el" href="class_r_b_ffactory.html#aefceec70c73e403c2034bc155ae857ad">RBFfactory</a>
+, <a class="el" href="class_neural_factory.html#ab84ed5dd9e48d8416ba6fb4aa3910629">NeuralFactory</a>
+, <a class="el" href="class_m_l_pfactory.html#a2734e70d1b260ec88975474d77abf881">MLPfactory</a>
 </li>
 <li>MLPfactory()
 : <a class="el" href="class_m_l_pfactory.html#a61dfce37d0344c58e275e8508b0a474c">MLPfactory</a>
+, <a class="el" href="class_m_l_pbehavior.html#a1aa48940238b9487734e590ffab33a1b">MLPbehavior</a>
 </li>
 </ul>
 
@@ -292,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>predict()
 : <a class="el" href="class_m_l_pbehavior.html#aaff94adc3577cda9e48d8da925b0ffbf">MLPbehavior</a>
-, <a class="el" href="class_predict_behavior.html#a696ac4324187caeef5d186eda965466f">PredictBehavior</a>
+, <a class="el" href="class_predict_behavior.html#a7db41238d6d1dbf60c67cf8575e79885">PredictBehavior</a>
 , <a class="el" href="class_r_b_fbehavior.html#ac14521848163e04810a6d038aef81896">RBFbehavior</a>
 </li>
 <li>push_back()
@@ -321,15 +330,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setNeuron()
 : <a class="el" href="class_con.html#ae372f50a253a424376959fb6ee8f083b">Con</a>
 </li>
+<li>setPredictBehavior()
+: <a class="el" href="class_neuron.html#a31eac774003a5f4fdca375d021b712fa">Neuron</a>
+, <a class="el" href="class_simple_neuron.html#a2f30831cc6f0fd2d4180269ce3fb3346">SimpleNeuron</a>
+</li>
 <li>setWeight()
 : <a class="el" href="class_con.html#acf3b130556e25414cd525d469b275239">Con</a>
 </li>
 <li>show()
-: <a class="el" href="class_simple_container.html#af4d591e2c3a44ae016e01e3d07d1e9ac">SimpleContainer&lt; T &gt;</a>
-, <a class="el" href="class_simple_neuron.html#afea22112336409283a5bb7d281f7f4bd">SimpleNeuron</a>
-, <a class="el" href="class_con.html#a6fac8dbf2a320d6fb674295a9c900a8a">Con</a>
-, <a class="el" href="class_container.html#a5ee85af656e60863a7e4c1f7f9c484f4">Container&lt; T &gt;</a>
+: <a class="el" href="class_container.html#a5ee85af656e60863a7e4c1f7f9c484f4">Container&lt; T &gt;</a>
+, <a class="el" href="class_m_l_pbehavior.html#a32aa885e07e8f4eb33e05afb46040567">MLPbehavior</a>
 , <a class="el" href="class_neuron.html#ae18a86f9b67c63a6fcb28c813b47a38d">Neuron</a>
+, <a class="el" href="class_simple_neuron.html#afea22112336409283a5bb7d281f7f4bd">SimpleNeuron</a>
+, <a class="el" href="class_predict_behavior.html#a9ef84360f73784248d994fa4707c1dde">PredictBehavior</a>
+, <a class="el" href="class_r_b_fbehavior.html#a96b123a5b657e46946c3ff98ea78f5de">RBFbehavior</a>
+, <a class="el" href="class_simple_container.html#af4d591e2c3a44ae016e01e3d07d1e9ac">SimpleContainer&lt; T &gt;</a>
+, <a class="el" href="class_con.html#a6fac8dbf2a320d6fb674295a9c900a8a">Con</a>
 </li>
 <li>SimpleContainer()
 : <a class="el" href="class_simple_container.html#a87d087aab51b4b6aad359ad906a90e4d">SimpleContainer&lt; T &gt;</a>
@@ -350,8 +366,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_simple_neuron.html#a38c2d75287caf6374c1252c35f73dce2">SimpleNeuron</a>
 </li>
 <li>size()
-: <a class="el" href="class_container.html#a1eebc7b5cbb0c574cb1aef87c2ddba36">Container&lt; T &gt;</a>
-, <a class="el" href="class_simple_container.html#a2fdb3580e1728e6e2ba6ef77c0bce63e">SimpleContainer&lt; T &gt;</a>
+: <a class="el" href="class_simple_container.html#a2fdb3580e1728e6e2ba6ef77c0bce63e">SimpleContainer&lt; T &gt;</a>
+, <a class="el" href="class_container.html#a1eebc7b5cbb0c574cb1aef87c2ddba36">Container&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -385,7 +401,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="footer">Generated on Fri Jul 15 2011 23:22:59 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 16 2011 10:54:05 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

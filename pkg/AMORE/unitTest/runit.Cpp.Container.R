@@ -35,7 +35,7 @@ test.Container.Cpp.show<- function() {
 			int ids[]= {10, 20, 30};
 			NeuronPtr neuronPtr;
 			foreach (Handler id, ids) {
-				neuronPtr.reset( neuralFactoryPtr->makeNeuron() );
+				neuronPtr = neuralFactoryPtr->makeNeuron() ;
 				neuronPtr->setId(id);		
  				neuronContainerPtr->push_back(neuronPtr) ;			
 			}	
@@ -45,7 +45,7 @@ test.Container.Cpp.show<- function() {
 			int wId=0;
 			NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
 			for ( itr->first(); !itr->isDone(); itr->next() ) {
-				conPtr.reset( neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) );
+				conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 				conContainerPtr->push_back( conPtr );
 			}
 		// Test	
@@ -84,7 +84,7 @@ test.Container.Cpp.push_back<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr.reset( neuralFactoryPtr->makeNeuron() );
+					neuronPtr = neuralFactoryPtr->makeNeuron() ;
 					neuronPtr->setId(id); 	
 					neuronContainerPtr->push_back(neuronPtr);
 				}
@@ -93,7 +93,7 @@ test.Container.Cpp.push_back<- function() {
 
 				NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
-					conPtr.reset( neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) );
+					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 					conContainerPtr->push_back( conPtr );
 				}
 				std::vector<Handler> result;
@@ -123,7 +123,7 @@ test.Container.Cpp.size<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr.reset( neuralFactoryPtr->makeNeuron() );
+					neuronPtr = neuralFactoryPtr->makeNeuron() ;
 					neuronPtr->setId(id); 	
 					neuronContainerPtr->push_back(neuronPtr);
 				}
@@ -134,7 +134,7 @@ test.Container.Cpp.size<- function() {
 				std::vector<size_type> result;				
 				NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
-					conPtr.reset( neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) );
+					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 					conContainerPtr->push_back( conPtr );
 					result.push_back(conContainerPtr->size());
 				}

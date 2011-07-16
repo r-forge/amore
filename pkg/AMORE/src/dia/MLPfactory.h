@@ -7,11 +7,12 @@ class MLPfactory : public NeuralFactory {
 public:
   MLPfactory ();
 private:
-  Con* makeCon (Neuron& neuron);
-  Con* makeCon (Neuron& neuron, double weight);
-  PredictBehavior* makePredictBehavior ();
-  Container<ConPtr>* makeConContainer ();
-  Neuron* makeNeuron ();
-  Container<NeuronPtr>* makeNeuronContainer ();
+  ConPtr makeCon (Neuron& neuron);
+  ConPtr makeCon (Neuron& neuron, double weight);
+  PredictBehaviorPtr makePredictBehavior ();
+  PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr);
+  ConContainerPtr makeConContainer ();
+  NeuronPtr makeNeuron ();
+  NeuronContainerPtr makeNeuronContainer ();
 };
 

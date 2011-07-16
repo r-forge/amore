@@ -14,5 +14,7 @@ private:
 public:
   void predict ();
   void show ();
+  double getOutput ();
+  void setOutput (double output);
 };
 

@@ -8,9 +8,24 @@
 #include "dia/SimpleNeuron.h"
 
 SimpleNeuron::SimpleNeuron() :
-  d_Id(NA_INTEGER) //, nCons()
+  d_Id(NA_INTEGER)
 {
 }
+
+
+double
+SimpleNeuron::getOutput()
+{
+  return d_predictBehavior->getOutput();
+}
+
+
+void
+SimpleNeuron::setOutput(double output)
+{
+  d_predictBehavior->setOutput(output);
+}
+
 
 
 Handler
@@ -30,9 +45,16 @@ SimpleNeuron::setId(Handler Id)
 
 
 void
-SimpleNeuron::setPredictBehavior(PredictBehavior* predictBehavior)
+SimpleNeuron::predict()
 {
-   d_predictBehavior.reset(predictBehavior);
+   d_predictBehavior->predict();
+}
+
+
+void
+SimpleNeuron::setPredictBehavior(PredictBehaviorPtr predictBehaviorPtr)
+{
+   d_predictBehavior=predictBehaviorPtr;
 }
 
 

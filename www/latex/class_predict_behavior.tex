@@ -13,17 +13,20 @@ class \hyperlink{class_predict_behavior}{PredictBehavior} -\/
 
 
 
-Inheritance diagram for PredictBehavior:\nopagebreak
+Inheritance diagram for PredictBehavior:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=279pt]{class_predict_behavior__inherit__graph}
+\includegraphics[width=275pt]{class_predict_behavior__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_predict_behavior_a696ac4324187caeef5d186eda965466f}{predict} ()
+virtual void \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{predict} ()=0
+\item 
+virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{show} ()=0
 \end{DoxyCompactItemize}
 
 
@@ -35,18 +38,31 @@ Definition at line 4 of file PredictBehavior.h.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_predict_behavior_a696ac4324187caeef5d186eda965466f}{
+\hypertarget{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
 \index{PredictBehavior@{PredictBehavior}!predict@{predict}}
 \index{predict@{predict}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::predict (
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::predict (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}
-\label{class_predict_behavior_a696ac4324187caeef5d186eda965466f}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}
 
 
-Reimplemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
+Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
+
+\hypertarget{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
+\index{PredictBehavior@{PredictBehavior}!show@{show}}
+\index{show@{show}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}
+
+
+Implemented in \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a96b123a5b657e46946c3ff98ea78f5de}{RBFbehavior}.
 
 
 

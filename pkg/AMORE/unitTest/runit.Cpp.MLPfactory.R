@@ -96,44 +96,107 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
-
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron() );
-			neuronPtr->setId(1);
+			neuronPtrInput1->setId(1);	
+			neuronPtrInput1->setOutput(4);
 
 			NeuronPtr neuronPtrInput2( neuralFactoryPtr->makeNeuron() );
-			neuronPtr->setId(2);
+			neuronPtrInput2->setId(2);
+			neuronPtrInput2->setOutput(2);
 
 			NeuronPtr neuronPtrInput3( neuralFactoryPtr->makeNeuron() );
-			neuronPtr->setId(3);
-
-			NeuronPtr neuronPtrOutput( neuralFactoryPtr->makeNeuron() );
-			neuronPtr->setId(4);
+			neuronPtrInput3->setId(3);
+			neuronPtrInput3->setOutput(4);
 
 			ConContainerPtr conContainerPtr( neuralFactoryPtr->makeConContainer() );
-			conContainerPtr->push_back( neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25) ); 
-			conContainerPtr->push_back( neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50) ); 
-			conContainerPtr->push_back( neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75) ); 
+			ConPtr conPtr(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));
+			conContainerPtr->push_back( conPtr ); 
+			conPtr = neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50);
+			conContainerPtr->push_back( conPtr );  
+			conPtr = neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75);
+			conContainerPtr->push_back( conPtr );  
 
-			conPtr->show();
-			conPtr->validate();
-	
-			PredictBehaviorPtr predictBehaviorPtr( neuralFactoryPtr->makePredictBehavior() );
-		
-//	TODO predictBehaviorPtr->predict();
+			NeuronPtr neuronPtrOutput( neuralFactoryPtr->makeNeuron() );
+			neuronPtrOutput->setId(4);
+			neuronPtrOutput->setPredictBehavior( neuralFactoryPtr->makePredictBehavior(conContainerPtr) );
+			neuronPtrOutput->predict();
+			
+			neuronPtrInput1->show();
+			neuronPtrInput2->show();
+			neuronPtrInput3->show();
+			neuronPtrOutput->show();
 
-			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= 0.0 ,
-			Rcpp::Named(\"weight\") = 0.0
+			return	Rcpp::List::create(	Rcpp::Named(\"outputN1\") = neuronPtrInput1->getOutput(),
+										Rcpp::Named(\"outputN2\") = neuronPtrInput2->getOutput(),
+										Rcpp::Named(\"outputN3\") = neuronPtrInput3->getOutput(),
+										Rcpp::Named(\"outputN4\") = neuronPtrOutput->getOutput()
 			);
 			"
-	#	TODO predictBehaviorPtr->predict();
-	
-	
+	#	TODO neuron->predict();
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
-	result <- testCodefun()
-	checkEquals(result$Id, 1)
-	checkEquals(result$weight, 4.5)
-# Error en checkEquals(result$Id, 1) : Mean absolute difference: 1
-# Error en checkEquals(result$weight, 4.5) : Mean absolute difference: 4.5
+	result <- testCodefun()	
+	checkEquals(result$outputN1, 4)
+	checkEquals(result$outputN2, 2)
+	checkEquals(result$outputN3, 4)
+	checkEquals(result$outputN4, 5)
+	
+	# 
+	# ------------------------
+	# 
+	#  Id: 1
+	# ------------------------
+	# 
+	#  bias: 0.000000
+	#  output: 4.000000
+	# ------------------------
+	# 
+	#  No connections defined
+	# ------------------------
+	# 
+	# ------------------------
+	# 
+	#  Id: 2
+	# ------------------------
+	# 
+	#  bias: 0.000000
+	#  output: 2.000000
+	# ------------------------
+	# 
+	#  No connections defined
+	# ------------------------
+	# 
+	# ------------------------
+	# 
+	#  Id: 3
+	# ------------------------
+	# 
+	#  bias: 0.000000
+	#  output: 4.000000
+	# ------------------------
+	# 
+	#  No connections defined
+	# ------------------------
+	# 
+	# ------------------------
+	# 
+	#  Id: 4
+	# ------------------------
+	# 
+	#  bias: 0.000000
+	#  output: 5.000000
+	# ------------------------
+	# From:	 1 	 Weight= 	 0.250000 
+	# From:	 2 	 Weight= 	 0.500000 
+	# From:	 3 	 Weight= 	 0.750000 
+	# 
+	# ------------------------
+	# [1] TRUE
+	# [1] TRUE
+	# [1] TRUE
+	# [1] TRUE
+
+		
+	
 }
 
 
