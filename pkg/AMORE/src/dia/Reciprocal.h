@@ -5,7 +5,7 @@
 class Reciprocal : public ActivationFunction {
   // Operations
 public:
-  double f0 ();
-  double f1 ();
+  void f0 ();
+  void f1 ();
 };
 

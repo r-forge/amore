@@ -13,7 +13,6 @@ private:
   ActivationFunctionPtr makeIdentityActivationFunction ();
   ActivationFunctionPtr makeTanhActivationFunction ();
   PredictBehaviorPtr makePredictBehavior ();
-  PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr);
   NeuronPtr makeNeuron ();
   NeuronContainerPtr makeNeuronContainer ();
 };

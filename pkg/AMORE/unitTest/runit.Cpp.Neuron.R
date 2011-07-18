@@ -7,6 +7,7 @@
 		//Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+
 			neuronPtr->show();	
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") = neuronPtr->getId() );
 	"
@@ -17,6 +18,13 @@
 	# ------------------------
 	# 
 	#  Id: NA, Invalid neuron Id
+	# ------------------------
+	# 
+	#  bias: 0.000000
+	#  output: 0.000000
+	# ------------------------
+	# 
+	#  No connections defined
 	# ------------------------
 	# [1] TRUE
 }
@@ -84,6 +92,8 @@ test.Neuron.Cpp.Validate_IdIsNa <- function() {
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	checkException( result <- testCodefun() , silent=TRUE)
+	# [1] TRUE
+
 }
 
 

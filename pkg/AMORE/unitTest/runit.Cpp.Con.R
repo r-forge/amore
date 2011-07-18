@@ -24,6 +24,7 @@ test.Con.Cpp.Constructor_SingleArgument <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 0)
+
 	# From:	 1 	 Weight= 	 0.000000 
 	# [1] TRUE
 	# [1] TRUE

@@ -12,7 +12,6 @@ private:
   ActivationFunctionPtr makeIdentityActivationFunction ();
   ActivationFunctionPtr makeTanhActivationFunction ();
   PredictBehaviorPtr makePredictBehavior ();
-  PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr);
   ConContainerPtr makeConContainer ();
   NeuronPtr makeNeuron ();
   NeuronContainerPtr makeNeuronContainer ();

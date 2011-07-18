@@ -9,13 +9,11 @@
 #include "dia/Identity.h"
 //=========================================================================================================
 
-
 double Identity::f0 () {
-  x <- d_predictBehavior.d_inducedLocalField;
-  d_predictBehavior.d_output = x;
+  return getInducedLocalField() ;
 }
 
 double Identity::f1 () {
-  d_predictBehavior.d_outputDerivative = 1.0 ;
+  return 1 ;
 }
 

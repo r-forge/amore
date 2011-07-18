@@ -10,7 +10,6 @@ public:
   virtual ActivationFunctionPtr makeIdentityActivationFunction () = 0;
   virtual ActivationFunctionPtr makeTanhActivationFunction () = 0;
   virtual PredictBehaviorPtr makePredictBehavior () = 0;
-  virtual PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr) = 0;
   virtual NeuronPtr makeNeuron () = 0;
   virtual NeuronContainerPtr makeNeuronContainer () = 0;
 };
