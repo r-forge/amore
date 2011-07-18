@@ -6,6 +6,7 @@ dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-NeuralFactory.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-NeuralCreator.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-PredictBehavior.dia
 dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-TrainingBehavior.dia
+dia2code -d pkg/AMORE/src/dia -l licensefile  AMORE-ActivationFunction.dia
 
 sed -e 's/public Container {/public Container<T> {/g' -i ""  pkg/AMORE/src/dia/SimpleContainer.h 
 sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  pkg/AMORE/src/dia/SimpleContainerIterator.h 

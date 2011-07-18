@@ -9,6 +9,8 @@ public:
 private:
   ConPtr makeCon (Neuron& neuron);
   ConPtr makeCon (Neuron& neuron, double weight);
+  ActivationFunctionPtr makeIdentityActivationFunction ();
+  ActivationFunctionPtr makeTanhActivationFunction ();
   PredictBehaviorPtr makePredictBehavior ();
   PredictBehaviorPtr makePredictBehavior (ConContainerPtr conContainerPtr);
   ConContainerPtr makeConContainer ();

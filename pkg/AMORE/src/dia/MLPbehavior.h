@@ -8,7 +8,8 @@ private:
   double d_bias;
   double d_output;
   ConContainerPtr d_nCons;
-  double d_accumulator;
+  double d_inducedLocalField;
+   d_activationFunction;
   // Operations
 public:
 friend class MLPfactory; 

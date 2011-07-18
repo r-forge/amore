@@ -17,9 +17,11 @@ MLPbehavior::predict()
        d_accumulator = 0.0;
        ConIteratorPtr  conIterator = d_nCons->createIterator();
        for ( conIterator->first(); !conIterator->isDone(); conIterator->next() ) {
-          d_accumulator += conIterator->currentItem()->getWeight()  *  conIterator->currentItem()->getNeuron().getOutput() ;
+          weight = conIterator->currentItem()->getWeight();
+          input  = conIterator->currentItem()->getNeuron().getOutput();
+          d_inducedLocalField +=  weight * input ;
        }
-       d_output=d_accumulator; // Still needs an activation function
+       d_output=d_activationFunction->f0();
 
 }
 
