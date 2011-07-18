@@ -37,14 +37,14 @@ MLPfactory::makeConContainer()
 }
 
 ActivationFunctionPtr
-MLPFactory::makeIdentityActivationFunction(){
-  ActivationFunctionPtr activationFunctionPtr(new Identity );
+MLPfactory::makeIdentityActivationFunction(){
+  ActivationFunctionPtr activationFunctionPtr(new Identity()) ;
   return activationFunctionPtr;
 }
 
 ActivationFunctionPtr
-MLPFactory::makeTanhActivationFunction(){
-  ActivationFunctionPtr activationFunctionPtr(new Tanh );
+MLPfactory::makeTanhActivationFunction(){
+  ActivationFunctionPtr activationFunctionPtr(new Tanh() );
   return activationFunctionPtr;
 }
 
@@ -53,56 +53,20 @@ MLPFactory::makeTanhActivationFunction(){
 PredictBehaviorPtr
 MLPfactory::makePredictBehavior()
 {
-
-  MLPbehavior* mlpBehavior( new MLPbehavior() );
-  mlpBehavior->d_bias=0.0;
-  mlpBehavior->d_output=0.0;
-  mlpBehavior->d_inducedLocalField=0.0;
-  mlpBehavior->d_nCons=makeConContainer();
-  mlpBehavior->d_activationFunction=makeActivationFunction();
-
-  PredictBehaviorPtr predictBehavior( mlpBehavior);
-  return  predictBehavior;
+  PredictBehaviorPtr predictBehaviorPtr(  new MLPbehavior() );
+  predictBehaviorPtr->setConnections( makeConContainer());
+  predictBehaviorPtr->setActivationFunction( makeIdentityActivationFunction() , predictBehaviorPtr);
+  return  predictBehaviorPtr;
 }
 
 
-PredictBehaviorPtr
-MLPfactory::makePredictBehavior(ConContainerPtr conContainerPtr)
-{
-  MLPbehavior* mlpBehavior( new MLPbehavior() );
-  mlpBehavior->d_bias=0.0;
-  mlpBehavior->d_output=0.0;
-  mlpBehavior->d_inducedLocalField=0.0;
-  mlpBehavior->d_nCons=conContainerPtr;
-  mlpBehavior->d_activationFunction=makeIdentityActivationFunction();
-
-  PredictBehaviorPtr predictBehavior( mlpBehavior);
-  return  predictBehavior;
-
-}
-
-
-PredictBehaviorPtr
-MLPfactory::makePredictBehavior(ConContainerPtr conContainerPtr, ActivationFunctionPtr activationFunctionPtr)
-{
-  MLPbehavior* mlpBehavior( new MLPbehavior() );
-  mlpBehavior->d_bias=0.0;
-  mlpBehavior->d_output=0.0;
-  mlpBehavior->d_inducedLocalField=0.0;
-  mlpBehavior->d_nCons=conContainerPtr;
-  mlpBehavior->d_activationFunction=activationFunctionPtr;
-
-  PredictBehaviorPtr predictBehavior( mlpBehavior);
-  return  predictBehavior;
-
-}
 
 
 NeuronPtr
 MLPfactory::makeNeuron()
 {
   NeuronPtr neuronPtr( new SimpleNeuron() );
-  neuronPtr->setPredictBehavior( makePredictBehavior() );
+  neuronPtr->setPredictBehavior(  makePredictBehavior()  );
   return neuronPtr;
 }
 

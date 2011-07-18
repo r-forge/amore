@@ -10,15 +10,13 @@
 //=========================================================================================================
 
 
+double Tanh::f0 () {
+  return tanh(getInducedLocalField());
 
-double Identity::f0 () {
-  x <- d_predictBehavior.d_inducedLocalField;
-  e2x=exp(2*x);
-  d_predictBehavior.d_output =  (e2x-1)/(e2x+1);
 }
 
-double Identity::f1 () {
-  x <- d_predictBehaviorPtr.d_output;
-  d_predictBehavior.d_outputDerivative = (1-x)/(1+x) ;
+double Tanh::f1 () {
+  double tanhx ( tanh(getInducedLocalField()) );
+  return (1-tanhx*tanhx) ; // TODO consider speeding up the calculation by using caller.d_output instead of tanhx
 }
 

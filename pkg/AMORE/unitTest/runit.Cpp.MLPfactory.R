@@ -4,6 +4,11 @@
 ###############################################################################
 
 
+require("inline")
+require("Rcpp")
+require("RUnit")
+
+
 ###############################################################################
 test.MLPfactory.Cpp.makeNeuron <- function() {	
 ###############################################################################	
@@ -81,7 +86,7 @@ test.MLPfactory.Cpp.makeCon_TwoArguments <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 4.5)
-	# From:	 1 	 Weight= 	 0.000000 
+	# From:	 1 	 Weight= 	 4.500000 
 	# [1] TRUE
 	# [1] TRUE
 }
@@ -91,22 +96,20 @@ test.MLPfactory.Cpp.makeCon_TwoArguments <- function() {
 ###############################################################################
 test.MLPfactory.Cpp.makeMLPbehavior <- function() {	
 ###############################################################################	
-
-
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron() );
 			neuronPtrInput1->setId(1);	
-			neuronPtrInput1->setOutput(4);
+			neuronPtrInput1->setOutput(4.0);
 
 			NeuronPtr neuronPtrInput2( neuralFactoryPtr->makeNeuron() );
 			neuronPtrInput2->setId(2);
-			neuronPtrInput2->setOutput(2);
+			neuronPtrInput2->setOutput(2.0);
 
 			NeuronPtr neuronPtrInput3( neuralFactoryPtr->makeNeuron() );
 			neuronPtrInput3->setId(3);
-			neuronPtrInput3->setOutput(4);
+			neuronPtrInput3->setOutput(4.0);
 
 			ConContainerPtr conContainerPtr( neuralFactoryPtr->makeConContainer() );
 			ConPtr conPtr(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));
@@ -116,9 +119,16 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			conPtr = neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75);
 			conContainerPtr->push_back( conPtr );  
 
+conContainerPtr->show();
+
 			NeuronPtr neuronPtrOutput( neuralFactoryPtr->makeNeuron() );
 			neuronPtrOutput->setId(4);
-			neuronPtrOutput->setPredictBehavior( neuralFactoryPtr->makePredictBehavior(conContainerPtr) );
+			PredictBehaviorPtr predictBehaviorPtr ( neuralFactoryPtr->makePredictBehavior() );
+			predictBehaviorPtr->setConnections(conContainerPtr);
+			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeTanhActivationFunction() );
+			predictBehaviorPtr->setActivationFunction(activationFunctionPtr, predictBehaviorPtr);
+			neuronPtrOutput->setPredictBehavior(predictBehaviorPtr);
+	
 			neuronPtrOutput->predict();
 			
 			neuronPtrInput1->show();
@@ -137,9 +147,65 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	checkEquals(result$outputN1, 4)
 	checkEquals(result$outputN2, 2)
 	checkEquals(result$outputN3, 4)
-	checkEquals(result$outputN4, 5)
-	
-		
+	checkEquals(result$outputN4, tanh(5))
+# From:	 1 	 Weight= 	 0.250000 
+# From:	 2 	 Weight= 	 0.500000 
+# From:	 3 	 Weight= 	 0.750000 
+# 
+# ------------------------
+# 
+#  Id: 1
+# ------------------------
+# 
+#  bias: 0.000000
+#  output: 4.000000
+# ------------------------
+# 
+#  No connections defined
+# ------------------------
+# 
+# ------------------------
+# 
+#  Id: 2
+# ------------------------
+# 
+#  bias: 0.000000
+#  output: 2.000000
+# ------------------------
+# 
+#  No connections defined
+# ------------------------
+# 
+# ------------------------
+# 
+#  Id: 3
+# ------------------------
+# 
+#  bias: 0.000000
+#  output: 4.000000
+# ------------------------
+# 
+#  No connections defined
+# ------------------------
+# 
+# ------------------------
+# 
+#  Id: 4
+# ------------------------
+# 
+#  bias: 0.000000
+#  output: 0.999909
+# ------------------------
+# From:	 1 	 Weight= 	 0.250000 
+# From:	 2 	 Weight= 	 0.500000 
+# From:	 3 	 Weight= 	 0.750000 
+# 
+# ------------------------
+# [1] TRUE
+# [1] TRUE
+# [1] TRUE
+# [1] TRUE
+
 	
 }
 
