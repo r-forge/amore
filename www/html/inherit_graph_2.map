@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_iterator.html" title="class Iterator &#45;" alt="" coords="6,5,103,32"/>
-<area shape="rect" id="node3" href="$class_simple_container_iterator.html" title="class SimpleContainerIterator &#45;" alt="" coords="153,5,351,32"/>
+<area shape="rect" id="node1" href="$class_container.html" title="class Container &#45;" alt="" coords="6,5,117,32"/>
+<area shape="rect" id="node3" href="$class_simple_container.html" title="class SimpleContainer &#45;" alt="" coords="165,5,320,32"/>
 </map>

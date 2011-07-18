@@ -18,7 +18,7 @@ Inheritance diagram for NeuralFactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=362pt]{class_neural_factory__inherit__graph}
+\includegraphics[width=400pt]{class_neural_factory__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -30,9 +30,11 @@ virtual \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyp
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_neural_factory_a4fa5f4f57a2551c95481146b1a0c83d7}{makeConContainer} ()=0
 \item 
-virtual \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_neural_factory_a1afe8d8d674aad726337295f46b75810}{makePredictBehavior} ()=0
+virtual \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_neural_factory_a2a2c7aa8f4d073126f468f676ea68272}{makeIdentityActivationFunction} ()=0
 \item 
-virtual \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_neural_factory_aae1e62cacbda2061e746abf31e01ad29}{makePredictBehavior} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)=0
+virtual \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_neural_factory_a7551643129b608ea6601cd18f2bfb011}{makeTanhActivationFunction} ()=0
+\item 
+virtual \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_neural_factory_a1afe8d8d674aad726337295f46b75810}{makePredictBehavior} ()=0
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{makeNeuron} ()=0
 \item 
@@ -88,6 +90,19 @@ Implemented in \hyperlink{class_m_l_pfactory_ac47beb4aced10b9c99414ba7dd7c8b55}{
 
 Implemented in \hyperlink{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a0b85ec075904a9d915d1a3527f5d6471}{RBFfactory}.
 
+\hypertarget{class_neural_factory_a2a2c7aa8f4d073126f468f676ea68272}{
+\index{NeuralFactory@{NeuralFactory}!makeIdentityActivationFunction@{makeIdentityActivationFunction}}
+\index{makeIdentityActivationFunction@{makeIdentityActivationFunction}!NeuralFactory@{NeuralFactory}}
+\subsubsection[{makeIdentityActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ActivationFunctionPtr} NeuralFactory::makeIdentityActivationFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_factory_a2a2c7aa8f4d073126f468f676ea68272}
+
+
+Implemented in \hyperlink{class_m_l_pfactory_a2e0323210a1a086a8a646b060d4db1b3}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a49489b75c9019c4eb08b04b333a476a0}{RBFfactory}.
+
 \hypertarget{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{
 \index{NeuralFactory@{NeuralFactory}!makeNeuron@{makeNeuron}}
 \index{makeNeuron@{makeNeuron}!NeuralFactory@{NeuralFactory}}
@@ -114,19 +129,6 @@ Implemented in \hyperlink{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{
 
 Implemented in \hyperlink{class_m_l_pfactory_a174caa9d45bc964a07d86f6221e576e1}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a9e304b053b54ad69c5b932cb0f30081c}{RBFfactory}.
 
-\hypertarget{class_neural_factory_aae1e62cacbda2061e746abf31e01ad29}{
-\index{NeuralFactory@{NeuralFactory}!makePredictBehavior@{makePredictBehavior}}
-\index{makePredictBehavior@{makePredictBehavior}!NeuralFactory@{NeuralFactory}}
-\subsubsection[{makePredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf PredictBehaviorPtr} NeuralFactory::makePredictBehavior (
-\begin{DoxyParamCaption}
-\item[{{\bf ConContainerPtr}}]{conContainerPtr}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neural_factory_aae1e62cacbda2061e746abf31e01ad29}
-
-
-Implemented in \hyperlink{class_m_l_pfactory_a94c8de29fc395fc62dc61a8de70b15c3}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a91ab055583da7ab1b0efe72c82c1af0d}{RBFfactory}.
-
 \hypertarget{class_neural_factory_a1afe8d8d674aad726337295f46b75810}{
 \index{NeuralFactory@{NeuralFactory}!makePredictBehavior@{makePredictBehavior}}
 \index{makePredictBehavior@{makePredictBehavior}!NeuralFactory@{NeuralFactory}}
@@ -139,6 +141,19 @@ Implemented in \hyperlink{class_m_l_pfactory_a94c8de29fc395fc62dc61a8de70b15c3}{
 
 
 Implemented in \hyperlink{class_m_l_pfactory_aba55f8dff50e23de43170ccbfffa4f89}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a37c1e41af6f362767be462afcd417726}{RBFfactory}.
+
+\hypertarget{class_neural_factory_a7551643129b608ea6601cd18f2bfb011}{
+\index{NeuralFactory@{NeuralFactory}!makeTanhActivationFunction@{makeTanhActivationFunction}}
+\index{makeTanhActivationFunction@{makeTanhActivationFunction}!NeuralFactory@{NeuralFactory}}
+\subsubsection[{makeTanhActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ActivationFunctionPtr} NeuralFactory::makeTanhActivationFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_factory_a7551643129b608ea6601cd18f2bfb011}
+
+
+Implemented in \hyperlink{class_m_l_pfactory_a8744ff60b65b6b9d37f25d9f3fdb3cfd}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a68c9c5fda0aee4350cf9e2ce3401145b}{RBFfactory}.
 
 
 
