@@ -18,7 +18,7 @@ Inheritance diagram for MLPfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_m_l_pfactory__inherit__graph}
+\includegraphics[width=258pt]{class_m_l_pfactory__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,7 +28,7 @@ Collaboration diagram for MLPfactory:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_m_l_pfactory__coll__graph}
+\includegraphics[width=258pt]{class_m_l_pfactory__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -43,9 +43,11 @@ Collaboration diagram for MLPfactory:
 \item 
 \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_m_l_pfactory_ac47beb4aced10b9c99414ba7dd7c8b55}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron, double weight)
 \item 
-\hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_m_l_pfactory_aba55f8dff50e23de43170ccbfffa4f89}{makePredictBehavior} ()
+\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_m_l_pfactory_a2e0323210a1a086a8a646b060d4db1b3}{makeIdentityActivationFunction} ()
 \item 
-\hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_m_l_pfactory_a94c8de29fc395fc62dc61a8de70b15c3}{makePredictBehavior} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)
+\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_m_l_pfactory_a8744ff60b65b6b9d37f25d9f3fdb3cfd}{makeTanhActivationFunction} ()
+\item 
+\hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_m_l_pfactory_aba55f8dff50e23de43170ccbfffa4f89}{makePredictBehavior} ()
 \item 
 \hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{makeConContainer} ()
 \item 
@@ -163,12 +165,51 @@ Referenced by makePredictBehavior().
 \end{DoxyCode}
 
 
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_m_l_pfactory_a2e0323210a1a086a8a646b060d4db1b3}{
+\index{MLPfactory@{MLPfactory}!makeIdentityActivationFunction@{makeIdentityActivationFunction}}
+\index{makeIdentityActivationFunction@{makeIdentityActivationFunction}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeIdentityActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ActivationFunctionPtr} MLPfactory::makeIdentityActivationFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a2e0323210a1a086a8a646b060d4db1b3}
+
+
+Implements \hyperlink{class_neural_factory_a2a2c7aa8f4d073126f468f676ea68272}{NeuralFactory}.
+
+
+
+Definition at line 40 of file MLPfactory.cpp.
+
+
+
+Referenced by makePredictBehavior().
+
+
+\begin{DoxyCode}
+                                          {
+  ActivationFunctionPtr activationFunctionPtr(new Identity()) ;
+  return activationFunctionPtr;
+}
+\end{DoxyCode}
+
+
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299_icgraph}
+\includegraphics[width=400pt]{class_m_l_pfactory_a2e0323210a1a086a8a646b060d4db1b3_icgraph}
 \end{center}
 \end{figure}
 
@@ -188,7 +229,7 @@ Implements \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{Ne
 
 
 
-Definition at line 71 of file MLPfactory.cpp.
+Definition at line 66 of file MLPfactory.cpp.
 
 
 
@@ -198,7 +239,7 @@ References makePredictBehavior().
 \begin{DoxyCode}
 {
   NeuronPtr neuronPtr( new SimpleNeuron() );
-  neuronPtr->setPredictBehavior( makePredictBehavior() );
+  neuronPtr->setPredictBehavior(  makePredictBehavior()  );
   return neuronPtr;
 }
 \end{DoxyCode}
@@ -229,7 +270,7 @@ Implements \hyperlink{class_neural_factory_ab8fe3634f3715f99616fe9498a29badb}{Ne
 
 
 
-Definition at line 81 of file MLPfactory.cpp.
+Definition at line 76 of file MLPfactory.cpp.
 
 
 \begin{DoxyCode}
@@ -253,11 +294,11 @@ Implements \hyperlink{class_neural_factory_a1afe8d8d674aad726337295f46b75810}{Ne
 
 
 
-Definition at line 41 of file MLPfactory.cpp.
+Definition at line 54 of file MLPfactory.cpp.
 
 
 
-References MLPbehavior::d\_\-accumulator, MLPbehavior::d\_\-bias, MLPbehavior::d\_\-nCons, MLPbehavior::d\_\-output, and makeConContainer().
+References makeConContainer(), and makeIdentityActivationFunction().
 
 
 
@@ -266,15 +307,11 @@ Referenced by makeNeuron().
 
 \begin{DoxyCode}
 {
-
-  MLPbehavior* mlpBehavior( new MLPbehavior() );
-  mlpBehavior->d_bias=0.0;
-  mlpBehavior->d_output=0.0;
-  mlpBehavior->d_accumulator=0.0;
-  mlpBehavior->d_nCons=makeConContainer();
-
-  PredictBehaviorPtr predictBehavior( mlpBehavior);
-  return  predictBehavior;
+  PredictBehaviorPtr predictBehaviorPtr(  new MLPbehavior() );
+  predictBehaviorPtr->setConnections( makeConContainer());
+  predictBehaviorPtr->setActivationFunction( makeIdentityActivationFunction() , p
+      redictBehaviorPtr);
+  return  predictBehaviorPtr;
 }
 \end{DoxyCode}
 
@@ -291,8 +328,7 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -301,39 +337,28 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{class_m_l_pfactory_a94c8de29fc395fc62dc61a8de70b15c3}{
-\index{MLPfactory@{MLPfactory}!makePredictBehavior@{makePredictBehavior}}
-\index{makePredictBehavior@{makePredictBehavior}!MLPfactory@{MLPfactory}}
-\subsubsection[{makePredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PredictBehaviorPtr} MLPfactory::makePredictBehavior (
+\hypertarget{class_m_l_pfactory_a8744ff60b65b6b9d37f25d9f3fdb3cfd}{
+\index{MLPfactory@{MLPfactory}!makeTanhActivationFunction@{makeTanhActivationFunction}}
+\index{makeTanhActivationFunction@{makeTanhActivationFunction}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeTanhActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ActivationFunctionPtr} MLPfactory::makeTanhActivationFunction (
 \begin{DoxyParamCaption}
-\item[{{\bf ConContainerPtr}}]{conContainerPtr}
+{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{class_m_l_pfactory_a94c8de29fc395fc62dc61a8de70b15c3}
+\label{class_m_l_pfactory_a8744ff60b65b6b9d37f25d9f3fdb3cfd}
 
 
-Implements \hyperlink{class_neural_factory_aae1e62cacbda2061e746abf31e01ad29}{NeuralFactory}.
-
-
-
-Definition at line 56 of file MLPfactory.cpp.
+Implements \hyperlink{class_neural_factory_a7551643129b608ea6601cd18f2bfb011}{NeuralFactory}.
 
 
 
-References MLPbehavior::d\_\-accumulator, MLPbehavior::d\_\-bias, MLPbehavior::d\_\-nCons, and MLPbehavior::d\_\-output.
+Definition at line 46 of file MLPfactory.cpp.
 
 
 \begin{DoxyCode}
-{
-  MLPbehavior* mlpBehavior( new MLPbehavior() );
-  mlpBehavior->d_bias=0.0;
-  mlpBehavior->d_output=0.0;
-  mlpBehavior->d_accumulator=0.0;
-  mlpBehavior->d_nCons=conContainerPtr;
-
-  PredictBehaviorPtr predictBehavior( mlpBehavior);
-  return  predictBehavior;
-
+                                      {
+  ActivationFunctionPtr activationFunctionPtr(new Tanh() );
+  return activationFunctionPtr;
 }
 \end{DoxyCode}
 

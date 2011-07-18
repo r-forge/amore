@@ -18,7 +18,7 @@ Inheritance diagram for PredictBehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=275pt]{class_predict_behavior__inherit__graph}
+\includegraphics[width=286pt]{class_predict_behavior__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -28,9 +28,31 @@ virtual void \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885
 \item 
 virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{show} ()=0
 \item 
-virtual double \hyperlink{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}{getOutput} ()=0
+double \hyperlink{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}{getOutput} ()
 \item 
-virtual void \hyperlink{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}{setOutput} (double output)=0
+void \hyperlink{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{setOutput} (double output)
+\item 
+void \hyperlink{class_predict_behavior_a996642f65ce5f5933854039981b66b56}{setActivationFunction} (\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} activationFunctionPtr, \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} predictBehaviorPtr)
+\item 
+double \hyperlink{class_predict_behavior_a69187d626108f96e50675729828daf07}{getInducedLocalField} ()
+\item 
+void \hyperlink{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}{setConnections} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}{PredictBehavior} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}{d\_\-nCons}
+\item 
+double \hyperlink{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}{d\_\-inducedLocalField}
+\item 
+\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}{d\_\-activationFunction}
+\item 
+double \hyperlink{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}{d\_\-output}
 \end{DoxyCompactItemize}
 
 
@@ -41,20 +63,76 @@ Definition at line 4 of file PredictBehavior.h.
 
 
 
-\subsection{Member Function Documentation}
-\hypertarget{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}{
-\index{PredictBehavior@{PredictBehavior}!getOutput@{getOutput}}
-\index{getOutput@{getOutput}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{getOutput}]{\setlength{\rightskip}{0pt plus 5cm}virtual double PredictBehavior::getOutput (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}{
+\index{PredictBehavior@{PredictBehavior}!PredictBehavior@{PredictBehavior}}
+\index{PredictBehavior@{PredictBehavior}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{PredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}PredictBehavior::PredictBehavior (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_predict_behavior_a8d44bbfd0e942d4941f77d23fbfe1ad2}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}
 
 
-Implemented in \hyperlink{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a9faeb38a3db00dd07fb29e012eb03b0c}{RBFbehavior}.
+Definition at line 11 of file PredictBehavior.cpp.
 
+
+\begin{DoxyCode}
+                                 :
+  d_output(0.0), d_inducedLocalField(0.0)
+{
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_predict_behavior_a69187d626108f96e50675729828daf07}{
+\index{PredictBehavior@{PredictBehavior}!getInducedLocalField@{getInducedLocalField}}
+\index{getInducedLocalField@{getInducedLocalField}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{getInducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::getInducedLocalField (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_predict_behavior_a69187d626108f96e50675729828daf07}
+
+
+Definition at line 29 of file PredictBehavior.cpp.
+
+
+
+References d\_\-inducedLocalField.
+
+
+\begin{DoxyCode}
+{
+  return d_inducedLocalField;
+}
+\end{DoxyCode}
+\hypertarget{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}{
+\index{PredictBehavior@{PredictBehavior}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{getOutput}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::getOutput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}
+
+
+Definition at line 23 of file PredictBehavior.cpp.
+
+
+
+References d\_\-output.
+
+
+\begin{DoxyCode}
+{
+  return d_output;
+}
+\end{DoxyCode}
 \hypertarget{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
 \index{PredictBehavior@{PredictBehavior}!predict@{predict}}
 \index{predict@{predict}!PredictBehavior@{PredictBehavior}}
@@ -68,19 +146,77 @@ Implemented in \hyperlink{class_m_l_pbehavior_a52691223d1fb62ac9533af5d46f9a4c1}
 
 Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
 
-\hypertarget{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}{
+\hypertarget{class_predict_behavior_a996642f65ce5f5933854039981b66b56}{
+\index{PredictBehavior@{PredictBehavior}!setActivationFunction@{setActivationFunction}}
+\index{setActivationFunction@{setActivationFunction}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{setActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setActivationFunction (
+\begin{DoxyParamCaption}
+\item[{{\bf ActivationFunctionPtr}}]{activationFunctionPtr, }
+\item[{{\bf PredictBehaviorPtr}}]{predictBehaviorPtr}
+\end{DoxyParamCaption}
+)}}
+\label{class_predict_behavior_a996642f65ce5f5933854039981b66b56}
+
+
+Definition at line 35 of file PredictBehavior.cpp.
+
+
+
+References d\_\-activationFunction.
+
+
+\begin{DoxyCode}
+{
+  d_activationFunction = activationFunctionPtr;
+  d_activationFunction.get()->setPredictBehavior(predictBehaviorPtr);
+}
+\end{DoxyCode}
+\hypertarget{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}{
+\index{PredictBehavior@{PredictBehavior}!setConnections@{setConnections}}
+\index{setConnections@{setConnections}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{setConnections}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setConnections (
+\begin{DoxyParamCaption}
+\item[{{\bf ConContainerPtr}}]{conContainerPtr}
+\end{DoxyParamCaption}
+)}}
+\label{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}
+
+
+Definition at line 44 of file PredictBehavior.cpp.
+
+
+
+References d\_\-nCons.
+
+
+\begin{DoxyCode}
+{
+  d_nCons = conContainerPtr;
+}
+\end{DoxyCode}
+\hypertarget{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{
 \index{PredictBehavior@{PredictBehavior}!setOutput@{setOutput}}
 \index{setOutput@{setOutput}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{setOutput}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::setOutput (
+\subsubsection[{setOutput}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setOutput (
 \begin{DoxyParamCaption}
 \item[{double}]{output}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_predict_behavior_ad1ac5702c6957ab2037594b5e4a7cf85}
+)}}
+\label{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}
 
 
-Implemented in \hyperlink{class_m_l_pbehavior_a96424b39aa598ffec0baf5a53efe0ff8}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a691b3a38f3b7b3a663c5380e32d2a777}{RBFbehavior}.
+Definition at line 17 of file PredictBehavior.cpp.
 
+
+
+References d\_\-output.
+
+
+\begin{DoxyCode}
+{
+  d_output = output;
+}
+\end{DoxyCode}
 \hypertarget{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
 \index{PredictBehavior@{PredictBehavior}!show@{show}}
 \index{show@{show}!PredictBehavior@{PredictBehavior}}
@@ -96,6 +232,62 @@ Implemented in \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}
 
 
 
-The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}{
+\index{PredictBehavior@{PredictBehavior}!d\_\-activationFunction@{d\_\-activationFunction}}
+\index{d\_\-activationFunction@{d\_\-activationFunction}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{d\_\-activationFunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ActivationFunctionPtr} {\bf PredictBehavior::d\_\-activationFunction}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}
+
+
+Definition at line 9 of file PredictBehavior.h.
+
+
+
+Referenced by MLPbehavior::predict(), and setActivationFunction().
+
+\hypertarget{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}{
+\index{PredictBehavior@{PredictBehavior}!d\_\-inducedLocalField@{d\_\-inducedLocalField}}
+\index{d\_\-inducedLocalField@{d\_\-inducedLocalField}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{d\_\-inducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf PredictBehavior::d\_\-inducedLocalField}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}
+
+
+Definition at line 8 of file PredictBehavior.h.
+
+
+
+Referenced by getInducedLocalField(), and MLPbehavior::predict().
+
+\hypertarget{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}{
+\index{PredictBehavior@{PredictBehavior}!d\_\-nCons@{d\_\-nCons}}
+\index{d\_\-nCons@{d\_\-nCons}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{d\_\-nCons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConContainerPtr} {\bf PredictBehavior::d\_\-nCons}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}
+
+
+Definition at line 7 of file PredictBehavior.h.
+
+
+
+Referenced by MLPbehavior::predict(), setConnections(), and MLPbehavior::show().
+
+\hypertarget{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}{
+\index{PredictBehavior@{PredictBehavior}!d\_\-output@{d\_\-output}}
+\index{d\_\-output@{d\_\-output}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{d\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf PredictBehavior::d\_\-output}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}
+
+
+Definition at line 10 of file PredictBehavior.h.
+
+
+
+Referenced by getOutput(), MLPbehavior::predict(), setOutput(), and MLPbehavior::show().
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 
-pkg/AMORE/src/dia/\hyperlink{_predict_behavior_8h}{PredictBehavior.h}\end{DoxyCompactItemize}
+pkg/AMORE/src/dia/\hyperlink{_predict_behavior_8h}{PredictBehavior.h}\item 
+pkg/AMORE/src/\hyperlink{_predict_behavior_8cpp}{PredictBehavior.cpp}\end{DoxyCompactItemize}

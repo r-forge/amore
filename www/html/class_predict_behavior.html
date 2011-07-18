@@ -80,7 +80,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">PredictBehavior Class Reference</div>  </div>
 </div>
@@ -93,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for PredictBehavior:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_predict_behavior__inherit__graph.svg" width="271" height="363" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_predict_behavior__inherit__graph.svg" width="286" height="406" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -103,30 +105,93 @@ Inheritance diagram for PredictBehavior:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a7db41238d6d1dbf60c67cf8575e79885">predict</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a9ef84360f73784248d994fa4707c1dde">show</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a8d44bbfd0e942d4941f77d23fbfe1ad2">getOutput</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#ad1ac5702c6957ab2037594b5e4a7cf85">setOutput</a> (double output)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#ac07dbe00c03788119df5df9f57ce11e5">getOutput</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6">setOutput</a> (double output)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a996642f65ce5f5933854039981b66b56">setActivationFunction</a> (<a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> activationFunctionPtr, <a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a69187d626108f96e50675729828daf07">getInducedLocalField</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a0acf1564a1d50771e357dae05986f7b8">setConnections</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> conContainerPtr)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#af0a2b23a6b860f470a3d7d22ce604689">PredictBehavior</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#ae7d8e531771e06a855f4f1ade167f2f3">d_nCons</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#afdf6139d11c2c1336dd9402262dc1b5e">d_inducedLocalField</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#a60e5bf9ad1d151741a359cdd88346eb5">d_activationFunction</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_behavior.html#acae2a69a47c0af627fc17b9243148db2">d_output</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_predict_behavior.html" title="class PredictBehavior -">PredictBehavior</a> - </p>
 
 <p>Definition at line <a class="el" href="_predict_behavior_8h_source.html#l00004">4</a> of file <a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a8d44bbfd0e942d4941f77d23fbfe1ad2"></a><!-- doxytag: member="PredictBehavior::getOutput" ref="a8d44bbfd0e942d4941f77d23fbfe1ad2" args="()=0" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af0a2b23a6b860f470a3d7d22ce604689"></a><!-- doxytag: member="PredictBehavior::PredictBehavior" ref="af0a2b23a6b860f470a3d7d22ce604689" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double PredictBehavior::getOutput </td>
+          <td class="memname">PredictBehavior::PredictBehavior </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_m_l_pbehavior.html#a52691223d1fb62ac9533af5d46f9a4c1">MLPbehavior</a>, and <a class="el" href="class_r_b_fbehavior.html#a9faeb38a3db00dd07fb29e012eb03b0c">RBFbehavior</a>.</p>
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00011">11</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                 :
+  <a class="code" href="class_predict_behavior.html#acae2a69a47c0af627fc17b9243148db2">d_output</a>(0.0), <a class="code" href="class_predict_behavior.html#afdf6139d11c2c1336dd9402262dc1b5e">d_inducedLocalField</a>(0.0)
+{
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a69187d626108f96e50675729828daf07"></a><!-- doxytag: member="PredictBehavior::getInducedLocalField" ref="a69187d626108f96e50675729828daf07" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PredictBehavior::getInducedLocalField </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00029">29</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
+
+<p>References <a class="el" href="_predict_behavior_8h_source.html#l00008">d_inducedLocalField</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <span class="keywordflow">return</span> <a class="code" href="class_predict_behavior.html#afdf6139d11c2c1336dd9402262dc1b5e">d_inducedLocalField</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac07dbe00c03788119df5df9f57ce11e5"></a><!-- doxytag: member="PredictBehavior::getOutput" ref="ac07dbe00c03788119df5df9f57ce11e5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PredictBehavior::getOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00023">23</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
+
+<p>References <a class="el" href="_predict_behavior_8h_source.html#l00010">d_output</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <span class="keywordflow">return</span> <a class="code" href="class_predict_behavior.html#acae2a69a47c0af627fc17b9243148db2">d_output</a>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a7db41238d6d1dbf60c67cf8575e79885"></a><!-- doxytag: member="PredictBehavior::predict" ref="a7db41238d6d1dbf60c67cf8575e79885" args="()=0" -->
@@ -147,23 +212,87 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad1ac5702c6957ab2037594b5e4a7cf85"></a><!-- doxytag: member="PredictBehavior::setOutput" ref="ad1ac5702c6957ab2037594b5e4a7cf85" args="(double output)=0" -->
+<a class="anchor" id="a996642f65ce5f5933854039981b66b56"></a><!-- doxytag: member="PredictBehavior::setActivationFunction" ref="a996642f65ce5f5933854039981b66b56" args="(ActivationFunctionPtr activationFunctionPtr, PredictBehaviorPtr predictBehaviorPtr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void PredictBehavior::setOutput </td>
+          <td class="memname">void PredictBehavior::setActivationFunction </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>output</em></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td>
+          <td class="paramname"><em>activationFunctionPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td>
+          <td class="paramname"><em>predictBehaviorPtr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_m_l_pbehavior.html#a96424b39aa598ffec0baf5a53efe0ff8">MLPbehavior</a>, and <a class="el" href="class_r_b_fbehavior.html#a691b3a38f3b7b3a663c5380e32d2a777">RBFbehavior</a>.</p>
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00035">35</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
 
+<p>References <a class="el" href="_predict_behavior_8h_source.html#l00009">d_activationFunction</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_predict_behavior.html#a60e5bf9ad1d151741a359cdd88346eb5">d_activationFunction</a> = activationFunctionPtr;
+  <a class="code" href="class_predict_behavior.html#a60e5bf9ad1d151741a359cdd88346eb5">d_activationFunction</a>.get()-&gt;setPredictBehavior(predictBehaviorPtr);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0acf1564a1d50771e357dae05986f7b8"></a><!-- doxytag: member="PredictBehavior::setConnections" ref="a0acf1564a1d50771e357dae05986f7b8" args="(ConContainerPtr conContainerPtr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictBehavior::setConnections </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td>
+          <td class="paramname"><em>conContainerPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00044">44</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
+
+<p>References <a class="el" href="_predict_behavior_8h_source.html#l00007">d_nCons</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_predict_behavior.html#ae7d8e531771e06a855f4f1ade167f2f3">d_nCons</a> = conContainerPtr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afeabe1f543e46d41909b41816d8210a6"></a><!-- doxytag: member="PredictBehavior::setOutput" ref="afeabe1f543e46d41909b41816d8210a6" args="(double output)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictBehavior::setOutput </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8cpp_source.html#l00017">17</a> of file <a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>.</p>
+
+<p>References <a class="el" href="_predict_behavior_8h_source.html#l00010">d_output</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_predict_behavior.html#acae2a69a47c0af627fc17b9243148db2">d_output</a> = output;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a9ef84360f73784248d994fa4707c1dde"></a><!-- doxytag: member="PredictBehavior::show" ref="a9ef84360f73784248d994fa4707c1dde" args="()=0" -->
@@ -184,15 +313,85 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a60e5bf9ad1d151741a359cdd88346eb5"></a><!-- doxytag: member="PredictBehavior::d_activationFunction" ref="a60e5bf9ad1d151741a359cdd88346eb5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> <a class="el" href="class_predict_behavior.html#a60e5bf9ad1d151741a359cdd88346eb5">PredictBehavior::d_activationFunction</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8h_source.html#l00009">9</a> of file <a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00019">MLPbehavior::predict()</a>, and <a class="el" href="_predict_behavior_8cpp_source.html#l00035">setActivationFunction()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afdf6139d11c2c1336dd9402262dc1b5e"></a><!-- doxytag: member="PredictBehavior::d_inducedLocalField" ref="afdf6139d11c2c1336dd9402262dc1b5e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_predict_behavior.html#afdf6139d11c2c1336dd9402262dc1b5e">PredictBehavior::d_inducedLocalField</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8h_source.html#l00008">8</a> of file <a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_predict_behavior_8cpp_source.html#l00029">getInducedLocalField()</a>, and <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00019">MLPbehavior::predict()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7d8e531771e06a855f4f1ade167f2f3"></a><!-- doxytag: member="PredictBehavior::d_nCons" ref="ae7d8e531771e06a855f4f1ade167f2f3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> <a class="el" href="class_predict_behavior.html#ae7d8e531771e06a855f4f1ade167f2f3">PredictBehavior::d_nCons</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8h_source.html#l00007">7</a> of file <a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00019">MLPbehavior::predict()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00044">setConnections()</a>, and <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00035">MLPbehavior::show()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acae2a69a47c0af627fc17b9243148db2"></a><!-- doxytag: member="PredictBehavior::d_output" ref="acae2a69a47c0af627fc17b9243148db2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_predict_behavior.html#acae2a69a47c0af627fc17b9243148db2">PredictBehavior::d_output</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_predict_behavior_8h_source.html#l00010">10</a> of file <a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_predict_behavior_8cpp_source.html#l00023">getOutput()</a>, <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00019">MLPbehavior::predict()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00017">setOutput()</a>, and <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00035">MLPbehavior::show()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>pkg/AMORE/src/dia/<a class="el" href="_predict_behavior_8h_source.html">PredictBehavior.h</a></li>
+<li>pkg/AMORE/src/<a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_predict_behavior.html">PredictBehavior</a>      </li>
-      <li class="footer">Generated on Sun Jul 17 2011 01:25:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Mon Jul 18 2011 17:41:24 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

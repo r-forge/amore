@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_arc_tan.html" title="class ArcTan &#45;" alt="" coords="5,177,69,269"/>
+<area shape="rect" id="node5" href="$class_cosine.html" title="class Cosine &#45;" alt="" coords="94,177,159,269"/>
+<area shape="rect" id="node7" href="$class_elliot.html" title="class Elliot &#45;" alt="" coords="184,177,240,269"/>
+<area shape="rect" id="node9" href="$class_exponential.html" title="class Exponential &#45;" alt="" coords="265,177,359,269"/>
+<area shape="rect" id="node11" href="$class_gauss.html" title="class Gauss &#45;" alt="" coords="384,177,445,269"/>
+<area shape="rect" id="node13" href="$class_identity.html" title="class Identity &#45;" alt="" coords="469,177,539,269"/>
+<area shape="rect" id="node15" href="$class_logistic.html" title="class Logistic &#45;" alt="" coords="563,177,633,269"/>
+<area shape="rect" id="node17" href="$class_radial_basis.html" title="class RadialBasis &#45;" alt="" coords="658,177,752,269"/>
+<area shape="rect" id="node19" href="$class_reciprocal.html" title="class Reciprocal &#45;" alt="" coords="777,177,863,269"/>
+<area shape="rect" id="node21" href="$class_sine.html" title="class Sine &#45;" alt="" coords="888,177,944,269"/>
+<area shape="rect" id="node23" href="$class_square.html" title="class Square &#45;" alt="" coords="968,177,1035,269"/>
+<area shape="rect" id="node25" href="$class_tanh.html" title="class Tanh &#45;" alt="" coords="1059,177,1115,269"/>
+<area shape="rect" id="node27" href="$class_threshold.html" title="class Threshold &#45;" alt="" coords="1139,177,1221,269"/>
+</map>
