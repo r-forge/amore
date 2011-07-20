@@ -105,6 +105,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="_simple_neuron_8h_source.html">dia/SimpleNeuron.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_neural_factory_8h_source.html">dia/NeuralFactory.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_m_l_pfactory_8h_source.html">dia/MLPfactory.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_tanh_factory_8h_source.html">dia/TanhFactory.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_identity_factory_8h_source.html">dia/IdentityFactory.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_neural_creator_8h_source.html">dia/NeuralCreator.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_simple_neural_creator_8h_source.html">dia/SimpleNeuralCreator.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_container_8h_source.html">dia/Container.h</a>&quot;</code><br/>
@@ -117,8 +119,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_predict_behavior_8cpp_source.html">PredictBehavior.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_m_l_pbehavior_8cpp_source.html">MLPbehavior.cpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_m_l_pfactory_8cpp_source.html">MLPfactory.cpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_tanh_factory_8cpp_source.html">TanhFactory.cpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_identity_factory_8cpp_source.html">IdentityFactory.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_container_8cpp_source.html">Container.cpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_iterator_8cpp_source.html">Iterator.cpp</a>&quot;</code><br/>
@@ -127,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AMORE.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="3914" height="262" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="_a_m_o_r_e_8h__incl.svg" width="4376" height="336" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -170,8 +175,7 @@ boost::reference_wrapper<br class="typebreak"/>
 &lt; <a class="el" href="class_neural_factory.html">NeuralFactory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="class_neural_creator.html">NeuralCreator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#aefebabe3353f684b7708712480c15699">NeuralCreatorPtr</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef boost::weak_ptr<br class="typebreak"/>
-&lt; <a class="el" href="class_predict_behavior.html">PredictBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#ae02ab8473cf61b61b3b9c154dc01191a">PredictBehaviorWeakPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef boost::weak_ptr&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a85d9ac269eba33293361f4ed7c2a697b"></a><!-- doxytag: member="AMORE.h::foreach" ref="a85d9ac269eba33293361f4ed7c2a697b" args="" -->
@@ -385,6 +389,21 @@ boost::reference_wrapper<br class="typebreak"/>
 
 </div>
 </div>
+<a class="anchor" id="a3e2d414e247d33f77957e70765d161c0"></a><!-- doxytag: member="AMORE.h::NeuronWeakPtr" ref="a3e2d414e247d33f77957e70765d161c0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::weak_ptr&lt;<a class="el" href="class_neuron.html">Neuron</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00094">94</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a1fb2f1f8fdf1e08c42ef4bdce436af93"></a><!-- doxytag: member="AMORE.h::PredictBehaviorPtr" ref="a1fb2f1f8fdf1e08c42ef4bdce436af93" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -415,21 +434,6 @@ boost::reference_wrapper<br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="ae02ab8473cf61b61b3b9c154dc01191a"></a><!-- doxytag: member="AMORE.h::PredictBehaviorWeakPtr" ref="ae02ab8473cf61b61b3b9c154dc01191a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::weak_ptr&lt;<a class="el" href="class_predict_behavior.html">PredictBehavior</a>&gt; <a class="el" href="_a_m_o_r_e_8h.html#ae02ab8473cf61b61b3b9c154dc01191a">PredictBehaviorWeakPtr</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_m_o_r_e_8h_source.html#l00094">94</a> of file <a class="el" href="_a_m_o_r_e_8h_source.html">AMORE.h</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a2efd5ce2c834a4c9e92cd98bbb887225"></a><!-- doxytag: member="AMORE.h::TrainingBehaviorRef" ref="a2efd5ce2c834a4c9e92cd98bbb887225" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +454,7 @@ boost::reference_wrapper<br class="typebreak"/>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_a_m_o_r_e_8h.html">AMORE.h</a>      </li>
-      <li class="footer">Generated on Mon Jul 18 2011 17:41:22 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 20 2011 04:54:20 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

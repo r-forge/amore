@@ -93,13 +93,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Identity:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_identity__inherit__graph.svg" width="190" height="275" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_identity__inherit__graph.svg" width="187" height="288" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Identity:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_identity__coll__graph.svg" width="190" height="275" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_identity__coll__graph.svg" width="187" height="288" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -107,6 +107,7 @@ Collaboration diagram for Identity:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_identity.html#ad5676f78b0f0eb354d696a073455d7b5">Identity</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_identity.html#a52e31d60b819554bf57a7e19f5a1a91e">f0</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_identity.html#ac7d4a38d1d3d3205fcf11f41fb985138">f1</a> ()</td></tr>
 </table>
@@ -114,7 +115,30 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>class <a class="el" href="class_identity.html" title="class Identity -">Identity</a> - </p>
 
 <p>Definition at line <a class="el" href="_identity_8h_source.html#l00005">5</a> of file <a class="el" href="_identity_8h_source.html">Identity.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad5676f78b0f0eb354d696a073455d7b5"></a><!-- doxytag: member="Identity::Identity" ref="ad5676f78b0f0eb354d696a073455d7b5" args="(NeuronPtr neuronPtr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Identity::Identity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td>
+          <td class="paramname"><em>neuronPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_identity_8cpp_source.html#l00012">12</a> of file <a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                      : <a class="code" href="class_activation_function.html#aebbc56ae5a7ff79e5d843034f6d7dc4f">ActivationFunction</a>(neuronPtr) {
+
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a52e31d60b819554bf57a7e19f5a1a91e"></a><!-- doxytag: member="Identity::f0" ref="a52e31d60b819554bf57a7e19f5a1a91e" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -131,9 +155,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_activation_function.html#a801deb6a372121fe110de1f79f93f1c6">ActivationFunction</a>.</p>
 
-<p>Definition at line <a class="el" href="_identity_8cpp_source.html#l00012">12</a> of file <a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_identity_8cpp_source.html#l00016">16</a> of file <a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>.</p>
 
-<p>References <a class="el" href="_activation_function_8cpp_source.html#l00012">ActivationFunction::getInducedLocalField()</a>.</p>
+<p>References <a class="el" href="_activation_function_8cpp_source.html#l00017">ActivationFunction::getInducedLocalField()</a>.</p>
 <div class="fragment"><pre class="fragment">                     {
   <span class="keywordflow">return</span> <a class="code" href="class_activation_function.html#a72f5e70051e79c0e19318ba1b9bb77ec">getInducedLocalField</a>() ;
 }
@@ -141,8 +165,7 @@ Public Member Functions</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_identity_a52e31d60b819554bf57a7e19f5a1a91e_cgraph.svg" width="424" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_identity_a52e31d60b819554bf57a7e19f5a1a91e_cgraph.svg" width="424" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -164,7 +187,7 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_activation_function.html#aa5a0a713bc1080ab5d5ae3632a08b08e">ActivationFunction</a>.</p>
 
-<p>Definition at line <a class="el" href="_identity_8cpp_source.html#l00016">16</a> of file <a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_identity_8cpp_source.html#l00020">20</a> of file <a class="el" href="_identity_8cpp_source.html">Identity.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">                     {
   <span class="keywordflow">return</span> 1 ;
 }
@@ -180,7 +203,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_identity.html">Identity</a>      </li>
-      <li class="footer">Generated on Mon Jul 18 2011 17:41:23 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 20 2011 04:54:23 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

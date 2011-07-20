@@ -16,65 +16,41 @@ MLPfactory::MLPfactory()
 ;
 
 ConPtr
-MLPfactory::makeCon(Neuron& neuron)
-{
-  ConPtr conPtr( new Con(neuron) );
-  return conPtr;
-}
-
-ConPtr
 MLPfactory::makeCon(Neuron& neuron, double weight)
 {
-  ConPtr conPtr( new Con(neuron, weight) );
+  ConPtr conPtr(new Con(neuron, weight));
   return conPtr;
 }
 
 ConContainerPtr
 MLPfactory::makeConContainer()
 {
-  ConContainerPtr conContainerPtr( new SimpleContainer<ConPtr> );
+  ConContainerPtr conContainerPtr(new SimpleContainer<ConPtr> );
   return conContainerPtr;
 }
 
-ActivationFunctionPtr
-MLPfactory::makeIdentityActivationFunction(){
-  ActivationFunctionPtr activationFunctionPtr(new Identity()) ;
-  return activationFunctionPtr;
-}
-
-ActivationFunctionPtr
-MLPfactory::makeTanhActivationFunction(){
-  ActivationFunctionPtr activationFunctionPtr(new Tanh() );
-  return activationFunctionPtr;
-}
-
-
 
 PredictBehaviorPtr
-MLPfactory::makePredictBehavior()
+MLPfactory::makePredictBehavior(NeuronPtr neuronPtr)
 {
-  PredictBehaviorPtr predictBehaviorPtr(  new MLPbehavior() );
-  predictBehaviorPtr->setConnections( makeConContainer());
-  predictBehaviorPtr->setActivationFunction( makeIdentityActivationFunction() , predictBehaviorPtr);
-  return  predictBehaviorPtr;
+  PredictBehaviorPtr predictBehaviorPtr(new MLPbehavior(neuronPtr));
+  return predictBehaviorPtr;
 }
-
-
-
 
 NeuronPtr
 MLPfactory::makeNeuron()
 {
-  NeuronPtr neuronPtr( new SimpleNeuron() );
-  neuronPtr->setPredictBehavior(  makePredictBehavior()  );
+  NeuronPtr neuronPtr(new SimpleNeuron());
+  neuronPtr->setPredictBehavior (makePredictBehavior(neuronPtr));
+  neuronPtr->setActivationFunction (makeActivationFunction(neuronPtr));
+  neuronPtr->setConnections (makeConContainer());
+
   return neuronPtr;
 }
-
-
 
 NeuronContainerPtr
 MLPfactory::makeNeuronContainer()
 {
-  NeuronContainerPtr neuronContainerPtr(new SimpleContainer<NeuronPtr>);
-  return neuronContainerPtr ;
+  NeuronContainerPtr neuronContainerPtr(new SimpleContainer<NeuronPtr> );
+  return neuronContainerPtr;
 }

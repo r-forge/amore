@@ -9,6 +9,9 @@
 #include "dia/Tanh.h"
 //=========================================================================================================
 
+Tanh::Tanh(NeuronPtr neuronPtr) : ActivationFunction(neuronPtr) {
+
+}
 
 double Tanh::f0 () {
   return tanh(getInducedLocalField());

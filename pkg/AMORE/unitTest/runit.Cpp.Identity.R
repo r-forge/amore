@@ -9,10 +9,10 @@ test.Identity.Cpp.f0 <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
-			PredictBehaviorPtr predictBehaviorPtr( neuralFactoryPtr->makePredictBehavior() );
-			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeIdentityActivationFunction() );
-			predictBehaviorPtr->setActivationFunction(activationFunctionPtr, predictBehaviorPtr);
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeActivationFunction(neuronPtr) );
+			neuronPtr->setActivationFunction(activationFunctionPtr);
 			double result  = activationFunctionPtr->f0();
 			return wrap(result);
 			"
@@ -29,10 +29,10 @@ test.Identity.Cpp.f1 <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
-			PredictBehaviorPtr predictBehaviorPtr( neuralFactoryPtr->makePredictBehavior() );
-			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeIdentityActivationFunction() );
-			predictBehaviorPtr->setActivationFunction(activationFunctionPtr, predictBehaviorPtr);
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeActivationFunction(neuronPtr) );
+			neuronPtr->setActivationFunction(activationFunctionPtr);
 			double result  = activationFunctionPtr->f1();
 			return wrap(result);
 			"

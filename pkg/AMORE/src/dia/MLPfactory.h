@@ -6,12 +6,10 @@ class MLPfactory : public NeuralFactory {
   // Operations
 public:
   MLPfactory ();
-private:
-  ConPtr makeCon (Neuron& neuron);
+protected:
   ConPtr makeCon (Neuron& neuron, double weight);
-  ActivationFunctionPtr makeIdentityActivationFunction ();
-  ActivationFunctionPtr makeTanhActivationFunction ();
-  PredictBehaviorPtr makePredictBehavior ();
+  virtual ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr) = 0;
+  PredictBehaviorPtr makePredictBehavior (NeuronPtr neuronPtr);
   ConContainerPtr makeConContainer ();
   NeuronPtr makeNeuron ();
   NeuronContainerPtr makeNeuronContainer ();

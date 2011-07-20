@@ -4,20 +4,16 @@
 class PredictBehavior {
   // Attributes
 protected:
-  ConContainerPtr d_nCons;
-  double d_inducedLocalField;
-  ActivationFunctionPtr d_activationFunction;
-  double d_output;
+  NeuronWeakPtr d_neuron;
   // Operations
 public:
   virtual void predict () = 0;
   virtual void show () = 0;
-  double getOutput ();
-  void setOutput (double output);
-  void setActivationFunction (ActivationFunctionPtr activationFunctionPtr, PredictBehaviorPtr predictBehaviorPtr);
-  double getInducedLocalField ();
-  void setConnections (ConContainerPtr conContainerPtr);
 protected:
-  PredictBehavior ();
+  PredictBehavior (NeuronPtr neuronPtr);
+  double useActivationFunctionf0 ();
+  ConIteratorPtr getConIterator ();
+  void setOutput (double output);
+  void setInducedLocalField (double inducedLocalField);
 };
 

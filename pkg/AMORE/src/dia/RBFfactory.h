@@ -6,12 +6,10 @@ class RBFfactory : public NeuralFactory {
   // Operations
 public:
   RBFfactory ();
-private:
+protected:
   ConPtr makeCon (Neuron* neuron, double weight);
-  ConPtr makeCon (Neuron& neuron);
   ConContainerPtr makeConContainer ();
-  ActivationFunctionPtr makeIdentityActivationFunction ();
-  ActivationFunctionPtr makeTanhActivationFunction ();
+  virtual ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr) = 0;
   PredictBehaviorPtr makePredictBehavior ();
   NeuronPtr makeNeuron ();
   NeuronContainerPtr makeNeuronContainer ();

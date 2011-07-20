@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">RBFfactory Class Reference</div>  </div>
 </div>
@@ -94,13 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for RBFfactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_r_b_ffactory__inherit__graph.svg" width="248" height="435" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_r_b_ffactory__inherit__graph.svg" width="200" height="502" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for RBFfactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_r_b_ffactory__coll__graph.svg" width="248" height="435" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_r_b_ffactory__coll__graph.svg" width="200" height="376" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -109,13 +109,11 @@ Collaboration diagram for RBFfactory:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#af6d7b55c1c157b296f211c46f253f546">RBFfactory</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a5068c3caacf0525f7069dbec4bf87a67">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> *neuron, double weight)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a2e83beed580f5e85ccec5fcad2e87345">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a0b85ec075904a9d915d1a3527f5d6471">makeConContainer</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a49489b75c9019c4eb08b04b333a476a0">makeIdentityActivationFunction</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a68c9c5fda0aee4350cf9e2ce3401145b">makeTanhActivationFunction</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a5620811041643684e164fb19bd03258b">makeActivationFunction</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a37c1e41af6f362767be462afcd417726">makePredictBehavior</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a91640e950fd3cea89cecf53517f42cef">makeNeuron</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_b_ffactory.html#a9e304b053b54ad69c5b932cb0f30081c">makeNeuronContainer</a> ()</td></tr>
@@ -142,6 +140,27 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a5620811041643684e164fb19bd03258b"></a><!-- doxytag: member="RBFfactory::makeActivationFunction" ref="a5620811041643684e164fb19bd03258b" args="(NeuronPtr neuronPtr)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> RBFfactory::makeActivationFunction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td>
+          <td class="paramname"><em>neuronPtr</em></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_factory.html#a678ec16456e5772a2c188c475a78c588">NeuralFactory</a>.</p>
+
+<p>Implemented in <a class="el" href="class_radial_basis_factory.html#ae68ec682e8f04e99e5a1560e347b7735">RadialBasisFactory</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a5068c3caacf0525f7069dbec4bf87a67"></a><!-- doxytag: member="RBFfactory::makeCon" ref="a5068c3caacf0525f7069dbec4bf87a67" args="(Neuron *neuron, double weight)" -->
 <div class="memitem">
 <div class="memproto">
@@ -161,30 +180,11 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [private]</code></td>
+          <td></td><td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2e83beed580f5e85ccec5fcad2e87345"></a><!-- doxytag: member="RBFfactory::makeCon" ref="a2e83beed580f5e85ccec5fcad2e87345" args="(Neuron &amp;neuron)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> RBFfactory::makeCon </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_neuron.html">Neuron</a> &amp;&#160;</td>
-          <td class="paramname"><em>neuron</em></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="class_neural_factory.html#a2e156aff271f0c6c134a8bad7d164f73">NeuralFactory</a>.</p>
 
 </div>
 </div>
@@ -196,31 +196,13 @@ Private Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> RBFfactory::makeConContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Implements <a class="el" href="class_neural_factory.html#a4fa5f4f57a2551c95481146b1a0c83d7">NeuralFactory</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a49489b75c9019c4eb08b04b333a476a0"></a><!-- doxytag: member="RBFfactory::makeIdentityActivationFunction" ref="a49489b75c9019c4eb08b04b333a476a0" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> RBFfactory::makeIdentityActivationFunction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="class_neural_factory.html#a2a2c7aa8f4d073126f468f676ea68272">NeuralFactory</a>.</p>
 
 </div>
 </div>
@@ -232,7 +214,7 @@ Private Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> RBFfactory::makeNeuron </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -250,7 +232,7 @@ Private Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a> RBFfactory::makeNeuronContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -268,31 +250,11 @@ Private Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> RBFfactory::makePredictBehavior </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Implements <a class="el" href="class_neural_factory.html#a1afe8d8d674aad726337295f46b75810">NeuralFactory</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a68c9c5fda0aee4350cf9e2ce3401145b"></a><!-- doxytag: member="RBFfactory::makeTanhActivationFunction" ref="a68c9c5fda0aee4350cf9e2ce3401145b" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> RBFfactory::makeTanhActivationFunction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="class_neural_factory.html#a7551643129b608ea6601cd18f2bfb011">NeuralFactory</a>.</p>
 
 </div>
 </div>
@@ -304,7 +266,7 @@ Private Member Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_r_b_ffactory.html">RBFfactory</a>      </li>
-      <li class="footer">Generated on Mon Jul 18 2011 17:41:24 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 20 2011 04:54:24 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
