@@ -9,7 +9,8 @@ private:
   double d_altitude;
   // Operations
 public:
-  RBFbehavior ();
+  RBFbehavior (NeuronPtr neuronPtr);
+private:
   void predict ();
   void show ();
 };

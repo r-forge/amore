@@ -4,12 +4,13 @@
 class ActivationFunction {
   // Attributes
 protected:
-  PredictBehaviorWeakPtr d_predictBehavior;
+  NeuronWeakPtr d_neuron;
   // Operations
 public:
   virtual double f0 () = 0;
   virtual double f1 () = 0;
+protected:
+  ActivationFunction (NeuronPtr neuronPtr);
   double getInducedLocalField ();
-  void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
 };
 

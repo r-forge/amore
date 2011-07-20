@@ -18,7 +18,7 @@ Inheritance diagram for MLPbehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_m_l_pbehavior__inherit__graph}
+\includegraphics[width=222pt]{class_m_l_pbehavior__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,13 +28,16 @@ Collaboration diagram for MLPbehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_m_l_pbehavior__coll__graph}
+\includegraphics[width=222pt]{class_m_l_pbehavior__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_m_l_pbehavior_a6e293c81badafe79f5c736aab2b7d58d}{MLPbehavior} ()
+\hyperlink{class_m_l_pbehavior_a6e42077295843dd0d9e52f2776f4309e}{MLPbehavior} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{predict} ()
 \item 
@@ -60,23 +63,23 @@ Definition at line 5 of file MLPbehavior.h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_m_l_pbehavior_a6e293c81badafe79f5c736aab2b7d58d}{
+\hypertarget{class_m_l_pbehavior_a6e42077295843dd0d9e52f2776f4309e}{
 \index{MLPbehavior@{MLPbehavior}!MLPbehavior@{MLPbehavior}}
 \index{MLPbehavior@{MLPbehavior}!MLPbehavior@{MLPbehavior}}
 \subsubsection[{MLPbehavior}]{\setlength{\rightskip}{0pt plus 5cm}MLPbehavior::MLPbehavior (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf NeuronPtr}}]{neuronPtr}
 \end{DoxyParamCaption}
 )}}
-\label{class_m_l_pbehavior_a6e293c81badafe79f5c736aab2b7d58d}
+\label{class_m_l_pbehavior_a6e42077295843dd0d9e52f2776f4309e}
 
 
 Definition at line 13 of file MLPbehavior.cpp.
 
 
 \begin{DoxyCode}
-                         :
-  d_bias(0.0), PredictBehavior()
+                                            :
+   PredictBehavior(neuronPtr) , d_bias(0.0)
 {
 }
 \end{DoxyCode}
@@ -90,7 +93,7 @@ Definition at line 13 of file MLPbehavior.cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
 \label{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}
 
 
@@ -102,24 +105,39 @@ Definition at line 19 of file MLPbehavior.cpp.
 
 
 
-References PredictBehavior::d\_\-activationFunction, PredictBehavior::d\_\-inducedLocalField, PredictBehavior::d\_\-nCons, and PredictBehavior::d\_\-output.
+References d\_\-bias, PredictBehavior::getConIterator(), PredictBehavior::setInducedLocalField(), PredictBehavior::setOutput(), and PredictBehavior::useActivationFunctionf0().
 
 
 \begin{DoxyCode}
 {
-  d_inducedLocalField = 0.0;
-  ConIteratorPtr conIterator = d_nCons->createIterator();
+
+  double accumulator(d_bias);
+  ConIteratorPtr conIterator = getConIterator();
   double weight;
   double incomingSignalValue;
   for (conIterator->first(); !conIterator->isDone(); conIterator->next())
     {
       weight = conIterator->currentItem()->getWeight();
       incomingSignalValue = conIterator->currentItem()->getNeuron().getOutput();
-      d_inducedLocalField += weight * incomingSignalValue;
+      accumulator += weight * incomingSignalValue;
     }
-  d_output = d_activationFunction->f0();
+  setInducedLocalField(accumulator);
+  setOutput (
+  useActivationFunctionf0());
 }
 \end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{
 \index{MLPbehavior@{MLPbehavior}!show@{show}}
 \index{show@{show}!MLPbehavior@{MLPbehavior}}
@@ -127,7 +145,7 @@ References PredictBehavior::d\_\-activationFunction, PredictBehavior::d\_\-induc
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
 \label{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}
 
 
@@ -135,27 +153,16 @@ Implements \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
 
 
 
-Definition at line 35 of file MLPbehavior.cpp.
+Definition at line 38 of file MLPbehavior.cpp.
 
 
 
-References d\_\-bias, PredictBehavior::d\_\-nCons, and PredictBehavior::d\_\-output.
+References d\_\-bias.
 
 
 \begin{DoxyCode}
 {
   Rprintf("\n bias: %lf", d_bias);
-  Rprintf("\n output: %lf", d_output);
-  Rprintf("\n------------------------\n");
-  if (d_nCons->size() == 0)
-    {
-      Rprintf("\n No connections defined");
-    }
-  else
-    {
-      d_nCons->show();
-    }
-  Rprintf("\n------------------------\n");
 }
 \end{DoxyCode}
 
@@ -184,7 +191,7 @@ Definition at line 8 of file MLPbehavior.h.
 
 
 
-Referenced by show().
+Referenced by predict(), and show().
 
 
 

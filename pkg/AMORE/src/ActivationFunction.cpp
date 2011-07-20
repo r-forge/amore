@@ -8,13 +8,15 @@
 #include "dia/ActivationFunction.h"
 //=========================================================================================================
 
-
-double ActivationFunction::getInducedLocalField () {
-  PredictBehaviorPtr predictBehaviorPtr ( d_predictBehavior.lock() );
-      return predictBehaviorPtr->getInducedLocalField();
+ActivationFunction::ActivationFunction(NeuronPtr neuronPtr) :
+  d_neuron(neuronPtr)
+{
 }
 
-
-void ActivationFunction::setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr) {
-   d_predictBehavior = predictBehaviorPtr;
+double
+ActivationFunction::getInducedLocalField()
+{
+  NeuronPtr neuronPtr(d_neuron.lock());
+  return neuronPtr->getInducedLocalField();
 }
+

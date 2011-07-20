@@ -1,4 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pfactory.html" title="class MLPfactory &#45;" alt="" coords="5,235,237,429"/>
-<area shape="rect" id="node5" href="$class_r_b_ffactory.html" title="class RBFfactory &#45;" alt="" coords="262,235,495,429"/>
+<area shape="rect" id="node3" href="$class_m_l_pfactory.html" title="class MLPfactory &#45;" alt="" coords="1269,205,1456,371"/>
+<area shape="rect" id="node29" href="$class_r_b_ffactory.html" title="class RBFfactory &#45;" alt="" coords="2006,205,2193,371"/>
+<area shape="rect" id="node5" href="$class_arc_tan_factory.html" title="class ArcTanFactory &#45;" alt="" coords="5,419,192,496"/>
+<area shape="rect" id="node7" href="$class_cosine_factory.html" title="class CosineFactory &#45;" alt="" coords="216,419,403,496"/>
+<area shape="rect" id="node9" href="$class_elliot_factory.html" title="class ElliotFactory &#45;" alt="" coords="427,419,613,496"/>
+<area shape="rect" id="node11" href="$class_exponential_factory.html" title="class ExponentialFactory &#45;" alt="" coords="637,419,824,496"/>
+<area shape="rect" id="node13" href="$class_gauss_factory.html" title="class GaussFactory &#45;" alt="" coords="848,419,1035,496"/>
+<area shape="rect" id="node15" href="$class_identity_factory.html" title="class IdentityFactory &#45;" alt="" coords="1059,419,1245,496"/>
+<area shape="rect" id="node17" href="$class_logistic_factory.html" title="class LogisticFactory &#45;" alt="" coords="1269,419,1456,496"/>
+<area shape="rect" id="node19" href="$class_reciprocal_factory.html" title="class ReciprocalFactory &#45;" alt="" coords="1480,419,1667,496"/>
+<area shape="rect" id="node21" href="$class_sine_factory.html" title="class SineFactory &#45;" alt="" coords="1691,419,1877,496"/>
+<area shape="rect" id="node23" href="$class_square_factory.html" title="class SquareFactory &#45;" alt="" coords="1901,419,2088,496"/>
+<area shape="rect" id="node25" href="$class_tanh_factory.html" title="class TanhFactory &#45;" alt="" coords="2112,419,2299,496"/>
+<area shape="rect" id="node27" href="$class_threshold_factory.html" title="class ThresholdFactory &#45;" alt="" coords="2323,419,2509,496"/>
+<area shape="rect" id="node31" href="$class_radial_basis_factory.html" title="class RadialBasisFactory &#45;" alt="" coords="2533,419,2720,496"/>
 </map>

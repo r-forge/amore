@@ -10,41 +10,33 @@
 //=========================================================================================================
 
 
-MLPbehavior::MLPbehavior() :
-  d_bias(0.0), PredictBehavior()
+MLPbehavior::MLPbehavior(NeuronPtr neuronPtr) :
+   PredictBehavior(neuronPtr) , d_bias(0.0)
 {
 }
 
 void
 MLPbehavior::predict()
 {
-  d_inducedLocalField = 0.0;
-  ConIteratorPtr conIterator = d_nCons->createIterator();
+
+  double accumulator(d_bias);
+  ConIteratorPtr conIterator = getConIterator();
   double weight;
   double incomingSignalValue;
   for (conIterator->first(); !conIterator->isDone(); conIterator->next())
     {
       weight = conIterator->currentItem()->getWeight();
       incomingSignalValue = conIterator->currentItem()->getNeuron().getOutput();
-      d_inducedLocalField += weight * incomingSignalValue;
+      accumulator += weight * incomingSignalValue;
     }
-  d_output = d_activationFunction->f0();
+  setInducedLocalField(accumulator);
+  setOutput (
+  useActivationFunctionf0());
 }
 
 void
 MLPbehavior::show()
 {
   Rprintf("\n bias: %lf", d_bias);
-  Rprintf("\n output: %lf", d_output);
-  Rprintf("\n------------------------\n");
-  if (d_nCons->size() == 0)
-    {
-      Rprintf("\n No connections defined");
-    }
-  else
-    {
-      d_nCons->show();
-    }
-  Rprintf("\n------------------------\n");
 }
 

@@ -9,7 +9,8 @@ private:
   // Operations
 public:
 friend class MLPfactory; 
-  MLPbehavior ();
+  MLPbehavior (NeuronPtr neuronPtr);
+private:
   void predict ();
   void show ();
 };

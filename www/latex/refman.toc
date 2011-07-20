@@ -11,13 +11,14 @@
 \contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}
 \contentsline {section}{\numberline {5.1}ActivationFunction Class Reference}{9}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Member Function Documentation}{10}{subsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.2.1}f0}{10}{subsubsection.5.1.2.1}
-\contentsline {subsubsection}{\numberline {5.1.2.2}f1}{10}{subsubsection.5.1.2.2}
-\contentsline {subsubsection}{\numberline {5.1.2.3}getInducedLocalField}{10}{subsubsection.5.1.2.3}
-\contentsline {subsubsection}{\numberline {5.1.2.4}setPredictBehavior}{11}{subsubsection.5.1.2.4}
-\contentsline {subsection}{\numberline {5.1.3}Member Data Documentation}{11}{subsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.3.1}d\_\discretionary {-}{}{}predictBehavior}{11}{subsubsection.5.1.3.1}
+\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{10}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}ActivationFunction}{10}{subsubsection.5.1.2.1}
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{10}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}f0}{10}{subsubsection.5.1.3.1}
+\contentsline {subsubsection}{\numberline {5.1.3.2}f1}{10}{subsubsection.5.1.3.2}
+\contentsline {subsubsection}{\numberline {5.1.3.3}getInducedLocalField}{10}{subsubsection.5.1.3.3}
+\contentsline {subsection}{\numberline {5.1.4}Member Data Documentation}{11}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}d\_\discretionary {-}{}{}neuron}{11}{subsubsection.5.1.4.1}
 \contentsline {section}{\numberline {5.2}AdaptBehavior Class Reference}{11}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Detailed Description}{13}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Member Function Documentation}{13}{subsection.5.2.2}
@@ -37,345 +38,445 @@
 \contentsline {section}{\numberline {5.5}ArcTan Class Reference}{19}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}Detailed Description}{20}{subsection.5.5.1}
 \contentsline {subsection}{\numberline {5.5.2}Member Function Documentation}{20}{subsection.5.5.2}
-\contentsline {subsubsection}{\numberline {5.5.2.1}f0}{20}{subsubsection.5.5.2.1}
-\contentsline {subsubsection}{\numberline {5.5.2.2}f1}{20}{subsubsection.5.5.2.2}
-\contentsline {section}{\numberline {5.6}BatchBehavior Class Reference}{21}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{22}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{22}{subsection.5.6.2}
-\contentsline {subsubsection}{\numberline {5.6.2.1}adjustParameters}{22}{subsubsection.5.6.2.1}
-\contentsline {section}{\numberline {5.7}BATCHgd Class Reference}{23}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{24}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{24}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}Arctan}{20}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}f0}{20}{subsubsection.5.5.2.2}
+\contentsline {subsubsection}{\numberline {5.5.2.3}f1}{21}{subsubsection.5.5.2.3}
+\contentsline {section}{\numberline {5.6}ArcTanFactory Class Reference}{21}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{23}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{24}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}makeActivationFunction}{24}{subsubsection.5.6.2.1}
+\contentsline {section}{\numberline {5.7}BatchBehavior Class Reference}{24}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{25}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{25}{subsection.5.7.2}
 \contentsline {subsubsection}{\numberline {5.7.2.1}adjustParameters}{25}{subsubsection.5.7.2.1}
-\contentsline {subsection}{\numberline {5.7.3}Member Data Documentation}{25}{subsection.5.7.3}
-\contentsline {subsubsection}{\numberline {5.7.3.1}outputDerivative}{25}{subsubsection.5.7.3.1}
-\contentsline {section}{\numberline {5.8}BATCHgdwm Class Reference}{25}{section.5.8}
+\contentsline {section}{\numberline {5.8}BATCHgd Class Reference}{26}{section.5.8}
 \contentsline {subsection}{\numberline {5.8.1}Detailed Description}{27}{subsection.5.8.1}
 \contentsline {subsection}{\numberline {5.8.2}Member Function Documentation}{27}{subsection.5.8.2}
 \contentsline {subsubsection}{\numberline {5.8.2.1}adjustParameters}{28}{subsubsection.5.8.2.1}
 \contentsline {subsection}{\numberline {5.8.3}Member Data Documentation}{28}{subsection.5.8.3}
 \contentsline {subsubsection}{\numberline {5.8.3.1}outputDerivative}{28}{subsubsection.5.8.3.1}
-\contentsline {section}{\numberline {5.9}Con Class Reference}{28}{section.5.9}
-\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{29}{subsection.5.9.1}
-\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{29}{subsection.5.9.2}
-\contentsline {subsubsection}{\numberline {5.9.2.1}Con}{29}{subsubsection.5.9.2.1}
-\contentsline {subsubsection}{\numberline {5.9.2.2}Con}{29}{subsubsection.5.9.2.2}
-\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{29}{subsection.5.9.3}
-\contentsline {subsubsection}{\numberline {5.9.3.1}getNeuron}{29}{subsubsection.5.9.3.1}
-\contentsline {subsubsection}{\numberline {5.9.3.2}getWeight}{30}{subsubsection.5.9.3.2}
-\contentsline {subsubsection}{\numberline {5.9.3.3}Id}{31}{subsubsection.5.9.3.3}
-\contentsline {subsubsection}{\numberline {5.9.3.4}setNeuron}{32}{subsubsection.5.9.3.4}
-\contentsline {subsubsection}{\numberline {5.9.3.5}setWeight}{32}{subsubsection.5.9.3.5}
-\contentsline {subsubsection}{\numberline {5.9.3.6}show}{32}{subsubsection.5.9.3.6}
-\contentsline {subsubsection}{\numberline {5.9.3.7}validate}{33}{subsubsection.5.9.3.7}
-\contentsline {subsection}{\numberline {5.9.4}Member Data Documentation}{34}{subsection.5.9.4}
-\contentsline {subsubsection}{\numberline {5.9.4.1}d\_\discretionary {-}{}{}neuron}{34}{subsubsection.5.9.4.1}
-\contentsline {subsubsection}{\numberline {5.9.4.2}d\_\discretionary {-}{}{}weight}{34}{subsubsection.5.9.4.2}
-\contentsline {section}{\numberline {5.10}Container$<$ T $>$ Class Template Reference}{34}{section.5.10}
-\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{36}{subsection.5.10.1}
-\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{36}{subsection.5.10.2}
-\contentsline {subsubsection}{\numberline {5.10.2.1}$\sim $Container}{36}{subsubsection.5.10.2.1}
-\contentsline {subsubsection}{\numberline {5.10.2.2}Container}{36}{subsubsection.5.10.2.2}
-\contentsline {subsection}{\numberline {5.10.3}Member Function Documentation}{36}{subsection.5.10.3}
-\contentsline {subsubsection}{\numberline {5.10.3.1}at}{36}{subsubsection.5.10.3.1}
-\contentsline {subsubsection}{\numberline {5.10.3.2}clear}{36}{subsubsection.5.10.3.2}
-\contentsline {subsubsection}{\numberline {5.10.3.3}createIterator}{37}{subsubsection.5.10.3.3}
-\contentsline {subsubsection}{\numberline {5.10.3.4}empty}{37}{subsubsection.5.10.3.4}
-\contentsline {subsubsection}{\numberline {5.10.3.5}push\_\discretionary {-}{}{}back}{37}{subsubsection.5.10.3.5}
-\contentsline {subsubsection}{\numberline {5.10.3.6}reserve}{37}{subsubsection.5.10.3.6}
-\contentsline {subsubsection}{\numberline {5.10.3.7}show}{37}{subsubsection.5.10.3.7}
-\contentsline {subsubsection}{\numberline {5.10.3.8}size}{37}{subsubsection.5.10.3.8}
-\contentsline {subsubsection}{\numberline {5.10.3.9}validate}{37}{subsubsection.5.10.3.9}
-\contentsline {section}{\numberline {5.11}Cosine Class Reference}{37}{section.5.11}
+\contentsline {section}{\numberline {5.9}BATCHgdwm Class Reference}{28}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{30}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Member Function Documentation}{30}{subsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.2.1}adjustParameters}{31}{subsubsection.5.9.2.1}
+\contentsline {subsection}{\numberline {5.9.3}Member Data Documentation}{31}{subsection.5.9.3}
+\contentsline {subsubsection}{\numberline {5.9.3.1}outputDerivative}{31}{subsubsection.5.9.3.1}
+\contentsline {section}{\numberline {5.10}Con Class Reference}{31}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{32}{subsection.5.10.1}
+\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{32}{subsection.5.10.2}
+\contentsline {subsubsection}{\numberline {5.10.2.1}Con}{32}{subsubsection.5.10.2.1}
+\contentsline {subsubsection}{\numberline {5.10.2.2}Con}{32}{subsubsection.5.10.2.2}
+\contentsline {subsection}{\numberline {5.10.3}Member Function Documentation}{32}{subsection.5.10.3}
+\contentsline {subsubsection}{\numberline {5.10.3.1}getNeuron}{32}{subsubsection.5.10.3.1}
+\contentsline {subsubsection}{\numberline {5.10.3.2}getWeight}{33}{subsubsection.5.10.3.2}
+\contentsline {subsubsection}{\numberline {5.10.3.3}Id}{34}{subsubsection.5.10.3.3}
+\contentsline {subsubsection}{\numberline {5.10.3.4}setNeuron}{35}{subsubsection.5.10.3.4}
+\contentsline {subsubsection}{\numberline {5.10.3.5}setWeight}{35}{subsubsection.5.10.3.5}
+\contentsline {subsubsection}{\numberline {5.10.3.6}show}{35}{subsubsection.5.10.3.6}
+\contentsline {subsubsection}{\numberline {5.10.3.7}validate}{36}{subsubsection.5.10.3.7}
+\contentsline {subsection}{\numberline {5.10.4}Member Data Documentation}{37}{subsection.5.10.4}
+\contentsline {subsubsection}{\numberline {5.10.4.1}d\_\discretionary {-}{}{}neuron}{37}{subsubsection.5.10.4.1}
+\contentsline {subsubsection}{\numberline {5.10.4.2}d\_\discretionary {-}{}{}weight}{37}{subsubsection.5.10.4.2}
+\contentsline {section}{\numberline {5.11}Container$<$ T $>$ Class Template Reference}{37}{section.5.11}
 \contentsline {subsection}{\numberline {5.11.1}Detailed Description}{39}{subsection.5.11.1}
-\contentsline {subsection}{\numberline {5.11.2}Member Function Documentation}{39}{subsection.5.11.2}
-\contentsline {subsubsection}{\numberline {5.11.2.1}f0}{39}{subsubsection.5.11.2.1}
-\contentsline {subsubsection}{\numberline {5.11.2.2}f1}{39}{subsubsection.5.11.2.2}
-\contentsline {section}{\numberline {5.12}Elliot Class Reference}{40}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{41}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Member Function Documentation}{41}{subsection.5.12.2}
-\contentsline {subsubsection}{\numberline {5.12.2.1}f0}{41}{subsubsection.5.12.2.1}
-\contentsline {subsubsection}{\numberline {5.12.2.2}f1}{41}{subsubsection.5.12.2.2}
-\contentsline {section}{\numberline {5.13}Exponential Class Reference}{42}{section.5.13}
-\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{43}{subsection.5.13.1}
-\contentsline {subsection}{\numberline {5.13.2}Member Function Documentation}{43}{subsection.5.13.2}
-\contentsline {subsubsection}{\numberline {5.13.2.1}f0}{43}{subsubsection.5.13.2.1}
-\contentsline {subsubsection}{\numberline {5.13.2.2}f1}{43}{subsubsection.5.13.2.2}
-\contentsline {section}{\numberline {5.14}Gauss Class Reference}{44}{section.5.14}
-\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{45}{subsection.5.14.1}
-\contentsline {subsection}{\numberline {5.14.2}Member Function Documentation}{45}{subsection.5.14.2}
-\contentsline {subsubsection}{\numberline {5.14.2.1}f0}{45}{subsubsection.5.14.2.1}
-\contentsline {subsubsection}{\numberline {5.14.2.2}f1}{45}{subsubsection.5.14.2.2}
-\contentsline {section}{\numberline {5.15}Identity Class Reference}{46}{section.5.15}
-\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{47}{subsection.5.15.1}
-\contentsline {subsection}{\numberline {5.15.2}Member Function Documentation}{47}{subsection.5.15.2}
-\contentsline {subsubsection}{\numberline {5.15.2.1}f0}{47}{subsubsection.5.15.2.1}
-\contentsline {subsubsection}{\numberline {5.15.2.2}f1}{48}{subsubsection.5.15.2.2}
-\contentsline {section}{\numberline {5.16}Iterator$<$ T $>$ Class Template Reference}{48}{section.5.16}
-\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{49}{subsection.5.16.1}
-\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{50}{subsection.5.16.2}
-\contentsline {subsubsection}{\numberline {5.16.2.1}$\sim $Iterator}{50}{subsubsection.5.16.2.1}
-\contentsline {subsubsection}{\numberline {5.16.2.2}Iterator}{50}{subsubsection.5.16.2.2}
-\contentsline {subsection}{\numberline {5.16.3}Member Function Documentation}{50}{subsection.5.16.3}
-\contentsline {subsubsection}{\numberline {5.16.3.1}currentItem}{50}{subsubsection.5.16.3.1}
-\contentsline {subsubsection}{\numberline {5.16.3.2}first}{50}{subsubsection.5.16.3.2}
-\contentsline {subsubsection}{\numberline {5.16.3.3}isDone}{50}{subsubsection.5.16.3.3}
-\contentsline {subsubsection}{\numberline {5.16.3.4}next}{50}{subsubsection.5.16.3.4}
-\contentsline {section}{\numberline {5.17}Logistic Class Reference}{51}{section.5.17}
-\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{52}{subsection.5.17.1}
-\contentsline {subsection}{\numberline {5.17.2}Member Function Documentation}{52}{subsection.5.17.2}
-\contentsline {subsubsection}{\numberline {5.17.2.1}f0}{52}{subsubsection.5.17.2.1}
-\contentsline {subsubsection}{\numberline {5.17.2.2}f1}{52}{subsubsection.5.17.2.2}
-\contentsline {section}{\numberline {5.18}MLPbehavior Class Reference}{53}{section.5.18}
-\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{55}{subsection.5.18.1}
-\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{55}{subsection.5.18.2}
-\contentsline {subsubsection}{\numberline {5.18.2.1}MLPbehavior}{55}{subsubsection.5.18.2.1}
-\contentsline {subsection}{\numberline {5.18.3}Member Function Documentation}{55}{subsection.5.18.3}
-\contentsline {subsubsection}{\numberline {5.18.3.1}predict}{55}{subsubsection.5.18.3.1}
-\contentsline {subsubsection}{\numberline {5.18.3.2}show}{55}{subsubsection.5.18.3.2}
-\contentsline {subsection}{\numberline {5.18.4}Friends And Related Function Documentation}{56}{subsection.5.18.4}
-\contentsline {subsubsection}{\numberline {5.18.4.1}MLPfactory}{56}{subsubsection.5.18.4.1}
-\contentsline {subsection}{\numberline {5.18.5}Member Data Documentation}{56}{subsection.5.18.5}
-\contentsline {subsubsection}{\numberline {5.18.5.1}d\_\discretionary {-}{}{}bias}{56}{subsubsection.5.18.5.1}
-\contentsline {section}{\numberline {5.19}MLPfactory Class Reference}{56}{section.5.19}
-\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{59}{subsection.5.19.1}
-\contentsline {subsection}{\numberline {5.19.2}Constructor \& Destructor Documentation}{59}{subsection.5.19.2}
-\contentsline {subsubsection}{\numberline {5.19.2.1}MLPfactory}{59}{subsubsection.5.19.2.1}
-\contentsline {subsection}{\numberline {5.19.3}Member Function Documentation}{59}{subsection.5.19.3}
-\contentsline {subsubsection}{\numberline {5.19.3.1}makeCon}{59}{subsubsection.5.19.3.1}
-\contentsline {subsubsection}{\numberline {5.19.3.2}makeCon}{59}{subsubsection.5.19.3.2}
-\contentsline {subsubsection}{\numberline {5.19.3.3}makeConContainer}{60}{subsubsection.5.19.3.3}
-\contentsline {subsubsection}{\numberline {5.19.3.4}makeIdentityActivationFunction}{60}{subsubsection.5.19.3.4}
-\contentsline {subsubsection}{\numberline {5.19.3.5}makeNeuron}{60}{subsubsection.5.19.3.5}
-\contentsline {subsubsection}{\numberline {5.19.3.6}makeNeuronContainer}{61}{subsubsection.5.19.3.6}
-\contentsline {subsubsection}{\numberline {5.19.3.7}makePredictBehavior}{61}{subsubsection.5.19.3.7}
-\contentsline {subsubsection}{\numberline {5.19.3.8}makeTanhActivationFunction}{62}{subsubsection.5.19.3.8}
-\contentsline {section}{\numberline {5.20}NeuralCreator Class Reference}{62}{section.5.20}
-\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{63}{subsection.5.20.1}
-\contentsline {subsection}{\numberline {5.20.2}Member Function Documentation}{63}{subsection.5.20.2}
-\contentsline {subsubsection}{\numberline {5.20.2.1}createNeuron}{63}{subsubsection.5.20.2.1}
-\contentsline {section}{\numberline {5.21}NeuralFactory Class Reference}{64}{section.5.21}
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{39}{subsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.2.1}$\sim $Container}{39}{subsubsection.5.11.2.1}
+\contentsline {subsubsection}{\numberline {5.11.2.2}Container}{39}{subsubsection.5.11.2.2}
+\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{39}{subsection.5.11.3}
+\contentsline {subsubsection}{\numberline {5.11.3.1}at}{39}{subsubsection.5.11.3.1}
+\contentsline {subsubsection}{\numberline {5.11.3.2}clear}{39}{subsubsection.5.11.3.2}
+\contentsline {subsubsection}{\numberline {5.11.3.3}createIterator}{40}{subsubsection.5.11.3.3}
+\contentsline {subsubsection}{\numberline {5.11.3.4}empty}{40}{subsubsection.5.11.3.4}
+\contentsline {subsubsection}{\numberline {5.11.3.5}push\_\discretionary {-}{}{}back}{40}{subsubsection.5.11.3.5}
+\contentsline {subsubsection}{\numberline {5.11.3.6}reserve}{40}{subsubsection.5.11.3.6}
+\contentsline {subsubsection}{\numberline {5.11.3.7}show}{40}{subsubsection.5.11.3.7}
+\contentsline {subsubsection}{\numberline {5.11.3.8}size}{40}{subsubsection.5.11.3.8}
+\contentsline {subsubsection}{\numberline {5.11.3.9}validate}{40}{subsubsection.5.11.3.9}
+\contentsline {section}{\numberline {5.12}Cosine Class Reference}{40}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{42}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{42}{subsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.2.1}Cosine}{42}{subsubsection.5.12.2.1}
+\contentsline {subsection}{\numberline {5.12.3}Member Function Documentation}{42}{subsection.5.12.3}
+\contentsline {subsubsection}{\numberline {5.12.3.1}f0}{43}{subsubsection.5.12.3.1}
+\contentsline {subsubsection}{\numberline {5.12.3.2}f1}{43}{subsubsection.5.12.3.2}
+\contentsline {section}{\numberline {5.13}CosineFactory Class Reference}{43}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{45}{subsection.5.13.1}
+\contentsline {subsection}{\numberline {5.13.2}Member Function Documentation}{46}{subsection.5.13.2}
+\contentsline {subsubsection}{\numberline {5.13.2.1}makeActivationFunction}{46}{subsubsection.5.13.2.1}
+\contentsline {section}{\numberline {5.14}Elliot Class Reference}{46}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{47}{subsection.5.14.1}
+\contentsline {subsection}{\numberline {5.14.2}Constructor \& Destructor Documentation}{47}{subsection.5.14.2}
+\contentsline {subsubsection}{\numberline {5.14.2.1}Elliot}{47}{subsubsection.5.14.2.1}
+\contentsline {subsection}{\numberline {5.14.3}Member Function Documentation}{47}{subsection.5.14.3}
+\contentsline {subsubsection}{\numberline {5.14.3.1}f0}{48}{subsubsection.5.14.3.1}
+\contentsline {subsubsection}{\numberline {5.14.3.2}f1}{48}{subsubsection.5.14.3.2}
+\contentsline {section}{\numberline {5.15}ElliotFactory Class Reference}{48}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{50}{subsection.5.15.1}
+\contentsline {subsection}{\numberline {5.15.2}Member Function Documentation}{51}{subsection.5.15.2}
+\contentsline {subsubsection}{\numberline {5.15.2.1}makeActivationFunction}{51}{subsubsection.5.15.2.1}
+\contentsline {section}{\numberline {5.16}Exponential Class Reference}{51}{section.5.16}
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{52}{subsection.5.16.1}
+\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{52}{subsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.2.1}Exponential}{52}{subsubsection.5.16.2.1}
+\contentsline {subsection}{\numberline {5.16.3}Member Function Documentation}{52}{subsection.5.16.3}
+\contentsline {subsubsection}{\numberline {5.16.3.1}f0}{53}{subsubsection.5.16.3.1}
+\contentsline {subsubsection}{\numberline {5.16.3.2}f1}{53}{subsubsection.5.16.3.2}
+\contentsline {section}{\numberline {5.17}ExponentialFactory Class Reference}{53}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{55}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Member Function Documentation}{56}{subsection.5.17.2}
+\contentsline {subsubsection}{\numberline {5.17.2.1}makeActivationFunction}{56}{subsubsection.5.17.2.1}
+\contentsline {section}{\numberline {5.18}Gauss Class Reference}{56}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{57}{subsection.5.18.1}
+\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{57}{subsection.5.18.2}
+\contentsline {subsubsection}{\numberline {5.18.2.1}Gauss}{57}{subsubsection.5.18.2.1}
+\contentsline {subsection}{\numberline {5.18.3}Member Function Documentation}{57}{subsection.5.18.3}
+\contentsline {subsubsection}{\numberline {5.18.3.1}f0}{58}{subsubsection.5.18.3.1}
+\contentsline {subsubsection}{\numberline {5.18.3.2}f1}{58}{subsubsection.5.18.3.2}
+\contentsline {section}{\numberline {5.19}GaussFactory Class Reference}{58}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{60}{subsection.5.19.1}
+\contentsline {subsection}{\numberline {5.19.2}Member Function Documentation}{61}{subsection.5.19.2}
+\contentsline {subsubsection}{\numberline {5.19.2.1}makeActivationFunction}{61}{subsubsection.5.19.2.1}
+\contentsline {section}{\numberline {5.20}Identity Class Reference}{61}{section.5.20}
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{62}{subsection.5.20.1}
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{62}{subsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.2.1}Identity}{62}{subsubsection.5.20.2.1}
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{63}{subsection.5.20.3}
+\contentsline {subsubsection}{\numberline {5.20.3.1}f0}{63}{subsubsection.5.20.3.1}
+\contentsline {subsubsection}{\numberline {5.20.3.2}f1}{63}{subsubsection.5.20.3.2}
+\contentsline {section}{\numberline {5.21}IdentityFactory Class Reference}{63}{section.5.21}
 \contentsline {subsection}{\numberline {5.21.1}Detailed Description}{65}{subsection.5.21.1}
-\contentsline {subsection}{\numberline {5.21.2}Member Function Documentation}{65}{subsection.5.21.2}
-\contentsline {subsubsection}{\numberline {5.21.2.1}makeCon}{65}{subsubsection.5.21.2.1}
-\contentsline {subsubsection}{\numberline {5.21.2.2}makeCon}{65}{subsubsection.5.21.2.2}
-\contentsline {subsubsection}{\numberline {5.21.2.3}makeConContainer}{65}{subsubsection.5.21.2.3}
-\contentsline {subsubsection}{\numberline {5.21.2.4}makeIdentityActivationFunction}{65}{subsubsection.5.21.2.4}
-\contentsline {subsubsection}{\numberline {5.21.2.5}makeNeuron}{65}{subsubsection.5.21.2.5}
-\contentsline {subsubsection}{\numberline {5.21.2.6}makeNeuronContainer}{65}{subsubsection.5.21.2.6}
-\contentsline {subsubsection}{\numberline {5.21.2.7}makePredictBehavior}{65}{subsubsection.5.21.2.7}
-\contentsline {subsubsection}{\numberline {5.21.2.8}makeTanhActivationFunction}{66}{subsubsection.5.21.2.8}
-\contentsline {section}{\numberline {5.22}Neuron Class Reference}{66}{section.5.22}
-\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{68}{subsection.5.22.1}
-\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{68}{subsection.5.22.2}
-\contentsline {subsubsection}{\numberline {5.22.2.1}getId}{68}{subsubsection.5.22.2.1}
-\contentsline {subsubsection}{\numberline {5.22.2.2}getOutput}{68}{subsubsection.5.22.2.2}
-\contentsline {subsubsection}{\numberline {5.22.2.3}predict}{68}{subsubsection.5.22.2.3}
-\contentsline {subsubsection}{\numberline {5.22.2.4}setId}{68}{subsubsection.5.22.2.4}
-\contentsline {subsubsection}{\numberline {5.22.2.5}setOutput}{68}{subsubsection.5.22.2.5}
-\contentsline {subsubsection}{\numberline {5.22.2.6}setPredictBehavior}{68}{subsubsection.5.22.2.6}
-\contentsline {subsubsection}{\numberline {5.22.2.7}show}{68}{subsubsection.5.22.2.7}
-\contentsline {subsubsection}{\numberline {5.22.2.8}validate}{69}{subsubsection.5.22.2.8}
-\contentsline {subsection}{\numberline {5.22.3}Member Data Documentation}{69}{subsection.5.22.3}
-\contentsline {subsubsection}{\numberline {5.22.3.1}d\_\discretionary {-}{}{}predictBehavior}{69}{subsubsection.5.22.3.1}
-\contentsline {section}{\numberline {5.23}PredictBehavior Class Reference}{69}{section.5.23}
-\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{71}{subsection.5.23.1}
-\contentsline {subsection}{\numberline {5.23.2}Constructor \& Destructor Documentation}{71}{subsection.5.23.2}
-\contentsline {subsubsection}{\numberline {5.23.2.1}PredictBehavior}{71}{subsubsection.5.23.2.1}
-\contentsline {subsection}{\numberline {5.23.3}Member Function Documentation}{71}{subsection.5.23.3}
-\contentsline {subsubsection}{\numberline {5.23.3.1}getInducedLocalField}{71}{subsubsection.5.23.3.1}
-\contentsline {subsubsection}{\numberline {5.23.3.2}getOutput}{71}{subsubsection.5.23.3.2}
-\contentsline {subsubsection}{\numberline {5.23.3.3}predict}{72}{subsubsection.5.23.3.3}
-\contentsline {subsubsection}{\numberline {5.23.3.4}setActivationFunction}{72}{subsubsection.5.23.3.4}
-\contentsline {subsubsection}{\numberline {5.23.3.5}setConnections}{72}{subsubsection.5.23.3.5}
-\contentsline {subsubsection}{\numberline {5.23.3.6}setOutput}{72}{subsubsection.5.23.3.6}
-\contentsline {subsubsection}{\numberline {5.23.3.7}show}{72}{subsubsection.5.23.3.7}
-\contentsline {subsection}{\numberline {5.23.4}Member Data Documentation}{72}{subsection.5.23.4}
-\contentsline {subsubsection}{\numberline {5.23.4.1}d\_\discretionary {-}{}{}activationFunction}{72}{subsubsection.5.23.4.1}
-\contentsline {subsubsection}{\numberline {5.23.4.2}d\_\discretionary {-}{}{}inducedLocalField}{73}{subsubsection.5.23.4.2}
-\contentsline {subsubsection}{\numberline {5.23.4.3}d\_\discretionary {-}{}{}nCons}{73}{subsubsection.5.23.4.3}
-\contentsline {subsubsection}{\numberline {5.23.4.4}d\_\discretionary {-}{}{}output}{73}{subsubsection.5.23.4.4}
-\contentsline {section}{\numberline {5.24}RadialBasis Class Reference}{73}{section.5.24}
-\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{75}{subsection.5.24.1}
-\contentsline {subsection}{\numberline {5.24.2}Member Function Documentation}{75}{subsection.5.24.2}
-\contentsline {subsubsection}{\numberline {5.24.2.1}f0}{75}{subsubsection.5.24.2.1}
-\contentsline {subsubsection}{\numberline {5.24.2.2}f1}{75}{subsubsection.5.24.2.2}
-\contentsline {section}{\numberline {5.25}RBFbehavior Class Reference}{76}{section.5.25}
-\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{78}{subsection.5.25.1}
-\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{78}{subsection.5.25.2}
-\contentsline {subsubsection}{\numberline {5.25.2.1}RBFbehavior}{78}{subsubsection.5.25.2.1}
-\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{78}{subsection.5.25.3}
-\contentsline {subsubsection}{\numberline {5.25.3.1}predict}{78}{subsubsection.5.25.3.1}
-\contentsline {subsubsection}{\numberline {5.25.3.2}show}{78}{subsubsection.5.25.3.2}
-\contentsline {subsection}{\numberline {5.25.4}Member Data Documentation}{78}{subsection.5.25.4}
-\contentsline {subsubsection}{\numberline {5.25.4.1}d\_\discretionary {-}{}{}altitude}{78}{subsubsection.5.25.4.1}
-\contentsline {subsubsection}{\numberline {5.25.4.2}d\_\discretionary {-}{}{}width}{78}{subsubsection.5.25.4.2}
-\contentsline {section}{\numberline {5.26}RBFfactory Class Reference}{78}{section.5.26}
-\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{81}{subsection.5.26.1}
-\contentsline {subsection}{\numberline {5.26.2}Constructor \& Destructor Documentation}{81}{subsection.5.26.2}
-\contentsline {subsubsection}{\numberline {5.26.2.1}RBFfactory}{81}{subsubsection.5.26.2.1}
-\contentsline {subsection}{\numberline {5.26.3}Member Function Documentation}{81}{subsection.5.26.3}
-\contentsline {subsubsection}{\numberline {5.26.3.1}makeCon}{81}{subsubsection.5.26.3.1}
-\contentsline {subsubsection}{\numberline {5.26.3.2}makeCon}{81}{subsubsection.5.26.3.2}
+\contentsline {subsection}{\numberline {5.21.2}Member Function Documentation}{66}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}makeActivationFunction}{66}{subsubsection.5.21.2.1}
+\contentsline {section}{\numberline {5.22}Iterator$<$ T $>$ Class Template Reference}{66}{section.5.22}
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{67}{subsection.5.22.1}
+\contentsline {subsection}{\numberline {5.22.2}Constructor \& Destructor Documentation}{68}{subsection.5.22.2}
+\contentsline {subsubsection}{\numberline {5.22.2.1}$\sim $Iterator}{68}{subsubsection.5.22.2.1}
+\contentsline {subsubsection}{\numberline {5.22.2.2}Iterator}{68}{subsubsection.5.22.2.2}
+\contentsline {subsection}{\numberline {5.22.3}Member Function Documentation}{68}{subsection.5.22.3}
+\contentsline {subsubsection}{\numberline {5.22.3.1}currentItem}{68}{subsubsection.5.22.3.1}
+\contentsline {subsubsection}{\numberline {5.22.3.2}first}{68}{subsubsection.5.22.3.2}
+\contentsline {subsubsection}{\numberline {5.22.3.3}isDone}{68}{subsubsection.5.22.3.3}
+\contentsline {subsubsection}{\numberline {5.22.3.4}next}{68}{subsubsection.5.22.3.4}
+\contentsline {section}{\numberline {5.23}Logistic Class Reference}{69}{section.5.23}
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{70}{subsection.5.23.1}
+\contentsline {subsection}{\numberline {5.23.2}Constructor \& Destructor Documentation}{70}{subsection.5.23.2}
+\contentsline {subsubsection}{\numberline {5.23.2.1}Logistic}{70}{subsubsection.5.23.2.1}
+\contentsline {subsection}{\numberline {5.23.3}Member Function Documentation}{70}{subsection.5.23.3}
+\contentsline {subsubsection}{\numberline {5.23.3.1}f0}{71}{subsubsection.5.23.3.1}
+\contentsline {subsubsection}{\numberline {5.23.3.2}f1}{71}{subsubsection.5.23.3.2}
+\contentsline {section}{\numberline {5.24}LogisticFactory Class Reference}{71}{section.5.24}
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{73}{subsection.5.24.1}
+\contentsline {subsection}{\numberline {5.24.2}Member Function Documentation}{74}{subsection.5.24.2}
+\contentsline {subsubsection}{\numberline {5.24.2.1}makeActivationFunction}{74}{subsubsection.5.24.2.1}
+\contentsline {section}{\numberline {5.25}MLPbehavior Class Reference}{74}{section.5.25}
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{76}{subsection.5.25.1}
+\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{76}{subsection.5.25.2}
+\contentsline {subsubsection}{\numberline {5.25.2.1}MLPbehavior}{76}{subsubsection.5.25.2.1}
+\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{76}{subsection.5.25.3}
+\contentsline {subsubsection}{\numberline {5.25.3.1}predict}{76}{subsubsection.5.25.3.1}
+\contentsline {subsubsection}{\numberline {5.25.3.2}show}{77}{subsubsection.5.25.3.2}
+\contentsline {subsection}{\numberline {5.25.4}Friends And Related Function Documentation}{77}{subsection.5.25.4}
+\contentsline {subsubsection}{\numberline {5.25.4.1}MLPfactory}{77}{subsubsection.5.25.4.1}
+\contentsline {subsection}{\numberline {5.25.5}Member Data Documentation}{77}{subsection.5.25.5}
+\contentsline {subsubsection}{\numberline {5.25.5.1}d\_\discretionary {-}{}{}bias}{77}{subsubsection.5.25.5.1}
+\contentsline {section}{\numberline {5.26}MLPfactory Class Reference}{78}{section.5.26}
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{80}{subsection.5.26.1}
+\contentsline {subsection}{\numberline {5.26.2}Constructor \& Destructor Documentation}{80}{subsection.5.26.2}
+\contentsline {subsubsection}{\numberline {5.26.2.1}MLPfactory}{80}{subsubsection.5.26.2.1}
+\contentsline {subsection}{\numberline {5.26.3}Member Function Documentation}{80}{subsection.5.26.3}
+\contentsline {subsubsection}{\numberline {5.26.3.1}makeActivationFunction}{80}{subsubsection.5.26.3.1}
+\contentsline {subsubsection}{\numberline {5.26.3.2}makeCon}{80}{subsubsection.5.26.3.2}
 \contentsline {subsubsection}{\numberline {5.26.3.3}makeConContainer}{81}{subsubsection.5.26.3.3}
-\contentsline {subsubsection}{\numberline {5.26.3.4}makeIdentityActivationFunction}{81}{subsubsection.5.26.3.4}
-\contentsline {subsubsection}{\numberline {5.26.3.5}makeNeuron}{81}{subsubsection.5.26.3.5}
-\contentsline {subsubsection}{\numberline {5.26.3.6}makeNeuronContainer}{81}{subsubsection.5.26.3.6}
-\contentsline {subsubsection}{\numberline {5.26.3.7}makePredictBehavior}{82}{subsubsection.5.26.3.7}
-\contentsline {subsubsection}{\numberline {5.26.3.8}makeTanhActivationFunction}{82}{subsubsection.5.26.3.8}
-\contentsline {section}{\numberline {5.27}Reciprocal Class Reference}{82}{section.5.27}
-\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{83}{subsection.5.27.1}
-\contentsline {subsection}{\numberline {5.27.2}Member Function Documentation}{83}{subsection.5.27.2}
-\contentsline {subsubsection}{\numberline {5.27.2.1}f0}{83}{subsubsection.5.27.2.1}
-\contentsline {subsubsection}{\numberline {5.27.2.2}f1}{83}{subsubsection.5.27.2.2}
-\contentsline {section}{\numberline {5.28}SimpleContainer$<$ T $>$ Class Template Reference}{84}{section.5.28}
-\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{87}{subsection.5.28.1}
-\contentsline {subsection}{\numberline {5.28.2}Constructor \& Destructor Documentation}{87}{subsection.5.28.2}
-\contentsline {subsubsection}{\numberline {5.28.2.1}SimpleContainer}{87}{subsubsection.5.28.2.1}
-\contentsline {subsubsection}{\numberline {5.28.2.2}$\sim $SimpleContainer}{88}{subsubsection.5.28.2.2}
-\contentsline {subsection}{\numberline {5.28.3}Member Function Documentation}{88}{subsection.5.28.3}
-\contentsline {subsubsection}{\numberline {5.28.3.1}at}{88}{subsubsection.5.28.3.1}
-\contentsline {subsubsection}{\numberline {5.28.3.2}clear}{89}{subsubsection.5.28.3.2}
-\contentsline {subsubsection}{\numberline {5.28.3.3}createIterator}{89}{subsubsection.5.28.3.3}
-\contentsline {subsubsection}{\numberline {5.28.3.4}empty}{89}{subsubsection.5.28.3.4}
-\contentsline {subsubsection}{\numberline {5.28.3.5}push\_\discretionary {-}{}{}back}{90}{subsubsection.5.28.3.5}
-\contentsline {subsubsection}{\numberline {5.28.3.6}reserve}{90}{subsubsection.5.28.3.6}
-\contentsline {subsubsection}{\numberline {5.28.3.7}show}{90}{subsubsection.5.28.3.7}
-\contentsline {subsubsection}{\numberline {5.28.3.8}size}{91}{subsubsection.5.28.3.8}
-\contentsline {subsubsection}{\numberline {5.28.3.9}validate}{91}{subsubsection.5.28.3.9}
-\contentsline {subsection}{\numberline {5.28.4}Friends And Related Function Documentation}{92}{subsection.5.28.4}
-\contentsline {subsubsection}{\numberline {5.28.4.1}SimpleContainerIterator$<$ T $>$}{92}{subsubsection.5.28.4.1}
-\contentsline {subsection}{\numberline {5.28.5}Member Data Documentation}{92}{subsection.5.28.5}
-\contentsline {subsubsection}{\numberline {5.28.5.1}d\_\discretionary {-}{}{}collection}{92}{subsubsection.5.28.5.1}
-\contentsline {section}{\numberline {5.29}SimpleContainerIterator$<$ T $>$ Class Template Reference}{92}{section.5.29}
-\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{95}{subsection.5.29.1}
-\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{95}{subsection.5.29.2}
-\contentsline {subsubsection}{\numberline {5.29.2.1}SimpleContainerIterator}{95}{subsubsection.5.29.2.1}
-\contentsline {subsubsection}{\numberline {5.29.2.2}$\sim $SimpleContainerIterator}{95}{subsubsection.5.29.2.2}
-\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{95}{subsection.5.29.3}
-\contentsline {subsubsection}{\numberline {5.29.3.1}currentItem}{95}{subsubsection.5.29.3.1}
-\contentsline {subsubsection}{\numberline {5.29.3.2}first}{96}{subsubsection.5.29.3.2}
-\contentsline {subsubsection}{\numberline {5.29.3.3}isDone}{96}{subsubsection.5.29.3.3}
-\contentsline {subsubsection}{\numberline {5.29.3.4}next}{96}{subsubsection.5.29.3.4}
-\contentsline {subsection}{\numberline {5.29.4}Friends And Related Function Documentation}{96}{subsection.5.29.4}
-\contentsline {subsubsection}{\numberline {5.29.4.1}SimpleContainer$<$ T $>$}{96}{subsubsection.5.29.4.1}
-\contentsline {subsection}{\numberline {5.29.5}Member Data Documentation}{97}{subsection.5.29.5}
-\contentsline {subsubsection}{\numberline {5.29.5.1}d\_\discretionary {-}{}{}container}{97}{subsubsection.5.29.5.1}
-\contentsline {subsubsection}{\numberline {5.29.5.2}d\_\discretionary {-}{}{}current}{97}{subsubsection.5.29.5.2}
-\contentsline {section}{\numberline {5.30}SimpleNeuralCreator Class Reference}{97}{section.5.30}
-\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{98}{subsection.5.30.1}
-\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{98}{subsection.5.30.2}
-\contentsline {subsubsection}{\numberline {5.30.2.1}SimpleNeuralCreator}{98}{subsubsection.5.30.2.1}
-\contentsline {subsection}{\numberline {5.30.3}Member Function Documentation}{98}{subsection.5.30.3}
-\contentsline {subsubsection}{\numberline {5.30.3.1}createNeuron}{99}{subsubsection.5.30.3.1}
-\contentsline {section}{\numberline {5.31}SimpleNeuron Class Reference}{99}{section.5.31}
-\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{102}{subsection.5.31.1}
-\contentsline {subsection}{\numberline {5.31.2}Constructor \& Destructor Documentation}{102}{subsection.5.31.2}
-\contentsline {subsubsection}{\numberline {5.31.2.1}SimpleNeuron}{102}{subsubsection.5.31.2.1}
-\contentsline {subsection}{\numberline {5.31.3}Member Function Documentation}{102}{subsection.5.31.3}
-\contentsline {subsubsection}{\numberline {5.31.3.1}getId}{102}{subsubsection.5.31.3.1}
-\contentsline {subsubsection}{\numberline {5.31.3.2}getOutput}{103}{subsubsection.5.31.3.2}
-\contentsline {subsubsection}{\numberline {5.31.3.3}predict}{103}{subsubsection.5.31.3.3}
-\contentsline {subsubsection}{\numberline {5.31.3.4}setId}{103}{subsubsection.5.31.3.4}
-\contentsline {subsubsection}{\numberline {5.31.3.5}setOutput}{104}{subsubsection.5.31.3.5}
-\contentsline {subsubsection}{\numberline {5.31.3.6}setPredictBehavior}{104}{subsubsection.5.31.3.6}
-\contentsline {subsubsection}{\numberline {5.31.3.7}show}{104}{subsubsection.5.31.3.7}
-\contentsline {subsubsection}{\numberline {5.31.3.8}validate}{105}{subsubsection.5.31.3.8}
-\contentsline {subsection}{\numberline {5.31.4}Member Data Documentation}{105}{subsection.5.31.4}
-\contentsline {subsubsection}{\numberline {5.31.4.1}d\_\discretionary {-}{}{}Id}{105}{subsubsection.5.31.4.1}
-\contentsline {section}{\numberline {5.32}Sine Class Reference}{106}{section.5.32}
-\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{107}{subsection.5.32.1}
-\contentsline {subsection}{\numberline {5.32.2}Member Function Documentation}{107}{subsection.5.32.2}
-\contentsline {subsubsection}{\numberline {5.32.2.1}f0}{107}{subsubsection.5.32.2.1}
-\contentsline {subsubsection}{\numberline {5.32.2.2}f1}{107}{subsubsection.5.32.2.2}
-\contentsline {section}{\numberline {5.33}Square Class Reference}{108}{section.5.33}
-\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{109}{subsection.5.33.1}
-\contentsline {subsection}{\numberline {5.33.2}Member Function Documentation}{109}{subsection.5.33.2}
-\contentsline {subsubsection}{\numberline {5.33.2.1}f0}{109}{subsubsection.5.33.2.1}
-\contentsline {subsubsection}{\numberline {5.33.2.2}f1}{109}{subsubsection.5.33.2.2}
-\contentsline {section}{\numberline {5.34}Tanh Class Reference}{110}{section.5.34}
-\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{111}{subsection.5.34.1}
-\contentsline {subsection}{\numberline {5.34.2}Member Function Documentation}{111}{subsection.5.34.2}
-\contentsline {subsubsection}{\numberline {5.34.2.1}f0}{111}{subsubsection.5.34.2.1}
-\contentsline {subsubsection}{\numberline {5.34.2.2}f1}{112}{subsubsection.5.34.2.2}
-\contentsline {section}{\numberline {5.35}Threshold Class Reference}{113}{section.5.35}
-\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{114}{subsection.5.35.1}
-\contentsline {subsection}{\numberline {5.35.2}Member Function Documentation}{114}{subsection.5.35.2}
-\contentsline {subsubsection}{\numberline {5.35.2.1}f0}{114}{subsubsection.5.35.2.1}
-\contentsline {subsubsection}{\numberline {5.35.2.2}f1}{114}{subsubsection.5.35.2.2}
-\contentsline {section}{\numberline {5.36}TrainingBehavior Class Reference}{115}{section.5.36}
-\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{115}{subsection.5.36.1}
-\contentsline {subsection}{\numberline {5.36.2}Member Function Documentation}{115}{subsection.5.36.2}
-\contentsline {subsubsection}{\numberline {5.36.2.1}adjustParameters}{116}{subsubsection.5.36.2.1}
-\contentsline {chapter}{\numberline {6}File Documentation}{117}{chapter.6}
-\contentsline {section}{\numberline {6.1}pkg/AMORE/src/ActivationFunction.cpp File Reference}{117}{section.6.1}
-\contentsline {section}{\numberline {6.2}pkg/AMORE/src/AMORE.h File Reference}{118}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Define Documentation}{120}{subsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.1.1}foreach}{120}{subsubsection.6.2.1.1}
-\contentsline {subsubsection}{\numberline {6.2.1.2}size\_\discretionary {-}{}{}type}{120}{subsubsection.6.2.1.2}
-\contentsline {subsection}{\numberline {6.2.2}Typedef Documentation}{120}{subsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.2.1}ActivationFunctionPtr}{120}{subsubsection.6.2.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2.2}ActivationFunctionRef}{120}{subsubsection.6.2.2.2}
-\contentsline {subsubsection}{\numberline {6.2.2.3}ConContainerPtr}{120}{subsubsection.6.2.2.3}
-\contentsline {subsubsection}{\numberline {6.2.2.4}ConIteratorPtr}{120}{subsubsection.6.2.2.4}
-\contentsline {subsubsection}{\numberline {6.2.2.5}ConPtr}{120}{subsubsection.6.2.2.5}
-\contentsline {subsubsection}{\numberline {6.2.2.6}Handler}{121}{subsubsection.6.2.2.6}
-\contentsline {subsubsection}{\numberline {6.2.2.7}NeuralCreatorPtr}{121}{subsubsection.6.2.2.7}
-\contentsline {subsubsection}{\numberline {6.2.2.8}NeuralFactoryPtr}{121}{subsubsection.6.2.2.8}
-\contentsline {subsubsection}{\numberline {6.2.2.9}NeuronContainerPtr}{121}{subsubsection.6.2.2.9}
-\contentsline {subsubsection}{\numberline {6.2.2.10}NeuronIteratorPtr}{121}{subsubsection.6.2.2.10}
-\contentsline {subsubsection}{\numberline {6.2.2.11}NeuronPtr}{121}{subsubsection.6.2.2.11}
-\contentsline {subsubsection}{\numberline {6.2.2.12}NeuronRef}{121}{subsubsection.6.2.2.12}
-\contentsline {subsubsection}{\numberline {6.2.2.13}PredictBehaviorPtr}{121}{subsubsection.6.2.2.13}
-\contentsline {subsubsection}{\numberline {6.2.2.14}PredictBehaviorRef}{121}{subsubsection.6.2.2.14}
-\contentsline {subsubsection}{\numberline {6.2.2.15}PredictBehaviorWeakPtr}{121}{subsubsection.6.2.2.15}
-\contentsline {subsubsection}{\numberline {6.2.2.16}TrainingBehaviorRef}{122}{subsubsection.6.2.2.16}
-\contentsline {section}{\numberline {6.3}pkg/AMORE/src/Con.cpp File Reference}{122}{section.6.3}
-\contentsline {section}{\numberline {6.4}pkg/AMORE/src/Container.cpp File Reference}{122}{section.6.4}
-\contentsline {section}{\numberline {6.5}pkg/AMORE/src/dia/ActivationFunction.h File Reference}{123}{section.6.5}
-\contentsline {section}{\numberline {6.6}pkg/AMORE/src/dia/AdaptBehavior.h File Reference}{124}{section.6.6}
-\contentsline {section}{\numberline {6.7}pkg/AMORE/src/dia/ADAPTgd.h File Reference}{125}{section.6.7}
-\contentsline {section}{\numberline {6.8}pkg/AMORE/src/dia/ADAPTgdwm.h File Reference}{125}{section.6.8}
-\contentsline {section}{\numberline {6.9}pkg/AMORE/src/dia/ArcTan.h File Reference}{126}{section.6.9}
-\contentsline {section}{\numberline {6.10}pkg/AMORE/src/dia/BatchBehavior.h File Reference}{127}{section.6.10}
-\contentsline {section}{\numberline {6.11}pkg/AMORE/src/dia/BATCHgd.h File Reference}{128}{section.6.11}
-\contentsline {section}{\numberline {6.12}pkg/AMORE/src/dia/BATCHgdwm.h File Reference}{128}{section.6.12}
-\contentsline {section}{\numberline {6.13}pkg/AMORE/src/dia/Con.h File Reference}{130}{section.6.13}
-\contentsline {section}{\numberline {6.14}pkg/AMORE/src/dia/Container.h File Reference}{130}{section.6.14}
-\contentsline {section}{\numberline {6.15}pkg/AMORE/src/dia/Cosine.h File Reference}{131}{section.6.15}
-\contentsline {section}{\numberline {6.16}pkg/AMORE/src/dia/Elliot.h File Reference}{131}{section.6.16}
-\contentsline {section}{\numberline {6.17}pkg/AMORE/src/dia/Exponential.h File Reference}{132}{section.6.17}
-\contentsline {section}{\numberline {6.18}pkg/AMORE/src/dia/Gauss.h File Reference}{133}{section.6.18}
-\contentsline {section}{\numberline {6.19}pkg/AMORE/src/dia/Identity.h File Reference}{133}{section.6.19}
-\contentsline {section}{\numberline {6.20}pkg/AMORE/src/dia/Iterator.h File Reference}{135}{section.6.20}
-\contentsline {section}{\numberline {6.21}pkg/AMORE/src/dia/Logistic.h File Reference}{135}{section.6.21}
-\contentsline {section}{\numberline {6.22}pkg/AMORE/src/dia/MLPbehavior.h File Reference}{136}{section.6.22}
-\contentsline {section}{\numberline {6.23}pkg/AMORE/src/dia/MLPfactory.h File Reference}{137}{section.6.23}
-\contentsline {section}{\numberline {6.24}pkg/AMORE/src/dia/NeuralCreator.h File Reference}{139}{section.6.24}
-\contentsline {section}{\numberline {6.25}pkg/AMORE/src/dia/NeuralFactory.h File Reference}{140}{section.6.25}
-\contentsline {section}{\numberline {6.26}pkg/AMORE/src/dia/Neuron.h File Reference}{141}{section.6.26}
-\contentsline {section}{\numberline {6.27}pkg/AMORE/src/dia/PredictBehavior.h File Reference}{142}{section.6.27}
-\contentsline {section}{\numberline {6.28}pkg/AMORE/src/dia/RadialBasis.h File Reference}{142}{section.6.28}
-\contentsline {section}{\numberline {6.29}pkg/AMORE/src/dia/RBFbehavior.h File Reference}{143}{section.6.29}
-\contentsline {section}{\numberline {6.30}pkg/AMORE/src/dia/RBFfactory.h File Reference}{143}{section.6.30}
-\contentsline {section}{\numberline {6.31}pkg/AMORE/src/dia/Reciprocal.h File Reference}{144}{section.6.31}
-\contentsline {section}{\numberline {6.32}pkg/AMORE/src/dia/SimpleContainer.h File Reference}{145}{section.6.32}
-\contentsline {section}{\numberline {6.33}pkg/AMORE/src/dia/SimpleContainerIterator.h File Reference}{145}{section.6.33}
-\contentsline {section}{\numberline {6.34}pkg/AMORE/src/dia/SimpleNeuralCreator.h File Reference}{146}{section.6.34}
-\contentsline {section}{\numberline {6.35}pkg/AMORE/src/dia/SimpleNeuron.h File Reference}{147}{section.6.35}
-\contentsline {section}{\numberline {6.36}pkg/AMORE/src/dia/Sine.h File Reference}{148}{section.6.36}
-\contentsline {section}{\numberline {6.37}pkg/AMORE/src/dia/Square.h File Reference}{149}{section.6.37}
-\contentsline {section}{\numberline {6.38}pkg/AMORE/src/dia/Tanh.h File Reference}{150}{section.6.38}
-\contentsline {section}{\numberline {6.39}pkg/AMORE/src/dia/Threshold.h File Reference}{151}{section.6.39}
-\contentsline {section}{\numberline {6.40}pkg/AMORE/src/dia/TrainingBehavior.h File Reference}{151}{section.6.40}
-\contentsline {section}{\numberline {6.41}pkg/AMORE/src/Identity.cpp File Reference}{152}{section.6.41}
-\contentsline {section}{\numberline {6.42}pkg/AMORE/src/Iterator.cpp File Reference}{152}{section.6.42}
-\contentsline {section}{\numberline {6.43}pkg/AMORE/src/IteratorInterface.cpp File Reference}{153}{section.6.43}
-\contentsline {section}{\numberline {6.44}pkg/AMORE/src/MLPbehavior.cpp File Reference}{154}{section.6.44}
-\contentsline {section}{\numberline {6.45}pkg/AMORE/src/MLPfactory.cpp File Reference}{155}{section.6.45}
-\contentsline {section}{\numberline {6.46}pkg/AMORE/src/PredictBehavior.cpp File Reference}{156}{section.6.46}
-\contentsline {section}{\numberline {6.47}pkg/AMORE/src/SimpleContainer.cpp File Reference}{157}{section.6.47}
-\contentsline {section}{\numberline {6.48}pkg/AMORE/src/SimpleContainerIterator.cpp File Reference}{158}{section.6.48}
-\contentsline {section}{\numberline {6.49}pkg/AMORE/src/SimpleNeuralCreator.cpp File Reference}{159}{section.6.49}
-\contentsline {section}{\numberline {6.50}pkg/AMORE/src/SimpleNeuron.cpp File Reference}{160}{section.6.50}
-\contentsline {section}{\numberline {6.51}pkg/AMORE/src/Tanh.cpp File Reference}{161}{section.6.51}
+\contentsline {subsubsection}{\numberline {5.26.3.4}makeNeuron}{81}{subsubsection.5.26.3.4}
+\contentsline {subsubsection}{\numberline {5.26.3.5}makeNeuronContainer}{82}{subsubsection.5.26.3.5}
+\contentsline {subsubsection}{\numberline {5.26.3.6}makePredictBehavior}{82}{subsubsection.5.26.3.6}
+\contentsline {section}{\numberline {5.27}NeuralCreator Class Reference}{83}{section.5.27}
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{84}{subsection.5.27.1}
+\contentsline {subsection}{\numberline {5.27.2}Member Function Documentation}{84}{subsection.5.27.2}
+\contentsline {subsubsection}{\numberline {5.27.2.1}createNeuron}{84}{subsubsection.5.27.2.1}
+\contentsline {section}{\numberline {5.28}NeuralFactory Class Reference}{84}{section.5.28}
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{85}{subsection.5.28.1}
+\contentsline {subsection}{\numberline {5.28.2}Member Function Documentation}{85}{subsection.5.28.2}
+\contentsline {subsubsection}{\numberline {5.28.2.1}makeActivationFunction}{85}{subsubsection.5.28.2.1}
+\contentsline {subsubsection}{\numberline {5.28.2.2}makeCon}{85}{subsubsection.5.28.2.2}
+\contentsline {subsubsection}{\numberline {5.28.2.3}makeConContainer}{85}{subsubsection.5.28.2.3}
+\contentsline {subsubsection}{\numberline {5.28.2.4}makeNeuron}{85}{subsubsection.5.28.2.4}
+\contentsline {subsubsection}{\numberline {5.28.2.5}makeNeuronContainer}{85}{subsubsection.5.28.2.5}
+\contentsline {subsubsection}{\numberline {5.28.2.6}makePredictBehavior}{85}{subsubsection.5.28.2.6}
+\contentsline {section}{\numberline {5.29}Neuron Class Reference}{86}{section.5.29}
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{88}{subsection.5.29.1}
+\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{88}{subsection.5.29.2}
+\contentsline {subsubsection}{\numberline {5.29.2.1}Neuron}{88}{subsubsection.5.29.2.1}
+\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{89}{subsection.5.29.3}
+\contentsline {subsubsection}{\numberline {5.29.3.1}getConIterator}{89}{subsubsection.5.29.3.1}
+\contentsline {subsubsection}{\numberline {5.29.3.2}getId}{89}{subsubsection.5.29.3.2}
+\contentsline {subsubsection}{\numberline {5.29.3.3}getInducedLocalField}{89}{subsubsection.5.29.3.3}
+\contentsline {subsubsection}{\numberline {5.29.3.4}getOutput}{89}{subsubsection.5.29.3.4}
+\contentsline {subsubsection}{\numberline {5.29.3.5}predict}{89}{subsubsection.5.29.3.5}
+\contentsline {subsubsection}{\numberline {5.29.3.6}setActivationFunction}{89}{subsubsection.5.29.3.6}
+\contentsline {subsubsection}{\numberline {5.29.3.7}setConnections}{89}{subsubsection.5.29.3.7}
+\contentsline {subsubsection}{\numberline {5.29.3.8}setId}{89}{subsubsection.5.29.3.8}
+\contentsline {subsubsection}{\numberline {5.29.3.9}setInducedLocalField}{89}{subsubsection.5.29.3.9}
+\contentsline {subsubsection}{\numberline {5.29.3.10}setOutput}{90}{subsubsection.5.29.3.10}
+\contentsline {subsubsection}{\numberline {5.29.3.11}setPredictBehavior}{90}{subsubsection.5.29.3.11}
+\contentsline {subsubsection}{\numberline {5.29.3.12}show}{90}{subsubsection.5.29.3.12}
+\contentsline {subsubsection}{\numberline {5.29.3.13}useActivationFunctionf0}{90}{subsubsection.5.29.3.13}
+\contentsline {subsubsection}{\numberline {5.29.3.14}validate}{90}{subsubsection.5.29.3.14}
+\contentsline {subsection}{\numberline {5.29.4}Member Data Documentation}{90}{subsection.5.29.4}
+\contentsline {subsubsection}{\numberline {5.29.4.1}d\_\discretionary {-}{}{}activationFunction}{90}{subsubsection.5.29.4.1}
+\contentsline {subsubsection}{\numberline {5.29.4.2}d\_\discretionary {-}{}{}Id}{90}{subsubsection.5.29.4.2}
+\contentsline {subsubsection}{\numberline {5.29.4.3}d\_\discretionary {-}{}{}inducedLocalField}{90}{subsubsection.5.29.4.3}
+\contentsline {subsubsection}{\numberline {5.29.4.4}d\_\discretionary {-}{}{}nCons}{90}{subsubsection.5.29.4.4}
+\contentsline {subsubsection}{\numberline {5.29.4.5}d\_\discretionary {-}{}{}output}{91}{subsubsection.5.29.4.5}
+\contentsline {subsubsection}{\numberline {5.29.4.6}d\_\discretionary {-}{}{}predictBehavior}{91}{subsubsection.5.29.4.6}
+\contentsline {section}{\numberline {5.30}PredictBehavior Class Reference}{91}{section.5.30}
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{93}{subsection.5.30.1}
+\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{93}{subsection.5.30.2}
+\contentsline {subsubsection}{\numberline {5.30.2.1}PredictBehavior}{93}{subsubsection.5.30.2.1}
+\contentsline {subsection}{\numberline {5.30.3}Member Function Documentation}{93}{subsection.5.30.3}
+\contentsline {subsubsection}{\numberline {5.30.3.1}getConIterator}{93}{subsubsection.5.30.3.1}
+\contentsline {subsubsection}{\numberline {5.30.3.2}predict}{93}{subsubsection.5.30.3.2}
+\contentsline {subsubsection}{\numberline {5.30.3.3}setInducedLocalField}{94}{subsubsection.5.30.3.3}
+\contentsline {subsubsection}{\numberline {5.30.3.4}setOutput}{94}{subsubsection.5.30.3.4}
+\contentsline {subsubsection}{\numberline {5.30.3.5}show}{95}{subsubsection.5.30.3.5}
+\contentsline {subsubsection}{\numberline {5.30.3.6}useActivationFunctionf0}{95}{subsubsection.5.30.3.6}
+\contentsline {subsection}{\numberline {5.30.4}Member Data Documentation}{95}{subsection.5.30.4}
+\contentsline {subsubsection}{\numberline {5.30.4.1}d\_\discretionary {-}{}{}neuron}{95}{subsubsection.5.30.4.1}
+\contentsline {section}{\numberline {5.31}RadialBasis Class Reference}{95}{section.5.31}
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{97}{subsection.5.31.1}
+\contentsline {subsection}{\numberline {5.31.2}Constructor \& Destructor Documentation}{97}{subsection.5.31.2}
+\contentsline {subsubsection}{\numberline {5.31.2.1}RadialBasis}{97}{subsubsection.5.31.2.1}
+\contentsline {subsection}{\numberline {5.31.3}Member Function Documentation}{97}{subsection.5.31.3}
+\contentsline {subsubsection}{\numberline {5.31.3.1}f0}{98}{subsubsection.5.31.3.1}
+\contentsline {subsubsection}{\numberline {5.31.3.2}f1}{98}{subsubsection.5.31.3.2}
+\contentsline {section}{\numberline {5.32}RadialBasisFactory Class Reference}{98}{section.5.32}
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{100}{subsection.5.32.1}
+\contentsline {subsection}{\numberline {5.32.2}Member Function Documentation}{101}{subsection.5.32.2}
+\contentsline {subsubsection}{\numberline {5.32.2.1}makeActivationFunction}{101}{subsubsection.5.32.2.1}
+\contentsline {section}{\numberline {5.33}RBFbehavior Class Reference}{101}{section.5.33}
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{104}{subsection.5.33.1}
+\contentsline {subsection}{\numberline {5.33.2}Constructor \& Destructor Documentation}{104}{subsection.5.33.2}
+\contentsline {subsubsection}{\numberline {5.33.2.1}RBFbehavior}{104}{subsubsection.5.33.2.1}
+\contentsline {subsection}{\numberline {5.33.3}Member Function Documentation}{104}{subsection.5.33.3}
+\contentsline {subsubsection}{\numberline {5.33.3.1}predict}{104}{subsubsection.5.33.3.1}
+\contentsline {subsubsection}{\numberline {5.33.3.2}show}{104}{subsubsection.5.33.3.2}
+\contentsline {subsection}{\numberline {5.33.4}Member Data Documentation}{104}{subsection.5.33.4}
+\contentsline {subsubsection}{\numberline {5.33.4.1}d\_\discretionary {-}{}{}altitude}{104}{subsubsection.5.33.4.1}
+\contentsline {subsubsection}{\numberline {5.33.4.2}d\_\discretionary {-}{}{}width}{104}{subsubsection.5.33.4.2}
+\contentsline {section}{\numberline {5.34}RBFfactory Class Reference}{104}{section.5.34}
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{107}{subsection.5.34.1}
+\contentsline {subsection}{\numberline {5.34.2}Constructor \& Destructor Documentation}{107}{subsection.5.34.2}
+\contentsline {subsubsection}{\numberline {5.34.2.1}RBFfactory}{107}{subsubsection.5.34.2.1}
+\contentsline {subsection}{\numberline {5.34.3}Member Function Documentation}{107}{subsection.5.34.3}
+\contentsline {subsubsection}{\numberline {5.34.3.1}makeActivationFunction}{107}{subsubsection.5.34.3.1}
+\contentsline {subsubsection}{\numberline {5.34.3.2}makeCon}{107}{subsubsection.5.34.3.2}
+\contentsline {subsubsection}{\numberline {5.34.3.3}makeConContainer}{107}{subsubsection.5.34.3.3}
+\contentsline {subsubsection}{\numberline {5.34.3.4}makeNeuron}{107}{subsubsection.5.34.3.4}
+\contentsline {subsubsection}{\numberline {5.34.3.5}makeNeuronContainer}{107}{subsubsection.5.34.3.5}
+\contentsline {subsubsection}{\numberline {5.34.3.6}makePredictBehavior}{107}{subsubsection.5.34.3.6}
+\contentsline {section}{\numberline {5.35}Reciprocal Class Reference}{107}{section.5.35}
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{109}{subsection.5.35.1}
+\contentsline {subsection}{\numberline {5.35.2}Constructor \& Destructor Documentation}{109}{subsection.5.35.2}
+\contentsline {subsubsection}{\numberline {5.35.2.1}Reciprocal}{109}{subsubsection.5.35.2.1}
+\contentsline {subsection}{\numberline {5.35.3}Member Function Documentation}{109}{subsection.5.35.3}
+\contentsline {subsubsection}{\numberline {5.35.3.1}f0}{110}{subsubsection.5.35.3.1}
+\contentsline {subsubsection}{\numberline {5.35.3.2}f1}{110}{subsubsection.5.35.3.2}
+\contentsline {section}{\numberline {5.36}ReciprocalFactory Class Reference}{110}{section.5.36}
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{112}{subsection.5.36.1}
+\contentsline {subsection}{\numberline {5.36.2}Member Function Documentation}{113}{subsection.5.36.2}
+\contentsline {subsubsection}{\numberline {5.36.2.1}makeActivationFunction}{113}{subsubsection.5.36.2.1}
+\contentsline {section}{\numberline {5.37}SimpleContainer$<$ T $>$ Class Template Reference}{113}{section.5.37}
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{116}{subsection.5.37.1}
+\contentsline {subsection}{\numberline {5.37.2}Constructor \& Destructor Documentation}{116}{subsection.5.37.2}
+\contentsline {subsubsection}{\numberline {5.37.2.1}SimpleContainer}{116}{subsubsection.5.37.2.1}
+\contentsline {subsubsection}{\numberline {5.37.2.2}$\sim $SimpleContainer}{117}{subsubsection.5.37.2.2}
+\contentsline {subsection}{\numberline {5.37.3}Member Function Documentation}{117}{subsection.5.37.3}
+\contentsline {subsubsection}{\numberline {5.37.3.1}at}{117}{subsubsection.5.37.3.1}
+\contentsline {subsubsection}{\numberline {5.37.3.2}clear}{118}{subsubsection.5.37.3.2}
+\contentsline {subsubsection}{\numberline {5.37.3.3}createIterator}{118}{subsubsection.5.37.3.3}
+\contentsline {subsubsection}{\numberline {5.37.3.4}empty}{118}{subsubsection.5.37.3.4}
+\contentsline {subsubsection}{\numberline {5.37.3.5}push\_\discretionary {-}{}{}back}{119}{subsubsection.5.37.3.5}
+\contentsline {subsubsection}{\numberline {5.37.3.6}reserve}{119}{subsubsection.5.37.3.6}
+\contentsline {subsubsection}{\numberline {5.37.3.7}show}{119}{subsubsection.5.37.3.7}
+\contentsline {subsubsection}{\numberline {5.37.3.8}size}{120}{subsubsection.5.37.3.8}
+\contentsline {subsubsection}{\numberline {5.37.3.9}validate}{120}{subsubsection.5.37.3.9}
+\contentsline {subsection}{\numberline {5.37.4}Friends And Related Function Documentation}{121}{subsection.5.37.4}
+\contentsline {subsubsection}{\numberline {5.37.4.1}SimpleContainerIterator$<$ T $>$}{121}{subsubsection.5.37.4.1}
+\contentsline {subsection}{\numberline {5.37.5}Member Data Documentation}{121}{subsection.5.37.5}
+\contentsline {subsubsection}{\numberline {5.37.5.1}d\_\discretionary {-}{}{}collection}{121}{subsubsection.5.37.5.1}
+\contentsline {section}{\numberline {5.38}SimpleContainerIterator$<$ T $>$ Class Template Reference}{121}{section.5.38}
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{124}{subsection.5.38.1}
+\contentsline {subsection}{\numberline {5.38.2}Constructor \& Destructor Documentation}{124}{subsection.5.38.2}
+\contentsline {subsubsection}{\numberline {5.38.2.1}SimpleContainerIterator}{124}{subsubsection.5.38.2.1}
+\contentsline {subsubsection}{\numberline {5.38.2.2}$\sim $SimpleContainerIterator}{124}{subsubsection.5.38.2.2}
+\contentsline {subsection}{\numberline {5.38.3}Member Function Documentation}{124}{subsection.5.38.3}
+\contentsline {subsubsection}{\numberline {5.38.3.1}currentItem}{124}{subsubsection.5.38.3.1}
+\contentsline {subsubsection}{\numberline {5.38.3.2}first}{125}{subsubsection.5.38.3.2}
+\contentsline {subsubsection}{\numberline {5.38.3.3}isDone}{125}{subsubsection.5.38.3.3}
+\contentsline {subsubsection}{\numberline {5.38.3.4}next}{125}{subsubsection.5.38.3.4}
+\contentsline {subsection}{\numberline {5.38.4}Friends And Related Function Documentation}{125}{subsection.5.38.4}
+\contentsline {subsubsection}{\numberline {5.38.4.1}SimpleContainer$<$ T $>$}{125}{subsubsection.5.38.4.1}
+\contentsline {subsection}{\numberline {5.38.5}Member Data Documentation}{126}{subsection.5.38.5}
+\contentsline {subsubsection}{\numberline {5.38.5.1}d\_\discretionary {-}{}{}container}{126}{subsubsection.5.38.5.1}
+\contentsline {subsubsection}{\numberline {5.38.5.2}d\_\discretionary {-}{}{}current}{126}{subsubsection.5.38.5.2}
+\contentsline {section}{\numberline {5.39}SimpleNeuralCreator Class Reference}{126}{section.5.39}
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{127}{subsection.5.39.1}
+\contentsline {subsection}{\numberline {5.39.2}Constructor \& Destructor Documentation}{127}{subsection.5.39.2}
+\contentsline {subsubsection}{\numberline {5.39.2.1}SimpleNeuralCreator}{127}{subsubsection.5.39.2.1}
+\contentsline {subsection}{\numberline {5.39.3}Member Function Documentation}{127}{subsection.5.39.3}
+\contentsline {subsubsection}{\numberline {5.39.3.1}createNeuron}{128}{subsubsection.5.39.3.1}
+\contentsline {section}{\numberline {5.40}SimpleNeuron Class Reference}{128}{section.5.40}
+\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{131}{subsection.5.40.1}
+\contentsline {subsection}{\numberline {5.40.2}Constructor \& Destructor Documentation}{131}{subsection.5.40.2}
+\contentsline {subsubsection}{\numberline {5.40.2.1}SimpleNeuron}{131}{subsubsection.5.40.2.1}
+\contentsline {subsection}{\numberline {5.40.3}Member Function Documentation}{131}{subsection.5.40.3}
+\contentsline {subsubsection}{\numberline {5.40.3.1}getConIterator}{131}{subsubsection.5.40.3.1}
+\contentsline {subsubsection}{\numberline {5.40.3.2}getId}{132}{subsubsection.5.40.3.2}
+\contentsline {subsubsection}{\numberline {5.40.3.3}getInducedLocalField}{132}{subsubsection.5.40.3.3}
+\contentsline {subsubsection}{\numberline {5.40.3.4}getOutput}{132}{subsubsection.5.40.3.4}
+\contentsline {subsubsection}{\numberline {5.40.3.5}predict}{133}{subsubsection.5.40.3.5}
+\contentsline {subsubsection}{\numberline {5.40.3.6}setActivationFunction}{133}{subsubsection.5.40.3.6}
+\contentsline {subsubsection}{\numberline {5.40.3.7}setConnections}{133}{subsubsection.5.40.3.7}
+\contentsline {subsubsection}{\numberline {5.40.3.8}setId}{134}{subsubsection.5.40.3.8}
+\contentsline {subsubsection}{\numberline {5.40.3.9}setInducedLocalField}{134}{subsubsection.5.40.3.9}
+\contentsline {subsubsection}{\numberline {5.40.3.10}setOutput}{134}{subsubsection.5.40.3.10}
+\contentsline {subsubsection}{\numberline {5.40.3.11}setPredictBehavior}{134}{subsubsection.5.40.3.11}
+\contentsline {subsubsection}{\numberline {5.40.3.12}show}{135}{subsubsection.5.40.3.12}
+\contentsline {subsubsection}{\numberline {5.40.3.13}useActivationFunctionf0}{135}{subsubsection.5.40.3.13}
+\contentsline {subsubsection}{\numberline {5.40.3.14}validate}{136}{subsubsection.5.40.3.14}
+\contentsline {section}{\numberline {5.41}Sine Class Reference}{136}{section.5.41}
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{138}{subsection.5.41.1}
+\contentsline {subsection}{\numberline {5.41.2}Constructor \& Destructor Documentation}{138}{subsection.5.41.2}
+\contentsline {subsubsection}{\numberline {5.41.2.1}Sine}{138}{subsubsection.5.41.2.1}
+\contentsline {subsection}{\numberline {5.41.3}Member Function Documentation}{138}{subsection.5.41.3}
+\contentsline {subsubsection}{\numberline {5.41.3.1}f0}{139}{subsubsection.5.41.3.1}
+\contentsline {subsubsection}{\numberline {5.41.3.2}f1}{139}{subsubsection.5.41.3.2}
+\contentsline {section}{\numberline {5.42}SineFactory Class Reference}{139}{section.5.42}
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{141}{subsection.5.42.1}
+\contentsline {subsection}{\numberline {5.42.2}Member Function Documentation}{142}{subsection.5.42.2}
+\contentsline {subsubsection}{\numberline {5.42.2.1}makeActivationFunction}{142}{subsubsection.5.42.2.1}
+\contentsline {section}{\numberline {5.43}Square Class Reference}{142}{section.5.43}
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{143}{subsection.5.43.1}
+\contentsline {subsection}{\numberline {5.43.2}Constructor \& Destructor Documentation}{143}{subsection.5.43.2}
+\contentsline {subsubsection}{\numberline {5.43.2.1}Square}{143}{subsubsection.5.43.2.1}
+\contentsline {subsection}{\numberline {5.43.3}Member Function Documentation}{143}{subsection.5.43.3}
+\contentsline {subsubsection}{\numberline {5.43.3.1}f0}{144}{subsubsection.5.43.3.1}
+\contentsline {subsubsection}{\numberline {5.43.3.2}f1}{144}{subsubsection.5.43.3.2}
+\contentsline {section}{\numberline {5.44}SquareFactory Class Reference}{144}{section.5.44}
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{146}{subsection.5.44.1}
+\contentsline {subsection}{\numberline {5.44.2}Member Function Documentation}{147}{subsection.5.44.2}
+\contentsline {subsubsection}{\numberline {5.44.2.1}makeActivationFunction}{147}{subsubsection.5.44.2.1}
+\contentsline {section}{\numberline {5.45}Tanh Class Reference}{147}{section.5.45}
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{148}{subsection.5.45.1}
+\contentsline {subsection}{\numberline {5.45.2}Constructor \& Destructor Documentation}{148}{subsection.5.45.2}
+\contentsline {subsubsection}{\numberline {5.45.2.1}Tanh}{148}{subsubsection.5.45.2.1}
+\contentsline {subsection}{\numberline {5.45.3}Member Function Documentation}{149}{subsection.5.45.3}
+\contentsline {subsubsection}{\numberline {5.45.3.1}f0}{149}{subsubsection.5.45.3.1}
+\contentsline {subsubsection}{\numberline {5.45.3.2}f1}{149}{subsubsection.5.45.3.2}
+\contentsline {section}{\numberline {5.46}TanhFactory Class Reference}{150}{section.5.46}
+\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{152}{subsection.5.46.1}
+\contentsline {subsection}{\numberline {5.46.2}Member Function Documentation}{153}{subsection.5.46.2}
+\contentsline {subsubsection}{\numberline {5.46.2.1}makeActivationFunction}{153}{subsubsection.5.46.2.1}
+\contentsline {section}{\numberline {5.47}Threshold Class Reference}{153}{section.5.47}
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{155}{subsection.5.47.1}
+\contentsline {subsection}{\numberline {5.47.2}Constructor \& Destructor Documentation}{155}{subsection.5.47.2}
+\contentsline {subsubsection}{\numberline {5.47.2.1}Threshold}{155}{subsubsection.5.47.2.1}
+\contentsline {subsection}{\numberline {5.47.3}Member Function Documentation}{155}{subsection.5.47.3}
+\contentsline {subsubsection}{\numberline {5.47.3.1}f0}{156}{subsubsection.5.47.3.1}
+\contentsline {subsubsection}{\numberline {5.47.3.2}f1}{156}{subsubsection.5.47.3.2}
+\contentsline {section}{\numberline {5.48}ThresholdFactory Class Reference}{156}{section.5.48}
+\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{158}{subsection.5.48.1}
+\contentsline {subsection}{\numberline {5.48.2}Member Function Documentation}{159}{subsection.5.48.2}
+\contentsline {subsubsection}{\numberline {5.48.2.1}makeActivationFunction}{159}{subsubsection.5.48.2.1}
+\contentsline {section}{\numberline {5.49}TrainingBehavior Class Reference}{159}{section.5.49}
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{160}{subsection.5.49.1}
+\contentsline {subsection}{\numberline {5.49.2}Member Function Documentation}{160}{subsection.5.49.2}
+\contentsline {subsubsection}{\numberline {5.49.2.1}adjustParameters}{160}{subsubsection.5.49.2.1}
+\contentsline {chapter}{\numberline {6}File Documentation}{161}{chapter.6}
+\contentsline {section}{\numberline {6.1}pkg/AMORE/src/ActivationFunction.cpp File Reference}{161}{section.6.1}
+\contentsline {section}{\numberline {6.2}pkg/AMORE/src/AMORE.h File Reference}{162}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Define Documentation}{164}{subsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1.1}foreach}{164}{subsubsection.6.2.1.1}
+\contentsline {subsubsection}{\numberline {6.2.1.2}size\_\discretionary {-}{}{}type}{164}{subsubsection.6.2.1.2}
+\contentsline {subsection}{\numberline {6.2.2}Typedef Documentation}{164}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}ActivationFunctionPtr}{164}{subsubsection.6.2.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2.2}ActivationFunctionRef}{164}{subsubsection.6.2.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.3}ConContainerPtr}{164}{subsubsection.6.2.2.3}
+\contentsline {subsubsection}{\numberline {6.2.2.4}ConIteratorPtr}{165}{subsubsection.6.2.2.4}
+\contentsline {subsubsection}{\numberline {6.2.2.5}ConPtr}{165}{subsubsection.6.2.2.5}
+\contentsline {subsubsection}{\numberline {6.2.2.6}Handler}{165}{subsubsection.6.2.2.6}
+\contentsline {subsubsection}{\numberline {6.2.2.7}NeuralCreatorPtr}{165}{subsubsection.6.2.2.7}
+\contentsline {subsubsection}{\numberline {6.2.2.8}NeuralFactoryPtr}{165}{subsubsection.6.2.2.8}
+\contentsline {subsubsection}{\numberline {6.2.2.9}NeuronContainerPtr}{165}{subsubsection.6.2.2.9}
+\contentsline {subsubsection}{\numberline {6.2.2.10}NeuronIteratorPtr}{165}{subsubsection.6.2.2.10}
+\contentsline {subsubsection}{\numberline {6.2.2.11}NeuronPtr}{165}{subsubsection.6.2.2.11}
+\contentsline {subsubsection}{\numberline {6.2.2.12}NeuronRef}{165}{subsubsection.6.2.2.12}
+\contentsline {subsubsection}{\numberline {6.2.2.13}NeuronWeakPtr}{165}{subsubsection.6.2.2.13}
+\contentsline {subsubsection}{\numberline {6.2.2.14}PredictBehaviorPtr}{166}{subsubsection.6.2.2.14}
+\contentsline {subsubsection}{\numberline {6.2.2.15}PredictBehaviorRef}{166}{subsubsection.6.2.2.15}
+\contentsline {subsubsection}{\numberline {6.2.2.16}TrainingBehaviorRef}{166}{subsubsection.6.2.2.16}
+\contentsline {section}{\numberline {6.3}pkg/AMORE/src/Con.cpp File Reference}{166}{section.6.3}
+\contentsline {section}{\numberline {6.4}pkg/AMORE/src/Container.cpp File Reference}{167}{section.6.4}
+\contentsline {section}{\numberline {6.5}pkg/AMORE/src/dia/ActivationFunction.h File Reference}{168}{section.6.5}
+\contentsline {section}{\numberline {6.6}pkg/AMORE/src/dia/AdaptBehavior.h File Reference}{168}{section.6.6}
+\contentsline {section}{\numberline {6.7}pkg/AMORE/src/dia/ADAPTgd.h File Reference}{169}{section.6.7}
+\contentsline {section}{\numberline {6.8}pkg/AMORE/src/dia/ADAPTgdwm.h File Reference}{170}{section.6.8}
+\contentsline {section}{\numberline {6.9}pkg/AMORE/src/dia/ArcTan.h File Reference}{171}{section.6.9}
+\contentsline {section}{\numberline {6.10}pkg/AMORE/src/dia/ArcTanFactory.h File Reference}{172}{section.6.10}
+\contentsline {section}{\numberline {6.11}pkg/AMORE/src/dia/BatchBehavior.h File Reference}{172}{section.6.11}
+\contentsline {section}{\numberline {6.12}pkg/AMORE/src/dia/BATCHgd.h File Reference}{173}{section.6.12}
+\contentsline {section}{\numberline {6.13}pkg/AMORE/src/dia/BATCHgdwm.h File Reference}{174}{section.6.13}
+\contentsline {section}{\numberline {6.14}pkg/AMORE/src/dia/Con.h File Reference}{176}{section.6.14}
+\contentsline {section}{\numberline {6.15}pkg/AMORE/src/dia/Container.h File Reference}{176}{section.6.15}
+\contentsline {section}{\numberline {6.16}pkg/AMORE/src/dia/Cosine.h File Reference}{177}{section.6.16}
+\contentsline {section}{\numberline {6.17}pkg/AMORE/src/dia/CosineFactory.h File Reference}{177}{section.6.17}
+\contentsline {section}{\numberline {6.18}pkg/AMORE/src/dia/Elliot.h File Reference}{178}{section.6.18}
+\contentsline {section}{\numberline {6.19}pkg/AMORE/src/dia/ElliotFactory.h File Reference}{179}{section.6.19}
+\contentsline {section}{\numberline {6.20}pkg/AMORE/src/dia/Exponential.h File Reference}{179}{section.6.20}
+\contentsline {section}{\numberline {6.21}pkg/AMORE/src/dia/ExponentialFactory.h File Reference}{180}{section.6.21}
+\contentsline {section}{\numberline {6.22}pkg/AMORE/src/dia/Gauss.h File Reference}{181}{section.6.22}
+\contentsline {section}{\numberline {6.23}pkg/AMORE/src/dia/GaussFactory.h File Reference}{181}{section.6.23}
+\contentsline {section}{\numberline {6.24}pkg/AMORE/src/dia/Identity.h File Reference}{182}{section.6.24}
+\contentsline {section}{\numberline {6.25}pkg/AMORE/src/dia/IdentityFactory.h File Reference}{183}{section.6.25}
+\contentsline {section}{\numberline {6.26}pkg/AMORE/src/dia/Iterator.h File Reference}{185}{section.6.26}
+\contentsline {section}{\numberline {6.27}pkg/AMORE/src/dia/Logistic.h File Reference}{185}{section.6.27}
+\contentsline {section}{\numberline {6.28}pkg/AMORE/src/dia/LogisticFactory.h File Reference}{186}{section.6.28}
+\contentsline {section}{\numberline {6.29}pkg/AMORE/src/dia/MLPbehavior.h File Reference}{187}{section.6.29}
+\contentsline {section}{\numberline {6.30}pkg/AMORE/src/dia/MLPfactory.h File Reference}{188}{section.6.30}
+\contentsline {section}{\numberline {6.31}pkg/AMORE/src/dia/NeuralCreator.h File Reference}{189}{section.6.31}
+\contentsline {section}{\numberline {6.32}pkg/AMORE/src/dia/NeuralFactory.h File Reference}{189}{section.6.32}
+\contentsline {section}{\numberline {6.33}pkg/AMORE/src/dia/Neuron.h File Reference}{190}{section.6.33}
+\contentsline {section}{\numberline {6.34}pkg/AMORE/src/dia/PredictBehavior.h File Reference}{191}{section.6.34}
+\contentsline {section}{\numberline {6.35}pkg/AMORE/src/dia/RadialBasis.h File Reference}{191}{section.6.35}
+\contentsline {section}{\numberline {6.36}pkg/AMORE/src/dia/RadialBasisFactory.h File Reference}{192}{section.6.36}
+\contentsline {section}{\numberline {6.37}pkg/AMORE/src/dia/RBFbehavior.h File Reference}{192}{section.6.37}
+\contentsline {section}{\numberline {6.38}pkg/AMORE/src/dia/RBFfactory.h File Reference}{193}{section.6.38}
+\contentsline {section}{\numberline {6.39}pkg/AMORE/src/dia/Reciprocal.h File Reference}{194}{section.6.39}
+\contentsline {section}{\numberline {6.40}pkg/AMORE/src/dia/ReciprocalFactory.h File Reference}{195}{section.6.40}
+\contentsline {section}{\numberline {6.41}pkg/AMORE/src/dia/SimpleContainer.h File Reference}{195}{section.6.41}
+\contentsline {section}{\numberline {6.42}pkg/AMORE/src/dia/SimpleContainerIterator.h File Reference}{196}{section.6.42}
+\contentsline {section}{\numberline {6.43}pkg/AMORE/src/dia/SimpleNeuralCreator.h File Reference}{197}{section.6.43}
+\contentsline {section}{\numberline {6.44}pkg/AMORE/src/dia/SimpleNeuron.h File Reference}{198}{section.6.44}
+\contentsline {section}{\numberline {6.45}pkg/AMORE/src/dia/Sine.h File Reference}{199}{section.6.45}
+\contentsline {section}{\numberline {6.46}pkg/AMORE/src/dia/SineFactory.h File Reference}{200}{section.6.46}
+\contentsline {section}{\numberline {6.47}pkg/AMORE/src/dia/Square.h File Reference}{201}{section.6.47}
+\contentsline {section}{\numberline {6.48}pkg/AMORE/src/dia/SquareFactory.h File Reference}{201}{section.6.48}
+\contentsline {section}{\numberline {6.49}pkg/AMORE/src/dia/Tanh.h File Reference}{202}{section.6.49}
+\contentsline {section}{\numberline {6.50}pkg/AMORE/src/dia/TanhFactory.h File Reference}{203}{section.6.50}
+\contentsline {section}{\numberline {6.51}pkg/AMORE/src/dia/Threshold.h File Reference}{205}{section.6.51}
+\contentsline {section}{\numberline {6.52}pkg/AMORE/src/dia/ThresholdFactory.h File Reference}{205}{section.6.52}
+\contentsline {section}{\numberline {6.53}pkg/AMORE/src/dia/TrainingBehavior.h File Reference}{206}{section.6.53}
+\contentsline {section}{\numberline {6.54}pkg/AMORE/src/Identity.cpp File Reference}{207}{section.6.54}
+\contentsline {section}{\numberline {6.55}pkg/AMORE/src/IdentityFactory.cpp File Reference}{207}{section.6.55}
+\contentsline {section}{\numberline {6.56}pkg/AMORE/src/Iterator.cpp File Reference}{209}{section.6.56}
+\contentsline {section}{\numberline {6.57}pkg/AMORE/src/IteratorInterface.cpp File Reference}{209}{section.6.57}
+\contentsline {section}{\numberline {6.58}pkg/AMORE/src/MLPbehavior.cpp File Reference}{210}{section.6.58}
+\contentsline {section}{\numberline {6.59}pkg/AMORE/src/MLPfactory.cpp File Reference}{211}{section.6.59}
+\contentsline {section}{\numberline {6.60}pkg/AMORE/src/Neuron.cpp File Reference}{212}{section.6.60}
+\contentsline {section}{\numberline {6.61}pkg/AMORE/src/PredictBehavior.cpp File Reference}{213}{section.6.61}
+\contentsline {section}{\numberline {6.62}pkg/AMORE/src/SimpleContainer.cpp File Reference}{214}{section.6.62}
+\contentsline {section}{\numberline {6.63}pkg/AMORE/src/SimpleContainerIterator.cpp File Reference}{215}{section.6.63}
+\contentsline {section}{\numberline {6.64}pkg/AMORE/src/SimpleNeuralCreator.cpp File Reference}{216}{section.6.64}
+\contentsline {section}{\numberline {6.65}pkg/AMORE/src/SimpleNeuron.cpp File Reference}{217}{section.6.65}
+\contentsline {section}{\numberline {6.66}pkg/AMORE/src/Tanh.cpp File Reference}{218}{section.6.66}
+\contentsline {section}{\numberline {6.67}pkg/AMORE/src/TanhFactory.cpp File Reference}{219}{section.6.67}

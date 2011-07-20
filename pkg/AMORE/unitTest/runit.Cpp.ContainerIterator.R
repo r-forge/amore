@@ -7,7 +7,7 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 			// Test
 			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 
-			NeuralFactoryPtr factoryPtr( new MLPfactory() );
+			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
 
 			int ids[]= {10, 20, 30};
@@ -40,7 +40,7 @@ test.ContainerIterator.Cpp.first<- function() {
 			// Test
 			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
-			NeuralFactoryPtr factoryPtr( new MLPfactory() );
+			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
 			
 			int ids[]= {10, 20, 30};
@@ -72,7 +72,7 @@ test.ContainerIterator.Cpp.next<- function() {
 			// Test
 			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
-			NeuralFactoryPtr factoryPtr( new MLPfactory() );
+			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
 			
 			int ids[]= {10, 20, 30};
@@ -107,7 +107,7 @@ test.ContainerIterator.Cpp.isDone<- function() {
 			// Test
 			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
-			NeuralFactoryPtr factoryPtr( new MLPfactory() );
+			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
 			
 			int ids[]= {10, 20, 30};
@@ -145,7 +145,7 @@ BEGIN_RCPP
 			// Test
 			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
-			NeuralFactoryPtr factoryPtr( new MLPfactory() );
+			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
 			
 			int ids[]= {10, 20, 30};

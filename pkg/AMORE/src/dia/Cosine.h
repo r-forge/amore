@@ -5,6 +5,7 @@
 class Cosine : public ActivationFunction {
   // Operations
 public:
+  Cosine (NeuronPtr neuronPtr);
   double f0 ();
   double f1 ();
 };

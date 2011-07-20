@@ -9,6 +9,10 @@
 #include "dia/Identity.h"
 //=========================================================================================================
 
+Identity::Identity(NeuronPtr neuronPtr) : ActivationFunction(neuronPtr) {
+
+}
+
 double Identity::f0 () {
   return getInducedLocalField() ;
 }

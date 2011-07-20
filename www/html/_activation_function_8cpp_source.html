@@ -91,22 +91,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="_activation_function_8h.html">dia/ActivationFunction.h</a>&quot;</span>
 <a name="l00009"></a>00009 <span class="comment">//=========================================================================================================</span>
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 
-<a name="l00012"></a><a class="code" href="class_activation_function.html#a72f5e70051e79c0e19318ba1b9bb77ec">00012</a> <span class="keywordtype">double</span> <a class="code" href="class_activation_function.html#a72f5e70051e79c0e19318ba1b9bb77ec">ActivationFunction::getInducedLocalField</a> () {
-<a name="l00013"></a>00013   <a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr ( <a class="code" href="class_activation_function.html#a0540673abfbcf1d2f2adfcde4051b483">d_predictBehavior</a>.lock() );
-<a name="l00014"></a>00014       <span class="keywordflow">return</span> predictBehaviorPtr-&gt;getInducedLocalField();
-<a name="l00015"></a>00015 }
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 
-<a name="l00018"></a><a class="code" href="class_activation_function.html#a8570d6dfe9d0859c6bfb921a752e3703">00018</a> <span class="keywordtype">void</span> <a class="code" href="class_activation_function.html#a8570d6dfe9d0859c6bfb921a752e3703">ActivationFunction::setPredictBehavior</a> (<a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr) {
-<a name="l00019"></a>00019    <a class="code" href="class_activation_function.html#a0540673abfbcf1d2f2adfcde4051b483">d_predictBehavior</a> = predictBehaviorPtr;
-<a name="l00020"></a>00020 }
+<a name="l00011"></a><a class="code" href="class_activation_function.html#aebbc56ae5a7ff79e5d843034f6d7dc4f">00011</a> <a class="code" href="class_activation_function.html#aebbc56ae5a7ff79e5d843034f6d7dc4f">ActivationFunction::ActivationFunction</a>(<a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr) :
+<a name="l00012"></a>00012   d_neuron(neuronPtr)
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014 }
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keywordtype">double</span>
+<a name="l00017"></a><a class="code" href="class_activation_function.html#a72f5e70051e79c0e19318ba1b9bb77ec">00017</a> <a class="code" href="class_activation_function.html#a72f5e70051e79c0e19318ba1b9bb77ec">ActivationFunction::getInducedLocalField</a>()
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019   <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr(<a class="code" href="class_activation_function.html#ae58cc9df29759bbc76816ebfd68e2084">d_neuron</a>.lock());
+<a name="l00020"></a>00020   <span class="keywordflow">return</span> neuronPtr-&gt;getInducedLocalField();
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_activation_function_8cpp.html">ActivationFunction.cpp</a>      </li>
-      <li class="footer">Generated on Mon Jul 18 2011 17:41:22 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 20 2011 04:54:19 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

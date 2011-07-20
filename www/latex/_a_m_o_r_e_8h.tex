@@ -23,6 +23,8 @@
 {\ttfamily \#include \char`\"{}dia/SimpleNeuron.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/NeuralFactory.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/MLPfactory.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}dia/TanhFactory.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}dia/IdentityFactory.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/NeuralCreator.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/SimpleNeuralCreator.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/Container.h\char`\"{}}\par
@@ -35,8 +37,11 @@
 {\ttfamily \#include \char`\"{}Identity.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}PredictBehavior.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}MLPbehavior.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Neuron.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}SimpleNeuron.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}MLPfactory.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}TanhFactory.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}IdentityFactory.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}SimpleNeuralCreator.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Container.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Iterator.cpp\char`\"{}}\par
@@ -90,7 +95,7 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_neural_factory}{NeuralFactory} 
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neural_creator}{NeuralCreator} $>$ \hyperlink{_a_m_o_r_e_8h_aefebabe3353f684b7708712480c15699}{NeuralCreatorPtr}
 \item 
-typedef boost::weak\_\-ptr$<$ \hyperlink{class_predict_behavior}{PredictBehavior} $>$ \hyperlink{_a_m_o_r_e_8h_ae02ab8473cf61b61b3b9c154dc01191a}{PredictBehaviorWeakPtr}
+typedef boost::weak\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{NeuronWeakPtr}
 \end{DoxyCompactItemize}
 
 
@@ -224,6 +229,15 @@ Definition at line 82 of file AMORE.h.
 
 Definition at line 78 of file AMORE.h.
 
+\hypertarget{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{
+\index{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}}
+\index{NeuronWeakPtr@{NeuronWeakPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuronWeakPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::weak\_\-ptr$<${\bf Neuron}$>$ {\bf NeuronWeakPtr}}}
+\label{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}
+
+
+Definition at line 94 of file AMORE.h.
+
 \hypertarget{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{
 \index{AMORE.h@{AMORE.h}!PredictBehaviorPtr@{PredictBehaviorPtr}}
 \index{PredictBehaviorPtr@{PredictBehaviorPtr}!AMORE.h@{AMORE.h}}
@@ -241,15 +255,6 @@ Definition at line 81 of file AMORE.h.
 
 
 Definition at line 76 of file AMORE.h.
-
-\hypertarget{_a_m_o_r_e_8h_ae02ab8473cf61b61b3b9c154dc01191a}{
-\index{AMORE.h@{AMORE.h}!PredictBehaviorWeakPtr@{PredictBehaviorWeakPtr}}
-\index{PredictBehaviorWeakPtr@{PredictBehaviorWeakPtr}!AMORE.h@{AMORE.h}}
-\subsubsection[{PredictBehaviorWeakPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::weak\_\-ptr$<${\bf PredictBehavior}$>$ {\bf PredictBehaviorWeakPtr}}}
-\label{_a_m_o_r_e_8h_ae02ab8473cf61b61b3b9c154dc01191a}
-
-
-Definition at line 94 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}{
 \index{AMORE.h@{AMORE.h}!TrainingBehaviorRef@{TrainingBehaviorRef}}

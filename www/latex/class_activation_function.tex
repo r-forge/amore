@@ -27,15 +27,18 @@ Inheritance diagram for ActivationFunction:
 virtual double \hyperlink{class_activation_function_a801deb6a372121fe110de1f79f93f1c6}{f0} ()=0
 \item 
 virtual double \hyperlink{class_activation_function_aa5a0a713bc1080ab5d5ae3632a08b08e}{f1} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_activation_function_aebbc56ae5a7ff79e5d843034f6d7dc4f}{ActivationFunction} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
 \item 
 double \hyperlink{class_activation_function_a72f5e70051e79c0e19318ba1b9bb77ec}{getInducedLocalField} ()
-\item 
-void \hyperlink{class_activation_function_a8570d6dfe9d0859c6bfb921a752e3703}{setPredictBehavior} (\hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} predictBehaviorPtr)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{_a_m_o_r_e_8h_ae02ab8473cf61b61b3b9c154dc01191a}{PredictBehaviorWeakPtr} \hyperlink{class_activation_function_a0540673abfbcf1d2f2adfcde4051b483}{d\_\-predictBehavior}
+\hyperlink{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{NeuronWeakPtr} \hyperlink{class_activation_function_ae58cc9df29759bbc76816ebfd68e2084}{d\_\-neuron}
 \end{DoxyCompactItemize}
 
 
@@ -44,6 +47,29 @@ class \hyperlink{class_activation_function}{ActivationFunction} -\/
 
 Definition at line 4 of file ActivationFunction.h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_activation_function_aebbc56ae5a7ff79e5d843034f6d7dc4f}{
+\index{ActivationFunction@{ActivationFunction}!ActivationFunction@{ActivationFunction}}
+\index{ActivationFunction@{ActivationFunction}!ActivationFunction@{ActivationFunction}}
+\subsubsection[{ActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}ActivationFunction::ActivationFunction (
+\begin{DoxyParamCaption}
+\item[{{\bf NeuronPtr}}]{neuronPtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_activation_function_aebbc56ae5a7ff79e5d843034f6d7dc4f}
+
+
+Definition at line 11 of file ActivationFunction.cpp.
+
+
+\begin{DoxyCode}
+                                                          :
+  d_neuron(neuronPtr)
+{
+}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -80,15 +106,15 @@ Implemented in \hyperlink{class_arc_tan_aed5994fac83bf1b0301dd79519dcb936}{ArcTa
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{class_activation_function_a72f5e70051e79c0e19318ba1b9bb77ec}
 
 
-Definition at line 12 of file ActivationFunction.cpp.
+Definition at line 17 of file ActivationFunction.cpp.
 
 
 
-References d\_\-predictBehavior.
+References d\_\-neuron.
 
 
 
@@ -96,15 +122,14 @@ Referenced by Tanh::f0(), Identity::f0(), and Tanh::f1().
 
 
 \begin{DoxyCode}
-                                                 {
-  PredictBehaviorPtr predictBehaviorPtr ( d_predictBehavior.lock() );
-      return predictBehaviorPtr->getInducedLocalField();
+{
+  NeuronPtr neuronPtr(d_neuron.lock());
+  return neuronPtr->getInducedLocalField();
 }
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -113,45 +138,21 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{class_activation_function_a8570d6dfe9d0859c6bfb921a752e3703}{
-\index{ActivationFunction@{ActivationFunction}!setPredictBehavior@{setPredictBehavior}}
-\index{setPredictBehavior@{setPredictBehavior}!ActivationFunction@{ActivationFunction}}
-\subsubsection[{setPredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}void ActivationFunction::setPredictBehavior (
-\begin{DoxyParamCaption}
-\item[{{\bf PredictBehaviorPtr}}]{predictBehaviorPtr}
-\end{DoxyParamCaption}
-)}}
-\label{class_activation_function_a8570d6dfe9d0859c6bfb921a752e3703}
-
-
-Definition at line 18 of file ActivationFunction.cpp.
-
-
-
-References d\_\-predictBehavior.
-
-
-\begin{DoxyCode}
-                                                                                 
-       {
-   d_predictBehavior = predictBehaviorPtr;
-}
-\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_activation_function_a0540673abfbcf1d2f2adfcde4051b483}{
-\index{ActivationFunction@{ActivationFunction}!d\_\-predictBehavior@{d\_\-predictBehavior}}
-\index{d\_\-predictBehavior@{d\_\-predictBehavior}!ActivationFunction@{ActivationFunction}}
-\subsubsection[{d\_\-predictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PredictBehaviorWeakPtr} {\bf ActivationFunction::d\_\-predictBehavior}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_activation_function_a0540673abfbcf1d2f2adfcde4051b483}
+\hypertarget{class_activation_function_ae58cc9df29759bbc76816ebfd68e2084}{
+\index{ActivationFunction@{ActivationFunction}!d\_\-neuron@{d\_\-neuron}}
+\index{d\_\-neuron@{d\_\-neuron}!ActivationFunction@{ActivationFunction}}
+\subsubsection[{d\_\-neuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronWeakPtr} {\bf ActivationFunction::d\_\-neuron}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_activation_function_ae58cc9df29759bbc76816ebfd68e2084}
 
 
 Definition at line 7 of file ActivationFunction.h.
 
 
 
-Referenced by getInducedLocalField(), and setPredictBehavior().
+Referenced by getInducedLocalField().
 
 
 

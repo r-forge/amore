@@ -30,10 +30,6 @@ source("pkg/AMORE/R/RBFneuralNetwork.R")
 
 
 source("pkg/AMORE/unitTest/unitTestSuite.R")
-
-#/*
-#	 for_each(s.begin(), s.end(), mem_fun(&Employee::print)); 
-#*/
 		
 
 #lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise

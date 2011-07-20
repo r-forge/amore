@@ -27,32 +27,24 @@ Inheritance diagram for PredictBehavior:
 virtual void \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{predict} ()=0
 \item 
 virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{show} ()=0
-\item 
-double \hyperlink{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}{getOutput} ()
-\item 
-void \hyperlink{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{setOutput} (double output)
-\item 
-void \hyperlink{class_predict_behavior_a996642f65ce5f5933854039981b66b56}{setActivationFunction} (\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} activationFunctionPtr, \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} predictBehaviorPtr)
-\item 
-double \hyperlink{class_predict_behavior_a69187d626108f96e50675729828daf07}{getInducedLocalField} ()
-\item 
-void \hyperlink{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}{setConnections} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}{PredictBehavior} ()
+\hyperlink{class_predict_behavior_add88913e7919dac8083e422adfaf9121}{PredictBehavior} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
+\item 
+double \hyperlink{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64}{useActivationFunctionf0} ()
+\item 
+\hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr} \hyperlink{class_predict_behavior_ae13310624d8ea02168c15e86759758fc}{getConIterator} ()
+\item 
+void \hyperlink{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{setOutput} (double output)
+\item 
+void \hyperlink{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}{setInducedLocalField} (double inducedLocalField)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}{d\_\-nCons}
-\item 
-double \hyperlink{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}{d\_\-inducedLocalField}
-\item 
-\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}{d\_\-activationFunction}
-\item 
-double \hyperlink{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}{d\_\-output}
+\hyperlink{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{NeuronWeakPtr} \hyperlink{class_predict_behavior_a49a9daba3c9e798fc7815ac44b645dc0}{d\_\-neuron}
 \end{DoxyCompactItemize}
 
 
@@ -64,75 +56,69 @@ Definition at line 4 of file PredictBehavior.h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}{
+\hypertarget{class_predict_behavior_add88913e7919dac8083e422adfaf9121}{
 \index{PredictBehavior@{PredictBehavior}!PredictBehavior@{PredictBehavior}}
 \index{PredictBehavior@{PredictBehavior}!PredictBehavior@{PredictBehavior}}
 \subsubsection[{PredictBehavior}]{\setlength{\rightskip}{0pt plus 5cm}PredictBehavior::PredictBehavior (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf NeuronPtr}}]{neuronPtr}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_predict_behavior_af0a2b23a6b860f470a3d7d22ce604689}
+\label{class_predict_behavior_add88913e7919dac8083e422adfaf9121}
 
 
 Definition at line 11 of file PredictBehavior.cpp.
 
 
 \begin{DoxyCode}
-                                 :
-  d_output(0.0), d_inducedLocalField(0.0)
+                                                    :
+  d_neuron(neuronPtr)
 {
 }
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_predict_behavior_a69187d626108f96e50675729828daf07}{
-\index{PredictBehavior@{PredictBehavior}!getInducedLocalField@{getInducedLocalField}}
-\index{getInducedLocalField@{getInducedLocalField}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{getInducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::getInducedLocalField (
+\hypertarget{class_predict_behavior_ae13310624d8ea02168c15e86759758fc}{
+\index{PredictBehavior@{PredictBehavior}!getConIterator@{getConIterator}}
+\index{getConIterator@{getConIterator}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{getConIterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConIteratorPtr} PredictBehavior::getConIterator (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}
-\label{class_predict_behavior_a69187d626108f96e50675729828daf07}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_ae13310624d8ea02168c15e86759758fc}
 
 
-Definition at line 29 of file PredictBehavior.cpp.
+Definition at line 25 of file PredictBehavior.cpp.
 
 
 
-References d\_\-inducedLocalField.
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::predict().
 
 
 \begin{DoxyCode}
 {
-  return d_inducedLocalField;
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->getConIterator();
 }
 \end{DoxyCode}
-\hypertarget{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}{
-\index{PredictBehavior@{PredictBehavior}!getOutput@{getOutput}}
-\index{getOutput@{getOutput}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{getOutput}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::getOutput (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{class_predict_behavior_ac07dbe00c03788119df5df9f57ce11e5}
 
 
-Definition at line 23 of file PredictBehavior.cpp.
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{class_predict_behavior_ae13310624d8ea02168c15e86759758fc_icgraph}
+\end{center}
+\end{figure}
 
 
-
-References d\_\-output.
-
-
-\begin{DoxyCode}
-{
-  return d_output;
-}
-\end{DoxyCode}
 \hypertarget{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
 \index{PredictBehavior@{PredictBehavior}!predict@{predict}}
 \index{predict@{predict}!PredictBehavior@{PredictBehavior}}
@@ -146,54 +132,46 @@ References d\_\-output.
 
 Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
 
-\hypertarget{class_predict_behavior_a996642f65ce5f5933854039981b66b56}{
-\index{PredictBehavior@{PredictBehavior}!setActivationFunction@{setActivationFunction}}
-\index{setActivationFunction@{setActivationFunction}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{setActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setActivationFunction (
+\hypertarget{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}{
+\index{PredictBehavior@{PredictBehavior}!setInducedLocalField@{setInducedLocalField}}
+\index{setInducedLocalField@{setInducedLocalField}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{setInducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setInducedLocalField (
 \begin{DoxyParamCaption}
-\item[{{\bf ActivationFunctionPtr}}]{activationFunctionPtr, }
-\item[{{\bf PredictBehaviorPtr}}]{predictBehaviorPtr}
+\item[{double}]{inducedLocalField}
 \end{DoxyParamCaption}
-)}}
-\label{class_predict_behavior_a996642f65ce5f5933854039981b66b56}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}
 
 
-Definition at line 35 of file PredictBehavior.cpp.
+Definition at line 39 of file PredictBehavior.cpp.
 
 
 
-References d\_\-activationFunction.
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::predict().
 
 
 \begin{DoxyCode}
 {
-  d_activationFunction = activationFunctionPtr;
-  d_activationFunction.get()->setPredictBehavior(predictBehaviorPtr);
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setInducedLocalField(inducedLocalField);
 }
 \end{DoxyCode}
-\hypertarget{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}{
-\index{PredictBehavior@{PredictBehavior}!setConnections@{setConnections}}
-\index{setConnections@{setConnections}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{setConnections}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setConnections (
-\begin{DoxyParamCaption}
-\item[{{\bf ConContainerPtr}}]{conContainerPtr}
-\end{DoxyParamCaption}
-)}}
-\label{class_predict_behavior_a0acf1564a1d50771e357dae05986f7b8}
 
 
-Definition at line 44 of file PredictBehavior.cpp.
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819_icgraph}
+\end{center}
+\end{figure}
 
 
-
-References d\_\-nCons.
-
-
-\begin{DoxyCode}
-{
-  d_nCons = conContainerPtr;
-}
-\end{DoxyCode}
 \hypertarget{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{
 \index{PredictBehavior@{PredictBehavior}!setOutput@{setOutput}}
 \index{setOutput@{setOutput}!PredictBehavior@{PredictBehavior}}
@@ -201,22 +179,39 @@ References d\_\-nCons.
 \begin{DoxyParamCaption}
 \item[{double}]{output}
 \end{DoxyParamCaption}
-)}}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}
 
 
-Definition at line 17 of file PredictBehavior.cpp.
+Definition at line 32 of file PredictBehavior.cpp.
 
 
 
-References d\_\-output.
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::predict().
 
 
 \begin{DoxyCode}
 {
-  d_output = output;
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setOutput(output);
 }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{
 \index{PredictBehavior@{PredictBehavior}!show@{show}}
 \index{show@{show}!PredictBehavior@{PredictBehavior}}
@@ -230,60 +225,62 @@ References d\_\-output.
 
 Implemented in \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a96b123a5b657e46946c3ff98ea78f5de}{RBFbehavior}.
 
+\hypertarget{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64}{
+\index{PredictBehavior@{PredictBehavior}!useActivationFunctionf0@{useActivationFunctionf0}}
+\index{useActivationFunctionf0@{useActivationFunctionf0}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{useActivationFunctionf0}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::useActivationFunctionf0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64}
+
+
+Definition at line 17 of file PredictBehavior.cpp.
+
+
+
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::predict().
+
+
+\begin{DoxyCode}
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->useActivationFunctionf0();
+
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64_icgraph}
+\end{center}
+\end{figure}
+
+
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}{
-\index{PredictBehavior@{PredictBehavior}!d\_\-activationFunction@{d\_\-activationFunction}}
-\index{d\_\-activationFunction@{d\_\-activationFunction}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{d\_\-activationFunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ActivationFunctionPtr} {\bf PredictBehavior::d\_\-activationFunction}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_predict_behavior_a60e5bf9ad1d151741a359cdd88346eb5}
-
-
-Definition at line 9 of file PredictBehavior.h.
-
-
-
-Referenced by MLPbehavior::predict(), and setActivationFunction().
-
-\hypertarget{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}{
-\index{PredictBehavior@{PredictBehavior}!d\_\-inducedLocalField@{d\_\-inducedLocalField}}
-\index{d\_\-inducedLocalField@{d\_\-inducedLocalField}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{d\_\-inducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf PredictBehavior::d\_\-inducedLocalField}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_predict_behavior_afdf6139d11c2c1336dd9402262dc1b5e}
-
-
-Definition at line 8 of file PredictBehavior.h.
-
-
-
-Referenced by getInducedLocalField(), and MLPbehavior::predict().
-
-\hypertarget{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}{
-\index{PredictBehavior@{PredictBehavior}!d\_\-nCons@{d\_\-nCons}}
-\index{d\_\-nCons@{d\_\-nCons}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{d\_\-nCons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConContainerPtr} {\bf PredictBehavior::d\_\-nCons}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_predict_behavior_ae7d8e531771e06a855f4f1ade167f2f3}
+\hypertarget{class_predict_behavior_a49a9daba3c9e798fc7815ac44b645dc0}{
+\index{PredictBehavior@{PredictBehavior}!d\_\-neuron@{d\_\-neuron}}
+\index{d\_\-neuron@{d\_\-neuron}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{d\_\-neuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronWeakPtr} {\bf PredictBehavior::d\_\-neuron}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_a49a9daba3c9e798fc7815ac44b645dc0}
 
 
 Definition at line 7 of file PredictBehavior.h.
 
 
 
-Referenced by MLPbehavior::predict(), setConnections(), and MLPbehavior::show().
-
-\hypertarget{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}{
-\index{PredictBehavior@{PredictBehavior}!d\_\-output@{d\_\-output}}
-\index{d\_\-output@{d\_\-output}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{d\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf PredictBehavior::d\_\-output}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_predict_behavior_acae2a69a47c0af627fc17b9243148db2}
-
-
-Definition at line 10 of file PredictBehavior.h.
-
-
-
-Referenced by getOutput(), MLPbehavior::predict(), setOutput(), and MLPbehavior::show().
+Referenced by getConIterator(), setInducedLocalField(), setOutput(), and useActivationFunctionf0().
 
 
 

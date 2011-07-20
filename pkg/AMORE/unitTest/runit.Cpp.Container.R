@@ -29,7 +29,7 @@ test.Container.Cpp.show<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
 
 			int ids[]= {10, 20, 30};
@@ -75,7 +75,7 @@ test.Container.Cpp.push_back<- function() {
 	testCode <- "
 			// Data set up
 				
-				NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 				NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
@@ -116,7 +116,7 @@ test.Container.Cpp.size<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-				NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 				NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
 				NeuronPtr neuronPtr;
 				int ids[]= {10, 20, 30};

@@ -13,20 +13,22 @@ class \hyperlink{class_simple_neuron}{SimpleNeuron} -\/
 
 
 
-Inheritance diagram for SimpleNeuron:\nopagebreak
+Inheritance diagram for SimpleNeuron:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_simple_neuron__inherit__graph}
+\includegraphics[width=222pt]{class_simple_neuron__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for SimpleNeuron:\nopagebreak
+Collaboration diagram for SimpleNeuron:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_simple_neuron__coll__graph}
+\includegraphics[width=222pt]{class_simple_neuron__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -37,6 +39,10 @@ Collaboration diagram for SimpleNeuron:\nopagebreak
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+double \hyperlink{class_simple_neuron_ac7d28dffa06f0825c4b7d12e981ce9b1}{getInducedLocalField} ()
+\item 
+void \hyperlink{class_simple_neuron_a6f0a732980dc4860757b475539085324}{setInducedLocalField} (double inducedLocalField)
+\item 
 double \hyperlink{class_simple_neuron_ae5a325412827ad1f63e2a75f82023267}{getOutput} ()
 \item 
 void \hyperlink{class_simple_neuron_af59d76e80aea2bb224b817390f083bf9}{setOutput} (double output)
@@ -45,18 +51,21 @@ void \hyperlink{class_simple_neuron_af59d76e80aea2bb224b817390f083bf9}{setOutput
 \item 
 void \hyperlink{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{setId} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id)
 \item 
+\hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr} \hyperlink{class_simple_neuron_a53a18c4b7ff06ae1a05eadc7222c7197}{getConIterator} ()
+\item 
+void \hyperlink{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}{setConnections} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)
+\item 
+void \hyperlink{class_simple_neuron_a3ccde895829b70bd0f6e42903d469b5f}{setActivationFunction} (\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} activationFunctionPtr)
+\item 
 void \hyperlink{class_simple_neuron_a8f230b4566e85adda71c7e0633d8a20d}{setPredictBehavior} (\hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} predictBehaviorPtr)
+\item 
+double \hyperlink{class_simple_neuron_abf7f3ad2eac82aec49c1521d26521ff2}{useActivationFunctionf0} ()
 \item 
 void \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{predict} ()
 \item 
 void \hyperlink{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{show} ()
 \item 
 bool \hyperlink{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}{validate} ()
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}{d\_\-Id}
 \end{DoxyCompactItemize}
 
 
@@ -84,13 +93,40 @@ Definition at line 10 of file SimpleNeuron.cpp.
 
 \begin{DoxyCode}
                            :
-  d_Id(NA_INTEGER)
+  Neuron()
 {
 }
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_simple_neuron_a53a18c4b7ff06ae1a05eadc7222c7197}{
+\index{SimpleNeuron@{SimpleNeuron}!getConIterator@{getConIterator}}
+\index{getConIterator@{getConIterator}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{getConIterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConIteratorPtr} SimpleNeuron::getConIterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_a53a18c4b7ff06ae1a05eadc7222c7197}
+
+
+Implements \hyperlink{class_neuron_ac52554d6ba02e8eec2dd04a150169ec9}{Neuron}.
+
+
+
+Definition at line 52 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-nCons.
+
+
+\begin{DoxyCode}
+{
+  return d_nCons->createIterator();
+}
+\end{DoxyCode}
 \hypertarget{class_simple_neuron_a2ed8cdd977472afaecca2c6b27c6beef}{
 \index{SimpleNeuron@{SimpleNeuron}!getId@{getId}}
 \index{getId@{getId}!SimpleNeuron@{SimpleNeuron}}
@@ -106,11 +142,11 @@ Implements \hyperlink{class_neuron_a1a34edd39fba70be1d18219d5e9e1eea}{Neuron}.
 
 
 
-Definition at line 32 of file SimpleNeuron.cpp.
+Definition at line 40 of file SimpleNeuron.cpp.
 
 
 
-References d\_\-Id.
+References Neuron::d\_\-Id.
 
 
 
@@ -133,6 +169,33 @@ Here is the caller graph for this function:\nopagebreak
 \end{figure}
 
 
+\hypertarget{class_simple_neuron_ac7d28dffa06f0825c4b7d12e981ce9b1}{
+\index{SimpleNeuron@{SimpleNeuron}!getInducedLocalField@{getInducedLocalField}}
+\index{getInducedLocalField@{getInducedLocalField}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{getInducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}double SimpleNeuron::getInducedLocalField (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_ac7d28dffa06f0825c4b7d12e981ce9b1}
+
+
+Implements \hyperlink{class_neuron_a1b7eea569128502e3387f5b50751a119}{Neuron}.
+
+
+
+Definition at line 16 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-inducedLocalField.
+
+
+\begin{DoxyCode}
+{
+  return d_inducedLocalField;
+}
+\end{DoxyCode}
 \hypertarget{class_simple_neuron_ae5a325412827ad1f63e2a75f82023267}{
 \index{SimpleNeuron@{SimpleNeuron}!getOutput@{getOutput}}
 \index{getOutput@{getOutput}!SimpleNeuron@{SimpleNeuron}}
@@ -148,16 +211,16 @@ Implements \hyperlink{class_neuron_a43ac0c8461c610bb2b82017d597435e3}{Neuron}.
 
 
 
-Definition at line 17 of file SimpleNeuron.cpp.
+Definition at line 28 of file SimpleNeuron.cpp.
 
 
 
-References Neuron::d\_\-predictBehavior.
+References Neuron::d\_\-output.
 
 
 \begin{DoxyCode}
 {
-  return d_predictBehavior->getOutput();
+  return d_output;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{
@@ -175,7 +238,7 @@ Implements \hyperlink{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{Neuron}.
 
 
 
-Definition at line 48 of file SimpleNeuron.cpp.
+Definition at line 82 of file SimpleNeuron.cpp.
 
 
 
@@ -184,7 +247,61 @@ References Neuron::d\_\-predictBehavior.
 
 \begin{DoxyCode}
 {
-   d_predictBehavior->predict();
+  d_predictBehavior->predict();
+}
+\end{DoxyCode}
+\hypertarget{class_simple_neuron_a3ccde895829b70bd0f6e42903d469b5f}{
+\index{SimpleNeuron@{SimpleNeuron}!setActivationFunction@{setActivationFunction}}
+\index{setActivationFunction@{setActivationFunction}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setActivationFunction}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setActivationFunction (
+\begin{DoxyParamCaption}
+\item[{{\bf ActivationFunctionPtr}}]{activationFunctionPtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_a3ccde895829b70bd0f6e42903d469b5f}
+
+
+Implements \hyperlink{class_neuron_ab73922d2dba9f86ab192e2bb87c6a1aa}{Neuron}.
+
+
+
+Definition at line 64 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-activationFunction.
+
+
+\begin{DoxyCode}
+{
+  d_activationFunction = activationFunctionPtr;
+}
+\end{DoxyCode}
+\hypertarget{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}{
+\index{SimpleNeuron@{SimpleNeuron}!setConnections@{setConnections}}
+\index{setConnections@{setConnections}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setConnections}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setConnections (
+\begin{DoxyParamCaption}
+\item[{{\bf ConContainerPtr}}]{conContainerPtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}
+
+
+Implements \hyperlink{class_neuron_a71b7dba693e9afad7e9fcfc0cee9a801}{Neuron}.
+
+
+
+Definition at line 58 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-nCons.
+
+
+\begin{DoxyCode}
+{
+  d_nCons = conContainerPtr;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{
@@ -202,16 +319,43 @@ Implements \hyperlink{class_neuron_a65331c891ac34a344d0bb791073a8dd9}{Neuron}.
 
 
 
-Definition at line 40 of file SimpleNeuron.cpp.
+Definition at line 46 of file SimpleNeuron.cpp.
 
 
 
-References d\_\-Id.
+References Neuron::d\_\-Id.
 
 
 \begin{DoxyCode}
 {
-   d_Id=Id;
+  d_Id = Id;
+}
+\end{DoxyCode}
+\hypertarget{class_simple_neuron_a6f0a732980dc4860757b475539085324}{
+\index{SimpleNeuron@{SimpleNeuron}!setInducedLocalField@{setInducedLocalField}}
+\index{setInducedLocalField@{setInducedLocalField}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{setInducedLocalField}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setInducedLocalField (
+\begin{DoxyParamCaption}
+\item[{double}]{inducedLocalField}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_a6f0a732980dc4860757b475539085324}
+
+
+Implements \hyperlink{class_neuron_ab7244964f798eb9cace1cb916f5ef359}{Neuron}.
+
+
+
+Definition at line 22 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-inducedLocalField.
+
+
+\begin{DoxyCode}
+{
+  d_inducedLocalField = inducedLocalField;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_af59d76e80aea2bb224b817390f083bf9}{
@@ -229,16 +373,16 @@ Implements \hyperlink{class_neuron_aae94f78cfa7ed3ce4935f23a3a585f95}{Neuron}.
 
 
 
-Definition at line 24 of file SimpleNeuron.cpp.
+Definition at line 34 of file SimpleNeuron.cpp.
 
 
 
-References Neuron::d\_\-predictBehavior.
+References Neuron::d\_\-output.
 
 
 \begin{DoxyCode}
 {
-  d_predictBehavior->setOutput(output);
+  d_output = output;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_a8f230b4566e85adda71c7e0633d8a20d}{
@@ -256,7 +400,7 @@ Implements \hyperlink{class_neuron_af21848d0ef33bec5587e4c2702c83e3f}{Neuron}.
 
 
 
-Definition at line 55 of file SimpleNeuron.cpp.
+Definition at line 70 of file SimpleNeuron.cpp.
 
 
 
@@ -265,7 +409,7 @@ References Neuron::d\_\-predictBehavior.
 
 \begin{DoxyCode}
 {
-   d_predictBehavior=predictBehaviorPtr;
+  d_predictBehavior = predictBehaviorPtr;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{
@@ -283,11 +427,11 @@ Implements \hyperlink{class_neuron_ae18a86f9b67c63a6fcb28c813b47a38d}{Neuron}.
 
 
 
-Definition at line 62 of file SimpleNeuron.cpp.
+Definition at line 88 of file SimpleNeuron.cpp.
 
 
 
-References Neuron::d\_\-predictBehavior, and getId().
+References Neuron::d\_\-nCons, Neuron::d\_\-output, Neuron::d\_\-predictBehavior, and getId().
 
 
 \begin{DoxyCode}
@@ -304,6 +448,17 @@ References Neuron::d\_\-predictBehavior, and getId().
     }
   Rprintf("\n------------------------\n");
   d_predictBehavior->show();
+  Rprintf("\n output: %lf", d_output);
+  Rprintf("\n------------------------\n");
+  if (d_nCons->size() == 0)
+    {
+      Rprintf("\n No connections defined");
+    }
+  else
+    {
+      d_nCons->show();
+    }
+  Rprintf("\n------------------------\n");
 
 }
 \end{DoxyCode}
@@ -318,6 +473,33 @@ Here is the call graph for this function:\nopagebreak
 \end{figure}
 
 
+\hypertarget{class_simple_neuron_abf7f3ad2eac82aec49c1521d26521ff2}{
+\index{SimpleNeuron@{SimpleNeuron}!useActivationFunctionf0@{useActivationFunctionf0}}
+\index{useActivationFunctionf0@{useActivationFunctionf0}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{useActivationFunctionf0}]{\setlength{\rightskip}{0pt plus 5cm}double SimpleNeuron::useActivationFunctionf0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_abf7f3ad2eac82aec49c1521d26521ff2}
+
+
+Implements \hyperlink{class_neuron_a78c90ab1f5d18b2d7cb8f366391b7821}{Neuron}.
+
+
+
+Definition at line 76 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-activationFunction.
+
+
+\begin{DoxyCode}
+{
+  return d_activationFunction->f0();
+}
+\end{DoxyCode}
 \hypertarget{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}{
 \index{SimpleNeuron@{SimpleNeuron}!validate@{validate}}
 \index{validate@{validate}!SimpleNeuron@{SimpleNeuron}}
@@ -333,7 +515,7 @@ Implements \hyperlink{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{Neuron}.
 
 
 
-Definition at line 80 of file SimpleNeuron.cpp.
+Definition at line 117 of file SimpleNeuron.cpp.
 
 
 
@@ -345,7 +527,7 @@ References getId().
   BEGIN_RCPP
   if (getId() == NA_INTEGER ) throw std::range_error("[C++ SimpleNeuron::validate
       ]: Error, Id is NA.");
- // nCons.validate();
+  // nCons.validate();
   return (TRUE);
 END_RCPP}
 \end{DoxyCode}
@@ -359,22 +541,6 @@ Here is the call graph for this function:\nopagebreak
 \end{center}
 \end{figure}
 
-
-
-
-\subsection{Member Data Documentation}
-\hypertarget{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}{
-\index{SimpleNeuron@{SimpleNeuron}!d\_\-Id@{d\_\-Id}}
-\index{d\_\-Id@{d\_\-Id}!SimpleNeuron@{SimpleNeuron}}
-\subsubsection[{d\_\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf SimpleNeuron::d\_\-Id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{class_simple_neuron_ad87b0b67c7f8bfe5377313c1e3fac60c}
-
-
-Definition at line 8 of file SimpleNeuron.h.
-
-
-
-Referenced by getId(), and setId().
 
 
 

@@ -8,41 +8,36 @@
 #include "dia/PredictBehavior.h"
 //=========================================================================================================
 
-PredictBehavior::PredictBehavior() :
-  d_output(0.0), d_inducedLocalField(0.0)
+PredictBehavior::PredictBehavior(NeuronPtr neuronPtr) :
+  d_neuron(neuronPtr)
 {
+}
+
+double
+PredictBehavior::useActivationFunctionf0()
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->useActivationFunctionf0();
+
+}
+
+ConIteratorPtr
+PredictBehavior::getConIterator()
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->getConIterator();
 }
 
 void
 PredictBehavior::setOutput(double output)
 {
-  d_output = output;
-}
-
-double
-PredictBehavior::getOutput()
-{
-  return d_output;
-}
-
-double
-PredictBehavior::getInducedLocalField()
-{
-  return d_inducedLocalField;
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setOutput(output);
 }
 
 void
-PredictBehavior::setActivationFunction(
-    ActivationFunctionPtr activationFunctionPtr,
-    PredictBehaviorPtr predictBehaviorPtr)
+PredictBehavior::setInducedLocalField(double inducedLocalField)
 {
-  d_activationFunction = activationFunctionPtr;
-  d_activationFunction.get()->setPredictBehavior(predictBehaviorPtr);
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setInducedLocalField(inducedLocalField);
 }
-
-void
-PredictBehavior::setConnections(ConContainerPtr conContainerPtr)
-{
-  d_nCons = conContainerPtr;
-}
-

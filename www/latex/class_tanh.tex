@@ -18,7 +18,7 @@ Inheritance diagram for Tanh:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_tanh__inherit__graph}
+\includegraphics[width=212pt]{class_tanh__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,11 +28,13 @@ Collaboration diagram for Tanh:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{class_tanh__coll__graph}
+\includegraphics[width=212pt]{class_tanh__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tanh_aba44ec3bc33fe028a0f1fab7d4802e1e}{Tanh} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
 \item 
 double \hyperlink{class_tanh_a7ba7f087622d22bb6cdd1c17380a2baa}{f0} ()
 \item 
@@ -45,6 +47,28 @@ class \hyperlink{class_tanh}{Tanh} -\/
 
 Definition at line 5 of file Tanh.h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tanh_aba44ec3bc33fe028a0f1fab7d4802e1e}{
+\index{Tanh@{Tanh}!Tanh@{Tanh}}
+\index{Tanh@{Tanh}!Tanh@{Tanh}}
+\subsubsection[{Tanh}]{\setlength{\rightskip}{0pt plus 5cm}Tanh::Tanh (
+\begin{DoxyParamCaption}
+\item[{{\bf NeuronPtr}}]{neuronPtr}
+\end{DoxyParamCaption}
+)}}
+\label{class_tanh_aba44ec3bc33fe028a0f1fab7d4802e1e}
+
+
+Definition at line 12 of file Tanh.cpp.
+
+
+\begin{DoxyCode}
+                              : ActivationFunction(neuronPtr) {
+
+}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -63,7 +87,7 @@ Implements \hyperlink{class_activation_function_a801deb6a372121fe110de1f79f93f1c
 
 
 
-Definition at line 13 of file Tanh.cpp.
+Definition at line 16 of file Tanh.cpp.
 
 
 
@@ -78,8 +102,7 @@ References ActivationFunction::getInducedLocalField().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -103,7 +126,7 @@ Implements \hyperlink{class_activation_function_aa5a0a713bc1080ab5d5ae3632a08b08
 
 
 
-Definition at line 18 of file Tanh.cpp.
+Definition at line 21 of file Tanh.cpp.
 
 
 
@@ -119,8 +142,7 @@ References ActivationFunction::getInducedLocalField().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

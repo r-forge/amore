@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for NeuralFactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neural_factory__inherit__graph.svg" width="500" height="435" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_neural_factory__inherit__graph.svg" width="2726" height="502" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -101,12 +101,10 @@ Inheritance diagram for NeuralFactory:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a2e156aff271f0c6c134a8bad7d164f73">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a0d11171bb9e5d09544e8d58a9324b923">makeCon</a> (<a class="el" href="class_neuron.html">Neuron</a> &amp;neuron, double weight)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a4fa5f4f57a2551c95481146b1a0c83d7">makeConContainer</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a2a2c7aa8f4d073126f468f676ea68272">makeIdentityActivationFunction</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a7551643129b608ea6601cd18f2bfb011">makeTanhActivationFunction</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a1afe8d8d674aad726337295f46b75810">makePredictBehavior</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a678ec16456e5772a2c188c475a78c588">makeActivationFunction</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a3d49ef5f05c82cc2c614e884ed3a27d5">makePredictBehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#a7921519c79b2fb0a5868661fe934f694">makeNeuron</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_factory.html#ab8fe3634f3715f99616fe9498a29badb">makeNeuronContainer</a> ()=0</td></tr>
 </table>
@@ -115,22 +113,22 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neural_factory_8h_source.html#l00004">4</a> of file <a class="el" href="_neural_factory_8h_source.html">NeuralFactory.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2e156aff271f0c6c134a8bad7d164f73"></a><!-- doxytag: member="NeuralFactory::makeCon" ref="a2e156aff271f0c6c134a8bad7d164f73" args="(Neuron &amp;neuron)=0" -->
+<a class="anchor" id="a678ec16456e5772a2c188c475a78c588"></a><!-- doxytag: member="NeuralFactory::makeActivationFunction" ref="a678ec16456e5772a2c188c475a78c588" args="(NeuronPtr neuronPtr)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> NeuralFactory::makeCon </td>
+          <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> NeuralFactory::makeActivationFunction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_neuron.html">Neuron</a> &amp;&#160;</td>
-          <td class="paramname"><em>neuron</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td>
+          <td class="paramname"><em>neuronPtr</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_m_l_pfactory.html#a3df7c74068372a88ec529d8844938d88">MLPfactory</a>, and <a class="el" href="class_r_b_ffactory.html#a2e83beed580f5e85ccec5fcad2e87345">RBFfactory</a>.</p>
+<p>Implemented in <a class="el" href="class_arc_tan_factory.html#ae07c1b383c55ee42732d97fb2215d7fb">ArcTanFactory</a>, <a class="el" href="class_cosine_factory.html#a7db770cbd419032850a7e4f09b0836cc">CosineFactory</a>, <a class="el" href="class_elliot_factory.html#aedc7054f162dea077b2de6beaa7d1577">ElliotFactory</a>, <a class="el" href="class_exponential_factory.html#a68819f57ee476e87a2aa23827fc52578">ExponentialFactory</a>, <a class="el" href="class_gauss_factory.html#a0a937a783740366b0c07264f1d707ea7">GaussFactory</a>, <a class="el" href="class_identity_factory.html#a13a9bb3996539b46c4d9eee7c2024ea1">IdentityFactory</a>, <a class="el" href="class_logistic_factory.html#a43d3c7497e5f4058f514f86cfd25d9f8">LogisticFactory</a>, <a class="el" href="class_m_l_pfactory.html#a92109ea285be7dd847d359a1ade9064a">MLPfactory</a>, <a class="el" href="class_radial_basis_factory.html#ae68ec682e8f04e99e5a1560e347b7735">RadialBasisFactory</a>, <a class="el" href="class_r_b_ffactory.html#a5620811041643684e164fb19bd03258b">RBFfactory</a>, <a class="el" href="class_reciprocal_factory.html#a4258da65a19ff656c79bac5f2699b8d8">ReciprocalFactory</a>, <a class="el" href="class_sine_factory.html#aca81bca10dbcac538f58209270ebd26d">SineFactory</a>, <a class="el" href="class_square_factory.html#a1fe378c014b3713865f88c49e96ba938">SquareFactory</a>, <a class="el" href="class_tanh_factory.html#a476450ea27b571e3548377afd1625372">TanhFactory</a>, and <a class="el" href="class_threshold_factory.html#a6be00aaf355c02f73e1f818d3de8c548">ThresholdFactory</a>.</p>
 
 </div>
 </div>
@@ -181,24 +179,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2a2c7aa8f4d073126f468f676ea68272"></a><!-- doxytag: member="NeuralFactory::makeIdentityActivationFunction" ref="a2a2c7aa8f4d073126f468f676ea68272" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> NeuralFactory::makeIdentityActivationFunction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_m_l_pfactory.html#a2e0323210a1a086a8a646b060d4db1b3">MLPfactory</a>, and <a class="el" href="class_r_b_ffactory.html#a49489b75c9019c4eb08b04b333a476a0">RBFfactory</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a7921519c79b2fb0a5868661fe934f694"></a><!-- doxytag: member="NeuralFactory::makeNeuron" ref="a7921519c79b2fb0a5868661fe934f694" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -235,39 +215,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1afe8d8d674aad726337295f46b75810"></a><!-- doxytag: member="NeuralFactory::makePredictBehavior" ref="a1afe8d8d674aad726337295f46b75810" args="()=0" -->
+<a class="anchor" id="a3d49ef5f05c82cc2c614e884ed3a27d5"></a><!-- doxytag: member="NeuralFactory::makePredictBehavior" ref="a3d49ef5f05c82cc2c614e884ed3a27d5" args="(NeuronPtr neuronPtr)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> NeuralFactory::makePredictBehavior </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td>
+          <td class="paramname"><em>neuronPtr</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_m_l_pfactory.html#aba55f8dff50e23de43170ccbfffa4f89">MLPfactory</a>, and <a class="el" href="class_r_b_ffactory.html#a37c1e41af6f362767be462afcd417726">RBFfactory</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7551643129b608ea6601cd18f2bfb011"></a><!-- doxytag: member="NeuralFactory::makeTanhActivationFunction" ref="a7551643129b608ea6601cd18f2bfb011" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> NeuralFactory::makeTanhActivationFunction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_m_l_pfactory.html#a8744ff60b65b6b9d37f25d9f3fdb3cfd">MLPfactory</a>, and <a class="el" href="class_r_b_ffactory.html#a68c9c5fda0aee4350cf9e2ce3401145b">RBFfactory</a>.</p>
+<p>Implemented in <a class="el" href="class_m_l_pfactory.html#a9e9e9bb4390df09c78a24c4ff79cdab6">MLPfactory</a>.</p>
 
 </div>
 </div>
@@ -279,7 +242,7 @@ Public Member Functions</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neural_factory.html">NeuralFactory</a>      </li>
-      <li class="footer">Generated on Mon Jul 18 2011 17:41:24 for AMORE++ by&#160;
+      <li class="footer">Generated on Wed Jul 20 2011 04:54:24 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

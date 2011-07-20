@@ -1,4 +1,18 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="25,155,207,181"/>
-<area shape="rect" id="node5" href="$_m_l_pfactory_8cpp.html" title="pkg/AMORE/src/MLPfactory.cpp" alt="" coords="80,80,299,107"/>
+<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="231,229,413,256"/>
+<area shape="rect" id="node5" href="$_tanh_factory_8h.html" title="pkg/AMORE/src/dia/TanhFactory.h" alt="" coords="35,80,263,107"/>
+<area shape="rect" id="node8" href="$_tanh_factory_8cpp.html" title="pkg/AMORE/src/TanhFactory.cpp" alt="" coords="137,155,359,181"/>
+<area shape="rect" id="node11" href="$_identity_factory_8h.html" title="pkg/AMORE/src/dia/IdentityFactory.h" alt="" coords="339,80,585,107"/>
+<area shape="rect" id="node14" href="$_identity_factory_8cpp.html" title="pkg/AMORE/src/IdentityFactory.cpp" alt="" coords="435,155,676,181"/>
+<area shape="rect" id="node17" href="$_m_l_pfactory_8cpp.html" title="pkg/AMORE/src/MLPfactory.cpp" alt="" coords="701,155,920,181"/>
+<area shape="rect" id="node22" href="$_arc_tan_factory_8h.html" title="pkg/AMORE/src/dia/ArcTanFactory.h" alt="" coords="713,80,953,107"/>
+<area shape="rect" id="node24" href="$_cosine_factory_8h.html" title="pkg/AMORE/src/dia/CosineFactory.h" alt="" coords="979,80,1221,107"/>
+<area shape="rect" id="node26" href="$_elliot_factory_8h.html" title="pkg/AMORE/src/dia/ElliotFactory.h" alt="" coords="1246,80,1476,107"/>
+<area shape="rect" id="node28" href="$_exponential_factory_8h.html" title="pkg/AMORE/src/dia/ExponentialFactory.h" alt="" coords="1501,80,1773,107"/>
+<area shape="rect" id="node30" href="$_gauss_factory_8h.html" title="pkg/AMORE/src/dia/GaussFactory.h" alt="" coords="1798,80,2036,107"/>
+<area shape="rect" id="node32" href="$_logistic_factory_8h.html" title="pkg/AMORE/src/dia/LogisticFactory.h" alt="" coords="2061,80,2309,107"/>
+<area shape="rect" id="node34" href="$_reciprocal_factory_8h.html" title="pkg/AMORE/src/dia/ReciprocalFactory.h" alt="" coords="2333,80,2597,107"/>
+<area shape="rect" id="node36" href="$_sine_factory_8h.html" title="pkg/AMORE/src/dia/SineFactory.h" alt="" coords="2621,80,2848,107"/>
+<area shape="rect" id="node38" href="$_square_factory_8h.html" title="pkg/AMORE/src/dia/SquareFactory.h" alt="" coords="2872,80,3115,107"/>
+<area shape="rect" id="node40" href="$_threshold_factory_8h.html" title="pkg/AMORE/src/dia/ThresholdFactory.h" alt="" coords="3139,80,3397,107"/>
 </map>

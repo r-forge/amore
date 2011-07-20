@@ -1,11 +1,14 @@
 
+
+
+
 ###############################################################################
  test.Neuron.Cpp.Constructor_EmptyArgumentList <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		//Test
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 
 			neuronPtr->show();	
@@ -36,7 +39,7 @@ test.Neuron.Cpp.getId <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 		// Test
 			std::vector<Handler> result;
@@ -59,7 +62,7 @@ test.Neuron.Cpp.setId <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 		// Test
 			std::vector<Handler> result;
@@ -86,7 +89,7 @@ test.Neuron.Cpp.Validate_IdIsNa <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			//Test
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->validate();			
 			"
@@ -103,7 +106,7 @@ test.Neuron.Cpp.Validate_EmptyCon <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			//Test
-			NeuralFactoryPtr neuralFactoryPtr( new MLPfactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
 			neuronPtr->setId(12);
 			neuronPtr->validate();			// An empty con does not throw exception
