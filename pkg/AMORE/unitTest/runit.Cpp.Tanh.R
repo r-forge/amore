@@ -10,7 +10,7 @@ test.Tanh.Cpp.f0 <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new TanhFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeActivationFunction(neuronPtr) );
 			neuronPtr->setActivationFunction(activationFunctionPtr);
 			double result  = activationFunctionPtr->f0();
@@ -30,7 +30,7 @@ test.Tanh.Cpp.f1 <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new TanhFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(2) );
 			ActivationFunctionPtr activationFunctionPtr( neuralFactoryPtr->makeActivationFunction(neuronPtr) );
 			neuronPtr->setActivationFunction(activationFunctionPtr);
 			double result  = activationFunctionPtr->f1();

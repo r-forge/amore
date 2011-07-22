@@ -34,7 +34,7 @@ Collaboration diagram for SimpleNeuron:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}{SimpleNeuron} ()
+\hyperlink{class_simple_neuron_adb0becb30ddc511aba5cc7cadea9d981}{SimpleNeuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -53,7 +53,7 @@ void \hyperlink{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{setId} (\
 \item 
 \hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr} \hyperlink{class_simple_neuron_a53a18c4b7ff06ae1a05eadc7222c7197}{getConIterator} ()
 \item 
-void \hyperlink{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}{setConnections} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)
+void \hyperlink{class_simple_neuron_a07d0ec8afcfde17098277e1ff2a5a61d}{addCon} (\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} conPtr)
 \item 
 void \hyperlink{class_simple_neuron_a3ccde895829b70bd0f6e42903d469b5f}{setActivationFunction} (\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} activationFunctionPtr)
 \item 
@@ -77,29 +77,56 @@ Definition at line 5 of file SimpleNeuron.h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}{
+\hypertarget{class_simple_neuron_adb0becb30ddc511aba5cc7cadea9d981}{
 \index{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}}
 \index{SimpleNeuron@{SimpleNeuron}!SimpleNeuron@{SimpleNeuron}}
 \subsubsection[{SimpleNeuron}]{\setlength{\rightskip}{0pt plus 5cm}SimpleNeuron::SimpleNeuron (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf NeuralFactory} \&}]{neuralFactory}
 \end{DoxyParamCaption}
 )}}
-\label{class_simple_neuron_a38c2d75287caf6374c1252c35f73dce2}
+\label{class_simple_neuron_adb0becb30ddc511aba5cc7cadea9d981}
 
 
 Definition at line 10 of file SimpleNeuron.cpp.
 
 
 \begin{DoxyCode}
-                           :
-  Neuron()
+                                                       :
+  Neuron(neuralFactory)
 {
 }
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_simple_neuron_a07d0ec8afcfde17098277e1ff2a5a61d}{
+\index{SimpleNeuron@{SimpleNeuron}!addCon@{addCon}}
+\index{addCon@{addCon}!SimpleNeuron@{SimpleNeuron}}
+\subsubsection[{addCon}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::addCon (
+\begin{DoxyParamCaption}
+\item[{{\bf ConPtr}}]{conPtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_neuron_a07d0ec8afcfde17098277e1ff2a5a61d}
+
+
+Implements \hyperlink{class_neuron_a9b991901b252c50c76b5192e2d135c68}{Neuron}.
+
+
+
+Definition at line 59 of file SimpleNeuron.cpp.
+
+
+
+References Neuron::d\_\-nCons.
+
+
+\begin{DoxyCode}
+{
+  d_nCons->push_back( conPtr) ;
+}
+\end{DoxyCode}
 \hypertarget{class_simple_neuron_a53a18c4b7ff06ae1a05eadc7222c7197}{
 \index{SimpleNeuron@{SimpleNeuron}!getConIterator@{getConIterator}}
 \index{getConIterator@{getConIterator}!SimpleNeuron@{SimpleNeuron}}
@@ -115,7 +142,7 @@ Implements \hyperlink{class_neuron_ac52554d6ba02e8eec2dd04a150169ec9}{Neuron}.
 
 
 
-Definition at line 52 of file SimpleNeuron.cpp.
+Definition at line 53 of file SimpleNeuron.cpp.
 
 
 
@@ -142,7 +169,7 @@ Implements \hyperlink{class_neuron_a1a34edd39fba70be1d18219d5e9e1eea}{Neuron}.
 
 
 
-Definition at line 40 of file SimpleNeuron.cpp.
+Definition at line 41 of file SimpleNeuron.cpp.
 
 
 
@@ -184,7 +211,7 @@ Implements \hyperlink{class_neuron_a1b7eea569128502e3387f5b50751a119}{Neuron}.
 
 
 
-Definition at line 16 of file SimpleNeuron.cpp.
+Definition at line 17 of file SimpleNeuron.cpp.
 
 
 
@@ -211,7 +238,7 @@ Implements \hyperlink{class_neuron_a43ac0c8461c610bb2b82017d597435e3}{Neuron}.
 
 
 
-Definition at line 28 of file SimpleNeuron.cpp.
+Definition at line 29 of file SimpleNeuron.cpp.
 
 
 
@@ -238,7 +265,7 @@ Implements \hyperlink{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{Neuron}.
 
 
 
-Definition at line 82 of file SimpleNeuron.cpp.
+Definition at line 83 of file SimpleNeuron.cpp.
 
 
 
@@ -265,7 +292,7 @@ Implements \hyperlink{class_neuron_ab73922d2dba9f86ab192e2bb87c6a1aa}{Neuron}.
 
 
 
-Definition at line 64 of file SimpleNeuron.cpp.
+Definition at line 65 of file SimpleNeuron.cpp.
 
 
 
@@ -275,33 +302,6 @@ References Neuron::d\_\-activationFunction.
 \begin{DoxyCode}
 {
   d_activationFunction = activationFunctionPtr;
-}
-\end{DoxyCode}
-\hypertarget{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}{
-\index{SimpleNeuron@{SimpleNeuron}!setConnections@{setConnections}}
-\index{setConnections@{setConnections}!SimpleNeuron@{SimpleNeuron}}
-\subsubsection[{setConnections}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNeuron::setConnections (
-\begin{DoxyParamCaption}
-\item[{{\bf ConContainerPtr}}]{conContainerPtr}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}
-
-
-Implements \hyperlink{class_neuron_a71b7dba693e9afad7e9fcfc0cee9a801}{Neuron}.
-
-
-
-Definition at line 58 of file SimpleNeuron.cpp.
-
-
-
-References Neuron::d\_\-nCons.
-
-
-\begin{DoxyCode}
-{
-  d_nCons = conContainerPtr;
 }
 \end{DoxyCode}
 \hypertarget{class_simple_neuron_a7330de5a6a79925b950f78a65c529297}{
@@ -319,7 +319,7 @@ Implements \hyperlink{class_neuron_a65331c891ac34a344d0bb791073a8dd9}{Neuron}.
 
 
 
-Definition at line 46 of file SimpleNeuron.cpp.
+Definition at line 47 of file SimpleNeuron.cpp.
 
 
 
@@ -346,7 +346,7 @@ Implements \hyperlink{class_neuron_ab7244964f798eb9cace1cb916f5ef359}{Neuron}.
 
 
 
-Definition at line 22 of file SimpleNeuron.cpp.
+Definition at line 23 of file SimpleNeuron.cpp.
 
 
 
@@ -373,7 +373,7 @@ Implements \hyperlink{class_neuron_aae94f78cfa7ed3ce4935f23a3a585f95}{Neuron}.
 
 
 
-Definition at line 34 of file SimpleNeuron.cpp.
+Definition at line 35 of file SimpleNeuron.cpp.
 
 
 
@@ -400,7 +400,7 @@ Implements \hyperlink{class_neuron_af21848d0ef33bec5587e4c2702c83e3f}{Neuron}.
 
 
 
-Definition at line 70 of file SimpleNeuron.cpp.
+Definition at line 71 of file SimpleNeuron.cpp.
 
 
 
@@ -427,7 +427,7 @@ Implements \hyperlink{class_neuron_ae18a86f9b67c63a6fcb28c813b47a38d}{Neuron}.
 
 
 
-Definition at line 88 of file SimpleNeuron.cpp.
+Definition at line 89 of file SimpleNeuron.cpp.
 
 
 
@@ -488,7 +488,7 @@ Implements \hyperlink{class_neuron_a78c90ab1f5d18b2d7cb8f366391b7821}{Neuron}.
 
 
 
-Definition at line 76 of file SimpleNeuron.cpp.
+Definition at line 77 of file SimpleNeuron.cpp.
 
 
 
@@ -515,7 +515,7 @@ Implements \hyperlink{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{Neuron}.
 
 
 
-Definition at line 117 of file SimpleNeuron.cpp.
+Definition at line 118 of file SimpleNeuron.cpp.
 
 
 

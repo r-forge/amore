@@ -13,20 +13,22 @@ class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/
 
 
 
-Inheritance diagram for SimpleNeuralCreator:\nopagebreak
+Inheritance diagram for SimpleNeuralCreator:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=210pt]{class_simple_neural_creator__inherit__graph}
+\includegraphics[width=316pt]{class_simple_neural_creator__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for SimpleNeuralCreator:\nopagebreak
+Collaboration diagram for SimpleNeuralCreator:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=210pt]{class_simple_neural_creator__coll__graph}
+\includegraphics[width=316pt]{class_simple_neural_creator__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -34,7 +36,7 @@ Collaboration diagram for SimpleNeuralCreator:\nopagebreak
 \item 
 \hyperlink{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{SimpleNeuralCreator} ()
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}{createNeuron} (\hyperlink{_a_m_o_r_e_8h_ac4ad88962955479bfc426da9ce4571d2}{NeuralFactoryPtr} neuralFactoryPtr)
+\hyperlink{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}{NeuralNetworkPtr} \hyperlink{class_simple_neural_creator_a7b61e2ea3637d65d223873aca4aabff9}{createFeedForwardFullyConnectedNetwork} (\hyperlink{_a_m_o_r_e_8h_ac4ad88962955479bfc426da9ce4571d2}{NeuralFactoryPtr} neuralFactoryPtr)
 \end{DoxyCompactItemize}
 
 
@@ -67,18 +69,18 @@ Definition at line 15 of file SimpleNeuralCreator.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}{
-\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createNeuron@{createNeuron}}
-\index{createNeuron@{createNeuron}!SimpleNeuralCreator@{SimpleNeuralCreator}}
-\subsubsection[{createNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} SimpleNeuralCreator::createNeuron (
+\hypertarget{class_simple_neural_creator_a7b61e2ea3637d65d223873aca4aabff9}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createFeedForwardFullyConnectedNetwork@{createFeedForwardFullyConnectedNetwork}}
+\index{createFeedForwardFullyConnectedNetwork@{createFeedForwardFullyConnectedNetwork}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{createFeedForwardFullyConnectedNetwork}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuralNetworkPtr} SimpleNeuralCreator::createFeedForwardFullyConnectedNetwork (
 \begin{DoxyParamCaption}
 \item[{{\bf NeuralFactoryPtr}}]{neuralFactoryPtr}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_simple_neural_creator_a9644ba2572c29a119d54c071611a52b2}
+\label{class_simple_neural_creator_a7b61e2ea3637d65d223873aca4aabff9}
 
 
-Implements \hyperlink{class_neural_creator_abfff3986cb184e493107692eab3dc678}{NeuralCreator}.
+Implements \hyperlink{class_neural_creator_adc9b52a5271eed92d0f318b5da100515}{NeuralCreator}.
 
 
 
@@ -87,7 +89,8 @@ Definition at line 22 of file SimpleNeuralCreator.cpp.
 
 \begin{DoxyCode}
 {
-  return neuralFactoryPtr->makeNeuron();
+  NeuralNetworkPtr n;
+  return n ; // change this, does'n make sense
 }
 \end{DoxyCode}
 

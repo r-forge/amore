@@ -25,6 +25,8 @@
 {\ttfamily \#include \char`\"{}dia/MLPfactory.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/TanhFactory.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/IdentityFactory.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}dia/NeuralNetwork.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}dia/SimpleNetwork.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/NeuralCreator.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/SimpleNeuralCreator.h\char`\"{}}\par
 {\ttfamily \#include \char`\"{}dia/Container.h\char`\"{}}\par
@@ -42,6 +44,8 @@
 {\ttfamily \#include \char`\"{}MLPfactory.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}TanhFactory.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}IdentityFactory.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}NeuralNetwork.cpp\char`\"{}}\par
+{\ttfamily \#include \char`\"{}SimpleNetwork.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}SimpleNeuralCreator.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Container.cpp\char`\"{}}\par
 {\ttfamily \#include \char`\"{}Iterator.cpp\char`\"{}}\par
@@ -83,9 +87,13 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr}
 \item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_neural_network}{NeuralNetwork} $>$ \hyperlink{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}{NeuralNetworkPtr}
+\item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_iterator}{Iterator}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}{NeuronIteratorPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_iterator}{Iterator}$<$ \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_ab6f0bcd94ae7a31c0c964d65e0db17cf}{LayerPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_container}{Container}$<$ \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} $>$ $>$ \hyperlink{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}{NeuronContainerPtr}
 \item 
@@ -107,7 +115,7 @@ typedef boost::weak\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{_a
 \label{_a_m_o_r_e_8h_a85d9ac269eba33293361f4ed7c2a697b}
 
 
-Definition at line 66 of file AMORE.h.
+Definition at line 68 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_adead3ef83e9181db3b1d4d7d098a18c0}{
 \index{AMORE.h@{AMORE.h}!size\_\-type@{size\_\-type}}
@@ -116,7 +124,7 @@ Definition at line 66 of file AMORE.h.
 \label{_a_m_o_r_e_8h_adead3ef83e9181db3b1d4d7d098a18c0}
 
 
-Definition at line 69 of file AMORE.h.
+Definition at line 71 of file AMORE.h.
 
 
 
@@ -128,7 +136,7 @@ Definition at line 69 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}
 
 
-Definition at line 80 of file AMORE.h.
+Definition at line 83 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_afba49a905fa91bc642dad378f7aa1b08}{
 \index{AMORE.h@{AMORE.h}!ActivationFunctionRef@{ActivationFunctionRef}}
@@ -137,7 +145,7 @@ Definition at line 80 of file AMORE.h.
 \label{_a_m_o_r_e_8h_afba49a905fa91bc642dad378f7aa1b08}
 
 
-Definition at line 75 of file AMORE.h.
+Definition at line 77 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{
 \index{AMORE.h@{AMORE.h}!ConContainerPtr@{ConContainerPtr}}
@@ -146,7 +154,7 @@ Definition at line 75 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}
 
 
-Definition at line 89 of file AMORE.h.
+Definition at line 95 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{
 \index{AMORE.h@{AMORE.h}!ConIteratorPtr@{ConIteratorPtr}}
@@ -155,7 +163,7 @@ Definition at line 89 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}
 
 
-Definition at line 86 of file AMORE.h.
+Definition at line 91 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{
 \index{AMORE.h@{AMORE.h}!ConPtr@{ConPtr}}
@@ -164,7 +172,7 @@ Definition at line 86 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}
 
 
-Definition at line 83 of file AMORE.h.
+Definition at line 86 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{
 \index{AMORE.h@{AMORE.h}!Handler@{Handler}}
@@ -173,7 +181,16 @@ Definition at line 83 of file AMORE.h.
 \label{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}
 
 
-Definition at line 72 of file AMORE.h.
+Definition at line 74 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_ab6f0bcd94ae7a31c0c964d65e0db17cf}{
+\index{AMORE.h@{AMORE.h}!LayerPtr@{LayerPtr}}
+\index{LayerPtr@{LayerPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{LayerPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<$ {\bf Container}$<${\bf NeuronPtr}$>$ $>$ {\bf LayerPtr}}}
+\label{_a_m_o_r_e_8h_ab6f0bcd94ae7a31c0c964d65e0db17cf}
+
+
+Definition at line 93 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_aefebabe3353f684b7708712480c15699}{
 \index{AMORE.h@{AMORE.h}!NeuralCreatorPtr@{NeuralCreatorPtr}}
@@ -182,7 +199,7 @@ Definition at line 72 of file AMORE.h.
 \label{_a_m_o_r_e_8h_aefebabe3353f684b7708712480c15699}
 
 
-Definition at line 92 of file AMORE.h.
+Definition at line 98 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ac4ad88962955479bfc426da9ce4571d2}{
 \index{AMORE.h@{AMORE.h}!NeuralFactoryPtr@{NeuralFactoryPtr}}
@@ -191,7 +208,16 @@ Definition at line 92 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ac4ad88962955479bfc426da9ce4571d2}
 
 
-Definition at line 91 of file AMORE.h.
+Definition at line 97 of file AMORE.h.
+
+\hypertarget{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}{
+\index{AMORE.h@{AMORE.h}!NeuralNetworkPtr@{NeuralNetworkPtr}}
+\index{NeuralNetworkPtr@{NeuralNetworkPtr}!AMORE.h@{AMORE.h}}
+\subsubsection[{NeuralNetworkPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf NeuralNetwork}$>$ {\bf NeuralNetworkPtr}}}
+\label{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}
+
+
+Definition at line 87 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}{
 \index{AMORE.h@{AMORE.h}!NeuronContainerPtr@{NeuronContainerPtr}}
@@ -200,7 +226,7 @@ Definition at line 91 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}
 
 
-Definition at line 88 of file AMORE.h.
+Definition at line 94 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}{
 \index{AMORE.h@{AMORE.h}!NeuronIteratorPtr@{NeuronIteratorPtr}}
@@ -209,7 +235,7 @@ Definition at line 88 of file AMORE.h.
 \label{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}
 
 
-Definition at line 85 of file AMORE.h.
+Definition at line 90 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{
 \index{AMORE.h@{AMORE.h}!NeuronPtr@{NeuronPtr}}
@@ -218,7 +244,7 @@ Definition at line 85 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}
 
 
-Definition at line 82 of file AMORE.h.
+Definition at line 85 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}{
 \index{AMORE.h@{AMORE.h}!NeuronRef@{NeuronRef}}
@@ -227,7 +253,7 @@ Definition at line 82 of file AMORE.h.
 \label{_a_m_o_r_e_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}
 
 
-Definition at line 78 of file AMORE.h.
+Definition at line 80 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}{
 \index{AMORE.h@{AMORE.h}!NeuronWeakPtr@{NeuronWeakPtr}}
@@ -236,7 +262,7 @@ Definition at line 78 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a3e2d414e247d33f77957e70765d161c0}
 
 
-Definition at line 94 of file AMORE.h.
+Definition at line 100 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{
 \index{AMORE.h@{AMORE.h}!PredictBehaviorPtr@{PredictBehaviorPtr}}
@@ -245,7 +271,7 @@ Definition at line 94 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}
 
 
-Definition at line 81 of file AMORE.h.
+Definition at line 84 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}{
 \index{AMORE.h@{AMORE.h}!PredictBehaviorRef@{PredictBehaviorRef}}
@@ -254,7 +280,7 @@ Definition at line 81 of file AMORE.h.
 \label{_a_m_o_r_e_8h_aff87e1c27cc15df9f3364b7cf29c85ea}
 
 
-Definition at line 76 of file AMORE.h.
+Definition at line 78 of file AMORE.h.
 
 \hypertarget{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}{
 \index{AMORE.h@{AMORE.h}!TrainingBehaviorRef@{TrainingBehaviorRef}}
@@ -263,5 +289,5 @@ Definition at line 76 of file AMORE.h.
 \label{_a_m_o_r_e_8h_a2efd5ce2c834a4c9e92cd98bbb887225}
 
 
-Definition at line 77 of file AMORE.h.
+Definition at line 79 of file AMORE.h.
 

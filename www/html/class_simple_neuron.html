@@ -108,7 +108,7 @@ Collaboration diagram for SimpleNeuron:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a38c2d75287caf6374c1252c35f73dce2">SimpleNeuron</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#adb0becb30ddc511aba5cc7cadea9d981">SimpleNeuron</a> (<a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;neuralFactory)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#ac7d28dffa06f0825c4b7d12e981ce9b1">getInducedLocalField</a> ()</td></tr>
@@ -118,7 +118,7 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a2ed8cdd977472afaecca2c6b27c6beef">getId</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a7330de5a6a79925b950f78a65c529297">setId</a> (<a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a53a18c4b7ff06ae1a05eadc7222c7197">getConIterator</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#ae948c0b8c5e2a1013da5145a000e8b34">setConnections</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> conContainerPtr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a07d0ec8afcfde17098277e1ff2a5a61d">addCon</a> (<a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> conPtr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a3ccde895829b70bd0f6e42903d469b5f">setActivationFunction</a> (<a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> activationFunctionPtr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#a8f230b4566e85adda71c7e0633d8a20d">setPredictBehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neuron.html#abf7f3ad2eac82aec49c1521d26521ff2">useActivationFunctionf0</a> ()</td></tr>
@@ -131,14 +131,15 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_simple_neuron_8h_source.html#l00005">5</a> of file <a class="el" href="_simple_neuron_8h_source.html">SimpleNeuron.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a38c2d75287caf6374c1252c35f73dce2"></a><!-- doxytag: member="SimpleNeuron::SimpleNeuron" ref="a38c2d75287caf6374c1252c35f73dce2" args="()" -->
+<a class="anchor" id="adb0becb30ddc511aba5cc7cadea9d981"></a><!-- doxytag: member="SimpleNeuron::SimpleNeuron" ref="adb0becb30ddc511aba5cc7cadea9d981" args="(NeuralFactory &amp;neuralFactory)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">SimpleNeuron::SimpleNeuron </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>neuralFactory</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -146,14 +147,40 @@ Private Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00010">10</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                           :
-  <a class="code" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron</a>()
+<div class="fragment"><pre class="fragment">                                                       :
+  <a class="code" href="class_neuron.html#a814666c8dc635e30659aa95cc4886e5f">Neuron</a>(neuralFactory)
 {
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a07d0ec8afcfde17098277e1ff2a5a61d"></a><!-- doxytag: member="SimpleNeuron::addCon" ref="a07d0ec8afcfde17098277e1ff2a5a61d" args="(ConPtr conPtr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleNeuron::addCon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
+          <td class="paramname"><em>conPtr</em></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neuron.html#a9b991901b252c50c76b5192e2d135c68">Neuron</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00059">59</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00010">Neuron::d_nCons</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">d_nCons</a>-&gt;push_back( conPtr) ;
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a53a18c4b7ff06ae1a05eadc7222c7197"></a><!-- doxytag: member="SimpleNeuron::getConIterator" ref="a53a18c4b7ff06ae1a05eadc7222c7197" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +197,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_neuron.html#ac52554d6ba02e8eec2dd04a150169ec9">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00052">52</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00053">53</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00010">Neuron::d_nCons</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -195,11 +222,11 @@ Private Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_neuron.html#a1a34edd39fba70be1d18219d5e9e1eea">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00040">40</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00041">41</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00009">Neuron::d_Id</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00088">show()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00117">validate()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00089">show()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00118">validate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordflow">return</span> <a class="code" href="class_neuron.html#ab1a34e30b663c41342e8f8eaac8bd466">d_Id</a>;
 }
@@ -229,7 +256,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a1b7eea569128502e3387f5b50751a119">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00016">16</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00017">17</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00011">Neuron::d_inducedLocalField</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -254,7 +281,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a43ac0c8461c610bb2b82017d597435e3">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00028">28</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00029">29</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00012">Neuron::d_output</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -279,7 +306,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a7181d8d0a5f9b0e4ff39410785f087e9">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00082">82</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00083">83</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00006">Neuron::d_predictBehavior</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -305,37 +332,11 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#ab73922d2dba9f86ab192e2bb87c6a1aa">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00064">64</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00065">65</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00007">Neuron::d_activationFunction</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <a class="code" href="class_neuron.html#ad530e9f0bb556e0469b5074e6b7f463f">d_activationFunction</a> = activationFunctionPtr;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ae948c0b8c5e2a1013da5145a000e8b34"></a><!-- doxytag: member="SimpleNeuron::setConnections" ref="ae948c0b8c5e2a1013da5145a000e8b34" args="(ConContainerPtr conContainerPtr)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SimpleNeuron::setConnections </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td>
-          <td class="paramname"><em>conContainerPtr</em></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="class_neuron.html#a71b7dba693e9afad7e9fcfc0cee9a801">Neuron</a>.</p>
-
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00058">58</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
-
-<p>References <a class="el" href="_neuron_8h_source.html#l00010">Neuron::d_nCons</a>.</p>
-<div class="fragment"><pre class="fragment">{
-  <a class="code" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">d_nCons</a> = conContainerPtr;
 }
 </pre></div>
 </div>
@@ -357,7 +358,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a65331c891ac34a344d0bb791073a8dd9">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00046">46</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00047">47</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00009">Neuron::d_Id</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -383,7 +384,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#ab7244964f798eb9cace1cb916f5ef359">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00022">22</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00023">23</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00011">Neuron::d_inducedLocalField</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -409,7 +410,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#aae94f78cfa7ed3ce4935f23a3a585f95">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00034">34</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00035">35</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00012">Neuron::d_output</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -435,7 +436,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#af21848d0ef33bec5587e4c2702c83e3f">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00070">70</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00071">71</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00006">Neuron::d_predictBehavior</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -460,9 +461,9 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#ae18a86f9b67c63a6fcb28c813b47a38d">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00088">88</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00089">89</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_neuron_8h_source.html#l00010">Neuron::d_nCons</a>, <a class="el" href="_neuron_8h_source.html#l00012">Neuron::d_output</a>, <a class="el" href="_neuron_8h_source.html#l00006">Neuron::d_predictBehavior</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00040">getId()</a>.</p>
+<p>References <a class="el" href="_neuron_8h_source.html#l00010">Neuron::d_nCons</a>, <a class="el" href="_neuron_8h_source.html#l00012">Neuron::d_output</a>, <a class="el" href="_neuron_8h_source.html#l00006">Neuron::d_predictBehavior</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00041">getId()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="class_simple_neuron.html#a2ed8cdd977472afaecca2c6b27c6beef">getId</a>();
   Rprintf(<span class="stringliteral">&quot;\n------------------------\n&quot;</span>);
@@ -515,7 +516,7 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a78c90ab1f5d18b2d7cb8f366391b7821">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00076">76</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00077">77</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
 <p>References <a class="el" href="_neuron_8h_source.html#l00007">Neuron::d_activationFunction</a>.</p>
 <div class="fragment"><pre class="fragment">{
@@ -540,9 +541,9 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="class_neuron.html#a37f57f44fefa328ea0b7ab32b52c853e">Neuron</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00117">117</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neuron_8cpp_source.html#l00118">118</a> of file <a class="el" href="_simple_neuron_8cpp_source.html">SimpleNeuron.cpp</a>.</p>
 
-<p>References <a class="el" href="_simple_neuron_8cpp_source.html#l00040">getId()</a>.</p>
+<p>References <a class="el" href="_simple_neuron_8cpp_source.html#l00041">getId()</a>.</p>
 <div class="fragment"><pre class="fragment">{
   BEGIN_RCPP
   <span class="keywordflow">if</span> (<a class="code" href="class_simple_neuron.html#a2ed8cdd977472afaecca2c6b27c6beef">getId</a>() == NA_INTEGER ) <span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;[C++ SimpleNeuron::validate]: Error, Id is NA.&quot;</span>);
@@ -568,7 +569,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_simple_neuron.html">SimpleNeuron</a>      </li>
-      <li class="footer">Generated on Wed Jul 20 2011 04:54:24 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 22 2011 04:19:45 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

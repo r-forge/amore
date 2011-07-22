@@ -32,7 +32,9 @@ virtual \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFu
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_neural_factory_a3d49ef5f05c82cc2c614e884ed3a27d5}{makePredictBehavior} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)=0
 \item 
-virtual \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{makeNeuron} ()=0
+virtual \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_neural_factory_a12abbf93f829aab585975f157c8c98f7}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id)=0
+\item 
+virtual \hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_neural_factory_a19c08ba7ad05ef7af05f7595dda2100b}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id, \hyperlink{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}{NeuronIteratorPtr} neuronIteratorPtr, double totalAmountOfParameters)=0
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}{NeuronContainerPtr} \hyperlink{class_neural_factory_ab8fe3634f3715f99616fe9498a29badb}{makeNeuronContainer} ()=0
 \end{DoxyCompactItemize}
@@ -86,18 +88,49 @@ Implemented in \hyperlink{class_m_l_pfactory_ac47beb4aced10b9c99414ba7dd7c8b55}{
 
 Implemented in \hyperlink{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a0b85ec075904a9d915d1a3527f5d6471}{RBFfactory}.
 
-\hypertarget{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{
+
+
+Referenced by Neuron::Neuron().
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{class_neural_factory_a4fa5f4f57a2551c95481146b1a0c83d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_neural_factory_a12abbf93f829aab585975f157c8c98f7}{
 \index{NeuralFactory@{NeuralFactory}!makeNeuron@{makeNeuron}}
 \index{makeNeuron@{makeNeuron}!NeuralFactory@{NeuralFactory}}
 \subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NeuronPtr} NeuralFactory::makeNeuron (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Handler}}]{Id}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}
+\label{class_neural_factory_a12abbf93f829aab585975f157c8c98f7}
 
 
-Implemented in \hyperlink{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}{RBFfactory}.
+Implemented in \hyperlink{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a3c6fa334aaffe3ebcbd35da57e6ce045}{RBFfactory}.
+
+\hypertarget{class_neural_factory_a19c08ba7ad05ef7af05f7595dda2100b}{
+\index{NeuralFactory@{NeuralFactory}!makeNeuron@{makeNeuron}}
+\index{makeNeuron@{makeNeuron}!NeuralFactory@{NeuralFactory}}
+\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NeuronPtr} NeuralFactory::makeNeuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Handler}}]{Id, }
+\item[{{\bf NeuronIteratorPtr}}]{neuronIteratorPtr, }
+\item[{double}]{totalAmountOfParameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_factory_a19c08ba7ad05ef7af05f7595dda2100b}
+
+
+Implemented in \hyperlink{class_m_l_pfactory_a9e3c7140a702a12d7a7fde8ad52b6b04}{MLPfactory}, and \hyperlink{class_r_b_ffactory_a244d2f6eb8d7d36b1fc5252ab10797ed}{RBFfactory}.
 
 \hypertarget{class_neural_factory_ab8fe3634f3715f99616fe9498a29badb}{
 \index{NeuralFactory@{NeuralFactory}!makeNeuronContainer@{makeNeuronContainer}}

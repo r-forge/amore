@@ -6,6 +6,6 @@ class SimpleNeuralCreator : public NeuralCreator {
   // Operations
 public:
   SimpleNeuralCreator ();
-  NeuronPtr createNeuron (NeuralFactoryPtr neuralFactoryPtr);
+  NeuralNetworkPtr createFeedForwardFullyConnectedNetwork (NeuralFactoryPtr neuralFactoryPtr);
 };
 

@@ -38,7 +38,7 @@ virtual void \hyperlink{class_neuron_a65331c891ac34a344d0bb791073a8dd9}{setId} (
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr} \hyperlink{class_neuron_ac52554d6ba02e8eec2dd04a150169ec9}{getConIterator} ()=0
 \item 
-virtual void \hyperlink{class_neuron_a71b7dba693e9afad7e9fcfc0cee9a801}{setConnections} (\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} conContainerPtr)=0
+virtual void \hyperlink{class_neuron_a9b991901b252c50c76b5192e2d135c68}{addCon} (\hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} conPtr)=0
 \item 
 virtual void \hyperlink{class_neuron_ab73922d2dba9f86ab192e2bb87c6a1aa}{setActivationFunction} (\hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} activationFunctionPtr)=0
 \item 
@@ -55,7 +55,7 @@ virtual bool \hyperlink{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{validate
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_neuron_a823487d01615fadb8ac19a2768dd9d96}{Neuron} ()
+\hyperlink{class_neuron_a814666c8dc635e30659aa95cc4886e5f}{Neuron} (\hyperlink{class_neural_factory}{NeuralFactory} \&neuralFactory)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -72,6 +72,11 @@ double \hyperlink{class_neuron_a4370eae5b594fb4c7f544fcefa298c7c}{d\_\-inducedLo
 \item 
 double \hyperlink{class_neuron_a1e0b130755580b323da98c5332a6610e}{d\_\-output}
 \end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_neuron_a1aa48940238b9487734e590ffab33a1b}{MLPfactory}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -82,29 +87,59 @@ Definition at line 3 of file Neuron.h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_neuron_a823487d01615fadb8ac19a2768dd9d96}{
+\hypertarget{class_neuron_a814666c8dc635e30659aa95cc4886e5f}{
 \index{Neuron@{Neuron}!Neuron@{Neuron}}
 \index{Neuron@{Neuron}!Neuron@{Neuron}}
 \subsubsection[{Neuron}]{\setlength{\rightskip}{0pt plus 5cm}Neuron::Neuron (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf NeuralFactory} \&}]{neuralFactory}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_neuron_a823487d01615fadb8ac19a2768dd9d96}
+\label{class_neuron_a814666c8dc635e30659aa95cc4886e5f}
 
 
 Definition at line 10 of file Neuron.cpp.
 
 
+
+References d\_\-nCons, and NeuralFactory::makeConContainer().
+
+
 \begin{DoxyCode}
-               :
+                                           :
   d_Id(NA_INTEGER), d_inducedLocalField(0.0), d_output(0.0)
 {
+  d_nCons = neuralFactory.makeConContainer();
 }
 \end{DoxyCode}
 
 
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{class_neuron_a814666c8dc635e30659aa95cc4886e5f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
 \subsection{Member Function Documentation}
+\hypertarget{class_neuron_a9b991901b252c50c76b5192e2d135c68}{
+\index{Neuron@{Neuron}!addCon@{addCon}}
+\index{addCon@{addCon}!Neuron@{Neuron}}
+\subsubsection[{addCon}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::addCon (
+\begin{DoxyParamCaption}
+\item[{{\bf ConPtr}}]{conPtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neuron_a9b991901b252c50c76b5192e2d135c68}
+
+
+Implemented in \hyperlink{class_simple_neuron_a07d0ec8afcfde17098277e1ff2a5a61d}{SimpleNeuron}.
+
 \hypertarget{class_neuron_ac52554d6ba02e8eec2dd04a150169ec9}{
 \index{Neuron@{Neuron}!getConIterator@{getConIterator}}
 \index{getConIterator@{getConIterator}!Neuron@{Neuron}}
@@ -182,19 +217,6 @@ Implemented in \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}
 
 
 Implemented in \hyperlink{class_simple_neuron_a3ccde895829b70bd0f6e42903d469b5f}{SimpleNeuron}.
-
-\hypertarget{class_neuron_a71b7dba693e9afad7e9fcfc0cee9a801}{
-\index{Neuron@{Neuron}!setConnections@{setConnections}}
-\index{setConnections@{setConnections}!Neuron@{Neuron}}
-\subsubsection[{setConnections}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::setConnections (
-\begin{DoxyParamCaption}
-\item[{{\bf ConContainerPtr}}]{conContainerPtr}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a71b7dba693e9afad7e9fcfc0cee9a801}
-
-
-Implemented in \hyperlink{class_simple_neuron_ae948c0b8c5e2a1013da5145a000e8b34}{SimpleNeuron}.
 
 \hypertarget{class_neuron_a65331c891ac34a344d0bb791073a8dd9}{
 \index{Neuron@{Neuron}!setId@{setId}}
@@ -289,6 +311,18 @@ Implemented in \hyperlink{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}
 
 
 
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_neuron_a1aa48940238b9487734e590ffab33a1b}{
+\index{Neuron@{Neuron}!MLPfactory@{MLPfactory}}
+\index{MLPfactory@{MLPfactory}!Neuron@{Neuron}}
+\subsubsection[{MLPfactory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf MLPfactory}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_neuron_a1aa48940238b9487734e590ffab33a1b}
+
+
+Definition at line 15 of file Neuron.h.
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{class_neuron_ad530e9f0bb556e0469b5074e6b7f463f}{
 \index{Neuron@{Neuron}!d\_\-activationFunction@{d\_\-activationFunction}}
@@ -340,7 +374,7 @@ Definition at line 10 of file Neuron.h.
 
 
 
-Referenced by SimpleNeuron::getConIterator(), SimpleNeuron::setConnections(), and SimpleNeuron::show().
+Referenced by SimpleNeuron::addCon(), SimpleNeuron::getConIterator(), Neuron(), and SimpleNeuron::show().
 
 \hypertarget{class_neuron_a1e0b130755580b323da98c5332a6610e}{
 \index{Neuron@{Neuron}!d\_\-output@{d\_\-output}}

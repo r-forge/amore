@@ -31,6 +31,7 @@ var NAVTREE =
       [ "MLPfactory", "class_m_l_pfactory.html", null ],
       [ "NeuralCreator", "class_neural_creator.html", null ],
       [ "NeuralFactory", "class_neural_factory.html", null ],
+      [ "NeuralNetwork", "class_neural_network.html", null ],
       [ "Neuron", "class_neuron.html", null ],
       [ "PredictBehavior", "class_predict_behavior.html", null ],
       [ "RadialBasis", "class_radial_basis.html", null ],
@@ -41,6 +42,7 @@ var NAVTREE =
       [ "ReciprocalFactory", "class_reciprocal_factory.html", null ],
       [ "SimpleContainer< T >", "class_simple_container.html", null ],
       [ "SimpleContainerIterator< T >", "class_simple_container_iterator.html", null ],
+      [ "SimpleNetwork", "class_simple_network.html", null ],
       [ "SimpleNeuralCreator", "class_simple_neural_creator.html", null ],
       [ "SimpleNeuron", "class_simple_neuron.html", null ],
       [ "Sine", "class_sine.html", null ],
@@ -99,6 +101,9 @@ var NAVTREE =
           [ "RadialBasisFactory", "class_radial_basis_factory.html", null ]
         ] ]
       ] ],
+      [ "NeuralNetwork", "class_neural_network.html", [
+        [ "SimpleNetwork", "class_simple_network.html", null ]
+      ] ],
       [ "Neuron", "class_neuron.html", [
         [ "SimpleNeuron", "class_simple_neuron.html", null ]
       ] ],
@@ -129,10 +134,12 @@ var NAVTREE =
       [ "pkg/AMORE/src/IteratorInterface.cpp", "_iterator_interface_8cpp.html", null ],
       [ "pkg/AMORE/src/MLPbehavior.cpp", "_m_l_pbehavior_8cpp.html", null ],
       [ "pkg/AMORE/src/MLPfactory.cpp", "_m_l_pfactory_8cpp.html", null ],
+      [ "pkg/AMORE/src/NeuralNetwork.cpp", "_neural_network_8cpp.html", null ],
       [ "pkg/AMORE/src/Neuron.cpp", "_neuron_8cpp.html", null ],
       [ "pkg/AMORE/src/PredictBehavior.cpp", "_predict_behavior_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleContainer.cpp", "_simple_container_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleContainerIterator.cpp", "_simple_container_iterator_8cpp.html", null ],
+      [ "pkg/AMORE/src/SimpleNetwork.cpp", "_simple_network_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleNeuralCreator.cpp", "_simple_neural_creator_8cpp.html", null ],
       [ "pkg/AMORE/src/SimpleNeuron.cpp", "_simple_neuron_8cpp.html", null ],
       [ "pkg/AMORE/src/Tanh.cpp", "_tanh_8cpp.html", null ],
@@ -165,6 +172,7 @@ var NAVTREE =
       [ "pkg/AMORE/src/dia/MLPfactory.h", "_m_l_pfactory_8h.html", null ],
       [ "pkg/AMORE/src/dia/NeuralCreator.h", "_neural_creator_8h.html", null ],
       [ "pkg/AMORE/src/dia/NeuralFactory.h", "_neural_factory_8h.html", null ],
+      [ "pkg/AMORE/src/dia/NeuralNetwork.h", "_neural_network_8h.html", null ],
       [ "pkg/AMORE/src/dia/Neuron.h", "_neuron_8h.html", null ],
       [ "pkg/AMORE/src/dia/PredictBehavior.h", "_predict_behavior_8h.html", null ],
       [ "pkg/AMORE/src/dia/RadialBasis.h", "_radial_basis_8h.html", null ],
@@ -175,6 +183,7 @@ var NAVTREE =
       [ "pkg/AMORE/src/dia/ReciprocalFactory.h", "_reciprocal_factory_8h.html", null ],
       [ "pkg/AMORE/src/dia/SimpleContainer.h", "_simple_container_8h.html", null ],
       [ "pkg/AMORE/src/dia/SimpleContainerIterator.h", "_simple_container_iterator_8h.html", null ],
+      [ "pkg/AMORE/src/dia/SimpleNetwork.h", "_simple_network_8h.html", null ],
       [ "pkg/AMORE/src/dia/SimpleNeuralCreator.h", "_simple_neural_creator_8h.html", null ],
       [ "pkg/AMORE/src/dia/SimpleNeuron.h", "_simple_neuron_8h.html", null ],
       [ "pkg/AMORE/src/dia/Sine.h", "_sine_8h.html", null ],

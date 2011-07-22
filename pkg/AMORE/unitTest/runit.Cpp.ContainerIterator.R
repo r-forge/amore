@@ -12,8 +12,7 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 
 			int ids[]= {10, 20, 30};
 			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron() );
-				neuronPtr->setId(id);
+				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
 				containerPtr->push_back(neuronPtr);
 			}
 	
@@ -45,8 +44,7 @@ test.ContainerIterator.Cpp.first<- function() {
 			
 			int ids[]= {10, 20, 30};
 			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron() );
-				neuronPtr->setId(id);
+				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
 				containerPtr->push_back(neuronPtr);
 			}
 			
@@ -77,8 +75,7 @@ test.ContainerIterator.Cpp.next<- function() {
 			
 			int ids[]= {10, 20, 30};
 			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron() );
-				neuronPtr->setId(id);
+				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
 				containerPtr->push_back(neuronPtr);
 			}
 			
@@ -112,8 +109,7 @@ test.ContainerIterator.Cpp.isDone<- function() {
 			
 			int ids[]= {10, 20, 30};
 			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron() );
-				neuronPtr->setId(id);
+				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
 				containerPtr->push_back(neuronPtr);
 			}
 			
@@ -150,8 +146,7 @@ BEGIN_RCPP
 			
 			int ids[]= {10, 20, 30};
 			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron() );
-				neuronPtr->setId(id);
+				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
 				containerPtr->push_back(neuronPtr);
 			}
 			

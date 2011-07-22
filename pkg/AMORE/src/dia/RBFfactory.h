@@ -11,7 +11,8 @@ protected:
   ConContainerPtr makeConContainer ();
   virtual ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr) = 0;
   PredictBehaviorPtr makePredictBehavior ();
-  NeuronPtr makeNeuron ();
+  NeuronPtr makeNeuron (Handler Id);
+  NeuronPtr makeNeuron (Handler Id, NeuronIteratorPtr neuronIteratorPtr, double totalAmountOfParameters);
   NeuronContainerPtr makeNeuronContainer ();
 };
 

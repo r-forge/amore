@@ -24,7 +24,7 @@
 <text text-anchor="start" x="9" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getId()</text>
 <text text-anchor="start" x="9" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setId()</text>
 <text text-anchor="start" x="9" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getConIterator()</text>
-<text text-anchor="start" x="9" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setConnections()</text>
+<text text-anchor="start" x="9" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addCon()</text>
 <text text-anchor="start" x="9" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setActivationFunction()</text>
 <text text-anchor="start" x="9" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPredictBehavior()</text>
 <text text-anchor="start" x="9" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; useActivationFunctionf0()</text>
@@ -52,7 +52,7 @@
 <text text-anchor="start" x="7.5" y="-366" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 <text text-anchor="start" x="7.5" y="-355" font-family="Helvetica,sans-Serif" font-size="10.00">+ setId()</text>
 <text text-anchor="start" x="7.5" y="-344" font-family="Helvetica,sans-Serif" font-size="10.00">+ getConIterator()</text>
-<text text-anchor="start" x="7.5" y="-333" font-family="Helvetica,sans-Serif" font-size="10.00">+ setConnections()</text>
+<text text-anchor="start" x="7.5" y="-333" font-family="Helvetica,sans-Serif" font-size="10.00">+ addCon()</text>
 <text text-anchor="start" x="7.5" y="-322" font-family="Helvetica,sans-Serif" font-size="10.00">+ setActivationFunction()</text>
 <text text-anchor="start" x="7.5" y="-311" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPredictBehavior()</text>
 <text text-anchor="start" x="7.5" y="-300" font-family="Helvetica,sans-Serif" font-size="10.00">+ useActivationFunctionf0()</text>

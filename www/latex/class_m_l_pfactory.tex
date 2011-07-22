@@ -41,13 +41,15 @@ Collaboration diagram for MLPfactory:
 \item 
 \hyperlink{_a_m_o_r_e_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr} \hyperlink{class_m_l_pfactory_ac47beb4aced10b9c99414ba7dd7c8b55}{makeCon} (\hyperlink{class_neuron}{Neuron} \&neuron, double weight)
 \item 
+\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{makeConContainer} ()
+\item 
 virtual \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_m_l_pfactory_a92109ea285be7dd847d359a1ade9064a}{makeActivationFunction} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)=0
 \item 
 \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_m_l_pfactory_a9e9e9bb4390df09c78a24c4ff79cdab6}{makePredictBehavior} (\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} neuronPtr)
 \item 
-\hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{makeConContainer} ()
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id)
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{makeNeuron} ()
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_m_l_pfactory_a9e3c7140a702a12d7a7fde8ad52b6b04}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id, \hyperlink{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}{NeuronIteratorPtr} neuronIteratorPtr, double totalAmountOfParameters)
 \item 
 \hyperlink{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}{NeuronContainerPtr} \hyperlink{class_m_l_pfactory_a174caa9d45bc964a07d86f6221e576e1}{makeNeuronContainer} ()
 \end{DoxyCompactItemize}
@@ -134,12 +136,28 @@ Implements \hyperlink{class_neural_factory_a0d11171bb9e5d09544e8d58a9324b923}{Ne
 Definition at line 19 of file MLPfactory.cpp.
 
 
+
+Referenced by makeNeuron().
+
+
 \begin{DoxyCode}
 {
   ConPtr conPtr(new Con(neuron, weight));
   return conPtr;
 }
 \end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{class_m_l_pfactory_ac47beb4aced10b9c99414ba7dd7c8b55_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299}{
 \index{MLPfactory@{MLPfactory}!makeConContainer@{makeConContainer}}
 \index{makeConContainer@{makeConContainer}!MLPfactory@{MLPfactory}}
@@ -158,57 +176,44 @@ Implements \hyperlink{class_neural_factory_a4fa5f4f57a2551c95481146b1a0c83d7}{Ne
 Definition at line 26 of file MLPfactory.cpp.
 
 
-
-Referenced by makeNeuron().
-
-
 \begin{DoxyCode}
 {
   ConContainerPtr conContainerPtr(new SimpleContainer<ConPtr> );
   return conContainerPtr;
 }
 \end{DoxyCode}
-
-
-Here is the caller graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_m_l_pfactory_a69562b8fd06c60a2d5db66d8b0f10299_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}{
+\hypertarget{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2}{
 \index{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}}
 \index{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}}
 \subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} MLPfactory::makeNeuron (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Handler}}]{Id}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb}
+\label{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2}
 
 
-Implements \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{NeuralFactory}.
-
-
-
-Definition at line 41 of file MLPfactory.cpp.
+Implements \hyperlink{class_neural_factory_a12abbf93f829aab585975f157c8c98f7}{NeuralFactory}.
 
 
 
-References makeActivationFunction(), makeConContainer(), and makePredictBehavior().
+Definition at line 40 of file MLPfactory.cpp.
+
+
+
+References makeActivationFunction(), and makePredictBehavior().
+
+
+
+Referenced by makeNeuron().
 
 
 \begin{DoxyCode}
 {
-  NeuronPtr neuronPtr(new SimpleNeuron());
-  neuronPtr->setPredictBehavior (makePredictBehavior(neuronPtr));
-  neuronPtr->setActivationFunction (makeActivationFunction(neuronPtr));
-  neuronPtr->setConnections (makeConContainer());
-
+  NeuronPtr neuronPtr(new SimpleNeuron(*this));
+  neuronPtr->setId(Id);
+  neuronPtr->setPredictBehavior(makePredictBehavior(neuronPtr));
+  neuronPtr->setActivationFunction(makeActivationFunction(neuronPtr));
   return neuronPtr;
 }
 \end{DoxyCode}
@@ -219,7 +224,77 @@ Here is the call graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=400pt]{class_m_l_pfactory_a7bb87e6e5427385b02041f2c36d1c8fb_cgraph}
+\includegraphics[width=400pt]{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{class_m_l_pfactory_a6dd50bc994fa69d7c4de183284efdae2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_m_l_pfactory_a9e3c7140a702a12d7a7fde8ad52b6b04}{
+\index{MLPfactory@{MLPfactory}!makeNeuron@{makeNeuron}}
+\index{makeNeuron@{makeNeuron}!MLPfactory@{MLPfactory}}
+\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} MLPfactory::makeNeuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Handler}}]{Id, }
+\item[{{\bf NeuronIteratorPtr}}]{neuronIteratorPtr, }
+\item[{double}]{totalAmountOfParameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{class_m_l_pfactory_a9e3c7140a702a12d7a7fde8ad52b6b04}
+
+
+Implements \hyperlink{class_neural_factory_a19c08ba7ad05ef7af05f7595dda2100b}{NeuralFactory}.
+
+
+
+Definition at line 50 of file MLPfactory.cpp.
+
+
+
+References MLPbehavior::d\_\-bias, makeCon(), and makeNeuron().
+
+
+\begin{DoxyCode}
+{
+  RNGScope scope;
+
+  NeuronPtr neuronPtr(makeNeuron(Id));
+
+  double extreme = sqrt(3 / totalAmountOfParameters);
+  double weight;
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPt
+      r->next())
+    {
+      weight =as<double>(runif(1, -extreme, extreme));
+      neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
+    }
+
+  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*>(neuronPtr->d_predictBehav
+      ior.get()) ;
+  mlpBehavior->d_bias=as<double>(runif(1, -extreme, extreme));
+
+return neuronPtr;
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pfactory_a9e3c7140a702a12d7a7fde8ad52b6b04_cgraph}
 \end{center}
 \end{figure}
 
@@ -239,7 +314,7 @@ Implements \hyperlink{class_neural_factory_ab8fe3634f3715f99616fe9498a29badb}{Ne
 
 
 
-Definition at line 52 of file MLPfactory.cpp.
+Definition at line 72 of file MLPfactory.cpp.
 
 
 \begin{DoxyCode}
@@ -263,7 +338,7 @@ Implements \hyperlink{class_neural_factory_a3d49ef5f05c82cc2c614e884ed3a27d5}{Ne
 
 
 
-Definition at line 34 of file MLPfactory.cpp.
+Definition at line 33 of file MLPfactory.cpp.
 
 
 

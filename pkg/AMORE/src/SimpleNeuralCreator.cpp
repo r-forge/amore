@@ -18,9 +18,10 @@ SimpleNeuralCreator::SimpleNeuralCreator()
 ;
 
 
-NeuronPtr
-SimpleNeuralCreator::createNeuron(NeuralFactoryPtr neuralFactoryPtr)
+NeuralNetworkPtr
+SimpleNeuralCreator::createFeedForwardFullyConnectedNetwork(NeuralFactoryPtr neuralFactoryPtr)
 {
-  return neuralFactoryPtr->makeNeuron();
+  NeuralNetworkPtr n;
+  return n ; // change this, does'n make sense
 }
 
