@@ -47,7 +47,9 @@ virtual \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFu
 \item 
 \hyperlink{_a_m_o_r_e_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr} \hyperlink{class_r_b_ffactory_a37c1e41af6f362767be462afcd417726}{makePredictBehavior} ()
 \item 
-\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}{makeNeuron} ()
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_r_b_ffactory_a3c6fa334aaffe3ebcbd35da57e6ce045}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id)
+\item 
+\hyperlink{_a_m_o_r_e_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr} \hyperlink{class_r_b_ffactory_a244d2f6eb8d7d36b1fc5252ab10797ed}{makeNeuron} (\hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} Id, \hyperlink{_a_m_o_r_e_8h_aa794539c0a68e4eb451e7a2cc6294acc}{NeuronIteratorPtr} neuronIteratorPtr, double totalAmountOfParameters)
 \item 
 \hyperlink{_a_m_o_r_e_8h_a6157c259718f98f808c85d7f77048970}{NeuronContainerPtr} \hyperlink{class_r_b_ffactory_a9e304b053b54ad69c5b932cb0f30081c}{makeNeuronContainer} ()
 \end{DoxyCompactItemize}
@@ -113,18 +115,33 @@ Implemented in \hyperlink{class_radial_basis_factory_ae68ec682e8f04e99e5a1560e34
 
 Implements \hyperlink{class_neural_factory_a4fa5f4f57a2551c95481146b1a0c83d7}{NeuralFactory}.
 
-\hypertarget{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}{
+\hypertarget{class_r_b_ffactory_a3c6fa334aaffe3ebcbd35da57e6ce045}{
 \index{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}}
 \index{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}}
 \subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} RBFfactory::makeNeuron (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Handler}}]{Id}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{class_r_b_ffactory_a91640e950fd3cea89cecf53517f42cef}
+\label{class_r_b_ffactory_a3c6fa334aaffe3ebcbd35da57e6ce045}
 
 
-Implements \hyperlink{class_neural_factory_a7921519c79b2fb0a5868661fe934f694}{NeuralFactory}.
+Implements \hyperlink{class_neural_factory_a12abbf93f829aab585975f157c8c98f7}{NeuralFactory}.
+
+\hypertarget{class_r_b_ffactory_a244d2f6eb8d7d36b1fc5252ab10797ed}{
+\index{RBFfactory@{RBFfactory}!makeNeuron@{makeNeuron}}
+\index{makeNeuron@{makeNeuron}!RBFfactory@{RBFfactory}}
+\subsubsection[{makeNeuron}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronPtr} RBFfactory::makeNeuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Handler}}]{Id, }
+\item[{{\bf NeuronIteratorPtr}}]{neuronIteratorPtr, }
+\item[{double}]{totalAmountOfParameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{class_r_b_ffactory_a244d2f6eb8d7d36b1fc5252ab10797ed}
+
+
+Implements \hyperlink{class_neural_factory_a19c08ba7ad05ef7af05f7595dda2100b}{NeuralFactory}.
 
 \hypertarget{class_r_b_ffactory_a9e304b053b54ad69c5b932cb0f30081c}{
 \index{RBFfactory@{RBFfactory}!makeNeuronContainer@{makeNeuronContainer}}

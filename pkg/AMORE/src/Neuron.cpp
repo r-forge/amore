@@ -7,7 +7,8 @@
 
 #include "dia/Neuron.h"
 
-Neuron::Neuron() :
+Neuron::Neuron(NeuralFactory& neuralFactory) :
   d_Id(NA_INTEGER), d_inducedLocalField(0.0), d_output(0.0)
 {
+  d_nCons = neuralFactory.makeConContainer();
 }

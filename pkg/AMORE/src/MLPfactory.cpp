@@ -29,7 +29,6 @@ MLPfactory::makeConContainer()
   return conContainerPtr;
 }
 
-
 PredictBehaviorPtr
 MLPfactory::makePredictBehavior(NeuronPtr neuronPtr)
 {
@@ -38,14 +37,35 @@ MLPfactory::makePredictBehavior(NeuronPtr neuronPtr)
 }
 
 NeuronPtr
-MLPfactory::makeNeuron()
+MLPfactory::makeNeuron(Handler Id)
 {
-  NeuronPtr neuronPtr(new SimpleNeuron());
-  neuronPtr->setPredictBehavior (makePredictBehavior(neuronPtr));
-  neuronPtr->setActivationFunction (makeActivationFunction(neuronPtr));
-  neuronPtr->setConnections (makeConContainer());
-
+  NeuronPtr neuronPtr(new SimpleNeuron(*this));
+  neuronPtr->setId(Id);
+  neuronPtr->setPredictBehavior(makePredictBehavior(neuronPtr));
+  neuronPtr->setActivationFunction(makeActivationFunction(neuronPtr));
   return neuronPtr;
+}
+
+NeuronPtr
+MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
+    double totalAmountOfParameters)
+{
+  RNGScope scope;
+
+  NeuronPtr neuronPtr(makeNeuron(Id));
+
+  double extreme = sqrt(3 / totalAmountOfParameters);
+  double weight;
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
+    {
+      weight =as<double>(runif(1, -extreme, extreme));
+      neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
+    }
+
+  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*>(neuronPtr->d_predictBehavior.get()) ;
+  mlpBehavior->d_bias=as<double>(runif(1, -extreme, extreme));
+
+return neuronPtr;
 }
 
 NeuronContainerPtr

@@ -1,5 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_neural_net.html" title="NeuralNet" alt="" coords="6,31,90,57"/>
-<area shape="rect" id="node3" href="$class_m_l_pneural_net.html" title="MLPneuralNet" alt="" coords="139,5,248,32"/>
-<area shape="rect" id="node5" href="$class_r_b_fneural_net.html" title="RBFneuralNet" alt="" coords="139,56,248,83"/>
+<area shape="rect" id="node1" href="$class_training_behavior.html" title="class TrainingBehavior &#45;" alt="" coords="5,81,128,108"/>
+<area shape="rect" id="node3" href="$class_adapt_behavior.html" title="class AdaptBehavior &#45;" alt="" coords="177,56,290,83"/>
+<area shape="rect" id="node9" href="$class_batch_behavior.html" title="class BatchBehavior &#45;" alt="" coords="177,107,289,133"/>
+<area shape="rect" id="node5" href="$class_a_d_a_p_tgd.html" title="class ADAPTgd &#45;" alt="" coords="351,5,433,32"/>
+<area shape="rect" id="node7" href="$class_a_d_a_p_tgdwm.html" title="class ADAPTgdwm &#45;" alt="" coords="339,56,445,83"/>
+<area shape="rect" id="node11" href="$class_b_a_t_c_hgd.html" title="class BATCHgd &#45;" alt="" coords="349,107,435,133"/>
+<area shape="rect" id="node13" href="$class_b_a_t_c_hgdwm.html" title="class BATCHgdwm &#45;" alt="" coords="339,157,445,184"/>
 </map>

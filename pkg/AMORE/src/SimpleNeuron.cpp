@@ -7,10 +7,11 @@
 
 #include "dia/SimpleNeuron.h"
 
-SimpleNeuron::SimpleNeuron() :
-  Neuron()
+SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :
+  Neuron(neuralFactory)
 {
 }
+
 
 double
 SimpleNeuron::getInducedLocalField()
@@ -55,9 +56,9 @@ SimpleNeuron::getConIterator()
 }
 
 void
-SimpleNeuron::setConnections(ConContainerPtr conContainerPtr)
+SimpleNeuron::addCon(ConPtr conPtr)
 {
-  d_nCons = conContainerPtr;
+  d_nCons->push_back( conPtr) ;
 }
 
 void

@@ -35,8 +35,7 @@ test.Container.Cpp.show<- function() {
 			int ids[]= {10, 20, 30};
 			NeuronPtr neuronPtr;
 			foreach (Handler id, ids) {
-				neuronPtr = neuralFactoryPtr->makeNeuron() ;
-				neuronPtr->setId(id);		
+				neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
  				neuronContainerPtr->push_back(neuronPtr) ;			
 			}	
 			double weights[] = {1.13, 2.22, 3.33 };
@@ -84,8 +83,7 @@ test.Container.Cpp.push_back<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr = neuralFactoryPtr->makeNeuron() ;
-					neuronPtr->setId(id); 	
+					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
 					neuronContainerPtr->push_back(neuronPtr);
 				}
 
@@ -123,8 +121,7 @@ test.Container.Cpp.size<- function() {
 				double weights[] = {1.13, 2.22, 3.33 };
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr = neuralFactoryPtr->makeNeuron() ;
-					neuronPtr->setId(id); 	
+					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
 					neuronContainerPtr->push_back(neuronPtr);
 				}
 					

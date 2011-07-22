@@ -12,6 +12,7 @@ protected:
   double d_output;
   // Operations
 public:
+friend class MLPfactory; 
   virtual double getInducedLocalField () = 0;
   virtual void setInducedLocalField (double inducedLocalField) = 0;
   virtual double getOutput () = 0;
@@ -19,7 +20,7 @@ public:
   virtual Handler getId () = 0;
   virtual void setId (Handler Id) = 0;
   virtual ConIteratorPtr getConIterator () = 0;
-  virtual void setConnections (ConContainerPtr conContainerPtr) = 0;
+  virtual void addCon (ConPtr conPtr) = 0;
   virtual void setActivationFunction (ActivationFunctionPtr activationFunctionPtr) = 0;
   virtual void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr) = 0;
   // virtual void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr) = 0;
@@ -29,6 +30,6 @@ public:
   virtual void show () = 0;
   virtual bool validate () = 0;
 protected:
-  Neuron ();
+  Neuron (NeuralFactory& neuralFactory);
 };
 

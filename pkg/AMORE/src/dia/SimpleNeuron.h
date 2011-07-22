@@ -5,7 +5,7 @@
 class SimpleNeuron : public Neuron {
   // Operations
 public:
-  SimpleNeuron ();
+  SimpleNeuron (NeuralFactory& neuralFactory);
 private:
   double getInducedLocalField ();
   void setInducedLocalField (double inducedLocalField);
@@ -14,7 +14,7 @@ private:
   Handler getId ();
   void setId (Handler Id);
   ConIteratorPtr getConIterator ();
-  void setConnections (ConContainerPtr conContainerPtr);
+  void addCon (ConPtr conPtr);
   void setActivationFunction (ActivationFunctionPtr activationFunctionPtr);
   void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
   // void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr);

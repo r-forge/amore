@@ -4,6 +4,6 @@
 class NeuralCreator {
   // Operations
 public:
-  virtual NeuronPtr createNeuron (NeuralFactoryPtr neuralFactoryPtr) = 0;
+  virtual NeuralNetworkPtr createFeedForwardFullyConnectedNetwork (NeuralFactoryPtr neuralFactoryPtr) = 0;
 };
 

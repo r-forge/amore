@@ -82,7 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Neuron Class Reference</div>  </div>
 </div>
@@ -110,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a1a34edd39fba70be1d18219d5e9e1eea">getId</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a65331c891ac34a344d0bb791073a8dd9">setId</a> (<a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ac52554d6ba02e8eec2dd04a150169ec9">getConIterator</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a71b7dba693e9afad7e9fcfc0cee9a801">setConnections</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> conContainerPtr)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a9b991901b252c50c76b5192e2d135c68">addCon</a> (<a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> conPtr)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ab73922d2dba9f86ab192e2bb87c6a1aa">setActivationFunction</a> (<a class="el" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> activationFunctionPtr)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#af21848d0ef33bec5587e4c2702c83e3f">setPredictBehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a78c90ab1f5d18b2d7cb8f366391b7821">useActivationFunctionf0</a> ()=0</td></tr>
@@ -119,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a37f57f44fefa328ea0b7ab32b52c853e">validate</a> ()=0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a823487d01615fadb8ac19a2768dd9d96">Neuron</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a814666c8dc635e30659aa95cc4886e5f">Neuron</a> (<a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;neuralFactory)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a2522e221f58c84bd3a1c32647da4a411">d_predictBehavior</a></td></tr>
@@ -128,20 +129,24 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">d_nCons</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a4370eae5b594fb4c7f544fcefa298c7c">d_inducedLocalField</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a1e0b130755580b323da98c5332a6610e">d_output</a></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neuron.html#a1aa48940238b9487734e590ffab33a1b">MLPfactory</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_neuron.html" title="class Neuron -">Neuron</a> - </p>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00003">3</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a823487d01615fadb8ac19a2768dd9d96"></a><!-- doxytag: member="Neuron::Neuron" ref="a823487d01615fadb8ac19a2768dd9d96" args="()" -->
+<a class="anchor" id="a814666c8dc635e30659aa95cc4886e5f"></a><!-- doxytag: member="Neuron::Neuron" ref="a814666c8dc635e30659aa95cc4886e5f" args="(NeuralFactory &amp;neuralFactory)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Neuron::Neuron </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>neuralFactory</em></td><td>)</td>
           <td><code> [protected]</code></td>
         </tr>
       </table>
@@ -149,14 +154,44 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_neuron_8cpp_source.html#l00010">10</a> of file <a class="el" href="_neuron_8cpp_source.html">Neuron.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">               :
+
+<p>References <a class="el" href="_neuron_8h_source.html#l00010">d_nCons</a>, and <a class="el" href="class_neural_factory.html#a4fa5f4f57a2551c95481146b1a0c83d7">NeuralFactory::makeConContainer()</a>.</p>
+<div class="fragment"><pre class="fragment">                                           :
   <a class="code" href="class_neuron.html#ab1a34e30b663c41342e8f8eaac8bd466">d_Id</a>(NA_INTEGER), <a class="code" href="class_neuron.html#a4370eae5b594fb4c7f544fcefa298c7c">d_inducedLocalField</a>(0.0), <a class="code" href="class_neuron.html#a1e0b130755580b323da98c5332a6610e">d_output</a>(0.0)
 {
+  <a class="code" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">d_nCons</a> = neuralFactory.<a class="code" href="class_neural_factory.html#a4fa5f4f57a2551c95481146b1a0c83d7">makeConContainer</a>();
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neuron_a814666c8dc635e30659aa95cc4886e5f_cgraph.svg" width="411" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9b991901b252c50c76b5192e2d135c68"></a><!-- doxytag: member="Neuron::addCon" ref="a9b991901b252c50c76b5192e2d135c68" args="(ConPtr conPtr)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Neuron::addCon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>&#160;</td>
+          <td class="paramname"><em>conPtr</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_neuron.html#a07d0ec8afcfde17098277e1ff2a5a61d">SimpleNeuron</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac52554d6ba02e8eec2dd04a150169ec9"></a><!-- doxytag: member="Neuron::getConIterator" ref="ac52554d6ba02e8eec2dd04a150169ec9" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -263,25 +298,6 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_simple_neuron.html#a3ccde895829b70bd0f6e42903d469b5f">SimpleNeuron</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a71b7dba693e9afad7e9fcfc0cee9a801"></a><!-- doxytag: member="Neuron::setConnections" ref="a71b7dba693e9afad7e9fcfc0cee9a801" args="(ConContainerPtr conContainerPtr)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Neuron::setConnections </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>&#160;</td>
-          <td class="paramname"><em>conContainerPtr</em></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_simple_neuron.html#ae948c0b8c5e2a1013da5145a000e8b34">SimpleNeuron</a>.</p>
 
 </div>
 </div>
@@ -415,6 +431,22 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a1aa48940238b9487734e590ffab33a1b"></a><!-- doxytag: member="Neuron::MLPfactory" ref="a1aa48940238b9487734e590ffab33a1b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_m_l_pfactory.html">MLPfactory</a><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neuron_8h_source.html#l00015">15</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ad530e9f0bb556e0469b5074e6b7f463f"></a><!-- doxytag: member="Neuron::d_activationFunction" ref="ad530e9f0bb556e0469b5074e6b7f463f" args="" -->
 <div class="memitem">
@@ -429,7 +461,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00007">7</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00064">SimpleNeuron::setActivationFunction()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00076">SimpleNeuron::useActivationFunctionf0()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00065">SimpleNeuron::setActivationFunction()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00077">SimpleNeuron::useActivationFunctionf0()</a>.</p>
 
 </div>
 </div>
@@ -446,7 +478,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00009">9</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00040">SimpleNeuron::getId()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00046">SimpleNeuron::setId()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00041">SimpleNeuron::getId()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00047">SimpleNeuron::setId()</a>.</p>
 
 </div>
 </div>
@@ -463,7 +495,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00011">11</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00016">SimpleNeuron::getInducedLocalField()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00022">SimpleNeuron::setInducedLocalField()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00017">SimpleNeuron::getInducedLocalField()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00023">SimpleNeuron::setInducedLocalField()</a>.</p>
 
 </div>
 </div>
@@ -480,7 +512,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00010">10</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00052">SimpleNeuron::getConIterator()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00058">SimpleNeuron::setConnections()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00088">SimpleNeuron::show()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00059">SimpleNeuron::addCon()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00053">SimpleNeuron::getConIterator()</a>, <a class="el" href="_neuron_8cpp_source.html#l00010">Neuron()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00089">SimpleNeuron::show()</a>.</p>
 
 </div>
 </div>
@@ -497,7 +529,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00012">12</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00028">SimpleNeuron::getOutput()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00034">SimpleNeuron::setOutput()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00088">SimpleNeuron::show()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00029">SimpleNeuron::getOutput()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00035">SimpleNeuron::setOutput()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00089">SimpleNeuron::show()</a>.</p>
 
 </div>
 </div>
@@ -514,7 +546,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neuron_8h_source.html#l00006">6</a> of file <a class="el" href="_neuron_8h_source.html">Neuron.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00082">SimpleNeuron::predict()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00070">SimpleNeuron::setPredictBehavior()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00088">SimpleNeuron::show()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_neuron_8cpp_source.html#l00083">SimpleNeuron::predict()</a>, <a class="el" href="_simple_neuron_8cpp_source.html#l00071">SimpleNeuron::setPredictBehavior()</a>, and <a class="el" href="_simple_neuron_8cpp_source.html#l00089">SimpleNeuron::show()</a>.</p>
 
 </div>
 </div>
@@ -527,7 +559,7 @@ Protected Attributes</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neuron.html">Neuron</a>      </li>
-      <li class="footer">Generated on Wed Jul 20 2011 04:54:24 for AMORE++ by&#160;
+      <li class="footer">Generated on Fri Jul 22 2011 04:19:45 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

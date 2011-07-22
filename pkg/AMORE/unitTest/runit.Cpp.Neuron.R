@@ -1,37 +1,5 @@
 
 
-
-
-###############################################################################
- test.Neuron.Cpp.Constructor_EmptyArgumentList <- function() {	
-###############################################################################	
-	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- "
-		//Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
-
-			neuronPtr->show();	
-			return	Rcpp::List::create(	Rcpp::Named(\"Id\") = neuronPtr->getId() );
-	"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
-	checkTrue(is.na(result$Id))
-	# 
-	# ------------------------
-	# 
-	#  Id: NA, Invalid neuron Id
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 0.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# [1] TRUE
-}
-
  
 ###############################################################################
 test.Neuron.Cpp.getId <- function() {	
@@ -40,12 +8,11 @@ test.Neuron.Cpp.getId <- function() {
 	testCode <- "
 		// Data set up
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 		// Test
 			std::vector<Handler> result;
 			result.push_back( neuronPtr->getId() ) ;
-			neuronPtr = neuralFactoryPtr->makeNeuron() ;	
-			neuronPtr->setId(12);
+			neuronPtr = neuralFactoryPtr->makeNeuron(12) ;	
 			result.push_back( neuronPtr->getId() ) ;			
 			return wrap(result);
 			"
@@ -63,7 +30,7 @@ test.Neuron.Cpp.setId <- function() {
 	testCode <- "
 			// Data set up
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 		// Test
 			std::vector<Handler> result;
 			result.push_back( neuronPtr->getId() ) ;
@@ -90,7 +57,7 @@ test.Neuron.Cpp.Validate_IdIsNa <- function() {
 	testCode <- "
 			//Test
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 			neuronPtr->validate();			
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
@@ -107,8 +74,7 @@ test.Neuron.Cpp.Validate_EmptyCon <- function() {
 	testCode <- "
 			//Test
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron() );
-			neuronPtr->setId(12);
+			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(12) );
 			neuronPtr->validate();			// An empty con does not throw exception
 			return wrap( neuronPtr->getId() );			
 			"
