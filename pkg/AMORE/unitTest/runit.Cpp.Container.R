@@ -30,19 +30,19 @@ test.Container.Cpp.show<- function() {
 	testCode <- "
 		// Data set up
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-			NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 
 			int ids[]= {10, 20, 30};
 			NeuronPtr neuronPtr;
 			foreach (Handler id, ids) {
 				neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
- 				neuronContainerPtr->push_back(neuronPtr) ;			
+ 				layerPtr->push_back(neuronPtr) ;			
 			}	
 			double weights[] = {1.13, 2.22, 3.33 };
 			ConContainerPtr conContainerPtr( neuralFactoryPtr->makeConContainer() );
 			ConPtr conPtr;
 			int wId=0;
-			NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
+			NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 			for ( itr->first(); !itr->isDone(); itr->next() ) {
 				conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 				conContainerPtr->push_back( conPtr );
@@ -75,7 +75,7 @@ test.Container.Cpp.push_back<- function() {
 			// Data set up
 				
 				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-				NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
+				NeuronContainerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
 				NeuronPtr neuronPtr;
@@ -84,12 +84,12 @@ test.Container.Cpp.push_back<- function() {
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
-					neuronContainerPtr->push_back(neuronPtr);
+					layerPtr->push_back(neuronPtr);
 				}
 
 				int wId=0;
 
-				NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
+				NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
 					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 					conContainerPtr->push_back( conPtr );
@@ -115,21 +115,21 @@ test.Container.Cpp.size<- function() {
 	testCode <- "
 		// Data set up
 				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-				NeuronContainerPtr neuronContainerPtr ( neuralFactoryPtr->makeNeuronContainer() );
+				NeuronContainerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				NeuronPtr neuronPtr;
 				int ids[]= {10, 20, 30};
 				double weights[] = {1.13, 2.22, 3.33 };
 			// Test
 				foreach (int id, ids){  			// Let's create a vector with three neurons
 					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
-					neuronContainerPtr->push_back(neuronPtr);
+					layerPtr->push_back(neuronPtr);
 				}
 					
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
 				int wId=0;
 				std::vector<size_type> result;				
-				NeuronIteratorPtr itr( neuronContainerPtr->createIterator() ) ;
+				NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
 					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
 					conContainerPtr->push_back( conPtr );

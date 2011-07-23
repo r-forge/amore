@@ -13,6 +13,9 @@ protected:
   PredictBehaviorPtr makePredictBehavior (NeuronPtr neuronPtr);
   NeuronPtr makeNeuron (Handler Id);
   NeuronPtr makeNeuron (Handler Id, NeuronIteratorPtr neuronIteratorPtr, double totalAmountOfParameters);
-  NeuronContainerPtr makeNeuronContainer ();
+  LayerPtr makeLayer ();
+  LayerContainerPtr makeLayerContainer ();
+  NeuralNetworkPtr makeNeuralNetwork (NeuralFactory& neuralFactory);
+  NeuralCreatorPtr makeNeuralCreator ();
 };
 

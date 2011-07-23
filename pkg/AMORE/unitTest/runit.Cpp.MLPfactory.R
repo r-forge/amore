@@ -87,54 +87,45 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new TanhFactory() );
-			NeuronContainerPtr inputNeuronContainerPtr (neuralFactoryPtr->makeNeuronContainer());
-			NeuronContainerPtr outputNeuronContainerPtr (neuralFactoryPtr->makeNeuronContainer());
-
+			
+			LayerPtr inputLayerPtr (neuralFactoryPtr->makeLayer());
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron(1) );
-			neuronPtrInput1->setOutput(4.0);
-			inputNeuronContainerPtr->push_back(neuronPtrInput1);
-			
-
 			NeuronPtr neuronPtrInput2( neuralFactoryPtr->makeNeuron(2) );
-			neuronPtrInput2->setOutput(2.0);
-			inputNeuronContainerPtr->push_back(neuronPtrInput2);
-			
 			NeuronPtr neuronPtrInput3( neuralFactoryPtr->makeNeuron(3) );
+			inputLayerPtr->push_back(neuronPtrInput1);
+			inputLayerPtr->push_back(neuronPtrInput2);	
+			inputLayerPtr->push_back(neuronPtrInput3);
+			neuronPtrInput1->setOutput(4.0);
+			neuronPtrInput2->setOutput(2.0);
 			neuronPtrInput3->setOutput(4.0);
-			inputNeuronContainerPtr->push_back(neuronPtrInput3);
 			
-
-
+			LayerPtr outputLayerPtr (neuralFactoryPtr->makeLayer());
 			NeuronPtr neuronPtrOutput4( neuralFactoryPtr->makeNeuron(4) );
-			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));
+			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the predict results
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50));
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75));
 			neuronPtrOutput4->predict();
 
-
-			NeuronPtr neuronPtrOutput5( neuralFactoryPtr->makeNeuron(5, inputNeuronContainerPtr->createIterator(), 11) );
+			NeuronPtr neuronPtrOutput5( neuralFactoryPtr->makeNeuron(5, inputLayerPtr->createIterator(), 11) );
 			neuronPtrOutput5->predict();
 
-
-			outputNeuronContainerPtr->push_back(neuronPtrOutput4);
-			outputNeuronContainerPtr->push_back(neuronPtrOutput5);
-
+			outputLayerPtr->push_back(neuronPtrOutput4);
+			outputLayerPtr->push_back(neuronPtrOutput5);
 
 			Rprintf(\"===================================\");
 			Rprintf(\" Input Neurons \");
 			Rprintf(\"===================================\");			
-			inputNeuronContainerPtr->show();
+			inputLayerPtr->show();
 			Rprintf(\"===================================\");
 			Rprintf(\" Output Neurons \");
 			Rprintf(\"===================================\");	
-			outputNeuronContainerPtr->show();
+			outputLayerPtr->show();
 
 			return	Rcpp::List::create(	Rcpp::Named(\"outputN1\") = neuronPtrInput1->getOutput(),
 										Rcpp::Named(\"outputN2\") = neuronPtrInput2->getOutput(),
 										Rcpp::Named(\"outputN3\") = neuronPtrInput3->getOutput(),
 										Rcpp::Named(\"outputN4\") = neuronPtrOutput4->getOutput(),
 										Rcpp::Named(\"outputN4\") = neuronPtrOutput5->getOutput()
-
 			);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -199,12 +190,12 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	#  Id: 5
 	# ------------------------
 	# 
-	#  bias: -0.395620
-	#  output: 0.891598
+	#  bias: -0.406162
+	#  output: 0.949352
 	# ------------------------
-	# From:	 1 	 Weight= 	 0.521615 
-	# From:	 2 	 Weight= 	 -0.279283 
-	# From:	 3 	 Weight= 	 0.074348 
+	# From:	 1 	 Weight= 	 0.094275 
+	# From:	 2 	 Weight= 	 0.153799 
+	# From:	 3 	 Weight= 	 0.386660 
 	# 
 	# ------------------------
 	# [1] TRUE
@@ -212,7 +203,6 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	# [1] TRUE
 	# [1] TRUE
 
-	
 }
 
 

@@ -12,7 +12,6 @@ SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :
 {
 }
 
-
 double
 SimpleNeuron::getInducedLocalField()
 {
@@ -58,7 +57,7 @@ SimpleNeuron::getConIterator()
 void
 SimpleNeuron::addCon(ConPtr conPtr)
 {
-  d_nCons->push_back( conPtr) ;
+  d_nCons->push_back(conPtr);
 }
 
 void
@@ -88,30 +87,43 @@ SimpleNeuron::predict()
 void
 SimpleNeuron::show()
 {
-  int id = getId();
-  Rprintf("\n------------------------\n");
-  if (id == NA_INTEGER)
-    {
-      Rprintf("\n Id: NA, Invalid neuron Id");
-    }
-  else
-    {
-      Rprintf("\n Id: %d", id);
-    }
-  Rprintf("\n------------------------\n");
-  d_predictBehavior->show();
-  Rprintf("\n output: %lf", d_output);
-  Rprintf("\n------------------------\n");
   if (d_nCons->size() == 0)
     {
-      Rprintf("\n No connections defined");
+
+      int id = getId();
+      Rprintf("\n\n-----------------------------------");
+      if (id == NA_INTEGER)
+        {
+          Rprintf("\n Id: NA, Invalid neuron Id");
+        }
+      else
+        {
+          Rprintf("\n Id: %d", id);
+        }
+      Rprintf("\n-----------------------------------");
+      Rprintf("\n output: %lf", d_output);
+      Rprintf("\n-----------------------------------");
     }
   else
     {
-      d_nCons->show();
-    }
-  Rprintf("\n------------------------\n");
+      int id = getId();
+      Rprintf("\n\n-----------------------------------");
+      if (id == NA_INTEGER)
+        {
+          Rprintf("\n Id: NA, Invalid neuron Id");
+        }
+      else
+        {
+          Rprintf("\n Id: %d", id);
+        }
+      Rprintf("\n-----------------------------------");
+      d_predictBehavior->show();
 
+      Rprintf("\n output: %lf", d_output);
+      Rprintf("\n-----------------------------------");
+      d_nCons->show();
+      Rprintf("\n-----------------------------------");
+    }
 }
 
 bool
