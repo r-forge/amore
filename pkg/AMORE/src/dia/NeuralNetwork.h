@@ -4,11 +4,14 @@ class NeuralNetwork {
   // Attributes
 protected:
   LayerPtr d_inputLayer;
-  boost::shared_ptr< Container< LayerPtr > > d_hiddenLayers;
+  LayerContainerPtr d_hiddenLayers;
   LayerPtr d_outputLayer;
   // Operations
 public:
-  void show ();
-  bool validate ();
+friend class SimpleNeuralCreator; 
+  virtual void show () = 0;
+  virtual bool validate () = 0;
+protected:
+  NeuralNetwork (NeuralFactory& neuralFactory);
 };
 

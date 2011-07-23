@@ -69,8 +69,36 @@ return neuronPtr;
 }
 
 NeuronContainerPtr
-MLPfactory::makeNeuronContainer()
+MLPfactory::makeLayer()
 {
-  NeuronContainerPtr neuronContainerPtr(new SimpleContainer<NeuronPtr> );
-  return neuronContainerPtr;
+  LayerPtr layerPtr( new SimpleContainer<NeuronPtr> );
+  return layerPtr;
 }
+
+
+LayerContainerPtr
+MLPfactory::makeLayerContainer()
+{
+  LayerContainerPtr layerContainerPtr( new SimpleContainer<LayerPtr> );
+  layerContainerPtr->push_back( makeLayer() );
+  return layerContainerPtr;
+}
+
+
+NeuralNetworkPtr
+MLPfactory::makeNeuralNetwork(NeuralFactory& neuralFactory)
+{
+  NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactory ) );
+  return neuralNetworkPtr;
+}
+
+
+NeuralCreatorPtr
+MLPfactory::makeNeuralCreator()
+{
+  NeuralCreatorPtr neuralCreatorPtr(new SimpleNeuralCreator );
+  return neuralCreatorPtr;
+}
+
+
+

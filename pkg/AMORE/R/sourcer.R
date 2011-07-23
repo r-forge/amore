@@ -35,26 +35,6 @@ source("pkg/AMORE/unitTest/unitTestSuite.R")
 #lapply(gListCon$methods(),FUN=function(x){cat("# TODO ",x, " unit test\n")}) -> DontMakeNoise
 
 
-# Lista de Fixme's
-
-
-
-###############################################
-# FIXME Javi: Implement vecCon::Validate  
-# STATUS: writing
-###############################################
-
-###############################################
-# FIXME Javi: RBFNeuron
-# STATUS: Accepted
-###############################################
-
-
-###############################################
-# FIXME Manolo: Neuron.h
-# STATUS: writing
-###############################################
-
 
 
 

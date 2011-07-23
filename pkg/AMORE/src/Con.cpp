@@ -137,11 +137,11 @@ Con::show()
   int id = Id();
   if (id == NA_INTEGER)
     {
-      Rprintf("From: NA\t Invalid Connection \n");
+      Rprintf("\nFrom: NA\t Invalid Connection");
     }
   else
     {
-      Rprintf("From:\t %d \t Weight= \t %lf \n", id , getWeight() );
+      Rprintf("\nFrom:\t %d \t Weight= \t %lf", id , getWeight() );
     }
 }
 

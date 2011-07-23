@@ -5,6 +5,7 @@
 class SimpleNetwork : public NeuralNetwork {
   // Operations
 public:
+  SimpleNetwork (NeuralFactory& neuralFactory);
   void show ();
   bool validate ();
 };

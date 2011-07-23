@@ -4,6 +4,6 @@
 class NeuralCreator {
   // Operations
 public:
-  virtual NeuralNetworkPtr createFeedForwardFullyConnectedNetwork (NeuralFactoryPtr neuralFactoryPtr) = 0;
+  virtual NeuralNetworkPtr createFeedForwardNetwork (std::vector<int> numberOfNeurons, NeuralFactory& hiddenLayersFactory, NeuralFactory& outputLayerFactory) = 0;
 };
 
