@@ -19,6 +19,8 @@ sed -e '/public:/ a\
 friend class MLPfactory; ' -i ""  pkg/AMORE/src/dia/Neuron.h 
 sed -e '/public:/ a\
 friend class MLPfactory; ' -i ""  pkg/AMORE/src/dia/MLPbehavior.h 
+sed -e '/public:/ a\
+friend class SimpleNeuralCreator; ' -i ""  pkg/AMORE/src/dia/NeuralNetwork.h 
 
 sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  pkg/AMORE/src/dia/Neuron.h 
 
