@@ -5,7 +5,7 @@
  *      Author: mcasl
  */
 
-#include "dia/ActivationFunction.h"
+#include "classHeaders/ActivationFunction.h"
 //=========================================================================================================
 
 ActivationFunction::ActivationFunction(NeuronPtr neuronPtr) :

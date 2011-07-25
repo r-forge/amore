@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/ActivationFunction.h"
-#include "dia/Tanh.h"
+#include "classHeaders/ActivationFunction.h"
+#include "classHeaders/Tanh.h"
 //=========================================================================================================
 
 Tanh::Tanh(NeuronPtr neuronPtr) : ActivationFunction(neuronPtr) {

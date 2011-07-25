@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/ActivationFunction.h"
-#include "dia/Identity.h"
+#include "classHeaders/ActivationFunction.h"
+#include "classHeaders/Identity.h"
 //=========================================================================================================
 
 Identity::Identity(NeuronPtr neuronPtr) : ActivationFunction(neuronPtr) {

@@ -5,7 +5,7 @@
  *      Author: mcasl
  */
 
-#include "dia/PredictBehavior.h"
+#include "classHeaders/PredictBehavior.h"
 //=========================================================================================================
 
 PredictBehavior::PredictBehavior(NeuronPtr neuronPtr) :

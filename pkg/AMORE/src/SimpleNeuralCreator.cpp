@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralCreator.h"
-#include "dia/SimpleNeuralCreator.h"
+#include "classHeaders/NeuralCreator.h"
+#include "classHeaders/SimpleNeuralCreator.h"
 //=========================================================================================================
 
 

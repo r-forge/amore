@@ -5,7 +5,7 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralNetwork.h"
+#include "classHeaders/NeuralNetwork.h"
 
 NeuralNetwork::NeuralNetwork(NeuralFactory& neuralFactory)
 {
