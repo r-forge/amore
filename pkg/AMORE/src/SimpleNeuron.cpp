@@ -5,7 +5,7 @@
  *      Author: mcasl
  */
 
-#include "dia/SimpleNeuron.h"
+#include "classHeaders/SimpleNeuron.h"
 
 SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :
   Neuron(neuralFactory)

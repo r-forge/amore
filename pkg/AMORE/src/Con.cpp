@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/Con.h"
-#include "dia/Neuron.h"
+#include "classHeaders/Con.h"
+#include "classHeaders/Neuron.h"
 //=========================================================================================================
 
 

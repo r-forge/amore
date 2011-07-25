@@ -5,13 +5,13 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralFactory.h"
-#include "dia/MLPfactory.h"
-#include "dia/TanhFactory.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/MLPfactory.h"
+#include "classHeaders/TanhFactory.h"
 
-
-
-
+TanhFactory::TanhFactory()
+{
+}
 
 ActivationFunctionPtr
 TanhFactory::makeActivationFunction(NeuronPtr neuronPtr)

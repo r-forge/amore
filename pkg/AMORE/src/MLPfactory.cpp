@@ -5,15 +5,12 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralFactory.h"
-#include "dia/MLPfactory.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/MLPfactory.h"
 //=========================================================================================================
 
 
-MLPfactory::MLPfactory()
-{
-}
-;
+
 
 ConPtr
 MLPfactory::makeCon(Neuron& neuron, double weight)

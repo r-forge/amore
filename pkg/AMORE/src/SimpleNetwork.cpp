@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralNetwork.h"
-#include "dia/SimpleNetwork.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/SimpleNetwork.h"
 
 SimpleNetwork::SimpleNetwork(NeuralFactory& neuralFactory) :
   NeuralNetwork(neuralFactory)

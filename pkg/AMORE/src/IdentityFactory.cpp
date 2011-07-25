@@ -5,17 +5,18 @@
  *      Author: mcasl
  */
 
-#include "dia/NeuralFactory.h"
-#include "dia/MLPfactory.h"
-#include "dia/IdentityFactory.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/MLPfactory.h"
+#include "classHeaders/IdentityFactory.h"
 
-
-
+IdentityFactory::IdentityFactory()
+{
+}
 
 
 ActivationFunctionPtr
 IdentityFactory::makeActivationFunction(NeuronPtr neuronPtr)
-{
-  ActivationFunctionPtr activationFunctionPtr(new Identity(neuronPtr));
-  return activationFunctionPtr;
-}
+  {
+    ActivationFunctionPtr activationFunctionPtr(new Identity(neuronPtr));
+    return activationFunctionPtr;
+  }

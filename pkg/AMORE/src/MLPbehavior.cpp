@@ -5,8 +5,8 @@
  *      Author: mcasl
  */
 
-#include "dia/PredictBehavior.h"
-#include "dia/MLPbehavior.h"
+#include "classHeaders/PredictBehavior.h"
+#include "classHeaders/MLPbehavior.h"
 //=========================================================================================================
 
 

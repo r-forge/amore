@@ -1,4 +1,4 @@
-#include "dia/IteratorInterface.h"
+#include "classHeaders/IteratorInterface.h"
 
 template<typename T>
   IteratorInterface<T>::IteratorInterface()

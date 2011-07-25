@@ -4,8 +4,6 @@
 /// class MLPfactory - 
 class MLPfactory : public NeuralFactory {
   // Operations
-public:
-  MLPfactory ();
 protected:
   ConPtr makeCon (Neuron& neuron, double weight);
   ConContainerPtr makeConContainer ();
