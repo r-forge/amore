@@ -9,6 +9,11 @@ protected:
   // Operations
 public:
 friend class SimpleNeuralCreator; 
+  virtual void writeInput (std::vector<double>::iterator& iterator) = 0;
+  virtual void predict () = 0;
+  virtual void readOutput (std::vector<double>::iterator& iterator) = 0;
+  virtual size_type inputSize () = 0;
+  virtual size_type outputSize () = 0;
   virtual void show () = 0;
   virtual bool validate () = 0;
 protected:

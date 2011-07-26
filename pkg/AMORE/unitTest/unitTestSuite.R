@@ -3,7 +3,11 @@
 # Author: mcasl
 ###############################################################################
 
-require("RUnit") 
+suppressMessages(require("inline"))
+suppressMessages(require("Rcpp"))
+suppressMessages(require("RUnit"))
+
+
 uniTestPath   <-  "./pkg/AMORE/unitTest"
 testFile <- "./www/unitTestResults.html"
 
@@ -15,14 +19,6 @@ testFileToSFLinkMap <- function(testFileName, testDir = "unitTest") {
 }
 
 
-testsuite.AMORErefClasses <- defineTestSuite("AMORE Reference Classes Unit Tests",
-		dirs = uniTestPath ,	
-		testFileRegexp = "^runit.RC.+\\.R",
-		testFuncRegexp = "^test.+",
-		rngKind = "Marsaglia-Multicarry",
-		rngNormalKind = "Kinderman-Ramage"
-)
-
 
 testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 		dirs = uniTestPath ,	
@@ -33,9 +29,7 @@ testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 )
 
 testResult <- runTestSuite(list( 
-				testsuite.AMORErefClasses,
- 				testsuite.AMORECppClasses
-					
+ 				testsuite.AMORECppClasses					
 								))
 						
 printHTMLProtocol(testResult, file=testFile, testFileToLinkMap = testFileToSFLinkMap)
