@@ -7,7 +7,11 @@ private:
   // Operations
 public:
   NetworkRinterface ();
-  void show ();
   void createFeedForwardNetwork (Rcpp::NumericVector numberOfNeurons);
+  Rcpp::NumericMatrix predict (Rcpp::NumericMatrix numericMatrix);
+  size_type inputSize ();
+  size_type outputSize ();
+  void show ();
+  bool validate ();
 };
 
