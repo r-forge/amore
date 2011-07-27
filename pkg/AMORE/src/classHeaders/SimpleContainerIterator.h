@@ -20,3 +20,4 @@ private:
   T currentItem ();
 };
 
+#include "../SimpleContainerIterator.code" 

@@ -5,6 +5,14 @@
  *      Author: mcasl
  */
 
+
+
+#include "package.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/Container.h"
+#include "classHeaders/Iterator.h"
+#include "classHeaders/ActivationFunction.h"
+#include "classHeaders/PredictBehavior.h"
 #include "classHeaders/SimpleNeuron.h"
 
 SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :

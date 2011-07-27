@@ -5,8 +5,22 @@
  *      Author: mcasl
  */
 
+#include "package.h"
+#include "classHeaders/Connection.h"
+#include "classHeaders/Neuron.h"
+#include "classHeaders/SimpleNeuron.h"
+#include "classHeaders/Container.h"
+#include "classHeaders/SimpleContainer.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/SimpleNetwork.h"
+#include "classHeaders/NeuralCreator.h"
+#include "classHeaders/SimpleNeuralCreator.h"
+#include "classHeaders/predictBehavior.h"
+#include "classHeaders/MLPbehavior.h"
+#include "classHeaders/Iterator.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
+
 //=========================================================================================================
 
 
@@ -25,6 +39,7 @@ MLPfactory::makeConContainer()
   ConContainerPtr conContainerPtr(new SimpleContainer<ConPtr> );
   return conContainerPtr;
 }
+
 
 PredictBehaviorPtr
 MLPfactory::makePredictBehavior(NeuronPtr neuronPtr)
@@ -65,7 +80,7 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
 return neuronPtr;
 }
 
-NeuronContainerPtr
+LayerPtr
 MLPfactory::makeLayer()
 {
   LayerPtr layerPtr( new SimpleContainer<NeuronPtr> );

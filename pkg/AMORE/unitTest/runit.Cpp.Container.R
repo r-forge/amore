@@ -75,7 +75,7 @@ test.Container.Cpp.push_back<- function() {
 			// Data set up
 				
 				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-				NeuronContainerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
+				LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
 				NeuronPtr neuronPtr;
@@ -115,7 +115,7 @@ test.Container.Cpp.size<- function() {
 	testCode <- "
 		// Data set up
 				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
-				NeuronContainerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
+				LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				NeuronPtr neuronPtr;
 				int ids[]= {10, 20, 30};
 				double weights[] = {1.13, 2.22, 3.33 };

@@ -5,7 +5,8 @@
  *      Author: mcasl
  */
 
-#include "classHeaders/Con.h"
+#include "package.h"
+#include "classHeaders/Connection.h"
 #include "classHeaders/Neuron.h"
 //=========================================================================================================
 

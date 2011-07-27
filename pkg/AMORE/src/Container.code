@@ -1,0 +1,29 @@
+/*
+ * Container.cpp
+ *
+ *  Created on: 15/07/2011
+ *      Author: mcasl
+ */
+
+//======================================================================================================================
+// This is a complementary file to classHeaders
+// Due to the behavior of C++ compilers, template classes are not compiled until needed.
+// Thus, should this file had cpp extension, no code would be generated.
+// Instead, this file is included in the classHeaders/Container.h in order to be available for the clients.
+// I believe this to be a more flexible solution than instantiating every concrete class at the end of the file.
+// As the classHeaders directory is wiped down on every execution of dia2code ---used during the development process---
+// I prefer to include the code using this file on a separate directory.
+//======================================================================================================================
+
+
+
+template<typename T>
+  Container<T>::Container()
+  {
+  }
+
+
+template<typename T>
+Container<T>::~Container()
+  {
+  }

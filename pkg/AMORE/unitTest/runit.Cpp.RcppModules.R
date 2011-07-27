@@ -7,7 +7,7 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 	testCode <- ""
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	
-	modAMORE <- Module("mod_AMORE",  getDynLib(testCodefun))	
+	modAMORE <- Module("modAMORE",  getDynLib(testCodefun))	
 
 	
 	AMOREnet <- modAMORE$NetworkRinterface

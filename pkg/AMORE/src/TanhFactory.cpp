@@ -5,9 +5,14 @@
  *      Author: mcasl
  */
 
+
+#include "package.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
+#include "classHeaders/Tanh.h"
 #include "classHeaders/TanhFactory.h"
+#include "classHeaders/ActivationFunction.h"
+
 
 TanhFactory::TanhFactory()
 {

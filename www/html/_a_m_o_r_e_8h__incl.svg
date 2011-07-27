@@ -126,9 +126,9 @@
 </g>
 <!-- Node13 -->
 <g id="node25" class="node"><title>Node13</title>
-<a xlink:href="_con_8h.html" target="_top" xlink:title="dia/Con.h">
+<a xlink:href="_con_8h.html" target="_top" xlink:title="dia/Connection.h">
 <polygon fill="white" stroke="black" points="802.5,-112.5 802.5,-131.5 861.5,-131.5 861.5,-112.5 802.5,-112.5"/>
-<text text-anchor="middle" x="832" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">dia/Con.h</text>
+<text text-anchor="middle" x="832" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">dia/Connection.h</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node13 -->

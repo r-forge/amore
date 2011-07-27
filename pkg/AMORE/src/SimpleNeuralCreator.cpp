@@ -4,11 +4,17 @@
  *  Created on: 14/07/2011
  *      Author: mcasl
  */
-
-#include "classHeaders/NeuralCreator.h"
-#include "classHeaders/SimpleNeuralCreator.h"
 //=========================================================================================================
 
+
+
+#include "package.h"
+#include "classHeaders/Container.h"
+#include "classHeaders/Neuron.h"
+#include "classHeaders/NeuralCreator.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/SimpleNeuralCreator.h"
 
 SimpleNeuralCreator::SimpleNeuralCreator()
 {

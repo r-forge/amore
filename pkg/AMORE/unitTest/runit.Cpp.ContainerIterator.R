@@ -5,7 +5,7 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
+			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 
 			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
@@ -37,7 +37,7 @@ test.ContainerIterator.Cpp.first<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
+			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
 			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
@@ -68,7 +68,7 @@ test.ContainerIterator.Cpp.next<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
+			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
 			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
@@ -102,7 +102,7 @@ test.ContainerIterator.Cpp.isDone<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
+			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
 			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;
@@ -139,7 +139,7 @@ test.ContainerIterator.Cpp.currentItem<- function() {
 	testCode <- "
 BEGIN_RCPP
 			// Test
-			NeuronContainerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
+			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
 			
 			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
 			NeuronPtr neuronPtr;

@@ -5,6 +5,7 @@
  *      Author: mcasl
  */
 
+#include "package.h"
 #include "classHeaders/ActivationFunction.h"
 #include "classHeaders/Identity.h"
 //=========================================================================================================
