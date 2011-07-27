@@ -1,5 +1,8 @@
+#include "package.h"
+#include "classHeaders/NetworkRinterface.h"
 
-RCPP_MODULE(mod_AMORE)
+
+RCPP_MODULE(modAMORE)
   {
     class_<NetworkRinterface>( "NetworkRinterface" )
     .constructor()

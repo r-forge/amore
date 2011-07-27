@@ -24,3 +24,4 @@ private:
   bool validate ();
 };
 
+#include "../SimpleContainer.code" 

@@ -117,7 +117,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pfactory.html#a9e9e9bb4390df09c78a24c4ff79cdab6">makePredictBehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pfactory.html#a6dd50bc994fa69d7c4de183284efdae2">makeNeuron</a> (<a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pfactory.html#a9e3c7140a702a12d7a7fde8ad52b6b04">makeNeuron</a> (<a class="el" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id, <a class="el" href="_a_m_o_r_e_8h.html#aa794539c0a68e4eb451e7a2cc6294acc">NeuronIteratorPtr</a> neuronIteratorPtr, double totalAmountOfParameters)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pfactory.html#a174caa9d45bc964a07d86f6221e576e1">makeNeuronContainer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pfactory.html#a174caa9d45bc964a07d86f6221e576e1">makeNeuronContainer</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_m_l_pfactory.html" title="class MLPfactory -">MLPfactory</a> - </p>
@@ -363,7 +363,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a> MLPfactory::makeNeuronContainer </td>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">LayerPtr</a> MLPfactory::makeNeuronContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -376,8 +376,8 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_m_l_pfactory_8cpp_source.html#l00072">72</a> of file <a class="el" href="_m_l_pfactory_8cpp_source.html">MLPfactory.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  <a class="code" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">NeuronContainerPtr</a> neuronContainerPtr(<span class="keyword">new</span> <a class="code" href="class_simple_container.html" title="class SimpleContainer -">SimpleContainer&lt;NeuronPtr&gt;</a> );
-  <span class="keywordflow">return</span> neuronContainerPtr;
+  <a class="code" href="_a_m_o_r_e_8h.html#a6157c259718f98f808c85d7f77048970">LayerPtr</a> LayerPtr(<span class="keyword">new</span> <a class="code" href="class_simple_container.html" title="class SimpleContainer -">SimpleContainer&lt;NeuronPtr&gt;</a> );
+  <span class="keywordflow">return</span> LayerPtr;
 }
 </pre></div>
 </div>

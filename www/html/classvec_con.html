@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>A vector of connections.  
  <a href="classvec_con.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="vec_con_8h_source.html">VecCon.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="vec_con_8h_source.html">VecConnection.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for VecCon:</div>
 <div class="dyncontent">
@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A vector of connections. </p>
 <p>The <a class="el" href="classvec_con.html" title="A vector of connections.">VecCon</a> class provides a simple class for a vector of connections. It's named after the R equivalent Reference Class. </p>
 
-<p>Definition at line <a class="el" href="vec_con_8h_source.html#l00017">17</a> of file <a class="el" href="vec_con_8h_source.html">VecCon.h</a>.</p>
+<p>Definition at line <a class="el" href="vec_con_8h_source.html#l00017">17</a> of file <a class="el" href="vec_con_8h_source.html">VecConnection.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ae2f2979a6ce42fa5ff0a8911a3ec3cb6"></a><!-- doxytag: member="VecCon::buildAndAppend" ref="ae2f2979a6ce42fa5ff0a8911a3ec3cb6" args="(std::vector&lt; NeuronSharedPtr &gt; vFrom, std::vector&lt; double &gt; nWeights)" -->
 <div class="memitem">
@@ -613,7 +613,7 @@ Here is the call graph for this function:</div>
         <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> LayerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">VecConPtr</a> conContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_con.html" title="A vector of connections.">VecCon</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>    ptC;
                                 <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptN;
@@ -621,12 +621,12 @@ Here is the call graph for this function:</div>
                                 <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33 };
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
+                                        LayerPtr-&gt;push_back(ptN);
                                 }
         <span class="comment">// Test</span>
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
                                         result.push_back(conContainerPtr-&gt;numOfCons());                <span class="comment">// Append numOfCons to result, create new Con and push_back into MyVecCon</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                         conContainerPtr-&gt;push_back(ptC);
                                 }
 
@@ -763,7 +763,7 @@ Here is the caller graph for this function:</div>
 
         <span class="comment">// Data set up</span>
                 std::vector&lt;int&gt; result;
-                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
+                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> LayerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
                 <a class="code" href="_a_m_o_r_e_8h.html#a16f0806a3e5478c590c5b8ac41187e57">VecConPtr</a> conContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_con.html" title="A vector of connections.">VecCon</a>() );
                 <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>    ptC;
                 <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptN;
@@ -773,14 +773,14 @@ Here is the caller graph for this function:</div>
 
                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
-                        neuronContainerPtr-&gt;push_back(ptN);
+                        LayerPtr-&gt;push_back(ptN);
                 }
                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
                         ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>() );
                         conContainerPtr-&gt;push_back(ptC);
                 }
         <span class="comment">// Test</span>
-                conContainerPtr-&gt;setFrom(neuronContainerPtr-&gt;load()) ;
+                conContainerPtr-&gt;setFrom(LayerPtr-&gt;load()) ;
                 conContainerPtr-&gt;show();
                 result=conContainerPtr-&gt;getId();
 
@@ -1026,7 +1026,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>pkg/AMORE/src/<a class="el" href="vec_con_8h_source.html">VecCon.h</a></li>
+<li>pkg/AMORE/src/<a class="el" href="vec_con_8h_source.html">VecConnection.h</a></li>
 <li>pkg/AMORE/src/<a class="el" href="vec_con_8cpp_source.html">VecCon.cpp</a></li>
 </ul>
 </div>

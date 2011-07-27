@@ -14,3 +14,4 @@ protected:
   Iterator ();
 };
 
+#include "../Iterator.code" 

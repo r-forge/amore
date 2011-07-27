@@ -165,7 +165,7 @@ template&lt;typename T&gt; </div>
         <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> LayerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a>    conContainerPtrA( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Con&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a>    conContainerPtrB( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Con&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>    ptC;
@@ -174,14 +174,14 @@ template&lt;typename T&gt; </div>
                                 <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33, 5.6, 4.2, 3.6 };
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=5 ; i++) {                             <span class="comment">// Let&#39;s create a vector with six neurons</span>
                                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
+                                        LayerPtr-&gt;push_back(ptN);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// A vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                         conContainerPtrA-&gt;push_back(ptC);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=3; i&lt;=5 ; i++) {                             <span class="comment">// Another vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                         conContainerPtrB-&gt;push_back(ptC);
                                 }
         <span class="comment">// Test</span>
@@ -241,7 +241,7 @@ template&lt;typename T &gt; </div>
                 <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
+                                <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> LayerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a>    conContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Con&gt;</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>    ptC;
                                 <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptN;
@@ -249,10 +249,10 @@ template&lt;typename T &gt; </div>
                                 <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33 };
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
+                                        LayerPtr-&gt;push_back(ptN);
                                 }
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                         vcA.push_back(ptC);
                                 }
                 <span class="comment">// Test</span>
@@ -413,7 +413,7 @@ template&lt;typename T &gt; </div>
                 <span class="comment">//Usage example:</span>
                 <span class="comment">//================</span>
                 <span class="comment">// Data set up</span>
-                        <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
+                        <a class="code" href="_a_m_o_r_e_8h.html#ada7ae04a1fa1bd30e64931d8f55e6aba">ContainerneuronSharedPtr</a> LayerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Neuron&gt;</a>() );
                         <a class="code" href="_a_m_o_r_e_8h.html#aef4af162896b6bdede75674d0ce7d9db">ContainerconSharedPtr</a>    conContainerPtr( <span class="keyword">new</span> <a class="code" href="classvec_a_m_o_r_e.html">Container&lt;Con&gt;</a>() );
                         <a class="code" href="_a_m_o_r_e_8h.html#ae7d05d5880745e8a588e1efd62c81f32">ConPtr</a>    ptC;
                         <a class="code" href="_a_m_o_r_e_8h.html#a03051950b0faf9499d14cf376e04c329">NeuronSharedPtr</a> ptN;
@@ -422,11 +422,11 @@ template&lt;typename T &gt; </div>
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                                 ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="A class to handle the information contained in a general Neuron.">Neuron</a>( ids[i] ) );
-                                neuronContainerPtr-&gt;push_back(ptN);
+                                LayerPtr-&gt;push_back(ptN);
                         }
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="A class to handle the information needed to describe an input connection.">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                 conContainerPtr-&gt;push_back(ptC);
                         }
 

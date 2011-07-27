@@ -1,5 +1,7 @@
 rm ../pkg/AMORE/src/classHeaders/*
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Con.dia
+mv ../pkg/AMORE/src/classHeaders/Connection.h ../pkg/AMORE/src/classHeaders/Connection.h
+
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Container.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Neuron.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralFactory.dia
@@ -16,6 +18,16 @@ sed -e '/public:/ a\
 friend class SimpleContainerIterator<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e '/public:/ a\
 friend class SimpleContainer<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
+
+
+
+
+echo "#include \"../Container.code\" " >> ../pkg/AMORE/src/classHeaders/Container.h
+echo "#include \"../SimpleContainer.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainer.h
+echo "#include \"../Iterator.code\" " >> ../pkg/AMORE/src/classHeaders/Iterator.h
+echo "#include \"../SimpleContainerIterator.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h
+
+
 sed -e '/public:/ a\
 friend class MLPfactory; ' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h 
 sed -e '/public:/ a\

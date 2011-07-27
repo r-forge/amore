@@ -5,6 +5,11 @@
  *      Author: mcasl
  */
 
+#include "package.h"
+#include "classHeaders/Container.h"
+#include "classHeaders/Iterator.h"
+#include "classHeaders/Neuron.h"
+
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/SimpleNetwork.h"
 

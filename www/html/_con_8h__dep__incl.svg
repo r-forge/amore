@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <polygon fill="#bfbfbf" stroke="black" points="1,-112.5 1,-131.5 135,-131.5 135,-112.5 1,-112.5"/>
-<text text-anchor="middle" x="68" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">pkg/AMORE/src/dia/Con.h</text>
+<text text-anchor="middle" x="68" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">pkg/AMORE/src/dia/Connection.h</text>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>

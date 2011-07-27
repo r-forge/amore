@@ -5,7 +5,16 @@
  *      Author: mcasl
  */
 
+#include "package.h"
+
+#include "classHeaders/IdentityFactory.h"
+#include "classHeaders/TanhFactory.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/NeuralCreator.h"
 #include "classHeaders/NetworkRinterface.h"
+
+
 
 //=========================================================================================================
 

@@ -450,7 +450,7 @@ Here is the caller graph for this function:</div>
         <span class="comment">// Data set up</span>
                                 std::vector&lt;int&gt; result;
                                 std::vector&lt;ConPtr&gt; vcA, vcB;
-                                ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
+                                ContainerNeuronPtr      LayerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
                                 ConContainerPtr conContainerPtr( <span class="keyword">new</span> <a class="code" href="class_con_container.html#aec4578b20ba3509e450bfbc9851d3393">ConContainer</a>() );
                                 <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                                 <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
@@ -458,12 +458,12 @@ Here is the caller graph for this function:</div>
                                 <span class="keywordtype">double</span> weights[] = {1.13, 2.22, 3.33 };
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                                        neuronContainerPtr-&gt;push_back(ptN);
+                                        LayerPtr-&gt;push_back(ptN);
                                 }
         <span class="comment">// Test</span>
                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
                                         result.push_back(conContainerPtr-&gt;numOfCons());         <span class="comment">// Append numOfCons to result, create new Con and push_back into conContainer</span>
-                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                        ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                         conContainerPtr-&gt;push_back(ptC);
                                 }
 
@@ -614,7 +614,7 @@ Here is the caller graph for this function:</div>
 
         <span class="comment">// Data set up</span>
                 std::vector&lt;int&gt; result;
-                ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
+                ContainerNeuronPtr      LayerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html">Container&lt;Neuron&gt;</a>() );
                 ConContainerPtr conContainerPtr( <span class="keyword">new</span> <a class="code" href="class_con_container.html#aec4578b20ba3509e450bfbc9851d3393">ConContainer</a>() );
                 <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                 <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
@@ -624,14 +624,14 @@ Here is the caller graph for this function:</div>
 
                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                         ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                        neuronContainerPtr-&gt;push_back(ptN);
+                        LayerPtr-&gt;push_back(ptN);
                 }
                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
                         ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>() );
                         conContainerPtr-&gt;push_back(ptC);
                 }
         <span class="comment">// Test</span>
-                conContainerPtr-&gt;setFrom(neuronContainerPtr-&gt;load()) ;
+                conContainerPtr-&gt;setFrom(LayerPtr-&gt;load()) ;
                 conContainerPtr-&gt;show();
                 result=conContainerPtr-&gt;getId();
 

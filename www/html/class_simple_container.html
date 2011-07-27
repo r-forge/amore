@@ -402,7 +402,7 @@ template&lt;typename T &gt; </div>
                 <span class="comment">//Usage example:</span>
                 <span class="comment">//================</span>
                 <span class="comment">// Data set up</span>
-                        ContainerNeuronPtr      neuronContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html" title="class Container -">Container&lt;Neuron&gt;</a>() );
+                        ContainerNeuronPtr      LayerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html" title="class Container -">Container&lt;Neuron&gt;</a>() );
                         ContainerConPtr conContainerPtr( <span class="keyword">new</span> <a class="code" href="class_container.html" title="class Container -">Container&lt;Con&gt;</a>() );
                         <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>  ptC;
                         <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> ptN;
@@ -411,11 +411,11 @@ template&lt;typename T &gt; </div>
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// Let&#39;s create a vector with three neurons</span>
                                 ptN.reset( <span class="keyword">new</span> <a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>( ids[i] ) );
-                                neuronContainerPtr-&gt;push_back(ptN);
+                                LayerPtr-&gt;push_back(ptN);
                         }
 
                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;=2 ; i++) {                             <span class="comment">// and a vector with three connections</span>
-                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( neuronContainerPtr-&gt;load().at(i), weights[i]) );
+                                ptC.reset( <span class="keyword">new</span> <a class="code" href="class_con.html" title="class Con -">Con</a>( LayerPtr-&gt;load().at(i), weights[i]) );
                                 conContainerPtr-&gt;push_back(ptC);
                         }
 

@@ -5,6 +5,8 @@
  *      Author: mcasl
  */
 
+#include "package.h"
+#include "classHeaders/Identity.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
 #include "classHeaders/IdentityFactory.h"

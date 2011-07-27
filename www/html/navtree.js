@@ -153,7 +153,7 @@ var NAVTREE =
       [ "pkg/AMORE/src/dia/BatchBehavior.h", "_batch_behavior_8h.html", null ],
       [ "pkg/AMORE/src/dia/BATCHgd.h", "_b_a_t_c_hgd_8h.html", null ],
       [ "pkg/AMORE/src/dia/BATCHgdwm.h", "_b_a_t_c_hgdwm_8h.html", null ],
-      [ "pkg/AMORE/src/dia/Con.h", "_con_8h.html", null ],
+      [ "pkg/AMORE/src/dia/Connection.h", "_con_8h.html", null ],
       [ "pkg/AMORE/src/dia/Container.h", "_container_8h.html", null ],
       [ "pkg/AMORE/src/dia/Cosine.h", "_cosine_8h.html", null ],
       [ "pkg/AMORE/src/dia/CosineFactory.h", "_cosine_factory_8h.html", null ],

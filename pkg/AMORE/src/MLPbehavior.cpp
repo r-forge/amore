@@ -5,6 +5,10 @@
  *      Author: mcasl
  */
 
+#include "package.h"
+#include "classHeaders/Connection.h"
+#include "classHeaders/Iterator.h"
+#include "classHeaders/Neuron.h"
 #include "classHeaders/PredictBehavior.h"
 #include "classHeaders/MLPbehavior.h"
 //=========================================================================================================
