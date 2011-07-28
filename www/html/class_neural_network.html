@@ -81,7 +81,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">NeuralNetwork Class Reference</div>  </div>
 </div>
@@ -94,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for NeuralNetwork:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neural_network__inherit__graph.svg" width="142" height="275" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_neural_network__inherit__graph.svg" width="150" height="451" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -102,69 +104,224 @@ Inheritance diagram for NeuralNetwork:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#abaaf6b63ffe8a48d6efe55d702da5d1a">show</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ae0a46bc39bde3b67a19f11e51a2a5191">validate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ad84eb675d31eab6e5d45c37f686d8186">writeInput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ac5d16c83c3159ecd075636e82688b2ed">predict</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#acb06905cd65e1f40b79cf2cc30e5987a">readOutput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a9b59b8576a47750009669a6885524d1e">inputSize</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af7bbfbd5635c29d66fbb37e74800ec15">outputSize</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#abe7893d4df14b19f059f9fca0175cbe1">show</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a7ab39cee7bef69eff19cca490ff5d7c0">validate</a> ()=0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a94089745c72c49c41c51aaa73935145e">NeuralNetwork</a> (<a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;neuralFactory)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="class_container.html">Container</a><br class="typebreak"/>
-&lt; <a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ab030966dcd9ee3b7706923d2d5d6a0e7">d_hiddenLayers</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">LayerContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a59e04cd60df00cd27e6539f482d90359">SimpleNeuralCreator</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_neural_network.html" title="class NeuralNetwork -">NeuralNetwork</a> - </p>
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00003">3</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="abaaf6b63ffe8a48d6efe55d702da5d1a"></a><!-- doxytag: member="NeuralNetwork::show" ref="abaaf6b63ffe8a48d6efe55d702da5d1a" args="()" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a94089745c72c49c41c51aaa73935145e"></a><!-- doxytag: member="NeuralNetwork::NeuralNetwork" ref="a94089745c72c49c41c51aaa73935145e" args="(NeuralFactory &amp;neuralFactory)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void NeuralNetwork::show </td>
+          <td class="memname">NeuralNetwork::NeuralNetwork </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>neuralFactory</em></td><td>)</td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">SimpleNetwork</a>.</p>
+<p>Definition at line <a class="el" href="_neural_network_8cpp_source.html#l00012">12</a> of file <a class="el" href="_neural_network_8cpp_source.html">NeuralNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00007">d_hiddenLayers</a>, <a class="el" href="_neural_network_8h_source.html#l00006">d_inputLayer</a>, <a class="el" href="_neural_network_8h_source.html#l00008">d_outputLayer</a>, <a class="el" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">NeuralFactory::makeLayer()</a>, and <a class="el" href="class_neural_factory.html#a10b5056a57cc3fef56c66da1ad367fc7">NeuralFactory::makeLayerContainer()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>  = neuralFactory.<a class="code" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">makeLayer</a>();
+  <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a> = neuralFactory.<a class="code" href="class_neural_factory.html#a10b5056a57cc3fef56c66da1ad367fc7">makeLayerContainer</a>();
+  <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a> = neuralFactory.<a class="code" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">makeLayer</a>();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_neural_network_a94089745c72c49c41c51aaa73935145e_cgraph.svg" width="512" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="ae0a46bc39bde3b67a19f11e51a2a5191"></a><!-- doxytag: member="NeuralNetwork::validate" ref="ae0a46bc39bde3b67a19f11e51a2a5191" args="()" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9b59b8576a47750009669a6885524d1e"></a><!-- doxytag: member="NeuralNetwork::inputSize" ref="a9b59b8576a47750009669a6885524d1e" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool NeuralNetwork::validate </td>
+          <td class="memname">virtual size_type NeuralNetwork::inputSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">SimpleNetwork</a>.</p>
+<p>Implemented in <a class="el" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7bbfbd5635c29d66fbb37e74800ec15"></a><!-- doxytag: member="NeuralNetwork::outputSize" ref="af7bbfbd5635c29d66fbb37e74800ec15" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_type NeuralNetwork::outputSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5d16c83c3159ecd075636e82688b2ed"></a><!-- doxytag: member="NeuralNetwork::predict" ref="ac5d16c83c3159ecd075636e82688b2ed" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::predict </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb06905cd65e1f40b79cf2cc30e5987a"></a><!-- doxytag: member="NeuralNetwork::readOutput" ref="acb06905cd65e1f40b79cf2cc30e5987a" args="(std::vector&lt; double &gt;::iterator &amp;iterator)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::readOutput </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;::iterator &amp;&#160;</td>
+          <td class="paramname"><em>iterator</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe7893d4df14b19f059f9fca0175cbe1"></a><!-- doxytag: member="NeuralNetwork::show" ref="abe7893d4df14b19f059f9fca0175cbe1" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::show </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ab39cee7bef69eff19cca490ff5d7c0"></a><!-- doxytag: member="NeuralNetwork::validate" ref="a7ab39cee7bef69eff19cca490ff5d7c0" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool NeuralNetwork::validate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad84eb675d31eab6e5d45c37f686d8186"></a><!-- doxytag: member="NeuralNetwork::writeInput" ref="ad84eb675d31eab6e5d45c37f686d8186" args="(std::vector&lt; double &gt;::iterator &amp;iterator)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::writeInput </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;::iterator &amp;&#160;</td>
+          <td class="paramname"><em>iterator</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#a45c0a090f4ac14963c7f2ebfc4cc3f5d">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a59e04cd60df00cd27e6539f482d90359"></a><!-- doxytag: member="NeuralNetwork::SimpleNeuralCreator" ref="a59e04cd60df00cd27e6539f482d90359" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_simple_neural_creator.html">SimpleNeuralCreator</a><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00011">11</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ab030966dcd9ee3b7706923d2d5d6a0e7"></a><!-- doxytag: member="NeuralNetwork::d_hiddenLayers" ref="ab030966dcd9ee3b7706923d2d5d6a0e7" args="" -->
+<a class="anchor" id="ae47be9819644d8ecf23328cf4e8f6dfb"></a><!-- doxytag: member="NeuralNetwork::d_hiddenLayers" ref="ae47be9819644d8ecf23328cf4e8f6dfb" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">boost::shared_ptr&lt; <a class="el" href="class_container.html">Container</a>&lt; <a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a> &gt; &gt; <a class="el" href="class_neural_network.html#ab030966dcd9ee3b7706923d2d5d6a0e7">NeuralNetwork::d_hiddenLayers</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">LayerContainerPtr</a> <a class="el" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">NeuralNetwork::d_hiddenLayers</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00007">7</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00023">SimpleNetwork::predict()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>.</p>
 
 </div>
 </div>
@@ -173,13 +330,15 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a> <a class="el" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">NeuralNetwork::d_inputLayer</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a> <a class="el" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">NeuralNetwork::d_inputLayer</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00006">6</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00070">SimpleNetwork::inputSize()</a>, <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00050">SimpleNetwork::writeInput()</a>.</p>
 
 </div>
 </div>
@@ -188,7 +347,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#ab6f0bcd94ae7a31c0c964d65e0db17cf">LayerPtr</a> <a class="el" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">NeuralNetwork::d_outputLayer</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a> <a class="el" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">NeuralNetwork::d_outputLayer</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -196,17 +355,20 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00008">8</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
+<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00076">SimpleNetwork::outputSize()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00023">SimpleNetwork::predict()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00060">SimpleNetwork::readOutput()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>pkg/AMORE/src/dia/<a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/<a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="_neural_network_8cpp_source.html">NeuralNetwork.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neural_network.html">NeuralNetwork</a>      </li>
-      <li class="footer">Generated on Fri Jul 22 2011 04:19:45 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 28 2011 01:19:53 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

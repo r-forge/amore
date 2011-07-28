@@ -93,13 +93,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for SimpleNeuralCreator:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_neural_creator__inherit__graph.svg" width="326" height="230" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_simple_neural_creator__inherit__graph.svg" width="230" height="230" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SimpleNeuralCreator:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_neural_creator__coll__graph.svg" width="326" height="230" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_simple_neural_creator__coll__graph.svg" width="230" height="230" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -108,7 +108,7 @@ Collaboration diagram for SimpleNeuralCreator:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neural_creator.html#adbb88d9250fc4cd85b036039286918bc">SimpleNeuralCreator</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neural_creator.html#a7b61e2ea3637d65d223873aca4aabff9">createFeedForwardFullyConnectedNetwork</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a> neuralFactoryPtr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_neural_creator.html#a02ea62733f819e7b4a0b9878910545c5">createFeedForwardNetwork</a> (std::vector&lt; int &gt; numberOfNeurons, <a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;hiddenLayersFactory, <a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;outputLayerFactory)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="class_simple_neural_creator.html" title="class SimpleNeuralCreator -">SimpleNeuralCreator</a> - </p>
@@ -129,48 +129,138 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_simple_neural_creator_8cpp_source.html#l00015">15</a> of file <a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neural_creator_8cpp_source.html#l00019">19</a> of file <a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a>.</p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a7b61e2ea3637d65d223873aca4aabff9"></a><!-- doxytag: member="SimpleNeuralCreator::createFeedForwardFullyConnectedNetwork" ref="a7b61e2ea3637d65d223873aca4aabff9" args="(NeuralFactoryPtr neuralFactoryPtr)" -->
+<a class="anchor" id="a02ea62733f819e7b4a0b9878910545c5"></a><!-- doxytag: member="SimpleNeuralCreator::createFeedForwardNetwork" ref="a02ea62733f819e7b4a0b9878910545c5" args="(std::vector&lt; int &gt; numberOfNeurons, NeuralFactory &amp;hiddenLayersFactory, NeuralFactory &amp;outputLayerFactory)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> SimpleNeuralCreator::createFeedForwardFullyConnectedNetwork </td>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> SimpleNeuralCreator::createFeedForwardNetwork </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a>&#160;</td>
-          <td class="paramname"><em>neuralFactoryPtr</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>numberOfNeurons</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>hiddenLayersFactory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>outputLayerFactory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="class_neural_creator.html#adc9b52a5271eed92d0f318b5da100515">NeuralCreator</a>.</p>
+<p>Implements <a class="el" href="class_neural_creator.html#a611ada630d83418fbd4ade790a1e655e">NeuralCreator</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_neural_creator_8cpp_source.html#l00022">22</a> of file <a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_simple_neural_creator_8cpp_source.html#l00024">24</a> of file <a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a>.</p>
+
+<p>References <a class="el" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">NeuralFactory::makeLayer()</a>, <a class="el" href="class_neural_factory.html#a15b9308e868ca439869b1d68afabfcde">NeuralFactory::makeNeuralNetwork()</a>, and <a class="el" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">NeuralFactory::makeNeuron()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-  <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> n;
-  <span class="keywordflow">return</span> n ; <span class="comment">// change this, does&#39;n make sense</span>
+  <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> neuralNetworkPtr(outputLayerFactory.<a class="code" href="class_neural_factory.html#a15b9308e868ca439869b1d68afabfcde">makeNeuralNetwork</a>(outputLayerFactory));
+  <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr;
+
+  <span class="keywordflow">if</span> (numberOfNeurons.size() &lt;= 2)
+    {
+      <span class="keywordflow">throw</span> std::range_error(
+          <span class="stringliteral">&quot;[C++ CreateFeedForwardNetwork::validate]: Error, number of layers lower than 3.&quot;</span>);
+    }
+
+  <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> neuronId = 1;
+
+  <span class="comment">//============================================================</span>
+  <span class="comment">// Calculation of the total amount of parameters</span>
+  <span class="comment">//============================================================</span>
+  <span class="keywordtype">int</span> totalAmountOfParameters = 0;
+
+  std::vector&lt;int&gt;::iterator itr1 = numberOfNeurons.begin();
+  <span class="keywordtype">int</span> totalNumberOfNeurons = *itr1;
+  <span class="keywordflow">for</span> (std::vector&lt;int&gt;::iterator itr2 = 1+itr1; itr2 != numberOfNeurons.end(); ++itr2, ++itr1)
+    {
+      totalNumberOfNeurons += *itr2;
+      totalAmountOfParameters += (*itr2) * (*itr1); <span class="comment">//integer multiplication</span>
+    }
+  totalAmountOfParameters += totalNumberOfNeurons;
+
+
+  <span class="comment">//============================================================</span>
+  <span class="comment">// Neuron insertion</span>
+  <span class="comment">//============================================================</span>
+
+  <span class="comment">//Input Layer</span>
+  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(0); ++i)
+    {
+      neuronPtr = outputLayerFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++); <span class="comment">// It&#39;s irrelevant whether to use outputLayerFactory o hiddenLayersFactory as inputFactory</span>
+      neuralNetworkPtr-&gt;d_inputLayer-&gt;push_back(neuronPtr);
+    }
+
+
+  <span class="comment">// Hidden layers</span>
+
+  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(1); ++i)
+     {
+       neuronPtr = hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_inputLayer-&gt;createIterator(), totalAmountOfParameters);
+       neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(0)-&gt;push_back(neuronPtr);
+     }
+
+  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> layerItr = 2 ;
+  <span class="keywordflow">for</span> (; layerItr &lt; (-1 + numberOfNeurons.size()); ++layerItr)
+    {
+      neuralNetworkPtr-&gt;d_hiddenLayers-&gt;push_back( hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">makeLayer</a>() ) ;
+      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(layerItr); ++i)
+        {
+          neuronPtr = hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-2)-&gt;createIterator(), totalAmountOfParameters);
+          neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-1)-&gt;push_back(neuronPtr);
+        }
+    }
+
+
+  <span class="comment">//Output Layer</span>
+  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.back(); ++i)
+    {
+      neuronPtr = outputLayerFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-2)-&gt;createIterator() , totalAmountOfParameters);
+      neuralNetworkPtr-&gt;d_outputLayer-&gt;push_back(neuronPtr);
+    }
+
+  <span class="keywordflow">return</span> neuralNetworkPtr;
 }
 </pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_simple_neural_creator_a02ea62733f819e7b4a0b9878910545c5_cgraph.svg" width="630" height="139" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>pkg/AMORE/src/dia/<a class="el" href="_simple_neural_creator_8h_source.html">SimpleNeuralCreator.h</a></li>
-<li>pkg/AMORE/src/<a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/<a class="el" href="_simple_neural_creator_8h_source.html">SimpleNeuralCreator.h</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="_simple_neural_creator_8cpp_source.html">SimpleNeuralCreator.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_simple_neural_creator.html">SimpleNeuralCreator</a>      </li>
-      <li class="footer">Generated on Fri Jul 22 2011 04:19:45 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 28 2011 01:19:54 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: pkg/AMORE/src/SimpleNeuralCreator.cpp Source File</title>
+<title>AMORE++: /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNeuralCreator.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">pkg/AMORE/src/SimpleNeuralCreator.cpp</div>  </div>
+<div class="title">/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNeuralCreator.cpp</div>  </div>
 </div>
 <div class="contents">
 <a href="_simple_neural_creator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -87,33 +87,99 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="comment"> *  Created on: 14/07/2011</span>
 <a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
-<a name="l00007"></a>00007 
+<a name="l00007"></a>00007 <span class="comment">//=========================================================================================================</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_neural_creator_8h.html">dia/NeuralCreator.h</a>&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8h.html">dia/SimpleNeuralCreator.h</a>&quot;</span>
-<a name="l00012"></a>00012 <span class="comment">//=========================================================================================================</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="class_simple_neural_creator.html#adbb88d9250fc4cd85b036039286918bc">00015</a> <a class="code" href="class_simple_neural_creator.html#adbb88d9250fc4cd85b036039286918bc">SimpleNeuralCreator::SimpleNeuralCreator</a>()
-<a name="l00016"></a>00016 {
-<a name="l00017"></a>00017 }
-<a name="l00018"></a>00018 ;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>
-<a name="l00022"></a><a class="code" href="class_simple_neural_creator.html#a7b61e2ea3637d65d223873aca4aabff9">00022</a> <a class="code" href="class_simple_neural_creator.html#a7b61e2ea3637d65d223873aca4aabff9">SimpleNeuralCreator::createFeedForwardFullyConnectedNetwork</a>(<a class="code" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a> neuralFactoryPtr)
-<a name="l00023"></a>00023 {
-<a name="l00024"></a>00024   <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> n;
-<a name="l00025"></a>00025   <span class="keywordflow">return</span> n ; <span class="comment">// change this, does&#39;n make sense</span>
-<a name="l00026"></a>00026 }
-<a name="l00027"></a>00027 
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="package_8h.html">package.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="_container_8h.html">classHeaders/Container.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8h.html">classHeaders/Neuron.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="_neural_creator_8h.html">classHeaders/NeuralCreator.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="_neural_factory_8h.html">classHeaders/NeuralFactory.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8h.html">classHeaders/NeuralNetwork.h</a>&quot;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8h.html">classHeaders/SimpleNeuralCreator.h</a>&quot;</span>
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="class_simple_neural_creator.html#adbb88d9250fc4cd85b036039286918bc">00019</a> <a class="code" href="class_simple_neural_creator.html#adbb88d9250fc4cd85b036039286918bc">SimpleNeuralCreator::SimpleNeuralCreator</a>()
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>
+<a name="l00024"></a><a class="code" href="class_simple_neural_creator.html#a02ea62733f819e7b4a0b9878910545c5">00024</a> <a class="code" href="class_simple_neural_creator.html#a02ea62733f819e7b4a0b9878910545c5">SimpleNeuralCreator::createFeedForwardNetwork</a>(std::vector&lt;int&gt; numberOfNeurons, <a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; hiddenLayersFactory, <a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; outputLayerFactory)
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026   <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a> neuralNetworkPtr(outputLayerFactory.<a class="code" href="class_neural_factory.html#a15b9308e868ca439869b1d68afabfcde">makeNeuralNetwork</a>(outputLayerFactory));
+<a name="l00027"></a>00027   <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029   <span class="keywordflow">if</span> (numberOfNeurons.size() &lt;= 2)
+<a name="l00030"></a>00030     {
+<a name="l00031"></a>00031       <span class="keywordflow">throw</span> std::range_error(
+<a name="l00032"></a>00032           <span class="stringliteral">&quot;[C++ CreateFeedForwardNetwork::validate]: Error, number of layers lower than 3.&quot;</span>);
+<a name="l00033"></a>00033     }
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035   <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> neuronId = 1;
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037   <span class="comment">//============================================================</span>
+<a name="l00038"></a>00038   <span class="comment">// Calculation of the total amount of parameters</span>
+<a name="l00039"></a>00039   <span class="comment">//============================================================</span>
+<a name="l00040"></a>00040   <span class="keywordtype">int</span> totalAmountOfParameters = 0;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042   std::vector&lt;int&gt;::iterator itr1 = numberOfNeurons.begin();
+<a name="l00043"></a>00043   <span class="keywordtype">int</span> totalNumberOfNeurons = *itr1;
+<a name="l00044"></a>00044   <span class="keywordflow">for</span> (std::vector&lt;int&gt;::iterator itr2 = 1+itr1; itr2 != numberOfNeurons.end(); ++itr2, ++itr1)
+<a name="l00045"></a>00045     {
+<a name="l00046"></a>00046       totalNumberOfNeurons += *itr2;
+<a name="l00047"></a>00047       totalAmountOfParameters += (*itr2) * (*itr1); <span class="comment">//integer multiplication</span>
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049   totalAmountOfParameters += totalNumberOfNeurons;
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052   <span class="comment">//============================================================</span>
+<a name="l00053"></a>00053   <span class="comment">// Neuron insertion</span>
+<a name="l00054"></a>00054   <span class="comment">//============================================================</span>
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056   <span class="comment">//Input Layer</span>
+<a name="l00057"></a>00057   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(0); ++i)
+<a name="l00058"></a>00058     {
+<a name="l00059"></a>00059       neuronPtr = outputLayerFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++); <span class="comment">// It&#39;s irrelevant whether to use outputLayerFactory o hiddenLayersFactory as inputFactory</span>
+<a name="l00060"></a>00060       neuralNetworkPtr-&gt;d_inputLayer-&gt;push_back(neuronPtr);
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064   <span class="comment">// Hidden layers</span>
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(1); ++i)
+<a name="l00067"></a>00067      {
+<a name="l00068"></a>00068        neuronPtr = hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_inputLayer-&gt;createIterator(), totalAmountOfParameters);
+<a name="l00069"></a>00069        neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(0)-&gt;push_back(neuronPtr);
+<a name="l00070"></a>00070      }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> layerItr = 2 ;
+<a name="l00073"></a>00073   <span class="keywordflow">for</span> (; layerItr &lt; (-1 + numberOfNeurons.size()); ++layerItr)
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075       neuralNetworkPtr-&gt;d_hiddenLayers-&gt;push_back( hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a1a02bc2427430c4085654a72a03a5f4f">makeLayer</a>() ) ;
+<a name="l00076"></a>00076       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.at(layerItr); ++i)
+<a name="l00077"></a>00077         {
+<a name="l00078"></a>00078           neuronPtr = hiddenLayersFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-2)-&gt;createIterator(), totalAmountOfParameters);
+<a name="l00079"></a>00079           neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-1)-&gt;push_back(neuronPtr);
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084   <span class="comment">//Output Layer</span>
+<a name="l00085"></a>00085   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numberOfNeurons.back(); ++i)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087       neuronPtr = outputLayerFactory.<a class="code" href="class_neural_factory.html#a12abbf93f829aab585975f157c8c98f7">makeNeuron</a>(neuronId++, neuralNetworkPtr-&gt;d_hiddenLayers-&gt;at(layerItr-2)-&gt;createIterator() , totalAmountOfParameters);
+<a name="l00088"></a>00088       neuralNetworkPtr-&gt;d_outputLayer-&gt;push_back(neuronPtr);
+<a name="l00089"></a>00089     }
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091   <span class="keywordflow">return</span> neuralNetworkPtr;
+<a name="l00092"></a>00092 }
+<a name="l00093"></a>00093 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_simple_neural_creator_8cpp.html">SimpleNeuralCreator.cpp</a>      </li>
-      <li class="footer">Generated on Fri Jul 22 2011 04:19:41 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

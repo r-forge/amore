@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_activation_function_8h.html" title="dia/ActivationFunction.h" alt="" coords="10,155,176,181"/>
-<area shape="rect" id="node5" href="$_tanh_8h.html" title="dia/Tanh.h" alt="" coords="92,80,175,107"/>
+<area shape="rect" id="node3" href="$package_8h.html" title="package.h" alt="" coords="514,80,597,107"/>
+<area shape="rect" id="node25" href="$_neuron_8h.html" title="classHeaders/Neuron.h" alt="" coords="941,80,1104,107"/>
+<area shape="rect" id="node27" href="$_activation_function_8h.html" title="classHeaders/ActivationFunction.h" alt="" coords="1137,155,1369,181"/>
+<area shape="rect" id="node29" href="$_tanh_8h.html" title="classHeaders/Tanh.h" alt="" coords="1179,80,1327,107"/>
 </map>

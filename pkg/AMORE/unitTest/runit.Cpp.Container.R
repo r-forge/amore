@@ -32,21 +32,29 @@ test.Container.Cpp.show<- function() {
 			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 
-			int ids[]= {10, 20, 30};
+
+			Rcpp::IntegerVector ids(Ids);
+			Rcpp::NumericVector weights(Weights);
 			NeuronPtr neuronPtr;
-			foreach (Handler id, ids) {
-				neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
- 				layerPtr->push_back(neuronPtr) ;			
-			}	
-			double weights[] = {1.13, 2.22, 3.33 };
+
+		// Test
+				 
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
+			}
+
+			Rcpp::NumericVector::iterator wItr = weights.begin();
 			ConContainerPtr conContainerPtr( neuralFactoryPtr->makeConContainer() );
 			ConPtr conPtr;
-			int wId=0;
+
 			NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 			for ( itr->first(); !itr->isDone(); itr->next() ) {
-				conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
+				conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , *(wItr++) ) ;
 				conContainerPtr->push_back( conPtr );
 			}
+
+
 		// Test	
 			conContainerPtr->show();
 
@@ -57,13 +65,14 @@ test.Container.Cpp.show<- function() {
 			}
 			return wrap(	result	);		
 			"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
-	checkEquals(result, c(10, 20, 30))
-# From:	 10 	 Weight= 	 1.130000 
-# From:	 20 	 Weight= 	 2.220000 
-# From:	 30 	 Weight= 	 3.330000 
-# [1] TRUE
+	testCodefun <- cfunction(sig=signature(Ids="integer", Weights="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(10,20,30), Weights=c(1.5, 4.6, 8.6))
+	checkEquals(result, c(10,20,30))
+	# 
+	# From:	 10 	 Weight= 	 1.500000
+	# From:	 20 	 Weight= 	 4.600000
+	# From:	 30 	 Weight= 	 8.600000[1] TRUE
+
 }
 
 
@@ -79,19 +88,21 @@ test.Container.Cpp.push_back<- function() {
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
 				NeuronPtr neuronPtr;
-				int ids[]= {10, 20, 30};
-				double weights[] = {1.13, 2.22, 3.33 };
+				Rcpp::IntegerVector ids(Ids);
+				Rcpp::NumericVector weights(Weights);
 			// Test
-				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
+
+				 
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
 					layerPtr->push_back(neuronPtr);
 				}
 
-				int wId=0;
+				Rcpp::NumericVector::iterator wItr = weights.begin();
 
 				NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
-					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
+					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , *(wItr++) ) ;
 					conContainerPtr->push_back( conPtr );
 				}
 				std::vector<Handler> result;
@@ -102,8 +113,8 @@ test.Container.Cpp.push_back<- function() {
 				}
 				return wrap(	result	);	
 				"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
-	result <- testCodefun()
+	testCodefun <- cfunction(sig=signature(Ids="integer", Weights="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(10,20,30), Weights=c(1.5, 4.6, 8.6))
 	checkEquals(result, c(10,20,30))
 	# [1] TRUE
 }
@@ -117,29 +128,33 @@ test.Container.Cpp.size<- function() {
 				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
 				LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				NeuronPtr neuronPtr;
-				int ids[]= {10, 20, 30};
-				double weights[] = {1.13, 2.22, 3.33 };
+
+				Rcpp::IntegerVector ids(Ids);
+				Rcpp::NumericVector weights(Weights);
 			// Test
-				foreach (int id, ids){  			// Let's create a vector with three neurons
-					neuronPtr = neuralFactoryPtr->makeNeuron(id) ;
+
+				 
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
 					layerPtr->push_back(neuronPtr);
 				}
+
 					
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
-				int wId=0;
+				Rcpp::NumericVector::iterator wItr = weights.begin();
 				std::vector<size_type> result;				
+
 				NeuronIteratorPtr itr( layerPtr->createIterator() ) ;
 				for ( itr->first(); !itr->isDone(); itr->next() ) {
-					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , weights[wId++]) ;
+					conPtr = neuralFactoryPtr->makeCon( *itr->currentItem() , *(wItr++) ) ;
 					conContainerPtr->push_back( conPtr );
 					result.push_back(conContainerPtr->size());
 				}
-
 				return wrap(result);
 			"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
-	result <- testCodefun()
+	testCodefun <- cfunction(sig=signature(Ids="integer", Weights="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(1,2,3), Weights=c(1.5, 4.6, 8.6))
 	checkEquals(result, c(1,2,3))
 	# [1] TRUE
 }

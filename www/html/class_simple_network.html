@@ -80,7 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">SimpleNetwork Class Reference</div>  </div>
 </div>
@@ -93,13 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for SimpleNetwork:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_network__inherit__graph.svg" width="142" height="275" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_simple_network__inherit__graph.svg" width="150" height="451" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SimpleNetwork:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_network__coll__graph.svg" width="142" height="275" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_simple_network__coll__graph.svg" width="150" height="451" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -107,6 +108,14 @@ Collaboration diagram for SimpleNetwork:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#a8371fd3be054537889207547e5e53e29">SimpleNetwork</a> (<a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;neuralFactory)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#a45c0a090f4ac14963c7f2ebfc4cc3f5d">writeInput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">predict</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">readOutput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">inputSize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">outputSize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">show</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">validate</a> ()</td></tr>
 </table>
@@ -114,7 +123,186 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>class <a class="el" href="class_simple_network.html" title="class SimpleNetwork -">SimpleNetwork</a> - </p>
 
 <p>Definition at line <a class="el" href="_simple_network_8h_source.html#l00005">5</a> of file <a class="el" href="_simple_network_8h_source.html">SimpleNetwork.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8371fd3be054537889207547e5e53e29"></a><!-- doxytag: member="SimpleNetwork::SimpleNetwork" ref="a8371fd3be054537889207547e5e53e29" args="(NeuralFactory &amp;neuralFactory)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SimpleNetwork::SimpleNetwork </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_neural_factory.html">NeuralFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>neuralFactory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00016">16</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                                                         :
+  <a class="code" href="class_neural_network.html#a94089745c72c49c41c51aaa73935145e">NeuralNetwork</a>(neuralFactory)
+{
+
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a7e14145c93afb1464c176d9b875ee6f2"></a><!-- doxytag: member="SimpleNetwork::inputSize" ref="a7e14145c93afb1464c176d9b875ee6f2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type SimpleNetwork::inputSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_network.html#a9b59b8576a47750009669a6885524d1e">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00070">70</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00006">NeuralNetwork::d_inputLayer</a>.</p>
+
+<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00050">writeInput()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <span class="keywordflow">return</span> <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;size();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_simple_network_a7e14145c93afb1464c176d9b875ee6f2_icgraph.svg" width="430" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a187ce11f4b7edb4b4f46e9c8ec31eadb"></a><!-- doxytag: member="SimpleNetwork::outputSize" ref="a187ce11f4b7edb4b4f46e9c8ec31eadb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type SimpleNetwork::outputSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_network.html#af7bbfbd5635c29d66fbb37e74800ec15">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00076">76</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00008">NeuralNetwork::d_outputLayer</a>.</p>
+
+<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00060">readOutput()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <span class="keywordflow">return</span> <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;size();
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_simple_network_a187ce11f4b7edb4b4f46e9c8ec31eadb_icgraph.svg" width="446" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2da5477f7441e8d0b22bf5214d1cf64"></a><!-- doxytag: member="SimpleNetwork::predict" ref="ad2da5477f7441e8d0b22bf5214d1cf64" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleNetwork::predict </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_network.html#ac5d16c83c3159ecd075636e82688b2ed">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00023">23</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00007">NeuralNetwork::d_hiddenLayers</a>, and <a class="el" href="_neural_network_8h_source.html#l00008">NeuralNetwork::d_outputLayer</a>.</p>
+<div class="fragment"><pre class="fragment">{
+
+  <span class="comment">// Hidden Layers</span>
+  boost::shared_ptr &lt; Iterator&lt;LayerPtr&gt; &gt; layerIterator(
+      <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;createIterator());
+
+  <span class="keywordflow">for</span> (layerIterator-&gt;first(); !layerIterator-&gt;isDone(); layerIterator-&gt;next())
+    {
+      boost::shared_ptr &lt; Iterator&lt;NeuronPtr&gt; &gt; neuronIterator(
+          layerIterator-&gt;currentItem()-&gt;createIterator());
+      <span class="keywordflow">for</span> (neuronIterator-&gt;first(); !neuronIterator-&gt;isDone(); neuronIterator-&gt;next())
+        {
+          neuronIterator-&gt;currentItem()-&gt;predict();
+        }
+    }
+
+  <span class="comment">// Output Layers</span>
+  boost::shared_ptr &lt; Iterator&lt;NeuronPtr&gt; &gt; neuronIterator(
+      <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;createIterator());
+  <span class="keywordflow">for</span> (neuronIterator-&gt;first(); !neuronIterator-&gt;isDone(); neuronIterator-&gt;next())
+    {
+      neuronIterator-&gt;currentItem()-&gt;predict();
+    }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="abdf4a70e4b26e4ce914afd65c58170cf"></a><!-- doxytag: member="SimpleNetwork::readOutput" ref="abdf4a70e4b26e4ce914afd65c58170cf" args="(std::vector&lt; double &gt;::iterator &amp;iterator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleNetwork::readOutput </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;::iterator &amp;&#160;</td>
+          <td class="paramname"><em>iterator</em></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_network.html#acb06905cd65e1f40b79cf2cc30e5987a">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00060">60</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00008">NeuralNetwork::d_outputLayer</a>, <a class="el" href="_simple_network_8cpp_source.html#l00076">outputSize()</a>, and <a class="el" href="_a_m_o_r_e_8h_source.html#l00075">size_type</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> nOutputs(<a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">outputSize</a>());
+  <span class="keywordflow">for</span> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> i = 0; i &lt; nOutputs; i++)
+    {
+      *iterator++ = <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;at(i)-&gt;getOutput();
+    }
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_simple_network_abdf4a70e4b26e4ce914afd65c58170cf_cgraph.svg" width="446" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a16273b96b12674d79b415ee6b31924f3"></a><!-- doxytag: member="SimpleNetwork::show" ref="a16273b96b12674d79b415ee6b31924f3" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -123,14 +311,36 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void SimpleNetwork::show </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [private, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_neural_network.html#abaaf6b63ffe8a48d6efe55d702da5d1a">NeuralNetwork</a>.</p>
+<p>Implements <a class="el" href="class_neural_network.html#abe7893d4df14b19f059f9fca0175cbe1">NeuralNetwork</a>.</p>
 
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00082">82</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00007">NeuralNetwork::d_hiddenLayers</a>, <a class="el" href="_neural_network_8h_source.html#l00006">NeuralNetwork::d_inputLayer</a>, and <a class="el" href="_neural_network_8h_source.html#l00008">NeuralNetwork::d_outputLayer</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;         Input Layer&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+  <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;show();
+
+  Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;         Hidden Layers&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+  <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;show();
+
+  Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;         Output Layer&quot;</span>);
+  Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+  <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;show();
+  Rprintf(<span class="stringliteral">&quot;\n=========================================================\n&quot;</span>);
+
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="adfbe36eff51ead5995f2ccc58fcee709"></a><!-- doxytag: member="SimpleNetwork::validate" ref="adfbe36eff51ead5995f2ccc58fcee709" args="()" -->
@@ -141,25 +351,74 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool SimpleNetwork::validate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [private, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_neural_network.html#ae0a46bc39bde3b67a19f11e51a2a5191">NeuralNetwork</a>.</p>
+<p>Implements <a class="el" href="class_neural_network.html#a7ab39cee7bef69eff19cca490ff5d7c0">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00103">103</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00007">NeuralNetwork::d_hiddenLayers</a>, <a class="el" href="_neural_network_8h_source.html#l00006">NeuralNetwork::d_inputLayer</a>, and <a class="el" href="_neural_network_8h_source.html#l00008">NeuralNetwork::d_outputLayer</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;validate();
+  <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;validate();
+  <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;validate();
+  <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a45c0a090f4ac14963c7f2ebfc4cc3f5d"></a><!-- doxytag: member="SimpleNetwork::writeInput" ref="a45c0a090f4ac14963c7f2ebfc4cc3f5d" args="(std::vector&lt; double &gt;::iterator &amp;iterator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleNetwork::writeInput </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;::iterator &amp;&#160;</td>
+          <td class="paramname"><em>iterator</em></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_neural_network.html#ad84eb675d31eab6e5d45c37f686d8186">NeuralNetwork</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_network_8cpp_source.html#l00050">50</a> of file <a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a>.</p>
+
+<p>References <a class="el" href="_neural_network_8h_source.html#l00006">NeuralNetwork::d_inputLayer</a>, <a class="el" href="_simple_network_8cpp_source.html#l00070">inputSize()</a>, and <a class="el" href="_a_m_o_r_e_8h_source.html#l00075">size_type</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> nInputs(<a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">inputSize</a>());
+  <span class="keywordflow">for</span> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> i = 0; i &lt; nInputs; i++)
+    {
+      <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;at(i)-&gt;setOutput(*iterator++);
+    }
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_simple_network_a45c0a090f4ac14963c7f2ebfc4cc3f5d_cgraph.svg" width="430" height="38" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>pkg/AMORE/src/dia/<a class="el" href="_simple_network_8h_source.html">SimpleNetwork.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/<a class="el" href="_simple_network_8h_source.html">SimpleNetwork.h</a></li>
+<li>/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/<a class="el" href="_simple_network_8cpp_source.html">SimpleNetwork.cpp</a></li>
 </ul>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_simple_network.html">SimpleNetwork</a>      </li>
-      <li class="footer">Generated on Fri Jul 22 2011 04:19:45 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 28 2011 01:19:54 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
