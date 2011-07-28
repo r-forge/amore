@@ -1,3 +1,10 @@
+//
+// This file is used by the unit tests,
+// not by R CMD INSTALL AMORE
+//
+//
+
+
 /*! \mainpage The AMORE++ package
 
  *
@@ -131,7 +138,7 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
 
-#include "Con.cpp"
+#include "Connection.cpp"
 #include "ActivationFunction.cpp"
 #include "Tanh.cpp"
 #include "Identity.cpp"
@@ -149,11 +156,6 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "SimpleNetwork.cpp"
 #include "SimpleNeuralCreator.cpp"
 #include "NetworkRinterface.cpp"
-#include "Container.cpp"
-#include "Iterator.cpp"
-#include "SimpleContainer.cpp"
-#include "SimpleContainerIterator.cpp"
-
 
 #include "RcppModules.cpp"
 

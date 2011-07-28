@@ -1,5 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_neural_factory_8h.html" title="dia/NeuralFactory.h" alt="" coords="55,229,193,256"/>
-<area shape="rect" id="node5" href="$_m_l_pfactory_8h.html" title="dia/MLPfactory.h" alt="" coords="113,155,236,181"/>
-<area shape="rect" id="node8" href="$_identity_factory_8h.html" title="dia/IdentityFactory.h" alt="" coords="163,80,309,107"/>
+<area shape="rect" id="node3" href="$package_8h.html" title="package.h" alt="" coords="514,80,597,107"/>
+<area shape="rect" id="node25" href="$_identity_8h.html" title="classHeaders/Identity.h" alt="" coords="1122,80,1288,107"/>
+<area shape="rect" id="node29" href="$_neural_factory_8h.html" title="classHeaders/NeuralFactory.h" alt="" coords="1290,229,1493,256"/>
+<area shape="rect" id="node31" href="$_m_l_pfactory_8h.html" title="classHeaders/MLPfactory.h" alt="" coords="1364,155,1553,181"/>
+<area shape="rect" id="node34" href="$_identity_factory_8h.html" title="classHeaders/IdentityFactory.h" alt="" coords="1415,80,1627,107"/>
+<area shape="rect" id="node27" href="$_activation_function_8h.html" title="ActivationFunction.h" alt="" coords="1137,155,1284,181"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="pkg/AMORE/src/AMORE.h" alt="" coords="13,229,195,256"/>
-<area shape="rect" id="node5" href="$_simple_neural_creator_8h.html" title="pkg/AMORE/src/dia/SimpleNeuralCreator.h" alt="" coords="28,80,309,107"/>
-<area shape="rect" id="node8" href="$_simple_neural_creator_8cpp.html" title="pkg/AMORE/src/SimpleNeuralCreator.cpp" alt="" coords="143,155,418,181"/>
+<area shape="rect" id="node3" href="$_a_m_o_r_e_8h.html" title="/Users/mcasl/pc&#45;ule/Trabajo/investigacion/AMORE/AMORE&#45;WC/AMORE&#45;WC/pkg/AMORE/src/AMORE.h" alt="" coords="428,229,1079,256"/>
+<area shape="rect" id="node5" href="$_simple_neural_creator_8h.html" title="/Users/mcasl/pc&#45;ule/Trabajo/investigacion/AMORE/AMORE&#45;WC/AMORE&#45;WC/pkg/AMORE/src/classHeaders/SimpleNeuralCreator.h" alt="" coords="317,80,1131,107"/>
+<area shape="rect" id="node8" href="$_m_l_pfactory_8cpp.html" title="/Users/mcasl/pc&#45;ule/Trabajo/investigacion/AMORE/AMORE&#45;WC/AMORE&#45;WC/pkg/AMORE/src/MLPfactory.cpp" alt="" coords="29,155,715,181"/>
+<area shape="rect" id="node11" href="$_simple_neural_creator_8cpp.html" title="/Users/mcasl/pc&#45;ule/Trabajo/investigacion/AMORE/AMORE&#45;WC/AMORE&#45;WC/pkg/AMORE/src/SimpleNeuralCreator.cpp" alt="" coords="791,155,1535,181"/>
+<area shape="rect" id="node16" href="$_network_rinterface_8cpp.html" title="/Users/mcasl/pc&#45;ule/Trabajo/investigacion/AMORE/AMORE&#45;WC/AMORE&#45;WC/pkg/AMORE/src/NetworkRinterface.cpp" alt="" coords="1207,80,1937,107"/>
 </map>

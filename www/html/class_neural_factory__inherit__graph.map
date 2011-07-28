@@ -1,17 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pfactory.html" title="class MLPfactory &#45;" alt="" coords="1269,219,1456,399"/>
-<area shape="rect" id="node29" href="$class_r_b_ffactory.html" title="class RBFfactory &#45;" alt="" coords="2006,219,2193,399"/>
-<area shape="rect" id="node5" href="$class_arc_tan_factory.html" title="class ArcTanFactory &#45;" alt="" coords="5,448,192,525"/>
-<area shape="rect" id="node7" href="$class_cosine_factory.html" title="class CosineFactory &#45;" alt="" coords="216,448,403,525"/>
-<area shape="rect" id="node9" href="$class_elliot_factory.html" title="class ElliotFactory &#45;" alt="" coords="427,448,613,525"/>
-<area shape="rect" id="node11" href="$class_exponential_factory.html" title="class ExponentialFactory &#45;" alt="" coords="637,448,824,525"/>
-<area shape="rect" id="node13" href="$class_gauss_factory.html" title="class GaussFactory &#45;" alt="" coords="848,448,1035,525"/>
-<area shape="rect" id="node15" href="$class_identity_factory.html" title="class IdentityFactory &#45;" alt="" coords="1059,448,1245,525"/>
-<area shape="rect" id="node17" href="$class_logistic_factory.html" title="class LogisticFactory &#45;" alt="" coords="1269,448,1456,525"/>
-<area shape="rect" id="node19" href="$class_reciprocal_factory.html" title="class ReciprocalFactory &#45;" alt="" coords="1480,448,1667,525"/>
-<area shape="rect" id="node21" href="$class_sine_factory.html" title="class SineFactory &#45;" alt="" coords="1691,448,1877,525"/>
-<area shape="rect" id="node23" href="$class_square_factory.html" title="class SquareFactory &#45;" alt="" coords="1901,448,2088,525"/>
-<area shape="rect" id="node25" href="$class_tanh_factory.html" title="class TanhFactory &#45;" alt="" coords="2112,448,2299,525"/>
-<area shape="rect" id="node27" href="$class_threshold_factory.html" title="class ThresholdFactory &#45;" alt="" coords="2323,448,2509,525"/>
-<area shape="rect" id="node31" href="$class_radial_basis_factory.html" title="class RadialBasisFactory &#45;" alt="" coords="2533,448,2720,525"/>
+<area shape="rect" id="node3" href="$class_m_l_pfactory.html" title="class MLPfactory &#45;" alt="" coords="1269,265,1456,474"/>
+<area shape="rect" id="node29" href="$class_r_b_ffactory.html" title="class RBFfactory &#45;" alt="" coords="2006,265,2193,474"/>
+<area shape="rect" id="node5" href="$class_arc_tan_factory.html" title="class ArcTanFactory &#45;" alt="" coords="5,523,192,615"/>
+<area shape="rect" id="node7" href="$class_cosine_factory.html" title="class CosineFactory &#45;" alt="" coords="216,523,403,615"/>
+<area shape="rect" id="node9" href="$class_elliot_factory.html" title="class ElliotFactory &#45;" alt="" coords="427,523,613,615"/>
+<area shape="rect" id="node11" href="$class_exponential_factory.html" title="class ExponentialFactory &#45;" alt="" coords="637,523,824,615"/>
+<area shape="rect" id="node13" href="$class_gauss_factory.html" title="class GaussFactory &#45;" alt="" coords="848,523,1035,615"/>
+<area shape="rect" id="node15" href="$class_identity_factory.html" title="class IdentityFactory &#45;" alt="" coords="1059,523,1245,615"/>
+<area shape="rect" id="node17" href="$class_logistic_factory.html" title="class LogisticFactory &#45;" alt="" coords="1269,523,1456,615"/>
+<area shape="rect" id="node19" href="$class_reciprocal_factory.html" title="class ReciprocalFactory &#45;" alt="" coords="1480,523,1667,615"/>
+<area shape="rect" id="node21" href="$class_sine_factory.html" title="class SineFactory &#45;" alt="" coords="1691,523,1877,615"/>
+<area shape="rect" id="node23" href="$class_square_factory.html" title="class SquareFactory &#45;" alt="" coords="1901,523,2088,615"/>
+<area shape="rect" id="node25" href="$class_tanh_factory.html" title="class TanhFactory &#45;" alt="" coords="2112,523,2299,615"/>
+<area shape="rect" id="node27" href="$class_threshold_factory.html" title="class ThresholdFactory &#45;" alt="" coords="2323,523,2509,615"/>
+<area shape="rect" id="node31" href="$class_radial_basis_factory.html" title="class RadialBasisFactory &#45;" alt="" coords="2533,523,2720,615"/>
 </map>

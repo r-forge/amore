@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AMORE++: pkg/AMORE/src/SimpleNetwork.cpp Source File</title>
+<title>AMORE++: /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -78,15 +78,124 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">pkg/AMORE/src/SimpleNetwork.cpp</div>  </div>
+<div class="title">/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp</div>  </div>
 </div>
 <div class="contents">
-<a href="_simple_network_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"></pre></div></div>
+<a href="_simple_network_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * SimpleNetwork.cpp</span>
+<a name="l00003"></a>00003 <span class="comment"> *</span>
+<a name="l00004"></a>00004 <span class="comment"> *  Created on: 22/07/2011</span>
+<a name="l00005"></a>00005 <span class="comment"> *      Author: mcasl</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="package_8h.html">package.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_container_8h.html">classHeaders/Container.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_iterator_8h.html">classHeaders/Iterator.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8h.html">classHeaders/Neuron.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8h.html">classHeaders/NeuralNetwork.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="_simple_network_8h.html">classHeaders/SimpleNetwork.h</a>&quot;</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="class_simple_network.html#a8371fd3be054537889207547e5e53e29">00016</a> <a class="code" href="class_simple_network.html#a8371fd3be054537889207547e5e53e29">SimpleNetwork::SimpleNetwork</a>(<a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; neuralFactory) :
+<a name="l00017"></a>00017   <a class="code" href="class_neural_network.html" title="class NeuralNetwork -">NeuralNetwork</a>(neuralFactory)
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 }
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keywordtype">void</span>
+<a name="l00023"></a><a class="code" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">00023</a> <a class="code" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">SimpleNetwork::predict</a>()
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026   <span class="comment">// Hidden Layers</span>
+<a name="l00027"></a>00027   boost::shared_ptr &lt; Iterator&lt;LayerPtr&gt; &gt; layerIterator(
+<a name="l00028"></a>00028       <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;createIterator());
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030   <span class="keywordflow">for</span> (layerIterator-&gt;first(); !layerIterator-&gt;isDone(); layerIterator-&gt;next())
+<a name="l00031"></a>00031     {
+<a name="l00032"></a>00032       boost::shared_ptr &lt; Iterator&lt;NeuronPtr&gt; &gt; neuronIterator(
+<a name="l00033"></a>00033           layerIterator-&gt;currentItem()-&gt;createIterator());
+<a name="l00034"></a>00034       <span class="keywordflow">for</span> (neuronIterator-&gt;first(); !neuronIterator-&gt;isDone(); neuronIterator-&gt;next())
+<a name="l00035"></a>00035         {
+<a name="l00036"></a>00036           neuronIterator-&gt;currentItem()-&gt;predict();
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040   <span class="comment">// Output Layers</span>
+<a name="l00041"></a>00041   boost::shared_ptr &lt; Iterator&lt;NeuronPtr&gt; &gt; neuronIterator(
+<a name="l00042"></a>00042       <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;createIterator());
+<a name="l00043"></a>00043   <span class="keywordflow">for</span> (neuronIterator-&gt;first(); !neuronIterator-&gt;isDone(); neuronIterator-&gt;next())
+<a name="l00044"></a>00044     {
+<a name="l00045"></a>00045       neuronIterator-&gt;currentItem()-&gt;predict();
+<a name="l00046"></a>00046     }
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="keywordtype">void</span>
+<a name="l00050"></a><a class="code" href="class_simple_network.html#a45c0a090f4ac14963c7f2ebfc4cc3f5d">00050</a> <a class="code" href="class_simple_network.html#a45c0a090f4ac14963c7f2ebfc4cc3f5d">SimpleNetwork::writeInput</a>(std::vector&lt;double&gt;::iterator&amp; iterator)
+<a name="l00051"></a>00051 {
+<a name="l00052"></a>00052   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> nInputs(<a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">inputSize</a>());
+<a name="l00053"></a>00053   <span class="keywordflow">for</span> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> i = 0; i &lt; nInputs; i++)
+<a name="l00054"></a>00054     {
+<a name="l00055"></a>00055       <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;at(i)-&gt;setOutput(*iterator++);
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="keywordtype">void</span>
+<a name="l00060"></a><a class="code" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">00060</a> <a class="code" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">SimpleNetwork::readOutput</a>(std::vector&lt;double&gt;::iterator&amp; iterator)
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> nOutputs(<a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">outputSize</a>());
+<a name="l00063"></a>00063   <span class="keywordflow">for</span> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> i = 0; i &lt; nOutputs; i++)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065       *iterator++ = <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;at(i)-&gt;getOutput();
+<a name="l00066"></a>00066     }
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00070"></a><a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">00070</a> <a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">SimpleNetwork::inputSize</a>()
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072   <span class="keywordflow">return</span> <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;size();
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00076"></a><a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">00076</a> <a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">SimpleNetwork::outputSize</a>()
+<a name="l00077"></a>00077 {
+<a name="l00078"></a>00078   <span class="keywordflow">return</span> <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;size();
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="keywordtype">void</span>
+<a name="l00082"></a><a class="code" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">00082</a> <a class="code" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">SimpleNetwork::show</a>()
+<a name="l00083"></a>00083 {
+<a name="l00084"></a>00084   Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+<a name="l00085"></a>00085   Rprintf(<span class="stringliteral">&quot;         Input Layer&quot;</span>);
+<a name="l00086"></a>00086   Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+<a name="l00087"></a>00087   <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;show();
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089   Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+<a name="l00090"></a>00090   Rprintf(<span class="stringliteral">&quot;         Hidden Layers&quot;</span>);
+<a name="l00091"></a>00091   Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+<a name="l00092"></a>00092   <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;show();
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094   Rprintf(<span class="stringliteral">&quot;\n\n=========================================================\n&quot;</span>);
+<a name="l00095"></a>00095   Rprintf(<span class="stringliteral">&quot;         Output Layer&quot;</span>);
+<a name="l00096"></a>00096   Rprintf(<span class="stringliteral">&quot;\n=========================================================&quot;</span>);
+<a name="l00097"></a>00097   <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;show();
+<a name="l00098"></a>00098   Rprintf(<span class="stringliteral">&quot;\n=========================================================\n&quot;</span>);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 <span class="keywordtype">bool</span>
+<a name="l00103"></a><a class="code" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">00103</a> <a class="code" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">SimpleNetwork::validate</a>()
+<a name="l00104"></a>00104 {
+<a name="l00105"></a>00105   <a class="code" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a>-&gt;validate();
+<a name="l00106"></a>00106   <a class="code" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a>-&gt;validate();
+<a name="l00107"></a>00107   <a class="code" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a>-&gt;validate();
+<a name="l00108"></a>00108   <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00109"></a>00109 }
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_simple_network_8cpp.html">SimpleNetwork.cpp</a>      </li>
-      <li class="footer">Generated on Fri Jul 22 2011 04:19:41 for AMORE++ by&#160;
+      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

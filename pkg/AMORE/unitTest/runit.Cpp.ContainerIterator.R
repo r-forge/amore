@@ -5,29 +5,25 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
-
-			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
-
-			int ids[]= {10, 20, 30};
-			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
-				containerPtr->push_back(neuronPtr);
+			Rcpp::IntegerVector ids(Ids);
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
 			}
-	
-			NeuronIteratorPtr itr = containerPtr->createIterator();
-
+			NeuronIteratorPtr itr = layerPtr->createIterator();
 			std::vector<int> result;
 			for ( itr->first(); !itr->isDone(); itr->next() ) {
 				result.push_back(itr->currentItem()->getId());
 			}
 			return wrap(	result	);
 		"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
+	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(10,20,30))
 	checkEquals(result, c(10,20,30))
-	# [1] TRUE
+# [1] TRUE
 }
 
 
@@ -37,27 +33,25 @@ test.ContainerIterator.Cpp.first<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
-			
-			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
-			
-			int ids[]= {10, 20, 30};
-			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
-				containerPtr->push_back(neuronPtr);
+			Rcpp::IntegerVector ids(Ids);
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
 			}
-			
-			NeuronIteratorPtr itr = containerPtr->createIterator();
+			NeuronIteratorPtr itr = layerPtr->createIterator();
 			itr->next();
 			itr->next();
 			itr->first();
 			int result = itr->currentItem()->getId();
 			return wrap(result);
 		"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
-	checkEquals(result, 10)
+		testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+		result <- testCodefun(Ids= c(10,20,30))
+
+		checkEquals(result, 10)
 	# [1] TRUE
 }
 
@@ -68,18 +62,15 @@ test.ContainerIterator.Cpp.next<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
-			
-			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
-			
-			int ids[]= {10, 20, 30};
-			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
-				containerPtr->push_back(neuronPtr);
+			Rcpp::IntegerVector ids(Ids);
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
 			}
-			
-			NeuronIteratorPtr itr = containerPtr->createIterator();
+			NeuronIteratorPtr itr = layerPtr->createIterator();
 			itr->first();
 			std::vector<Handler> result;
 			result.push_back( itr->currentItem()->getId() );
@@ -89,8 +80,8 @@ test.ContainerIterator.Cpp.next<- function() {
 			result.push_back( itr->currentItem()->getId() );
 			return wrap(result);
 		"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
+	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(10,20,30))
 	checkEquals(result, c(10,20,30))
 	# [1] TRUE
 }
@@ -102,18 +93,15 @@ test.ContainerIterator.Cpp.isDone<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
-			
-			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
-			
-			int ids[]= {10, 20, 30};
-			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
-				containerPtr->push_back(neuronPtr);
+			Rcpp::IntegerVector ids(Ids);
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
 			}
-			
-			NeuronIteratorPtr itr = containerPtr->createIterator();
+			NeuronIteratorPtr itr = layerPtr->createIterator();
 			itr->first();
 			std::vector<bool> result;
 			result.push_back( itr->isDone() );
@@ -125,8 +113,8 @@ test.ContainerIterator.Cpp.isDone<- function() {
 			result.push_back( itr->isDone() );
 			return wrap(result);
 		"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()
+	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	result <- testCodefun(Ids= c(10,20,30))
 	checkEquals(result, c(FALSE, FALSE, FALSE, TRUE))
 	# [1] TRUE
 }
@@ -139,18 +127,15 @@ test.ContainerIterator.Cpp.currentItem<- function() {
 	testCode <- "
 BEGIN_RCPP
 			// Test
-			LayerPtr containerPtr(new SimpleContainer<NeuronPtr>() );
-			
-			NeuralFactoryPtr factoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
-			
-			int ids[]= {10, 20, 30};
-			foreach (int id, ids){  			// Let's create a vector with three neurons
-				NeuronPtr neuronPtr( factoryPtr->makeNeuron(id) );
-				containerPtr->push_back(neuronPtr);
+			Rcpp::IntegerVector ids(Ids);
+			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
+				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+				layerPtr->push_back(neuronPtr);
 			}
-			
-			NeuronIteratorPtr itr = containerPtr->createIterator();
+			NeuronIteratorPtr itr = layerPtr->createIterator();
 			itr->first();
 			std::vector<Handler> result;
 			result.push_back( itr->currentItem()->getId() ); // Id==10
@@ -164,8 +149,8 @@ BEGIN_RCPP
 END_RCPP
 
 			"
-	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs="-Wall", cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	checkException( result <- testCodefun() )
+	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+	checkException( result <- testCodefun(Ids= c(10,20,30)) , silent=TRUE)
 }
 
 

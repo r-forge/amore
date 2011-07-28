@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_activation_function_8h.html" title="dia/ActivationFunction.h" alt="" coords="19,155,185,181"/>
-<area shape="rect" id="node5" href="$_identity_8h.html" title="dia/Identity.h" alt="" coords="96,80,197,107"/>
+<area shape="rect" id="node3" href="$package_8h.html" title="package.h" alt="" coords="514,80,597,107"/>
+<area shape="rect" id="node25" href="$_activation_function_8h.html" title="classHeaders/ActivationFunction.h" alt="" coords="1137,155,1369,181"/>
+<area shape="rect" id="node27" href="$_identity_8h.html" title="classHeaders/Identity.h" alt="" coords="1170,80,1336,107"/>
 </map>
