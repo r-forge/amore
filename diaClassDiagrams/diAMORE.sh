@@ -1,18 +1,8 @@
 rm ../pkg/AMORE/src/classHeaders/*
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Con.dia
+
+ls *.dia | awk '{print "dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile " $0  }' | sh
+
 mv ../pkg/AMORE/src/classHeaders/Con.h ../pkg/AMORE/src/classHeaders/Connection.h
-
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Container.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Neuron.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralFactory.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralCreator.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-PredictBehavior.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-ActivationFunction.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralNetwork.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NetworkRinterface.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NetworkTrainBehavior.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuronTrainBehavior.dia
-
 
 
 
@@ -23,9 +13,6 @@ sed -e '/public:/ a\
 friend class SimpleContainerIterator<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e '/public:/ a\
 friend class SimpleContainer<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
-
-
-
 
 echo "#include \"../Container.code\" " >> ../pkg/AMORE/src/classHeaders/Container.h
 echo "#include \"../SimpleContainer.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainer.h
