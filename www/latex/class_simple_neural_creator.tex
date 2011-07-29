@@ -1,0 +1,192 @@
+\hypertarget{class_simple_neural_creator}{
+\section{SimpleNeuralCreator Class Reference}
+\label{class_simple_neural_creator}\index{SimpleNeuralCreator@{SimpleNeuralCreator}}
+}
+
+
+class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/  
+
+
+
+
+{\ttfamily \#include $<$SimpleNeuralCreator.h$>$}
+
+
+
+Inheritance diagram for SimpleNeuralCreator:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_simple_neural_creator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SimpleNeuralCreator:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_simple_neural_creator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{SimpleNeuralCreator} ()
+\item 
+\hyperlink{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}{NeuralNetworkPtr} \hyperlink{class_simple_neural_creator_a02ea62733f819e7b4a0b9878910545c5}{createFeedForwardNetwork} (std::vector$<$ int $>$ numberOfNeurons, \hyperlink{class_neural_factory}{NeuralFactory} \&hiddenLayersFactory, \hyperlink{class_neural_factory}{NeuralFactory} \&outputLayerFactory)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_simple_neural_creator}{SimpleNeuralCreator} -\/ 
+
+Definition at line 5 of file SimpleNeuralCreator.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{SimpleNeuralCreator}]{\setlength{\rightskip}{0pt plus 5cm}SimpleNeuralCreator::SimpleNeuralCreator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_simple_neural_creator_adbb88d9250fc4cd85b036039286918bc}
+
+
+Definition at line 19 of file SimpleNeuralCreator.cpp.
+
+
+\begin{DoxyCode}
+{
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simple_neural_creator_a02ea62733f819e7b4a0b9878910545c5}{
+\index{SimpleNeuralCreator@{SimpleNeuralCreator}!createFeedForwardNetwork@{createFeedForwardNetwork}}
+\index{createFeedForwardNetwork@{createFeedForwardNetwork}!SimpleNeuralCreator@{SimpleNeuralCreator}}
+\subsubsection[{createFeedForwardNetwork}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuralNetworkPtr} SimpleNeuralCreator::createFeedForwardNetwork (
+\begin{DoxyParamCaption}
+\item[{std::vector$<$ int $>$}]{numberOfNeurons, }
+\item[{{\bf NeuralFactory} \&}]{hiddenLayersFactory, }
+\item[{{\bf NeuralFactory} \&}]{outputLayerFactory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_simple_neural_creator_a02ea62733f819e7b4a0b9878910545c5}
+
+
+Implements \hyperlink{class_neural_creator_a611ada630d83418fbd4ade790a1e655e}{NeuralCreator}.
+
+
+
+Definition at line 24 of file SimpleNeuralCreator.cpp.
+
+
+
+References NeuralFactory::makeLayer(), NeuralFactory::makeNeuralNetwork(), and NeuralFactory::makeNeuron().
+
+
+\begin{DoxyCode}
+{
+  NeuralNetworkPtr neuralNetworkPtr(outputLayerFactory.makeNeuralNetwork(outputLa
+      yerFactory));
+  NeuronPtr neuronPtr;
+
+  if (numberOfNeurons.size() <= 2)
+    {
+      throw std::range_error(
+          "[C++ CreateFeedForwardNetwork::validate]: Error, number of layers lowe
+      r than 3.");
+    }
+
+  Handler neuronId = 1;
+
+  //============================================================
+  // Calculation of the total amount of parameters
+  //============================================================
+  int totalAmountOfParameters = 0;
+
+  std::vector<int>::iterator itr1 = numberOfNeurons.begin();
+  int totalNumberOfNeurons = *itr1;
+  for (std::vector<int>::iterator itr2 = 1+itr1; itr2 != numberOfNeurons.end(); +
+      +itr2, ++itr1)
+    {
+      totalNumberOfNeurons += *itr2;
+      totalAmountOfParameters += (*itr2) * (*itr1); //integer multiplication
+    }
+  totalAmountOfParameters += totalNumberOfNeurons;
+
+
+  //============================================================
+  // Neuron insertion
+  //============================================================
+
+  //Input Layer
+  for (int i = 0; i < numberOfNeurons.at(0); ++i)
+    {
+      neuronPtr = outputLayerFactory.makeNeuron(neuronId++); // It's irrelevant w
+      hether to use outputLayerFactory o hiddenLayersFactory as inputFactory
+      neuralNetworkPtr->d_inputLayer->push_back(neuronPtr);
+    }
+
+
+  // Hidden layers
+
+  for (int i = 0; i < numberOfNeurons.at(1); ++i)
+     {
+       neuronPtr = hiddenLayersFactory.makeNeuron(neuronId++, neuralNetworkPtr->d
+      _inputLayer->createIterator(), totalAmountOfParameters);
+       neuralNetworkPtr->d_hiddenLayers->at(0)->push_back(neuronPtr);
+     }
+
+  unsigned int layerItr = 2 ;
+  for (; layerItr < (-1 + numberOfNeurons.size()); ++layerItr)
+    {
+      neuralNetworkPtr->d_hiddenLayers->push_back( hiddenLayersFactory.makeLayer(
+      ) ) ;
+      for (int i = 0; i < numberOfNeurons.at(layerItr); ++i)
+        {
+          neuronPtr = hiddenLayersFactory.makeNeuron(neuronId++, neuralNetworkPtr
+      ->d_hiddenLayers->at(layerItr-2)->createIterator(), totalAmountOfParameters);
+          neuralNetworkPtr->d_hiddenLayers->at(layerItr-1)->push_back(neuronPtr);
+      
+        }
+    }
+
+
+  //Output Layer
+  for (int i = 0; i < numberOfNeurons.back(); ++i)
+    {
+      neuronPtr = outputLayerFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_h
+      iddenLayers->at(layerItr-2)->createIterator() , totalAmountOfParameters);
+      neuralNetworkPtr->d_outputLayer->push_back(neuronPtr);
+    }
+
+  return neuralNetworkPtr;
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_simple_neural_creator_a02ea62733f819e7b4a0b9878910545c5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/classHeaders/\hyperlink{_simple_neural_creator_8h}{SimpleNeuralCreator.h}\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/\hyperlink{_simple_neural_creator_8cpp}{SimpleNeuralCreator.cpp}\end{DoxyCompactItemize}

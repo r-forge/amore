@@ -6,6 +6,7 @@ protected:
   LayerPtr d_inputLayer;
   LayerContainerPtr d_hiddenLayers;
   LayerPtr d_outputLayer;
+  NetworkTrainBehaviorPtr d_networkTrainBehavior;
   // Operations
 public:
 friend class SimpleNeuralCreator; 

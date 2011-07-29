@@ -1,16 +1,21 @@
 rm ../pkg/AMORE/src/classHeaders/*
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Con.dia
-mv ../pkg/AMORE/src/classHeaders/Connection.h ../pkg/AMORE/src/classHeaders/Connection.h
+mv ../pkg/AMORE/src/classHeaders/Con.h ../pkg/AMORE/src/classHeaders/Connection.h
 
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Container.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-Neuron.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralFactory.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralCreator.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-PredictBehavior.dia
-dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-TrainingBehavior.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-ActivationFunction.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuralNetwork.dia
 dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NetworkRinterface.dia
+dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NetworkTrainBehavior.dia
+dia2code -d ../pkg/AMORE/src/classHeaders -l licensefile  AMORE-NeuronTrainBehavior.dia
+
+
+
+
 
 sed -e 's/public Container {/public Container<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
