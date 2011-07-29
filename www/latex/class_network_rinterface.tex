@@ -1,0 +1,388 @@
+\hypertarget{class_network_rinterface}{
+\section{NetworkRinterface Class Reference}
+\label{class_network_rinterface}\index{NetworkRinterface@{NetworkRinterface}}
+}
+
+
+class \hyperlink{class_network_rinterface}{NetworkRinterface} -\/  
+
+
+
+
+{\ttfamily \#include $<$NetworkRinterface.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_network_rinterface_afcfa99fcf4ce5b5a0a3a18a0b7fd1b9c}{NetworkRinterface} ()
+\item 
+void \hyperlink{class_network_rinterface_aa2a5e2b5605382da022dd0f277f0a73f}{createFeedForwardNetwork} (Rcpp::NumericVector numberOfNeurons)
+\item 
+Rcpp::NumericMatrix \hyperlink{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c}{predict} (Rcpp::NumericMatrix numericMatrix)
+\item 
+size\_\-type \hyperlink{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08}{inputSize} ()
+\item 
+size\_\-type \hyperlink{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc}{outputSize} ()
+\item 
+void \hyperlink{class_network_rinterface_a3bcc22e2278cc28157b807ac190c7787}{show} ()
+\item 
+bool \hyperlink{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1}{validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_m_o_r_e_8h_a7adadf1c313313507b00cd1193db29a1}{NeuralNetworkPtr} \hyperlink{class_network_rinterface_a841abcde82202671c51525b61ce6a47d}{d\_\-neuralNetwork}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_network_rinterface}{NetworkRinterface} -\/ 
+
+Definition at line 3 of file NetworkRinterface.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_network_rinterface_afcfa99fcf4ce5b5a0a3a18a0b7fd1b9c}{
+\index{NetworkRinterface@{NetworkRinterface}!NetworkRinterface@{NetworkRinterface}}
+\index{NetworkRinterface@{NetworkRinterface}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{NetworkRinterface}]{\setlength{\rightskip}{0pt plus 5cm}NetworkRinterface::NetworkRinterface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_afcfa99fcf4ce5b5a0a3a18a0b7fd1b9c}
+
+
+Definition at line 22 of file NetworkRinterface.cpp.
+
+
+\begin{DoxyCode}
+{
+
+}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_network_rinterface_aa2a5e2b5605382da022dd0f277f0a73f}{
+\index{NetworkRinterface@{NetworkRinterface}!createFeedForwardNetwork@{createFeedForwardNetwork}}
+\index{createFeedForwardNetwork@{createFeedForwardNetwork}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{createFeedForwardNetwork}]{\setlength{\rightskip}{0pt plus 5cm}void NetworkRinterface::createFeedForwardNetwork (
+\begin{DoxyParamCaption}
+\item[{Rcpp::NumericVector}]{numberOfNeurons}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_aa2a5e2b5605382da022dd0f277f0a73f}
+
+
+Definition at line 28 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+
+Referenced by RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+  NeuralFactoryPtr hiddenLayersFactoryPtr(new TanhFactory());
+  NeuralFactoryPtr outputFactoryPtr(new IdentityFactory());
+  NeuralCreatorPtr neuralCreator(outputFactoryPtr->makeNeuralCreator());
+  d_neuralNetwork = neuralCreator->createFeedForwardNetwork(
+      as<std::vector<int> > (numberOfNeurons), *hiddenLayersFactoryPtr,
+      *outputFactoryPtr);
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_network_rinterface_aa2a5e2b5605382da022dd0f277f0a73f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08}{
+\index{NetworkRinterface@{NetworkRinterface}!inputSize@{inputSize}}
+\index{inputSize@{inputSize}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{inputSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-type NetworkRinterface::inputSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08}
+
+
+Definition at line 70 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+
+Referenced by predict(), and RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+  return d_neuralNetwork->inputSize();
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc}{
+\index{NetworkRinterface@{NetworkRinterface}!outputSize@{outputSize}}
+\index{outputSize@{outputSize}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{outputSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-type NetworkRinterface::outputSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc}
+
+
+Definition at line 76 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+
+Referenced by predict(), and RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+  return d_neuralNetwork->outputSize();
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c}{
+\index{NetworkRinterface@{NetworkRinterface}!predict@{predict}}
+\index{predict@{predict}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}Rcpp::NumericMatrix NetworkRinterface::predict (
+\begin{DoxyParamCaption}
+\item[{Rcpp::NumericMatrix}]{numericMatrix}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c}
+
+
+Definition at line 39 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork, inputSize(), and outputSize().
+
+
+
+Referenced by RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+  BEGIN_RCPP
+  if (!d_neuralNetwork)
+    {
+      throw std::runtime_error( "\nUninitialized network. Please use any of the c
+      reate methods available.\n");
+    }
+
+  bool checkIncorrectNumberOfRows(
+      inputSize() != static_cast<size_type> (numericMatrix.nrow()));
+  if (checkIncorrectNumberOfRows)
+    {
+      throw std::runtime_error(
+          "\nIncorrect number or rows. The number of input neurons must be equal 
+      to the number of rows of the input matrix.\n");
+    }
+
+  Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
+  std::vector<double>::iterator inputIterator(numericMatrix.begin());
+  std::vector<double>::iterator outputIterator(outputMatrix.begin());
+
+  for (int i = 0; i < numericMatrix.ncol(); i++)
+    {
+      d_neuralNetwork->writeInput(inputIterator);
+      d_neuralNetwork->predict();
+      d_neuralNetwork->readOutput(outputIterator);
+    }
+  return outputMatrix;
+
+END_RCPP}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=354pt]{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_network_rinterface_a3bcc22e2278cc28157b807ac190c7787}{
+\index{NetworkRinterface@{NetworkRinterface}!show@{show}}
+\index{show@{show}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void NetworkRinterface::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_a3bcc22e2278cc28157b807ac190c7787}
+
+
+Definition at line 82 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+
+Referenced by RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+
+  if (!d_neuralNetwork)
+    {
+      Rprintf(
+          "\nUninitialized network. Please use any of the create methods availabl
+      e.\n");
+    }
+  else
+    {
+      d_neuralNetwork->show();
+    }
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_network_rinterface_a3bcc22e2278cc28157b807ac190c7787_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1}{
+\index{NetworkRinterface@{NetworkRinterface}!validate@{validate}}
+\index{validate@{validate}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}bool NetworkRinterface::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1}
+
+
+Definition at line 97 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+
+Referenced by RCPP\_\-MODULE().
+
+
+\begin{DoxyCode}
+{
+BEGIN_RCPP if (d_neuralNetwork)
+  {
+    return d_neuralNetwork->validate();
+  }
+else
+  {
+    throw std::runtime_error(
+        "\nUninitialized network. Please use any of the create methods available.
+      \n");
+    return false;
+  }
+END_RCPP
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=358pt]{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_network_rinterface_a841abcde82202671c51525b61ce6a47d}{
+\index{NetworkRinterface@{NetworkRinterface}!d\_\-neuralNetwork@{d\_\-neuralNetwork}}
+\index{d\_\-neuralNetwork@{d\_\-neuralNetwork}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{d\_\-neuralNetwork}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuralNetworkPtr} {\bf NetworkRinterface::d\_\-neuralNetwork}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_network_rinterface_a841abcde82202671c51525b61ce6a47d}
+
+
+Definition at line 6 of file NetworkRinterface.h.
+
+
+
+Referenced by createFeedForwardNetwork(), inputSize(), outputSize(), predict(), show(), and validate().
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/classHeaders/\hyperlink{_network_rinterface_8h}{NetworkRinterface.h}\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/\hyperlink{_network_rinterface_8cpp}{NetworkRinterface.cpp}\end{DoxyCompactItemize}
