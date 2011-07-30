@@ -4,14 +4,20 @@ var NAVTREE =
     [ "The AMORE++ package", "index.html", null ],
     [ "Class List", "annotated.html", [
       [ "ActivationFunction", "class_activation_function.html", null ],
-      [ "AdaptBehavior", "class_adapt_behavior.html", null ],
-      [ "ADAPTgd", "class_a_d_a_p_tgd.html", null ],
-      [ "ADAPTgdwm", "class_a_d_a_p_tgdwm.html", null ],
+      [ "ADAPTgdNetworkTrainBehavior", "class_a_d_a_p_tgd_network_train_behavior.html", null ],
+      [ "ADAPTgdNeuronTrainBehavior", "class_a_d_a_p_tgd_neuron_train_behavior.html", null ],
+      [ "ADAPTgdwmNetworkTrainBehavior", "class_a_d_a_p_tgdwm_network_train_behavior.html", null ],
+      [ "ADAPTgdwmNeuronTrainBehavior", "class_a_d_a_p_tgdwm_neuron_train_behavior.html", null ],
+      [ "AdaptNetworkTrainBehavior", "class_adapt_network_train_behavior.html", null ],
+      [ "AdaptNeuronTrainBehavior", "class_adapt_neuron_train_behavior.html", null ],
       [ "ArcTan", "class_arc_tan.html", null ],
       [ "ArcTanFactory", "class_arc_tan_factory.html", null ],
-      [ "BatchBehavior", "class_batch_behavior.html", null ],
-      [ "BATCHgd", "class_b_a_t_c_hgd.html", null ],
-      [ "BATCHgdwm", "class_b_a_t_c_hgdwm.html", null ],
+      [ "BATCHgdNetworkTrainBehavior", "class_b_a_t_c_hgd_network_train_behavior.html", null ],
+      [ "BATCHgdNeuronTrainBehavior", "class_b_a_t_c_hgd_neuron_train_behavior.html", null ],
+      [ "BATCHgdwmNetworkTrainBehavior", "class_b_a_t_c_hgdwm_network_train_behavior.html", null ],
+      [ "BATCHgdwmNeuronTrainBehavior", "class_b_a_t_c_hgdwm_neuron_train_behavior.html", null ],
+      [ "BatchNetworkTrainBehavior", "class_batch_network_train_behavior.html", null ],
+      [ "BatchNeuronTrainBehavior", "class_batch_neuron_train_behavior.html", null ],
       [ "Con", "class_con.html", null ],
       [ "Container< T >", "class_container.html", null ],
       [ "Cosine", "class_cosine.html", null ],
@@ -30,10 +36,12 @@ var NAVTREE =
       [ "MLPbehavior", "class_m_l_pbehavior.html", null ],
       [ "MLPfactory", "class_m_l_pfactory.html", null ],
       [ "NetworkRinterface", "class_network_rinterface.html", null ],
+      [ "NetworkTrainBehavior", "class_network_train_behavior.html", null ],
       [ "NeuralCreator", "class_neural_creator.html", null ],
       [ "NeuralFactory", "class_neural_factory.html", null ],
       [ "NeuralNetwork", "class_neural_network.html", null ],
       [ "Neuron", "class_neuron.html", null ],
+      [ "NeuronTrainBehavior", "class_neuron_train_behavior.html", null ],
       [ "PredictBehavior", "class_predict_behavior.html", null ],
       [ "RadialBasis", "class_radial_basis.html", null ],
       [ "RadialBasisFactory", "class_radial_basis_factory.html", null ],
@@ -43,6 +51,7 @@ var NAVTREE =
       [ "ReciprocalFactory", "class_reciprocal_factory.html", null ],
       [ "SimpleContainer< T >", "class_simple_container.html", null ],
       [ "SimpleContainerIterator< T >", "class_simple_container_iterator.html", null ],
+      [ "SimpleContainerReverseIterator< T >", "class_simple_container_reverse_iterator.html", null ],
       [ "SimpleNetwork", "class_simple_network.html", null ],
       [ "SimpleNeuralCreator", "class_simple_neural_creator.html", null ],
       [ "SimpleNeuron", "class_simple_neuron.html", null ],
@@ -53,8 +62,7 @@ var NAVTREE =
       [ "Tanh", "class_tanh.html", null ],
       [ "TanhFactory", "class_tanh_factory.html", null ],
       [ "Threshold", "class_threshold.html", null ],
-      [ "ThresholdFactory", "class_threshold_factory.html", null ],
-      [ "TrainingBehavior", "class_training_behavior.html", null ]
+      [ "ThresholdFactory", "class_threshold_factory.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
     [ "Class Hierarchy", "hierarchy.html", [
@@ -78,9 +86,20 @@ var NAVTREE =
         [ "SimpleContainer< T >", "class_simple_container.html", null ]
       ] ],
       [ "Iterator< T >", "class_iterator.html", [
-        [ "SimpleContainerIterator< T >", "class_simple_container_iterator.html", null ]
+        [ "SimpleContainerIterator< T >", "class_simple_container_iterator.html", null ],
+        [ "SimpleContainerReverseIterator< T >", "class_simple_container_reverse_iterator.html", null ]
       ] ],
       [ "NetworkRinterface", "class_network_rinterface.html", null ],
+      [ "NetworkTrainBehavior", "class_network_train_behavior.html", [
+        [ "AdaptNetworkTrainBehavior", "class_adapt_network_train_behavior.html", [
+          [ "ADAPTgdNetworkTrainBehavior", "class_a_d_a_p_tgd_network_train_behavior.html", null ],
+          [ "ADAPTgdwmNetworkTrainBehavior", "class_a_d_a_p_tgdwm_network_train_behavior.html", null ]
+        ] ],
+        [ "BatchNetworkTrainBehavior", "class_batch_network_train_behavior.html", [
+          [ "BATCHgdNetworkTrainBehavior", "class_b_a_t_c_hgd_network_train_behavior.html", null ],
+          [ "BATCHgdwmNetworkTrainBehavior", "class_b_a_t_c_hgdwm_network_train_behavior.html", null ]
+        ] ]
+      ] ],
       [ "NeuralCreator", "class_neural_creator.html", [
         [ "SimpleNeuralCreator", "class_simple_neural_creator.html", null ]
       ] ],
@@ -109,24 +128,25 @@ var NAVTREE =
       [ "Neuron", "class_neuron.html", [
         [ "SimpleNeuron", "class_simple_neuron.html", null ]
       ] ],
+      [ "NeuronTrainBehavior", "class_neuron_train_behavior.html", [
+        [ "AdaptNeuronTrainBehavior", "class_adapt_neuron_train_behavior.html", [
+          [ "ADAPTgdNeuronTrainBehavior", "class_a_d_a_p_tgd_neuron_train_behavior.html", null ],
+          [ "ADAPTgdwmNeuronTrainBehavior", "class_a_d_a_p_tgdwm_neuron_train_behavior.html", null ]
+        ] ],
+        [ "BatchNeuronTrainBehavior", "class_batch_neuron_train_behavior.html", [
+          [ "BATCHgdNeuronTrainBehavior", "class_b_a_t_c_hgd_neuron_train_behavior.html", null ],
+          [ "BATCHgdwmNeuronTrainBehavior", "class_b_a_t_c_hgdwm_neuron_train_behavior.html", null ]
+        ] ]
+      ] ],
       [ "PredictBehavior", "class_predict_behavior.html", [
         [ "MLPbehavior", "class_m_l_pbehavior.html", null ],
         [ "RBFbehavior", "class_r_b_fbehavior.html", null ]
-      ] ],
-      [ "TrainingBehavior", "class_training_behavior.html", [
-        [ "AdaptBehavior", "class_adapt_behavior.html", [
-          [ "ADAPTgd", "class_a_d_a_p_tgd.html", null ],
-          [ "ADAPTgdwm", "class_a_d_a_p_tgdwm.html", null ]
-        ] ],
-        [ "BatchBehavior", "class_batch_behavior.html", [
-          [ "BATCHgd", "class_b_a_t_c_hgd.html", null ],
-          [ "BATCHgdwm", "class_b_a_t_c_hgdwm.html", null ]
-        ] ]
       ] ]
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ActivationFunction.cpp", "_activation_function_8cpp.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/ADAPTgdNetworkTrainBehavior.cpp", "_a_d_a_p_tgd_network_train_behavior_8cpp.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/AMORE.h", "_a_m_o_r_e_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Connection.cpp", "_connection_8cpp.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Identity.cpp", "_identity_8cpp.html", null ],
@@ -145,14 +165,20 @@ var NAVTREE =
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/Tanh.cpp", "_tanh_8cpp.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/TanhFactory.cpp", "_tanh_factory_8cpp.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ActivationFunction.h", "_activation_function_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/AdaptBehavior.h", "_adapt_behavior_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgd.h", "_a_d_a_p_tgd_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgdwm.h", "_a_d_a_p_tgdwm_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgdNetworkTrainBehavior.h", "_a_d_a_p_tgd_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgdNeuronTrainBehavior.h", "_a_d_a_p_tgd_neuron_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgdwmNetworkTrainBehavior.h", "_a_d_a_p_tgdwm_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ADAPTgdwmNeuronTrainBehavior.h", "_a_d_a_p_tgdwm_neuron_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/AdaptNetworkTrainBehavior.h", "_adapt_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/AdaptNeuronTrainBehavior.h", "_adapt_neuron_train_behavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ArcTan.h", "_arc_tan_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ArcTanFactory.h", "_arc_tan_factory_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BatchBehavior.h", "_batch_behavior_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgd.h", "_b_a_t_c_hgd_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgdwm.h", "_b_a_t_c_hgdwm_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgdNetworkTrainBehavior.h", "_b_a_t_c_hgd_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgdNeuronTrainBehavior.h", "_b_a_t_c_hgd_neuron_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgdwmNetworkTrainBehavior.h", "_b_a_t_c_hgdwm_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BATCHgdwmNeuronTrainBehavior.h", "_b_a_t_c_hgdwm_neuron_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BatchNetworkTrainBehavior.h", "_batch_network_train_behavior_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/BatchNeuronTrainBehavior.h", "_batch_neuron_train_behavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Connection.h", "_connection_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Container.h", "_container_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Cosine.h", "_cosine_8h.html", null ],
@@ -171,10 +197,12 @@ var NAVTREE =
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/MLPbehavior.h", "_m_l_pbehavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/MLPfactory.h", "_m_l_pfactory_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NetworkRinterface.h", "_network_rinterface_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NetworkTrainBehavior.h", "_network_train_behavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h", "_neural_creator_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralFactory.h", "_neural_factory_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralNetwork.h", "_neural_network_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Neuron.h", "_neuron_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuronTrainBehavior.h", "_neuron_train_behavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/PredictBehavior.h", "_predict_behavior_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/RadialBasis.h", "_radial_basis_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/RadialBasisFactory.h", "_radial_basis_factory_8h.html", null ],
@@ -184,6 +212,7 @@ var NAVTREE =
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ReciprocalFactory.h", "_reciprocal_factory_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleContainer.h", "_simple_container_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleContainerIterator.h", "_simple_container_iterator_8h.html", null ],
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleContainerReverseIterator.h", "_simple_container_reverse_iterator_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleNetwork.h", "_simple_network_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleNeuralCreator.h", "_simple_neural_creator_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/SimpleNeuron.h", "_simple_neuron_8h.html", null ],
@@ -194,8 +223,7 @@ var NAVTREE =
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Tanh.h", "_tanh_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/TanhFactory.h", "_tanh_factory_8h.html", null ],
       [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/Threshold.h", "_threshold_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ThresholdFactory.h", "_threshold_factory_8h.html", null ],
-      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/TrainingBehavior.h", "_training_behavior_8h.html", null ]
+      [ "/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/ThresholdFactory.h", "_threshold_factory_8h.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]
   ] ]

@@ -18,7 +18,7 @@ Inheritance diagram for Neuron:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_neuron__inherit__graph}
+\includegraphics[height=600pt]{class_neuron__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -31,6 +31,8 @@ virtual void \hyperlink{class_neuron_ab7244964f798eb9cace1cb916f5ef359}{setInduc
 virtual double \hyperlink{class_neuron_a43ac0c8461c610bb2b82017d597435e3}{getOutput} ()=0
 \item 
 virtual void \hyperlink{class_neuron_aae94f78cfa7ed3ce4935f23a3a585f95}{setOutput} (double output)=0
+\item 
+virtual void \hyperlink{class_neuron_a313a84fcb2bcb6562a659ee69e75c2d5}{setOutputDerivative} (double outputDerivative)=0
 \item 
 virtual \hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_neuron_a1a34edd39fba70be1d18219d5e9e1eea}{getId} ()=0
 \item 
@@ -46,7 +48,11 @@ virtual void \hyperlink{class_neuron_af21848d0ef33bec5587e4c2702c83e3f}{setPredi
 \item 
 virtual double \hyperlink{class_neuron_a78c90ab1f5d18b2d7cb8f366391b7821}{useActivationFunctionf0} ()=0
 \item 
-virtual void \hyperlink{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{predict} ()=0
+virtual double \hyperlink{class_neuron_ad8c510fc08c5d4cf3a9614fbb98867b6}{useActivationFunctionf1} ()=0
+\item 
+virtual void \hyperlink{class_neuron_a80b821200bd08777ea6f3d686dffd760}{singlePatternForwardAction} ()=0
+\item 
+virtual void \hyperlink{class_neuron_a936435da3fde7254d7051163170009be}{singlePatternBackwardAction} ()=0
 \item 
 virtual void \hyperlink{class_neuron_ae18a86f9b67c63a6fcb28c813b47a38d}{show} ()=0
 \item 
@@ -64,6 +70,8 @@ virtual bool \hyperlink{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{validate
 \item 
 \hyperlink{_a_m_o_r_e_8h_a77602a0277a02e5769c3df0adc669b17}{ActivationFunctionPtr} \hyperlink{class_neuron_ad530e9f0bb556e0469b5074e6b7f463f}{d\_\-activationFunction}
 \item 
+\hyperlink{_a_m_o_r_e_8h_a687ad68f1793905a403f187c0eda2ec1}{NeuronTrainBehaviorPtr} \hyperlink{class_neuron_ab435b271c3deef356620b5582630e77b}{d\_\-neuronTrainBehavior}
+\item 
 \hyperlink{_a_m_o_r_e_8h_abc871abb71cff6655b8172ee7240b8ef}{Handler} \hyperlink{class_neuron_ab1a34e30b663c41342e8f8eaac8bd466}{d\_\-Id}
 \item 
 \hyperlink{_a_m_o_r_e_8h_a1021dbaf961d1c8da6d58a8566e5778b}{ConContainerPtr} \hyperlink{class_neuron_ac3cb61c8582bb07bb3c61fe9fa07489b}{d\_\-nCons}
@@ -71,6 +79,8 @@ virtual bool \hyperlink{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{validate
 double \hyperlink{class_neuron_a4370eae5b594fb4c7f544fcefa298c7c}{d\_\-inducedLocalField}
 \item 
 double \hyperlink{class_neuron_a1e0b130755580b323da98c5332a6610e}{d\_\-output}
+\item 
+double \hyperlink{class_neuron_a7145844d8be9fb33ad77d47eb50fb9af}{d\_\-outputDerivative}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -114,8 +124,7 @@ References d\_\-nCons, and NeuralFactory::makeConContainer().
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -192,19 +201,6 @@ Implemented in \hyperlink{class_simple_neuron_ac7d28dffa06f0825c4b7d12e981ce9b1}
 
 Implemented in \hyperlink{class_simple_neuron_ae5a325412827ad1f63e2a75f82023267}{SimpleNeuron}.
 
-\hypertarget{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}{
-\index{Neuron@{Neuron}!predict@{predict}}
-\index{predict@{predict}!Neuron@{Neuron}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neuron_a7181d8d0a5f9b0e4ff39410785f087e9}
-
-
-Implemented in \hyperlink{class_simple_neuron_a232e6c3a7205372e3ccb7e93f26c58b6}{SimpleNeuron}.
-
 \hypertarget{class_neuron_ab73922d2dba9f86ab192e2bb87c6a1aa}{
 \index{Neuron@{Neuron}!setActivationFunction@{setActivationFunction}}
 \index{setActivationFunction@{setActivationFunction}!Neuron@{Neuron}}
@@ -257,6 +253,19 @@ Implemented in \hyperlink{class_simple_neuron_a6f0a732980dc4860757b475539085324}
 
 Implemented in \hyperlink{class_simple_neuron_af59d76e80aea2bb224b817390f083bf9}{SimpleNeuron}.
 
+\hypertarget{class_neuron_a313a84fcb2bcb6562a659ee69e75c2d5}{
+\index{Neuron@{Neuron}!setOutputDerivative@{setOutputDerivative}}
+\index{setOutputDerivative@{setOutputDerivative}!Neuron@{Neuron}}
+\subsubsection[{setOutputDerivative}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::setOutputDerivative (
+\begin{DoxyParamCaption}
+\item[{double}]{outputDerivative}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neuron_a313a84fcb2bcb6562a659ee69e75c2d5}
+
+
+Implemented in \hyperlink{class_simple_neuron_a53a5a3754c38d4558d23d15152a2275a}{SimpleNeuron}.
+
 \hypertarget{class_neuron_af21848d0ef33bec5587e4c2702c83e3f}{
 \index{Neuron@{Neuron}!setPredictBehavior@{setPredictBehavior}}
 \index{setPredictBehavior@{setPredictBehavior}!Neuron@{Neuron}}
@@ -283,6 +292,32 @@ Implemented in \hyperlink{class_simple_neuron_a8f230b4566e85adda71c7e0633d8a20d}
 
 Implemented in \hyperlink{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}{SimpleNeuron}.
 
+\hypertarget{class_neuron_a936435da3fde7254d7051163170009be}{
+\index{Neuron@{Neuron}!singlePatternBackwardAction@{singlePatternBackwardAction}}
+\index{singlePatternBackwardAction@{singlePatternBackwardAction}!Neuron@{Neuron}}
+\subsubsection[{singlePatternBackwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::singlePatternBackwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neuron_a936435da3fde7254d7051163170009be}
+
+
+Implemented in \hyperlink{class_simple_neuron_a7e63496ca2eb173688f85d510f5cbbfa}{SimpleNeuron}.
+
+\hypertarget{class_neuron_a80b821200bd08777ea6f3d686dffd760}{
+\index{Neuron@{Neuron}!singlePatternForwardAction@{singlePatternForwardAction}}
+\index{singlePatternForwardAction@{singlePatternForwardAction}!Neuron@{Neuron}}
+\subsubsection[{singlePatternForwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Neuron::singlePatternForwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neuron_a80b821200bd08777ea6f3d686dffd760}
+
+
+Implemented in \hyperlink{class_simple_neuron_a8fdcbb3dad7d499a496feadc6a27bb9f}{SimpleNeuron}.
+
 \hypertarget{class_neuron_a78c90ab1f5d18b2d7cb8f366391b7821}{
 \index{Neuron@{Neuron}!useActivationFunctionf0@{useActivationFunctionf0}}
 \index{useActivationFunctionf0@{useActivationFunctionf0}!Neuron@{Neuron}}
@@ -295,6 +330,19 @@ Implemented in \hyperlink{class_simple_neuron_afea22112336409283a5bb7d281f7f4bd}
 
 
 Implemented in \hyperlink{class_simple_neuron_abf7f3ad2eac82aec49c1521d26521ff2}{SimpleNeuron}.
+
+\hypertarget{class_neuron_ad8c510fc08c5d4cf3a9614fbb98867b6}{
+\index{Neuron@{Neuron}!useActivationFunctionf1@{useActivationFunctionf1}}
+\index{useActivationFunctionf1@{useActivationFunctionf1}!Neuron@{Neuron}}
+\subsubsection[{useActivationFunctionf1}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Neuron::useActivationFunctionf1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neuron_ad8c510fc08c5d4cf3a9614fbb98867b6}
+
+
+Implemented in \hyperlink{class_simple_neuron_a48f96e836e8d34c213e6e6e2c056ba57}{SimpleNeuron}.
 
 \hypertarget{class_neuron_a37f57f44fefa328ea0b7ab32b52c853e}{
 \index{Neuron@{Neuron}!validate@{validate}}
@@ -319,7 +367,7 @@ Implemented in \hyperlink{class_simple_neuron_a9e7173abb892281d0b2ffb0efc82f0e5}
 \label{class_neuron_a1aa48940238b9487734e590ffab33a1b}
 
 
-Definition at line 15 of file Neuron.h.
+Definition at line 16 of file Neuron.h.
 
 
 
@@ -335,7 +383,7 @@ Definition at line 7 of file Neuron.h.
 
 
 
-Referenced by SimpleNeuron::setActivationFunction(), and SimpleNeuron::useActivationFunctionf0().
+Referenced by SimpleNeuron::setActivationFunction(), SimpleNeuron::useActivationFunctionf0(), and SimpleNeuron::useActivationFunctionf1().
 
 \hypertarget{class_neuron_ab1a34e30b663c41342e8f8eaac8bd466}{
 \index{Neuron@{Neuron}!d\_\-Id@{d\_\-Id}}
@@ -376,6 +424,19 @@ Definition at line 10 of file Neuron.h.
 
 Referenced by SimpleNeuron::addCon(), SimpleNeuron::getConIterator(), Neuron(), and SimpleNeuron::show().
 
+\hypertarget{class_neuron_ab435b271c3deef356620b5582630e77b}{
+\index{Neuron@{Neuron}!d\_\-neuronTrainBehavior@{d\_\-neuronTrainBehavior}}
+\index{d\_\-neuronTrainBehavior@{d\_\-neuronTrainBehavior}!Neuron@{Neuron}}
+\subsubsection[{d\_\-neuronTrainBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NeuronTrainBehaviorPtr} {\bf Neuron::d\_\-neuronTrainBehavior}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_neuron_ab435b271c3deef356620b5582630e77b}
+
+
+Definition at line 8 of file Neuron.h.
+
+
+
+Referenced by SimpleNeuron::singlePatternBackwardAction().
+
 \hypertarget{class_neuron_a1e0b130755580b323da98c5332a6610e}{
 \index{Neuron@{Neuron}!d\_\-output@{d\_\-output}}
 \index{d\_\-output@{d\_\-output}!Neuron@{Neuron}}
@@ -389,6 +450,19 @@ Definition at line 12 of file Neuron.h.
 
 Referenced by SimpleNeuron::getOutput(), SimpleNeuron::setOutput(), and SimpleNeuron::show().
 
+\hypertarget{class_neuron_a7145844d8be9fb33ad77d47eb50fb9af}{
+\index{Neuron@{Neuron}!d\_\-outputDerivative@{d\_\-outputDerivative}}
+\index{d\_\-outputDerivative@{d\_\-outputDerivative}!Neuron@{Neuron}}
+\subsubsection[{d\_\-outputDerivative}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf Neuron::d\_\-outputDerivative}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_neuron_a7145844d8be9fb33ad77d47eb50fb9af}
+
+
+Definition at line 13 of file Neuron.h.
+
+
+
+Referenced by SimpleNeuron::setOutputDerivative().
+
 \hypertarget{class_neuron_a2522e221f58c84bd3a1c32647da4a411}{
 \index{Neuron@{Neuron}!d\_\-predictBehavior@{d\_\-predictBehavior}}
 \index{d\_\-predictBehavior@{d\_\-predictBehavior}!Neuron@{Neuron}}
@@ -400,7 +474,7 @@ Definition at line 6 of file Neuron.h.
 
 
 
-Referenced by SimpleNeuron::predict(), SimpleNeuron::setPredictBehavior(), and SimpleNeuron::show().
+Referenced by SimpleNeuron::setPredictBehavior(), SimpleNeuron::show(), and SimpleNeuron::singlePatternForwardAction().
 
 
 

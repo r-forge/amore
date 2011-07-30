@@ -18,7 +18,7 @@ Inheritance diagram for Container$<$ T $>$:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=196pt]{class_container__inherit__graph}
+\includegraphics[width=216pt]{class_container__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -27,6 +27,8 @@ Inheritance diagram for Container$<$ T $>$:
 virtual \hyperlink{class_container_ac190e8e99e5a92ef02390027765cbbb6}{$\sim$Container} ()
 \item 
 virtual boost::shared\_\-ptr$<$ \hyperlink{class_iterator}{Iterator}$<$ T $>$ $>$ \hyperlink{class_container_a18a0a70153781d3d94526bc09fcbedb8}{createIterator} ()=0
+\item 
+virtual boost::shared\_\-ptr$<$ \hyperlink{class_iterator}{Iterator}$<$ T $>$ $>$ \hyperlink{class_container_acc5e862abc8a449fe5c69c94eff4113e}{createReverseIterator} ()=0
 \item 
 virtual T \hyperlink{class_container_a8aed06783f7cd0749f796c64e64626e7}{at} (size\_\-type element)=0
 \item 
@@ -120,6 +122,19 @@ Implemented in \hyperlink{class_simple_container_ae3ee6cb18f1dd33ab5de4f9854ce24
 
 
 Implemented in \hyperlink{class_simple_container_a4e46f5cb32231deaf9aa9bb7f871d09e}{SimpleContainer$<$ T $>$}.
+
+\hypertarget{class_container_acc5e862abc8a449fe5c69c94eff4113e}{
+\index{Container@{Container}!createReverseIterator@{createReverseIterator}}
+\index{createReverseIterator@{createReverseIterator}!Container@{Container}}
+\subsubsection[{createReverseIterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual boost::shared\_\-ptr$<$ {\bf Iterator}$<$T$>$ $>$ {\bf Container}$<$ T $>$::createReverseIterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_container_acc5e862abc8a449fe5c69c94eff4113e}
+
+
+Implemented in \hyperlink{class_simple_container_acb880d7d14d0067085aa7b7c90602628}{SimpleContainer$<$ T $>$}.
 
 \hypertarget{class_container_a123dcd25b363ab92ac8bfa8b4c4061a4}{
 \index{Container@{Container}!empty@{empty}}

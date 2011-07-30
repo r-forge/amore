@@ -18,7 +18,7 @@ Inheritance diagram for SimpleNetwork:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=184pt]{class_simple_network__inherit__graph}
+\includegraphics[width=248pt]{class_simple_network__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,7 +28,7 @@ Collaboration diagram for SimpleNetwork:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=184pt]{class_simple_network__coll__graph}
+\includegraphics[width=248pt]{class_simple_network__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -41,9 +41,13 @@ Collaboration diagram for SimpleNetwork:
 \item 
 void \hyperlink{class_simple_network_a45c0a090f4ac14963c7f2ebfc4cc3f5d}{writeInput} (std::vector$<$ double $>$::iterator \&iterator)
 \item 
-void \hyperlink{class_simple_network_ad2da5477f7441e8d0b22bf5214d1cf64}{predict} ()
+void \hyperlink{class_simple_network_a6a966984617511c0d79bc38f2ba73888}{singlePatternForwardAction} ()
+\item 
+void \hyperlink{class_simple_network_acce93c67ba6f301f99889642dbd620de}{singlePatternBackwardAction} ()
 \item 
 void \hyperlink{class_simple_network_abdf4a70e4b26e4ce914afd65c58170cf}{readOutput} (std::vector$<$ double $>$::iterator \&iterator)
+\item 
+Rcpp::List \hyperlink{class_simple_network_a97cd497e97b090ce972151ebb3201fb9}{train} (Rcpp::List parameterList)
 \item 
 size\_\-type \hyperlink{class_simple_network_a7e14145c93afb1464c176d9b875ee6f2}{inputSize} ()
 \item 
@@ -102,7 +106,7 @@ Implements \hyperlink{class_neural_network_a9b59b8576a47750009669a6885524d1e}{Ne
 
 
 
-Definition at line 70 of file SimpleNetwork.cpp.
+Definition at line 108 of file SimpleNetwork.cpp.
 
 
 
@@ -120,8 +124,7 @@ Referenced by writeInput().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -145,7 +148,7 @@ Implements \hyperlink{class_neural_network_af7bbfbd5635c29d66fbb37e74800ec15}{Ne
 
 
 
-Definition at line 76 of file SimpleNetwork.cpp.
+Definition at line 114 of file SimpleNetwork.cpp.
 
 
 
@@ -163,8 +166,7 @@ Referenced by readOutput().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -173,56 +175,6 @@ Here is the caller graph for this function:
 \end{figure}
 
 
-\hypertarget{class_simple_network_ad2da5477f7441e8d0b22bf5214d1cf64}{
-\index{SimpleNetwork@{SimpleNetwork}!predict@{predict}}
-\index{predict@{predict}!SimpleNetwork@{SimpleNetwork}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNetwork::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{class_simple_network_ad2da5477f7441e8d0b22bf5214d1cf64}
-
-
-Implements \hyperlink{class_neural_network_ac5d16c83c3159ecd075636e82688b2ed}{NeuralNetwork}.
-
-
-
-Definition at line 23 of file SimpleNetwork.cpp.
-
-
-
-References NeuralNetwork::d\_\-hiddenLayers, and NeuralNetwork::d\_\-outputLayer.
-
-
-\begin{DoxyCode}
-{
-
-  // Hidden Layers
-  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(
-      d_hiddenLayers->createIterator());
-
-  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
-    {
-      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
-          layerIterator->currentItem()->createIterator());
-      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->ne
-      xt())
-        {
-          neuronIterator->currentItem()->predict();
-        }
-    }
-
-  // Output Layers
-  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
-      d_outputLayer->createIterator());
-  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next()
-      )
-    {
-      neuronIterator->currentItem()->predict();
-    }
-}
-\end{DoxyCode}
 \hypertarget{class_simple_network_abdf4a70e4b26e4ce914afd65c58170cf}{
 \index{SimpleNetwork@{SimpleNetwork}!readOutput@{readOutput}}
 \index{readOutput@{readOutput}!SimpleNetwork@{SimpleNetwork}}
@@ -238,7 +190,7 @@ Implements \hyperlink{class_neural_network_acb06905cd65e1f40b79cf2cc30e5987a}{Ne
 
 
 
-Definition at line 60 of file SimpleNetwork.cpp.
+Definition at line 88 of file SimpleNetwork.cpp.
 
 
 
@@ -256,8 +208,7 @@ References NeuralNetwork::d\_\-outputLayer, outputSize(), and size\_\-type.
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -281,7 +232,7 @@ Implements \hyperlink{class_neural_network_abe7893d4df14b19f059f9fca0175cbe1}{Ne
 
 
 
-Definition at line 82 of file SimpleNetwork.cpp.
+Definition at line 120 of file SimpleNetwork.cpp.
 
 
 
@@ -308,6 +259,134 @@ References NeuralNetwork::d\_\-hiddenLayers, NeuralNetwork::d\_\-inputLayer, and
 
 }
 \end{DoxyCode}
+\hypertarget{class_simple_network_acce93c67ba6f301f99889642dbd620de}{
+\index{SimpleNetwork@{SimpleNetwork}!singlePatternBackwardAction@{singlePatternBackwardAction}}
+\index{singlePatternBackwardAction@{singlePatternBackwardAction}!SimpleNetwork@{SimpleNetwork}}
+\subsubsection[{singlePatternBackwardAction}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNetwork::singlePatternBackwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_network_acce93c67ba6f301f99889642dbd620de}
+
+
+Implements \hyperlink{class_neural_network_a67e3bda920636659bd6b0635f177fcee}{NeuralNetwork}.
+
+
+
+Definition at line 64 of file SimpleNetwork.cpp.
+
+
+
+References NeuralNetwork::d\_\-hiddenLayers, and NeuralNetwork::d\_\-outputLayer.
+
+
+\begin{DoxyCode}
+{
+  // Output Layers
+  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(d_outputLayer->createR
+      everseIterator());
+  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next()
+      )
+    {
+      neuronIterator->currentItem()->singlePatternBackwardAction();
+    }
+
+  // Hidden Layers
+  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(d_hiddenLayers->createRe
+      verseIterator());
+  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
+    {
+      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator( layerIterator->cu
+      rrentItem()->createReverseIterator());
+      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->ne
+      xt())
+        {
+          neuronIterator->currentItem()->singlePatternBackwardAction();
+        }
+    }
+}
+\end{DoxyCode}
+\hypertarget{class_simple_network_a6a966984617511c0d79bc38f2ba73888}{
+\index{SimpleNetwork@{SimpleNetwork}!singlePatternForwardAction@{singlePatternForwardAction}}
+\index{singlePatternForwardAction@{singlePatternForwardAction}!SimpleNetwork@{SimpleNetwork}}
+\subsubsection[{singlePatternForwardAction}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleNetwork::singlePatternForwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_network_a6a966984617511c0d79bc38f2ba73888}
+
+
+Implements \hyperlink{class_neural_network_aba99bf07f941e852ce0519266a997d3a}{NeuralNetwork}.
+
+
+
+Definition at line 35 of file SimpleNetwork.cpp.
+
+
+
+References NeuralNetwork::d\_\-hiddenLayers, and NeuralNetwork::d\_\-outputLayer.
+
+
+\begin{DoxyCode}
+{
+
+  // Hidden Layers
+  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(
+      d_hiddenLayers->createIterator());
+
+  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
+    {
+      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
+          layerIterator->currentItem()->createIterator());
+      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->ne
+      xt())
+        {
+          neuronIterator->currentItem()->singlePatternForwardAction();
+        }
+    }
+
+  // Output Layers
+  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
+      d_outputLayer->createIterator());
+  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next()
+      )
+    {
+      neuronIterator->currentItem()->singlePatternForwardAction();
+    }
+}
+\end{DoxyCode}
+\hypertarget{class_simple_network_a97cd497e97b090ce972151ebb3201fb9}{
+\index{SimpleNetwork@{SimpleNetwork}!train@{train}}
+\index{train@{train}!SimpleNetwork@{SimpleNetwork}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}Rcpp::List SimpleNetwork::train (
+\begin{DoxyParamCaption}
+\item[{Rcpp::List}]{parameterList}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_simple_network_a97cd497e97b090ce972151ebb3201fb9}
+
+
+Implements \hyperlink{class_neural_network_a3edff5f034de30abf24b73f8e81728a3}{NeuralNetwork}.
+
+
+
+Definition at line 98 of file SimpleNetwork.cpp.
+
+
+
+References NeuralNetwork::d\_\-networkTrainBehavior.
+
+
+\begin{DoxyCode}
+{
+  // TODO check train behavior and change it if need be
+  // TODO check cost function  and change it if need be
+
+  return d_networkTrainBehavior->train(parameterList);
+}
+\end{DoxyCode}
 \hypertarget{class_simple_network_adfbe36eff51ead5995f2ccc58fcee709}{
 \index{SimpleNetwork@{SimpleNetwork}!validate@{validate}}
 \index{validate@{validate}!SimpleNetwork@{SimpleNetwork}}
@@ -323,7 +402,7 @@ Implements \hyperlink{class_neural_network_a7ab39cee7bef69eff19cca490ff5d7c0}{Ne
 
 
 
-Definition at line 103 of file SimpleNetwork.cpp.
+Definition at line 141 of file SimpleNetwork.cpp.
 
 
 
@@ -353,7 +432,7 @@ Implements \hyperlink{class_neural_network_ad84eb675d31eab6e5d45c37f686d8186}{Ne
 
 
 
-Definition at line 50 of file SimpleNetwork.cpp.
+Definition at line 23 of file SimpleNetwork.cpp.
 
 
 
@@ -371,8 +450,7 @@ References NeuralNetwork::d\_\-inputLayer, inputSize(), and size\_\-type.
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

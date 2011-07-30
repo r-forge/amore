@@ -18,7 +18,7 @@ Inheritance diagram for MLPbehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_m_l_pbehavior__inherit__graph}
+\includegraphics[width=240pt]{class_m_l_pbehavior__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -28,7 +28,7 @@ Collaboration diagram for MLPbehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_m_l_pbehavior__coll__graph}
+\includegraphics[width=240pt]{class_m_l_pbehavior__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -39,7 +39,7 @@ Collaboration diagram for MLPbehavior:
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{predict} ()
+void \hyperlink{class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7}{singlePatternForwardAction} ()
 \item 
 void \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{show} ()
 \end{DoxyCompactItemize}
@@ -86,58 +86,6 @@ Definition at line 17 of file MLPbehavior.cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{
-\index{MLPbehavior@{MLPbehavior}!predict@{predict}}
-\index{predict@{predict}!MLPbehavior@{MLPbehavior}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}void MLPbehavior::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
-\label{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}
-
-
-Implements \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{PredictBehavior}.
-
-
-
-Definition at line 23 of file MLPbehavior.cpp.
-
-
-
-References d\_\-bias, PredictBehavior::getConIterator(), PredictBehavior::setInducedLocalField(), PredictBehavior::setOutput(), and PredictBehavior::useActivationFunctionf0().
-
-
-\begin{DoxyCode}
-{
-
-  double accumulator(d_bias);
-  ConIteratorPtr conIterator = getConIterator();
-  double weight;
-  double incomingSignalValue;
-  for (conIterator->first(); !conIterator->isDone(); conIterator->next())
-    {
-      weight = conIterator->currentItem()->getWeight();
-      incomingSignalValue = conIterator->currentItem()->getNeuron().getOutput();
-      accumulator += weight * incomingSignalValue;
-    }
-  setInducedLocalField(accumulator);
-  setOutput (
-  useActivationFunctionf0());
-}
-\end{DoxyCode}
-
-
-Here is the call graph for this function:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=400pt]{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf_cgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{
 \index{MLPbehavior@{MLPbehavior}!show@{show}}
 \index{show@{show}!MLPbehavior@{MLPbehavior}}
@@ -165,6 +113,58 @@ References d\_\-bias.
   Rprintf("\n bias: %lf", d_bias);
 }
 \end{DoxyCode}
+\hypertarget{class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7}{
+\index{MLPbehavior@{MLPbehavior}!singlePatternForwardAction@{singlePatternForwardAction}}
+\index{singlePatternForwardAction@{singlePatternForwardAction}!MLPbehavior@{MLPbehavior}}
+\subsubsection[{singlePatternForwardAction}]{\setlength{\rightskip}{0pt plus 5cm}void MLPbehavior::singlePatternForwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7}
+
+
+Implements \hyperlink{class_predict_behavior_a13d82e6ee45b4fa1b7e17941f990fdc5}{PredictBehavior}.
+
+
+
+Definition at line 23 of file MLPbehavior.cpp.
+
+
+
+References d\_\-bias, PredictBehavior::getConIterator(), PredictBehavior::setInducedLocalField(), PredictBehavior::setOutput(), PredictBehavior::setOutputDerivative(), PredictBehavior::useActivationFunctionf0(), and PredictBehavior::useActivationFunctionf1().
+
+
+\begin{DoxyCode}
+{
+
+  double accumulator(d_bias);
+  ConIteratorPtr conIterator = getConIterator();
+  double weight;
+  double incomingSignalValue;
+  for (conIterator->first(); !conIterator->isDone(); conIterator->next())
+    {
+      weight = conIterator->currentItem()->getWeight();
+      incomingSignalValue = conIterator->currentItem()->getNeuron().getOutput();
+      accumulator += weight * incomingSignalValue;
+    }
+  setInducedLocalField(accumulator);
+  setOutput (useActivationFunctionf0());
+  setOutputDerivative (useActivationFunctionf1());
+}
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7_cgraph}
+\end{center}
+\end{figure}
+
+
 
 
 \subsection{Friends And Related Function Documentation}
@@ -191,7 +191,7 @@ Definition at line 8 of file MLPbehavior.h.
 
 
 
-Referenced by MLPfactory::makeNeuron(), predict(), and show().
+Referenced by MLPfactory::makeNeuron(), show(), and singlePatternForwardAction().
 
 
 

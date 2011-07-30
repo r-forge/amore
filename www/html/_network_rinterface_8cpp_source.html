@@ -122,81 +122,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a><a class="code" href="class_network_rinterface.html#a28c63ea70e49d8771e8242107b65d62c">00039</a> <a class="code" href="class_network_rinterface.html#a28c63ea70e49d8771e8242107b65d62c">NetworkRinterface::predict</a>(Rcpp::NumericMatrix numericMatrix)
 <a name="l00040"></a>00040 {
 <a name="l00041"></a>00041   BEGIN_RCPP
-<a name="l00042"></a>00042   <span class="keywordflow">if</span> (!<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
-<a name="l00043"></a>00043     {
-<a name="l00044"></a>00044       <span class="keywordflow">throw</span> std::runtime_error( <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
-<a name="l00045"></a>00045     }
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047   <span class="keywordtype">bool</span> checkIncorrectNumberOfRows(
-<a name="l00048"></a>00048       <a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">inputSize</a>() != static_cast&lt;size_type&gt; (numericMatrix.nrow()));
-<a name="l00049"></a>00049   <span class="keywordflow">if</span> (checkIncorrectNumberOfRows)
-<a name="l00050"></a>00050     {
-<a name="l00051"></a>00051       <span class="keywordflow">throw</span> std::runtime_error(
-<a name="l00052"></a>00052           <span class="stringliteral">&quot;\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n&quot;</span>);
-<a name="l00053"></a>00053     }
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055   Rcpp::NumericMatrix outputMatrix(<a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">outputSize</a>(), numericMatrix.ncol());
-<a name="l00056"></a>00056   std::vector&lt;double&gt;::iterator inputIterator(numericMatrix.begin());
-<a name="l00057"></a>00057   std::vector&lt;double&gt;::iterator outputIterator(outputMatrix.begin());
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numericMatrix.ncol(); i++)
-<a name="l00060"></a>00060     {
-<a name="l00061"></a>00061       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;writeInput(inputIterator);
-<a name="l00062"></a>00062       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;predict();
-<a name="l00063"></a>00063       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;readOutput(outputIterator);
-<a name="l00064"></a>00064     }
-<a name="l00065"></a>00065   <span class="keywordflow">return</span> outputMatrix;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 END_RCPP}
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
-<a name="l00070"></a><a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">00070</a> <a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">NetworkRinterface::inputSize</a>()
-<a name="l00071"></a>00071 {
-<a name="l00072"></a>00072   <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;inputSize();
-<a name="l00073"></a>00073 }
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043   <span class="comment">// VALIDATION</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <span class="keywordflow">if</span> (!<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047       <span class="keywordflow">throw</span> std::runtime_error( <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050   <span class="keywordtype">bool</span> checkIncorrectNumberOfRows(
+<a name="l00051"></a>00051       <a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">inputSize</a>() != static_cast&lt;size_type&gt; (numericMatrix.nrow()));
+<a name="l00052"></a>00052   <span class="keywordflow">if</span> (checkIncorrectNumberOfRows)
+<a name="l00053"></a>00053     {
+<a name="l00054"></a>00054       <span class="keywordflow">throw</span> std::runtime_error(
+<a name="l00055"></a>00055           <span class="stringliteral">&quot;\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n&quot;</span>);
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058   Rcpp::NumericMatrix outputMatrix(<a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">outputSize</a>(), numericMatrix.ncol());
+<a name="l00059"></a>00059   std::vector&lt;double&gt;::iterator inputIterator(numericMatrix.begin());
+<a name="l00060"></a>00060   std::vector&lt;double&gt;::iterator outputIterator(outputMatrix.begin());
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062   <span class="comment">// PREDICT LOOP</span>
+<a name="l00063"></a>00063   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numericMatrix.ncol(); i++)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;writeInput(inputIterator);
+<a name="l00066"></a>00066       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;singlePatternForwardAction();
+<a name="l00067"></a>00067       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;readOutput(outputIterator);
+<a name="l00068"></a>00068     }
+<a name="l00069"></a>00069   <span class="keywordflow">return</span> outputMatrix;
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 END_RCPP}
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
-<a name="l00076"></a><a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">00076</a> <a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">NetworkRinterface::outputSize</a>()
-<a name="l00077"></a>00077 {
-<a name="l00078"></a>00078   <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;outputSize();
-<a name="l00079"></a>00079 }
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keywordtype">void</span>
-<a name="l00082"></a><a class="code" href="class_network_rinterface.html#a3bcc22e2278cc28157b807ac190c7787">00082</a> <a class="code" href="class_network_rinterface.html#a3bcc22e2278cc28157b807ac190c7787">NetworkRinterface::show</a>()
-<a name="l00083"></a>00083 {
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 Rcpp::List
+<a name="l00077"></a><a class="code" href="class_network_rinterface.html#adf8323eeb7133fdc9adf37a7755a05df">00077</a> <a class="code" href="class_network_rinterface.html#adf8323eeb7133fdc9adf37a7755a05df">NetworkRinterface::train</a>(Rcpp::List parameterList)
+<a name="l00078"></a>00078 {
+<a name="l00079"></a>00079   BEGIN_RCPP
+<a name="l00080"></a>00080     <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;train(parameterList);
+<a name="l00081"></a>00081   END_RCPP
+<a name="l00082"></a>00082 }
+<a name="l00083"></a>00083 
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085   <span class="keywordflow">if</span> (!<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
-<a name="l00086"></a>00086     {
-<a name="l00087"></a>00087       Rprintf(
-<a name="l00088"></a>00088           <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
-<a name="l00089"></a>00089     }
-<a name="l00090"></a>00090   <span class="keywordflow">else</span>
-<a name="l00091"></a>00091     {
-<a name="l00092"></a>00092       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;show();
-<a name="l00093"></a>00093     }
-<a name="l00094"></a>00094 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="keywordtype">bool</span>
-<a name="l00097"></a><a class="code" href="class_network_rinterface.html#a1b37bfff06e29aedd525fa25137b94e1">00097</a> <a class="code" href="class_network_rinterface.html#a1b37bfff06e29aedd525fa25137b94e1">NetworkRinterface::validate</a>()
-<a name="l00098"></a>00098 {
-<a name="l00099"></a>00099 BEGIN_RCPP <span class="keywordflow">if</span> (<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
-<a name="l00100"></a>00100   {
-<a name="l00101"></a>00101     <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;validate();
-<a name="l00102"></a>00102   }
-<a name="l00103"></a>00103 <span class="keywordflow">else</span>
-<a name="l00104"></a>00104   {
-<a name="l00105"></a>00105     <span class="keywordflow">throw</span> std::runtime_error(
-<a name="l00106"></a>00106         <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
-<a name="l00107"></a>00107     <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00108"></a>00108   }
-<a name="l00109"></a>00109 END_RCPP
-<a name="l00110"></a>00110 }
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00102"></a><a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">00102</a> <a class="code" href="class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08">NetworkRinterface::inputSize</a>()
+<a name="l00103"></a>00103 {
+<a name="l00104"></a>00104   <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;inputSize();
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a>
+<a name="l00108"></a><a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">00108</a> <a class="code" href="class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc">NetworkRinterface::outputSize</a>()
+<a name="l00109"></a>00109 {
+<a name="l00110"></a>00110   <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;outputSize();
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="keywordtype">void</span>
+<a name="l00114"></a><a class="code" href="class_network_rinterface.html#a3bcc22e2278cc28157b807ac190c7787">00114</a> <a class="code" href="class_network_rinterface.html#a3bcc22e2278cc28157b807ac190c7787">NetworkRinterface::show</a>()
+<a name="l00115"></a>00115 {
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117   <span class="keywordflow">if</span> (!<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
+<a name="l00118"></a>00118     {
+<a name="l00119"></a>00119       Rprintf(
+<a name="l00120"></a>00120           <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
+<a name="l00121"></a>00121     }
+<a name="l00122"></a>00122   <span class="keywordflow">else</span>
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124       <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;show();
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 }
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128 <span class="keywordtype">bool</span>
+<a name="l00129"></a><a class="code" href="class_network_rinterface.html#a1b37bfff06e29aedd525fa25137b94e1">00129</a> <a class="code" href="class_network_rinterface.html#a1b37bfff06e29aedd525fa25137b94e1">NetworkRinterface::validate</a>()
+<a name="l00130"></a>00130 {
+<a name="l00131"></a>00131 BEGIN_RCPP <span class="keywordflow">if</span> (<a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>)
+<a name="l00132"></a>00132   {
+<a name="l00133"></a>00133     <span class="keywordflow">return</span> <a class="code" href="class_network_rinterface.html#a841abcde82202671c51525b61ce6a47d">d_neuralNetwork</a>-&gt;validate();
+<a name="l00134"></a>00134   }
+<a name="l00135"></a>00135 <span class="keywordflow">else</span>
+<a name="l00136"></a>00136   {
+<a name="l00137"></a>00137     <span class="keywordflow">throw</span> std::runtime_error(
+<a name="l00138"></a>00138         <span class="stringliteral">&quot;\nUninitialized network. Please use any of the create methods available.\n&quot;</span>);
+<a name="l00139"></a>00139     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00140"></a>00140   }
+<a name="l00141"></a>00141 END_RCPP
+<a name="l00142"></a>00142 }
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_network_rinterface_8cpp.html">NetworkRinterface.cpp</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

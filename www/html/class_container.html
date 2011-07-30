@@ -94,7 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for Container&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_container__inherit__graph.svg" width="166" height="507" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_container__inherit__graph.svg" width="192" height="539" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_container-members.html">List of all members.</a></p>
@@ -104,6 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ac190e8e99e5a92ef02390027765cbbb6">~Container</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a18a0a70153781d3d94526bc09fcbedb8">createIterator</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#acc5e862abc8a449fe5c69c94eff4113e">createReverseIterator</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a8aed06783f7cd0749f796c64e64626e7">at</a> (size_type element)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a12ffe2d2dbbcd78b6b293756004bd6e0">push_back</a> (T const &amp;const_reference)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a5f70fb0d821a8db9a0733aafe9ef35ac">reserve</a> (int n)=0</td></tr>
@@ -219,6 +222,26 @@ template&lt;typename T &gt; </div>
 <div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_simple_container.html#a4e46f5cb32231deaf9aa9bb7f871d09e">SimpleContainer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc5e862abc8a449fe5c69c94eff4113e"></a><!-- doxytag: member="Container::createReverseIterator" ref="acc5e862abc8a449fe5c69c94eff4113e" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual boost::shared_ptr&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt;T&gt; &gt; <a class="el" href="class_container.html">Container</a>&lt; T &gt;::createReverseIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_container.html#acb880d7d14d0067085aa7b7c90602628">SimpleContainer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -352,7 +375,7 @@ template&lt;typename T &gt; </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_container.html">Container</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:18 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

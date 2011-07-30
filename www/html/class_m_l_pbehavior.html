@@ -96,12 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for MLPbehavior:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_m_l_pbehavior__inherit__graph.svg" width="200" height="331" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_m_l_pbehavior__inherit__graph.svg" width="224" height="360" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for MLPbehavior:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_m_l_pbehavior__coll__graph.svg" width="200" height="331" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_m_l_pbehavior__coll__graph.svg" width="224" height="360" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_m_l_pbehavior-members.html">List of all members.</a></p>
@@ -111,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pbehavior.html#a6e42077295843dd0d9e52f2776f4309e">MLPbehavior</a> (<a class="el" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a> neuronPtr)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pbehavior.html#aaff94adc3577cda9e48d8da925b0ffbf">predict</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pbehavior.html#a2f91bc3f2e558b92f5beb5e45402e6c7">singlePatternForwardAction</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l_pbehavior.html#a32aa885e07e8f4eb33e05afb46040567">show</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -149,51 +151,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aaff94adc3577cda9e48d8da925b0ffbf"></a><!-- doxytag: member="MLPbehavior::predict" ref="aaff94adc3577cda9e48d8da925b0ffbf" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MLPbehavior::predict </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="class_predict_behavior.html#a7db41238d6d1dbf60c67cf8575e79885">PredictBehavior</a>.</p>
-
-<p>Definition at line <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00023">23</a> of file <a class="el" href="_m_l_pbehavior_8cpp_source.html">MLPbehavior.cpp</a>.</p>
-
-<p>References <a class="el" href="_m_l_pbehavior_8h_source.html#l00008">d_bias</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00028">PredictBehavior::getConIterator()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00042">PredictBehavior::setInducedLocalField()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00035">PredictBehavior::setOutput()</a>, and <a class="el" href="_predict_behavior_8cpp_source.html#l00020">PredictBehavior::useActivationFunctionf0()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-
-  <span class="keywordtype">double</span> accumulator(<a class="code" href="class_m_l_pbehavior.html#a6206785c5c3f838a0538f9f77fa7a25a">d_bias</a>);
-  <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a> conIterator = <a class="code" href="class_predict_behavior.html#ae13310624d8ea02168c15e86759758fc">getConIterator</a>();
-  <span class="keywordtype">double</span> weight;
-  <span class="keywordtype">double</span> incomingSignalValue;
-  <span class="keywordflow">for</span> (conIterator-&gt;first(); !conIterator-&gt;isDone(); conIterator-&gt;next())
-    {
-      weight = conIterator-&gt;currentItem()-&gt;getWeight();
-      incomingSignalValue = conIterator-&gt;currentItem()-&gt;getNeuron().getOutput();
-      accumulator += weight * incomingSignalValue;
-    }
-  <a class="code" href="class_predict_behavior.html#ae0c61e493d55b658161b96a8d7b62819">setInducedLocalField</a>(accumulator);
-  <a class="code" href="class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6">setOutput</a> (
-  <a class="code" href="class_predict_behavior.html#a699f23b6abd42f900ef991ac172a6f64">useActivationFunctionf0</a>());
-}
-</pre></div>
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe src="class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf_cgraph.svg" width="488" height="190" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
-</div>
-</div>
 <a class="anchor" id="a32aa885e07e8f4eb33e05afb46040567"></a><!-- doxytag: member="MLPbehavior::show" ref="a32aa885e07e8f4eb33e05afb46040567" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -217,6 +174,52 @@ Here is the call graph for this function:</div>
   Rprintf(<span class="stringliteral">&quot;\n bias: %lf&quot;</span>, <a class="code" href="class_m_l_pbehavior.html#a6206785c5c3f838a0538f9f77fa7a25a">d_bias</a>);
 }
 </pre></div>
+</div>
+</div>
+<a class="anchor" id="a2f91bc3f2e558b92f5beb5e45402e6c7"></a><!-- doxytag: member="MLPbehavior::singlePatternForwardAction" ref="a2f91bc3f2e558b92f5beb5e45402e6c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MLPbehavior::singlePatternForwardAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_predict_behavior.html#a13d82e6ee45b4fa1b7e17941f990fdc5">PredictBehavior</a>.</p>
+
+<p>Definition at line <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00023">23</a> of file <a class="el" href="_m_l_pbehavior_8cpp_source.html">MLPbehavior.cpp</a>.</p>
+
+<p>References <a class="el" href="_m_l_pbehavior_8h_source.html#l00008">d_bias</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00036">PredictBehavior::getConIterator()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00059">PredictBehavior::setInducedLocalField()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00043">PredictBehavior::setOutput()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00051">PredictBehavior::setOutputDerivative()</a>, <a class="el" href="_predict_behavior_8cpp_source.html#l00020">PredictBehavior::useActivationFunctionf0()</a>, and <a class="el" href="_predict_behavior_8cpp_source.html#l00028">PredictBehavior::useActivationFunctionf1()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+
+  <span class="keywordtype">double</span> accumulator(<a class="code" href="class_m_l_pbehavior.html#a6206785c5c3f838a0538f9f77fa7a25a">d_bias</a>);
+  <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a> conIterator = <a class="code" href="class_predict_behavior.html#ae13310624d8ea02168c15e86759758fc">getConIterator</a>();
+  <span class="keywordtype">double</span> weight;
+  <span class="keywordtype">double</span> incomingSignalValue;
+  <span class="keywordflow">for</span> (conIterator-&gt;first(); !conIterator-&gt;isDone(); conIterator-&gt;next())
+    {
+      weight = conIterator-&gt;currentItem()-&gt;getWeight();
+      incomingSignalValue = conIterator-&gt;currentItem()-&gt;getNeuron().getOutput();
+      accumulator += weight * incomingSignalValue;
+    }
+  <a class="code" href="class_predict_behavior.html#ae0c61e493d55b658161b96a8d7b62819">setInducedLocalField</a>(accumulator);
+  <a class="code" href="class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6">setOutput</a> (<a class="code" href="class_predict_behavior.html#a699f23b6abd42f900ef991ac172a6f64">useActivationFunctionf0</a>());
+  <a class="code" href="class_predict_behavior.html#a59cb660d082154f8e72f0ce2281f1b0f">setOutputDerivative</a> (<a class="code" href="class_predict_behavior.html#a2af882d5e647130684979b885de3082f">useActivationFunctionf1</a>());
+}
+</pre></div>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe src="class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7_cgraph.svg" width="614" height="291" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -249,7 +252,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_m_l_pbehavior_8h_source.html#l00008">8</a> of file <a class="el" href="_m_l_pbehavior_8h_source.html">MLPbehavior.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_m_l_pfactory_8cpp_source.html#l00062">MLPfactory::makeNeuron()</a>, <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00023">predict()</a>, and <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00042">show()</a>.</p>
+<p>Referenced by <a class="el" href="_m_l_pfactory_8cpp_source.html#l00062">MLPfactory::makeNeuron()</a>, <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00042">show()</a>, and <a class="el" href="_m_l_pbehavior_8cpp_source.html#l00023">singlePatternForwardAction()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +265,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_m_l_pbehavior.html">MLPbehavior</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:19 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
