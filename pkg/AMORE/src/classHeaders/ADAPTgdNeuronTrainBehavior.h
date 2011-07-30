@@ -9,7 +9,7 @@ private:
   double learning.rate;
   // Operations
 private:
-  void singlePatternAction ();
+  void singlePatternBackwardAction ();
   void endOfEpochAction ();
 };
 

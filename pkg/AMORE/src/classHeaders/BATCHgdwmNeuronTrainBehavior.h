@@ -14,7 +14,7 @@ private:
   double former.bias.change;
   // Operations
 private:
-  void singlePatternAction ();
+  void singlePatternBackwardAction ();
   void endOfEpochAction ();
 };
 

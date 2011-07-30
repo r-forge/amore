@@ -11,6 +11,7 @@ private:
   void setInducedLocalField (double inducedLocalField);
   double getOutput ();
   void setOutput (double output);
+  void setOutputDerivative (double outputDerivative);
   Handler getId ();
   void setId (Handler Id);
   ConIteratorPtr getConIterator ();
@@ -19,7 +20,9 @@ private:
   void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
   // void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr);
   double useActivationFunctionf0 ();
-  void predict ();
+  double useActivationFunctionf1 ();
+  void singlePatternForwardAction ();
+  void singlePatternBackwardAction ();
   // void adjustParameters ();
   void show ();
   bool validate ();

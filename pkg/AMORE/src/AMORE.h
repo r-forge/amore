@@ -63,10 +63,14 @@ class NetworkRinterface;
 class NeuralNetwork;
 class NeuralCreator;
 class NeuralFactory;
+class NetworkTrainBehavior;
 class Neuron;
+class NeuronTrainBehavior;
+
 class PredictBehavior;
 template<typename T> class SimpleContainer;
 template<typename T> class SimpleContainerIterator;
+template<typename T> class SimpleContainerReverseIterator;
 class SimpleNetwork;
 class SimpleNeuralCreator;
 class SimpleNeuron;
@@ -93,6 +97,8 @@ typedef boost::reference_wrapper<Neuron> NeuronRef;
 
 typedef boost::shared_ptr<ActivationFunction> ActivationFunctionPtr;
 typedef boost::shared_ptr<PredictBehavior> PredictBehaviorPtr;
+typedef boost::shared_ptr<NetworkTrainBehavior> NetworkTrainBehaviorPtr;
+typedef boost::shared_ptr<NeuronTrainBehavior> NeuronTrainBehaviorPtr;
 typedef boost::shared_ptr<Neuron> NeuronPtr;
 typedef boost::shared_ptr<Con> ConPtr;
 typedef boost::shared_ptr<NeuralNetwork> NeuralNetworkPtr;
@@ -108,6 +114,7 @@ typedef boost::shared_ptr< Container<ConPtr> > ConContainerPtr;
 typedef boost::shared_ptr< NeuralFactory > NeuralFactoryPtr;
 typedef boost::shared_ptr< NeuralCreator > NeuralCreatorPtr;
 
+typedef boost::weak_ptr<NeuralNetwork> NeuralNetworkWeakPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
 #include "classHeaders/Connection.h"
@@ -117,15 +124,15 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
 #include "classHeaders/PredictBehavior.h"
 #include "classHeaders/MLPBehavior.h"
+#include "classHeaders/NeuronTrainBehavior.h"
+#include "classHeaders/NetworkTrainBehavior.h"
+
 #include "classHeaders/Neuron.h"
 #include "classHeaders/SimpleNeuron.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
 #include "classHeaders/TanhFactory.h"
 #include "classHeaders/IdentityFactory.h"
-
-
-
 
 
 #include "classHeaders/NeuralNetwork.h"
@@ -137,6 +144,7 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/SimpleContainer.h"
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
+#include "classHeaders/SimpleContainerReverseIterator.h"
 
 #include "Connection.cpp"
 #include "ActivationFunction.cpp"

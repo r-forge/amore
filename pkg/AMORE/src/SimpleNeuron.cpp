@@ -44,6 +44,14 @@ SimpleNeuron::setOutput(double output)
   d_output = output;
 }
 
+
+
+void
+SimpleNeuron::setOutputDerivative(double outputDerivative)
+{
+  d_outputDerivative = outputDerivative;
+}
+
 Handler
 SimpleNeuron::getId()
 {
@@ -86,11 +94,29 @@ SimpleNeuron::useActivationFunctionf0()
   return d_activationFunction->f0();
 }
 
-void
-SimpleNeuron::predict()
+
+
+double
+SimpleNeuron::useActivationFunctionf1()
 {
-  d_predictBehavior->predict();
+  return d_activationFunction->f1();
 }
+
+
+
+void
+SimpleNeuron::singlePatternForwardAction()
+{
+  d_predictBehavior->singlePatternForwardAction();
+}
+
+void
+SimpleNeuron::singlePatternBackwardAction()
+{
+  d_neuronTrainBehavior->singlePatternBackwardAction();
+}
+
+
 
 void
 SimpleNeuron::show()

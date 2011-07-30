@@ -11,7 +11,7 @@ private:
 public:
   RBFbehavior (NeuronPtr neuronPtr);
 private:
-  void predict ();
+  void singlePatternForwardAction ();
   void show ();
 };
 

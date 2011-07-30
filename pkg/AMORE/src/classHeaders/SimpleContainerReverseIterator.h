@@ -1,9 +1,9 @@
 #pragma once
 #include "Iterator.h"
 
-/// class SimpleContainerIterator - 
+/// class SimpleContainerReverseIterator - 
 template <typename T>
-class SimpleContainerIterator : public Iterator<T> {
+class SimpleContainerReverseIterator : public Iterator<T> {
   // Attributes
 private:
   Container<T>* d_container;
@@ -11,8 +11,8 @@ private:
   // Operations
 public:
 friend class SimpleContainer<T>; 
-  SimpleContainerIterator ();
-  ~SimpleContainerIterator ();
+  SimpleContainerReverseIterator ();
+  ~SimpleContainerReverseIterator ();
 private:
   void first ();
   void next ();
@@ -20,4 +20,4 @@ private:
   T currentItem ();
 };
 
-#include "../SimpleContainerIterator.code" 
+#include "../SimpleContainerReverseIterator.code" 

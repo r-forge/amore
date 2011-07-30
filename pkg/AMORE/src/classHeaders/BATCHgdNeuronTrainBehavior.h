@@ -11,7 +11,7 @@ private:
   double sum.delta.bias;
   // Operations
 private:
-  void singlePatternAction ();
+  void singlePatternBackwardAction ();
   void endOfEpochAction ();
 };
 

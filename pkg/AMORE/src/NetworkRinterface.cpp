@@ -39,6 +39,9 @@ Rcpp::NumericMatrix
 NetworkRinterface::predict(Rcpp::NumericMatrix numericMatrix)
 {
   BEGIN_RCPP
+
+  // VALIDATION
+
   if (!d_neuralNetwork)
     {
       throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
@@ -56,15 +59,44 @@ NetworkRinterface::predict(Rcpp::NumericMatrix numericMatrix)
   std::vector<double>::iterator inputIterator(numericMatrix.begin());
   std::vector<double>::iterator outputIterator(outputMatrix.begin());
 
+  // PREDICT LOOP
   for (int i = 0; i < numericMatrix.ncol(); i++)
     {
       d_neuralNetwork->writeInput(inputIterator);
-      d_neuralNetwork->predict();
+      d_neuralNetwork->singlePatternForwardAction();
       d_neuralNetwork->readOutput(outputIterator);
     }
   return outputMatrix;
 
 END_RCPP}
+
+
+
+
+Rcpp::List
+NetworkRinterface::train(Rcpp::List parameterList)
+{
+  BEGIN_RCPP
+    return d_neuralNetwork->train(parameterList);
+  END_RCPP
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 size_type
 NetworkRinterface::inputSize()

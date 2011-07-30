@@ -2,9 +2,12 @@
 // Interface
 /// class NeuronTrainBehavior - 
 class NeuronTrainBehavior {
+  // Attributes
+protected:
+  NeuronWeakPtr d_neuron;
   // Operations
 public:
-  virtual void singlePatternAction () = 0;
+  virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };
 
