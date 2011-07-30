@@ -18,7 +18,7 @@ Inheritance diagram for NeuralNetwork:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=184pt]{class_neural_network__inherit__graph}
+\includegraphics[width=248pt]{class_neural_network__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -26,9 +26,13 @@ Inheritance diagram for NeuralNetwork:
 \item 
 virtual void \hyperlink{class_neural_network_ad84eb675d31eab6e5d45c37f686d8186}{writeInput} (std::vector$<$ double $>$::iterator \&iterator)=0
 \item 
-virtual void \hyperlink{class_neural_network_ac5d16c83c3159ecd075636e82688b2ed}{predict} ()=0
+virtual void \hyperlink{class_neural_network_aba99bf07f941e852ce0519266a997d3a}{singlePatternForwardAction} ()=0
+\item 
+virtual void \hyperlink{class_neural_network_a67e3bda920636659bd6b0635f177fcee}{singlePatternBackwardAction} ()=0
 \item 
 virtual void \hyperlink{class_neural_network_acb06905cd65e1f40b79cf2cc30e5987a}{readOutput} (std::vector$<$ double $>$::iterator \&iterator)=0
+\item 
+virtual Rcpp::List \hyperlink{class_neural_network_a3edff5f034de30abf24b73f8e81728a3}{train} (Rcpp::List parameterList)=0
 \item 
 virtual size\_\-type \hyperlink{class_neural_network_a9b59b8576a47750009669a6885524d1e}{inputSize} ()=0
 \item 
@@ -51,6 +55,8 @@ virtual bool \hyperlink{class_neural_network_a7ab39cee7bef69eff19cca490ff5d7c0}{
 \hyperlink{_a_m_o_r_e_8h_af261b546158af61fc27686fb926961f2}{LayerContainerPtr} \hyperlink{class_neural_network_ae47be9819644d8ecf23328cf4e8f6dfb}{d\_\-hiddenLayers}
 \item 
 \hyperlink{_a_m_o_r_e_8h_acce4b66db3921b7326fbe1a04a56e5fc}{LayerPtr} \hyperlink{class_neural_network_af61fb83fcaaf81c5fa0574f7d3bdc268}{d\_\-outputLayer}
+\item 
+\hyperlink{_a_m_o_r_e_8h_adb6e0874dc796a04d0566a773cb10a71}{NetworkTrainBehaviorPtr} \hyperlink{class_neural_network_aceb363923df9d29642b4e41e47e10267}{d\_\-networkTrainBehavior}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -94,8 +100,7 @@ References d\_\-hiddenLayers, d\_\-inputLayer, d\_\-outputLayer, NeuralFactory::
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -133,19 +138,6 @@ Implemented in \hyperlink{class_simple_network_a7e14145c93afb1464c176d9b875ee6f2
 
 Implemented in \hyperlink{class_simple_network_a187ce11f4b7edb4b4f46e9c8ec31eadb}{SimpleNetwork}.
 
-\hypertarget{class_neural_network_ac5d16c83c3159ecd075636e82688b2ed}{
-\index{NeuralNetwork@{NeuralNetwork}!predict@{predict}}
-\index{predict@{predict}!NeuralNetwork@{NeuralNetwork}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NeuralNetwork::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_neural_network_ac5d16c83c3159ecd075636e82688b2ed}
-
-
-Implemented in \hyperlink{class_simple_network_ad2da5477f7441e8d0b22bf5214d1cf64}{SimpleNetwork}.
-
 \hypertarget{class_neural_network_acb06905cd65e1f40b79cf2cc30e5987a}{
 \index{NeuralNetwork@{NeuralNetwork}!readOutput@{readOutput}}
 \index{readOutput@{readOutput}!NeuralNetwork@{NeuralNetwork}}
@@ -171,6 +163,45 @@ Implemented in \hyperlink{class_simple_network_abdf4a70e4b26e4ce914afd65c58170cf
 
 
 Implemented in \hyperlink{class_simple_network_a16273b96b12674d79b415ee6b31924f3}{SimpleNetwork}.
+
+\hypertarget{class_neural_network_a67e3bda920636659bd6b0635f177fcee}{
+\index{NeuralNetwork@{NeuralNetwork}!singlePatternBackwardAction@{singlePatternBackwardAction}}
+\index{singlePatternBackwardAction@{singlePatternBackwardAction}!NeuralNetwork@{NeuralNetwork}}
+\subsubsection[{singlePatternBackwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NeuralNetwork::singlePatternBackwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_network_a67e3bda920636659bd6b0635f177fcee}
+
+
+Implemented in \hyperlink{class_simple_network_acce93c67ba6f301f99889642dbd620de}{SimpleNetwork}.
+
+\hypertarget{class_neural_network_aba99bf07f941e852ce0519266a997d3a}{
+\index{NeuralNetwork@{NeuralNetwork}!singlePatternForwardAction@{singlePatternForwardAction}}
+\index{singlePatternForwardAction@{singlePatternForwardAction}!NeuralNetwork@{NeuralNetwork}}
+\subsubsection[{singlePatternForwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NeuralNetwork::singlePatternForwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_network_aba99bf07f941e852ce0519266a997d3a}
+
+
+Implemented in \hyperlink{class_simple_network_a6a966984617511c0d79bc38f2ba73888}{SimpleNetwork}.
+
+\hypertarget{class_neural_network_a3edff5f034de30abf24b73f8e81728a3}{
+\index{NeuralNetwork@{NeuralNetwork}!train@{train}}
+\index{train@{train}!NeuralNetwork@{NeuralNetwork}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}virtual Rcpp::List NeuralNetwork::train (
+\begin{DoxyParamCaption}
+\item[{Rcpp::List}]{parameterList}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_neural_network_a3edff5f034de30abf24b73f8e81728a3}
+
+
+Implemented in \hyperlink{class_simple_network_a97cd497e97b090ce972151ebb3201fb9}{SimpleNetwork}.
 
 \hypertarget{class_neural_network_a7ab39cee7bef69eff19cca490ff5d7c0}{
 \index{NeuralNetwork@{NeuralNetwork}!validate@{validate}}
@@ -208,7 +239,7 @@ Implemented in \hyperlink{class_simple_network_a45c0a090f4ac14963c7f2ebfc4cc3f5d
 \label{class_neural_network_a59e04cd60df00cd27e6539f482d90359}
 
 
-Definition at line 11 of file NeuralNetwork.h.
+Definition at line 12 of file NeuralNetwork.h.
 
 
 
@@ -224,7 +255,7 @@ Definition at line 7 of file NeuralNetwork.h.
 
 
 
-Referenced by NeuralNetwork(), SimpleNetwork::predict(), SimpleNetwork::show(), and SimpleNetwork::validate().
+Referenced by NeuralNetwork(), SimpleNetwork::show(), SimpleNetwork::singlePatternBackwardAction(), SimpleNetwork::singlePatternForwardAction(), and SimpleNetwork::validate().
 
 \hypertarget{class_neural_network_ada358911107a3a4cdccf0812d876393f}{
 \index{NeuralNetwork@{NeuralNetwork}!d\_\-inputLayer@{d\_\-inputLayer}}
@@ -239,6 +270,19 @@ Definition at line 6 of file NeuralNetwork.h.
 
 Referenced by SimpleNetwork::inputSize(), NeuralNetwork(), SimpleNetwork::show(), SimpleNetwork::validate(), and SimpleNetwork::writeInput().
 
+\hypertarget{class_neural_network_aceb363923df9d29642b4e41e47e10267}{
+\index{NeuralNetwork@{NeuralNetwork}!d\_\-networkTrainBehavior@{d\_\-networkTrainBehavior}}
+\index{d\_\-networkTrainBehavior@{d\_\-networkTrainBehavior}!NeuralNetwork@{NeuralNetwork}}
+\subsubsection[{d\_\-networkTrainBehavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetworkTrainBehaviorPtr} {\bf NeuralNetwork::d\_\-networkTrainBehavior}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_neural_network_aceb363923df9d29642b4e41e47e10267}
+
+
+Definition at line 9 of file NeuralNetwork.h.
+
+
+
+Referenced by SimpleNetwork::train().
+
 \hypertarget{class_neural_network_af61fb83fcaaf81c5fa0574f7d3bdc268}{
 \index{NeuralNetwork@{NeuralNetwork}!d\_\-outputLayer@{d\_\-outputLayer}}
 \index{d\_\-outputLayer@{d\_\-outputLayer}!NeuralNetwork@{NeuralNetwork}}
@@ -250,7 +294,7 @@ Definition at line 8 of file NeuralNetwork.h.
 
 
 
-Referenced by NeuralNetwork(), SimpleNetwork::outputSize(), SimpleNetwork::predict(), SimpleNetwork::readOutput(), SimpleNetwork::show(), and SimpleNetwork::validate().
+Referenced by NeuralNetwork(), SimpleNetwork::outputSize(), SimpleNetwork::readOutput(), SimpleNetwork::show(), SimpleNetwork::singlePatternBackwardAction(), SimpleNetwork::singlePatternForwardAction(), and SimpleNetwork::validate().
 
 
 

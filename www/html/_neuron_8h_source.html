@@ -88,40 +88,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="keyword">protected</span>:
 <a name="l00006"></a><a class="code" href="class_neuron.html#a2522e221f58c84bd3a1c32647da4a411">00006</a>   <a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> <a class="code" href="class_neuron.html#a2522e221f58c84bd3a1c32647da4a411">d_predictBehavior</a>;
 <a name="l00007"></a><a class="code" href="class_neuron.html#ad530e9f0bb556e0469b5074e6b7f463f">00007</a>   <a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> <a class="code" href="class_neuron.html#ad530e9f0bb556e0469b5074e6b7f463f">d_activationFunction</a>;
-<a name="l00008"></a>00008   <span class="comment">// TrainingBehaviorPtr d_trainingBehavior;</span>
+<a name="l00008"></a><a class="code" href="class_neuron.html#ab435b271c3deef356620b5582630e77b">00008</a>   <a class="code" href="_a_m_o_r_e_8h.html#a687ad68f1793905a403f187c0eda2ec1">NeuronTrainBehaviorPtr</a> <a class="code" href="class_neuron.html#ab435b271c3deef356620b5582630e77b">d_neuronTrainBehavior</a>;
 <a name="l00009"></a><a class="code" href="class_neuron.html#ab1a34e30b663c41342e8f8eaac8bd466">00009</a>   <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> <a class="code" href="class_neuron.html#ab1a34e30b663c41342e8f8eaac8bd466">d_Id</a>;
 <a name="l00010"></a><a class="code" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">00010</a>   <a class="code" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a> <a class="code" href="class_neuron.html#ac3cb61c8582bb07bb3c61fe9fa07489b">d_nCons</a>;
 <a name="l00011"></a><a class="code" href="class_neuron.html#a4370eae5b594fb4c7f544fcefa298c7c">00011</a>   <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a4370eae5b594fb4c7f544fcefa298c7c">d_inducedLocalField</a>;
 <a name="l00012"></a><a class="code" href="class_neuron.html#a1e0b130755580b323da98c5332a6610e">00012</a>   <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a1e0b130755580b323da98c5332a6610e">d_output</a>;
-<a name="l00013"></a>00013   <span class="comment">// Operations</span>
-<a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00015"></a><a class="code" href="class_neuron.html#a1aa48940238b9487734e590ffab33a1b">00015</a> <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_m_l_pfactory.html" title="class MLPfactory -">MLPfactory</a>; 
-<a name="l00016"></a>00016   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a1b7eea569128502e3387f5b50751a119">getInducedLocalField</a> () = 0;
-<a name="l00017"></a>00017   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ab7244964f798eb9cace1cb916f5ef359">setInducedLocalField</a> (<span class="keywordtype">double</span> inducedLocalField) = 0;
-<a name="l00018"></a>00018   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a43ac0c8461c610bb2b82017d597435e3">getOutput</a> () = 0;
-<a name="l00019"></a>00019   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#aae94f78cfa7ed3ce4935f23a3a585f95">setOutput</a> (<span class="keywordtype">double</span> output) = 0;
-<a name="l00020"></a>00020   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> <a class="code" href="class_neuron.html#a1a34edd39fba70be1d18219d5e9e1eea">getId</a> () = 0;
-<a name="l00021"></a>00021   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a65331c891ac34a344d0bb791073a8dd9">setId</a> (<a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id) = 0;
-<a name="l00022"></a>00022   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a> <a class="code" href="class_neuron.html#ac52554d6ba02e8eec2dd04a150169ec9">getConIterator</a> () = 0;
-<a name="l00023"></a>00023   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a9b991901b252c50c76b5192e2d135c68">addCon</a> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> conPtr) = 0;
-<a name="l00024"></a>00024   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ab73922d2dba9f86ab192e2bb87c6a1aa">setActivationFunction</a> (<a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> activationFunctionPtr) = 0;
-<a name="l00025"></a>00025   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#af21848d0ef33bec5587e4c2702c83e3f">setPredictBehavior</a> (<a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr) = 0;
-<a name="l00026"></a>00026   <span class="comment">// virtual void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr) = 0;</span>
-<a name="l00027"></a>00027   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a78c90ab1f5d18b2d7cb8f366391b7821">useActivationFunctionf0</a> () = 0;
-<a name="l00028"></a>00028   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a7181d8d0a5f9b0e4ff39410785f087e9">predict</a> () = 0;
-<a name="l00029"></a>00029   <span class="comment">// virtual void adjustParameters () = 0;</span>
-<a name="l00030"></a>00030   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ae18a86f9b67c63a6fcb28c813b47a38d">show</a> () = 0;
-<a name="l00031"></a>00031   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_neuron.html#a37f57f44fefa328ea0b7ab32b52c853e">validate</a> () = 0;
-<a name="l00032"></a>00032 <span class="keyword">protected</span>:
-<a name="l00033"></a>00033   <a class="code" href="class_neuron.html#a814666c8dc635e30659aa95cc4886e5f">Neuron</a> (<a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; neuralFactory);
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
+<a name="l00013"></a><a class="code" href="class_neuron.html#a7145844d8be9fb33ad77d47eb50fb9af">00013</a>   <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a7145844d8be9fb33ad77d47eb50fb9af">d_outputDerivative</a>;
+<a name="l00014"></a>00014   <span class="comment">// Operations</span>
+<a name="l00015"></a>00015 <span class="keyword">public</span>:
+<a name="l00016"></a><a class="code" href="class_neuron.html#a1aa48940238b9487734e590ffab33a1b">00016</a> <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_m_l_pfactory.html" title="class MLPfactory -">MLPfactory</a>; 
+<a name="l00017"></a>00017   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a1b7eea569128502e3387f5b50751a119">getInducedLocalField</a> () = 0;
+<a name="l00018"></a>00018   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ab7244964f798eb9cace1cb916f5ef359">setInducedLocalField</a> (<span class="keywordtype">double</span> inducedLocalField) = 0;
+<a name="l00019"></a>00019   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a43ac0c8461c610bb2b82017d597435e3">getOutput</a> () = 0;
+<a name="l00020"></a>00020   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#aae94f78cfa7ed3ce4935f23a3a585f95">setOutput</a> (<span class="keywordtype">double</span> output) = 0;
+<a name="l00021"></a>00021   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a313a84fcb2bcb6562a659ee69e75c2d5">setOutputDerivative</a> (<span class="keywordtype">double</span> outputDerivative) = 0;
+<a name="l00022"></a>00022   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> <a class="code" href="class_neuron.html#a1a34edd39fba70be1d18219d5e9e1eea">getId</a> () = 0;
+<a name="l00023"></a>00023   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a65331c891ac34a344d0bb791073a8dd9">setId</a> (<a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a> Id) = 0;
+<a name="l00024"></a>00024   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a> <a class="code" href="class_neuron.html#ac52554d6ba02e8eec2dd04a150169ec9">getConIterator</a> () = 0;
+<a name="l00025"></a>00025   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a9b991901b252c50c76b5192e2d135c68">addCon</a> (<a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a> conPtr) = 0;
+<a name="l00026"></a>00026   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ab73922d2dba9f86ab192e2bb87c6a1aa">setActivationFunction</a> (<a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a> activationFunctionPtr) = 0;
+<a name="l00027"></a>00027   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#af21848d0ef33bec5587e4c2702c83e3f">setPredictBehavior</a> (<a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a> predictBehaviorPtr) = 0;
+<a name="l00028"></a>00028   <span class="comment">// virtual void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr) = 0;</span>
+<a name="l00029"></a>00029   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#a78c90ab1f5d18b2d7cb8f366391b7821">useActivationFunctionf0</a> () = 0;
+<a name="l00030"></a>00030   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_neuron.html#ad8c510fc08c5d4cf3a9614fbb98867b6">useActivationFunctionf1</a> () = 0;
+<a name="l00031"></a>00031   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a80b821200bd08777ea6f3d686dffd760">singlePatternForwardAction</a> () = 0;
+<a name="l00032"></a>00032   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#a936435da3fde7254d7051163170009be">singlePatternBackwardAction</a> () = 0;
+<a name="l00033"></a>00033   <span class="comment">// virtual void adjustParameters () = 0;</span>
+<a name="l00034"></a>00034   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_neuron.html#ae18a86f9b67c63a6fcb28c813b47a38d">show</a> () = 0;
+<a name="l00035"></a>00035   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_neuron.html#a37f57f44fefa328ea0b7ab32b52c853e">validate</a> () = 0;
+<a name="l00036"></a>00036 <span class="keyword">protected</span>:
+<a name="l00037"></a>00037   <a class="code" href="class_neuron.html#a814666c8dc635e30659aa95cc4886e5f">Neuron</a> (<a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; neuralFactory);
+<a name="l00038"></a>00038 };
+<a name="l00039"></a>00039 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_neuron_8h.html">Neuron.h</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

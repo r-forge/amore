@@ -18,13 +18,13 @@ Inheritance diagram for PredictBehavior:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=286pt]{class_predict_behavior__inherit__graph}
+\includegraphics[width=400pt]{class_predict_behavior__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{predict} ()=0
+virtual void \hyperlink{class_predict_behavior_a13d82e6ee45b4fa1b7e17941f990fdc5}{singlePatternForwardAction} ()=0
 \item 
 virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde}{show} ()=0
 \end{DoxyCompactItemize}
@@ -35,9 +35,13 @@ virtual void \hyperlink{class_predict_behavior_a9ef84360f73784248d994fa4707c1dde
 \item 
 double \hyperlink{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64}{useActivationFunctionf0} ()
 \item 
+double \hyperlink{class_predict_behavior_a2af882d5e647130684979b885de3082f}{useActivationFunctionf1} ()
+\item 
 \hyperlink{_a_m_o_r_e_8h_a819efaf710ead601ac8241df5e235dd8}{ConIteratorPtr} \hyperlink{class_predict_behavior_ae13310624d8ea02168c15e86759758fc}{getConIterator} ()
 \item 
 void \hyperlink{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}{setOutput} (double output)
+\item 
+void \hyperlink{class_predict_behavior_a59cb660d082154f8e72f0ce2281f1b0f}{setOutputDerivative} (double outputDerivative)
 \item 
 void \hyperlink{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}{setInducedLocalField} (double inducedLocalField)
 \end{DoxyCompactItemize}
@@ -90,7 +94,7 @@ Definition at line 14 of file PredictBehavior.cpp.
 \label{class_predict_behavior_ae13310624d8ea02168c15e86759758fc}
 
 
-Definition at line 28 of file PredictBehavior.cpp.
+Definition at line 36 of file PredictBehavior.cpp.
 
 
 
@@ -98,7 +102,7 @@ References d\_\-neuron.
 
 
 
-Referenced by MLPbehavior::predict().
+Referenced by MLPbehavior::singlePatternForwardAction().
 
 
 \begin{DoxyCode}
@@ -114,23 +118,10 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=396pt]{class_predict_behavior_ae13310624d8ea02168c15e86759758fc_icgraph}
+\includegraphics[width=400pt]{class_predict_behavior_ae13310624d8ea02168c15e86759758fc_icgraph}
 \end{center}
 \end{figure}
 
-
-\hypertarget{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}{
-\index{PredictBehavior@{PredictBehavior}!predict@{predict}}
-\index{predict@{predict}!PredictBehavior@{PredictBehavior}}
-\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::predict (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_predict_behavior_a7db41238d6d1dbf60c67cf8575e79885}
-
-
-Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_ac14521848163e04810a6d038aef81896}{RBFbehavior}.
 
 \hypertarget{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}{
 \index{PredictBehavior@{PredictBehavior}!setInducedLocalField@{setInducedLocalField}}
@@ -143,7 +134,7 @@ Implemented in \hyperlink{class_m_l_pbehavior_aaff94adc3577cda9e48d8da925b0ffbf}
 \label{class_predict_behavior_ae0c61e493d55b658161b96a8d7b62819}
 
 
-Definition at line 42 of file PredictBehavior.cpp.
+Definition at line 59 of file PredictBehavior.cpp.
 
 
 
@@ -151,7 +142,7 @@ References d\_\-neuron.
 
 
 
-Referenced by MLPbehavior::predict().
+Referenced by MLPbehavior::singlePatternForwardAction().
 
 
 \begin{DoxyCode}
@@ -183,7 +174,7 @@ Here is the caller graph for this function:
 \label{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6}
 
 
-Definition at line 35 of file PredictBehavior.cpp.
+Definition at line 43 of file PredictBehavior.cpp.
 
 
 
@@ -191,7 +182,7 @@ References d\_\-neuron.
 
 
 
-Referenced by MLPbehavior::predict().
+Referenced by MLPbehavior::singlePatternForwardAction().
 
 
 \begin{DoxyCode}
@@ -207,7 +198,47 @@ Here is the caller graph for this function:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=376pt]{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6_icgraph}
+\includegraphics[width=400pt]{class_predict_behavior_afeabe1f543e46d41909b41816d8210a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_predict_behavior_a59cb660d082154f8e72f0ce2281f1b0f}{
+\index{PredictBehavior@{PredictBehavior}!setOutputDerivative@{setOutputDerivative}}
+\index{setOutputDerivative@{setOutputDerivative}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{setOutputDerivative}]{\setlength{\rightskip}{0pt plus 5cm}void PredictBehavior::setOutputDerivative (
+\begin{DoxyParamCaption}
+\item[{double}]{outputDerivative}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_a59cb660d082154f8e72f0ce2281f1b0f}
+
+
+Definition at line 51 of file PredictBehavior.cpp.
+
+
+
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::singlePatternForwardAction().
+
+
+\begin{DoxyCode}
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setOutputDerivative(outputDerivative);
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_predict_behavior_a59cb660d082154f8e72f0ce2281f1b0f_icgraph}
 \end{center}
 \end{figure}
 
@@ -224,6 +255,19 @@ Here is the caller graph for this function:
 
 
 Implemented in \hyperlink{class_m_l_pbehavior_a32aa885e07e8f4eb33e05afb46040567}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a96b123a5b657e46946c3ff98ea78f5de}{RBFbehavior}.
+
+\hypertarget{class_predict_behavior_a13d82e6ee45b4fa1b7e17941f990fdc5}{
+\index{PredictBehavior@{PredictBehavior}!singlePatternForwardAction@{singlePatternForwardAction}}
+\index{singlePatternForwardAction@{singlePatternForwardAction}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{singlePatternForwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void PredictBehavior::singlePatternForwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_predict_behavior_a13d82e6ee45b4fa1b7e17941f990fdc5}
+
+
+Implemented in \hyperlink{class_m_l_pbehavior_a2f91bc3f2e558b92f5beb5e45402e6c7}{MLPbehavior}, and \hyperlink{class_r_b_fbehavior_a65deae9c787617869b92c8a716d510b3}{RBFbehavior}.
 
 \hypertarget{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64}{
 \index{PredictBehavior@{PredictBehavior}!useActivationFunctionf0@{useActivationFunctionf0}}
@@ -244,14 +288,13 @@ References d\_\-neuron.
 
 
 
-Referenced by MLPbehavior::predict().
+Referenced by MLPbehavior::singlePatternForwardAction().
 
 
 \begin{DoxyCode}
 {
   NeuronPtr neuronPtr( d_neuron.lock() ) ;
   return neuronPtr->useActivationFunctionf0();
-
 }
 \end{DoxyCode}
 
@@ -262,6 +305,46 @@ Here is the caller graph for this function:
 \begin{center}
 \leavevmode
 \includegraphics[width=400pt]{class_predict_behavior_a699f23b6abd42f900ef991ac172a6f64_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_predict_behavior_a2af882d5e647130684979b885de3082f}{
+\index{PredictBehavior@{PredictBehavior}!useActivationFunctionf1@{useActivationFunctionf1}}
+\index{useActivationFunctionf1@{useActivationFunctionf1}!PredictBehavior@{PredictBehavior}}
+\subsubsection[{useActivationFunctionf1}]{\setlength{\rightskip}{0pt plus 5cm}double PredictBehavior::useActivationFunctionf1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_predict_behavior_a2af882d5e647130684979b885de3082f}
+
+
+Definition at line 28 of file PredictBehavior.cpp.
+
+
+
+References d\_\-neuron.
+
+
+
+Referenced by MLPbehavior::singlePatternForwardAction().
+
+
+\begin{DoxyCode}
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->useActivationFunctionf1();
+}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_predict_behavior_a2af882d5e647130684979b885de3082f_icgraph}
 \end{center}
 \end{figure}
 
@@ -280,7 +363,7 @@ Definition at line 7 of file PredictBehavior.h.
 
 
 
-Referenced by getConIterator(), setInducedLocalField(), setOutput(), and useActivationFunctionf0().
+Referenced by getConIterator(), setInducedLocalField(), setOutput(), setOutputDerivative(), useActivationFunctionf0(), and useActivationFunctionf1().
 
 
 

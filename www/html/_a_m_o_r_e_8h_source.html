@@ -81,142 +81,151 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/AMORE.h</div>  </div>
 </div>
 <div class="contents">
-<a href="_a_m_o_r_e_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;sstream&gt;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;algorithm&gt;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;iterator&gt;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;boost/weak_ptr.hpp&gt;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;valarray&gt;</span>    <span class="comment">// for tanh, ...</span>
-<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;Rcpp.h&gt;</span>
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="keyword">using namespace </span>Rcpp;
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="keyword">class </span><a class="code" href="class_activation_function.html" title="class ActivationFunction -">ActivationFunction</a>;
-<a name="l00047"></a>00047 <span class="keyword">class </span><a class="code" href="class_con.html" title="class Con -">Con</a>;
-<a name="l00048"></a>00048 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_container.html" title="class Container -">Container</a>;
-<a name="l00049"></a>00049 <span class="keyword">class </span><a class="code" href="class_identity.html" title="class Identity -">Identity</a>;
-<a name="l00050"></a>00050 <span class="keyword">class </span><a class="code" href="class_identity_factory.html" title="class IdentityFactory -">IdentityFactory</a>;
-<a name="l00051"></a>00051 <span class="keyword">class </span><a class="code" href="class_identity.html" title="class Identity -">Identity</a>;
-<a name="l00052"></a>00052 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_iterator.html" title="class Iterator -">Iterator</a>;
-<a name="l00053"></a>00053 <span class="keyword">class </span><a class="code" href="class_m_l_pbehavior.html" title="class MLPbehavior -">MLPbehavior</a>;
-<a name="l00054"></a>00054 <span class="keyword">class </span><a class="code" href="class_m_l_pfactory.html" title="class MLPfactory -">MLPfactory</a>;
-<a name="l00055"></a>00055 <span class="keyword">class </span><a class="code" href="class_network_rinterface.html" title="class NetworkRinterface -">NetworkRinterface</a>;
-<a name="l00056"></a>00056 <span class="keyword">class </span><a class="code" href="class_neural_network.html" title="class NeuralNetwork -">NeuralNetwork</a>;
-<a name="l00057"></a>00057 <span class="keyword">class </span><a class="code" href="class_neural_creator.html" title="class NeuralCreator -">NeuralCreator</a>;
-<a name="l00058"></a>00058 <span class="keyword">class </span><a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>;
-<a name="l00059"></a>00059 <span class="keyword">class </span><a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>;
-<a name="l00060"></a>00060 <span class="keyword">class </span><a class="code" href="class_predict_behavior.html" title="class PredictBehavior -">PredictBehavior</a>;
-<a name="l00061"></a>00061 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_simple_container.html" title="class SimpleContainer -">SimpleContainer</a>;
-<a name="l00062"></a>00062 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_simple_container_iterator.html" title="class SimpleContainerIterator -">SimpleContainerIterator</a>;
-<a name="l00063"></a>00063 <span class="keyword">class </span><a class="code" href="class_simple_network.html" title="class SimpleNetwork -">SimpleNetwork</a>;
-<a name="l00064"></a>00064 <span class="keyword">class </span><a class="code" href="class_simple_neural_creator.html" title="class SimpleNeuralCreator -">SimpleNeuralCreator</a>;
-<a name="l00065"></a>00065 <span class="keyword">class </span><a class="code" href="class_simple_neuron.html" title="class SimpleNeuron -">SimpleNeuron</a>;
-<a name="l00066"></a>00066 <span class="keyword">class </span><a class="code" href="class_tanh.html" title="class Tanh -">Tanh</a>;
-<a name="l00067"></a>00067 <span class="keyword">class </span><a class="code" href="class_tanh_factory.html" title="class TanhFactory -">TanhFactory</a>;
-<a name="l00068"></a>00068 
+<a href="_a_m_o_r_e_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">// This file is used by the unit tests,</span>
+<a name="l00003"></a>00003 <span class="comment">// not by R CMD INSTALL AMORE</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;iterator&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;boost/weak_ptr.hpp&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;boost/ref.hpp&gt;</span>
+<a name="l00048"></a>00048 <span class="preprocessor">#include &lt;valarray&gt;</span>    <span class="comment">// for tanh, ...</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include &lt;Rcpp.h&gt;</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="keyword">using namespace </span>Rcpp;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="keyword">class </span><a class="code" href="class_activation_function.html" title="class ActivationFunction -">ActivationFunction</a>;
+<a name="l00054"></a>00054 <span class="keyword">class </span><a class="code" href="class_con.html" title="class Con -">Con</a>;
+<a name="l00055"></a>00055 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_container.html" title="class Container -">Container</a>;
+<a name="l00056"></a>00056 <span class="keyword">class </span><a class="code" href="class_identity.html" title="class Identity -">Identity</a>;
+<a name="l00057"></a>00057 <span class="keyword">class </span><a class="code" href="class_identity_factory.html" title="class IdentityFactory -">IdentityFactory</a>;
+<a name="l00058"></a>00058 <span class="keyword">class </span><a class="code" href="class_identity.html" title="class Identity -">Identity</a>;
+<a name="l00059"></a>00059 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_iterator.html" title="class Iterator -">Iterator</a>;
+<a name="l00060"></a>00060 <span class="keyword">class </span><a class="code" href="class_m_l_pbehavior.html" title="class MLPbehavior -">MLPbehavior</a>;
+<a name="l00061"></a>00061 <span class="keyword">class </span><a class="code" href="class_m_l_pfactory.html" title="class MLPfactory -">MLPfactory</a>;
+<a name="l00062"></a>00062 <span class="keyword">class </span><a class="code" href="class_network_rinterface.html" title="class NetworkRinterface -">NetworkRinterface</a>;
+<a name="l00063"></a>00063 <span class="keyword">class </span><a class="code" href="class_neural_network.html" title="class NeuralNetwork -">NeuralNetwork</a>;
+<a name="l00064"></a>00064 <span class="keyword">class </span><a class="code" href="class_neural_creator.html" title="class NeuralCreator -">NeuralCreator</a>;
+<a name="l00065"></a>00065 <span class="keyword">class </span><a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>;
+<a name="l00066"></a>00066 <span class="keyword">class </span><a class="code" href="class_network_train_behavior.html" title="class NetworkTrainBehavior -">NetworkTrainBehavior</a>;
+<a name="l00067"></a>00067 <span class="keyword">class </span><a class="code" href="class_neuron.html" title="class Neuron -">Neuron</a>;
+<a name="l00068"></a>00068 <span class="keyword">class </span><a class="code" href="class_neuron_train_behavior.html" title="class NeuronTrainBehavior -">NeuronTrainBehavior</a>;
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 <span class="keyword">class </span><a class="code" href="class_training_behavior.html" title="class TrainingBehavior -">TrainingBehavior</a>;
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074 <span class="preprocessor">#ifndef size_type</span>
-<a name="l00075"></a><a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">00075</a> <span class="preprocessor"></span><span class="preprocessor">#define size_type unsigned int</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span>
-<a name="l00078"></a><a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">00078</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a>;
+<a name="l00070"></a>00070 <span class="keyword">class </span><a class="code" href="class_predict_behavior.html" title="class PredictBehavior -">PredictBehavior</a>;
+<a name="l00071"></a>00071 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_simple_container.html" title="class SimpleContainer -">SimpleContainer</a>;
+<a name="l00072"></a>00072 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_simple_container_iterator.html" title="class SimpleContainerIterator -">SimpleContainerIterator</a>;
+<a name="l00073"></a>00073 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_simple_container_reverse_iterator.html" title="class SimpleContainerReverseIterator -">SimpleContainerReverseIterator</a>;
+<a name="l00074"></a>00074 <span class="keyword">class </span><a class="code" href="class_simple_network.html" title="class SimpleNetwork -">SimpleNetwork</a>;
+<a name="l00075"></a>00075 <span class="keyword">class </span><a class="code" href="class_simple_neural_creator.html" title="class SimpleNeuralCreator -">SimpleNeuralCreator</a>;
+<a name="l00076"></a>00076 <span class="keyword">class </span><a class="code" href="class_simple_neuron.html" title="class SimpleNeuron -">SimpleNeuron</a>;
+<a name="l00077"></a>00077 <span class="keyword">class </span><a class="code" href="class_tanh.html" title="class Tanh -">Tanh</a>;
+<a name="l00078"></a>00078 <span class="keyword">class </span><a class="code" href="class_tanh_factory.html" title="class TanhFactory -">TanhFactory</a>;
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 
-<a name="l00081"></a><a class="code" href="_a_m_o_r_e_8h.html#afba49a905fa91bc642dad378f7aa1b08">00081</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#afba49a905fa91bc642dad378f7aa1b08">ActivationFunctionRef</a>;
-<a name="l00082"></a><a class="code" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">00082</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">PredictBehaviorRef</a>;
-<a name="l00083"></a><a class="code" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">00083</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;TrainingBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">TrainingBehaviorRef</a>;
-<a name="l00084"></a><a class="code" href="_a_m_o_r_e_8h.html#ae4f8e0af6c35f16f9f1d3588d8915cf6">00084</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#ae4f8e0af6c35f16f9f1d3588d8915cf6">NeuronRef</a>;
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">00087</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;ActivationFunction&gt; <a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>;
-<a name="l00088"></a><a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">00088</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>;
-<a name="l00089"></a><a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">00089</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>;
-<a name="l00090"></a><a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">00090</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Con&gt; <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>;
-<a name="l00091"></a><a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">00091</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;NeuralNetwork&gt; <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>;
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 
-<a name="l00094"></a><a class="code" href="_a_m_o_r_e_8h.html#aa794539c0a68e4eb451e7a2cc6294acc">00094</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Iterator&lt;NeuronPtr&gt; &gt;<a class="code" href="_a_m_o_r_e_8h.html#aa794539c0a68e4eb451e7a2cc6294acc">NeuronIteratorPtr</a>;
-<a name="l00095"></a><a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">00095</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Iterator&lt;ConPtr&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a>;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="keyword">class </span>TrainingBehavior;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="preprocessor">#ifndef size_type</span>
+<a name="l00086"></a><a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define size_type unsigned int</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a><a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">00089</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_a_m_o_r_e_8h.html#abc871abb71cff6655b8172ee7240b8ef">Handler</a>;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="_a_m_o_r_e_8h.html#afba49a905fa91bc642dad378f7aa1b08">00092</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#afba49a905fa91bc642dad378f7aa1b08">ActivationFunctionRef</a>;
+<a name="l00093"></a><a class="code" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">00093</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#aff87e1c27cc15df9f3364b7cf29c85ea">PredictBehaviorRef</a>;
+<a name="l00094"></a><a class="code" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">00094</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;TrainingBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#a2efd5ce2c834a4c9e92cd98bbb887225">TrainingBehaviorRef</a>;
+<a name="l00095"></a><a class="code" href="_a_m_o_r_e_8h.html#ae4f8e0af6c35f16f9f1d3588d8915cf6">00095</a> <span class="keyword">typedef</span> boost::reference_wrapper&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#ae4f8e0af6c35f16f9f1d3588d8915cf6">NeuronRef</a>;
 <a name="l00096"></a>00096 
-<a name="l00097"></a><a class="code" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">00097</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt;NeuronPtr &gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>;
-<a name="l00098"></a><a class="code" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">00098</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt; LayerPtr &gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">LayerContainerPtr</a>;
-<a name="l00099"></a><a class="code" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">00099</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt;ConPtr&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>;
-<a name="l00100"></a>00100 
-<a name="l00101"></a><a class="code" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">00101</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; NeuralFactory &gt; <a class="code" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a>;
-<a name="l00102"></a><a class="code" href="_a_m_o_r_e_8h.html#aefebabe3353f684b7708712480c15699">00102</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; NeuralCreator &gt; <a class="code" href="_a_m_o_r_e_8h.html#aefebabe3353f684b7708712480c15699">NeuralCreatorPtr</a>;
-<a name="l00103"></a>00103 
-<a name="l00104"></a><a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">00104</a> <span class="keyword">typedef</span> boost::weak_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a>;
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">00098</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;ActivationFunction&gt; <a class="code" href="_a_m_o_r_e_8h.html#a77602a0277a02e5769c3df0adc669b17">ActivationFunctionPtr</a>;
+<a name="l00099"></a><a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">00099</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;PredictBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#a1fb2f1f8fdf1e08c42ef4bdce436af93">PredictBehaviorPtr</a>;
+<a name="l00100"></a><a class="code" href="_a_m_o_r_e_8h.html#adb6e0874dc796a04d0566a773cb10a71">00100</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;NetworkTrainBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#adb6e0874dc796a04d0566a773cb10a71">NetworkTrainBehaviorPtr</a>;
+<a name="l00101"></a><a class="code" href="_a_m_o_r_e_8h.html#a687ad68f1793905a403f187c0eda2ec1">00101</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;NeuronTrainBehavior&gt; <a class="code" href="_a_m_o_r_e_8h.html#a687ad68f1793905a403f187c0eda2ec1">NeuronTrainBehaviorPtr</a>;
+<a name="l00102"></a><a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">00102</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#ac1ea936c2c7728eb382278131652fef4">NeuronPtr</a>;
+<a name="l00103"></a><a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">00103</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;Con&gt; <a class="code" href="_a_m_o_r_e_8h.html#a169bb8e5f26ce70bf2b10dec2fb5ee50">ConPtr</a>;
+<a name="l00104"></a><a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">00104</a> <span class="keyword">typedef</span> boost::shared_ptr&lt;NeuralNetwork&gt; <a class="code" href="_a_m_o_r_e_8h.html#a7adadf1c313313507b00cd1193db29a1">NeuralNetworkPtr</a>;
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="preprocessor">#include &quot;<a class="code" href="_connection_8h.html">classHeaders/Connection.h</a>&quot;</span>
-<a name="l00107"></a>00107 <span class="preprocessor">#include &quot;<a class="code" href="_activation_function_8h.html">classHeaders/ActivationFunction.h</a>&quot;</span>
-<a name="l00108"></a>00108 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_8h.html">classHeaders/Tanh.h</a>&quot;</span>
-<a name="l00109"></a>00109 <span class="preprocessor">#include &quot;<a class="code" href="_identity_8h.html">classHeaders/Identity.h</a>&quot;</span>
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 <span class="preprocessor">#include &quot;<a class="code" href="_predict_behavior_8h.html">classHeaders/PredictBehavior.h</a>&quot;</span>
-<a name="l00112"></a>00112 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pbehavior_8h.html">classHeaders/MLPBehavior.h</a>&quot;</span>
-<a name="l00113"></a>00113 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8h.html">classHeaders/Neuron.h</a>&quot;</span>
-<a name="l00114"></a>00114 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neuron_8h.html">classHeaders/SimpleNeuron.h</a>&quot;</span>
-<a name="l00115"></a>00115 <span class="preprocessor">#include &quot;<a class="code" href="_neural_factory_8h.html">classHeaders/NeuralFactory.h</a>&quot;</span>
-<a name="l00116"></a>00116 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pfactory_8h.html">classHeaders/MLPfactory.h</a>&quot;</span>
-<a name="l00117"></a>00117 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_factory_8h.html">classHeaders/TanhFactory.h</a>&quot;</span>
-<a name="l00118"></a>00118 <span class="preprocessor">#include &quot;<a class="code" href="_identity_factory_8h.html">classHeaders/IdentityFactory.h</a>&quot;</span>
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="_a_m_o_r_e_8h.html#aa794539c0a68e4eb451e7a2cc6294acc">00107</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Iterator&lt;NeuronPtr&gt; &gt;<a class="code" href="_a_m_o_r_e_8h.html#aa794539c0a68e4eb451e7a2cc6294acc">NeuronIteratorPtr</a>;
+<a name="l00108"></a><a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">00108</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Iterator&lt;ConPtr&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#a819efaf710ead601ac8241df5e235dd8">ConIteratorPtr</a>;
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">00110</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt;NeuronPtr &gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>;
+<a name="l00111"></a><a class="code" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">00111</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt; LayerPtr &gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">LayerContainerPtr</a>;
+<a name="l00112"></a><a class="code" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">00112</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; Container&lt;ConPtr&gt; &gt; <a class="code" href="_a_m_o_r_e_8h.html#a1021dbaf961d1c8da6d58a8566e5778b">ConContainerPtr</a>;
+<a name="l00113"></a>00113 
+<a name="l00114"></a><a class="code" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">00114</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; NeuralFactory &gt; <a class="code" href="_a_m_o_r_e_8h.html#ac4ad88962955479bfc426da9ce4571d2">NeuralFactoryPtr</a>;
+<a name="l00115"></a><a class="code" href="_a_m_o_r_e_8h.html#aefebabe3353f684b7708712480c15699">00115</a> <span class="keyword">typedef</span> boost::shared_ptr&lt; NeuralCreator &gt; <a class="code" href="_a_m_o_r_e_8h.html#aefebabe3353f684b7708712480c15699">NeuralCreatorPtr</a>;
+<a name="l00116"></a>00116 
+<a name="l00117"></a><a class="code" href="_a_m_o_r_e_8h.html#a8d64c996fa6b9b71d7f9d67e229650bf">00117</a> <span class="keyword">typedef</span> boost::weak_ptr&lt;NeuralNetwork&gt; <a class="code" href="_a_m_o_r_e_8h.html#a8d64c996fa6b9b71d7f9d67e229650bf">NeuralNetworkWeakPtr</a>;
+<a name="l00118"></a><a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">00118</a> <span class="keyword">typedef</span> boost::weak_ptr&lt;Neuron&gt; <a class="code" href="_a_m_o_r_e_8h.html#a3e2d414e247d33f77957e70765d161c0">NeuronWeakPtr</a>;
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8h.html">classHeaders/NeuralNetwork.h</a>&quot;</span>
-<a name="l00125"></a>00125 <span class="preprocessor">#include &quot;<a class="code" href="_simple_network_8h.html">classHeaders/SimpleNetwork.h</a>&quot;</span>
-<a name="l00126"></a>00126 <span class="preprocessor">#include &quot;<a class="code" href="_neural_creator_8h.html">classHeaders/NeuralCreator.h</a>&quot;</span>
-<a name="l00127"></a>00127 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8h.html">classHeaders/SimpleNeuralCreator.h</a>&quot;</span>
-<a name="l00128"></a>00128 <span class="preprocessor">#include &quot;<a class="code" href="_network_rinterface_8h.html">classHeaders/NetworkRinterface.h</a>&quot;</span>
-<a name="l00129"></a>00129 <span class="preprocessor">#include &quot;<a class="code" href="_container_8h.html">classHeaders/Container.h</a>&quot;</span>
-<a name="l00130"></a>00130 <span class="preprocessor">#include &quot;<a class="code" href="_simple_container_8h.html">classHeaders/SimpleContainer.h</a>&quot;</span>
-<a name="l00131"></a>00131 <span class="preprocessor">#include &quot;<a class="code" href="_iterator_8h.html">classHeaders/Iterator.h</a>&quot;</span>
-<a name="l00132"></a>00132 <span class="preprocessor">#include &quot;<a class="code" href="_simple_container_iterator_8h.html">classHeaders/SimpleContainerIterator.h</a>&quot;</span>
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134 <span class="preprocessor">#include &quot;Con.cpp&quot;</span>
-<a name="l00135"></a>00135 <span class="preprocessor">#include &quot;<a class="code" href="_activation_function_8cpp.html">ActivationFunction.cpp</a>&quot;</span>
-<a name="l00136"></a>00136 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_8cpp.html">Tanh.cpp</a>&quot;</span>
-<a name="l00137"></a>00137 <span class="preprocessor">#include &quot;<a class="code" href="_identity_8cpp.html">Identity.cpp</a>&quot;</span>
-<a name="l00138"></a>00138 <span class="preprocessor">#include &quot;<a class="code" href="_predict_behavior_8cpp.html">PredictBehavior.cpp</a>&quot;</span>
-<a name="l00139"></a>00139 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pbehavior_8cpp.html">MLPbehavior.cpp</a>&quot;</span>
-<a name="l00140"></a>00140 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8cpp.html">Neuron.cpp</a>&quot;</span>
-<a name="l00141"></a>00141 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neuron_8cpp.html">SimpleNeuron.cpp</a>&quot;</span>
-<a name="l00142"></a>00142 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pfactory_8cpp.html">MLPfactory.cpp</a>&quot;</span>
-<a name="l00143"></a>00143 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_factory_8cpp.html">TanhFactory.cpp</a>&quot;</span>
-<a name="l00144"></a>00144 <span class="preprocessor">#include &quot;<a class="code" href="_identity_factory_8cpp.html">IdentityFactory.cpp</a>&quot;</span>
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146 
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8cpp.html">NeuralNetwork.cpp</a>&quot;</span>
-<a name="l00149"></a>00149 <span class="preprocessor">#include &quot;<a class="code" href="_simple_network_8cpp.html">SimpleNetwork.cpp</a>&quot;</span>
-<a name="l00150"></a>00150 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8cpp.html">SimpleNeuralCreator.cpp</a>&quot;</span>
-<a name="l00151"></a>00151 <span class="preprocessor">#include &quot;<a class="code" href="_network_rinterface_8cpp.html">NetworkRinterface.cpp</a>&quot;</span>
-<a name="l00152"></a>00152 <span class="preprocessor">#include &quot;Container.cpp&quot;</span>
-<a name="l00153"></a>00153 <span class="preprocessor">#include &quot;Iterator.cpp&quot;</span>
-<a name="l00154"></a>00154 <span class="preprocessor">#include &quot;SimpleContainer.cpp&quot;</span>
-<a name="l00155"></a>00155 <span class="preprocessor">#include &quot;SimpleContainerIterator.cpp&quot;</span>
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158 <span class="preprocessor">#include &quot;<a class="code" href="_rcpp_modules_8cpp.html">RcppModules.cpp</a>&quot;</span>
-<a name="l00159"></a>00159 
+<a name="l00120"></a>00120 <span class="preprocessor">#include &quot;<a class="code" href="_connection_8h.html">classHeaders/Connection.h</a>&quot;</span>
+<a name="l00121"></a>00121 <span class="preprocessor">#include &quot;<a class="code" href="_activation_function_8h.html">classHeaders/ActivationFunction.h</a>&quot;</span>
+<a name="l00122"></a>00122 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_8h.html">classHeaders/Tanh.h</a>&quot;</span>
+<a name="l00123"></a>00123 <span class="preprocessor">#include &quot;<a class="code" href="_identity_8h.html">classHeaders/Identity.h</a>&quot;</span>
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 <span class="preprocessor">#include &quot;<a class="code" href="_predict_behavior_8h.html">classHeaders/PredictBehavior.h</a>&quot;</span>
+<a name="l00126"></a>00126 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pbehavior_8h.html">classHeaders/MLPBehavior.h</a>&quot;</span>
+<a name="l00127"></a>00127 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_train_behavior_8h.html">classHeaders/NeuronTrainBehavior.h</a>&quot;</span>
+<a name="l00128"></a>00128 <span class="preprocessor">#include &quot;<a class="code" href="_network_train_behavior_8h.html">classHeaders/NetworkTrainBehavior.h</a>&quot;</span>
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8h.html">classHeaders/Neuron.h</a>&quot;</span>
+<a name="l00131"></a>00131 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neuron_8h.html">classHeaders/SimpleNeuron.h</a>&quot;</span>
+<a name="l00132"></a>00132 <span class="preprocessor">#include &quot;<a class="code" href="_neural_factory_8h.html">classHeaders/NeuralFactory.h</a>&quot;</span>
+<a name="l00133"></a>00133 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pfactory_8h.html">classHeaders/MLPfactory.h</a>&quot;</span>
+<a name="l00134"></a>00134 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_factory_8h.html">classHeaders/TanhFactory.h</a>&quot;</span>
+<a name="l00135"></a>00135 <span class="preprocessor">#include &quot;<a class="code" href="_identity_factory_8h.html">classHeaders/IdentityFactory.h</a>&quot;</span>
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8h.html">classHeaders/NeuralNetwork.h</a>&quot;</span>
+<a name="l00139"></a>00139 <span class="preprocessor">#include &quot;<a class="code" href="_simple_network_8h.html">classHeaders/SimpleNetwork.h</a>&quot;</span>
+<a name="l00140"></a>00140 <span class="preprocessor">#include &quot;<a class="code" href="_neural_creator_8h.html">classHeaders/NeuralCreator.h</a>&quot;</span>
+<a name="l00141"></a>00141 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8h.html">classHeaders/SimpleNeuralCreator.h</a>&quot;</span>
+<a name="l00142"></a>00142 <span class="preprocessor">#include &quot;<a class="code" href="_network_rinterface_8h.html">classHeaders/NetworkRinterface.h</a>&quot;</span>
+<a name="l00143"></a>00143 <span class="preprocessor">#include &quot;<a class="code" href="_container_8h.html">classHeaders/Container.h</a>&quot;</span>
+<a name="l00144"></a>00144 <span class="preprocessor">#include &quot;<a class="code" href="_simple_container_8h.html">classHeaders/SimpleContainer.h</a>&quot;</span>
+<a name="l00145"></a>00145 <span class="preprocessor">#include &quot;<a class="code" href="_iterator_8h.html">classHeaders/Iterator.h</a>&quot;</span>
+<a name="l00146"></a>00146 <span class="preprocessor">#include &quot;<a class="code" href="_simple_container_iterator_8h.html">classHeaders/SimpleContainerIterator.h</a>&quot;</span>
+<a name="l00147"></a>00147 <span class="preprocessor">#include &quot;<a class="code" href="_simple_container_reverse_iterator_8h.html">classHeaders/SimpleContainerReverseIterator.h</a>&quot;</span>
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 <span class="preprocessor">#include &quot;<a class="code" href="_connection_8cpp.html">Connection.cpp</a>&quot;</span>
+<a name="l00150"></a>00150 <span class="preprocessor">#include &quot;<a class="code" href="_activation_function_8cpp.html">ActivationFunction.cpp</a>&quot;</span>
+<a name="l00151"></a>00151 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_8cpp.html">Tanh.cpp</a>&quot;</span>
+<a name="l00152"></a>00152 <span class="preprocessor">#include &quot;<a class="code" href="_identity_8cpp.html">Identity.cpp</a>&quot;</span>
+<a name="l00153"></a>00153 <span class="preprocessor">#include &quot;<a class="code" href="_predict_behavior_8cpp.html">PredictBehavior.cpp</a>&quot;</span>
+<a name="l00154"></a>00154 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pbehavior_8cpp.html">MLPbehavior.cpp</a>&quot;</span>
+<a name="l00155"></a>00155 <span class="preprocessor">#include &quot;<a class="code" href="_neuron_8cpp.html">Neuron.cpp</a>&quot;</span>
+<a name="l00156"></a>00156 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neuron_8cpp.html">SimpleNeuron.cpp</a>&quot;</span>
+<a name="l00157"></a>00157 <span class="preprocessor">#include &quot;<a class="code" href="_m_l_pfactory_8cpp.html">MLPfactory.cpp</a>&quot;</span>
+<a name="l00158"></a>00158 <span class="preprocessor">#include &quot;<a class="code" href="_tanh_factory_8cpp.html">TanhFactory.cpp</a>&quot;</span>
+<a name="l00159"></a>00159 <span class="preprocessor">#include &quot;<a class="code" href="_identity_factory_8cpp.html">IdentityFactory.cpp</a>&quot;</span>
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161 
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163 <span class="preprocessor">#include &quot;<a class="code" href="_neural_network_8cpp.html">NeuralNetwork.cpp</a>&quot;</span>
+<a name="l00164"></a>00164 <span class="preprocessor">#include &quot;<a class="code" href="_simple_network_8cpp.html">SimpleNetwork.cpp</a>&quot;</span>
+<a name="l00165"></a>00165 <span class="preprocessor">#include &quot;<a class="code" href="_simple_neural_creator_8cpp.html">SimpleNeuralCreator.cpp</a>&quot;</span>
+<a name="l00166"></a>00166 <span class="preprocessor">#include &quot;<a class="code" href="_network_rinterface_8cpp.html">NetworkRinterface.cpp</a>&quot;</span>
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168 <span class="preprocessor">#include &quot;<a class="code" href="_rcpp_modules_8cpp.html">RcppModules.cpp</a>&quot;</span>
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_a_m_o_r_e_8h.html">AMORE.h</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

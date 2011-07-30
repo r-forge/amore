@@ -90,20 +90,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008   <a class="code" href="class_simple_network.html#a8371fd3be054537889207547e5e53e29">SimpleNetwork</a> (<a class="code" href="class_neural_factory.html" title="class NeuralFactory -">NeuralFactory</a>&amp; neuralFactory);
 <a name="l00009"></a>00009 <span class="keyword">private</span>:
 <a name="l00010"></a>00010   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#a45c0a090f4ac14963c7f2ebfc4cc3f5d">writeInput</a> (std::vector&lt;double&gt;::iterator&amp; iterator);
-<a name="l00011"></a>00011   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">predict</a> ();
-<a name="l00012"></a>00012   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">readOutput</a> (std::vector&lt;double&gt;::iterator&amp; iterator);
-<a name="l00013"></a>00013   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">inputSize</a> ();
-<a name="l00014"></a>00014   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">outputSize</a> ();
-<a name="l00015"></a>00015   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">show</a> ();
-<a name="l00016"></a>00016   <span class="keywordtype">bool</span> <a class="code" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">validate</a> ();
-<a name="l00017"></a>00017 };
-<a name="l00018"></a>00018 
+<a name="l00011"></a>00011   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#a6a966984617511c0d79bc38f2ba73888">singlePatternForwardAction</a> ();
+<a name="l00012"></a>00012   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#acce93c67ba6f301f99889642dbd620de">singlePatternBackwardAction</a> ();
+<a name="l00013"></a>00013   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#abdf4a70e4b26e4ce914afd65c58170cf">readOutput</a> (std::vector&lt;double&gt;::iterator&amp; iterator);
+<a name="l00014"></a>00014   Rcpp::List <a class="code" href="class_simple_network.html#a97cd497e97b090ce972151ebb3201fb9">train</a> (Rcpp::List parameterList);
+<a name="l00015"></a>00015   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_simple_network.html#a7e14145c93afb1464c176d9b875ee6f2">inputSize</a> ();
+<a name="l00016"></a>00016   <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_simple_network.html#a187ce11f4b7edb4b4f46e9c8ec31eadb">outputSize</a> ();
+<a name="l00017"></a>00017   <span class="keywordtype">void</span> <a class="code" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">show</a> ();
+<a name="l00018"></a>00018   <span class="keywordtype">bool</span> <a class="code" href="class_simple_network.html#adfbe36eff51ead5995f2ccc58fcee709">validate</a> ();
+<a name="l00019"></a>00019 };
+<a name="l00020"></a>00020 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_simple_network_8h.html">SimpleNetwork.h</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

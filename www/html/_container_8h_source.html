@@ -89,25 +89,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="keyword">public</span>:
 <a name="l00008"></a>00008   <span class="keyword">virtual</span> <a class="code" href="class_container.html#ac190e8e99e5a92ef02390027765cbbb6">~Container</a> ();
 <a name="l00009"></a>00009   <span class="keyword">virtual</span> boost::shared_ptr&lt; Iterator&lt;T&gt; &gt;  <a class="code" href="class_container.html#a18a0a70153781d3d94526bc09fcbedb8">createIterator</a> () = 0;
-<a name="l00010"></a>00010   <span class="keyword">virtual</span> T <a class="code" href="class_container.html#a8aed06783f7cd0749f796c64e64626e7">at</a> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> element) = 0;
-<a name="l00011"></a>00011   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a12ffe2d2dbbcd78b6b293756004bd6e0">push_back</a> (T <span class="keyword">const</span> &amp; const_reference) = 0;
-<a name="l00012"></a>00012   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a5f70fb0d821a8db9a0733aafe9ef35ac">reserve</a> (<span class="keywordtype">int</span> n) = 0;
-<a name="l00013"></a>00013   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_container.html#a123dcd25b363ab92ac8bfa8b4c4061a4">empty</a> () = 0;
-<a name="l00014"></a>00014   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_container.html#a1eebc7b5cbb0c574cb1aef87c2ddba36">size</a> () = 0;
-<a name="l00015"></a>00015   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#ac27f3554d6ac6ecb227ead060ff1f8a2">clear</a> () = 0;
-<a name="l00016"></a>00016   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a5ee85af656e60863a7e4c1f7f9c484f4">show</a> () = 0;
-<a name="l00017"></a>00017   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_container.html#abbd8ca2714a550351442f4410cf5736d">validate</a> () = 0;
-<a name="l00018"></a>00018 <span class="keyword">protected</span>:
-<a name="l00019"></a>00019   <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a> ();
-<a name="l00020"></a>00020 };
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;../Container.code&quot;</span> 
+<a name="l00010"></a>00010   <span class="keyword">virtual</span> boost::shared_ptr&lt; Iterator&lt;T&gt; &gt; <a class="code" href="class_container.html#acc5e862abc8a449fe5c69c94eff4113e">createReverseIterator</a> () = 0;
+<a name="l00011"></a>00011   <span class="keyword">virtual</span> T <a class="code" href="class_container.html#a8aed06783f7cd0749f796c64e64626e7">at</a> (<a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> element) = 0;
+<a name="l00012"></a>00012   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a12ffe2d2dbbcd78b6b293756004bd6e0">push_back</a> (T <span class="keyword">const</span> &amp; const_reference) = 0;
+<a name="l00013"></a>00013   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a5f70fb0d821a8db9a0733aafe9ef35ac">reserve</a> (<span class="keywordtype">int</span> n) = 0;
+<a name="l00014"></a>00014   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_container.html#a123dcd25b363ab92ac8bfa8b4c4061a4">empty</a> () = 0;
+<a name="l00015"></a>00015   <span class="keyword">virtual</span> <a class="code" href="_a_m_o_r_e_8h.html#adead3ef83e9181db3b1d4d7d098a18c0">size_type</a> <a class="code" href="class_container.html#a1eebc7b5cbb0c574cb1aef87c2ddba36">size</a> () = 0;
+<a name="l00016"></a>00016   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#ac27f3554d6ac6ecb227ead060ff1f8a2">clear</a> () = 0;
+<a name="l00017"></a>00017   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_container.html#a5ee85af656e60863a7e4c1f7f9c484f4">show</a> () = 0;
+<a name="l00018"></a>00018   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_container.html#abbd8ca2714a550351442f4410cf5736d">validate</a> () = 0;
+<a name="l00019"></a>00019 <span class="keyword">protected</span>:
+<a name="l00020"></a>00020   <a class="code" href="class_container.html#ab17ce1f67243b28abcd4c8113a72524c">Container</a> ();
+<a name="l00021"></a>00021 };
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;../Container.code&quot;</span> 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_container_8h.html">Container.h</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

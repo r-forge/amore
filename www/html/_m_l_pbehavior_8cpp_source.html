@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 }
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="keywordtype">void</span>
-<a name="l00023"></a><a class="code" href="class_m_l_pbehavior.html#aaff94adc3577cda9e48d8da925b0ffbf">00023</a> <a class="code" href="class_m_l_pbehavior.html#aaff94adc3577cda9e48d8da925b0ffbf">MLPbehavior::predict</a>()
+<a name="l00023"></a><a class="code" href="class_m_l_pbehavior.html#a2f91bc3f2e558b92f5beb5e45402e6c7">00023</a> <a class="code" href="class_m_l_pbehavior.html#a2f91bc3f2e558b92f5beb5e45402e6c7">MLPbehavior::singlePatternForwardAction</a>()
 <a name="l00024"></a>00024 {
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026   <span class="keywordtype">double</span> accumulator(<a class="code" href="class_m_l_pbehavior.html#a6206785c5c3f838a0538f9f77fa7a25a">d_bias</a>);
@@ -117,8 +117,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034       accumulator += weight * incomingSignalValue;
 <a name="l00035"></a>00035     }
 <a name="l00036"></a>00036   <a class="code" href="class_predict_behavior.html#ae0c61e493d55b658161b96a8d7b62819">setInducedLocalField</a>(accumulator);
-<a name="l00037"></a>00037   <a class="code" href="class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6">setOutput</a> (
-<a name="l00038"></a>00038   <a class="code" href="class_predict_behavior.html#a699f23b6abd42f900ef991ac172a6f64">useActivationFunctionf0</a>());
+<a name="l00037"></a>00037   <a class="code" href="class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6">setOutput</a> (<a class="code" href="class_predict_behavior.html#a699f23b6abd42f900ef991ac172a6f64">useActivationFunctionf0</a>());
+<a name="l00038"></a>00038   <a class="code" href="class_predict_behavior.html#a59cb660d082154f8e72f0ce2281f1b0f">setOutputDerivative</a> (<a class="code" href="class_predict_behavior.html#a2af882d5e647130684979b885de3082f">useActivationFunctionf1</a>());
 <a name="l00039"></a>00039 }
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 <span class="keywordtype">void</span>
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_m_l_pbehavior_8cpp.html">MLPbehavior.cpp</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:52 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:16 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

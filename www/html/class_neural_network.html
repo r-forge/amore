@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for NeuralNetwork:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neural_network__inherit__graph.svg" width="150" height="451" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe src="class_neural_network__inherit__graph.svg" width="235" height="523" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -105,8 +105,10 @@ Inheritance diagram for NeuralNetwork:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ad84eb675d31eab6e5d45c37f686d8186">writeInput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ac5d16c83c3159ecd075636e82688b2ed">predict</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#aba99bf07f941e852ce0519266a997d3a">singlePatternForwardAction</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a67e3bda920636659bd6b0635f177fcee">singlePatternBackwardAction</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#acb06905cd65e1f40b79cf2cc30e5987a">readOutput</a> (std::vector&lt; double &gt;::iterator &amp;iterator)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual Rcpp::List&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a3edff5f034de30abf24b73f8e81728a3">train</a> (Rcpp::List parameterList)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a9b59b8576a47750009669a6885524d1e">inputSize</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af7bbfbd5635c29d66fbb37e74800ec15">outputSize</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#abe7893d4df14b19f059f9fca0175cbe1">show</a> ()=0</td></tr>
@@ -119,6 +121,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ada358911107a3a4cdccf0812d876393f">d_inputLayer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#af261b546158af61fc27686fb926961f2">LayerContainerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ae47be9819644d8ecf23328cf4e8f6dfb">d_hiddenLayers</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#acce4b66db3921b7326fbe1a04a56e5fc">LayerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af61fb83fcaaf81c5fa0574f7d3bdc268">d_outputLayer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_a_m_o_r_e_8h.html#adb6e0874dc796a04d0566a773cb10a71">NetworkTrainBehaviorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#aceb363923df9d29642b4e41e47e10267">d_networkTrainBehavior</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a59e04cd60df00cd27e6539f482d90359">SimpleNeuralCreator</a></td></tr>
@@ -155,8 +158,7 @@ Friends</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_neural_network_a94089745c72c49c41c51aaa73935145e_cgraph.svg" width="512" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe src="class_neural_network_a94089745c72c49c41c51aaa73935145e_cgraph.svg" width="512" height="88" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -199,24 +201,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="ac5d16c83c3159ecd075636e82688b2ed"></a><!-- doxytag: member="NeuralNetwork::predict" ref="ac5d16c83c3159ecd075636e82688b2ed" args="()=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void NeuralNetwork::predict </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_simple_network.html#ad2da5477f7441e8d0b22bf5214d1cf64">SimpleNetwork</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="acb06905cd65e1f40b79cf2cc30e5987a"></a><!-- doxytag: member="NeuralNetwork::readOutput" ref="acb06905cd65e1f40b79cf2cc30e5987a" args="(std::vector&lt; double &gt;::iterator &amp;iterator)=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -251,6 +235,61 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_simple_network.html#a16273b96b12674d79b415ee6b31924f3">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67e3bda920636659bd6b0635f177fcee"></a><!-- doxytag: member="NeuralNetwork::singlePatternBackwardAction" ref="a67e3bda920636659bd6b0635f177fcee" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::singlePatternBackwardAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#acce93c67ba6f301f99889642dbd620de">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba99bf07f941e852ce0519266a997d3a"></a><!-- doxytag: member="NeuralNetwork::singlePatternForwardAction" ref="aba99bf07f941e852ce0519266a997d3a" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NeuralNetwork::singlePatternForwardAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#a6a966984617511c0d79bc38f2ba73888">SimpleNetwork</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3edff5f034de30abf24b73f8e81728a3"></a><!-- doxytag: member="NeuralNetwork::train" ref="a3edff5f034de30abf24b73f8e81728a3" args="(Rcpp::List parameterList)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Rcpp::List NeuralNetwork::train </td>
+          <td>(</td>
+          <td class="paramtype">Rcpp::List&#160;</td>
+          <td class="paramname"><em>parameterList</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_simple_network.html#a97cd497e97b090ce972151ebb3201fb9">SimpleNetwork</a>.</p>
 
 </div>
 </div>
@@ -303,7 +342,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00011">11</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
+<p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00012">12</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
 </div>
 </div>
@@ -321,7 +360,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00007">7</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00023">SimpleNetwork::predict()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>.</p>
+<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00120">SimpleNetwork::show()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00064">SimpleNetwork::singlePatternBackwardAction()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00035">SimpleNetwork::singlePatternForwardAction()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00141">SimpleNetwork::validate()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +377,24 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00006">6</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00070">SimpleNetwork::inputSize()</a>, <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00050">SimpleNetwork::writeInput()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00108">SimpleNetwork::inputSize()</a>, <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00120">SimpleNetwork::show()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00141">SimpleNetwork::validate()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00023">SimpleNetwork::writeInput()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aceb363923df9d29642b4e41e47e10267"></a><!-- doxytag: member="NeuralNetwork::d_networkTrainBehavior" ref="aceb363923df9d29642b4e41e47e10267" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_a_m_o_r_e_8h.html#adb6e0874dc796a04d0566a773cb10a71">NetworkTrainBehaviorPtr</a> <a class="el" href="class_neural_network.html#aceb363923df9d29642b4e41e47e10267">NeuralNetwork::d_networkTrainBehavior</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00009">9</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_simple_network_8cpp_source.html#l00098">SimpleNetwork::train()</a>.</p>
 
 </div>
 </div>
@@ -355,7 +411,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_neural_network_8h_source.html#l00008">8</a> of file <a class="el" href="_neural_network_8h_source.html">NeuralNetwork.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00076">SimpleNetwork::outputSize()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00023">SimpleNetwork::predict()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00060">SimpleNetwork::readOutput()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00082">SimpleNetwork::show()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00103">SimpleNetwork::validate()</a>.</p>
+<p>Referenced by <a class="el" href="_neural_network_8cpp_source.html#l00012">NeuralNetwork()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00114">SimpleNetwork::outputSize()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00088">SimpleNetwork::readOutput()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00120">SimpleNetwork::show()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00064">SimpleNetwork::singlePatternBackwardAction()</a>, <a class="el" href="_simple_network_8cpp_source.html#l00035">SimpleNetwork::singlePatternForwardAction()</a>, and <a class="el" href="_simple_network_8cpp_source.html#l00141">SimpleNetwork::validate()</a>.</p>
 
 </div>
 </div>
@@ -368,7 +424,7 @@ Here is the call graph for this function:</div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_neural_network.html">NeuralNetwork</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:53 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:19 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

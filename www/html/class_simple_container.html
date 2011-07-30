@@ -96,12 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for SimpleContainer&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_container__inherit__graph.svg" width="166" height="507" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_simple_container__inherit__graph.svg" width="192" height="539" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SimpleContainer&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe src="class_simple_container__coll__graph.svg" width="166" height="507" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe src="class_simple_container__coll__graph.svg" width="192" height="539" frameborder="0" scrolling="no"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_simple_container-members.html">List of all members.</a></p>
@@ -117,6 +119,7 @@ Protected Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a2e8f56f3af1e0ffb1fcd54d05d82c477">at</a> (size_type element)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a4e46f5cb32231deaf9aa9bb7f871d09e">createIterator</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#acb880d7d14d0067085aa7b7c90602628">createReverseIterator</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a53466966297b3f0a707e025b3721004a">push_back</a> (T const &amp;const_reference)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a4bca44e6a9cef9d57627218c0a180d8a">reserve</a> (int n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#ac2966f33796f69c290a84361a578ed08">empty</a> ()</td></tr>
@@ -126,6 +129,7 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#ac7cae8eaac2dc0a69138b65f679bd16a">validate</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a0fe65b06d8220d8fcb1d34e1496b8399">SimpleContainerReverseIterator&lt; T &gt;</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_container.html#a9abe836547cca50b94869af58a0901f7">SimpleContainerIterator&lt; T &gt;</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -231,6 +235,26 @@ template&lt;typename T &gt; </div>
 <div class="memdoc">
 
 <p>Implements <a class="el" href="class_container.html#a18a0a70153781d3d94526bc09fcbedb8">Container&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb880d7d14d0067085aa7b7c90602628"></a><!-- doxytag: member="SimpleContainer::createReverseIterator" ref="acb880d7d14d0067085aa7b7c90602628" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; <a class="el" href="class_iterator.html">Iterator</a>&lt;T&gt; &gt; <a class="el" href="class_simple_container.html">SimpleContainer</a>&lt; T &gt;::createReverseIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_container.html#acc5e862abc8a449fe5c69c94eff4113e">Container&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -370,6 +394,23 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="_simple_container_8h_source.html#l00013">13</a> of file <a class="el" href="_simple_container_8h_source.html">SimpleContainer.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fe65b06d8220d8fcb1d34e1496b8399"></a><!-- doxytag: member="SimpleContainer::SimpleContainerReverseIterator&lt; T &gt;" ref="a0fe65b06d8220d8fcb1d34e1496b8399" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_simple_container_reverse_iterator.html">SimpleContainerReverseIterator</a>&lt; T &gt;<code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
 <p>Definition at line <a class="el" href="_simple_container_8h_source.html#l00012">12</a> of file <a class="el" href="_simple_container_8h_source.html">SimpleContainer.h</a>.</p>
 
 </div>
@@ -400,7 +441,7 @@ template&lt;typename T &gt; </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_simple_container.html">SimpleContainer</a>      </li>
-      <li class="footer">Generated on Thu Jul 28 2011 01:19:54 for AMORE++ by&#160;
+      <li class="footer">Generated on Sat Jul 30 2011 04:41:20 for AMORE++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

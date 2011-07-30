@@ -12,8 +12,7 @@
 {\ttfamily \#include $<$boost/ref.hpp$>$}\par
 {\ttfamily \#include $<$valarray$>$}\par
 {\ttfamily \#include $<$Rcpp.h$>$}\par
-Include dependency graph for package.h:
-\nopagebreak
+Include dependency graph for package.h:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -48,6 +47,10 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_activation_function}{Activation
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_predict_behavior}{PredictBehavior} $>$ \hyperlink{package_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{PredictBehaviorPtr}
 \item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_network_train_behavior}{NetworkTrainBehavior} $>$ \hyperlink{package_8h_adb6e0874dc796a04d0566a773cb10a71}{NetworkTrainBehaviorPtr}
+\item 
+typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron_train_behavior}{NeuronTrainBehavior} $>$ \hyperlink{package_8h_a687ad68f1793905a403f187c0eda2ec1}{NeuronTrainBehaviorPtr}
+\item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{package_8h_ac1ea936c2c7728eb382278131652fef4}{NeuronPtr}
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_con}{Con} $>$ \hyperlink{package_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{ConPtr}
@@ -68,6 +71,8 @@ typedef boost::shared\_\-ptr$<$ \hyperlink{class_neural_factory}{NeuralFactory} 
 \item 
 typedef boost::shared\_\-ptr$<$ \hyperlink{class_neural_creator}{NeuralCreator} $>$ \hyperlink{package_8h_a94063cfbabd0e2579544b9068a627763}{NeuralCreatorPtr}
 \item 
+typedef boost::weak\_\-ptr$<$ \hyperlink{class_neural_network}{NeuralNetwork} $>$ \hyperlink{package_8h_a8d64c996fa6b9b71d7f9d67e229650bf}{NeuralNetworkWeakPtr}
+\item 
 typedef boost::weak\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{package_8h_a3e2d414e247d33f77957e70765d161c0}{NeuronWeakPtr}
 \end{DoxyCompactItemize}
 
@@ -80,7 +85,7 @@ typedef boost::weak\_\-ptr$<$ \hyperlink{class_neuron}{Neuron} $>$ \hyperlink{pa
 \label{package_8h_adead3ef83e9181db3b1d4d7d098a18c0}
 
 
-Definition at line 75 of file package.h.
+Definition at line 81 of file package.h.
 
 
 
@@ -92,7 +97,7 @@ Definition at line 75 of file package.h.
 \label{package_8h_a77602a0277a02e5769c3df0adc669b17}
 
 
-Definition at line 85 of file package.h.
+Definition at line 91 of file package.h.
 
 \hypertarget{package_8h_afba49a905fa91bc642dad378f7aa1b08}{
 \index{package.h@{package.h}!ActivationFunctionRef@{ActivationFunctionRef}}
@@ -101,7 +106,7 @@ Definition at line 85 of file package.h.
 \label{package_8h_afba49a905fa91bc642dad378f7aa1b08}
 
 
-Definition at line 80 of file package.h.
+Definition at line 86 of file package.h.
 
 \hypertarget{package_8h_ab8759358d7b92f0e74d71c607a87fb69}{
 \index{package.h@{package.h}!ConContainerPtr@{ConContainerPtr}}
@@ -110,7 +115,7 @@ Definition at line 80 of file package.h.
 \label{package_8h_ab8759358d7b92f0e74d71c607a87fb69}
 
 
-Definition at line 97 of file package.h.
+Definition at line 105 of file package.h.
 
 \hypertarget{package_8h_a56ff72c1ab314937acae34b8c3ee4c0e}{
 \index{package.h@{package.h}!ConIteratorPtr@{ConIteratorPtr}}
@@ -119,7 +124,7 @@ Definition at line 97 of file package.h.
 \label{package_8h_a56ff72c1ab314937acae34b8c3ee4c0e}
 
 
-Definition at line 92 of file package.h.
+Definition at line 100 of file package.h.
 
 \hypertarget{package_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}{
 \index{package.h@{package.h}!ConPtr@{ConPtr}}
@@ -128,7 +133,7 @@ Definition at line 92 of file package.h.
 \label{package_8h_a169bb8e5f26ce70bf2b10dec2fb5ee50}
 
 
-Definition at line 88 of file package.h.
+Definition at line 96 of file package.h.
 
 \hypertarget{package_8h_abc871abb71cff6655b8172ee7240b8ef}{
 \index{package.h@{package.h}!Handler@{Handler}}
@@ -137,7 +142,7 @@ Definition at line 88 of file package.h.
 \label{package_8h_abc871abb71cff6655b8172ee7240b8ef}
 
 
-Definition at line 78 of file package.h.
+Definition at line 84 of file package.h.
 
 \hypertarget{package_8h_a81e8173d130be2e5f03e4acffa1e8557}{
 \index{package.h@{package.h}!LayerContainerPtr@{LayerContainerPtr}}
@@ -146,7 +151,7 @@ Definition at line 78 of file package.h.
 \label{package_8h_a81e8173d130be2e5f03e4acffa1e8557}
 
 
-Definition at line 95 of file package.h.
+Definition at line 103 of file package.h.
 
 \hypertarget{package_8h_abd3a3015ed23412c710d1c5ba7b39089}{
 \index{package.h@{package.h}!LayerPtr@{LayerPtr}}
@@ -155,7 +160,16 @@ Definition at line 95 of file package.h.
 \label{package_8h_abd3a3015ed23412c710d1c5ba7b39089}
 
 
-Definition at line 94 of file package.h.
+Definition at line 102 of file package.h.
+
+\hypertarget{package_8h_adb6e0874dc796a04d0566a773cb10a71}{
+\index{package.h@{package.h}!NetworkTrainBehaviorPtr@{NetworkTrainBehaviorPtr}}
+\index{NetworkTrainBehaviorPtr@{NetworkTrainBehaviorPtr}!package.h@{package.h}}
+\subsubsection[{NetworkTrainBehaviorPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf NetworkTrainBehavior}$>$ {\bf NetworkTrainBehaviorPtr}}}
+\label{package_8h_adb6e0874dc796a04d0566a773cb10a71}
+
+
+Definition at line 93 of file package.h.
 
 \hypertarget{package_8h_a94063cfbabd0e2579544b9068a627763}{
 \index{package.h@{package.h}!NeuralCreatorPtr@{NeuralCreatorPtr}}
@@ -164,7 +178,7 @@ Definition at line 94 of file package.h.
 \label{package_8h_a94063cfbabd0e2579544b9068a627763}
 
 
-Definition at line 100 of file package.h.
+Definition at line 108 of file package.h.
 
 \hypertarget{package_8h_aaaf15e56f39371b5a0b5039743ba10b0}{
 \index{package.h@{package.h}!NeuralFactoryPtr@{NeuralFactoryPtr}}
@@ -173,7 +187,7 @@ Definition at line 100 of file package.h.
 \label{package_8h_aaaf15e56f39371b5a0b5039743ba10b0}
 
 
-Definition at line 99 of file package.h.
+Definition at line 107 of file package.h.
 
 \hypertarget{package_8h_a7adadf1c313313507b00cd1193db29a1}{
 \index{package.h@{package.h}!NeuralNetworkPtr@{NeuralNetworkPtr}}
@@ -182,7 +196,16 @@ Definition at line 99 of file package.h.
 \label{package_8h_a7adadf1c313313507b00cd1193db29a1}
 
 
-Definition at line 89 of file package.h.
+Definition at line 97 of file package.h.
+
+\hypertarget{package_8h_a8d64c996fa6b9b71d7f9d67e229650bf}{
+\index{package.h@{package.h}!NeuralNetworkWeakPtr@{NeuralNetworkWeakPtr}}
+\index{NeuralNetworkWeakPtr@{NeuralNetworkWeakPtr}!package.h@{package.h}}
+\subsubsection[{NeuralNetworkWeakPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::weak\_\-ptr$<${\bf NeuralNetwork}$>$ {\bf NeuralNetworkWeakPtr}}}
+\label{package_8h_a8d64c996fa6b9b71d7f9d67e229650bf}
+
+
+Definition at line 110 of file package.h.
 
 \hypertarget{package_8h_ae270e4c7c13bd8c9f08652a277ce099b}{
 \index{package.h@{package.h}!NeuronIteratorPtr@{NeuronIteratorPtr}}
@@ -191,7 +214,7 @@ Definition at line 89 of file package.h.
 \label{package_8h_ae270e4c7c13bd8c9f08652a277ce099b}
 
 
-Definition at line 91 of file package.h.
+Definition at line 99 of file package.h.
 
 \hypertarget{package_8h_ac1ea936c2c7728eb382278131652fef4}{
 \index{package.h@{package.h}!NeuronPtr@{NeuronPtr}}
@@ -200,7 +223,7 @@ Definition at line 91 of file package.h.
 \label{package_8h_ac1ea936c2c7728eb382278131652fef4}
 
 
-Definition at line 87 of file package.h.
+Definition at line 95 of file package.h.
 
 \hypertarget{package_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}{
 \index{package.h@{package.h}!NeuronRef@{NeuronRef}}
@@ -209,7 +232,16 @@ Definition at line 87 of file package.h.
 \label{package_8h_ae4f8e0af6c35f16f9f1d3588d8915cf6}
 
 
-Definition at line 83 of file package.h.
+Definition at line 89 of file package.h.
+
+\hypertarget{package_8h_a687ad68f1793905a403f187c0eda2ec1}{
+\index{package.h@{package.h}!NeuronTrainBehaviorPtr@{NeuronTrainBehaviorPtr}}
+\index{NeuronTrainBehaviorPtr@{NeuronTrainBehaviorPtr}!package.h@{package.h}}
+\subsubsection[{NeuronTrainBehaviorPtr}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost::shared\_\-ptr$<${\bf NeuronTrainBehavior}$>$ {\bf NeuronTrainBehaviorPtr}}}
+\label{package_8h_a687ad68f1793905a403f187c0eda2ec1}
+
+
+Definition at line 94 of file package.h.
 
 \hypertarget{package_8h_a3e2d414e247d33f77957e70765d161c0}{
 \index{package.h@{package.h}!NeuronWeakPtr@{NeuronWeakPtr}}
@@ -218,7 +250,7 @@ Definition at line 83 of file package.h.
 \label{package_8h_a3e2d414e247d33f77957e70765d161c0}
 
 
-Definition at line 102 of file package.h.
+Definition at line 111 of file package.h.
 
 \hypertarget{package_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}{
 \index{package.h@{package.h}!PredictBehaviorPtr@{PredictBehaviorPtr}}
@@ -227,7 +259,7 @@ Definition at line 102 of file package.h.
 \label{package_8h_a1fb2f1f8fdf1e08c42ef4bdce436af93}
 
 
-Definition at line 86 of file package.h.
+Definition at line 92 of file package.h.
 
 \hypertarget{package_8h_aff87e1c27cc15df9f3364b7cf29c85ea}{
 \index{package.h@{package.h}!PredictBehaviorRef@{PredictBehaviorRef}}
@@ -236,5 +268,5 @@ Definition at line 86 of file package.h.
 \label{package_8h_aff87e1c27cc15df9f3364b7cf29c85ea}
 
 
-Definition at line 81 of file package.h.
+Definition at line 87 of file package.h.
 

@@ -20,6 +20,8 @@ void \hyperlink{class_network_rinterface_aa2a5e2b5605382da022dd0f277f0a73f}{crea
 \item 
 Rcpp::NumericMatrix \hyperlink{class_network_rinterface_a28c63ea70e49d8771e8242107b65d62c}{predict} (Rcpp::NumericMatrix numericMatrix)
 \item 
+Rcpp::List \hyperlink{class_network_rinterface_adf8323eeb7133fdc9adf37a7755a05df}{train} (Rcpp::List parameterList)
+\item 
 size\_\-type \hyperlink{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08}{inputSize} ()
 \item 
 size\_\-type \hyperlink{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc}{outputSize} ()
@@ -99,8 +101,7 @@ Referenced by RCPP\_\-MODULE().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -120,7 +121,7 @@ Here is the caller graph for this function:
 \label{class_network_rinterface_ae82e946eb0ad4fc532803ee2e34d4e08}
 
 
-Definition at line 70 of file NetworkRinterface.cpp.
+Definition at line 102 of file NetworkRinterface.cpp.
 
 
 
@@ -138,8 +139,7 @@ Referenced by predict(), and RCPP\_\-MODULE().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,7 +159,7 @@ Here is the caller graph for this function:
 \label{class_network_rinterface_a4e5243781bd453c3abd2baea0713f7dc}
 
 
-Definition at line 76 of file NetworkRinterface.cpp.
+Definition at line 108 of file NetworkRinterface.cpp.
 
 
 
@@ -177,8 +177,7 @@ Referenced by predict(), and RCPP\_\-MODULE().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,6 +211,9 @@ Referenced by RCPP\_\-MODULE().
 \begin{DoxyCode}
 {
   BEGIN_RCPP
+
+  // VALIDATION
+
   if (!d_neuralNetwork)
     {
       throw std::runtime_error( "\nUninitialized network. Please use any of the c
@@ -231,10 +233,11 @@ Referenced by RCPP\_\-MODULE().
   std::vector<double>::iterator inputIterator(numericMatrix.begin());
   std::vector<double>::iterator outputIterator(outputMatrix.begin());
 
+  // PREDICT LOOP
   for (int i = 0; i < numericMatrix.ncol(); i++)
     {
       d_neuralNetwork->writeInput(inputIterator);
-      d_neuralNetwork->predict();
+      d_neuralNetwork->singlePatternForwardAction();
       d_neuralNetwork->readOutput(outputIterator);
     }
   return outputMatrix;
@@ -243,8 +246,7 @@ END_RCPP}
 \end{DoxyCode}
 
 
-Here is the call graph for this function:
-\nopagebreak
+Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,8 +257,7 @@ Here is the call graph for this function:
 
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -276,7 +277,7 @@ Here is the caller graph for this function:
 \label{class_network_rinterface_a3bcc22e2278cc28157b807ac190c7787}
 
 
-Definition at line 82 of file NetworkRinterface.cpp.
+Definition at line 114 of file NetworkRinterface.cpp.
 
 
 
@@ -304,8 +305,7 @@ Referenced by RCPP\_\-MODULE().
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -314,6 +314,31 @@ Here is the caller graph for this function:
 \end{figure}
 
 
+\hypertarget{class_network_rinterface_adf8323eeb7133fdc9adf37a7755a05df}{
+\index{NetworkRinterface@{NetworkRinterface}!train@{train}}
+\index{train@{train}!NetworkRinterface@{NetworkRinterface}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}Rcpp::List NetworkRinterface::train (
+\begin{DoxyParamCaption}
+\item[{Rcpp::List}]{parameterList}
+\end{DoxyParamCaption}
+)}}
+\label{class_network_rinterface_adf8323eeb7133fdc9adf37a7755a05df}
+
+
+Definition at line 77 of file NetworkRinterface.cpp.
+
+
+
+References d\_\-neuralNetwork.
+
+
+\begin{DoxyCode}
+{
+  BEGIN_RCPP
+    return d_neuralNetwork->train(parameterList);
+  END_RCPP
+}
+\end{DoxyCode}
 \hypertarget{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1}{
 \index{NetworkRinterface@{NetworkRinterface}!validate@{validate}}
 \index{validate@{validate}!NetworkRinterface@{NetworkRinterface}}
@@ -325,7 +350,7 @@ Here is the caller graph for this function:
 \label{class_network_rinterface_a1b37bfff06e29aedd525fa25137b94e1}
 
 
-Definition at line 97 of file NetworkRinterface.cpp.
+Definition at line 129 of file NetworkRinterface.cpp.
 
 
 
@@ -354,8 +379,7 @@ END_RCPP
 \end{DoxyCode}
 
 
-Here is the caller graph for this function:
-\nopagebreak
+Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -378,7 +402,7 @@ Definition at line 6 of file NetworkRinterface.h.
 
 
 
-Referenced by createFeedForwardNetwork(), inputSize(), outputSize(), predict(), show(), and validate().
+Referenced by createFeedForwardNetwork(), inputSize(), outputSize(), predict(), show(), train(), and validate().
 
 
 
