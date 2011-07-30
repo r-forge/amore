@@ -9,15 +9,21 @@ mv ../pkg/AMORE/src/classHeaders/Con.h ../pkg/AMORE/src/classHeaders/Connection.
 
 sed -e 's/public Container {/public Container<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
+sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerReverseIterator.h 
 sed -e '/public:/ a\
 friend class SimpleContainerIterator<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e '/public:/ a\
+friend class SimpleContainerReverseIterator<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
+sed -e '/public:/ a\
 friend class SimpleContainer<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
+sed -e '/public:/ a\
+friend class SimpleContainer<T>; ' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerReverseIterator.h 
 
 echo "#include \"../Container.code\" " >> ../pkg/AMORE/src/classHeaders/Container.h
 echo "#include \"../SimpleContainer.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainer.h
 echo "#include \"../Iterator.code\" " >> ../pkg/AMORE/src/classHeaders/Iterator.h
 echo "#include \"../SimpleContainerIterator.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h
+echo "#include \"../SimpleContainerReverseIterator.code\" " >> ../pkg/AMORE/src/classHeaders/SimpleContainerReverseIterator.h
 
 
 sed -e '/public:/ a\

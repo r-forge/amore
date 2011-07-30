@@ -20,7 +20,7 @@ MLPbehavior::MLPbehavior(NeuronPtr neuronPtr) :
 }
 
 void
-MLPbehavior::predict()
+MLPbehavior::singlePatternForwardAction()
 {
 
   double accumulator(d_bias);
@@ -34,8 +34,8 @@ MLPbehavior::predict()
       accumulator += weight * incomingSignalValue;
     }
   setInducedLocalField(accumulator);
-  setOutput (
-  useActivationFunctionf0());
+  setOutput (useActivationFunctionf0());
+  setOutputDerivative (useActivationFunctionf1());
 }
 
 void

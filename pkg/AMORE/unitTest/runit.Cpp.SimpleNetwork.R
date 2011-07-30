@@ -116,7 +116,7 @@ test.SimpleNetwork.Cpp.readOutput <- function() {
 
 
 ###############################################################################
-test.SimpleNetwork.Cpp.predict <- function() {	
+test.SimpleNetwork.Cpp.singlePatternForwardAction <- function() {	
 ###############################################################################		
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
@@ -133,7 +133,7 @@ test.SimpleNetwork.Cpp.predict <- function() {
 			std::vector<double>::iterator outputIterator(outputVector.begin());
 			
 			networkPtr->writeInput(inputIterator);
-			networkPtr->predict();
+			networkPtr->singlePatternForwardAction();
 			networkPtr->readOutput(outputIterator);
 			return wrap(outputVector);
 			"

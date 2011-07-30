@@ -2,7 +2,7 @@
 // This is a complementary file to classHeaders
 // Due to the behavior of C++ compilers, template classes are not compiled until needed.
 // Thus, should this file had cpp extension, no code would be generated.
-// Instead, this file is included in the classHeaders/SimpleContainerIterator.h in order to be available for the clients.
+// Instead, this file is included in the classHeaders/SimpleContainerReverseIterator.h in order to be available for the clients.
 // I believe this to be a more flexible solution than instantiating every concrete class at the end of the file.
 // As the classHeaders directory is wiped down on every execution of dia2code ---used during the development process---
 // I prefer to include the code using this file on a separate directory.
@@ -10,42 +10,47 @@
 
 
 template<typename T>
-  SimpleContainerIterator<T>::SimpleContainerIterator()
+  SimpleContainerReverseIterator<T>::SimpleContainerReverseIterator()
   {
   }
 
+
 template<typename T>
-  SimpleContainerIterator<T>::~SimpleContainerIterator()
+  SimpleContainerReverseIterator<T>::~SimpleContainerReverseIterator()
   {
   }
 
-template<typename T>
-  void
-  SimpleContainerIterator<T>::first()
-  {
-    d_current = 0;
-  }
 
 template<typename T>
   void
-  SimpleContainerIterator<T>::next()
+  SimpleContainerReverseIterator<T>::first()
   {
-    ++d_current;
+    d_current = -1+d_container->size();
   }
+
+
+template<typename T>
+  void
+  SimpleContainerReverseIterator<T>::next()
+  {
+    --d_current;
+  }
+
 
 template<typename T>
   bool
-  SimpleContainerIterator<T>::isDone()
+  SimpleContainerReverseIterator<T>::isDone()
   {
-    bool IteratorIsDone(d_current == static_cast<int>(d_container->size()));
+    bool IteratorIsDone( d_current < 0 );
     return IteratorIsDone;
   }
 
+
 template<typename T>
   T
-  SimpleContainerIterator<T>::currentItem()
+  SimpleContainerReverseIterator<T>::currentItem()
   {
-      if (isDone()) throw std::range_error("SimpleContainerIterator::currentItem  Error: IteratorOutOfBounds");
+      if (isDone()) throw std::range_error("SimpleContainerReverseIterator::currentItem  Error: IteratorOutOfBounds");
       return d_container->at(d_current);
   }
 

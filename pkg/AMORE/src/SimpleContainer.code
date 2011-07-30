@@ -45,6 +45,18 @@ template<typename T>
     return iteratorPtr;
   }
 
+
+template<typename T>
+  boost::shared_ptr<Iterator<T> >
+  SimpleContainer<T>::createReverseIterator()
+  {
+    boost::shared_ptr < SimpleContainerReverseIterator<T> > iteratorPtr( new SimpleContainerReverseIterator<T> ());
+    iteratorPtr->d_container = this;
+    iteratorPtr->d_current = -1 + this->size();
+    return iteratorPtr;
+  }
+
+
 // TODO use a factory method above
 
 

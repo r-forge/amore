@@ -20,7 +20,19 @@ SimpleNetwork::SimpleNetwork(NeuralFactory& neuralFactory) :
 }
 
 void
-SimpleNetwork::predict()
+SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
+{
+  size_type nInputs(inputSize());
+  for (size_type i = 0; i < nInputs; i++)
+    {
+      d_inputLayer->at(i)->setOutput(*iterator++);
+    }
+}
+
+
+
+void
+SimpleNetwork::singlePatternForwardAction()
 {
 
   // Hidden Layers
@@ -33,7 +45,7 @@ SimpleNetwork::predict()
           layerIterator->currentItem()->createIterator());
       for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
         {
-          neuronIterator->currentItem()->predict();
+          neuronIterator->currentItem()->singlePatternForwardAction();
         }
     }
 
@@ -42,19 +54,35 @@ SimpleNetwork::predict()
       d_outputLayer->createIterator());
   for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
     {
-      neuronIterator->currentItem()->predict();
+      neuronIterator->currentItem()->singlePatternForwardAction();
     }
 }
 
+
+
 void
-SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
+SimpleNetwork::singlePatternBackwardAction()
 {
-  size_type nInputs(inputSize());
-  for (size_type i = 0; i < nInputs; i++)
+  // Output Layers
+  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(d_outputLayer->createReverseIterator());
+  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
     {
-      d_inputLayer->at(i)->setOutput(*iterator++);
+      neuronIterator->currentItem()->singlePatternBackwardAction();
+    }
+
+  // Hidden Layers
+  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(d_hiddenLayers->createReverseIterator());
+  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
+    {
+      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator( layerIterator->currentItem()->createReverseIterator());
+      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
+        {
+          neuronIterator->currentItem()->singlePatternBackwardAction();
+        }
     }
 }
+
+
 
 void
 SimpleNetwork::readOutput(std::vector<double>::iterator& iterator)
@@ -65,6 +93,16 @@ SimpleNetwork::readOutput(std::vector<double>::iterator& iterator)
       *iterator++ = d_outputLayer->at(i)->getOutput();
     }
 }
+
+Rcpp::List
+SimpleNetwork::train(Rcpp::List parameterList)
+{
+  // TODO check train behavior and change it if need be
+  // TODO check cost function  and change it if need be
+
+  return d_networkTrainBehavior->train(parameterList);
+}
+
 
 size_type
 SimpleNetwork::inputSize()

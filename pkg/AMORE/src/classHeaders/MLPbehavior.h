@@ -11,7 +11,7 @@ public:
 friend class MLPfactory; 
   MLPbehavior (NeuronPtr neuronPtr);
 private:
-  void predict ();
+  void singlePatternForwardAction ();
   void show ();
 };
 

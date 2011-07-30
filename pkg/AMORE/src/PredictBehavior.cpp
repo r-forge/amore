@@ -21,8 +21,16 @@ PredictBehavior::useActivationFunctionf0()
 {
   NeuronPtr neuronPtr( d_neuron.lock() ) ;
   return neuronPtr->useActivationFunctionf0();
-
 }
+
+
+double
+PredictBehavior::useActivationFunctionf1()
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->useActivationFunctionf1();
+}
+
 
 ConIteratorPtr
 PredictBehavior::getConIterator()
@@ -37,6 +45,15 @@ PredictBehavior::setOutput(double output)
   NeuronPtr neuronPtr( d_neuron.lock() ) ;
   return neuronPtr->setOutput(output);
 }
+
+
+void
+PredictBehavior::setOutputDerivative(double outputDerivative)
+{
+  NeuronPtr neuronPtr( d_neuron.lock() ) ;
+  return neuronPtr->setOutputDerivative(outputDerivative);
+}
+
 
 void
 PredictBehavior::setInducedLocalField(double inducedLocalField)

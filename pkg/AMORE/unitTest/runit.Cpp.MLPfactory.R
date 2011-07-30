@@ -104,10 +104,10 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the predict results
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50));
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75));
-			neuronPtrOutput4->predict();
+			neuronPtrOutput4->singlePatternForwardAction();
 
 			NeuronPtr neuronPtrOutput5( neuralFactoryPtr->makeNeuron(5, inputLayerPtr->createIterator(), 11) );
-			neuronPtrOutput5->predict();
+			neuronPtrOutput5->singlePatternForwardAction();
 
 			outputLayerPtr->push_back(neuronPtrOutput4);
 			outputLayerPtr->push_back(neuronPtrOutput5);
