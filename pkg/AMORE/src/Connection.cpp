@@ -126,7 +126,6 @@ Con::setWeight(double weight)
   d_weight=weight;
 }
 
-
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.
  * \return true in case everything works without throwing an exception
@@ -160,5 +159,6 @@ Con::validate()
   if (Id() == NA_INTEGER)
     throw std::range_error("fromId is not finite.");
   return (true);
-END_RCPP}
+END_RCPP
+}
 

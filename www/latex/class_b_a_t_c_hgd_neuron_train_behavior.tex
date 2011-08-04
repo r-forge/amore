@@ -1,0 +1,139 @@
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior}{
+\section{BATCHgdNeuronTrainBehavior Class Reference}
+\label{class_b_a_t_c_hgd_neuron_train_behavior}\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+}
+
+
+class \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior}{BATCHgdNeuronTrainBehavior} -\/  
+
+
+
+
+{\ttfamily \#include $<$BATCHgdNeuronTrainBehavior.h$>$}
+
+
+
+Inheritance diagram for BATCHgdNeuronTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_a_t_c_hgd_neuron_train_behavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for BATCHgdNeuronTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=381pt]{class_b_a_t_c_hgd_neuron_train_behavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_a718bebef530c49fd596c9b8fed0add47}{singlePatternBackwardAction} ()=0
+\item 
+virtual void \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_a889aa3bba7cef4fe324d8531bfa76644}{endOfEpochAction} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_a4e01704e70a1ddb84f7dbabed742fa2e}{d\_\-delta}
+\item 
+double \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_a5abbdd1cacdd131657f8228740f7ed84}{d\_\-learningRate}
+\item 
+std::vector$<$ double $>$ \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_acd99745752a709f6eb53ed16d1da2805}{d\_\-sum\_\-delta\_\-x}
+\item 
+double \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior_a05667982d0be814e84f3bd58fd6b2d69}{d\_\-sum\_\-delta\_\-bias}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_b_a_t_c_hgd_neuron_train_behavior}{BATCHgdNeuronTrainBehavior} -\/ 
+
+Definition at line 5 of file BATCHgdNeuronTrainBehavior.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_a889aa3bba7cef4fe324d8531bfa76644}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!endOfEpochAction@{endOfEpochAction}}
+\index{endOfEpochAction@{endOfEpochAction}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{endOfEpochAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void BATCHgdNeuronTrainBehavior::endOfEpochAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_a889aa3bba7cef4fe324d8531bfa76644}
+
+
+Implements \hyperlink{class_batch_neuron_train_behavior_abcba7ee559f8b016ff1a96d5d92ae169}{BatchNeuronTrainBehavior}.
+
+
+
+Implemented in \hyperlink{class_b_a_t_c_hgd_hidden_neuron_train_behavior_a31cac1d782120cc798c7ef0492d32eed}{BATCHgdHiddenNeuronTrainBehavior}, and \hyperlink{class_b_a_t_c_hgd_output_neuron_train_behavior_accdfa1c88ee68d0968ddf945df621e13}{BATCHgdOutputNeuronTrainBehavior}.
+
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_a718bebef530c49fd596c9b8fed0add47}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!singlePatternBackwardAction@{singlePatternBackwardAction}}
+\index{singlePatternBackwardAction@{singlePatternBackwardAction}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{singlePatternBackwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void BATCHgdNeuronTrainBehavior::singlePatternBackwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_a718bebef530c49fd596c9b8fed0add47}
+
+
+Implements \hyperlink{class_batch_neuron_train_behavior_a8cac2df1e1e2bac29ddc8567676dd74d}{BatchNeuronTrainBehavior}.
+
+
+
+Implemented in \hyperlink{class_b_a_t_c_hgd_hidden_neuron_train_behavior_a68ca3b8816a87610ff07ba2745345956}{BATCHgdHiddenNeuronTrainBehavior}, and \hyperlink{class_b_a_t_c_hgd_output_neuron_train_behavior_a327178e6d04079ca137877a9082c2963}{BATCHgdOutputNeuronTrainBehavior}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_a4e01704e70a1ddb84f7dbabed742fa2e}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!d\_\-delta@{d\_\-delta}}
+\index{d\_\-delta@{d\_\-delta}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{d\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf BATCHgdNeuronTrainBehavior::d\_\-delta}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_a4e01704e70a1ddb84f7dbabed742fa2e}
+
+
+Definition at line 8 of file BATCHgdNeuronTrainBehavior.h.
+
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_a5abbdd1cacdd131657f8228740f7ed84}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!d\_\-learningRate@{d\_\-learningRate}}
+\index{d\_\-learningRate@{d\_\-learningRate}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{d\_\-learningRate}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf BATCHgdNeuronTrainBehavior::d\_\-learningRate}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_a5abbdd1cacdd131657f8228740f7ed84}
+
+
+Definition at line 9 of file BATCHgdNeuronTrainBehavior.h.
+
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_a05667982d0be814e84f3bd58fd6b2d69}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!d\_\-sum\_\-delta\_\-bias@{d\_\-sum\_\-delta\_\-bias}}
+\index{d\_\-sum\_\-delta\_\-bias@{d\_\-sum\_\-delta\_\-bias}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{d\_\-sum\_\-delta\_\-bias}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf BATCHgdNeuronTrainBehavior::d\_\-sum\_\-delta\_\-bias}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_a05667982d0be814e84f3bd58fd6b2d69}
+
+
+Definition at line 11 of file BATCHgdNeuronTrainBehavior.h.
+
+\hypertarget{class_b_a_t_c_hgd_neuron_train_behavior_acd99745752a709f6eb53ed16d1da2805}{
+\index{BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}!d\_\-sum\_\-delta\_\-x@{d\_\-sum\_\-delta\_\-x}}
+\index{d\_\-sum\_\-delta\_\-x@{d\_\-sum\_\-delta\_\-x}!BATCHgdNeuronTrainBehavior@{BATCHgdNeuronTrainBehavior}}
+\subsubsection[{d\_\-sum\_\-delta\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$double$>$ {\bf BATCHgdNeuronTrainBehavior::d\_\-sum\_\-delta\_\-x}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_a_t_c_hgd_neuron_train_behavior_acd99745752a709f6eb53ed16d1da2805}
+
+
+Definition at line 10 of file BATCHgdNeuronTrainBehavior.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/classHeaders/\hyperlink{_b_a_t_c_hgd_neuron_train_behavior_8h}{BATCHgdNeuronTrainBehavior.h}\end{DoxyCompactItemize}

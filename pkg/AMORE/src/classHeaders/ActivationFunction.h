@@ -5,12 +5,14 @@ class ActivationFunction {
   // Attributes
 protected:
   NeuronWeakPtr d_neuron;
+  Rcpp::XPtr<CppFunctionPointer> d_f0;
+  Rcpp::XPtr<CppFunctionPointer> d_f1;
   // Operations
 public:
-  virtual double f0 () = 0;
-  virtual double f1 () = 0;
+  ActivationFunction (NeuronPtr neuronPtr, Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1);
+  double f0 ();
+  double f1 ();
 protected:
-  ActivationFunction (NeuronPtr neuronPtr);
   double getInducedLocalField ();
 };
 

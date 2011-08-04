@@ -1,8 +1,8 @@
 #pragma once
-#include "NeuronTrainBehavior.h"
+#include "MLPNeuronTrainBehavior.h"
 
 /// class BatchNeuronTrainBehavior - 
-class BatchNeuronTrainBehavior : public NeuronTrainBehavior {
+class BatchNeuronTrainBehavior : public MLPNeuronTrainBehavior {
   // Operations
 public:
   virtual void singlePatternBackwardAction () = 0;

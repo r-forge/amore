@@ -8,8 +8,9 @@ public:
   SimpleNetwork (NeuralFactory& neuralFactory);
 private:
   void writeInput (std::vector<double>::iterator& iterator);
+  void writeTarget (std::vector<double>::iterator& iterator);
   void singlePatternForwardAction ();
-  void singlePatternBackwardAction ();
+  // void singlePatternBackwardAction ();
   void readOutput (std::vector<double>::iterator& iterator);
   Rcpp::List train (Rcpp::List parameterList);
   size_type inputSize ();

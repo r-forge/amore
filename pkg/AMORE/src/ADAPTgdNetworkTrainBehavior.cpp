@@ -8,7 +8,6 @@
 ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
 {
 
-  int numberOfEpochs = as<int> (parameterList["numberOfEpochs"]);
   Rcpp::NumericMatrix inputMatrix = as<Rcpp::NumericMatrix> (
       parameterList["inputMatrix"]);
   Rcpp::NumericMatrix targetMatrix = as<Rcpp::NumericMatrix> (
@@ -17,7 +16,7 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
   int showStep = as<int> (parameterList["showStep"]);
 
 
-  // Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
+ // Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
   std::vector<double>::iterator inputIterator(inputMatrix.begin());
   std::vector<double>::iterator targetIterator(targetMatrix.begin());
 
@@ -31,7 +30,7 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
             {
               d_neuralNetwork->writeInput(inputIterator);
               d_neuralNetwork->singlePatternForwardAction();
-
+              d_neuralNetwork->writeTarget(targetIterator);
               d_neuralNetwork->singlePatternBackwardAction();
             }
         }

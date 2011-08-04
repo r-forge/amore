@@ -9,8 +9,10 @@
 #include "classHeaders/ActivationFunction.h"
 //=========================================================================================================
 
-ActivationFunction::ActivationFunction(NeuronPtr neuronPtr) :
-  d_neuron(neuronPtr)
+
+ActivationFunction::ActivationFunction(NeuronPtr neuronPtr,
+    Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1) :
+  d_neuron(neuronPtr), d_f0(f0), d_f1(f1)
 {
 }
 
@@ -21,3 +23,14 @@ ActivationFunction::getInducedLocalField()
   return neuronPtr->getInducedLocalField();
 }
 
+double
+ActivationFunction::f0()
+{
+  return (*d_f0)(getInducedLocalField());
+}
+
+double
+ActivationFunction::f1()
+{
+  return (*d_f1)(getInducedLocalField());
+}

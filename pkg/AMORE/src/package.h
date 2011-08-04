@@ -47,6 +47,7 @@ using namespace Rcpp;
 
 class ActivationFunction;
 class Con;
+class CostFunction;
 template<typename T>
   class Container;
 class Identity;
@@ -82,13 +83,19 @@ class TanhFactory;
 #endif
 
 typedef int Handler;
+typedef double (*CppFunctionPointer)(double);
+
 
 typedef boost::reference_wrapper<PredictBehavior> ActivationFunctionRef;
+typedef boost::shared_ptr<CostFunction> CostFunctionPtr;
+
+
 typedef boost::reference_wrapper<PredictBehavior> PredictBehaviorRef;
 // typedef boost::reference_wrapper<TrainingBehavior> TrainingBehaviorRef;
 typedef boost::reference_wrapper<Neuron> NeuronRef;
 
 typedef boost::shared_ptr<ActivationFunction> ActivationFunctionPtr;
+typedef boost::shared_ptr<CostFunction> CostFunctionPtr;
 typedef boost::shared_ptr<PredictBehavior> PredictBehaviorPtr;
 typedef boost::shared_ptr<NetworkTrainBehavior> NetworkTrainBehaviorPtr;
 typedef boost::shared_ptr<NeuronTrainBehavior> NeuronTrainBehaviorPtr;
@@ -96,13 +103,13 @@ typedef boost::shared_ptr<Neuron> NeuronPtr;
 typedef boost::shared_ptr<Con> ConPtr;
 typedef boost::shared_ptr<NeuralNetwork> NeuralNetworkPtr;
 
-typedef boost::shared_ptr<Iterator<NeuronPtr> > NeuronIteratorPtr;
-typedef boost::shared_ptr<Iterator<ConPtr> > ConIteratorPtr;
-
 typedef boost::shared_ptr<Container<NeuronPtr> > LayerPtr;
 typedef boost::shared_ptr<Container<LayerPtr> > LayerContainerPtr;
-
 typedef boost::shared_ptr<Container<ConPtr> > ConContainerPtr;
+
+typedef boost::shared_ptr<Iterator<LayerPtr> > LayerIteratorPtr;
+typedef boost::shared_ptr<Iterator<NeuronPtr> > NeuronIteratorPtr;
+typedef boost::shared_ptr<Iterator<ConPtr> > ConIteratorPtr;
 
 typedef boost::shared_ptr<NeuralFactory> NeuralFactoryPtr;
 typedef boost::shared_ptr<NeuralCreator> NeuralCreatorPtr;

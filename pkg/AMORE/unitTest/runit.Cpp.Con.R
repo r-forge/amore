@@ -9,7 +9,7 @@ test.Con.Cpp.Constructor <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- " 
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 			
 			Con con( *neuronPtr , 4.5 );
@@ -23,6 +23,12 @@ test.Con.Cpp.Constructor <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 4.5)
+	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp: In member function 'virtual Rcpp::List SimpleNetwork::train(Rcpp::List)':
+	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp:110: warning: control reaches end of non-void function
+	# 
+	# From:	 1 	 Weight= 	 4.500000[1] TRUE
+	# [1] TRUE
+
 	# From:	 1 	 Weight= 	 4.500000 
 	# [1] TRUE
 	# [1] TRUE
@@ -33,7 +39,7 @@ test.Con.Cpp.getNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(12) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 9.8) ); 
 	
@@ -51,7 +57,7 @@ test.Con.Cpp.setNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr1( neuralFactoryPtr->makeNeuron(12) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr1, 9.7) ); 
 	
@@ -79,7 +85,7 @@ test.Con.Cpp.Id <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(9) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 8.7) ); 
 	
@@ -96,7 +102,7 @@ test.Con.Cpp.getWeight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(16) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
 	
@@ -113,7 +119,7 @@ test.Con.Cpp.setWeight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory);
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(16) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
 			std::vector<double> result;
@@ -134,7 +140,7 @@ test.Con.Cpp.show <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(16) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4) ); 
 	
@@ -153,7 +159,7 @@ test.Con.Cpp.validate_weight <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(16) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 12.4/0.0) ); 
 		
@@ -174,7 +180,7 @@ test.Con.Cpp.validate_from <- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 2.7) ); 
 		

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$class_a_d_a_p_tgd_hidden_neuron_train_behavior.html" title="class ADAPTgdHiddenNeuronTrainBehavior &#45;" alt="" coords="5,443,259,535"/>
+<area shape="rect" id="node9" href="$class_a_d_a_p_tgd_output_neuron_train_behavior.html" title="class ADAPTgdOutputNeuronTrainBehavior &#45;" alt="" coords="284,443,537,535"/>
+<area shape="rect" id="node2" href="$class_adapt_neuron_train_behavior.html" title="class AdaptNeuronTrainBehavior &#45;" alt="" coords="158,147,383,239"/>
+<area shape="rect" id="node4" href="$class_neuron_train_behavior.html" title="class NeuronTrainBehavior &#45;" alt="" coords="158,6,383,98"/>
+</map>

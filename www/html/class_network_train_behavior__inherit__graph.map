@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_adapt_network_train_behavior.html" title="class AdaptNetworkTrainBehavior &#45;" alt="" coords="271,147,465,224"/>
+<area shape="rect" id="node9" href="$class_batch_network_train_behavior.html" title="class BatchNetworkTrainBehavior &#45;" alt="" coords="526,147,719,224"/>
+<area shape="rect" id="node5" href="$class_a_d_a_p_tgd_network_train_behavior.html" title="class ADAPTgdNetworkTrainBehavior &#45;" alt="" coords="5,272,224,349"/>
+<area shape="rect" id="node7" href="$class_a_d_a_p_tgdwm_network_train_behavior.html" title="class ADAPTgdwmNetworkTrainBehavior &#45;" alt="" coords="248,272,488,349"/>
+<area shape="rect" id="node11" href="$class_b_a_t_c_hgd_network_train_behavior.html" title="class BATCHgdNetworkTrainBehavior &#45;" alt="" coords="513,272,732,349"/>
+<area shape="rect" id="node13" href="$class_b_a_t_c_hgdwm_network_train_behavior.html" title="class BATCHgdwmNetworkTrainBehavior &#45;" alt="" coords="757,272,1000,349"/>
+</map>

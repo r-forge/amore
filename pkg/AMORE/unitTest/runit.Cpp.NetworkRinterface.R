@@ -9,11 +9,14 @@ test.NetworkRinterface.Cpp.show_UninitializedNetwork <- function() {
 			NetworkRinterface networkRinterface;
 			// Test
 			networkRinterface.show();
+			networkRinterface.validate();
 			return wrap(true);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun()	
+	checkException(result <- testCodefun(),silent=TRUE)	
+	# 
 	# Uninitialized network. Please use any of the create methods available.
+	# [1] TRUE
 }
 
 
@@ -32,6 +35,7 @@ test.NetworkRinterface.Cpp.show_InitializedNetwork <- function() {
 			"
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun(c(2,4,5,3))	
+	checkTrue(result)
 	
 	# 
 	# 
@@ -214,12 +218,72 @@ test.NetworkRinterface.Cpp.createFeedForwardNetwork <- function() {
 			NetworkRinterface networkRinterface;
 			// Test
 			networkRinterface.createFeedForwardNetwork(numberOfNeurons);
-			networkRinterface.show();
-			return wrap(true);
+			return wrap( networkRinterface.validate() );
+			
 			"
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun(c(2,4,5,3))	
-	
-	
+	checkTrue(result)
+	# [1] TRUE
 }
 
+
+
+###############################################################################
+test.NetworkRinterface.Cpp.predict <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Data set up			
+			NetworkRinterface networkRinterface;
+			// Test
+			networkRinterface.createFeedForwardNetwork(numberOfNeurons);
+			Rcpp::NumericMatrix inputMatrix (input); 
+			return wrap( networkRinterface.predict(inputMatrix) );
+			
+			"
+	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric", input="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun(numberOfNeurons=c(2,4,5,3), input=matrix(rnorm(300), ncol=150, nrow=2))	
+	checkEquals(dim(result), c(3,150))
+	checkEquals(sum(is.na(result)), 0)
+	checkTrue(sum(abs(result>0))> 0)
+	# [1] TRUE
+	# [1] TRUE
+	# [1] TRUE
+}
+
+
+###############################################################################
+test.NetworkRinterface.Cpp.inputSize <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Data set up			
+			NetworkRinterface networkRinterface;
+			// Test
+			networkRinterface.createFeedForwardNetwork(numberOfNeurons);
+			return wrap(  networkRinterface.inputSize()  );
+			"
+	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun(c(2,4,5,3))	
+	checkEquals(result,2)
+	# [1] TRUE
+}
+
+
+###############################################################################
+test.NetworkRinterface.Cpp.outputSize <- function() {	
+###############################################################################	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- "
+			// Data set up			
+			NetworkRinterface networkRinterface;
+			// Test
+			networkRinterface.createFeedForwardNetwork(numberOfNeurons);
+			return wrap( networkRinterface.outputSize() );
+			"
+	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun(c(2,4,5,3))	
+	checkEquals(result,3)
+	# [1] TRUE
+}

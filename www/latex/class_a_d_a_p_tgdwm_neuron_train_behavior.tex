@@ -1,0 +1,150 @@
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior}{
+\section{ADAPTgdwmNeuronTrainBehavior Class Reference}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior}\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+}
+
+
+class \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior}{ADAPTgdwmNeuronTrainBehavior} -\/  
+
+
+
+
+{\ttfamily \#include $<$ADAPTgdwmNeuronTrainBehavior.h$>$}
+
+
+
+Inheritance diagram for ADAPTgdwmNeuronTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_a_d_a_p_tgdwm_neuron_train_behavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ADAPTgdwmNeuronTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_a_d_a_p_tgdwm_neuron_train_behavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_af3524a3adf772e90a05f3d2693377d02}{singlePatternBackwardAction} ()=0
+\item 
+virtual void \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_aa280eefc693a37f4a0ac33f47684dbb2}{endOfEpochAction} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_a06fc2faa99b36cd6fae4340dc8a0f1bf}{d\_\-delta}
+\item 
+double \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_a5864033f42a4683baad96e195fadab56}{d\_\-learningRate}
+\item 
+double \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_a51a564625b458fcb7ee469de1e00ffd7}{d\_\-momentum}
+\item 
+std::vector$<$ double $>$ \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_adcd67f1342ed2f85fa638215c5be4617}{d\_\-formerWeightChange}
+\item 
+double \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior_a30788883d9671facfea7b7d2ff16b5e7}{d\_\-formerBiasChange}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_a_d_a_p_tgdwm_neuron_train_behavior}{ADAPTgdwmNeuronTrainBehavior} -\/ 
+
+Definition at line 5 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_aa280eefc693a37f4a0ac33f47684dbb2}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!endOfEpochAction@{endOfEpochAction}}
+\index{endOfEpochAction@{endOfEpochAction}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{endOfEpochAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ADAPTgdwmNeuronTrainBehavior::endOfEpochAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_aa280eefc693a37f4a0ac33f47684dbb2}
+
+
+Implements \hyperlink{class_adapt_neuron_train_behavior_a9345a0885fb415f62c02aba721b264a7}{AdaptNeuronTrainBehavior}.
+
+
+
+Implemented in \hyperlink{class_a_d_a_p_tgdwm_hidden_neuron_train_behavior_a9d74e4001b26992f7bc8c9fb33e4981a}{ADAPTgdwmHiddenNeuronTrainBehavior}, and \hyperlink{class_a_d_a_p_tgdwm_output_neuron_train_behavior_a1bafb52aa3c961a0cfba288a6044f880}{ADAPTgdwmOutputNeuronTrainBehavior}.
+
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_af3524a3adf772e90a05f3d2693377d02}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!singlePatternBackwardAction@{singlePatternBackwardAction}}
+\index{singlePatternBackwardAction@{singlePatternBackwardAction}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{singlePatternBackwardAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ADAPTgdwmNeuronTrainBehavior::singlePatternBackwardAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_af3524a3adf772e90a05f3d2693377d02}
+
+
+Implements \hyperlink{class_adapt_neuron_train_behavior_aee5cc56b9437dc549975d99f3fc084fd}{AdaptNeuronTrainBehavior}.
+
+
+
+Implemented in \hyperlink{class_a_d_a_p_tgdwm_hidden_neuron_train_behavior_aaee129502dae1ddad997f23faf0063b1}{ADAPTgdwmHiddenNeuronTrainBehavior}, and \hyperlink{class_a_d_a_p_tgdwm_output_neuron_train_behavior_a4bb0ec6e24b4e42df0fa985fe0a5d309}{ADAPTgdwmOutputNeuronTrainBehavior}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_a06fc2faa99b36cd6fae4340dc8a0f1bf}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!d\_\-delta@{d\_\-delta}}
+\index{d\_\-delta@{d\_\-delta}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{d\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ADAPTgdwmNeuronTrainBehavior::d\_\-delta}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_a06fc2faa99b36cd6fae4340dc8a0f1bf}
+
+
+Definition at line 8 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_a30788883d9671facfea7b7d2ff16b5e7}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!d\_\-formerBiasChange@{d\_\-formerBiasChange}}
+\index{d\_\-formerBiasChange@{d\_\-formerBiasChange}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{d\_\-formerBiasChange}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ADAPTgdwmNeuronTrainBehavior::d\_\-formerBiasChange}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_a30788883d9671facfea7b7d2ff16b5e7}
+
+
+Definition at line 12 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_adcd67f1342ed2f85fa638215c5be4617}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!d\_\-formerWeightChange@{d\_\-formerWeightChange}}
+\index{d\_\-formerWeightChange@{d\_\-formerWeightChange}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{d\_\-formerWeightChange}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$double$>$ {\bf ADAPTgdwmNeuronTrainBehavior::d\_\-formerWeightChange}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_adcd67f1342ed2f85fa638215c5be4617}
+
+
+Definition at line 11 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_a5864033f42a4683baad96e195fadab56}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!d\_\-learningRate@{d\_\-learningRate}}
+\index{d\_\-learningRate@{d\_\-learningRate}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{d\_\-learningRate}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ADAPTgdwmNeuronTrainBehavior::d\_\-learningRate}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_a5864033f42a4683baad96e195fadab56}
+
+
+Definition at line 9 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+\hypertarget{class_a_d_a_p_tgdwm_neuron_train_behavior_a51a564625b458fcb7ee469de1e00ffd7}{
+\index{ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}!d\_\-momentum@{d\_\-momentum}}
+\index{d\_\-momentum@{d\_\-momentum}!ADAPTgdwmNeuronTrainBehavior@{ADAPTgdwmNeuronTrainBehavior}}
+\subsubsection[{d\_\-momentum}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ADAPTgdwmNeuronTrainBehavior::d\_\-momentum}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_a_d_a_p_tgdwm_neuron_train_behavior_a51a564625b458fcb7ee469de1e00ffd7}
+
+
+Definition at line 10 of file ADAPTgdwmNeuronTrainBehavior.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/classHeaders/\hyperlink{_a_d_a_p_tgdwm_neuron_train_behavior_8h}{ADAPTgdwmNeuronTrainBehavior.h}\end{DoxyCompactItemize}

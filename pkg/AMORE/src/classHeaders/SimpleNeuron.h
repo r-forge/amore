@@ -11,6 +11,9 @@ private:
   void setInducedLocalField (double inducedLocalField);
   double getOutput ();
   void setOutput (double output);
+  double getTarget ();
+  void setTarget (double target);
+  double getOutputDerivative ();
   void setOutputDerivative (double outputDerivative);
   Handler getId ();
   void setId (Handler Id);
@@ -22,7 +25,7 @@ private:
   double useActivationFunctionf0 ();
   double useActivationFunctionf1 ();
   void singlePatternForwardAction ();
-  void singlePatternBackwardAction ();
+  // void singlePatternBackwardAction ();
   // void adjustParameters ();
   void show ();
   bool validate ();

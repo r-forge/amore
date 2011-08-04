@@ -20,6 +20,7 @@ SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :
 {
 }
 
+
 double
 SimpleNeuron::getInducedLocalField()
 {
@@ -46,17 +47,40 @@ SimpleNeuron::setOutput(double output)
 
 
 
+double
+SimpleNeuron::getTarget()
+{
+  return d_target;
+}
+
+void
+SimpleNeuron::setTarget(double target)
+{
+  d_target = target;
+}
+
+
+double
+SimpleNeuron::getOutputDerivative()
+{
+  return d_outputDerivative ;
+}
+
+
+
 void
 SimpleNeuron::setOutputDerivative(double outputDerivative)
 {
   d_outputDerivative = outputDerivative;
 }
 
+
 Handler
 SimpleNeuron::getId()
 {
   return d_Id;
 }
+
 
 void
 SimpleNeuron::setId(Handler Id)
@@ -76,11 +100,13 @@ SimpleNeuron::addCon(ConPtr conPtr)
   d_nCons->push_back(conPtr);
 }
 
+
 void
 SimpleNeuron::setActivationFunction(ActivationFunctionPtr activationFunctionPtr)
 {
   d_activationFunction = activationFunctionPtr;
 }
+
 
 void
 SimpleNeuron::setPredictBehavior(PredictBehaviorPtr predictBehaviorPtr)
@@ -88,12 +114,13 @@ SimpleNeuron::setPredictBehavior(PredictBehaviorPtr predictBehaviorPtr)
   d_predictBehavior = predictBehaviorPtr;
 }
 
+
+
 double
 SimpleNeuron::useActivationFunctionf0()
 {
   return d_activationFunction->f0();
 }
-
 
 
 double
@@ -110,12 +137,14 @@ SimpleNeuron::singlePatternForwardAction()
   d_predictBehavior->singlePatternForwardAction();
 }
 
+#if 0
 void
 SimpleNeuron::singlePatternBackwardAction()
 {
   d_neuronTrainBehavior->singlePatternBackwardAction();
-}
 
+}
+#endif
 
 
 void
@@ -152,8 +181,8 @@ SimpleNeuron::show()
         }
       Rprintf("\n-----------------------------------");
       d_predictBehavior->show();
-
       Rprintf("\n output: %lf", d_output);
+      Rprintf("\n target: %lf", d_target);
       Rprintf("\n-----------------------------------");
       d_nCons->show();
       Rprintf("\n-----------------------------------");
@@ -165,7 +194,7 @@ SimpleNeuron::validate()
 {
   BEGIN_RCPP
   if (getId() == NA_INTEGER ) throw std::range_error("[C++ SimpleNeuron::validate]: Error, Id is NA.");
-  // nCons.validate();
+    d_nCons->validate();
   return (TRUE);
 END_RCPP}
 

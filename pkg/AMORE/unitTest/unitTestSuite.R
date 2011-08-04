@@ -1,5 +1,7 @@
 # 
-# Run unit tests and store the results in a html file
+# 
+
+# Run unit tests and report the results in a html file
 # Author: mcasl
 ###############################################################################
 

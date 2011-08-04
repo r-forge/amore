@@ -7,7 +7,6 @@
 //=========================================================================================================
 
 
-
 #include "package.h"
 #include "classHeaders/Container.h"
 #include "classHeaders/Neuron.h"
@@ -21,9 +20,13 @@ SimpleNeuralCreator::SimpleNeuralCreator()
 }
 
 NeuralNetworkPtr
-SimpleNeuralCreator::createFeedForwardNetwork(std::vector<int> numberOfNeurons, NeuralFactory& hiddenLayersFactory, NeuralFactory& outputLayerFactory)
+SimpleNeuralCreator::createFeedForwardNetwork(NeuralFactory& neuralFactory,
+    std::vector<int> numberOfNeurons,
+    Rcpp::List hiddenLayersActivationFunction,
+    Rcpp::List outputLayerActivationFunction)
 {
-  NeuralNetworkPtr neuralNetworkPtr(outputLayerFactory.makeNeuralNetwork(outputLayerFactory));
+  NeuralNetworkPtr neuralNetworkPtr(
+      neuralFactory.makeNeuralNetwork(neuralFactory));
   NeuronPtr neuronPtr;
 
   if (numberOfNeurons.size() <= 2)
@@ -41,13 +44,13 @@ SimpleNeuralCreator::createFeedForwardNetwork(std::vector<int> numberOfNeurons, 
 
   std::vector<int>::iterator itr1 = numberOfNeurons.begin();
   int totalNumberOfNeurons = *itr1;
-  for (std::vector<int>::iterator itr2 = 1+itr1; itr2 != numberOfNeurons.end(); ++itr2, ++itr1)
+  for (std::vector<int>::iterator itr2 = 1 + itr1; itr2
+      != numberOfNeurons.end(); ++itr2, ++itr1)
     {
       totalNumberOfNeurons += *itr2;
       totalAmountOfParameters += (*itr2) * (*itr1); //integer multiplication
     }
   totalAmountOfParameters += totalNumberOfNeurons;
-
 
   //============================================================
   // Neuron insertion
@@ -56,35 +59,42 @@ SimpleNeuralCreator::createFeedForwardNetwork(std::vector<int> numberOfNeurons, 
   //Input Layer
   for (int i = 0; i < numberOfNeurons.at(0); ++i)
     {
-      neuronPtr = outputLayerFactory.makeNeuron(neuronId++); // It's irrelevant whether to use outputLayerFactory o hiddenLayersFactory as inputFactory
+      neuronPtr = neuralFactory.makeNeuron(neuronId++);
       neuralNetworkPtr->d_inputLayer->push_back(neuronPtr);
     }
 
-
   // Hidden layers
+  Rcpp::XPtr < CppFunctionPointer > f0XPtr = hiddenLayersActivationFunction["f0"];
+  Rcpp::XPtr < CppFunctionPointer > f1XPtr = hiddenLayersActivationFunction["f1"];
 
   for (int i = 0; i < numberOfNeurons.at(1); ++i)
-     {
-       neuronPtr = hiddenLayersFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_inputLayer->createIterator(), totalAmountOfParameters);
-       neuralNetworkPtr->d_hiddenLayers->at(0)->push_back(neuronPtr);
-     }
+    {
 
-  unsigned int layerItr = 2 ;
+      neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_inputLayer->createIterator(), totalAmountOfParameters);
+      neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
+      neuralNetworkPtr->d_hiddenLayers->at(0)->push_back(neuronPtr);
+    }
+
+  unsigned int layerItr = 2;
   for (; layerItr < (-1 + numberOfNeurons.size()); ++layerItr)
     {
-      neuralNetworkPtr->d_hiddenLayers->push_back( hiddenLayersFactory.makeLayer() ) ;
+      neuralNetworkPtr->d_hiddenLayers->push_back( neuralFactory.makeLayer() );
       for (int i = 0; i < numberOfNeurons.at(layerItr); ++i)
         {
-          neuronPtr = hiddenLayersFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr-2)->createIterator(), totalAmountOfParameters);
-          neuralNetworkPtr->d_hiddenLayers->at(layerItr-1)->push_back(neuronPtr);
+          neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(), totalAmountOfParameters);
+          neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
+          neuralNetworkPtr->d_hiddenLayers->at(layerItr - 1)->push_back(neuronPtr);
         }
     }
 
-
   //Output Layer
+  f0XPtr = outputLayerActivationFunction["f0"];
+  f1XPtr = outputLayerActivationFunction["f1"];
+
   for (int i = 0; i < numberOfNeurons.back(); ++i)
     {
-      neuronPtr = outputLayerFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr-2)->createIterator() , totalAmountOfParameters);
+      neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(), totalAmountOfParameters);
+      neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
       neuralNetworkPtr->d_outputLayer->push_back(neuronPtr);
     }
 

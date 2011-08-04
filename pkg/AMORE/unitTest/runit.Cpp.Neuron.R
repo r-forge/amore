@@ -7,7 +7,7 @@ test.Neuron.Cpp.getId <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 		// Test
 			std::vector<Handler> result;
@@ -29,7 +29,7 @@ test.Neuron.Cpp.setId <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 		// Test
 			std::vector<Handler> result;
@@ -56,7 +56,7 @@ test.Neuron.Cpp.Validate_IdIsNa <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			//Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
 			neuronPtr->validate();			
 			"
@@ -73,7 +73,7 @@ test.Neuron.Cpp.Validate_EmptyCon <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			//Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(12) );
 			neuronPtr->validate();			// An empty con does not throw exception
 			return wrap( neuronPtr->getId() );			

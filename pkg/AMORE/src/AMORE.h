@@ -53,8 +53,9 @@ using namespace Rcpp;
 class ActivationFunction;
 class Con;
 template<typename T> class Container;
-class Identity;
-class IdentityFactory;
+class CostFunction;
+class classNoTrainBehaviorFactory;
+
 class Identity;
 template<typename T> class Iterator;
 class MLPbehavior;
@@ -75,7 +76,6 @@ class SimpleNetwork;
 class SimpleNeuralCreator;
 class SimpleNeuron;
 class Tanh;
-class TanhFactory;
 
 
 
@@ -87,15 +87,23 @@ class TrainingBehavior;
 #endif
 
 typedef int Handler;
+typedef double (*CppFunctionPointer)(double);
+
+double Tanh_f0(double inducedLocalField) { return tanh(inducedLocalField); }
+double Tanh_f1(double inducedLocalField) { double tanhx = tanh(inducedLocalField); return 1-tanhx*tanhx;}
+double default_f0(double inducedLocalField) { return NA_REAL; }
+double default_f1(double inducedLocalField) { return NA_REAL; }
 
 
-typedef boost::reference_wrapper<PredictBehavior> ActivationFunctionRef;
-typedef boost::reference_wrapper<PredictBehavior> PredictBehaviorRef;
-typedef boost::reference_wrapper<TrainingBehavior> TrainingBehaviorRef;
+// typedef boost::reference_wrapper<PredictBehavior> ActivationFunctionRef;
+// typedef boost::reference_wrapper<PredictBehavior> PredictBehaviorRef;
+// typedef boost::reference_wrapper<TrainingBehavior> TrainingBehaviorRef;
+
 typedef boost::reference_wrapper<Neuron> NeuronRef;
 
 
 typedef boost::shared_ptr<ActivationFunction> ActivationFunctionPtr;
+typedef boost::shared_ptr<CostFunction> CostFunctionPtr;
 typedef boost::shared_ptr<PredictBehavior> PredictBehaviorPtr;
 typedef boost::shared_ptr<NetworkTrainBehavior> NetworkTrainBehaviorPtr;
 typedef boost::shared_ptr<NeuronTrainBehavior> NeuronTrainBehaviorPtr;
@@ -103,13 +111,14 @@ typedef boost::shared_ptr<Neuron> NeuronPtr;
 typedef boost::shared_ptr<Con> ConPtr;
 typedef boost::shared_ptr<NeuralNetwork> NeuralNetworkPtr;
 
-
-typedef boost::shared_ptr< Iterator<NeuronPtr> >NeuronIteratorPtr;
-typedef boost::shared_ptr< Iterator<ConPtr> > ConIteratorPtr;
-
 typedef boost::shared_ptr< Container<NeuronPtr > > LayerPtr;
 typedef boost::shared_ptr< Container< LayerPtr > > LayerContainerPtr;
 typedef boost::shared_ptr< Container<ConPtr> > ConContainerPtr;
+
+
+typedef boost::shared_ptr< Iterator<LayerPtr> > LayerIteratorPtr;
+typedef boost::shared_ptr< Iterator<NeuronPtr> > NeuronIteratorPtr;
+typedef boost::shared_ptr< Iterator<ConPtr> > ConIteratorPtr;
 
 typedef boost::shared_ptr< NeuralFactory > NeuralFactoryPtr;
 typedef boost::shared_ptr< NeuralCreator > NeuralCreatorPtr;
@@ -118,54 +127,58 @@ typedef boost::weak_ptr<NeuralNetwork> NeuralNetworkWeakPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
 #include "classHeaders/Connection.h"
-#include "classHeaders/ActivationFunction.h"
-#include "classHeaders/Tanh.h"
-#include "classHeaders/Identity.h"
-
-#include "classHeaders/PredictBehavior.h"
-#include "classHeaders/MLPBehavior.h"
-#include "classHeaders/NeuronTrainBehavior.h"
-#include "classHeaders/NetworkTrainBehavior.h"
-
 #include "classHeaders/Neuron.h"
 #include "classHeaders/SimpleNeuron.h"
-#include "classHeaders/NeuralFactory.h"
-#include "classHeaders/MLPfactory.h"
-#include "classHeaders/TanhFactory.h"
-#include "classHeaders/IdentityFactory.h"
-
-
-#include "classHeaders/NeuralNetwork.h"
-#include "classHeaders/SimpleNetwork.h"
-#include "classHeaders/NeuralCreator.h"
-#include "classHeaders/SimpleNeuralCreator.h"
-#include "classHeaders/NetworkRinterface.h"
 #include "classHeaders/Container.h"
 #include "classHeaders/SimpleContainer.h"
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
 #include "classHeaders/SimpleContainerReverseIterator.h"
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/MLPfactory.h"
+#include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/SimpleNetwork.h"
+#include "classHeaders/ActivationFunction.h"
+#include "classHeaders/PredictBehavior.h"
+#include "classHeaders/MLPBehavior.h"
+#include "classHeaders/NeuralCreator.h"
+#include "classHeaders/SimpleNeuralCreator.h"
+
+
+#if 0
+#include "classHeaders/NeuronTrainBehavior.h"
+#include "classHeaders/NoNeuronTrainBehavior.h"
+#include "classHeaders/NetworkTrainBehavior.h"
+#include "classHeaders/NoNetworkTrainBehavior.h"
+#include "classHeaders/NoNetworkTrainBehaviorFactory.h"
+
+#include "classHeaders/NetworkRinterface.h"
+
+#endif
 
 #include "Connection.cpp"
-#include "ActivationFunction.cpp"
-#include "Tanh.cpp"
-#include "Identity.cpp"
-#include "PredictBehavior.cpp"
-#include "MLPbehavior.cpp"
 #include "Neuron.cpp"
 #include "SimpleNeuron.cpp"
 #include "MLPfactory.cpp"
-#include "TanhFactory.cpp"
-#include "IdentityFactory.cpp"
-
-
-
+#include "MLPNoNetworkTrainBehaviorFactory.cpp"
 #include "NeuralNetwork.cpp"
 #include "SimpleNetwork.cpp"
-#include "SimpleNeuralCreator.cpp"
-#include "NetworkRinterface.cpp"
+#include "ActivationFunction.cpp"
 
+#include "PredictBehavior.cpp"
+#include "MLPbehavior.cpp"
+#include "SimpleNeuralCreator.cpp"
+
+
+#if 0
+#include "NoNeuronTrainBehavior.cpp"
+#include "NoNetworkTrainBehavior.cpp"
+
+#include "NetworkRinterface.cpp"
 #include "RcppModules.cpp"
+
+#endif
 
 
 

@@ -4,12 +4,12 @@
 /// class ADAPTgdNeuronTrainBehavior - 
 class ADAPTgdNeuronTrainBehavior : public AdaptNeuronTrainBehavior {
   // Attributes
-private:
-  double delta;
-  double learning.rate;
+protected:
+  double d_delta;
+  double d_learningRate;
   // Operations
-private:
-  void singlePatternBackwardAction ();
-  void endOfEpochAction ();
+public:
+  virtual void singlePatternBackwardAction () = 0;
+  virtual void endOfEpochAction () = 0;
 };
 

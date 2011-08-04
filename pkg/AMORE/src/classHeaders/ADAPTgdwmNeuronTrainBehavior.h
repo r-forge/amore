@@ -4,15 +4,15 @@
 /// class ADAPTgdwmNeuronTrainBehavior - 
 class ADAPTgdwmNeuronTrainBehavior : public AdaptNeuronTrainBehavior {
   // Attributes
-private:
-  double delta;
-  double learning.rate;
-  double momentum;
-  std::vector<double> former.weight.change;
-  double former.bias.change;
+protected:
+  double d_delta;
+  double d_learningRate;
+  double d_momentum;
+  std::vector<double> d_formerWeightChange;
+  double d_formerBiasChange;
   // Operations
-private:
-  void singlePatternBackwardAction ();
-  void endOfEpochAction ();
+public:
+  virtual void singlePatternBackwardAction () = 0;
+  virtual void endOfEpochAction () = 0;
 };
 

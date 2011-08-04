@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$class_b_a_t_c_hgd_hidden_neuron_train_behavior.html" title="class BATCHgdHiddenNeuronTrainBehavior &#45;" alt="" coords="5,473,261,565"/>
+<area shape="rect" id="node9" href="$class_b_a_t_c_hgd_output_neuron_train_behavior.html" title="class BATCHgdOutputNeuronTrainBehavior &#45;" alt="" coords="286,473,540,565"/>
+<area shape="rect" id="node2" href="$class_batch_neuron_train_behavior.html" title="class BatchNeuronTrainBehavior &#45;" alt="" coords="161,147,385,239"/>
+<area shape="rect" id="node4" href="$class_neuron_train_behavior.html" title="class NeuronTrainBehavior &#45;" alt="" coords="161,6,385,98"/>
+</map>

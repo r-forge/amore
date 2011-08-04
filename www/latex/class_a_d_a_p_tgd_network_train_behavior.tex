@@ -1,0 +1,109 @@
+\hypertarget{class_a_d_a_p_tgd_network_train_behavior}{
+\section{ADAPTgdNetworkTrainBehavior Class Reference}
+\label{class_a_d_a_p_tgd_network_train_behavior}\index{ADAPTgdNetworkTrainBehavior@{ADAPTgdNetworkTrainBehavior}}
+}
+
+
+class \hyperlink{class_a_d_a_p_tgd_network_train_behavior}{ADAPTgdNetworkTrainBehavior} -\/  
+
+
+
+
+{\ttfamily \#include $<$ADAPTgdNetworkTrainBehavior.h$>$}
+
+
+
+Inheritance diagram for ADAPTgdNetworkTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_a_d_a_p_tgd_network_train_behavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ADAPTgdNetworkTrainBehavior:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_a_d_a_p_tgd_network_train_behavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Rcpp::List \hyperlink{class_a_d_a_p_tgd_network_train_behavior_ac63b24253552d7c84a67716655def3b0}{train} (Rcpp::List parameterList)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{class_a_d_a_p_tgd_network_train_behavior}{ADAPTgdNetworkTrainBehavior} -\/ 
+
+Definition at line 5 of file ADAPTgdNetworkTrainBehavior.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_d_a_p_tgd_network_train_behavior_ac63b24253552d7c84a67716655def3b0}{
+\index{ADAPTgdNetworkTrainBehavior@{ADAPTgdNetworkTrainBehavior}!train@{train}}
+\index{train@{train}!ADAPTgdNetworkTrainBehavior@{ADAPTgdNetworkTrainBehavior}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}ADAPTgdNetworkTrainBehavior::train (
+\begin{DoxyParamCaption}
+\item[{Rcpp::List}]{parameterList}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_a_d_a_p_tgd_network_train_behavior_ac63b24253552d7c84a67716655def3b0}
+
+
+Implements \hyperlink{class_adapt_network_train_behavior_a6e26770de368cd5a0a14d0728c2f3d07}{AdaptNetworkTrainBehavior}.
+
+
+
+Definition at line 8 of file ADAPTgdNetworkTrainBehavior.cpp.
+
+
+
+References NetworkTrainBehavior::d\_\-neuralNetwork.
+
+
+\begin{DoxyCode}
+{
+
+  int numberOfEpochs = as<int> (parameterList["numberOfEpochs"]);
+  Rcpp::NumericMatrix inputMatrix = as<Rcpp::NumericMatrix> (
+      parameterList["inputMatrix"]);
+  Rcpp::NumericMatrix targetMatrix = as<Rcpp::NumericMatrix> (
+      parameterList["targetMatrix"]);
+  int numberOfEpochs = as<int> (parameterList["numberOfEpochs"]);
+  int showStep = as<int> (parameterList["showStep"]);
+
+
+  // Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
+  std::vector<double>::iterator inputIterator(inputMatrix.begin());
+  std::vector<double>::iterator targetIterator(targetMatrix.begin());
+
+
+  int maxShows = (numberOfEpochs > showStep) ? numberOfEpochs / showStep : 1;
+  for (int idShow = 0; idShow < maxShows; ++idShow)
+    {
+      for (int step = 0; step < showStep; ++step)
+        {
+          for (int idRow = 0; idRow < inputMatrix.ncol(); idRow++)
+            {
+              d_neuralNetwork->writeInput(inputIterator);
+              d_neuralNetwork->singlePatternForwardAction();
+
+              d_neuralNetwork->singlePatternBackwardAction();
+            }
+        }
+    }
+}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/classHeaders/\hyperlink{_a_d_a_p_tgd_network_train_behavior_8h}{ADAPTgdNetworkTrainBehavior.h}\item 
+/Users/mcasl/pc-\/ule/Trabajo/investigacion/AMORE/AMORE-\/WC/AMORE-\/WC/pkg/AMORE/src/\hyperlink{_a_d_a_p_tgd_network_train_behavior_8cpp}{ADAPTgdNetworkTrainBehavior.cpp}\end{DoxyCompactItemize}

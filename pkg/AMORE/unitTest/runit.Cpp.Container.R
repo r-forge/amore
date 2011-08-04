@@ -29,7 +29,7 @@ test.Container.Cpp.show<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 
 
@@ -83,7 +83,7 @@ test.Container.Cpp.push_back<- function() {
 	testCode <- "
 			// Data set up
 				
-				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+				NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 				LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				ConContainerPtr conContainerPtr ( neuralFactoryPtr->makeConContainer() );
 				ConPtr	conPtr;
@@ -125,7 +125,7 @@ test.Container.Cpp.size<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 		// Data set up
-				NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+				NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 				LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 				NeuronPtr neuronPtr;
 
