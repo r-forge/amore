@@ -11,11 +11,6 @@
 #include "classHeaders/MLPfactory.h"
 #include "classHeaders/IdentityFactory.h"
 
-IdentityFactory::IdentityFactory()
-{
-}
-
-
 ActivationFunctionPtr
 IdentityFactory::makeActivationFunction(NeuronPtr neuronPtr)
   {

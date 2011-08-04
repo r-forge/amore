@@ -7,9 +7,9 @@
 
 #include "package.h"
 
-#include "classHeaders/IdentityFactory.h"
-#include "classHeaders/TanhFactory.h"
+
 #include "classHeaders/NeuralFactory.h"
+#include "classHeaders/NoNetworkTrainBehaviorFactory.h"
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/NeuralCreator.h"
 #include "classHeaders/NetworkRinterface.h"
@@ -27,8 +27,8 @@ NetworkRinterface::NetworkRinterface()
 void
 NetworkRinterface::createFeedForwardNetwork(Rcpp::NumericVector numberOfNeurons)
 {
-  NeuralFactoryPtr hiddenLayersFactoryPtr(new TanhFactory());
-  NeuralFactoryPtr outputFactoryPtr(new IdentityFactory());
+  NeuralFactoryPtr hiddenLayersFactoryPtr(new NoNetworkTrainBehaviorFactory());
+  NeuralFactoryPtr outputFactoryPtr(new NoNetworkTrainBehaviorFactory());
   NeuralCreatorPtr neuralCreator(outputFactoryPtr->makeNeuralCreator());
   d_neuralNetwork = neuralCreator->createFeedForwardNetwork(
       as<std::vector<int> > (numberOfNeurons), *hiddenLayersFactoryPtr,
@@ -80,21 +80,6 @@ NetworkRinterface::train(Rcpp::List parameterList)
     return d_neuralNetwork->train(parameterList);
   END_RCPP
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

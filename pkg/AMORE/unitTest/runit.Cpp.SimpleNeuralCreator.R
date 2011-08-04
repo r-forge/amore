@@ -7,8 +7,8 @@ test.SimpleNeuronCreator.Cpp.createFeedForward <- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Data set up			
-				NeuralFactoryPtr hiddenLayersFactoryPtr (new TanhFactory()     );
-				NeuralFactoryPtr outputFactoryPtr 		(new IdentityFactory()) ; 
+				NeuralFactoryPtr hiddenLayersFactoryPtr (newMLPNoNetworkTrainBehaviorFactory()     );
+				NeuralFactoryPtr outputFactoryPtr 		(new MLPNoNetworkTrainBehaviorFactory()) ; 
 				NeuralCreatorPtr neuralCreator( outputFactoryPtr->makeNeuralCreator() );
 				NeuralNetworkPtr network = neuralCreator->createFeedForwardNetwork(as< std::vector<int> >(numberOfNeurons), *hiddenLayersFactoryPtr, *outputFactoryPtr);
 			// Test

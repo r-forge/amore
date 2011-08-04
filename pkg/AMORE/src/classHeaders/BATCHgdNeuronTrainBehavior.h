@@ -4,14 +4,14 @@
 /// class BATCHgdNeuronTrainBehavior - 
 class BATCHgdNeuronTrainBehavior : public BatchNeuronTrainBehavior {
   // Attributes
-private:
-  double delta;
-  double learning.rate;
-  std::vector<double> sum.delta.x;
-  double sum.delta.bias;
+protected:
+  double d_delta;
+  double d_learningRate;
+  std::vector<double> d_sum_delta_x;
+  double d_sum_delta_bias;
   // Operations
-private:
-  void singlePatternBackwardAction ();
-  void endOfEpochAction ();
+public:
+  virtual void singlePatternBackwardAction () = 0;
+  virtual void endOfEpochAction () = 0;
 };
 

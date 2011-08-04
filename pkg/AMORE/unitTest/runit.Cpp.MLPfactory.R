@@ -14,7 +14,7 @@ test.MLPfactory.Cpp.makeNeuron <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 			neuronPtr->show();
 			neuronPtr->validate();	
@@ -61,7 +61,7 @@ test.MLPfactory.Cpp.makeCon <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 4.5) ); 
 			conPtr->show();
@@ -86,7 +86,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new TanhFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			
 			LayerPtr inputLayerPtr (neuralFactoryPtr->makeLayer());
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron(1) );
@@ -116,6 +116,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			Rprintf(\" Input Neurons \");
 			Rprintf(\"===================================\");			
 			inputLayerPtr->show();
+
 			Rprintf(\"===================================\");
 			Rprintf(\" Output Neurons \");
 			Rprintf(\"===================================\");	
@@ -134,74 +135,6 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	checkEquals(result$outputN2, 2)
 	checkEquals(result$outputN3, 4)
 	checkEquals(result$outputN4, tanh(5))
-	# =================================== Input Neurons ===================================
-	# ------------------------
-	# 
-	#  Id: 1
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 4.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 2
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 2.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 3
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 4.000000
-	# ------------------------
-	# 
-	#  No connections defined
-	# ------------------------
-	# =================================== Output Neurons ===================================
-	# ------------------------
-	# 
-	#  Id: 4
-	# ------------------------
-	# 
-	#  bias: 0.000000
-	#  output: 0.999909
-	# ------------------------
-	# From:	 1 	 Weight= 	 0.250000 
-	# From:	 2 	 Weight= 	 0.500000 
-	# From:	 3 	 Weight= 	 0.750000 
-	# 
-	# ------------------------
-	# 
-	# ------------------------
-	# 
-	#  Id: 5
-	# ------------------------
-	# 
-	#  bias: -0.406162
-	#  output: 0.949352
-	# ------------------------
-	# From:	 1 	 Weight= 	 0.094275 
-	# From:	 2 	 Weight= 	 0.153799 
-	# From:	 3 	 Weight= 	 0.386660 
-	# 
-	# ------------------------
-	# [1] TRUE
-	# [1] TRUE
-	# [1] TRUE
-	# [1] TRUE
 
 }
 

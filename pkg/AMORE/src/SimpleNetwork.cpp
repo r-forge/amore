@@ -22,13 +22,22 @@ SimpleNetwork::SimpleNetwork(NeuralFactory& neuralFactory) :
 void
 SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
 {
-  size_type nInputs(inputSize());
-  for (size_type i = 0; i < nInputs; i++)
+  NeuronIteratorPtr neuronIteratorPtr(d_inputLayer->createIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      d_inputLayer->at(i)->setOutput(*iterator++);
+      neuronIteratorPtr->currentItem()->setOutput(*iterator++);
     }
 }
 
+void
+SimpleNetwork::writeTarget(std::vector<double>::iterator& iterator)
+{
+  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
+    {
+      neuronIteratorPtr->currentItem()->setTarget(*iterator++);
+    }
+}
 
 
 void
@@ -36,61 +45,57 @@ SimpleNetwork::singlePatternForwardAction()
 {
 
   // Hidden Layers
-  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(
-      d_hiddenLayers->createIterator());
+  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
 
-  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
+  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
     {
-      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
-          layerIterator->currentItem()->createIterator());
-      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
+      NeuronIteratorPtr neuronIteratorPtr(layerIteratorPtr->currentItem()->createIterator());
+      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
         {
-          neuronIterator->currentItem()->singlePatternForwardAction();
+          neuronIteratorPtr->currentItem()->singlePatternForwardAction();
         }
     }
 
   // Output Layers
-  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(
-      d_outputLayer->createIterator());
-  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
+  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      neuronIterator->currentItem()->singlePatternForwardAction();
+      neuronIteratorPtr->currentItem()->singlePatternForwardAction();
     }
 }
 
-
-
+#if 0
 void
 SimpleNetwork::singlePatternBackwardAction()
 {
   // Output Layers
-  boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator(d_outputLayer->createReverseIterator());
-  for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
+  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createReverseIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      neuronIterator->currentItem()->singlePatternBackwardAction();
+      neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
     }
 
   // Hidden Layers
-  boost::shared_ptr < Iterator<LayerPtr> > layerIterator(d_hiddenLayers->createReverseIterator());
-  for (layerIterator->first(); !layerIterator->isDone(); layerIterator->next())
+  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createReverseIterator());
+  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
     {
-      boost::shared_ptr < Iterator<NeuronPtr> > neuronIterator( layerIterator->currentItem()->createReverseIterator());
-      for (neuronIterator->first(); !neuronIterator->isDone(); neuronIterator->next())
+      NeuronIteratorPtr neuronIteratorPtr(layerIteratorPtr->currentItem()->createReverseIterator());
+      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
         {
-          neuronIterator->currentItem()->singlePatternBackwardAction();
+          neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
         }
     }
 }
 
-
+#endif
 
 void
 SimpleNetwork::readOutput(std::vector<double>::iterator& iterator)
 {
-  size_type nOutputs(outputSize());
-  for (size_type i = 0; i < nOutputs; i++)
+  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      *iterator++ = d_outputLayer->at(i)->getOutput();
+      *iterator++ = neuronIteratorPtr->currentItem()->getOutput();
     }
 }
 
@@ -100,9 +105,9 @@ SimpleNetwork::train(Rcpp::List parameterList)
   // TODO check train behavior and change it if need be
   // TODO check cost function  and change it if need be
 
-  return d_networkTrainBehavior->train(parameterList);
+//  return d_networkTrainBehavior->train(parameterList);
+  return Rcpp::List::create();
 }
-
 
 size_type
 SimpleNetwork::inputSize()

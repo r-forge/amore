@@ -7,7 +7,6 @@ class MLPfactory : public NeuralFactory {
 protected:
   ConPtr makeCon (Neuron& neuron, double weight);
   ConContainerPtr makeConContainer ();
-  virtual ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr) = 0;
   PredictBehaviorPtr makePredictBehavior (NeuronPtr neuronPtr);
   NeuronPtr makeNeuron (Handler Id);
   NeuronPtr makeNeuron (Handler Id, NeuronIteratorPtr neuronIteratorPtr, double totalAmountOfParameters);
@@ -15,5 +14,8 @@ protected:
   LayerContainerPtr makeLayerContainer ();
   NeuralNetworkPtr makeNeuralNetwork (NeuralFactory& neuralFactory);
   NeuralCreatorPtr makeNeuralCreator ();
+  ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr, Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1);
+  // virtual NetworkTrainBehaviorPtr makeNetworkTrainBehavior () = 0;
+  // virtual NeuronTrainBehaviorPtr makeNeuronTrainBehavior (NeuronPtr neuronPtr) = 0;
 };
 

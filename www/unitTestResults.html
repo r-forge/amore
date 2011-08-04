@@ -1,11 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/transitional.dtd">
-<html><head><title>RUNIT TEST PROTOCOL--Sat Jul 30 04:39:38 2011</title>
+<html><head><title>RUNIT TEST PROTOCOL--Thu Aug  4 19:06:14 2011</title>
 </head>
-<body><h1 TRUE>RUNIT TEST PROTOCOL--Sat Jul 30 04:39:38 2011</h1>
-<p>Number of test functions: 45</p>
-<p>Number of errors: 0</p>
-<p>Number of failures: 0</p>
+<body><h1 TRUE>RUNIT TEST PROTOCOL--Thu Aug  4 19:06:14 2011</h1>
+<p>Number of test functions: 49</p>
+<p style=color:red>Number of errors: 18</p>
+<p style=color:red>Number of failures: 1</p>
 <hr>
 <h3 TRUE>1 Test suite</h3>
 <table border="1" width="60%" >
@@ -15,15 +15,392 @@
 <th width="20%">Failures</th>
 </tr>
 <tr><td><a href="#AMORE C++ Classes Unit Tests">AMORE C++ Classes Unit Tests</a></td>
-<td>45</td>
-<td>0</td>
-<td>0</td>
+<td>49</td>
+<td bgcolor="red">18</td>
+<td bgcolor="red">1</td>
+</tr>
+</table>
+<hr>
+<h3 TRUE>Errors</h3>
+<table border="1" width="100%" >
+<tr><th width="30%">Test suite : test function</th>
+<th width="70%">message</th>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.createFeedForwardNetwork">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.createFeedForwardNetwork</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file79a0a22f.cpp: In function 'SEXPREC* file79a0a22f(SEXPREC*)':
+file79a0a22f.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file79a0a22f.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.inputSize">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.inputSize</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file20f7fa0b.cpp: In function 'SEXPREC* file20f7fa0b(SEXPREC*)':
+file20f7fa0b.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file20f7fa0b.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.outputSize">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.outputSize</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7840f915.cpp: In function 'SEXPREC* file7840f915(SEXPREC*)':
+file7840f915.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file7840f915.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.predict">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.predict</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file71a10f60.cpp: In function 'SEXPREC* file71a10f60(SEXPREC*, SEXPREC*)':
+file71a10f60.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file71a10f60.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_InitializedNetwork">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.show_InitializedNetwork</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file4f8a1e8.cpp: In function 'SEXPREC* file4f8a1e8(SEXPREC*)':
+file4f8a1e8.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file4f8a1e8.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_UninitializedNetwork">AMORE C++ Classes Unit Tests : test.NetworkRinterface.Cpp.show_UninitializedNetwork</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file5f4d88e4.cpp: In function 'SEXPREC* file5f4d88e4()':
+file5f4d88e4.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file5f4d88e4.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.RcppModules.R_test.RcppModules.Cpp.new_NetworRinterface">AMORE C++ Classes Unit Tests : test.RcppModules.Cpp.new_NetworRinterface</a></td>
+<td>Error in Module(module, mustStart = TRUE) : 
+  Failed to initialize module pointer: Error in FUN("_rcpp_module_boot_modAMORE"[[1L]], ...): no such symbol _rcpp_module_boot_modAMORE in package /var/folders/oU/oUWMzq8rHeOdomo6GqVbs++++TM/-Tmp-//RtmpKc3FHu/file48a4b4d1.so
+
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.inputSize">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.inputSize</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file355b2a99.cpp: In function 'SEXPREC* file355b2a99(SEXPREC*)':
+file355b2a99.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file355b2a99.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file355b2a99.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file355b2a99.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file355b2a99.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file355b2a99.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.outputSize">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.outputSize</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7449be2c.cpp: In function 'SEXPREC* file7449be2c(SEXPREC*)':
+file7449be2c.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file7449be2c.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file7449be2c.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file7449be2c.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file7449be2c.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file7449be2c.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.readOutput">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.readOutput</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file15647659.cpp: In function 'SEXPREC* file15647659(SEXPREC*, SEXPREC*)':
+file15647659.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file15647659.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file15647659.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file15647659.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file15647659.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file15647659.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.singlePatternBackwardAction">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.singlePatternBackwardAction</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7695d807.cpp: In function 'SEXPREC* file7695d807(SEXPREC*, SEXPREC*, SEXPREC*)':
+file7695d807.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file7695d807.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file7695d807.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file7695d807.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file7695d807.cpp:216: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+file7695d807.cpp:221: error: 'class NeuralNetwork' has no member named 'singlePatternBackwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file7695d807.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file7695d807.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.singlePatternForwardAction">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.singlePatternForwardAction</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file6799f063.cpp: In function 'SEXPREC* file6799f063(SEXPREC*, SEXPREC*)':
+file6799f063.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file6799f063.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file6799f063.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file6799f063.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file6799f063.cpp:210: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file6799f063.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file6799f063.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.validate">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.validate</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file2b7528b8.cpp: In function 'SEXPREC* file2b7528b8(SEXPREC*)':
+file2b7528b8.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file2b7528b8.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file2b7528b8.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file2b7528b8.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file2b7528b8.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file2b7528b8.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.writeInput">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.writeInput</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file18c45e52.cpp: In function 'SEXPREC* file18c45e52(SEXPREC*, SEXPREC*)':
+file18c45e52.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file18c45e52.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file18c45e52.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file18c45e52.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file18c45e52.cpp:209: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+file18c45e52.cpp:212: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file18c45e52.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file18c45e52.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.writeTarget">AMORE C++ Classes Unit Tests : test.SimpleNetwork.Cpp.writeTarget</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file40c6632.cpp: In function 'SEXPREC* file40c6632(SEXPREC*, SEXPREC*)':
+file40c6632.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file40c6632.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file40c6632.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file40c6632.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file40c6632.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file40c6632.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNeuralCreator.R_test.SimpleNeuronCreator.Cpp.createFeedForward">AMORE C++ Classes Unit Tests : test.SimpleNeuronCreator.Cpp.createFeedForward</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file4a095eb1.cpp: In function 'SEXPREC* file4a095eb1(SEXPREC*)':
+file4a095eb1.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file4a095eb1.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file4a095eb1.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file4a095eb1.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file4a095eb1.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file4a095eb1.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f0">AMORE C++ Classes Unit Tests : test.Tanh.Cpp.f0</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file2d27dc70.cpp: In function 'SEXPREC* file2d27dc70()':
+file2d27dc70.cpp:197: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file2d27dc70.cpp:197: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file2d27dc70.cpp:199: error: no matching function for call to 'NeuralFactory::makeActivationFunction(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralFactory.h:16: note: candidates are: virtual ActivationFunctionPtr NeuralFactory::makeActivationFunction(NeuronPtr, Rcpp::XPtr<double (*)(double)>, Rcpp::XPtr<double (*)(double)>)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file2d27dc70.cpp:197:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file2d27dc70.o] Error 1
+</td>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f1">AMORE C++ Classes Unit Tests : test.Tanh.Cpp.f1</a></td>
+<td>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file13f95439.cpp: In function 'SEXPREC* file13f95439()':
+file13f95439.cpp:197: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file13f95439.cpp:197: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file13f95439.cpp:199: error: no matching function for call to 'NeuralFactory::makeActivationFunction(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralFactory.h:16: note: candidates are: virtual ActivationFunctionPtr NeuralFactory::makeActivationFunction(NeuronPtr, Rcpp::XPtr<double (*)(double)>, Rcpp::XPtr<double (*)(double)>)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file13f95439.cpp:197:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file13f95439.o] Error 1
+</td>
+</tr>
+</table>
+<hr>
+<h3 TRUE>Failures</h3>
+<table border="1" width="100%" >
+<tr><th width="30%">Test suite : test function</th>
+<th width="70%">message</th>
+</tr>
+<tr><td><a href="#AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeMLPbehavior">AMORE C++ Classes Unit Tests : test.MLPfactory.Cpp.makeMLPbehavior</a></td>
+<td>Error in checkEquals(result$outputN4, tanh(5)) : 
+  'is.NA' value mismatch: 0 in current 1 in target
+</td>
 </tr>
 </table>
 <hr>
 <h3 TRUE>Details</h3>
 <p><a name="AMORE C++ Classes Unit Tests"><h5 TRUE>Test Suite: AMORE C++ Classes Unit Tests</h5>
-</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.Cpp.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Con.R?root=amore">Test file: runit.Cpp.Con.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor">test.Con.Cpp.Constructor: (2 checks) ... OK (9.27 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Id">test.Con.Cpp.Id: (1 checks) ... OK (7.59 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.getNeuron">test.Con.Cpp.getNeuron: (1 checks) ... OK (7.52 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.getWeight">test.Con.Cpp.getWeight: (1 checks) ... OK (9.54 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.setNeuron">test.Con.Cpp.setNeuron: (1 checks) ... OK (9.57 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.setWeight">test.Con.Cpp.setWeight: (1 checks) ... OK (8.44 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.show">test.Con.Cpp.show: (1 checks) ... OK (7.95 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_from">test.Con.Cpp.validate_from: (1 checks) ... OK (7.96 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_weight">test.Con.Cpp.validate_weight: (1 checks) ... OK (7.89 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Container.R?root=amore">Test file: runit.Cpp.Container.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_EmptyArgumentList">test.Container.Cpp.Constructor_EmptyArgumentList: (1 checks) ... OK (8.04 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.push_back">test.Container.Cpp.push_back: (1 checks) ... OK (7.94 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.show">test.Container.Cpp.show: (1 checks) ... OK (8.58 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.size">test.Container.Cpp.size: (1 checks) ... OK (7.59 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ContainerIterator.R?root=amore">Test file: runit.Cpp.ContainerIterator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.Constructor">test.ContainerIterator.Cpp.Constructor: (1 checks) ... OK (7.98 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.currentItem">test.ContainerIterator.Cpp.currentItem: (1 checks) ... OK (9.16 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.first">test.ContainerIterator.Cpp.first: (1 checks) ... OK (8.76 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.isDone">test.ContainerIterator.Cpp.isDone: (1 checks) ... OK (7.85 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.next">test.ContainerIterator.Cpp.next: (1 checks) ... OK (8.29 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ContainerReverseIterator.R?root=amore">Test file: runit.Cpp.ContainerReverseIterator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.Constructor">test.ContainerReverseIterator.Cpp.Constructor: (1 checks) ... OK (8.09 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.currentItem">test.ContainerReverseIterator.Cpp.currentItem: (1 checks) ... OK (7.78 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.first">test.ContainerReverseIterator.Cpp.first: (1 checks) ... OK (8.03 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.isDone">test.ContainerReverseIterator.Cpp.isDone: (1 checks) ... OK (8.15 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.next">test.ContainerReverseIterator.Cpp.next: (1 checks) ... OK (8.02 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Identity.R?root=amore">Test file: runit.Cpp.Identity.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Identity.R_test.Identity.Cpp.f0">test.Identity.Cpp.f0: (1 checks) ... OK (7.69 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Identity.R_test.Identity.Cpp.f1">test.Identity.Cpp.f1: (1 checks) ... OK (7.56 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.MLPfactory.R?root=amore">Test file: runit.Cpp.MLPfactory.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeCon">test.MLPfactory.Cpp.makeCon: (2 checks) ... OK (7.49 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeMLPbehavior">test.MLPfactory.Cpp.makeMLPbehavior: (4 checks) ... OK (7.82 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeNeuron">test.MLPfactory.Cpp.makeNeuron: (1 checks) ... OK (7.44 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.NetworkRinterface.R?root=amore">Test file: runit.Cpp.NetworkRinterface.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.createFeedForwardNetwork">test.NetworkRinterface.Cpp.createFeedForwardNetwork: (0 checks) ... OK (7.4 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_InitializedNetwork">test.NetworkRinterface.Cpp.show_InitializedNetwork: (0 checks) ... OK (7.39 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_UninitializedNetwork">test.NetworkRinterface.Cpp.show_UninitializedNetwork: (0 checks) ... OK (7.38 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Neuron.R?root=amore">Test file: runit.Cpp.Neuron.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_EmptyCon">test.Neuron.Cpp.Validate_EmptyCon: (1 checks) ... OK (7.39 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_IdIsNa">test.Neuron.Cpp.Validate_IdIsNa: (1 checks) ... OK (7.4 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getId">test.Neuron.Cpp.getId: (1 checks) ... OK (7.48 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setId">test.Neuron.Cpp.setId: (1 checks) ... OK (7.53 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.RcppModules.R?root=amore">Test file: runit.Cpp.RcppModules.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.RcppModules.R_test.RcppModules.Cpp.new_NetworRinterface">test.RcppModules.Cpp.new_NetworRinterface: (5 checks) ... OK (7.44 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.SimpleNetwork.R?root=amore">Test file: runit.Cpp.SimpleNetwork.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.inputSize">test.SimpleNetwork.Cpp.inputSize: (1 checks) ... OK (7.42 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.outputSize">test.SimpleNetwork.Cpp.outputSize: (1 checks) ... OK (7.42 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.readOutput">test.SimpleNetwork.Cpp.readOutput: (1 checks) ... OK (7.68 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.singlePatternForwardAction">test.SimpleNetwork.Cpp.singlePatternForwardAction: (1 checks) ... OK (7.44 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.validate">test.SimpleNetwork.Cpp.validate: (1 checks) ... OK (7.42 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.writeInput">test.SimpleNetwork.Cpp.writeInput: (1 checks) ... OK (7.44 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.SimpleNeuralCreator.R?root=amore">Test file: runit.Cpp.SimpleNeuralCreator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNeuralCreator.R_test.SimpleNeuronCreator.Cpp.createFeedForward">test.SimpleNeuronCreator.Cpp.createFeedForward: (1 checks) ... OK (7.46 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Tanh.R?root=amore">Test file: runit.Cpp.Tanh.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f0">test.Tanh.Cpp.f0: (1 checks) ... OK (7.41 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f1">test.Tanh.Cpp.f1: (1 checks) ... OK (7.44 seconds)<br/></a></li></ul></li></ul><hr>
+</a>Test function regexp: ^test.+<br/>Test file regexp: ^runit.Cpp.+\.R<br/>Involved directory:<br/>./pkg/AMORE/unitTest<br/><ul><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ActivationFunction.R?root=amore">Test file: runit.Cpp.ActivationFunction.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ActivationFunction.R_test.ActivationFunction.Cpp.Constructor">test.ActivationFunction.Cpp.Constructor: (1 checks) ... OK (15.94 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Con.R?root=amore">Test file: runit.Cpp.Con.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Constructor">test.Con.Cpp.Constructor: (2 checks) ... OK (4.78 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.Id">test.Con.Cpp.Id: (1 checks) ... OK (4.75 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.getNeuron">test.Con.Cpp.getNeuron: (1 checks) ... OK (4.59 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.getWeight">test.Con.Cpp.getWeight: (1 checks) ... OK (4.67 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.setNeuron">test.Con.Cpp.setNeuron: (1 checks) ... OK (4.79 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.setWeight">test.Con.Cpp.setWeight: (1 checks) ... OK (4.75 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.show">test.Con.Cpp.show: (1 checks) ... OK (5.31 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_from">test.Con.Cpp.validate_from: (1 checks) ... OK (4.65 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Con.R_test.Con.Cpp.validate_weight">test.Con.Cpp.validate_weight: (1 checks) ... OK (4.87 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Container.R?root=amore">Test file: runit.Cpp.Container.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.Constructor_EmptyArgumentList">test.Container.Cpp.Constructor_EmptyArgumentList: (1 checks) ... OK (6.55 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.push_back">test.Container.Cpp.push_back: (1 checks) ... OK (5.28 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.show">test.Container.Cpp.show: (1 checks) ... OK (4.65 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Container.R_test.Container.Cpp.size">test.Container.Cpp.size: (1 checks) ... OK (4.55 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ContainerIterator.R?root=amore">Test file: runit.Cpp.ContainerIterator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.Constructor">test.ContainerIterator.Cpp.Constructor: (1 checks) ... OK (4.53 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.currentItem">test.ContainerIterator.Cpp.currentItem: (1 checks) ... OK (4.86 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.first">test.ContainerIterator.Cpp.first: (1 checks) ... OK (4.76 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.isDone">test.ContainerIterator.Cpp.isDone: (1 checks) ... OK (4.79 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerIterator.R_test.ContainerIterator.Cpp.next">test.ContainerIterator.Cpp.next: (1 checks) ... OK (4.6 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.ContainerReverseIterator.R?root=amore">Test file: runit.Cpp.ContainerReverseIterator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.Constructor">test.ContainerReverseIterator.Cpp.Constructor: (1 checks) ... OK (4.67 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.currentItem">test.ContainerReverseIterator.Cpp.currentItem: (1 checks) ... OK (4.91 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.first">test.ContainerReverseIterator.Cpp.first: (1 checks) ... OK (5.44 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.isDone">test.ContainerReverseIterator.Cpp.isDone: (1 checks) ... OK (4.75 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.ContainerReverseIterator.R_test.ContainerReverseIterator.Cpp.next">test.ContainerReverseIterator.Cpp.next: (1 checks) ... OK (5.13 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.MLPfactory.R?root=amore">Test file: runit.Cpp.MLPfactory.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeCon">test.MLPfactory.Cpp.makeCon: (2 checks) ... OK (4.76 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeMLPbehavior"><u style=color:red>test.MLPfactory.Cpp.makeMLPbehavior: FAILURE !! (check number 4)  </u></a>Error in checkEquals(result$outputN4, tanh(5)) : 
+  'is.NA' value mismatch: 0 in current 1 in target
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.MLPfactory.R_test.MLPfactory.Cpp.makeNeuron">test.MLPfactory.Cpp.makeNeuron: (1 checks) ... OK (4.47 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.NetworkRinterface.R?root=amore">Test file: runit.Cpp.NetworkRinterface.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.createFeedForwardNetwork"><u style=color:red>test.NetworkRinterface.Cpp.createFeedForwardNetwork: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file79a0a22f.cpp: In function 'SEXPREC* file79a0a22f(SEXPREC*)':
+file79a0a22f.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file79a0a22f.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.inputSize"><u style=color:red>test.NetworkRinterface.Cpp.inputSize: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file20f7fa0b.cpp: In function 'SEXPREC* file20f7fa0b(SEXPREC*)':
+file20f7fa0b.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file20f7fa0b.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.outputSize"><u style=color:red>test.NetworkRinterface.Cpp.outputSize: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7840f915.cpp: In function 'SEXPREC* file7840f915(SEXPREC*)':
+file7840f915.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file7840f915.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.predict"><u style=color:red>test.NetworkRinterface.Cpp.predict: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file71a10f60.cpp: In function 'SEXPREC* file71a10f60(SEXPREC*, SEXPREC*)':
+file71a10f60.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file71a10f60.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_InitializedNetwork"><u style=color:red>test.NetworkRinterface.Cpp.show_InitializedNetwork: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file4f8a1e8.cpp: In function 'SEXPREC* file4f8a1e8(SEXPREC*)':
+file4f8a1e8.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file4f8a1e8.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.NetworkRinterface.R_test.NetworkRinterface.Cpp.show_UninitializedNetwork"><u style=color:red>test.NetworkRinterface.Cpp.show_UninitializedNetwork: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file5f4d88e4.cpp: In function 'SEXPREC* file5f4d88e4()':
+file5f4d88e4.cpp:198: error: aggregate 'NetworkRinterface networkRinterface' has incomplete type and cannot be defined
+make: *** [file5f4d88e4.o] Error 1
+<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Neuron.R?root=amore">Test file: runit.Cpp.Neuron.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_EmptyCon">test.Neuron.Cpp.Validate_EmptyCon: (1 checks) ... OK (4.85 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.Validate_IdIsNa">test.Neuron.Cpp.Validate_IdIsNa: (1 checks) ... OK (5.66 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.getId">test.Neuron.Cpp.getId: (1 checks) ... OK (5.38 seconds)<br/></a></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Neuron.R_test.Neuron.Cpp.setId">test.Neuron.Cpp.setId: (1 checks) ... OK (4.57 seconds)<br/></a></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.RcppModules.R?root=amore">Test file: runit.Cpp.RcppModules.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.RcppModules.R_test.RcppModules.Cpp.new_NetworRinterface"><u style=color:red>test.RcppModules.Cpp.new_NetworRinterface: ERROR !!  </u></a>Error in Module(module, mustStart = TRUE) : 
+  Failed to initialize module pointer: Error in FUN("_rcpp_module_boot_modAMORE"[[1L]], ...): no such symbol _rcpp_module_boot_modAMORE in package /var/folders/oU/oUWMzq8rHeOdomo6GqVbs++++TM/-Tmp-//RtmpKc3FHu/file48a4b4d1.so
+
+<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.SimpleNetwork.R?root=amore">Test file: runit.Cpp.SimpleNetwork.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.inputSize"><u style=color:red>test.SimpleNetwork.Cpp.inputSize: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file355b2a99.cpp: In function 'SEXPREC* file355b2a99(SEXPREC*)':
+file355b2a99.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file355b2a99.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file355b2a99.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file355b2a99.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file355b2a99.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file355b2a99.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.outputSize"><u style=color:red>test.SimpleNetwork.Cpp.outputSize: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7449be2c.cpp: In function 'SEXPREC* file7449be2c(SEXPREC*)':
+file7449be2c.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file7449be2c.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file7449be2c.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file7449be2c.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file7449be2c.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file7449be2c.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.readOutput"><u style=color:red>test.SimpleNetwork.Cpp.readOutput: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file15647659.cpp: In function 'SEXPREC* file15647659(SEXPREC*, SEXPREC*)':
+file15647659.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file15647659.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file15647659.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file15647659.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file15647659.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file15647659.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.singlePatternBackwardAction"><u style=color:red>test.SimpleNetwork.Cpp.singlePatternBackwardAction: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file7695d807.cpp: In function 'SEXPREC* file7695d807(SEXPREC*, SEXPREC*, SEXPREC*)':
+file7695d807.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file7695d807.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file7695d807.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file7695d807.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file7695d807.cpp:216: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+file7695d807.cpp:221: error: 'class NeuralNetwork' has no member named 'singlePatternBackwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file7695d807.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file7695d807.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.singlePatternForwardAction"><u style=color:red>test.SimpleNetwork.Cpp.singlePatternForwardAction: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file6799f063.cpp: In function 'SEXPREC* file6799f063(SEXPREC*, SEXPREC*)':
+file6799f063.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file6799f063.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file6799f063.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file6799f063.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file6799f063.cpp:210: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file6799f063.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file6799f063.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.validate"><u style=color:red>test.SimpleNetwork.Cpp.validate: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file2b7528b8.cpp: In function 'SEXPREC* file2b7528b8(SEXPREC*)':
+file2b7528b8.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file2b7528b8.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file2b7528b8.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file2b7528b8.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file2b7528b8.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file2b7528b8.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.writeInput"><u style=color:red>test.SimpleNetwork.Cpp.writeInput: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file18c45e52.cpp: In function 'SEXPREC* file18c45e52(SEXPREC*, SEXPREC*)':
+file18c45e52.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file18c45e52.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file18c45e52.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file18c45e52.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+file18c45e52.cpp:209: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+file18c45e52.cpp:212: error: 'class NeuralNetwork' has no member named 'singlePatternForwardAction'
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file18c45e52.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file18c45e52.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNetwork.R_test.SimpleNetwork.Cpp.writeTarget"><u style=color:red>test.SimpleNetwork.Cpp.writeTarget: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file40c6632.cpp: In function 'SEXPREC* file40c6632(SEXPREC*, SEXPREC*)':
+file40c6632.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file40c6632.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file40c6632.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file40c6632.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file40c6632.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file40c6632.o] Error 1
+<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.SimpleNeuralCreator.R?root=amore">Test file: runit.Cpp.SimpleNeuralCreator.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.SimpleNeuralCreator.R_test.SimpleNeuronCreator.Cpp.createFeedForward"><u style=color:red>test.SimpleNeuronCreator.Cpp.createFeedForward: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file4a095eb1.cpp: In function 'SEXPREC* file4a095eb1(SEXPREC*)':
+file4a095eb1.cpp:198: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file4a095eb1.cpp:198: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file4a095eb1.cpp:200: error: 'class NeuralFactory' has no member named 'makeNeuralCreator'
+file4a095eb1.cpp:201: error: no matching function for call to 'NeuralCreator::createFeedForwardNetwork(std::vector<int, std::allocator<int> >, NeuralFactory&, NeuralFactory&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralCreator.h:7: note: candidates are: virtual NeuralNetworkPtr NeuralCreator::createFeedForwardNetwork(NeuralFactory&, std::vector<int, std::allocator<int> >, Rcpp::List, Rcpp::List)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file4a095eb1.cpp:198:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file4a095eb1.o] Error 1
+<br/></li></ul></li><li><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE//unitTest/runit.Cpp.Tanh.R?root=amore">Test file: runit.Cpp.Tanh.R</a><ul><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f0"><u style=color:red>test.Tanh.Cpp.f0: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file2d27dc70.cpp: In function 'SEXPREC* file2d27dc70()':
+file2d27dc70.cpp:197: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file2d27dc70.cpp:197: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file2d27dc70.cpp:199: error: no matching function for call to 'NeuralFactory::makeActivationFunction(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralFactory.h:16: note: candidates are: virtual ActivationFunctionPtr NeuralFactory::makeActivationFunction(NeuronPtr, Rcpp::XPtr<double (*)(double)>, Rcpp::XPtr<double (*)(double)>)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file2d27dc70.cpp:197:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file2d27dc70.o] Error 1
+<br/></li><li><a name="AMORE C++ Classes Unit Tests_._pkg_AMORE_unitTest_runit.Cpp.Tanh.R_test.Tanh.Cpp.f1"><u style=color:red>test.Tanh.Cpp.f1: ERROR !!  </u></a>Error in compileCode(f, code, language, verbose) : 
+  Compilation ERROR, function(s)/method(s) not created! file13f95439.cpp: In function 'SEXPREC* file13f95439()':
+file13f95439.cpp:197: error: expected type-specifier before 'LmsADAPTgdTanhFactory'
+file13f95439.cpp:197: error: expected `)' before 'LmsADAPTgdTanhFactory'
+file13f95439.cpp:199: error: no matching function for call to 'NeuralFactory::makeActivationFunction(NeuronPtr&)'
+/Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/classHeaders/NeuralFactory.h:16: note: candidates are: virtual ActivationFunctionPtr NeuralFactory::makeActivationFunction(NeuronPtr, Rcpp::XPtr<double (*)(double)>, Rcpp::XPtr<double (*)(double)>)
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp: In constructor 'boost::shared_ptr<T>::shared_ptr(Y*) [with Y = int, T = NeuralFactory]':
+file13f95439.cpp:197:   instantiated from here
+/opt/local/include/boost/smart_ptr/shared_ptr.hpp:187: error: cannot convert 'int*' to 'NeuralFactory*' in initialization
+make: *** [file13f95439.o] Error 1
+<br/></li></ul></li></ul><hr>
 <table border="0" width="80%" >
 <tr><th>Name</th>
 <th>Value</th>

@@ -1,9 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_neuron_train_behavior.html" title="class NeuronTrainBehavior &#45;" alt="" coords="5,81,155,108"/>
-<area shape="rect" id="node3" href="$class_adapt_neuron_train_behavior.html" title="class AdaptNeuronTrainBehavior &#45;" alt="" coords="203,56,389,83"/>
-<area shape="rect" id="node9" href="$class_batch_neuron_train_behavior.html" title="class BatchNeuronTrainBehavior &#45;" alt="" coords="203,107,389,133"/>
-<area shape="rect" id="node5" href="$class_a_d_a_p_tgd_neuron_train_behavior.html" title="class ADAPTgdNeuronTrainBehavior &#45;" alt="" coords="449,5,660,32"/>
-<area shape="rect" id="node7" href="$class_a_d_a_p_tgdwm_neuron_train_behavior.html" title="class ADAPTgdwmNeuronTrainBehavior &#45;" alt="" coords="439,56,671,83"/>
-<area shape="rect" id="node11" href="$class_b_a_t_c_hgd_neuron_train_behavior.html" title="class BATCHgdNeuronTrainBehavior &#45;" alt="" coords="449,107,661,133"/>
-<area shape="rect" id="node13" href="$class_b_a_t_c_hgdwm_neuron_train_behavior.html" title="class BATCHgdwmNeuronTrainBehavior &#45;" alt="" coords="437,157,672,184"/>
+<area shape="rect" id="node1" href="$class_neuron.html" title="class Neuron &#45;" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node3" href="$class_simple_neuron.html" title="class SimpleNeuron &#45;" alt="" coords="120,5,229,32"/>
 </map>

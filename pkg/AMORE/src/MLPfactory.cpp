@@ -24,8 +24,6 @@
 //=========================================================================================================
 
 
-
-
 ConPtr
 MLPfactory::makeCon(Neuron& neuron, double weight)
 {
@@ -40,7 +38,6 @@ MLPfactory::makeConContainer()
   return conContainerPtr;
 }
 
-
 PredictBehaviorPtr
 MLPfactory::makePredictBehavior(NeuronPtr neuronPtr)
 {
@@ -54,7 +51,10 @@ MLPfactory::makeNeuron(Handler Id)
   NeuronPtr neuronPtr(new SimpleNeuron(*this));
   neuronPtr->setId(Id);
   neuronPtr->setPredictBehavior(makePredictBehavior(neuronPtr));
-  neuronPtr->setActivationFunction(makeActivationFunction(neuronPtr));
+  neuronPtr->setActivationFunction(
+      makeActivationFunction(neuronPtr,
+          Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f0)),
+          Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f1))));
   return neuronPtr;
 }
 
@@ -70,47 +70,55 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
   double weight;
   for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      weight =as<double>(runif(1, -extreme, extreme));
+      weight = as<double> (runif(1, -extreme, extreme));
       neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
     }
 
-  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*>(neuronPtr->d_predictBehavior.get()) ;
-  mlpBehavior->d_bias=as<double>(runif(1, -extreme, extreme));
+   MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*>(neuronPtr->d_predictBehavior.get()) ;
+   mlpBehavior->d_bias=as<double>(runif(1, -extreme, extreme));
 
-return neuronPtr;
+  return neuronPtr;
 }
 
 LayerPtr
 MLPfactory::makeLayer()
 {
-  LayerPtr layerPtr( new SimpleContainer<NeuronPtr> );
+  LayerPtr layerPtr(new SimpleContainer<NeuronPtr> );
   return layerPtr;
 }
-
 
 LayerContainerPtr
 MLPfactory::makeLayerContainer()
 {
-  LayerContainerPtr layerContainerPtr( new SimpleContainer<LayerPtr> );
-  layerContainerPtr->push_back( makeLayer() );
+  LayerContainerPtr layerContainerPtr(new SimpleContainer<LayerPtr> );
+  layerContainerPtr->push_back(makeLayer());
   return layerContainerPtr;
 }
-
 
 NeuralNetworkPtr
 MLPfactory::makeNeuralNetwork(NeuralFactory& neuralFactory)
 {
-  NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactory ) );
+  NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactory));
   return neuralNetworkPtr;
 }
 
+#if 0
 
 NeuralCreatorPtr
 MLPfactory::makeNeuralCreator()
+  {
+    NeuralCreatorPtr neuralCreatorPtr(new SimpleNeuralCreator );
+    return neuralCreatorPtr;
+  }
+
+#endif
+
+ActivationFunctionPtr
+MLPfactory::makeActivationFunction(NeuronPtr neuronPtr,
+    Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1)
 {
-  NeuralCreatorPtr neuralCreatorPtr(new SimpleNeuralCreator );
-  return neuralCreatorPtr;
+  ActivationFunctionPtr activationFunctionPtr(
+      new ActivationFunction(neuronPtr, f0, f1));
+  return activationFunctionPtr;
 }
-
-
 

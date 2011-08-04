@@ -5,7 +5,7 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
 			Rcpp::IntegerVector ids(Ids);
@@ -33,7 +33,7 @@ test.ContainerIterator.Cpp.first<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
 			Rcpp::IntegerVector ids(Ids);
@@ -62,7 +62,7 @@ test.ContainerIterator.Cpp.next<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
 			Rcpp::IntegerVector ids(Ids);
@@ -93,7 +93,7 @@ test.ContainerIterator.Cpp.isDone<- function() {
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
 			Rcpp::IntegerVector ids(Ids);
@@ -127,7 +127,7 @@ test.ContainerIterator.Cpp.currentItem<- function() {
 	testCode <- "
 BEGIN_RCPP
 			// Test
-			NeuralFactoryPtr neuralFactoryPtr( new IdentityFactory() );
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
 			NeuronPtr neuronPtr;
 			Rcpp::IntegerVector ids(Ids);
