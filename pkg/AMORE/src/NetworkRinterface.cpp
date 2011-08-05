@@ -9,7 +9,6 @@
 
 
 #include "classHeaders/NeuralFactory.h"
-#include "classHeaders/NoNetworkTrainBehaviorFactory.h"
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/NeuralCreator.h"
 #include "classHeaders/NetworkRinterface.h"
@@ -25,15 +24,27 @@ NetworkRinterface::NetworkRinterface()
 }
 
 void
-NetworkRinterface::createFeedForwardNetwork(Rcpp::NumericVector numberOfNeurons)
+NetworkRinterface::createFeedForwardNetwork(Rcpp::NumericVector numberOfNeurons,   Rcpp::CharacterVector hiddenLayersActivationFunctionName, Rcpp::CharacterVector outputLayerActivationFunctionName)
 {
-  NeuralFactoryPtr hiddenLayersFactoryPtr(new NoNetworkTrainBehaviorFactory());
-  NeuralFactoryPtr outputFactoryPtr(new NoNetworkTrainBehaviorFactory());
-  NeuralCreatorPtr neuralCreator(outputFactoryPtr->makeNeuralCreator());
-  d_neuralNetwork = neuralCreator->createFeedForwardNetwork(
-      as<std::vector<int> > (numberOfNeurons), *hiddenLayersFactoryPtr,
-      *outputFactoryPtr);
+  NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory );
+  NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+  std::string hiddenName = as<std::string> (hiddenLayersActivationFunctionName);
+  std::string outputName = as<std::string> (outputLayerActivationFunctionName);
+  std::vector<int> numOfNeurons = as< std::vector<int> >(numberOfNeurons) ;
+  d_neuralNetwork = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, numOfNeurons, hiddenName, outputName);
 }
+
+void
+NetworkRinterface::createCustomFeedForwardNetwork(Rcpp::NumericVector numberOfNeurons, Rcpp::List hiddenLayersActivationFunction, Rcpp::List outputLayerActivationFunction)
+{
+  NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory );
+  NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+  std::vector<int> numOfNeurons = as< std::vector<int> >(numberOfNeurons) ;
+  d_neuralNetwork = neuralCreatorPtr->createCustomFeedForwardNetwork(*neuralFactoryPtr, numOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
+
+}
+
+
 
 Rcpp::NumericMatrix
 NetworkRinterface::predict(Rcpp::NumericMatrix numericMatrix)

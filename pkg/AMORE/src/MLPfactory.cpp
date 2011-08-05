@@ -74,8 +74,9 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
       neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
     }
 
-   MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*>(neuronPtr->d_predictBehavior.get()) ;
-   mlpBehavior->d_bias=as<double>(runif(1, -extreme, extreme));
+  MLPbehavior* mlpBehavior =
+      dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
+  mlpBehavior->d_bias = as<double> (runif(1, -extreme, extreme));
 
   return neuronPtr;
 }
@@ -102,7 +103,7 @@ MLPfactory::makeNeuralNetwork(NeuralFactory& neuralFactory)
   return neuralNetworkPtr;
 }
 
-#if 0
+
 
 NeuralCreatorPtr
 MLPfactory::makeNeuralCreator()
@@ -111,7 +112,6 @@ MLPfactory::makeNeuralCreator()
     return neuralCreatorPtr;
   }
 
-#endif
 
 ActivationFunctionPtr
 MLPfactory::makeActivationFunction(NeuronPtr neuronPtr,
@@ -122,3 +122,113 @@ MLPfactory::makeActivationFunction(NeuronPtr neuronPtr,
   return activationFunctionPtr;
 }
 
+Rcpp::List
+MLPfactory::makeXPtrFunctionList(std::string functionName)
+{
+
+  if (functionName == "Tanh")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (new CppFunctionPointer(&Tanh_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (new CppFunctionPointer(&Tanh_f1)));
+    }
+  else if (functionName == "Identity")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Identity_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Identity_f1)));
+    }
+  else if (functionName == "Threshold")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Threshold_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Threshold_f1)));
+    }
+  else if (functionName == "Logistic")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Logistic_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Logistic_f1)));
+    }
+  else if (functionName == "Exponential")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Exponential_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Exponential_f1)));
+    }
+  else if (functionName == "Reciprocal")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Reciprocal_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Reciprocal_f1)));
+    }
+  else if (functionName == "Square")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Square_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Square_f1)));
+    }
+  else if (functionName == "Gauss")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Gauss_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Gauss_f1)));
+    }
+  else if (functionName == "Sine")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Sine_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Sine_f1)));
+    }
+  else if (functionName == "Cosine")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Cosine_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Cosine_f1)));
+    }
+  else if (functionName == "Elliot")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Elliot_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Elliot_f1)));
+    }
+  else if (functionName == "Arctan")
+    {
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Arctan_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&Arctan_f1)));
+    }
+  else
+    {
+      Rprintf(
+          "\nWarning: default function applied. Unknown function name entered.\n");
+      return List::create(
+          _["f0"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&default_f0)),
+          _["f1"] = XPtr<CppFunctionPointer> (
+              new CppFunctionPointer(&default_f1)));
+    }
+
+}

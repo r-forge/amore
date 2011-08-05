@@ -42,6 +42,7 @@
 #include <algorithm>
 #include <vector>
 #include <iterator>
+#include <string>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
 #include <boost/ref.hpp>
@@ -89,10 +90,56 @@ class TrainingBehavior;
 typedef int Handler;
 typedef double (*CppFunctionPointer)(double);
 
-double Tanh_f0(double inducedLocalField) { return tanh(inducedLocalField); }
-double Tanh_f1(double inducedLocalField) { double tanhx = tanh(inducedLocalField); return 1-tanhx*tanhx;}
-double default_f0(double inducedLocalField) { return NA_REAL; }
-double default_f1(double inducedLocalField) { return NA_REAL; }
+
+//================================================================================
+// ----------------------------------- Function definitions ----------------------
+//================================================================================
+double default_f0(double inducedLocalField)  { return NA_REAL; }
+double default_f1(double inducedLocalField)  { return NA_REAL; }
+
+double Tanh_f0(double inducedLocalField)     { return tanh(inducedLocalField); }
+double Tanh_f1(double inducedLocalField)     { double f0value = tanh(inducedLocalField); return 1-f0value*f0value;}
+
+double Identity_f0(double inducedLocalField) { return inducedLocalField; }
+double Identity_f1(double inducedLocalField) { return 1; }
+
+double Threshold_f0(double inducedLocalField)   { return (inducedLocalField > 0) ? 1 : 0 ; }
+double Threshold_f1(double inducedLocalField)   { return 0; }
+
+double Logistic_f0(double inducedLocalField) { return 1.0/(1.0+exp(-inducedLocalField)) ; }
+double Logistic_f1(double inducedLocalField) { double f0value = 1.0/(1.0+exp(-inducedLocalField)); return f0value*(1-f0value) ; }
+
+double Exponential_f0(double inducedLocalField) { return exp(inducedLocalField); }
+double Exponential_f1(double inducedLocalField) { double f0value=exp(inducedLocalField); return f0value; }
+
+double Reciprocal_f0(double inducedLocalField) { return 1.0/inducedLocalField; }
+double Reciprocal_f1(double inducedLocalField) { double f0value=1.0/inducedLocalField ; return -f0value*f0value; }
+
+double Square_f0(double inducedLocalField) { return inducedLocalField*inducedLocalField; }
+double Square_f1(double inducedLocalField) { return 2*inducedLocalField; }
+
+double Gauss_f0(double inducedLocalField) { return exp(-inducedLocalField*inducedLocalField); }
+double Gauss_f1(double inducedLocalField) { double f0value=exp(-inducedLocalField*inducedLocalField); return -2*inducedLocalField*f0value; }
+
+double Sine_f0(double inducedLocalField) { return sin(inducedLocalField); }
+double Sine_f1(double inducedLocalField) { return cos(inducedLocalField); }
+
+double Cosine_f0(double inducedLocalField) { return cos(inducedLocalField); }
+double Cosine_f1(double inducedLocalField) { return -sin(inducedLocalField); }
+
+
+double Elliot_f0(double inducedLocalField) { return inducedLocalField/(1+abs(inducedLocalField)); }
+double Elliot_f1(double inducedLocalField) { double aux= abs(inducedLocalField)+1; return (aux+inducedLocalField) / (aux*aux) ; }
+
+double Arctan_f0(double inducedLocalField) { return 2.0*atan(inducedLocalField)/M_PI; }
+double Arctan_f1(double inducedLocalField) { return 2.0/((1+inducedLocalField*inducedLocalField)*M_PI); }
+
+
+//================================================================================
+// ----------------------------------- End of Function definitions ----------------------
+//================================================================================
+
+
 
 
 // typedef boost::reference_wrapper<PredictBehavior> ActivationFunctionRef;
@@ -144,7 +191,7 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/MLPBehavior.h"
 #include "classHeaders/NeuralCreator.h"
 #include "classHeaders/SimpleNeuralCreator.h"
-
+#include "classHeaders/NetworkRinterface.h"
 
 #if 0
 #include "classHeaders/NeuronTrainBehavior.h"
@@ -153,7 +200,6 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/NoNetworkTrainBehavior.h"
 #include "classHeaders/NoNetworkTrainBehaviorFactory.h"
 
-#include "classHeaders/NetworkRinterface.h"
 
 #endif
 
@@ -169,14 +215,14 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "PredictBehavior.cpp"
 #include "MLPbehavior.cpp"
 #include "SimpleNeuralCreator.cpp"
+#include "NetworkRinterface.cpp"
+#include "RcppModules.cpp"
 
 
 #if 0
+
 #include "NoNeuronTrainBehavior.cpp"
 #include "NoNetworkTrainBehavior.cpp"
-
-#include "NetworkRinterface.cpp"
-#include "RcppModules.cpp"
 
 #endif
 

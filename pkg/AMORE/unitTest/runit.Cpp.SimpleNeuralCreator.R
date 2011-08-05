@@ -5,161 +5,49 @@ test.SimpleNeuronCreator.Cpp.createFeedForward <- function() {
 
 
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-	testCode <- "
+	testCode <- '
 			// Data set up			
-				NeuralFactoryPtr hiddenLayersFactoryPtr (newMLPNoNetworkTrainBehaviorFactory()     );
-				NeuralFactoryPtr outputFactoryPtr 		(new MLPNoNetworkTrainBehaviorFactory()) ; 
-				NeuralCreatorPtr neuralCreator( outputFactoryPtr->makeNeuralCreator() );
-				NeuralNetworkPtr network = neuralCreator->createFeedForwardNetwork(as< std::vector<int> >(numberOfNeurons), *hiddenLayersFactoryPtr, *outputFactoryPtr);
+				NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory()     );
+				NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+				NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
+
 			// Test
-				network->show();
-				network->validate();
+				networkPtr->show();
+				networkPtr->validate();
 				return wrap(true);
-			"
+			'
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun(c(2,5,4,1))	
 	checkTrue(result)
-	# 
-	# 
-	# =========================================================
-	#          Input Layer
-	# =========================================================
-	# 
-	# -----------------------------------
-	#  Id: 1
-	# -----------------------------------
-	#  output: 0.000000
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 2
-	# -----------------------------------
-	#  output: 0.000000
-	# -----------------------------------
-	# 
-	# =========================================================
-	#          Hidden Layers
-	# =========================================================
-	# 
-	# -----------------------------------
-	#  Id: 3
-	# -----------------------------------
-	#  bias: 0.046232
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 1 	 Weight= 	 0.009029
-	# From:	 2 	 Weight= 	 0.142977
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 4
-	# -----------------------------------
-	#  bias: -0.107329
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 1 	 Weight= 	 0.094700
-	# From:	 2 	 Weight= 	 -0.208257
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 5
-	# -----------------------------------
-	#  bias: -0.084666
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 1 	 Weight= 	 -0.184596
-	# From:	 2 	 Weight= 	 -0.047012
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 6
-	# -----------------------------------
-	#  bias: 0.255033
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 1 	 Weight= 	 0.250585
-	# From:	 2 	 Weight= 	 -0.080460
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 7
-	# -----------------------------------
-	#  bias: -0.098106
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 1 	 Weight= 	 0.003574
-	# From:	 2 	 Weight= 	 0.123212
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 8
-	# -----------------------------------
-	#  bias: -0.123320
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 3 	 Weight= 	 -0.157360
-	# From:	 4 	 Weight= 	 0.093612
-	# From:	 5 	 Weight= 	 0.061412
-	# From:	 6 	 Weight= 	 0.237122
-	# From:	 7 	 Weight= 	 -0.228928
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 9
-	# -----------------------------------
-	#  bias: 0.242495
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 3 	 Weight= 	 -0.040469
-	# From:	 4 	 Weight= 	 0.232137
-	# From:	 5 	 Weight= 	 0.157734
-	# From:	 6 	 Weight= 	 -0.212726
-	# From:	 7 	 Weight= 	 -0.194016
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 10
-	# -----------------------------------
-	#  bias: -0.249893
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 3 	 Weight= 	 -0.218267
-	# From:	 4 	 Weight= 	 0.170988
-	# From:	 5 	 Weight= 	 -0.227110
-	# From:	 6 	 Weight= 	 -0.160108
-	# From:	 7 	 Weight= 	 -0.163247
-	# -----------------------------------
-	# 
-	# -----------------------------------
-	#  Id: 11
-	# -----------------------------------
-	#  bias: -0.059329
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 3 	 Weight= 	 -0.190577
-	# From:	 4 	 Weight= 	 0.116734
-	# From:	 5 	 Weight= 	 0.002884
-	# From:	 6 	 Weight= 	 -0.055454
-	# From:	 7 	 Weight= 	 -0.060051
-	# -----------------------------------
-	# 
-	# =========================================================
-	#          Output Layer
-	# =========================================================
-	# 
-	# -----------------------------------
-	#  Id: 12
-	# -----------------------------------
-	#  bias: -0.120243
-	#  output: 0.000000
-	# -----------------------------------
-	# From:	 8 	 Weight= 	 0.063711
-	# From:	 9 	 Weight= 	 -0.123484
-	# From:	 10 	 Weight= 	 0.233685
-	# From:	 11 	 Weight= 	 0.201822
-	# -----------------------------------
-	# =========================================================
-	# [1] TRUE
 
+	
+}
+
+
+###############################################################################
+test.SimpleNeuronCreator.Cpp.createCustomFeedForward <- function() {	
+###############################################################################	
+	
+	
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- '
+			// Data set up			
+			NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory()     );
+			NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+
+			Rcpp::List hiddenLayersActivationFunctionList = neuralFactoryPtr->makeXPtrFunctionList("Tanh");
+			Rcpp::List outputLayerActivationFunctionsList = neuralFactoryPtr->makeXPtrFunctionList("Identity");
+
+			NeuralNetworkPtr networkPtr = neuralCreatorPtr->createCustomFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), hiddenLayersActivationFunctionList, outputLayerActivationFunctionsList);
+			
+			// Test
+			networkPtr->show();
+			networkPtr->validate();
+			return wrap(true);
+			'
+	testCodefun <- cfunction(sig=signature(numberOfNeurons="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+	result <- testCodefun(c(2,5,4,1))	
+	checkTrue(result)
+	
 	
 }
