@@ -86,8 +86,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
-			
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );			
 			LayerPtr inputLayerPtr (neuralFactoryPtr->makeLayer());
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron(1) );
 			NeuronPtr neuronPtrInput2( neuralFactoryPtr->makeNeuron(2) );
@@ -100,10 +99,17 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			neuronPtrInput3->setOutput(4.0);
 			
 			LayerPtr outputLayerPtr (neuralFactoryPtr->makeLayer());
+		
+			Rcpp::XPtr<CppFunctionPointer>  f0XPtr(new CppFunctionPointer(&Tanh_f0)) ;
+			Rcpp::XPtr<CppFunctionPointer>  f1XPtr(new CppFunctionPointer(&Tanh_f1)) ;
+
 			NeuronPtr neuronPtrOutput4( neuralFactoryPtr->makeNeuron(4) );
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the predict results
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50));
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75));
+			ActivationFunctionPtr activationFunctionPtr ( neuralFactoryPtr->makeActivationFunction(neuronPtrOutput4, f0XPtr, f1XPtr)	);
+			neuronPtrOutput4->setActivationFunction(activationFunctionPtr);
+
 			neuronPtrOutput4->singlePatternForwardAction();
 
 			NeuronPtr neuronPtrOutput5( neuralFactoryPtr->makeNeuron(5, inputLayerPtr->createIterator(), 11) );
@@ -126,7 +132,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 										Rcpp::Named(\"outputN2\") = neuronPtrInput2->getOutput(),
 										Rcpp::Named(\"outputN3\") = neuronPtrInput3->getOutput(),
 										Rcpp::Named(\"outputN4\") = neuronPtrOutput4->getOutput(),
-										Rcpp::Named(\"outputN4\") = neuronPtrOutput5->getOutput()
+										Rcpp::Named(\"outputN5\") = neuronPtrOutput5->getOutput()
 			);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -135,7 +141,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	checkEquals(result$outputN2, 2)
 	checkEquals(result$outputN3, 4)
 	checkEquals(result$outputN4, tanh(5))
-
+	checkTrue(is.na(result$outputN5))
 }
 
 

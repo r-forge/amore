@@ -15,6 +15,7 @@ protected:
   NeuralNetworkPtr makeNeuralNetwork (NeuralFactory& neuralFactory);
   NeuralCreatorPtr makeNeuralCreator ();
   ActivationFunctionPtr makeActivationFunction (NeuronPtr neuronPtr, Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1);
+  Rcpp::List makeXPtrFunctionList (std::string functionName);
   // virtual NetworkTrainBehaviorPtr makeNetworkTrainBehavior () = 0;
   // virtual NeuronTrainBehaviorPtr makeNeuronTrainBehavior (NeuronPtr neuronPtr) = 0;
 };

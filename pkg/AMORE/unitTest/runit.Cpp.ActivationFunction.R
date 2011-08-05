@@ -8,12 +8,6 @@ suppressMessages(require("Rcpp"))
 suppressMessages(require("RUnit"))
 
 
-# 
-
-
-
-
-
 ###############################################################################
 test.ActivationFunction.Cpp.Constructor <- function() {	
 ###############################################################################	

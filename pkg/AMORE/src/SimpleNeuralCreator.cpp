@@ -22,6 +22,17 @@ SimpleNeuralCreator::SimpleNeuralCreator()
 NeuralNetworkPtr
 SimpleNeuralCreator::createFeedForwardNetwork(NeuralFactory& neuralFactory,
     std::vector<int> numberOfNeurons,
+    std::string hiddenLayersActivationFunctionName,
+    std::string outputLayerActivationFunctionName)
+  {
+    Rcpp::List hiddenLayersActivationFunction = neuralFactory.makeXPtrFunctionList(hiddenLayersActivationFunctionName);
+    Rcpp::List outputLayerActivationFunction  = neuralFactory.makeXPtrFunctionList(outputLayerActivationFunctionName);
+    return createCustomFeedForwardNetwork(neuralFactory, numberOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
+  }
+
+NeuralNetworkPtr
+SimpleNeuralCreator::createCustomFeedForwardNetwork(
+    NeuralFactory& neuralFactory, std::vector<int> numberOfNeurons,
     Rcpp::List hiddenLayersActivationFunction,
     Rcpp::List outputLayerActivationFunction)
 {
@@ -64,26 +75,37 @@ SimpleNeuralCreator::createFeedForwardNetwork(NeuralFactory& neuralFactory,
     }
 
   // Hidden layers
-  Rcpp::XPtr < CppFunctionPointer > f0XPtr = hiddenLayersActivationFunction["f0"];
-  Rcpp::XPtr < CppFunctionPointer > f1XPtr = hiddenLayersActivationFunction["f1"];
+  Rcpp::XPtr < CppFunctionPointer > f0XPtr
+      = hiddenLayersActivationFunction["f0"];
+  Rcpp::XPtr < CppFunctionPointer > f1XPtr
+      = hiddenLayersActivationFunction["f1"];
 
   for (int i = 0; i < numberOfNeurons.at(1); ++i)
     {
 
-      neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_inputLayer->createIterator(), totalAmountOfParameters);
-      neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
+      neuronPtr = neuralFactory.makeNeuron(neuronId++,
+          neuralNetworkPtr->d_inputLayer->createIterator(),
+          totalAmountOfParameters);
+      neuronPtr->setActivationFunction(
+          neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
       neuralNetworkPtr->d_hiddenLayers->at(0)->push_back(neuronPtr);
     }
 
   unsigned int layerItr = 2;
   for (; layerItr < (-1 + numberOfNeurons.size()); ++layerItr)
     {
-      neuralNetworkPtr->d_hiddenLayers->push_back( neuralFactory.makeLayer() );
+      neuralNetworkPtr->d_hiddenLayers->push_back(neuralFactory.makeLayer());
       for (int i = 0; i < numberOfNeurons.at(layerItr); ++i)
         {
-          neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(), totalAmountOfParameters);
-          neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
-          neuralNetworkPtr->d_hiddenLayers->at(layerItr - 1)->push_back(neuronPtr);
+          neuronPtr
+              = neuralFactory.makeNeuron(
+                  neuronId++,
+                  neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(),
+                  totalAmountOfParameters);
+          neuronPtr->setActivationFunction(
+              neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+          neuralNetworkPtr->d_hiddenLayers->at(layerItr - 1)->push_back(
+              neuronPtr);
         }
     }
 
@@ -93,8 +115,11 @@ SimpleNeuralCreator::createFeedForwardNetwork(NeuralFactory& neuralFactory,
 
   for (int i = 0; i < numberOfNeurons.back(); ++i)
     {
-      neuronPtr = neuralFactory.makeNeuron(neuronId++, neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(), totalAmountOfParameters);
-      neuronPtr->setActivationFunction( neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr) );
+      neuronPtr = neuralFactory.makeNeuron(neuronId++,
+          neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(),
+          totalAmountOfParameters);
+      neuronPtr->setActivationFunction(
+          neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
       neuralNetworkPtr->d_outputLayer->push_back(neuronPtr);
     }
 
