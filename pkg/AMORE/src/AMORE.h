@@ -181,27 +181,39 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
 #include "classHeaders/SimpleContainerReverseIterator.h"
+
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
 #include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
+
+#include "classHeaders/ADAPTFactory.h"
+#include "classHeaders/ADAPTgdFactory.h"
+#include "classHeaders/ADAPTgdwmFactory.h"
+#include "classHeaders/BATCHFactory.h"
+#include "classHeaders/BATCHgdFactory.h"
+#include "classHeaders/BATCHgdwmFactory.h"
+
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/SimpleNetwork.h"
+
 #include "classHeaders/ActivationFunction.h"
 #include "classHeaders/PredictBehavior.h"
 #include "classHeaders/MLPBehavior.h"
+
 #include "classHeaders/NeuralCreator.h"
 #include "classHeaders/SimpleNeuralCreator.h"
 #include "classHeaders/NetworkRinterface.h"
 
-#if 0
 #include "classHeaders/NeuronTrainBehavior.h"
 #include "classHeaders/NoNeuronTrainBehavior.h"
+
 #include "classHeaders/NetworkTrainBehavior.h"
-#include "classHeaders/NoNetworkTrainBehavior.h"
-#include "classHeaders/NoNetworkTrainBehaviorFactory.h"
+#include "classHeaders/MLPNetworkTrainBehavior.h"
+#include "classHeaders/MLPNoNetworkTrainBehavior.h"
 
 
-#endif
+
+
 
 #include "Connection.cpp"
 #include "Neuron.cpp"
@@ -212,19 +224,30 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "SimpleNetwork.cpp"
 #include "ActivationFunction.cpp"
 
+#include "ADAPTgdFactory.cpp"
+#include "ADAPTgdwmFactory.cpp"
+#include "BATCHgdFactory.cpp"
+#include "BATCHgdwmFactory.cpp"
+#include "ADAPTgdOutputNeuronTrainBehavior.cpp"
+#include "ADAPTgdHiddenNeuronTrainBehavior.cpp"
+#include "ADAPTgdwmOutputNeuronTrainBehavior.cpp"
+#include "ADAPTgdwmHiddenNeuronTrainBehavior.cpp"
+#include "BATCHgdOutputNeuronTrainBehavior.cpp"
+#include "BATCHgdHiddenNeuronTrainBehavior.cpp"
+#include "BATCHgdwmOutputNeuronTrainBehavior.cpp"
+#include "BATCHgdwmHiddenNeuronTrainBehavior.cpp"
+
+
+
+
 #include "PredictBehavior.cpp"
 #include "MLPbehavior.cpp"
 #include "SimpleNeuralCreator.cpp"
 #include "NetworkRinterface.cpp"
 #include "RcppModules.cpp"
-
-
-#if 0
-
 #include "NoNeuronTrainBehavior.cpp"
-#include "NoNetworkTrainBehavior.cpp"
+#include "MLPNoNetworkTrainBehavior.cpp"
 
-#endif
 
 
 

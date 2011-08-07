@@ -4,7 +4,7 @@
 /// class BatchNetworkTrainBehavior - 
 class BatchNetworkTrainBehavior : public MLPNetworkTrainBehavior {
   // Operations
-public:
+protected:
   virtual Rcpp::List train (Rcpp::List parameterList) = 0;
 };
 

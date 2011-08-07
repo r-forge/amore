@@ -6,7 +6,6 @@ mv ../pkg/AMORE/src/classHeaders/Con.h ../pkg/AMORE/src/classHeaders/Connection.
 
 
 
-
 sed -e 's/public Container {/public Container<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainer.h 
 sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerIterator.h 
 sed -e 's/public Iterator {/public Iterator<T> {/g' -i ""  ../pkg/AMORE/src/classHeaders/SimpleContainerReverseIterator.h 

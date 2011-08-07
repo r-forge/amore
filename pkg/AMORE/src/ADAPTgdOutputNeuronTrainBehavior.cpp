@@ -13,7 +13,7 @@
 
 void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction (){
   d_delta = d_neuron->getOutputDerivative() * d_costFunction->f1( d_neuron->getOutput(), d_neuron->getTarget() );
-  d_neuron->changeBias( - d_learningRate * d_delta ) ;
+  d_neuron->d_predictBehavior->d_bias += - d_learningRate * d_delta  ;
 }
 
 

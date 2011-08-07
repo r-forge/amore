@@ -16,8 +16,37 @@
 SimpleNetwork::SimpleNetwork(NeuralFactory& neuralFactory) :
   NeuralNetwork(neuralFactory)
 {
+}
+
+
+Rcpp::NumericMatrix
+SimpleNetwork::sim(Rcpp::NumericMatrix numericMatrix)
+{
+
+  bool checkIncorrectNumberOfRows( inputSize() != static_cast<size_type> (numericMatrix.nrow()));
+  if (checkIncorrectNumberOfRows)
+    {
+      throw std::runtime_error(
+          "\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n");
+    }
+
+  Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
+  std::vector<double>::iterator inputIterator(numericMatrix.begin());
+  std::vector<double>::iterator outputIterator(outputMatrix.begin());
+
+  // PREDICT LOOP
+  for (int i = 0; i < numericMatrix.ncol(); i++)
+    {
+      writeInput(inputIterator);
+      singlePatternForwardAction();
+      readOutput(outputIterator);
+    }
+  return outputMatrix;
 
 }
+
+
+
 
 void
 SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
@@ -64,7 +93,7 @@ SimpleNetwork::singlePatternForwardAction()
     }
 }
 
-#if 0
+
 void
 SimpleNetwork::singlePatternBackwardAction()
 {
@@ -87,7 +116,6 @@ SimpleNetwork::singlePatternBackwardAction()
     }
 }
 
-#endif
 
 void
 SimpleNetwork::readOutput(std::vector<double>::iterator& iterator)

@@ -71,23 +71,21 @@ SimpleNeuralCreator::createCustomFeedForwardNetwork(
   for (int i = 0; i < numberOfNeurons.at(0); ++i)
     {
       neuronPtr = neuralFactory.makeNeuron(neuronId++);
+      neuronPtr->setNeuronTrainBehavior( neuralFactory.makeHiddenNeuronTrainBehavior(neuronPtr));
       neuralNetworkPtr->d_inputLayer->push_back(neuronPtr);
     }
 
   // Hidden layers
-  Rcpp::XPtr < CppFunctionPointer > f0XPtr
-      = hiddenLayersActivationFunction["f0"];
-  Rcpp::XPtr < CppFunctionPointer > f1XPtr
-      = hiddenLayersActivationFunction["f1"];
+  Rcpp::XPtr < CppFunctionPointer > f0XPtr      = hiddenLayersActivationFunction["f0"];
+  Rcpp::XPtr < CppFunctionPointer > f1XPtr      = hiddenLayersActivationFunction["f1"];
 
   for (int i = 0; i < numberOfNeurons.at(1); ++i)
     {
-
       neuronPtr = neuralFactory.makeNeuron(neuronId++,
           neuralNetworkPtr->d_inputLayer->createIterator(),
           totalAmountOfParameters);
-      neuronPtr->setActivationFunction(
-          neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+      neuronPtr->setActivationFunction(  neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+      neuronPtr->setNeuronTrainBehavior( neuralFactory.makeHiddenNeuronTrainBehavior(neuronPtr));
       neuralNetworkPtr->d_hiddenLayers->at(0)->push_back(neuronPtr);
     }
 
@@ -102,8 +100,8 @@ SimpleNeuralCreator::createCustomFeedForwardNetwork(
                   neuronId++,
                   neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(),
                   totalAmountOfParameters);
-          neuronPtr->setActivationFunction(
-              neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+          neuronPtr->setActivationFunction(  neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+          neuronPtr->setNeuronTrainBehavior( neuralFactory.makeHiddenNeuronTrainBehavior(neuronPtr));
           neuralNetworkPtr->d_hiddenLayers->at(layerItr - 1)->push_back(
               neuronPtr);
         }
@@ -118,8 +116,8 @@ SimpleNeuralCreator::createCustomFeedForwardNetwork(
       neuronPtr = neuralFactory.makeNeuron(neuronId++,
           neuralNetworkPtr->d_hiddenLayers->at(layerItr - 2)->createIterator(),
           totalAmountOfParameters);
-      neuronPtr->setActivationFunction(
-          neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+      neuronPtr->setActivationFunction(  neuralFactory.makeActivationFunction(neuronPtr, f0XPtr, f1XPtr));
+      neuronPtr->setNeuronTrainBehavior( neuralFactory.makeOutputNeuronTrainBehavior(neuronPtr));
       neuralNetworkPtr->d_outputLayer->push_back(neuronPtr);
     }
 

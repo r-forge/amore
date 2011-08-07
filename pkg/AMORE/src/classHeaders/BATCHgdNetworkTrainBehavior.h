@@ -4,7 +4,7 @@
 /// class BATCHgdNetworkTrainBehavior - 
 class BATCHgdNetworkTrainBehavior : public BatchNetworkTrainBehavior {
   // Operations
-public:
+protected:
   Rcpp::List train (Rcpp::List parameterList);
 };
 

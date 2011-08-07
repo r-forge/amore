@@ -202,10 +202,12 @@ test.SimpleNetwork.Cpp.singlePatternForwardAction <- function() {
 ###############################################################################
 test.SimpleNetwork.Cpp.singlePatternBackwardAction <- function() {	
 ###############################################################################		
+	
+
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
 			// Data set up		
-			NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory );
+			NeuralFactoryPtr neuralFactoryPtr (new ADAPTgdFactory );
 			NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
 			NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
 			networkPtr->show();
@@ -237,7 +239,6 @@ test.SimpleNetwork.Cpp.singlePatternBackwardAction <- function() {
 			return wrap(outputVector);
 			'
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="integer", inputData="numeric", targetData="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-	result <- testCodefun(numberOfNeurons=c(2,5,4,31), inputData=c(1.4, 4.5), targetData=c(0.4, 0.5) )
-	checkEquals(length(result), 31)
-	# [1] TRUE
+	result <- testCodefun(numberOfNeurons=c(2,2,2), inputData=c(1.4, 4.5), targetData=c(0.4, 0.5) )
+	checkEquals(length(result), 2)
 }

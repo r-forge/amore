@@ -4,7 +4,7 @@
 /// class ADAPTgdNetworkTrainBehavior - 
 class ADAPTgdNetworkTrainBehavior : public AdaptNetworkTrainBehavior {
   // Operations
-public:
+protected:
   Rcpp::List train (Rcpp::List parameterList);
 };
 

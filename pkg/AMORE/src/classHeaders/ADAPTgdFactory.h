@@ -5,6 +5,7 @@
 class ADAPTgdFactory : public ADAPTFactory {
   // Operations
 protected:
-  NeuronTrainBehaviorPtr makeNeuronTrainBehavior (NeuronPtr neuronPtr);
+  NeuronTrainBehaviorPtr makeOutputNeuronTrainBehavior (NeuronPtr neuronPtr);
+  NeuronTrainBehaviorPtr makeHiddenNeuronTrainBehavior (NeuronPtr neuronPtr);
 };
 

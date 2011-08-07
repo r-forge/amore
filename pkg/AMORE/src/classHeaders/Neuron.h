@@ -5,7 +5,7 @@ class Neuron {
 protected:
   PredictBehaviorPtr d_predictBehavior;
   ActivationFunctionPtr d_activationFunction;
-  // NeuronTrainBehaviorPtr d_neuronTrainBehavior;
+  NeuronTrainBehaviorPtr d_neuronTrainBehavior;
   Handler d_Id;
   ConContainerPtr d_nCons;
   double d_inducedLocalField;
@@ -29,11 +29,11 @@ friend class MLPfactory;
   virtual void addCon (ConPtr conPtr) = 0;
   virtual void setActivationFunction (ActivationFunctionPtr activationFunctionPtr) = 0;
   virtual void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr) = 0;
-  // virtual void setTrainingBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr) = 0;
+  virtual void setNeuronTrainBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr) = 0;
   virtual double useActivationFunctionf0 () = 0;
   virtual double useActivationFunctionf1 () = 0;
   virtual void singlePatternForwardAction () = 0;
-  // virtual void singlePatternBackwardAction () = 0;
+  virtual void singlePatternBackwardAction () = 0;
   // virtual void adjustParameters () = 0;
   virtual void show () = 0;
   virtual bool validate () = 0;
