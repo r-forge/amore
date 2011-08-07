@@ -1,5 +1,5 @@
 /*
- * NoNetworkTrainBehaviorFactory.cpp
+ * MLPNoNetworkTrainBehaviorFactory.cpp
  *
  *  Created on: 20/07/2011
  *      Author: mcasl
@@ -7,23 +7,30 @@
 
 #include "package.h"
 #include "classHeaders/NeuralFactory.h"
-#include "classHeaders/MLPfactory.h"
-#include "classHeaders/ADAPTFactory.h"
+#include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
 
-#if 0
+
 NetworkTrainBehaviorPtr
-NoNetworkTrainBehaviorFactory::makeNetworkTrainBehavior()
+MLPNoNetworkTrainBehaviorFactory::makeNetworkTrainBehavior()
 {
-  NetworkTrainBehaviorPtr networkTrainBehaviorPtr (new NoNetworkTrainBehavior());
+  NetworkTrainBehaviorPtr networkTrainBehaviorPtr (new MLPNoNetworkTrainBehavior );
   return networkTrainBehaviorPtr;
 }
 
+
+
 NeuronTrainBehaviorPtr
-NoNetworkTrainBehaviorFactory::makeNeuronTrainBehavior(NeuronPtr neuronPtr)
+MLPNoNetworkTrainBehaviorFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior());
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior );
   return  neuronTrainBehaviorPtr;
 
 }
 
-#endif
+
+NeuronTrainBehaviorPtr
+MLPNoNetworkTrainBehaviorFactory::makeHiddenNeuronTrainBehavior(NeuronPtr neuronPtr)
+{
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior );
+  return  neuronTrainBehaviorPtr;
+}

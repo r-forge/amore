@@ -4,7 +4,7 @@
 /// class AdaptNeuronTrainBehavior - 
 class AdaptNeuronTrainBehavior : public MLPNeuronTrainBehavior {
   // Operations
-public:
+protected:
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };

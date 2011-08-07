@@ -47,37 +47,16 @@ NetworkRinterface::createCustomFeedForwardNetwork(Rcpp::NumericVector numberOfNe
 
 
 Rcpp::NumericMatrix
-NetworkRinterface::predict(Rcpp::NumericMatrix numericMatrix)
+NetworkRinterface::sim(Rcpp::NumericMatrix numericMatrix)
 {
   BEGIN_RCPP
-
-  // VALIDATION
 
   if (!d_neuralNetwork)
     {
       throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
     }
 
-  bool checkIncorrectNumberOfRows(
-      inputSize() != static_cast<size_type> (numericMatrix.nrow()));
-  if (checkIncorrectNumberOfRows)
-    {
-      throw std::runtime_error(
-          "\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n");
-    }
-
-  Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
-  std::vector<double>::iterator inputIterator(numericMatrix.begin());
-  std::vector<double>::iterator outputIterator(outputMatrix.begin());
-
-  // PREDICT LOOP
-  for (int i = 0; i < numericMatrix.ncol(); i++)
-    {
-      d_neuralNetwork->writeInput(inputIterator);
-      d_neuralNetwork->singlePatternForwardAction();
-      d_neuralNetwork->readOutput(outputIterator);
-    }
-  return outputMatrix;
+  return d_neuralNetwork->sim(numericMatrix);
 
 END_RCPP}
 
@@ -88,7 +67,12 @@ Rcpp::List
 NetworkRinterface::train(Rcpp::List parameterList)
 {
   BEGIN_RCPP
-    return d_neuralNetwork->train(parameterList);
+  if (!d_neuralNetwork)
+    {
+      throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
+    }
+
+  return d_neuralNetwork->train(parameterList);
   END_RCPP
 }
 
@@ -97,12 +81,22 @@ NetworkRinterface::train(Rcpp::List parameterList)
 size_type
 NetworkRinterface::inputSize()
 {
+  if (!d_neuralNetwork)
+    {
+      throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
+    }
+
   return d_neuralNetwork->inputSize();
 }
 
 size_type
 NetworkRinterface::outputSize()
 {
+  if (!d_neuralNetwork)
+    {
+      throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
+    }
+
   return d_neuralNetwork->outputSize();
 }
 

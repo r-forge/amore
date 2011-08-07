@@ -11,7 +11,7 @@ protected:
   std::vector<double> d_formerWeightChange;
   double d_formerBiasChange;
   // Operations
-public:
+protected:
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };

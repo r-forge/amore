@@ -11,11 +11,13 @@
 void
 NoNeuronTrainBehavior::singlePatternBackwardAction()
 {
+  Rprintf("\nNoNeuronTrainBehavior::singlePatternBackwardAction(). Set train behavior in order to train. \n");
 
 }
 
 void
 NoNeuronTrainBehavior::endOfEpochAction()
 {
+  Rprintf("\nNoNeuronTrainBehavior.endOfEpochAction(). Set train behavior in order to train. \n");
 }
 

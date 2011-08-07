@@ -13,7 +13,7 @@ protected:
   std::vector<double> former.weight.change;
   double former.bias.change;
   // Operations
-private:
+protected:
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };

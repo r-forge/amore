@@ -8,7 +8,7 @@ protected:
   double d_delta;
   double d_learningRate;
   // Operations
-public:
+protected:
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };

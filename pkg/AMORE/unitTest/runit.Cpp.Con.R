@@ -7,6 +7,8 @@
 ###############################################################################
 test.Con.Cpp.Constructor <- function() {	
 ###############################################################################	
+
+
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- " 
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
@@ -23,11 +25,7 @@ test.Con.Cpp.Constructor <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 4.5)
-	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp: In member function 'virtual Rcpp::List SimpleNetwork::train(Rcpp::List)':
-	# /Users/mcasl/pc-ule/Trabajo/investigacion/AMORE/AMORE-WC/AMORE-WC/pkg/AMORE/src/SimpleNetwork.cpp:110: warning: control reaches end of non-void function
-	# 
-	# From:	 1 	 Weight= 	 4.500000[1] TRUE
-	# [1] TRUE
+	
 
 	# From:	 1 	 Weight= 	 4.500000 
 	# [1] TRUE

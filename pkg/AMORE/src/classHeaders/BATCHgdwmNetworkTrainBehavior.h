@@ -4,7 +4,7 @@
 /// class BATCHgdwmNetworkTrainBehavior - 
 class BATCHgdwmNetworkTrainBehavior : public BatchNetworkTrainBehavior {
   // Operations
-public:
+protected:
   Rcpp::List train (Rcpp::List parameterList);
 };
 

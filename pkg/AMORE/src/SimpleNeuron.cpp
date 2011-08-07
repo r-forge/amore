@@ -116,6 +116,13 @@ SimpleNeuron::setPredictBehavior(PredictBehaviorPtr predictBehaviorPtr)
 
 
 
+void
+SimpleNeuron::setNeuronTrainBehavior(NeuronTrainBehaviorPtr neuronTrainBehaviorPtr)
+{
+  d_neuronTrainBehavior = neuronTrainBehaviorPtr;
+}
+
+
 double
 SimpleNeuron::useActivationFunctionf0()
 {
@@ -137,14 +144,12 @@ SimpleNeuron::singlePatternForwardAction()
   d_predictBehavior->singlePatternForwardAction();
 }
 
-#if 0
+
 void
 SimpleNeuron::singlePatternBackwardAction()
 {
   d_neuronTrainBehavior->singlePatternBackwardAction();
-
 }
-#endif
 
 
 void

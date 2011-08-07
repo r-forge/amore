@@ -21,11 +21,11 @@ private:
   void addCon (ConPtr conPtr);
   void setActivationFunction (ActivationFunctionPtr activationFunctionPtr);
   void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
-  // void setTrainingBehavior (TrainingBehaviorPtr trainingBehaviorPtr);
+  void setNeuronTrainBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr);
   double useActivationFunctionf0 ();
   double useActivationFunctionf1 ();
   void singlePatternForwardAction ();
-  // void singlePatternBackwardAction ();
+  void singlePatternBackwardAction ();
   // void adjustParameters ();
   void show ();
   bool validate ();

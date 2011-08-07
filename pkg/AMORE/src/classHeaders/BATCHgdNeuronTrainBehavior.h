@@ -10,7 +10,7 @@ protected:
   std::vector<double> d_sum_delta_x;
   double d_sum_delta_bias;
   // Operations
-public:
+protected:
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
 };
