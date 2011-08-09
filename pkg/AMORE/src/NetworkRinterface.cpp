@@ -72,6 +72,38 @@ NetworkRinterface::train(Rcpp::List parameterList)
       throw std::runtime_error( "\nUninitialized network. Please use any of the create methods available.\n");
     }
 
+  Rcpp::CharacterVector algorithmRcpp = parameterList["algorithm"];
+  std::string algorithm=as<std::string>(algorithmRcpp);
+  NeuralFactoryPtr neuralFactoryPtr;
+  if (algorithm == "ADAPTgd")
+    {
+      neuralFactoryPtr= NeuralFactoryPtr(new ADAPTgdFactory);
+    }
+#if 0
+  else if (algorithm == "ADAPTgdwm")
+    {
+      neuralFactoryPtr= NeuralFactoryPtr(new ADAPTgdwmFactory);
+    }
+  else if (algorithm == "BATCHgd")
+    {
+      neuralFactoryPtr= NeuralFactoryPtr(new BATCHgdFactory);
+    }
+  else if (algorithm == "BATCHgdwm")
+    {
+      neuralFactoryPtr= NeuralFactoryPtr(new BATCHgdwmFactory);
+    }
+#endif
+  else
+      {
+        throw std::invalid_argument("\n[NetworkRinterface::train Error]: Invalid argument. Please choose a known algorithm.\n");
+      }
+
+  d_neuralNetwork->setNetworkTrainBehavior( neuralFactoryPtr->makeNetworkTrainBehavior(d_neuralNetwork) );
+
+  Rcpp::CharacterVector costFunction = parameterList["costFunction"];
+  std::string functionName = as<std::string>(costFunction);
+  d_neuralNetwork->setCostFunction( neuralFactoryPtr->makeCostFunction(functionName) );
+  d_neuralNetwork->setNeuronTrainBehavior( *neuralFactoryPtr );
   return d_neuralNetwork->train(parameterList);
   END_RCPP
 }

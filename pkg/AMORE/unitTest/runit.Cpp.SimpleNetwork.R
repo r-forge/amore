@@ -204,14 +204,22 @@ test.SimpleNetwork.Cpp.singlePatternBackwardAction <- function() {
 ###############################################################################		
 	
 
+suppressMessages(require("inline"))
+suppressMessages(require("Rcpp"))
+suppressMessages(require("RUnit"))
+
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
-			// Data set up		
-			NeuralFactoryPtr neuralFactoryPtr (new ADAPTgdFactory );
-			NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
-			NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
-			networkPtr->show();
-			// Test
+		// Data set up		
+				NeuralFactoryPtr neuralFactoryPtr (new ADAPTgdFactory );
+				NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+				NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
+
+				neuralFactoryPtr = NeuralFactoryPtr(new ADAPTgdFactory) ;
+				NetworkTrainBehaviorPtr networkTrainBehaviorPtr ( neuralFactoryPtr->makeNetworkTrainBehavior(networkPtr) );
+				networkPtr->setNetworkTrainBehavior( networkTrainBehaviorPtr );
+				networkPtr->setNeuronTrainBehavior( *neuralFactoryPtr );
+		// Test
 			Rcpp::NumericVector inputVector(inputData);
 			Rcpp::NumericVector outputVector(networkPtr->outputSize());
 			Rcpp::NumericVector targetVector(targetData);
@@ -240,5 +248,69 @@ test.SimpleNetwork.Cpp.singlePatternBackwardAction <- function() {
 			'
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="integer", inputData="numeric", targetData="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun(numberOfNeurons=c(2,2,2), inputData=c(1.4, 4.5), targetData=c(0.4, 0.5) )
+	
+	
+	
+	# 
+
 	checkEquals(length(result), 2)
-}
+
+	
+	}
+	
+	
+###############################################################################
+test.SimpleNetwork.Cpp.setNetworkTrainBehavior <- function() {	
+###############################################################################		
+		incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+		testCode <- '
+				// Data set up		
+		            NeuralFactoryPtr neuralFactoryPtr ( new MLPNoNetworkTrainBehaviorFactory );
+	                NeuralCreatorPtr neuralCreatorPtr ( neuralFactoryPtr->makeNeuralCreator() );
+					NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
+				// Test
+					Rcpp::List result;
+					result["before"]= networkPtr->getNetworkTrainBehaviorName();
+					neuralFactoryPtr = NeuralFactoryPtr(new ADAPTgdFactory) ;
+					NetworkTrainBehaviorPtr networkTrainBehaviorPtr ( neuralFactoryPtr->makeNetworkTrainBehavior(networkPtr) );
+					networkPtr->setNetworkTrainBehavior( networkTrainBehaviorPtr );
+					result["after"]= networkPtr->getNetworkTrainBehaviorName();
+					return result;
+		'
+		testCodefun <- cfunction(sig=signature(numberOfNeurons="integer", inputData="numeric", targetData="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+		result <- testCodefun(numberOfNeurons=c(2,2,2), inputData=c(1.4, 4.5), targetData=c(0.4, 0.5) )	
+		checkEquals(result$before, "MLPNoNetworkTrainBehavior"   ) 
+		checkEquals(result$after,  "ADAPTgdNetworkTrainBehavior" )
+		# [1] TRUE
+		# [1] TRUE
+	}
+	
+	
+###############################################################################
+test.SimpleNetwork.Cpp.setNeuronTrainBehavior <- function() {	
+###############################################################################
+		
+		incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+		testCode <- '
+				// Data set up		
+				NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory );
+				NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
+				NeuralNetworkPtr networkPtr = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, as< std::vector<int> >(numberOfNeurons), "Tanh", "Identity");
+				networkPtr->show();
+				// Test
+				neuralFactoryPtr = NeuralFactoryPtr(new ADAPTgdFactory) ;
+				NetworkTrainBehaviorPtr networkTrainBehaviorPtr ( neuralFactoryPtr->makeNetworkTrainBehavior(networkPtr) );
+				networkPtr->setNetworkTrainBehavior( networkTrainBehaviorPtr );
+				networkPtr->show();
+				networkPtr->setNeuronTrainBehavior( *neuralFactoryPtr );
+				networkPtr->show();
+				return wrap(true);
+				'
+		testCodefun <- cfunction(sig=signature(numberOfNeurons="integer", inputData="numeric", targetData="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+		result <- testCodefun(numberOfNeurons=c(2,2,2), inputData=c(1.4, 4.5), targetData=c(0.4, 0.5) )	
+		checkTrue(result)
+		
+	}
+	
+	
+	

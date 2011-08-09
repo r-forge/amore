@@ -22,6 +22,7 @@ private:
   void setActivationFunction (ActivationFunctionPtr activationFunctionPtr);
   void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
   void setNeuronTrainBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr);
+  std::string getNeuronTrainBehaviorName ();
   double useActivationFunctionf0 ();
   double useActivationFunctionf1 ();
   void singlePatternForwardAction ();

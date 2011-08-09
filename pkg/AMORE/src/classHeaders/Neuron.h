@@ -30,6 +30,7 @@ friend class MLPfactory;
   virtual void setActivationFunction (ActivationFunctionPtr activationFunctionPtr) = 0;
   virtual void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr) = 0;
   virtual void setNeuronTrainBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr) = 0;
+  virtual std::string getNeuronTrainBehaviorName () = 0;
   virtual double useActivationFunctionf0 () = 0;
   virtual double useActivationFunctionf1 () = 0;
   virtual void singlePatternForwardAction () = 0;

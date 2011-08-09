@@ -7,5 +7,6 @@ class ADAPTgdHiddenNeuronTrainBehavior : public ADAPTgdNeuronTrainBehavior {
 private:
   void singlePatternBackwardAction ();
   void endOfEpochAction ();
+  std::string getName ();
 };
 

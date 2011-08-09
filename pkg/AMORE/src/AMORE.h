@@ -37,6 +37,11 @@
 
  */
 
+//#include <cstdio>
+//#include <cstdlib>
+//#include <strings.h>
+
+
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -170,6 +175,7 @@ typedef boost::shared_ptr< Iterator<ConPtr> > ConIteratorPtr;
 typedef boost::shared_ptr< NeuralFactory > NeuralFactoryPtr;
 typedef boost::shared_ptr< NeuralCreator > NeuralCreatorPtr;
 
+typedef boost::weak_ptr<CostFunction> CostFunctionWeakPtr;
 typedef boost::weak_ptr<NeuralNetwork> NeuralNetworkWeakPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
@@ -185,16 +191,22 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
 #include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
-
 #include "classHeaders/ADAPTFactory.h"
 #include "classHeaders/ADAPTgdFactory.h"
+#if 0
 #include "classHeaders/ADAPTgdwmFactory.h"
 #include "classHeaders/BATCHFactory.h"
 #include "classHeaders/BATCHgdFactory.h"
 #include "classHeaders/BATCHgdwmFactory.h"
+#endif
 
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/SimpleNetwork.h"
+
+#include "classHeaders/CostFunction.h"
+#include "classHeaders/LMS.h"
+#include "classHeaders/LMLS.h"
+#include "classHeaders/TAO.h"
 
 #include "classHeaders/ActivationFunction.h"
 #include "classHeaders/PredictBehavior.h"
@@ -206,38 +218,62 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
 #include "classHeaders/NeuronTrainBehavior.h"
 #include "classHeaders/NoNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdOutputNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdHiddenNeuronTrainBehavior.h"
+
+
 
 #include "classHeaders/NetworkTrainBehavior.h"
 #include "classHeaders/MLPNetworkTrainBehavior.h"
 #include "classHeaders/MLPNoNetworkTrainBehavior.h"
+#include "classHeaders/AdaptNetworkTrainBehavior.h"
+#include "classHeaders/ADAPTgdNetworkTrainBehavior.h"
 
+#if 0
+#include "classHeaders/ADAPTgdwmNetworkTrainBehavior.h"
+#include "classHeaders/BATCHgdNetworkTrainBehavior.h"
+#include "classHeaders/BATCHgdwmNetworkTrainBehavior.h"
+#endif
 
-
-
+#include "classHeaders/LMS.h"
+#include "classHeaders/LMLS.h"
+#include "classHeaders/TAO.h"
 
 #include "Connection.cpp"
 #include "Neuron.cpp"
 #include "SimpleNeuron.cpp"
 #include "MLPfactory.cpp"
 #include "MLPNoNetworkTrainBehaviorFactory.cpp"
+
+#include "ADAPTgdFactory.cpp"
+
+#include "LMS.cpp"
+#include "LMLS.cpp"
+#include "TAO.cpp"
+
+
+#if 0
+#include "ADAPTgdwmFactory.cpp"
+#include "BATCHgdFactory.cpp"
+#include "BATCHgdwmFactory.cpp"
+#endif
+
 #include "NeuralNetwork.cpp"
 #include "SimpleNetwork.cpp"
 #include "ActivationFunction.cpp"
 
-#include "ADAPTgdFactory.cpp"
-#include "ADAPTgdwmFactory.cpp"
-#include "BATCHgdFactory.cpp"
-#include "BATCHgdwmFactory.cpp"
+
 #include "ADAPTgdOutputNeuronTrainBehavior.cpp"
 #include "ADAPTgdHiddenNeuronTrainBehavior.cpp"
+
+#if 0
 #include "ADAPTgdwmOutputNeuronTrainBehavior.cpp"
 #include "ADAPTgdwmHiddenNeuronTrainBehavior.cpp"
 #include "BATCHgdOutputNeuronTrainBehavior.cpp"
 #include "BATCHgdHiddenNeuronTrainBehavior.cpp"
 #include "BATCHgdwmOutputNeuronTrainBehavior.cpp"
 #include "BATCHgdwmHiddenNeuronTrainBehavior.cpp"
-
-
+#endif
 
 
 #include "PredictBehavior.cpp"
@@ -246,7 +282,19 @@ typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 #include "NetworkRinterface.cpp"
 #include "RcppModules.cpp"
 #include "NoNeuronTrainBehavior.cpp"
+
+#include "NetworkTrainBehavior.cpp"
+#include "MLPNetworkTrainBehavior.cpp"
 #include "MLPNoNetworkTrainBehavior.cpp"
+#include "AdaptNetworkTrainBehavior.cpp"
+#include "ADAPTgdNetworkTrainBehavior.cpp"
+
+
+#if 0
+#include "ADAPTgdwmNetworkTrainBehavior.cpp"
+#include "BATCHgdNetworkTrainBehavior.cpp"
+#include "BATCHgdwmNetworkTrainBehavior.cpp"
+#endif
 
 
 

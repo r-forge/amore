@@ -123,6 +123,14 @@ SimpleNeuron::setNeuronTrainBehavior(NeuronTrainBehaviorPtr neuronTrainBehaviorP
 }
 
 
+
+std::string
+SimpleNeuron::getNeuronTrainBehaviorName()
+{
+  return d_neuronTrainBehavior->getName();
+}
+
+
 double
 SimpleNeuron::useActivationFunctionf0()
 {
@@ -171,6 +179,9 @@ SimpleNeuron::show()
       Rprintf("\n-----------------------------------");
       Rprintf("\n output: %lf", d_output);
       Rprintf("\n-----------------------------------");
+      Rprintf("\n Neuron Train Behavior: %s", getNeuronTrainBehaviorName().c_str() );
+      Rprintf("\n-----------------------------------");
+
     }
   else
     {
@@ -190,6 +201,8 @@ SimpleNeuron::show()
       Rprintf("\n target: %lf", d_target);
       Rprintf("\n-----------------------------------");
       d_nCons->show();
+      Rprintf("\n-----------------------------------");
+      Rprintf("\n Neuron Train Behavior: %s", getNeuronTrainBehaviorName().c_str() );
       Rprintf("\n-----------------------------------");
     }
 }

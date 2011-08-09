@@ -10,6 +10,13 @@
 #include "classHeaders/BATCHgdFactory.h"
 
 
+NetworkTrainBehaviorPtr
+BATCHgdFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
+{
+  NetworkTrainBehaviorPtr networkTrainBehavior(new BATCHgdNetworkTrainBehavior(neuralNetworkPtr));
+
+}
+
 
 
 NeuronTrainBehaviorPtr

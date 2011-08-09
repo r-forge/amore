@@ -4,8 +4,9 @@
 /// class LMLS - 
 class LMLS : public CostFunction {
   // Operations
-public:
+private:
   double f0 (double output, double target);
   double f1 (double output, double target);
+  std::string getName ();
 };
 

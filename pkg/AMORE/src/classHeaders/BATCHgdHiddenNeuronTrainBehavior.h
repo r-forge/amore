@@ -7,5 +7,6 @@ class BATCHgdHiddenNeuronTrainBehavior : public BATCHgdNeuronTrainBehavior {
 private:
   void singlePatternBackwardAction ();
   void endOfEpochAction ();
+  std::string getName ();
 };
 

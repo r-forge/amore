@@ -21,3 +21,11 @@ NoNeuronTrainBehavior::endOfEpochAction()
   Rprintf("\nNoNeuronTrainBehavior.endOfEpochAction(). Set train behavior in order to train. \n");
 }
 
+
+std::string
+NoNeuronTrainBehavior::getName()
+{
+  std::string name("NoNeuronTrainBehavior");
+  return name;
+}
+

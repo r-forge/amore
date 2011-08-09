@@ -81,12 +81,14 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
   return neuronPtr;
 }
 
+
 LayerPtr
 MLPfactory::makeLayer()
 {
   LayerPtr layerPtr(new SimpleContainer<NeuronPtr> );
   return layerPtr;
 }
+
 
 LayerContainerPtr
 MLPfactory::makeLayerContainer()
@@ -96,13 +98,14 @@ MLPfactory::makeLayerContainer()
   return layerContainerPtr;
 }
 
+
 NeuralNetworkPtr
 MLPfactory::makeNeuralNetwork(NeuralFactory& neuralFactory)
 {
   NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactory));
+  neuralNetworkPtr->setNetworkTrainBehavior( neuralFactory.makeNetworkTrainBehavior(neuralNetworkPtr) );
   return neuralNetworkPtr;
 }
-
 
 
 NeuralCreatorPtr
@@ -230,5 +233,33 @@ MLPfactory::makeXPtrFunctionList(std::string functionName)
           _["f1"] = XPtr<CppFunctionPointer> (
               new CppFunctionPointer(&default_f1)));
     }
+
+}
+
+
+CostFunctionPtr
+MLPfactory::makeCostFunction(std::string functionName)
+{
+
+  if (functionName == "LMS")
+     {
+      CostFunctionPtr costFunctionPtr(new LMS);
+      return costFunctionPtr;
+     }
+   else if (functionName == "LMLS")
+     {
+       CostFunctionPtr costFunctionPtr(new LMLS);
+       return costFunctionPtr;
+     }
+   else if (functionName == "TAO")
+     {
+       CostFunctionPtr costFunctionPtr(new Tao);
+       return costFunctionPtr;
+     }
+   else
+     {
+       throw std::invalid_argument(
+           "[SimpleNetwork::train Error]: Unknown cost function.");
+     }
 
 }
