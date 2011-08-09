@@ -11,9 +11,9 @@
 
 
 NetworkTrainBehaviorPtr
-MLPNoNetworkTrainBehaviorFactory::makeNetworkTrainBehavior()
+MLPNoNetworkTrainBehaviorFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
 {
-  NetworkTrainBehaviorPtr networkTrainBehaviorPtr (new MLPNoNetworkTrainBehavior );
+  NetworkTrainBehaviorPtr networkTrainBehaviorPtr (new MLPNoNetworkTrainBehavior(neuralNetworkPtr) );
   return networkTrainBehaviorPtr;
 }
 

@@ -16,7 +16,6 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 	otherCode <- '
 		using namespace Rcpp;
 	'
-
 	testCode <- ' 
 		NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 		NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );

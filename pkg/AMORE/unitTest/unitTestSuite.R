@@ -10,6 +10,8 @@ suppressMessages(require("Rcpp"))
 suppressMessages(require("RUnit"))
 
 
+
+
 uniTestPath   <-  "./pkg/AMORE/unitTest"
 testFile <- "./www/unitTestResults.html"
 

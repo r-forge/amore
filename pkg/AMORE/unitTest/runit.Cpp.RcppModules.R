@@ -8,8 +8,6 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	
 	modAMORE <- Module("modAMORE",  getDynLib(testCodefun))	
-
-	
 	AMOREnet <- modAMORE$NetworkRinterface
 	net <- new (AMOREnet)
 	checkException(net$validate(), silent=TRUE)
@@ -17,9 +15,14 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 	checkTrue(net$validate())
 	checkEquals(net$inputSize(),3)
 	checkEquals(net$outputSize(),2)
+
+	net$show()
+
+
+
 	
 	checkException( net$predict(matrix(rnorm(120),  nrow=4)) , silent=TRUE )
-	net$predict(matrix(rnorm(120), nrow=3))
+	net$sim(matrix(rnorm(120), nrow=3))
 	
 	
 	srcf0hiddenLayer <- 'double f0(double inducedLocalField) {
@@ -73,7 +76,14 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 	# [2,]  0.1774886  0.28319996  0.1668513  0.2324923  0.36494964  0.1455367
 	# [3,] -0.3481298 -0.33658162 -0.3548845 -0.3464877 -0.33446067 -0.3491690
 
-
-	
+    net$train(list( algorithm      = "ADAPTgd", 
+					costFunction   = "LMS", 
+					inputMatrix    = matrix(rnorm(120), nrow=3), 
+					targetMatrix   = matrix(rnorm(80), nrow=2),
+					numberOfEpochs = 3L,
+					showStep=1L) 
+	          )
+			  
+			  
 }
 

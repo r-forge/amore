@@ -8,6 +8,11 @@ public:
   SimpleNetwork (NeuralFactory& neuralFactory);
 private:
   Rcpp::NumericMatrix sim (Rcpp::NumericMatrix sim);
+  void setNetworkTrainBehavior (NetworkTrainBehaviorPtr networkTrainBehaviorPtr);
+  std::string getNetworkTrainBehaviorName ();
+  void setNeuronTrainBehavior (NeuralFactory& neuralFactory);
+  void setCostFunction (CostFunctionPtr costFunctionPtr);
+  std::string getCostFunctionName ();
   Rcpp::List train (Rcpp::List parameterList);
   void writeInput (std::vector<double>::iterator& iterator);
   void writeTarget (std::vector<double>::iterator& iterator);

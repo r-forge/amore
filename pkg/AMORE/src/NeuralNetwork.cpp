@@ -14,5 +14,6 @@ NeuralNetwork::NeuralNetwork(NeuralFactory& neuralFactory)
   d_inputLayer  = neuralFactory.makeLayer();
   d_hiddenLayers = neuralFactory.makeLayerContainer();
   d_outputLayer = neuralFactory.makeLayer();
+  d_costFunction = neuralFactory.makeCostFunction("LMS");
 }
 

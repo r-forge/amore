@@ -7,5 +7,6 @@ class NoNeuronTrainBehavior : public NeuronTrainBehavior {
 private:
   void singlePatternBackwardAction ();
   void endOfEpochAction ();
+  std::string getName ();
 };
 

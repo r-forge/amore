@@ -5,7 +5,7 @@
 class MLPNoNetworkTrainBehaviorFactory : public MLPfactory {
   // Operations
 protected:
-  NetworkTrainBehaviorPtr makeNetworkTrainBehavior ();
+  NetworkTrainBehaviorPtr makeNetworkTrainBehavior (NeuralNetworkPtr neuralNetworkPtr);
   NeuronTrainBehaviorPtr makeOutputNeuronTrainBehavior (NeuronPtr neuronPtr);
   NeuronTrainBehaviorPtr makeHiddenNeuronTrainBehavior (NeuronPtr neuronPtr);
 };

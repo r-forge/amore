@@ -11,6 +11,12 @@
 
 
 
+NetworkTrainBehaviorPtr
+BATCHgdwmFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
+{
+  NetworkTrainBehaviorPtr networkTrainBehavior(new BATCHgdwmNetworkTrainBehavior(neuralNetworkPtr));
+}
+
 
 NeuronTrainBehaviorPtr
 BATCHgdwmFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
