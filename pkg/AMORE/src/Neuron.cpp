@@ -16,3 +16,4 @@ Neuron::Neuron(NeuralFactory& neuralFactory) :
 }
 
 
+

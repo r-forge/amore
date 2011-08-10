@@ -9,18 +9,22 @@
 #include "package.h"
 #include "classHeaders/ADAPTgdHiddenNeuronTrainBehavior.h"
 
-
-
-void ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction (){
-  Rprintf("ADAPTgdHiddenNeuronTrainBehavior.h\n");
+ADAPTgdHiddenNeuronTrainBehavior::ADAPTgdHiddenNeuronTrainBehavior(NeuronPtr neuronPtr) :
+  ADAPTgdNeuronTrainBehavior(neuronPtr)
+{
 }
 
-
-
-void ADAPTgdHiddenNeuronTrainBehavior::endOfEpochAction (){
-  Rprintf("ADAPTgdHiddenNeuronTrainBehavior.h\n");
+void
+ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction()
+{
+  Rprintf("TODO : ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction \n");
 }
 
+void
+ADAPTgdHiddenNeuronTrainBehavior::endOfEpochAction()
+{
+// There's nothing to do in this case.
+}
 
 std::string
 ADAPTgdHiddenNeuronTrainBehavior::getName()

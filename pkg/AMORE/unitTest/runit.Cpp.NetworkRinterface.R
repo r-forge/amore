@@ -89,7 +89,7 @@ test.NetworkRinterface.Cpp.createCustomFeedForwardNetwork <- function() {
 
 
 ###############################################################################
-test.NetworkRinterface.Cpp.predict <- function() {	
+test.NetworkRinterface.Cpp.sim <- function() {	
 ###############################################################################	
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- '
@@ -98,7 +98,7 @@ test.NetworkRinterface.Cpp.predict <- function() {
 		// Test
 			networkRinterface.createFeedForwardNetwork(numberOfNeurons, hiddenLayerFunction, outputLayerFunction);
 			Rcpp::NumericMatrix inputMatrix (input); 
-			return wrap( networkRinterface.predict(inputMatrix) );
+			return wrap( networkRinterface.sim(inputMatrix) );
 		'
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric", hiddenLayerFunction="character", outputLayerFunction="character", input="numeric"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
 	result <- testCodefun(c(2,4,3), hiddenLayerFunction="Tanh", outputLayerFunction="Identity", input=matrix(rnorm(300), ncol=150, nrow=2))	

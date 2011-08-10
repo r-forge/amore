@@ -7,6 +7,7 @@ protected:
   NeuronWeakPtr d_neuron;
   // Operations
 public:
+friend class NeuronTrainBehavior; 
   virtual void singlePatternForwardAction () = 0;
   virtual void show () = 0;
 protected:

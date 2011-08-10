@@ -4,6 +4,8 @@
 /// class NoNeuronTrainBehavior - 
 class NoNeuronTrainBehavior : public NeuronTrainBehavior {
   // Operations
+public:
+  NoNeuronTrainBehavior (NeuronPtr neuronPtr);
 private:
   void singlePatternBackwardAction ();
   void endOfEpochAction ();

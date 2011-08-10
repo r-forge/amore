@@ -14,18 +14,21 @@
 NetworkTrainBehaviorPtr
 BATCHgdwmFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
 {
-  NetworkTrainBehaviorPtr networkTrainBehavior(new BATCHgdwmNetworkTrainBehavior(neuralNetworkPtr));
+  NetworkTrainBehaviorPtr networkTrainBehaviorPtr(new BATCHgdwmNetworkTrainBehavior(neuralNetworkPtr));
+  return networkTrainBehaviorPtr;
 }
 
 
 NeuronTrainBehaviorPtr
 BATCHgdwmFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new BATCHgdwmOutputNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new BATCHgdwmOutputNeuronTrainBehavior(neuronPtr) );
+  return neuronTrainBehaviorPtr;
 }
 
 NeuronTrainBehaviorPtr
 BATCHgdwmFactory::makeHiddenNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new BATCHgdwmHiddenNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new BATCHgdwmHiddenNeuronTrainBehavior(neuronPtr) );
+  return neuronTrainBehaviorPtr;
 }

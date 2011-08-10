@@ -26,7 +26,9 @@ echo "#include \"../SimpleContainerReverseIterator.code\" " >> ../pkg/AMORE/src/
 
 
 sed -e '/public:/ a\
-friend class MLPfactory; ' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h 
+friend class NeuronTrainBehavior; ' -i ""  ../pkg/AMORE/src/classHeaders/PredictBehavior.h 
+sed -e '/public:/ a\
+friend class MLPfactory; friend class NeuronTrainBehavior; ' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h 
 sed -e '/public:/ a\
 friend class MLPfactory; ' -i ""  ../pkg/AMORE/src/classHeaders/MLPbehavior.h 
 sed -e '/public:/ a\

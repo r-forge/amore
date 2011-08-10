@@ -22,7 +22,7 @@ MLPNoNetworkTrainBehaviorFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neur
 NeuronTrainBehaviorPtr
 MLPNoNetworkTrainBehaviorFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 
 }
@@ -31,6 +31,6 @@ MLPNoNetworkTrainBehaviorFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuron
 NeuronTrainBehaviorPtr
 MLPNoNetworkTrainBehaviorFactory::makeHiddenNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (new NoNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 }

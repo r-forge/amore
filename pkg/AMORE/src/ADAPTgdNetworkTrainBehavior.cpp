@@ -18,6 +18,11 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
 
   Rcpp::NumericMatrix inputMatrix = as<Rcpp::NumericMatrix> (parameterList["inputMatrix"]);
   Rcpp::NumericMatrix targetMatrix = as<Rcpp::NumericMatrix> (parameterList["targetMatrix"]);
+  std::vector<double>::iterator inputIterator(inputMatrix.begin());
+  std::vector<double>::iterator targetIterator(targetMatrix.begin());
+  std::vector<double>::iterator inputBegin(inputMatrix.begin());
+  std::vector<double>::iterator targetBegin(targetMatrix.begin());
+
   int numberOfEpochs = as<int> (parameterList["numberOfEpochs"]);
   int showStep = as<int> (parameterList["showStep"]);
 
@@ -28,9 +33,8 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
     {
       for (int step = 0; step < showStep; ++step)
         {
-          std::vector<double>::iterator inputIterator(inputMatrix.begin());
-          std::vector<double>::iterator targetIterator(targetMatrix.begin());
-
+          inputIterator  = inputBegin;
+          targetIterator = targetBegin;
           for (int idRow = 0; idRow < inputMatrix.ncol(); idRow++)
             {
               writeInput(inputIterator);
@@ -39,7 +43,9 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
               singlePatternBackwardAction();
             }
         }
-
+//      inputIterator  = inputBegin;
+//    targetIterator = targetBegin;
+// TODO calculate error
     }
 
   Rcpp::List result;

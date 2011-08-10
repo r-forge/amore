@@ -55,16 +55,18 @@ MLPfactory::makeNeuron(Handler Id)
       makeActivationFunction(neuronPtr,
           Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f0)),
           Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f1))));
+  neuronPtr->setNeuronTrainBehavior(makeHiddenNeuronTrainBehavior(neuronPtr));
   return neuronPtr;
 }
 
 NeuronPtr
 MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
-    double totalAmountOfParameters)
+    double totalAmountOfParameters, NeuralNetworkPtr neuralNetworkPtr)
 {
   RNGScope scope;
 
   NeuronPtr neuronPtr(makeNeuron(Id));
+  neuronPtr->setNeuralNetwork(neuralNetworkPtr);
 
   double extreme = sqrt(3 / totalAmountOfParameters);
   double weight;
@@ -74,8 +76,7 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
       neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
     }
 
-  MLPbehavior* mlpBehavior =
-      dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
+  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
   mlpBehavior->d_bias = as<double> (runif(1, -extreme, extreme));
 
   return neuronPtr;

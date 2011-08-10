@@ -37,11 +37,6 @@
 
  */
 
-//#include <cstdio>
-//#include <cstdlib>
-//#include <strings.h>
-
-
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -50,8 +45,8 @@
 #include <string>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-#include <boost/ref.hpp>
-#include <valarray>    // for tanh, ...
+#include <boost/ref.hpp> // remove once the Con class does not use boost::ref
+#include <valarray>      // for tanh, ...
 #include <Rcpp.h>
 
 using namespace Rcpp;
@@ -96,9 +91,9 @@ typedef int Handler;
 typedef double (*CppFunctionPointer)(double);
 
 
-//================================================================================
+//============================================================================================
 // ----------------------------------- Function definitions ----------------------
-//================================================================================
+//============================================================================================
 double default_f0(double inducedLocalField)  { return NA_REAL; }
 double default_f1(double inducedLocalField)  { return NA_REAL; }
 
@@ -140,9 +135,9 @@ double Arctan_f0(double inducedLocalField) { return 2.0*atan(inducedLocalField)/
 double Arctan_f1(double inducedLocalField) { return 2.0/((1+inducedLocalField*inducedLocalField)*M_PI); }
 
 
-//================================================================================
+//============================================================================================
 // ----------------------------------- End of Function definitions ----------------------
-//================================================================================
+//============================================================================================
 
 
 
@@ -179,123 +174,186 @@ typedef boost::weak_ptr<CostFunction> CostFunctionWeakPtr;
 typedef boost::weak_ptr<NeuralNetwork> NeuralNetworkWeakPtr;
 typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
 
+
+//============================================================================================
+// HEADERS (grouped according to the *.dia files)
+//============================================================================================
+
+// -------------------------------------------  Activation.dia class headers ----------
+#include "classHeaders/ActivationFunction.h"
+
+
+// -------------------------------------------  Con.dia class headers ----------
 #include "classHeaders/Connection.h"
-#include "classHeaders/Neuron.h"
-#include "classHeaders/SimpleNeuron.h"
+
+
+// -------------------------------------------  Container.dia class headers ----------
 #include "classHeaders/Container.h"
 #include "classHeaders/SimpleContainer.h"
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
 #include "classHeaders/SimpleContainerReverseIterator.h"
 
-#include "classHeaders/NeuralFactory.h"
-#include "classHeaders/MLPfactory.h"
-#include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
-#include "classHeaders/ADAPTFactory.h"
-#include "classHeaders/ADAPTgdFactory.h"
-#if 0
-#include "classHeaders/ADAPTgdwmFactory.h"
-#include "classHeaders/BATCHFactory.h"
-#include "classHeaders/BATCHgdFactory.h"
-#include "classHeaders/BATCHgdwmFactory.h"
-#endif
 
-#include "classHeaders/NeuralNetwork.h"
-#include "classHeaders/SimpleNetwork.h"
-
+// -------------------------------------------  CostFunction.dia class headers ----------
 #include "classHeaders/CostFunction.h"
 #include "classHeaders/LMS.h"
 #include "classHeaders/LMLS.h"
 #include "classHeaders/TAO.h"
 
-#include "classHeaders/ActivationFunction.h"
-#include "classHeaders/PredictBehavior.h"
-#include "classHeaders/MLPBehavior.h"
-
-#include "classHeaders/NeuralCreator.h"
-#include "classHeaders/SimpleNeuralCreator.h"
+// -------------------------------------------  NetworkRinterface.dia class headers ----------
 #include "classHeaders/NetworkRinterface.h"
 
-#include "classHeaders/NeuronTrainBehavior.h"
-#include "classHeaders/NoNeuronTrainBehavior.h"
-#include "classHeaders/ADAPTgdOutputNeuronTrainBehavior.h"
-#include "classHeaders/ADAPTgdHiddenNeuronTrainBehavior.h"
 
-
-
+// -------------------------------------------  NetworkTrainBehavior.dia class headers ----------
 #include "classHeaders/NetworkTrainBehavior.h"
 #include "classHeaders/MLPNetworkTrainBehavior.h"
 #include "classHeaders/MLPNoNetworkTrainBehavior.h"
 #include "classHeaders/AdaptNetworkTrainBehavior.h"
 #include "classHeaders/ADAPTgdNetworkTrainBehavior.h"
-
-#if 0
 #include "classHeaders/ADAPTgdwmNetworkTrainBehavior.h"
+#include "classHeaders/BatchNetworkTrainBehavior.h"
 #include "classHeaders/BATCHgdNetworkTrainBehavior.h"
 #include "classHeaders/BATCHgdwmNetworkTrainBehavior.h"
-#endif
 
-#include "classHeaders/LMS.h"
-#include "classHeaders/LMLS.h"
-#include "classHeaders/TAO.h"
 
+// -------------------------------------------  NeuralCreator.dia class headers ----------
+#include "classHeaders/NeuralCreator.h"
+#include "classHeaders/SimpleNeuralCreator.h"
+
+
+// -------------------------------------------  NeuralNetwork.dia class headers ----------
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/SimpleNetwork.h"
+
+
+// -------------------------------------------  Neuralfactory.dia class headers ----------
+#include "classHeaders/NeuralFactory.h"
+#include "classHeaders/MLPfactory.h"
+#include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
+#include "classHeaders/ADAPTFactory.h"
+#include "classHeaders/ADAPTgdFactory.h"
+#include "classHeaders/ADAPTgdwmFactory.h"
+#include "classHeaders/BATCHFactory.h"
+#include "classHeaders/BATCHgdFactory.h"
+#include "classHeaders/BATCHgdwmFactory.h"
+
+
+// -------------------------------------------  Neuron.dia class headers ----------
+#include "classHeaders/Neuron.h"
+#include "classHeaders/SimpleNeuron.h"
+
+
+// -------------------------------------------  NeuronTrainBehavior.dia class headers ----------
+#include "classHeaders/NeuronTrainBehavior.h"
+#include "classHeaders/NoNeuronTrainBehavior.h"
+#include "classHeaders/MLPNeuronTrainBehavior.h"
+#include "classHeaders/AdaptNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdOutputNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdHiddenNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdwmNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdwmOutputNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdwmHiddenNeuronTrainBehavior.h"
+#include "classHeaders/BatchNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdOutputNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdHiddenNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdwmNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdwmOutputNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdwmHiddenNeuronTrainBehavior.h"
+
+
+// -------------------------------------------  PredictBehavior.dia class headers ----------
+#include "classHeaders/PredictBehavior.h"
+#include "classHeaders/MLPBehavior.h"
+
+
+//============================================================================================
+// CODE  (grouped according to the *.dia files)
+//============================================================================================
+
+// -------------------------------------------  Activation.dia classes' code ----------
+#include "ActivationFunction.cpp"
+
+
+// -------------------------------------------  Con.dia classes' code ----------
 #include "Connection.cpp"
-#include "Neuron.cpp"
-#include "SimpleNeuron.cpp"
-#include "MLPfactory.cpp"
-#include "MLPNoNetworkTrainBehaviorFactory.cpp"
 
-#include "ADAPTgdFactory.cpp"
 
+// -------------------------------------------  Container.dia classes' code ----------
+// Container.dia classes are templates, thus with coded defined in the header files
+
+
+// -------------------------------------------  CostFunction.dia classes' code ----------
 #include "LMS.cpp"
 #include "LMLS.cpp"
 #include "TAO.cpp"
 
-
-#if 0
-#include "ADAPTgdwmFactory.cpp"
-#include "BATCHgdFactory.cpp"
-#include "BATCHgdwmFactory.cpp"
-#endif
-
-#include "NeuralNetwork.cpp"
-#include "SimpleNetwork.cpp"
-#include "ActivationFunction.cpp"
-
-
-#include "ADAPTgdOutputNeuronTrainBehavior.cpp"
-#include "ADAPTgdHiddenNeuronTrainBehavior.cpp"
-
-#if 0
-#include "ADAPTgdwmOutputNeuronTrainBehavior.cpp"
-#include "ADAPTgdwmHiddenNeuronTrainBehavior.cpp"
-#include "BATCHgdOutputNeuronTrainBehavior.cpp"
-#include "BATCHgdHiddenNeuronTrainBehavior.cpp"
-#include "BATCHgdwmOutputNeuronTrainBehavior.cpp"
-#include "BATCHgdwmHiddenNeuronTrainBehavior.cpp"
-#endif
-
-
-#include "PredictBehavior.cpp"
-#include "MLPbehavior.cpp"
-#include "SimpleNeuralCreator.cpp"
+// -------------------------------------------  NetworkRinterface.dia classes' code ----------
 #include "NetworkRinterface.cpp"
-#include "RcppModules.cpp"
-#include "NoNeuronTrainBehavior.cpp"
 
+
+// -------------------------------------------  NetworkTrainBehavior.dia classes' code ----------
 #include "NetworkTrainBehavior.cpp"
 #include "MLPNetworkTrainBehavior.cpp"
 #include "MLPNoNetworkTrainBehavior.cpp"
 #include "AdaptNetworkTrainBehavior.cpp"
 #include "ADAPTgdNetworkTrainBehavior.cpp"
-
-
-#if 0
 #include "ADAPTgdwmNetworkTrainBehavior.cpp"
+#include "BatchNetworkTrainBehavior.cpp"
 #include "BATCHgdNetworkTrainBehavior.cpp"
 #include "BATCHgdwmNetworkTrainBehavior.cpp"
-#endif
 
 
+// -------------------------------------------  NeuralCreator.dia classes' code ----------
+#include "SimpleNeuralCreator.cpp"
 
+
+// -------------------------------------------  NeuralNetwork.dia classes' code ----------
+#include "NeuralNetwork.cpp"
+#include "SimpleNetwork.cpp"
+
+
+// -------------------------------------------  Neuralfactory.dia classes' code ----------
+#include "MLPfactory.cpp"
+#include "MLPNoNetworkTrainBehaviorFactory.cpp"
+#include "ADAPTgdFactory.cpp"
+#include "ADAPTgdwmFactory.cpp"
+#include "BATCHgdFactory.cpp"
+#include "BATCHgdwmFactory.cpp"
+
+
+// -------------------------------------------  Neuron.dia class classes' code ----------
+#include "Neuron.cpp"
+#include "SimpleNeuron.cpp"
+
+
+// -------------------------------------------  NeuronTrainBehavior.dia classes' code ----------
+#include "NeuronTrainBehavior.cpp"
+#include "NoNeuronTrainBehavior.cpp"
+#include "MLPNeuronTrainBehavior.cpp"
+#include "AdaptNeuronTrainBehavior.cpp"
+#include "ADAPTgdNeuronTrainBehavior.cpp"
+#include "ADAPTgdOutputNeuronTrainBehavior.cpp"
+#include "ADAPTgdHiddenNeuronTrainBehavior.cpp"
+#include "ADAPTgdwmNeuronTrainBehavior.cpp"
+#include "ADAPTgdwmOutputNeuronTrainBehavior.cpp"
+#include "ADAPTgdwmHiddenNeuronTrainBehavior.cpp"
+#include "BatchNeuronTrainBehavior.cpp"
+#include "BATCHgdNeuronTrainBehavior.cpp"
+#include "BATCHgdOutputNeuronTrainBehavior.cpp"
+#include "BATCHgdHiddenNeuronTrainBehavior.cpp"
+#include "BATCHgdwmNeuronTrainBehavior.cpp"
+#include "BATCHgdwmOutputNeuronTrainBehavior.cpp"
+#include "BATCHgdwmHiddenNeuronTrainBehavior.cpp"
+
+
+// -------------------------------------------  PredictBehavior.dia classes' code ----------
+#include "PredictBehavior.cpp"
+#include "MLPbehavior.cpp"
+
+
+// -------------------------------------------  RcppModules code ----------
+#include "RcppModules.cpp"
 
