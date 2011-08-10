@@ -23,6 +23,8 @@ private:
   void setPredictBehavior (PredictBehaviorPtr predictBehaviorPtr);
   void setNeuronTrainBehavior (NeuronTrainBehaviorPtr neuronTrainBehaviorPtr);
   std::string getNeuronTrainBehaviorName ();
+  NeuralNetworkPtr getNeuralNetwork ();
+  void setNeuralNetwork (NeuralNetworkPtr neuralNetworkPtr);
   double useActivationFunctionf0 ();
   double useActivationFunctionf1 ();
   void singlePatternForwardAction ();
@@ -30,5 +32,6 @@ private:
   // void adjustParameters ();
   void show ();
   bool validate ();
+  int numberOfConnections ();
 };
 

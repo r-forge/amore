@@ -5,6 +5,7 @@
 class MLPNeuronTrainBehavior : public NeuronTrainBehavior {
   // Operations
 protected:
+  MLPNeuronTrainBehavior (NeuronPtr neuronPtr);
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
   virtual std::string getName () = 0;

@@ -21,7 +21,7 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 
 
 	
-	checkException( net$predict(matrix(rnorm(120),  nrow=4)) , silent=TRUE )
+	checkException( net$sim(matrix(rnorm(120),  nrow=4)) , silent=TRUE )
 	net$sim(matrix(rnorm(120), nrow=3))
 	
 	
@@ -54,7 +54,7 @@ test.RcppModules.Cpp.new_NetworRinterface <- function() {
 	checkEquals(net$inputSize(),4)
 	checkEquals(net$outputSize(),3)
 	
-    net$predict(matrix(rnorm(120),  nrow=4))
+    net$sim(matrix(rnorm(120),  nrow=4))
 	#            [,1]       [,2]        [,3]       [,4]        [,5]       [,6]
 	# [1,] -0.1440866 -0.1125475 -0.09873694 -0.1081136 -0.01153598 -0.1532900
 	# [2,]  0.2591979  0.3073223  0.27910547  0.2980877  0.36910578  0.2346915

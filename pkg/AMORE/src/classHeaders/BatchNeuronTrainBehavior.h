@@ -1,10 +1,11 @@
 #pragma once
-#include "NeuronTrainBehavior.h"
+#include "MLPNeuronTrainBehavior.h"
 
 /// class BatchNeuronTrainBehavior - 
-class BatchNeuronTrainBehavior : public NeuronTrainBehavior {
+class BatchNeuronTrainBehavior : public MLPNeuronTrainBehavior {
   // Operations
-public:
+protected:
+  BatchNeuronTrainBehavior (NeuronPtr neuronPtr);
   virtual void singlePatternBackwardAction () = 0;
   virtual void endOfEpochAction () = 0;
   virtual std::string getName () = 0;

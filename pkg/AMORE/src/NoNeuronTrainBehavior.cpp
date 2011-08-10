@@ -8,19 +8,25 @@
 #include "package.h"
 #include "classHeaders/NoNeuronTrainBehavior.h"
 
+NoNeuronTrainBehavior::NoNeuronTrainBehavior(NeuronPtr neuronPtr) :
+  NeuronTrainBehavior(neuronPtr)
+{
+}
+
 void
 NoNeuronTrainBehavior::singlePatternBackwardAction()
 {
-  Rprintf("\nNoNeuronTrainBehavior::singlePatternBackwardAction(). Set train behavior in order to train. \n");
+  Rprintf(
+      "\n[ NoNeuronTrainBehavior::singlePatternBackwardAction() ]: Set train behavior in order to train. \n");
 
 }
 
 void
 NoNeuronTrainBehavior::endOfEpochAction()
 {
-  Rprintf("\nNoNeuronTrainBehavior.endOfEpochAction(). Set train behavior in order to train. \n");
+  Rprintf(
+      "\n[ NoNeuronTrainBehavior.endOfEpochAction() ]: Set train behavior in order to train. \n");
 }
-
 
 std::string
 NoNeuronTrainBehavior::getName()

@@ -20,13 +20,13 @@ ADAPTgdFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
 NeuronTrainBehaviorPtr
 ADAPTgdFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdOutputNeuronTrainBehavior);
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdOutputNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 }
 
 NeuronTrainBehaviorPtr
 ADAPTgdFactory::makeHiddenNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(  new ADAPTgdHiddenNeuronTrainBehavior);
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(  new ADAPTgdHiddenNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 }

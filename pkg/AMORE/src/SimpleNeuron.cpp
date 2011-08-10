@@ -131,6 +131,22 @@ SimpleNeuron::getNeuronTrainBehaviorName()
 }
 
 
+NeuralNetworkPtr
+SimpleNeuron::getNeuralNetwork( )
+{
+  NeuralNetworkPtr neuralNetworkPtr ( d_neuralNetwork.lock() );
+  return neuralNetworkPtr;
+}
+
+
+void
+SimpleNeuron::setNeuralNetwork( NeuralNetworkPtr neuralNetworkPtr)
+{
+  d_neuralNetwork = neuralNetworkPtr;
+}
+
+
+
 double
 SimpleNeuron::useActivationFunctionf0()
 {
@@ -216,3 +232,9 @@ SimpleNeuron::validate()
   return (TRUE);
 END_RCPP}
 
+
+int
+SimpleNeuron::numberOfConnections()
+{
+  return static_cast<int>(d_nCons->size());
+}

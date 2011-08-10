@@ -9,7 +9,7 @@ protected:
   ConContainerPtr makeConContainer ();
   PredictBehaviorPtr makePredictBehavior (NeuronPtr neuronPtr);
   NeuronPtr makeNeuron (Handler Id);
-  NeuronPtr makeNeuron (Handler Id, NeuronIteratorPtr neuronIteratorPtr, double totalAmountOfParameters);
+  NeuronPtr makeNeuron (Handler Id, NeuronIteratorPtr neuronIteratorPtr, double totalAmountOfParameters, NeuralNetworkPtr neuralNetworkPtr);
   LayerPtr makeLayer ();
   LayerContainerPtr makeLayerContainer ();
   NeuralNetworkPtr makeNeuralNetwork (NeuralFactory& neuralFactory);

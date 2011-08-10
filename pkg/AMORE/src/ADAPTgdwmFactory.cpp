@@ -15,7 +15,6 @@ ADAPTgdwmFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
 {
   NetworkTrainBehaviorPtr networkTrainBehaviorPtr(new ADAPTgdwmNetworkTrainBehavior(neuralNetworkPtr));
   return  networkTrainBehaviorPtr;
-
 }
 
 
@@ -23,13 +22,13 @@ ADAPTgdwmFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)
 NeuronTrainBehaviorPtr
 ADAPTgdwmFactory::makeOutputNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdwmOutputNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdwmOutputNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 }
 
 NeuronTrainBehaviorPtr
 ADAPTgdwmFactory::makeHiddenNeuronTrainBehavior(NeuronPtr neuronPtr)
 {
-  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdwmHiddenNeuronTrainBehavior );
+  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr( new ADAPTgdwmHiddenNeuronTrainBehavior(neuronPtr) );
   return  neuronTrainBehaviorPtr;
 }

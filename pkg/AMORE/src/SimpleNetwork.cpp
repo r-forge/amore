@@ -100,6 +100,7 @@ SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory)
 }
 
 
+
 void
 SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
 {

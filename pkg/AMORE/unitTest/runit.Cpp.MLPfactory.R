@@ -104,7 +104,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			Rcpp::XPtr<CppFunctionPointer>  f1XPtr(new CppFunctionPointer(&Tanh_f1)) ;
 
 			NeuronPtr neuronPtrOutput4( neuralFactoryPtr->makeNeuron(4) );
-			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the predict results
+			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the sim results
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50));
 			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75));
 			ActivationFunctionPtr activationFunctionPtr ( neuralFactoryPtr->makeActivationFunction(neuronPtrOutput4, f0XPtr, f1XPtr)	);
@@ -112,11 +112,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 
 			neuronPtrOutput4->singlePatternForwardAction();
 
-			NeuronPtr neuronPtrOutput5( neuralFactoryPtr->makeNeuron(5, inputLayerPtr->createIterator(), 11) );
-			neuronPtrOutput5->singlePatternForwardAction();
-
 			outputLayerPtr->push_back(neuronPtrOutput4);
-			outputLayerPtr->push_back(neuronPtrOutput5);
 
 			Rprintf(\"===================================\");
 			Rprintf(\" Input Neurons \");
@@ -131,8 +127,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			return	Rcpp::List::create(	Rcpp::Named(\"outputN1\") = neuronPtrInput1->getOutput(),
 										Rcpp::Named(\"outputN2\") = neuronPtrInput2->getOutput(),
 										Rcpp::Named(\"outputN3\") = neuronPtrInput3->getOutput(),
-										Rcpp::Named(\"outputN4\") = neuronPtrOutput4->getOutput(),
-										Rcpp::Named(\"outputN5\") = neuronPtrOutput5->getOutput()
+										Rcpp::Named(\"outputN4\") = neuronPtrOutput4->getOutput()
 			);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -141,7 +136,6 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 	checkEquals(result$outputN2, 2)
 	checkEquals(result$outputN3, 4)
 	checkEquals(result$outputN4, tanh(5))
-	checkTrue(is.na(result$outputN5))
 }
 
 

@@ -4,6 +4,8 @@
 /// class ADAPTgdHiddenNeuronTrainBehavior - 
 class ADAPTgdHiddenNeuronTrainBehavior : public ADAPTgdNeuronTrainBehavior {
   // Operations
+public:
+  ADAPTgdHiddenNeuronTrainBehavior (NeuronPtr neuronPtr);
 private:
   void singlePatternBackwardAction ();
   void endOfEpochAction ();
