@@ -33,5 +33,10 @@ private:
   void show ();
   bool validate ();
   int numberOfConnections ();
+  double costFunctionf0 (double output, double target);
+  double costFunctionf1 (double output, double target);
+  void addToBias (double value);
+  void addToDelta (double value);
+  void setLearningRate (double learningRate);
 };
 

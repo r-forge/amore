@@ -16,6 +16,12 @@ NetworkTrainBehavior::NetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr) :
 }
 
 void
+NetworkTrainBehavior::setLearningRate (double learningRate){
+  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
+  neuralNetworkPtr->setLearningRate(learningRate);
+}
+
+void
 NetworkTrainBehavior::writeInput(std::vector<double>::iterator& iterator)
 {
   NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());

@@ -238,3 +238,45 @@ SimpleNeuron::numberOfConnections()
 {
   return static_cast<int>(d_nCons->size());
 }
+
+
+
+double
+SimpleNeuron::costFunctionf0(double output, double target)
+{
+  NeuralNetworkPtr neuralNetworkPtr( d_neuralNetwork.lock() );
+  return neuralNetworkPtr->costFunctionf0( output, target );
+}
+
+
+double
+SimpleNeuron::costFunctionf1(double output, double target)
+{
+  NeuralNetworkPtr neuralNetworkPtr( d_neuralNetwork.lock() );
+  return neuralNetworkPtr->costFunctionf1( output, target );
+}
+
+
+
+void
+SimpleNeuron::addToBias(double value)
+{
+  d_predictBehavior->addToBias(value);
+}
+
+
+void
+SimpleNeuron::addToDelta(double value)
+{
+  d_neuronTrainBehavior->addToDelta(value);
+}
+
+void
+SimpleNeuron::setLearningRate(double learningRate)
+{
+  d_neuronTrainBehavior->setLearningRate(learningRate);
+}
+
+
+
+

@@ -6,7 +6,7 @@ class ADAPTgdwmNetworkTrainBehavior : public AdaptNetworkTrainBehavior {
   // Operations
 public:
   ADAPTgdwmNetworkTrainBehavior (NeuralNetworkPtr neuralNetworkPtr);
-protected:
+private:
   Rcpp::List train (Rcpp::List parameterList);
   std::string getName ();
 };

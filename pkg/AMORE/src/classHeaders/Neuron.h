@@ -42,6 +42,11 @@ friend class MLPfactory; friend class NeuronTrainBehavior;
   virtual void show () = 0;
   virtual bool validate () = 0;
   virtual int numberOfConnections () = 0;
+  virtual double costFunctionf0 (double output, double target) = 0;
+  virtual double costFunctionf1 (double output, double target) = 0;
+  virtual void addToBias (double value) = 0;
+  virtual void addToDelta (double value) = 0;
+  virtual void setLearningRate (double learningRate) = 0;
 protected:
   Neuron (NeuralFactory& neuralFactory);
 };

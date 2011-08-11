@@ -10,6 +10,7 @@ public:
 friend class NeuronTrainBehavior; 
   virtual void singlePatternForwardAction () = 0;
   virtual void show () = 0;
+  virtual void addToBias (double value) = 0;
 protected:
   PredictBehavior (NeuronPtr neuronPtr);
   double useActivationFunctionf0 ();

@@ -25,6 +25,9 @@ friend class SimpleNeuralCreator;
   virtual void readOutput (std::vector<double>::iterator& iterator) = 0;
   virtual size_type inputSize () = 0;
   virtual size_type outputSize () = 0;
+  virtual double costFunctionf0 (double output, double target) = 0;
+  virtual double costFunctionf1 (double output, double target) = 0;
+  virtual void setLearningRate (double learningRate) = 0;
   virtual void show () = 0;
   virtual bool validate () = 0;
 protected:
