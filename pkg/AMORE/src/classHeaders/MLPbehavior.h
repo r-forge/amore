@@ -13,5 +13,6 @@ friend class MLPfactory;
 private:
   void singlePatternForwardAction ();
   void show ();
+  void addToBias (double value);
 };
 

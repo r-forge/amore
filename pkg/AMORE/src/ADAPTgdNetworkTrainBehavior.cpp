@@ -16,6 +16,9 @@ Rcpp::List
 ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
 {
 
+  double learningRate = as<double> (parameterList["learningRate"]);
+  setLearningRate(learningRate);
+
   Rcpp::NumericMatrix inputMatrix = as<Rcpp::NumericMatrix> (parameterList["inputMatrix"]);
   Rcpp::NumericMatrix targetMatrix = as<Rcpp::NumericMatrix> (parameterList["targetMatrix"]);
   std::vector<double>::iterator inputIterator(inputMatrix.begin());
@@ -43,6 +46,7 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
               singlePatternBackwardAction();
             }
         }
+      Rprintf("idShow: %d\n", idShow+1);
 //      inputIterator  = inputBegin;
 //    targetIterator = targetBegin;
 // TODO calculate error

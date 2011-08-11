@@ -126,6 +126,30 @@ Con::setWeight(double weight)
   d_weight=weight;
 }
 
+
+double
+Con::getInputValue()
+{
+  return d_neuron.get().getOutput();
+}
+
+
+void
+Con::addToWeight(double value)
+{
+  d_weight += value;
+}
+
+
+void
+Con::addToDelta(double value)
+{
+  d_neuron.get().addToDelta(value);
+}
+
+
+
+
 //! Pretty print of the Con information
 /*! This method outputs in the R terminal the contents of the Con fields.
  * \return true in case everything works without throwing an exception

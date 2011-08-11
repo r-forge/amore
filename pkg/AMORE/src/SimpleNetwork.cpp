@@ -58,20 +58,17 @@ SimpleNetwork::getNetworkTrainBehaviorName()
   return d_networkTrainBehavior->getName();
 }
 
-
 void
 SimpleNetwork::setCostFunction(CostFunctionPtr costFunctionPtr)
 {
   d_costFunction = costFunctionPtr;
 }
 
-
 std::string
 SimpleNetwork::getCostFunctionName()
 {
   return d_costFunction->getName();
 }
-
 
 void
 SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory)
@@ -82,11 +79,15 @@ SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory)
 
   for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
     {
-      NeuronIteratorPtr neuronIteratorPtr( layerIteratorPtr->currentItem()->createIterator());
+      NeuronIteratorPtr neuronIteratorPtr(
+          layerIteratorPtr->currentItem()->createIterator());
       for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
         {
-          NeuronTrainBehaviorPtr neuronTrainBehaviorPtr ( neuralFactory.makeHiddenNeuronTrainBehavior(neuronIteratorPtr->currentItem()) );
-          neuronIteratorPtr->currentItem()->setNeuronTrainBehavior( neuronTrainBehaviorPtr );
+          NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
+              neuralFactory.makeHiddenNeuronTrainBehavior(
+                  neuronIteratorPtr->currentItem()));
+          neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(
+              neuronTrainBehaviorPtr);
         }
     }
 
@@ -94,12 +95,13 @@ SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory)
   NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
   for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
-      NeuronTrainBehaviorPtr neuronTrainBehaviorPtr ( neuralFactory.makeOutputNeuronTrainBehavior(neuronIteratorPtr->currentItem()) );
-      neuronIteratorPtr->currentItem()->setNeuronTrainBehavior( neuronTrainBehaviorPtr );
+      NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
+          neuralFactory.makeOutputNeuronTrainBehavior(
+              neuronIteratorPtr->currentItem()));
+      neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(
+          neuronTrainBehaviorPtr);
     }
 }
-
-
 
 void
 SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
@@ -198,6 +200,49 @@ SimpleNetwork::outputSize()
   return d_outputLayer->size();
 }
 
+double
+SimpleNetwork::costFunctionf0(double output, double target)
+{
+  return d_costFunction->f0( output, target );
+}
+
+
+double
+SimpleNetwork::costFunctionf1(double output, double target)
+{
+  return d_costFunction->f1( output, target );
+}
+
+
+void
+SimpleNetwork::setLearningRate(double learningRate)
+{
+
+
+  // Hidden Layers
+  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
+
+  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
+    {
+      NeuronIteratorPtr neuronIteratorPtr(
+          layerIteratorPtr->currentItem()->createIterator());
+      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
+        {
+          neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
+        }
+    }
+
+  // Output Layers
+  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
+    {
+      neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
+    }
+
+
+}
+
+
 void
 SimpleNetwork::show()
 {
@@ -205,11 +250,11 @@ SimpleNetwork::show()
   Rprintf("         Neural Network");
   Rprintf("\n=========================================================");
 
-
-  Rprintf("\n Input size: %d\n", inputSize() );
-  Rprintf("\n Output size: %d\n", outputSize() );
-  Rprintf("\n Network Train Behavior: %s\n", getNetworkTrainBehaviorName().c_str() );
-  Rprintf("\n Cost Function: %s\n", getCostFunctionName().c_str() );
+  Rprintf("\n Input size: %d\n", inputSize());
+  Rprintf("\n Output size: %d\n", outputSize());
+  Rprintf("\n Network Train Behavior: %s\n",
+      getNetworkTrainBehaviorName().c_str());
+  Rprintf("\n Cost Function: %s\n", getCostFunctionName().c_str());
   Rprintf("\n\n=========================================================\n");
   Rprintf("         Input Layer");
   Rprintf("\n=========================================================");

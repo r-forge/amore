@@ -9,7 +9,8 @@
 #include "package.h"
 #include "classHeaders/ADAPTgdOutputNeuronTrainBehavior.h"
 
-ADAPTgdOutputNeuronTrainBehavior::ADAPTgdOutputNeuronTrainBehavior(NeuronPtr neuronPtr) :
+ADAPTgdOutputNeuronTrainBehavior::ADAPTgdOutputNeuronTrainBehavior(
+    NeuronPtr neuronPtr) :
   ADAPTgdNeuronTrainBehavior(neuronPtr)
 {
 }
@@ -17,18 +18,30 @@ ADAPTgdOutputNeuronTrainBehavior::ADAPTgdOutputNeuronTrainBehavior(NeuronPtr neu
 void
 ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction()
 {
-#if 0
-  d_delta = d_neuron->getOutputDerivative() * d_costFunction->f1(
-      d_neuron->getOutput(), d_neuron->getTarget());
-      d_neuron->d_predictBehavior->d_bias += -d_learningRate * d_delta;
-      //I'm working here right now
-#endif
+  d_delta = getNeuronOutputDerivative() * costFunctionf1( getNeuronOutput(), getNeuronTarget() );
+  double minusLearningRateTimesDelta = -d_learningRate * d_delta;
+  addToNeuronBias( minusLearningRateTimesDelta );
+
+  ConIteratorPtr conIteratorPtr = getConIterator();
+  for (conIteratorPtr->first(); !conIteratorPtr->isDone(); conIteratorPtr->next())
+    {
+      double inputValue = conIteratorPtr->currentItem()->getInputValue();
+      conIteratorPtr->currentItem()->addToWeight( minusLearningRateTimesDelta * inputValue );  // Update current weight
+      double weight = conIteratorPtr->currentItem()->getWeight() ;
+      conIteratorPtr->currentItem()->addToDelta( d_delta * weight );                           // Update connections' delta
+    }
+   d_delta=0.0;
 }
+
+
+// TODO check that aux_DELTA = 0.0;
+
+
 
 void
 ADAPTgdOutputNeuronTrainBehavior::endOfEpochAction()
 {
-// There's nothing to do in this case.
+  // There's nothing to do in this case.
 }
 
 std::string

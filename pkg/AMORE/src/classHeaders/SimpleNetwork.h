@@ -21,6 +21,9 @@ private:
   void readOutput (std::vector<double>::iterator& iterator);
   size_type inputSize ();
   size_type outputSize ();
+  double costFunctionf0 (double output, double target);
+  double costFunctionf1 (double output, double target);
+  void setLearningRate (double learningRate);
   void show ();
   bool validate ();
 };

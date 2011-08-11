@@ -7,8 +7,7 @@ class MLPNoNetworkTrainBehavior : public MLPNetworkTrainBehavior {
 public:
   MLPNoNetworkTrainBehavior (NeuralNetworkPtr neuralNetworkPtr);
 private:
-  std::string getName ();
-protected:
   Rcpp::List train (Rcpp::List parameterList);
+  std::string getName ();
 };
 

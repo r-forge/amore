@@ -169,7 +169,7 @@ test.NetworkRinterface.Cpp.train.ADAPTgd.LMS <- function() {
             parameterList["numberOfEpochs"]    = Rcpp::IntegerVector    (numberOfEpochs);
             parameterList["showStep"]          = Rcpp::IntegerVector    (showStep); 
 
-            networkRinterface.() 
+
 //			return wrap( networkRinterface.train(parameterList) );
 			return wrap(true);	
 		'
@@ -194,11 +194,8 @@ test.NetworkRinterface.Cpp.train.ADAPTgd.LMS <- function() {
 						  target=matrix(rnorm(450), ncol=150, nrow=3)
 				  )
 				  
-	checkEquals(dim(result), c(3,150))
-	checkEquals(sum(is.na(result)), 0)
-	checkTrue(sum(abs(result>0))> 0)	
-	# 
-
+				  checkEquals(result$error, 0)	
+				  
 }
 
 
@@ -206,9 +203,7 @@ test.NetworkRinterface.Cpp.train.ADAPTgd.LMS <- function() {
 
 ###############################################################################
 test.NetworkRinterface.Cpp.train.ADAPTgd.LMS <- function() {	
-	###############################################################################	
-	
-	
+###############################################################################	
 	
 	suppressMessages(require("inline"))
 	suppressMessages(require("Rcpp"))
@@ -225,38 +220,54 @@ test.NetworkRinterface.Cpp.train.ADAPTgd.LMS <- function() {
 			parameterList["inputMatrix"]       = Rcpp::NumericMatrix    (input); 
 			parameterList["targetMatrix"]      = Rcpp::NumericMatrix    (target);
 			parameterList["algorithm"]         = Rcpp::CharacterVector  (algorithm);
+			parameterList["learningRate"]      = Rcpp::NumericVector    (learningRate);
 			parameterList["costFunction"]      = Rcpp::CharacterVector  (costFunction);
 			parameterList["numberOfEpochs"]    = Rcpp::IntegerVector    (numberOfEpochs);
 			parameterList["showStep"]          = Rcpp::IntegerVector    (showStep); 
 			
-			return wrap( networkRinterface.train(parameterList) );
+            networkRinterface.train(parameterList);
+			return wrap( networkRinterface.sim( Rcpp::NumericMatrix(input) ) );
 			'
 	testCodefun <- cfunction(sig=signature(numberOfNeurons="numeric",
 					hiddenLayerFunction="character",
 					outputLayerFunction="character",
 					algorithm="character",
+					learningRate="numeric",
 					costFunction="character",
 					numberOfEpochs="integer",
 					showStep="integer",
 					input="numeric", 
 					target="numeric"									 
 			), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
+
+	x <- runif(1000, min=-1, max=1)
+	y <- runif(1000, min=-1, max=1)
 	result <- testCodefun(numberOfNeurons=c(2,4,3),
 			hiddenLayerFunction="Tanh",
 			outputLayerFunction="Identity",
 			algorithm="ADAPTgd",
+			learningRate=1e-4,
 			costFunction="LMS",
-			numberOfEpochs=3,
-			showStep=1,
-			input=matrix( rnorm(300), ncol=150, nrow=2),
-			target=matrix(rnorm(450), ncol=150, nrow=3)
+			numberOfEpochs=30000,
+			showStep=10,
+			input=as.matrix( rbind(x,y) ),
+			target=as.matrix( rbind(x^2, -y^3, x+y) )
 	)
 	
-	checkEquals(dim(result), c(3,150))
-	checkEquals(sum(is.na(result)), 0)
-	checkTrue(sum(abs(result>0))> 0)	
-	# 
 	
+par(mfrow=c(3,1))
+plot(t(x), t(result[1,]))
+plot(t(y), t(result[2,]))
+plot(t(x+y), t(result[3,]))
+
+
+
+
+
+	
+	
+	checkEquals(result$error, 0)	
+
 }
 
 

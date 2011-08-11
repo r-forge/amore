@@ -44,3 +44,10 @@ MLPbehavior::show()
   Rprintf("\n bias: %lf", d_bias);
 }
 
+
+void
+MLPbehavior::addToBias(double value)
+{
+  d_bias += value;
+}
+

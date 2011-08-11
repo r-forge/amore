@@ -7,6 +7,8 @@ class NoNeuronTrainBehavior : public NeuronTrainBehavior {
 public:
   NoNeuronTrainBehavior (NeuronPtr neuronPtr);
 private:
+  void addToNeuronBias (double value);
+  void addToDelta (double value);
   void singlePatternBackwardAction ();
   void endOfEpochAction ();
   std::string getName ();

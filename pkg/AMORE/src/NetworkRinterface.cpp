@@ -79,7 +79,6 @@ NetworkRinterface::train(Rcpp::List parameterList)
     {
       neuralFactoryPtr= NeuralFactoryPtr(new ADAPTgdFactory);
     }
-#if 0
   else if (algorithm == "ADAPTgdwm")
     {
       neuralFactoryPtr= NeuralFactoryPtr(new ADAPTgdwmFactory);
@@ -92,17 +91,16 @@ NetworkRinterface::train(Rcpp::List parameterList)
     {
       neuralFactoryPtr= NeuralFactoryPtr(new BATCHgdwmFactory);
     }
-#endif
-  else
+ else
       {
         throw std::invalid_argument("\n[NetworkRinterface::train Error]: Invalid argument. Please choose a known algorithm.\n");
       }
 
   d_neuralNetwork->setNetworkTrainBehavior( neuralFactoryPtr->makeNetworkTrainBehavior(d_neuralNetwork) );
 
-  Rcpp::CharacterVector costFunction = parameterList["costFunction"];
-  std::string functionName = as<std::string>(costFunction);
+  std::string functionName = as<std::string>(parameterList["costFunction"]);
   d_neuralNetwork->setCostFunction( neuralFactoryPtr->makeCostFunction(functionName) );
+
   d_neuralNetwork->setNeuronTrainBehavior( *neuralFactoryPtr );
   return d_neuralNetwork->train(parameterList);
   END_RCPP
