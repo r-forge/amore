@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pfactory.html#a2734e70d1b260ec88975474d77abf881" title="MLPfactory::makePredictBehavior" alt="" coords="230,5,461,32"/>
-<area shape="rect" id="node7" href="$class_neuron.html#a31eac774003a5f4fdca375d021b712fa" title="Neuron::setPredictBehavior" alt="" coords="249,56,441,83"/>
-<area shape="rect" id="node5" href="$class_m_l_pfactory.html#a62ea35a5b7ce5f139f91b2c3edd4ad61" title="MLPfactory::makeConContainer" alt="" coords="509,5,725,32"/>
-</map>

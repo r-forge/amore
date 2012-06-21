@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_vec_con.html#a280ee1e24c44c8aeff1c4c4076322b71" title="Setter of the from fields of the Con objects related to VecCon." alt="" coords="175,81,297,108"/>
-<area shape="rect" id="node5" href="$class_container.html#ac5e2a75311f6e6a690ca67603490ddb1" title="Container::begin" alt="" coords="368,5,483,32"/>
-<area shape="rect" id="node7" href="$class_container.html#ab8e09c25f519687468ef5b9f0fae9b3e" title="Container::empty" alt="" coords="365,56,485,83"/>
-<area shape="rect" id="node9" href="$class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Container\&lt; Con \&gt;::size" alt="" coords="347,107,504,133"/>
-</map>

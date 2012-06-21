@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pfactory.html#ac47beb4aced10b9c99414ba7dd7c8b55" title="MLPfactory::makeCon" alt="" coords="239,5,396,32"/>
-<area shape="rect" id="node5" href="$class_m_l_pfactory.html#a6dd50bc994fa69d7c4de183284efdae2" title="MLPfactory::makeNeuron" alt="" coords="229,56,405,83"/>
-<area shape="rect" id="node7" href="$class_m_l_pfactory.html#a92109ea285be7dd847d359a1ade9064a" title="MLPfactory::makeActivationFunction" alt="" coords="453,31,699,57"/>
-<area shape="rect" id="node9" href="$class_m_l_pfactory.html#a9e9e9bb4390df09c78a24c4ff79cdab6" title="MLPfactory::makePredictBehavior" alt="" coords="461,81,691,108"/>
-</map>

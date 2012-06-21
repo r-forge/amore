@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$package_8h.html" title="package.h" alt="" coords="514,80,597,107"/>
-<area shape="rect" id="node25" href="$_connection_8h.html" title="classHeaders/Connection.h" alt="" coords="805,80,995,107"/>
-<area shape="rect" id="node27" href="$_iterator_8h.html" title="classHeaders/Iterator.h" alt="" coords="1019,80,1183,107"/>
-<area shape="rect" id="node31" href="$_neuron_8h.html" title="classHeaders/Neuron.h" alt="" coords="1208,80,1371,107"/>
-<area shape="rect" id="node33" href="$_predict_behavior_8h.html" title="classHeaders/PredictBehavior.h" alt="" coords="1369,155,1585,181"/>
-<area shape="rect" id="node35" href="$_m_l_pbehavior_8h.html" title="classHeaders/MLPbehavior.h" alt="" coords="1446,80,1644,107"/>
-</map>

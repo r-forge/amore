@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$class_b_a_t_c_hgd_neuron_train_behavior.html" title="class BATCHgdNeuronTrainBehavior &#45;" alt="" coords="301,311,525,447"/>
-<area shape="rect" id="node11" href="$class_b_a_t_c_hgdwm_neuron_train_behavior.html" title="class BATCHgdwmNeuronTrainBehavior &#45;" alt="" coords="587,289,821,469"/>
-<area shape="rect" id="node2" href="$class_neuron_train_behavior.html" title="class NeuronTrainBehavior &#45;" alt="" coords="446,6,671,98"/>
-<area shape="rect" id="node7" href="$class_b_a_t_c_hgd_hidden_neuron_train_behavior.html" title="class BATCHgdHiddenNeuronTrainBehavior &#45;" alt="" coords="5,518,261,610"/>
-<area shape="rect" id="node9" href="$class_b_a_t_c_hgd_output_neuron_train_behavior.html" title="class BATCHgdOutputNeuronTrainBehavior &#45;" alt="" coords="286,518,540,610"/>
-<area shape="rect" id="node13" href="$class_b_a_t_c_hgdwm_hidden_neuron_train_behavior.html" title="class BATCHgdwmHiddenNeuronTrainBehavior &#45;" alt="" coords="565,518,843,610"/>
-<area shape="rect" id="node15" href="$class_b_a_t_c_hgdwm_output_neuron_train_behavior.html" title="class BATCHgdwmOutputNeuronTrainBehavior &#45;" alt="" coords="868,518,1145,610"/>
-</map>

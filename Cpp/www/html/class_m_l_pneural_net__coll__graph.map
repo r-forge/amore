@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_neural_net.html" title="{NeuralNet\n||+ train()\l}" alt="" coords="46,1496,129,1573"/>
-<area shape="rect" id="node4" href="$class_m_l_player_container.html" title="{MLPlayerContainer\n||}" alt="" coords="155,1496,293,1573"/>
-<area shape="rect" id="node6" href="$class_container.html" title="{Container\&lt; MLPlayer \&gt;\n|# collection\l|+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l# Container()\l}" alt="" coords="144,1001,304,1445"/>
-<area shape="rect" id="node10" title="STL class." alt="" coords="201,147,319,224"/>
-<area shape="rect" id="node14" href="$class_container.html" title="class Container &#45;" alt="" coords="267,491,396,935"/>
-</map>

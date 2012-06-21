@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_m_l_pfactory.html#a92109ea285be7dd847d359a1ade9064a" title="MLPfactory::makeActivationFunction" alt="" coords="229,5,475,32"/>
-<area shape="rect" id="node5" href="$class_m_l_pfactory.html#a69562b8fd06c60a2d5db66d8b0f10299" title="MLPfactory::makeConContainer" alt="" coords="244,56,460,83"/>
-<area shape="rect" id="node7" href="$class_m_l_pfactory.html#a9e9e9bb4390df09c78a24c4ff79cdab6" title="MLPfactory::makePredictBehavior" alt="" coords="237,107,467,133"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_network_rinterface.html#aa2a5e2b5605382da022dd0f277f0a73f" title="NetworkRinterface::createFeedForwardNetwork" alt="" coords="182,5,501,32"/>
-<area shape="rect" id="node5" href="$class_network_rinterface.html#ae82e946eb0ad4fc532803ee2e34d4e08" title="NetworkRinterface::inputSize" alt="" coords="555,81,757,108"/>
-<area shape="rect" id="node7" href="$class_network_rinterface.html#a4e5243781bd453c3abd2baea0713f7dc" title="NetworkRinterface::outputSize" alt="" coords="550,144,762,171"/>
-<area shape="rect" id="node9" href="$class_network_rinterface.html#a28c63ea70e49d8771e8242107b65d62c" title="NetworkRinterface::predict" alt="" coords="247,107,435,133"/>
-<area shape="rect" id="node13" href="$class_network_rinterface.html#a3bcc22e2278cc28157b807ac190c7787" title="NetworkRinterface::show" alt="" coords="252,208,431,235"/>
-<area shape="rect" id="node15" href="$class_network_rinterface.html#a1b37bfff06e29aedd525fa25137b94e1" title="NetworkRinterface::validate" alt="" coords="245,259,438,285"/>
-</map>

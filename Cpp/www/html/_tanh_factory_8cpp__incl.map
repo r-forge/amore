@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$package_8h.html" title="package.h" alt="" coords="514,80,597,107"/>
-<area shape="rect" id="node25" href="$_neural_factory_8h.html" title="classHeaders/NeuralFactory.h" alt="" coords="1114,229,1317,256"/>
-<area shape="rect" id="node27" href="$_m_l_pfactory_8h.html" title="classHeaders/MLPfactory.h" alt="" coords="1188,155,1377,181"/>
-<area shape="rect" id="node30" href="$_tanh_8h.html" title="classHeaders/Tanh.h" alt="" coords="1458,80,1605,107"/>
-<area shape="rect" id="node32" href="$_activation_function_8h.html" title="ActivationFunction.h" alt="" coords="1515,155,1661,181"/>
-<area shape="rect" id="node34" href="$_tanh_factory_8h.html" title="classHeaders/TanhFactory.h" alt="" coords="1239,80,1433,107"/>
-</map>
