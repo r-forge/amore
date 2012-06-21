@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_predict_behavior.html#ae13310624d8ea02168c15e86759758fc" title="PredictBehavior::getConIterator" alt="" coords="361,5,580,32"/>
-<area shape="rect" id="node5" href="$class_predict_behavior.html#ae0c61e493d55b658161b96a8d7b62819" title="PredictBehavior::setInducedLocalField" alt="" coords="341,56,601,83"/>
-<area shape="rect" id="node7" href="$class_predict_behavior.html#afeabe1f543e46d41909b41816d8210a6" title="PredictBehavior::setOutput" alt="" coords="375,107,566,133"/>
-<area shape="rect" id="node9" href="$class_predict_behavior.html#a59cb660d082154f8e72f0ce2281f1b0f" title="PredictBehavior::setOutputDerivative" alt="" coords="344,157,597,184"/>
-<area shape="rect" id="node11" href="$class_predict_behavior.html#a699f23b6abd42f900ef991ac172a6f64" title="PredictBehavior::useActivationFunctionf0" alt="" coords="333,208,608,235"/>
-<area shape="rect" id="node13" href="$class_predict_behavior.html#a2af882d5e647130684979b885de3082f" title="PredictBehavior::useActivationFunctionf1" alt="" coords="333,259,608,285"/>
-</map>

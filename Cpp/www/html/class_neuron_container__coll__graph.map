@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_container.html" title="{Container\&lt; Neuron \&gt;\n|# collection\l|+ ~Container()\l+ createIterator()\l+ push_back()\l+ push_back()\l+ reserve()\l+ reserve()\l+ empty()\l+ empty()\l+ size()\l+ size()\l+ clear()\l+ clear()\l+ show()\l+ show()\l+ validate()\l+ validate()\l+ Container()\l+ Container()\l+ begin()\l+ end()\l+ load()\l+ store()\l+ append()\l+ resize()\l+ operator[]()\l# Container()\l}" alt="" coords="140,1001,287,1445"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="189,147,307,224"/>
-<area shape="rect" id="node10" href="$class_container.html" title="class Container &#45;" alt="" coords="257,491,385,935"/>
-</map>

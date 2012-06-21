@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_con_container.html#a705da30e27c1022561e32c59ce81da5e" title="Getter of the from field of the Con objects related to ConContainer." alt="" coords="173,56,331,83"/>
-<area shape="rect" id="node5" href="$class_con_container.html#a8895e2c10e223e9950028f595588b9fe" title="Size of the ConContainer object." alt="" coords="380,5,559,32"/>
-<area shape="rect" id="node9" href="$class_container.html#afd87c69cb799ed7b434c29090083a285" title="Append a shared_ptr at the end of collection." alt="" coords="396,56,543,83"/>
-<area shape="rect" id="node11" href="$class_container.html#aa3cbae68ebeed649c52eb3805a30fb75" title="Container::reserve" alt="" coords="405,107,533,133"/>
-<area shape="rect" id="node7" href="$class_container.html#a842c3d9eca81b78b59112fde9707b091" title="Container\&lt; Con \&gt;::size" alt="" coords="608,5,765,32"/>
-</map>
