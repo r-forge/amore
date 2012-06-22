@@ -1,18 +1,20 @@
 package es.unileon.amorej;
 
 public class SimpleNeuron implements Neuron {
-	private int d_Id;
-	
-	public SimpleNeuron(int newId){
-		this.d_Id = newId;
+
+	private String id;
+
+	public SimpleNeuron(String newId) {
+		this.id = newId;
 	}
-	
-	public int  getId() {
-		return this.d_Id;
+
+	public String getId() {
+		return this.id;
 	}
-	
-	 public void setId(int newId){
-		this.d_Id = newId; 
-	 }
-	 
+
+	public void setId(String newId) {
+		this.id = newId;
+	}
+
+
 }
