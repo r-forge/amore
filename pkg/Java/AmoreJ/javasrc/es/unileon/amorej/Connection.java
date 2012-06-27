@@ -4,7 +4,7 @@ package es.unileon.amorej;
  * @author mcasl
  * 
  */
-public class Connection {
+public class Connection implements Visible, Checkable {
 	private Neuron nextNeuron;
 	private double weight;
 
@@ -75,7 +75,7 @@ public class Connection {
 	 * 
 	 */
 	public void show() {
-		System.out.format("\nFrom:\t" + this.getId() + "\t Weight= \t"
+		System.out.print("\nFrom:\t" + this.getId() + "\t Weight= \t"
 				+ this.weight);
 	}
 

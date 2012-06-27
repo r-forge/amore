@@ -6,40 +6,48 @@ public interface Neuron {
 
 	void setId(String newId);
 
-	
-	
-	
+	int numberOfConnections();
 
-//	  virtual double getInducedLocalField () = 0;
-//	  virtual void setInducedLocalField (double inducedLocalField) = 0;
-//	  virtual double getOutput () = 0;
-//	  virtual void setOutput (double output) = 0;
-//	  virtual double getTarget () = 0;
-//	  virtual void setTarget (double target) = 0;
-//	  virtual double getOutputDerivative () = 0;
-//	  virtual void setOutputDerivative (double outputDerivative) = 0;
+	boolean validate() throws AmoreJException;
 
-//	  virtual ConIteratorPtr& getConIterator () = 0;
-//	  virtual void addCon (ConPtr& conPtr) = 0;
-//	  virtual void setActivationFunction (ActivationFunctionPtr& activationFunctionPtr) = 0;
-//	  virtual void setPredictBehavior (PredictBehaviorPtr& predictBehaviorPtr) = 0;
-//	  virtual void setNeuronTrainBehavior (NeuronTrainBehaviorPtr& neuronTrainBehaviorPtr) = 0;
-//	  virtual std::string getNeuronTrainBehaviorName () = 0;
-//	  virtual NeuralNetwork* getNeuralNetwork () = 0;
-//	  virtual void setNeuralNetwork (NeuralNetworkPtr& neuralNetworkPtr) = 0;
-//	  virtual double useActivationFunctionf0 () = 0;
-//	  virtual double useActivationFunctionf1 () = 0;
-//	  virtual void singlePatternForwardAction () = 0;
-//	  virtual void singlePatternBackwardAction () = 0;
-//	  virtual void show () = 0;
-//	  virtual bool validate () = 0;
-//	  virtual int numberOfConnections () = 0;
-//	  virtual double costFunctionf0 (double output, double target) = 0;
-//	  virtual double costFunctionf1 (double output, double target) = 0;
-//	  virtual void addToBias (double value) = 0;
-//	  virtual void addToDelta (double value) = 0;
-//	  virtual void setLearningRate (double learningRate) = 0;
-//	protected:
-//	  Neuron (NeuralFactory* ptNeuralFactory);
+	void addConnection(Connection connection);
+
+	double getInducedLocalField();
+
+	void setInducedLocalField(double inducedLocalField);
+
+	double getOutput();
+
+	void setOutput(double output);
+
+	double getTarget();
+
+	void setTarget(double target);
+
+	double getOutputDerivative();
+
+	void setOutputDerivative(double outputDerivative);
+
+	// void setActivationFunction (ActivationFunction activationFunction);
+	// void setPredictBehavior (PredictBehavior predictBehavior);
+	// void setNeuronTrainBehavior (NeuronTrainBehavior neuronTrainBehavior);
+	// String getNeuronTrainBehaviorName();
+	// NeuralNetwork getNeuralNetwork();
+	// void setNeuralNetwork (NeuralNetwork neuralNetwork);
+	// double useActivationFunctionf0();
+	// double useActivationFunctionf1();
+	// void singlePatternForwardAction();
+	// void singlePatternBackwardAction ;
+	void show();
+
+//	double costFunctionf0(double output, double target);
+//
+//	double costFunctionf1(double output, double target);
+//
+//	void addToBias(double value);
+//
+//	void addToDelta(double value);
+//
+//	void setLearningRate(double learningRate);
 
 }
