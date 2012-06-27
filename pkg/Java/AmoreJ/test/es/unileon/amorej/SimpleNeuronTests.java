@@ -13,13 +13,15 @@ public class SimpleNeuronTests {
 
 	@Test
 	public void testGetId() {
-		Neuron neuron = new SimpleNeuron("13");
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("13");
 		assertTrue(neuron.getId().equals("13"));
 	}
 
 	@Test
 	public void testSetId() {
-		Neuron neuron = new SimpleNeuron("13");
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("13");
 		neuron.setId("31");
 		assertTrue(neuron.getId().equals("31"));
 		neuron.setId("");
@@ -30,28 +32,20 @@ public class SimpleNeuronTests {
 
 	@Test(expected = AmoreJException.class)
 	public void testValidateIdIsNA() throws AmoreJException {
-		Neuron neuron = new SimpleNeuron("");
-		Connection connection = new Connection(neuron, 2.7 );
-		connection.validate();
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("NA");
+		neuron.validate();
 }
 
+	@Test(expected = AmoreJException.class)
+	public void testValidateIdIsEmptyString() throws AmoreJException {
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("");
+		neuron.validate();
+}
 
-	//test.Neuron.Cpp.Validate_IdIsNa <- function() {	
-//###############################################################################	
-//	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
-//	testCode <- "
-//			//Test
-//			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
-//			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(NA_INTEGER) );
-//			neuronPtr->validate();			
-//			"
-//	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())	
-//	checkException( result <- testCodefun() , silent=TRUE)
-//	# [1] TRUE
-//
-//}
-//
-//
+	
+	
 //###############################################################################
 //test.Neuron.Cpp.Validate_EmptyCon <- function() {	
 //###############################################################################	
@@ -69,6 +63,6 @@ public class SimpleNeuronTests {
 //	# [1] TRUE
 //}
 
-	//
+//
 
 }
