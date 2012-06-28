@@ -15,10 +15,10 @@ public interface NeuralFactory {
 //	  PredictBehavior makePredictBehavior (Neuron neuron);
 	  Neuron makeNeuron (String Id);
 //	  Neuron makeNeuron (String Id, NeuronIterator neuronIterator, int totalAmountOfParameters, NeuralNetwork neuralNetwork);
-//	  Layer makeLayer ();
-//	  LayerContainer makeLayerContainer ();
-//	  NeuralNetwork makeNeuralNetwork (NeuralFactory neuralFactory);
-	  NeuralCreator makeNeuralCreator ();
+	  Container<Neuron> makeLayer ();
+	  Container<Container<Neuron>> makeLayerContainer ();
+	  NeuralNetwork makeNeuralNetwork (NeuralFactory neuralFactory);
+//	  NeuralCreator makeNeuralCreator ();
 //	  ActivationFunction makeActivationFunction (Neuron neuron, Rcpp::X<CppFunctionPointer> f0, Rcpp::X<CppFunctionPointer> f1);
 //	  Rcpp::List makeXFunctionList (std::string functionName);
 //	  NetworkTrainBehavior makeNetworkTrainBehavior (NeuralNetwork neuralNetwork);

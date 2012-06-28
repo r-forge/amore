@@ -2,25 +2,38 @@ package es.unileon.amorej;
 
 import java.util.ArrayList;
 
-public class SimpleContainer<E extends Visible & Checkable> implements Container<E> {
+public class SimpleContainer<E extends Visible & Checkable> implements
+		Container<E> {
 	private ArrayList<E> collection;
 
-	 public SimpleContainer() {
-	 collection = new ArrayList<E>();
-	 }
+	public SimpleContainer() {
+		collection = new ArrayList<E>();
+	}
 
-	 public SimpleContainer(int initialCapacity) {
-	 collection = new ArrayList<E>(initialCapacity);
-	 }
+	public SimpleContainer(int initialCapacity) {
+		collection = new ArrayList<E>(initialCapacity);
+	}
 
-	 @Override
+	@Override
+	public Iterator<E> createIterator() {
+		Iterator<E> iterator = new SimpleContainerIterator<E>(this);
+		return iterator;
+	}
+
+	@Override
+	public Iterator<E> createReverseIterator() {
+		Iterator<E> iterator = new SimpleContainerReverseIterator<E>(this);
+		return iterator;
+	}
+
+	@Override
 	public E get(int index) {
 		return collection.get(index);
 	}
 
 	@Override
 	public boolean add(E e) {
-		return collection.add(e);		
+		return collection.add(e);
 	}
 
 	@Override
@@ -41,11 +54,11 @@ public class SimpleContainer<E extends Visible & Checkable> implements Container
 	@Override
 	public void clear() {
 		collection.clear();
-		
+
 	}
 
-	public  void show() {
-		for (E e: collection) {
+	public void show() {
+		for (E e : collection) {
 			e.show();
 		}
 
@@ -53,7 +66,7 @@ public class SimpleContainer<E extends Visible & Checkable> implements Container
 
 	@Override
 	public boolean validate() throws AmoreJException {
-		for (E e: collection) {
+		for (E e : collection) {
 			e.validate();
 		}
 		return true;
