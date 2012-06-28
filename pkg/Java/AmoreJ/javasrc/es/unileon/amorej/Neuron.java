@@ -1,6 +1,6 @@
 package es.unileon.amorej;
 
-public interface Neuron {
+public interface Neuron extends Visible, Checkable {
 
 	String getId();
 

@@ -1,29 +1,37 @@
 package es.unileon.amorej;
 
-public class SimpleContainerIterator implements Iterator {
+public class SimpleContainerIterator<E extends Visible & Checkable> implements
+		Iterator<E> {
+	Container<E> container;
+	int current;
+
+	SimpleContainerIterator(Container<E> container) {
+		this.container = container;
+		this.current = 0;
+	}
 
 	@Override
 	public void first() {
-		// TODO Auto-generated method stub
-		
+		this.current = 0;
 	}
 
 	@Override
 	public void next() {
-		// TODO Auto-generated method stub
-		
+		this.current++;
 	}
 
 	@Override
 	public boolean isDone() {
-		// TODO Auto-generated method stub
-		return false;
+		return (this.current == this.container.size());
 	}
 
 	@Override
-	public Visible currentItem() {
-		// TODO Auto-generated method stub
-		return null;
+	public E currentItem() throws AmoreJException {
+		if (this.isDone())
+			throw new AmoreJException(
+					"SimpleContainerIterator.currentItem  Error: IteratorOutOfBounds");
+		return this.container.get(current);
+
 	}
 
 }

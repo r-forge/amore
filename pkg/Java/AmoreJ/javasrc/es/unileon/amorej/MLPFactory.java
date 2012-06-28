@@ -51,7 +51,8 @@ public class MLPFactory implements NeuralFactory {
 	}
 
 	public Container<Connection> makeConnectionContainer(int initialCapacity) {
-		Container<Connection> connectionContainer = new SimpleContainer<Connection>(initialCapacity);
+		Container<Connection> connectionContainer = new SimpleContainer<Connection>(
+				initialCapacity);
 		return connectionContainer;
 	}
 
@@ -89,22 +90,19 @@ public class MLPFactory implements NeuralFactory {
 	// return neuronPtr;
 	// }
 	//
-	// LayerPtr
-	// MLPfactory::makeLayer()
-	// {
-	// LayerPtr layerPtr(new SimpleContainer<NeuronPtr> );
-	// return layerPtr;
-	// }
-	//
-	// LayerContainerPtr
-	// MLPfactory::makeLayerContainer()
-	// {
-	// LayerContainerPtr layerContainerPtr(new SimpleContainer<LayerPtr> );
-	// layerContainerPtr->push_back(makeLayer());
-	// return layerContainerPtr;
-	// }
-	//
-	NeuralNetwork makeNeuralNetwork(NeuralFactory neuralFactory) {
+
+	public Container<Neuron> makeLayer() {
+		Container<Neuron> layer = new SimpleContainer<Neuron>();
+		return layer;
+	}
+
+	public Container<Container<Neuron>> makeLayerContainer()	 {
+		Container<Container<Neuron>> layerContainer = new SimpleContainer<Container<Neuron>> ();
+	 layerContainer.add( this.makeLayer() );
+	 return layerContainer;
+	 }
+
+	public NeuralNetwork makeNeuralNetwork(NeuralFactory neuralFactory) {
 		NeuralNetwork neuralNetwork = new SimpleNetwork(neuralFactory);
 		// NetworkTrainBehavior networkTrainBehavior(
 		// neuralFactory.makeNetworkTrainBehavior(neuralNetwork));
