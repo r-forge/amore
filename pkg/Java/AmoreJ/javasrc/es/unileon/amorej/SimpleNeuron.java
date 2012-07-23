@@ -10,12 +10,12 @@ public class SimpleNeuron implements Neuron {
 	private double output;
 	private double outputDerivative;
 	private double target;
-	private List<Connection> nConnections;
+	private Container<Connection> connectionContainer;
 
-	// NeuralNetwork neuralNetwork;
-	// PredictBehavior predictBehavior;
-	// ActivationFunction activationFunction;
-	// NeuronTrainBehavior neuronTrainBehavior;
+	// TODO NeuralNetwork neuralNetwork;
+	// TODO PredictBehavior predictBehavior;
+	// TODO ActivationFunction activationFunction;
+	// TODO NeuronTrainBehavior neuronTrainBehavior;
 
 	public SimpleNeuron(NeuralFactory neuralFactory) {
 		this.id = "NA";
@@ -23,7 +23,7 @@ public class SimpleNeuron implements Neuron {
 		this.output = 0.0;
 		this.outputDerivative = 0.0;
 		this.target = 0.0;
-		this.nConnections = new ArrayList<Connection>();
+		this.connectionContainer = neuralFactory.makeConnectionContainer();
 	}
 
 	public double getInducedLocalField() {
@@ -73,24 +73,30 @@ public class SimpleNeuron implements Neuron {
 		if (this.id.equals(""))
 			throw new AmoreJException(
 					"[Java SimpleNeuron.validate]: Error, Id is empty string.");
-		for (Connection connection : nConnections) {
+
+//		Iterator<Connection> connectionItr =  connectionContainer.createIterator();
+//		for (connectionItr.first(); !connectionItr.isDone(); connectionItr.next()) {
+//			
+//		}
+		
+		for (Connection connection : connectionContainer){
 			connection.validate();
 		}
 		return true;
 	}
 
 	public void addConnection(Connection connection) {
-		nConnections.add(connection);
+		connectionContainer.add(connection);
 	}
 
-	// public void
+	// TODO  public void
 	// setActivationFunction(ActivationFunction activationFunction)
 	// {
 	// this.activationFunction = activationFunction;
 	// }
 	//
 
-	// public void
+	// TODO public void
 	// setPredictBehavior(PredictBehavior predictBehavior)
 	// {
 	// this.predictBehavior = predictBehavior;
@@ -98,7 +104,7 @@ public class SimpleNeuron implements Neuron {
 	//
 	//
 	//
-	// public void
+	// TODO public void
 	// setNeuronTrainBehavior(NeuronTrainBehavior neuronTrainBehavior)
 	// {
 	// this.neuronTrainBehavior = neuronTrainBehavior;
@@ -106,21 +112,21 @@ public class SimpleNeuron implements Neuron {
 	//
 	//
 	//
-	// public String
+	// TODO public String
 	// getNeuronTrainBehaviorName()
 	// {
 	// return this.neuronTrainBehavior.getName();
 	// }
 	//
 	//
-	// public NeuralNetwork
+	// TODO public NeuralNetwork
 	// getNeuralNetwork( )
 	// {
 	// return this.neuralNetwork;
 	// }
 	//
 	//
-	// public void
+	// TODO public void
 	// setNeuralNetwork( NeuralNetworkPtr& neuralNetworkPtr)
 	// {
 	// this.neuralNetwork = neuralNetwork;
@@ -128,14 +134,14 @@ public class SimpleNeuron implements Neuron {
 	//
 	//
 	//
-	// public double
+	// TODO  public double
 	// useActivationFunctionf0()
 	// {
 	// return this.activationFunction.f0();
 	// }
 	//
 	//
-	// public double
+	// TODO  public double
 	// useActivationFunctionf1()
 	// {
 	// return this.activationFunction.f1();
@@ -143,14 +149,14 @@ public class SimpleNeuron implements Neuron {
 	//
 	//
 	//
-	// public void
+	// TODO public void
 	// singlePatternForwardAction()
 	// {
 	// this.predictBehavior.singlePatternForwardAction();
 	// }
 	//
 	//
-	// public void
+	// TODO  public void
 	// singlePatternBackwardAction()
 	// {
 	// this.neuronTrainBehavior.singlePatternBackwardAction();
@@ -158,7 +164,7 @@ public class SimpleNeuron implements Neuron {
 	//
 
 	public int numberOfConnections() {
-		return nConnections.size();
+		return connectionContainer.size();
 	}
 
 	public void show() {
@@ -169,7 +175,7 @@ public class SimpleNeuron implements Neuron {
 		System.out.println(" output: " + this.output);
 		System.out.println(" target: " + this.target);
 		System.out.print("-----------------------------------");
-		for (Connection connection : this.nConnections) {
+		for (Connection connection : this.connectionContainer) {
 			connection.show();
 		}
 		System.out.println("\n-----------------------------------");
@@ -177,30 +183,30 @@ public class SimpleNeuron implements Neuron {
 		// getNeuronTrainBehaviorName().c_str() );
 		System.out.println("\n-----------------------------------");
 	}
-	// public double costFunctionf0(double output, double target)
+	// TODO public double costFunctionf0(double output, double target)
 	// {
 	// return this.neuralNetwork.costFunctionf0( output, target );
 	// }
 	//
 	//
-	// public double costFunctionf1(double output, double target)
+	// TODO  public double costFunctionf1(double output, double target)
 	// {
 	// return this.neuralNetwork.costFunctionf1( output, target );
 	// }
 	//
 	//
-	// public void addToBias(double value)
+	// TODO  public void addToBias(double value)
 	// {
 	// this.predictBehavior.addToBias(value);
 	// }
 	//
 	//
-	// public void addToDelta(double value)
+	// TODO  public void addToDelta(double value)
 	// {
 	// this.neuronTrainBehavior.addToDelta(value);
 	// }
 	//
-	// public void
+	// TODO  public void
 	// setLearningRate(double learningRate)
 	// {
 	// this.neuronTrainBehavior.setLearningRate(learningRate);

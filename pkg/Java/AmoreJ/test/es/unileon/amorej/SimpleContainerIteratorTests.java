@@ -49,6 +49,7 @@ public class SimpleContainerIteratorTests {
 		assertTrue(itr.currentItem().getId().equals("10"));
 	}
 
+	
 	@Test
 	public void testNext() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
@@ -86,6 +87,10 @@ public class SimpleContainerIteratorTests {
 		itr.next();
 		assertTrue(itr.currentItem().getId().equals("30"));
 		assertFalse(itr.isDone());
+		itr.next();
+		assertTrue(itr.isDone());
+		itr.next();
+		assertTrue(itr.isDone());
 		itr.next();
 		assertTrue(itr.isDone());
 	}

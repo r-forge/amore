@@ -1,7 +1,9 @@
 package es.unileon.amorej;
 
-public interface Container<E extends Visible & Checkable> extends Visible, Checkable {
+public interface Container<E extends Visible & Checkable> extends Visible, Checkable, Iterable<E> {
 
+    java.util.Iterator<E> iterator();
+ 
 	Iterator<E> createIterator();
 
 	Iterator<E> createReverseIterator();

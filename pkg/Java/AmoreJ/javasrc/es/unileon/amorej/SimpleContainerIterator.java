@@ -22,7 +22,7 @@ public class SimpleContainerIterator<E extends Visible & Checkable> implements
 
 	@Override
 	public boolean isDone() {
-		return (this.current == this.container.size());
+		return (this.current >= this.container.size());
 	}
 
 	@Override

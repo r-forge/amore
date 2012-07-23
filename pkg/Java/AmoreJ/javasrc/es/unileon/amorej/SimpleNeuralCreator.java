@@ -10,9 +10,9 @@ public class SimpleNeuralCreator implements NeuralCreator {
 
 	public NeuralNetwork createFeedForwardNetwork(NeuralFactory neuralFactory,
 			List<Integer> numberOfNeurons) {
-//	    Rcpp::List hiddenLayersActivationFunction = neuralFactoryPtr->makeXPtrFunctionList(hiddenLayersActivationFunctionName);
-//	    Rcpp::List outputLayerActivationFunction  = neuralFactoryPtr->makeXPtrFunctionList(outputLayerActivationFunctionName);
-//	    return createCustomFeedForwardNetwork(neuralFactoryPtr, numberOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
+//	TODO     Rcpp::List hiddenLayersActivationFunction = neuralFactoryPtr->makeXPtrFunctionList(hiddenLayersActivationFunctionName);
+//	TODO     Rcpp::List outputLayerActivationFunction  = neuralFactoryPtr->makeXPtrFunctionList(outputLayerActivationFunctionName);
+//	TODO     return createCustomFeedForwardNetwork(neuralFactoryPtr, numberOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
 	    return createCustomFeedForwardNetwork(neuralFactoryPtr, numberOfNeurons);	
 	}
 
@@ -49,8 +49,8 @@ public class SimpleNeuralCreator implements NeuralCreator {
   //Input Layer
   for (int i = 0; i < numberOfNeurons.at(0); ++i)
     {
-      neuronPtr = neuralFactory.makeNeuron(neuronId++);
-      neuronPtr->setNeuralNetwork(neuralNetworkPtr);
+      neuron = neuralFactory.makeNeuron(neuronId++);
+      neuron.setNeuralNetwork(neuralNetworkPtr);
       NeuronTrainBehaviorPtr neuronTrainBehaviorPtr (neuralFactoryPtr->makeHiddenNeuronTrainBehavior(neuronPtr) );
       neuronPtr->setNeuronTrainBehavior( neuronTrainBehaviorPtr );
       neuralNetworkPtr->d_inputLayer->push_back(neuronPtr);
