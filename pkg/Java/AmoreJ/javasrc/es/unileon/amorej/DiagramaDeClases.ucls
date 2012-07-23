@@ -18,7 +18,7 @@
   </class>  
   <interface id="3" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.Neuron" project="AmoreJ" 
     file="/AmoreJ/javasrc/es/unileon/amorej/Neuron.java" binary="false">    
-    <position height="-1" width="-1" x="596" y="570"/>    
+    <position height="-1" width="-1" x="523" y="587"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -26,24 +26,100 @@
   </interface>  
   <class id="4" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.SimpleNeuron" project="AmoreJ" 
     file="/AmoreJ/javasrc/es/unileon/amorej/SimpleNeuron.java" binary="false">    
-    <position height="-1" width="-1" x="589" y="997"/>    
+    <position height="-1" width="-1" x="537" y="1004"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <realization id="5">    
+  <interface id="5" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.Container" project="AmoreJ" 
+    file="/AmoreJ/javasrc/es/unileon/amorej/Container.java" binary="false">    
+    <position height="-1" width="-1" x="55" y="1004"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.SimpleContainer" project="AmoreJ" 
+    file="/AmoreJ/javasrc/es/unileon/amorej/SimpleContainer.java" binary="false">    
+    <position height="-1" width="-1" x="63" y="1353"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.Iterator" project="AmoreJ" 
+    file="/AmoreJ/javasrc/es/unileon/amorej/Iterator.java" binary="false">    
+    <position height="-1" width="-1" x="-460" y="931"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.SimpleContainerIterator" project="AmoreJ" 
+    file="/AmoreJ/javasrc/es/unileon/amorej/SimpleContainerIterator.java" binary="false">    
+    <position height="-1" width="-1" x="-245" y="1399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" corner="BOTTOM_RIGHT" language="java" name="es.unileon.amorej.SimpleContainerReverseIterator" 
+    project="AmoreJ" file="/AmoreJ/javasrc/es/unileon/amorej/SimpleContainerReverseIterator.java" binary="false">    
+    <position height="-1" width="-1" x="-563" y="1420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association id="10">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="11" name="container"/>      
+      <multiplicity id="12" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="14" name="container"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="16">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="17" name="connectionContainer"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="19">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <association id="6">    
+  <realization id="20">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="22">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="7" name="nextNeuron"/>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+      <attribute id="23" name="nextNeuron"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="25">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     visibility="true">    
     <attributes public="true" package="true" protected="true" private="true"/>    
