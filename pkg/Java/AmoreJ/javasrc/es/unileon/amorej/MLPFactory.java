@@ -30,18 +30,17 @@ public class MLPFactory implements NeuralFactory {
 	public Neuron makeNeuron(String id) {
 		Neuron neuron = new SimpleNeuron(this);
 		neuron.setId(id);
-		// PredictBehaviorPtr
-		// predictBehaviorPtr(makePredictBehavior(neuronPtr));
-		// neuronPtr->setPredictBehavior(predictBehaviorPtr);
-		// ActivationFunctionPtr activationFunctionPtr(
-		// makeActivationFunction(neuronPtr,
-		// Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f0)),
-		// Rcpp::XPtr<CppFunctionPointer>(new
-		// CppFunctionPointer(&default_f1))));
-		// neuronPtr->setActivationFunction(activationFunctionPtr);
-		// NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
-		// makeHiddenNeuronTrainBehavior(neuronPtr));
-		// neuronPtr->setNeuronTrainBehavior(neuronTrainBehaviorPtr);
+		// TODO PredictBehaviorPtr
+		// TODO predictBehaviorPtr(makePredictBehavior(neuronPtr));
+		// TODO neuronPtr->setPredictBehavior(predictBehaviorPtr);
+		// TODO ActivationFunctionPtr activationFunctionPtr(
+		// TODO makeActivationFunction(neuronPtr,
+		// TODO  Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f0)),
+		// TODO  Rcpp::XPtr<CppFunctionPointer>(new CppFunctionPointer(&default_f1))));
+		// TODO  neuronPtr->setActivationFunction(activationFunctionPtr);
+		// TODO  NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
+		// TODO makeHiddenNeuronTrainBehavior(neuronPtr));
+		// TODO neuronPtr->setNeuronTrainBehavior(neuronTrainBehaviorPtr);
 		return neuron;
 	}
 
@@ -56,7 +55,7 @@ public class MLPFactory implements NeuralFactory {
 		return connectionContainer;
 	}
 
-	// PredictBehaviorPtr
+	//TODO  PredictBehaviorPtr
 	// MLPfactory::makePredictBehavior(NeuronPtr& neuronPtr)
 	// {
 	// PredictBehaviorPtr predictBehaviorPtr(new MLPbehavior(neuronPtr));
@@ -64,7 +63,7 @@ public class MLPFactory implements NeuralFactory {
 	// }
 	//
 
-	// NeuronPtr
+	//TODO  NeuronPtr
 	// MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
 	// int totalAmountOfParameters, NeuralNetworkPtr& neuralNetworkPtr)
 	// {
@@ -104,10 +103,10 @@ public class MLPFactory implements NeuralFactory {
 
 	public NeuralNetwork makeNeuralNetwork(NeuralFactory neuralFactory) {
 		NeuralNetwork neuralNetwork = new SimpleNetwork(neuralFactory);
-		// NetworkTrainBehavior networkTrainBehavior(
-		// neuralFactory.makeNetworkTrainBehavior(neuralNetwork));
-		// neuralNetwork.setNetworkTrainBehavior(networkTrainBehavior);
-		// TO-DO Remove comments above
+		// TODO NetworkTrainBehavior networkTrainBehavior(
+		// TODO neuralFactory.makeNetworkTrainBehavior(neuralNetwork));
+		// TODO  neuralNetwork.setNetworkTrainBehavior(networkTrainBehavior);
+		// TODO  Remove comments above
 		return neuralNetwork;
 	}
 
@@ -117,7 +116,7 @@ public class MLPFactory implements NeuralFactory {
 	}
 
 	//
-	// ActivationFunctionPtr
+	//TODO  ActivationFunctionPtr
 	// MLPfactory::makeActivationFunction(NeuronPtr& neuronPtr,
 	// Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1)
 	// {
@@ -126,7 +125,7 @@ public class MLPFactory implements NeuralFactory {
 	// return activationFunctionPtr;
 	// }
 	//
-	// Rcpp::List
+	//TODO  Rcpp::List
 	// MLPfactory::makeXPtrFunctionList(std::string functionName)
 	// {
 	//
@@ -235,7 +234,7 @@ public class MLPFactory implements NeuralFactory {
 	//
 	// }
 	//
-	// CostFunctionPtr
+	// TODO CostFunctionPtr
 	// MLPfactory::makeCostFunction(std::string functionName)
 	// {
 	//

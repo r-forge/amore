@@ -14,6 +14,10 @@ public class SimpleContainer<E extends Visible & Checkable> implements
 		collection = new ArrayList<E>(initialCapacity);
 	}
 
+	public java.util.Iterator<E> iterator() {
+		return collection.iterator();
+	}
+	
 	@Override
 	public Iterator<E> createIterator() {
 		Iterator<E> iterator = new SimpleContainerIterator<E>(this);

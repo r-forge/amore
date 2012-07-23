@@ -23,7 +23,7 @@ public class SimpleContainerReverseIterator<E extends Visible & Checkable>
 
 	@Override
 	public boolean isDone() {
-		return (this.current == -1);
+		return (this.current < 0);
 	}
 
 	@Override

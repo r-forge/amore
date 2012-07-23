@@ -5,23 +5,32 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ConTests {
+public class ConnectionTests {
 
 	@Before
 	public void setUp() throws Exception {
 	}
 
 	@Test
-	public void testConstructor() throws AmoreJException {
+	public void testConstructor1Argument() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
 		Neuron neuron = neuralFactory.makeNeuron("1");
-		Connection connection = neuralFactory.makeConnection(neuron, 4.5);
+		Connection connection = new Connection(neuron);
+		connection.show();
+		connection.validate();
+		assertTrue(connection.getId().equals("1"));
+		assertEquals(connection.getWeight(), 0.0, 1e-10);
+	}
+	@Test
+	public void testConstructor2Arguments() throws AmoreJException {
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("1");
+		Connection connection = new Connection(neuron, 4.5);
 		connection.show();
 		connection.validate();
 		assertTrue(connection.getId().equals("1"));
 		assertEquals(connection.getWeight(), 4.5, 1e-10);
 	}
-
 	@Test
 	public void testGetNeuron() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
@@ -69,10 +78,23 @@ public class ConTests {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
 		Neuron neuron = neuralFactory.makeNeuron("16");
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
+		assertTrue(connection.getWeight()==12.4);
 	    connection.setWeight(2.2);
 		assertTrue(connection.getWeight()==2.2);
 	}
 	
+	@Test
+	public void testGetInputValue() {
+		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		Neuron neuron = neuralFactory.makeNeuron("16");
+		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
+	    connection.setWeight(2.2);
+		assertTrue(connection.getInputValue()==0.0);
+		neuron.setOutput(12.3);
+		assertTrue(connection.getInputValue()==12.3);
+	}
+	
+
 
 	@Test
 	public void testShow() {

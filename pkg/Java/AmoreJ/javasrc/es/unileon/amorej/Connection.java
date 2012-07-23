@@ -43,7 +43,8 @@ public class Connection implements Visible, Checkable {
 	 * @return
 	 */
 	public String getId() {
-		return  (this.nextNeuron!=null)?this.nextNeuron.getId():"NA";
+		boolean isNextNeuronAvailable = (this.nextNeuron != null) ; 
+		return  isNextNeuronAvailable ? this.nextNeuron.getId() : "NA";
 	}
 
 	/**
@@ -60,7 +61,10 @@ public class Connection implements Visible, Checkable {
 		this.weight = value;
 	}
 
-	// public double getInputValue () { return this.nextNeuron.getOutput(); }
+	// TODO Check whether we can remove the getInputValue method
+	public double getInputValue() {
+		return this.nextNeuron.getOutput();
+	}
 
 	/**
 	 * @param value
@@ -69,7 +73,7 @@ public class Connection implements Visible, Checkable {
 		this.weight += value;
 	}
 
-	// public void addToDelta(double value) { neuron.addToDelta(value); }
+	// TODO public void addToDelta(double value) { neuron.addToDelta(value); }
 
 	/**
 	 * 

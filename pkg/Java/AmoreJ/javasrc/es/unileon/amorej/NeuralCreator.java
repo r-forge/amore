@@ -16,15 +16,15 @@ public interface NeuralCreator {
 	public NeuralNetwork createCustomFeedForwardNetwork(
 			NeuralFactory neuralFactory, List<Integer> numberOfNeurons);
 
-// Original , remember to correct the previous ones	
+// TODO Original , remember to correct the previous ones	
 	
 //	
-//	public NeuralNetwork createFeedForwardNetwork(NeuralFactory neuralFactory,
+//	TODO public NeuralNetwork createFeedForwardNetwork(NeuralFactory neuralFactory,
 //			List<Integer> numberOfNeurons,
 //			String hiddenLayersActivationFunctionName,
 //			String outputLayerActivationFunctionName);
 //
-//	public NeuralNetwork createCustomFeedForwardNetwork(
+//	TODO public NeuralNetwork createCustomFeedForwardNetwork(
 //			NeuralFactory neuralFactory, List<Integer> numberOfNeurons,
 //			List hiddenLayersActivationFunction,
 //			List outputLayerActivationFunction);
