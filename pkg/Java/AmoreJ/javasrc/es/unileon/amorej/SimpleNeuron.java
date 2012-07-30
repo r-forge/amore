@@ -1,7 +1,6 @@
 package es.unileon.amorej;
 
-import java.util.ArrayList;
-import java.util.List;
+import es.unileon.amorej.net.NeuralNetwork;
 
 public class SimpleNeuron implements Neuron {
 
@@ -12,18 +11,20 @@ public class SimpleNeuron implements Neuron {
 	private double target;
 	private Container<Connection> connectionContainer;
 
-	// TODO NeuralNetwork neuralNetwork;
+	private NeuralNetwork neuralNetwork;
+
 	// TODO PredictBehavior predictBehavior;
 	// TODO ActivationFunction activationFunction;
 	// TODO NeuronTrainBehavior neuronTrainBehavior;
 
-	public SimpleNeuron(NeuralFactory neuralFactory) {
+	public SimpleNeuron(NeuralNetwork neuralNetwork) {
+		this.neuralNetwork = neuralNetwork;
 		this.id = "NA";
 		this.inducedLocalField = 0.0;
 		this.output = 0.0;
 		this.outputDerivative = 0.0;
 		this.target = 0.0;
-		this.connectionContainer = neuralFactory.makeConnectionContainer();
+		this.connectionContainer = neuralNetwork.getFactory().makeConnectionContainer();
 	}
 
 	public double getInducedLocalField() {
@@ -74,12 +75,14 @@ public class SimpleNeuron implements Neuron {
 			throw new AmoreJException(
 					"[Java SimpleNeuron.validate]: Error, Id is empty string.");
 
-//		Iterator<Connection> connectionItr =  connectionContainer.createIterator();
-//		for (connectionItr.first(); !connectionItr.isDone(); connectionItr.next()) {
-//			
-//		}
-		
-		for (Connection connection : connectionContainer){
+		// Iterator<Connection> connectionItr =
+		// connectionContainer.createIterator();
+		// for (connectionItr.first(); !connectionItr.isDone();
+		// connectionItr.next()) {
+		//
+		// }
+
+		for (Connection connection : connectionContainer) {
 			connection.validate();
 		}
 		return true;
@@ -89,7 +92,7 @@ public class SimpleNeuron implements Neuron {
 		connectionContainer.add(connection);
 	}
 
-	// TODO  public void
+	// TODO public void
 	// setActivationFunction(ActivationFunction activationFunction)
 	// {
 	// this.activationFunction = activationFunction;
@@ -119,29 +122,25 @@ public class SimpleNeuron implements Neuron {
 	// }
 	//
 	//
-	// TODO public NeuralNetwork
-	// getNeuralNetwork( )
-	// {
-	// return this.neuralNetwork;
-	// }
-	//
-	//
-	// TODO public void
-	// setNeuralNetwork( NeuralNetworkPtr& neuralNetworkPtr)
-	// {
-	// this.neuralNetwork = neuralNetwork;
-	// }
+	public NeuralNetwork getNeuralNetwork() {
+		return this.neuralNetwork;
+	}
+
+	public void setNeuralNetwork(NeuralNetwork neuralNetwork) {
+		this.neuralNetwork = neuralNetwork;
+	}
+
 	//
 	//
 	//
-	// TODO  public double
+	// TODO public double
 	// useActivationFunctionf0()
 	// {
 	// return this.activationFunction.f0();
 	// }
 	//
 	//
-	// TODO  public double
+	// TODO public double
 	// useActivationFunctionf1()
 	// {
 	// return this.activationFunction.f1();
@@ -156,7 +155,7 @@ public class SimpleNeuron implements Neuron {
 	// }
 	//
 	//
-	// TODO  public void
+	// TODO public void
 	// singlePatternBackwardAction()
 	// {
 	// this.neuronTrainBehavior.singlePatternBackwardAction();
@@ -189,24 +188,24 @@ public class SimpleNeuron implements Neuron {
 	// }
 	//
 	//
-	// TODO  public double costFunctionf1(double output, double target)
+	// TODO public double costFunctionf1(double output, double target)
 	// {
 	// return this.neuralNetwork.costFunctionf1( output, target );
 	// }
 	//
 	//
-	// TODO  public void addToBias(double value)
+	// TODO public void addToBias(double value)
 	// {
 	// this.predictBehavior.addToBias(value);
 	// }
 	//
 	//
-	// TODO  public void addToDelta(double value)
+	// TODO public void addToDelta(double value)
 	// {
 	// this.neuronTrainBehavior.addToDelta(value);
 	// }
 	//
-	// TODO  public void
+	// TODO public void
 	// setLearningRate(double learningRate)
 	// {
 	// this.neuronTrainBehavior.setLearningRate(learningRate);

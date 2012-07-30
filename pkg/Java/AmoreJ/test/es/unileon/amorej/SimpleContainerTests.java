@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import es.unileon.amorej.net.NeuralNetwork;
+
 public class SimpleContainerTests {
 
 	@Test
@@ -36,11 +38,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testGet() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 0, 1, 2, 3, 4, 5 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -53,11 +56,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testAdd() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 0, 1, 2, 3, 4, 5 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -69,11 +73,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testIsEmpty() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 1, 2, 3, 4, 5, 6 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -88,11 +93,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testSize() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 1, 2, 3, 4, 5, 6 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -104,11 +110,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testClear() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 1, 2, 3, 4, 5, 6 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i),neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -122,11 +129,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testShow() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 1, 2, 3, 4, 5, 6 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
@@ -137,11 +145,12 @@ public class SimpleContainerTests {
 	@Test
 	public void testValidate() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
 		Container<Connection> connectionContainer = neuralFactory
 				.makeConnectionContainer();
 		int[] intArray = { 1, 2, 3, 4, 5, 6 };
 		for (int i : intArray) {
-			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i));
+			Neuron neuron = neuralFactory.makeNeuron(String.valueOf(i), neuralNetwork);
 			Connection connection = neuralFactory.makeConnection(neuron,
 					Math.random());
 			connectionContainer.add(connection);
