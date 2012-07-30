@@ -7,10 +7,10 @@ import es.unileon.amorej.NeuralFactory;
 import es.unileon.amorej.Neuron;
 
 public class SimpleNetwork implements NeuralNetwork {
-	NeuralFactory factory;
-	Container<Neuron> inputLayer;
-	Container<Container<Neuron>> hiddenLayers;
-	Container<Neuron> outputLayer;
+	protected NeuralFactory factory;
+	protected Container<Neuron> inputLayer;
+	protected Container<Container<Neuron>> hiddenLayers;
+	protected Container<Neuron> outputLayer;
 
 	// TODO costFunction;
 
