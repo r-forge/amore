@@ -1,6 +1,9 @@
 package es.unileon.amorej;
 
+import es.unileon.amorej.net.NeuralNetwork;
+
 public interface Neuron extends Visible, Checkable {
+
 
 	String getId();
 
@@ -33,7 +36,7 @@ public interface Neuron extends Visible, Checkable {
 	// TODO void setNeuronTrainBehavior (NeuronTrainBehavior neuronTrainBehavior);
 	// TODO String getNeuronTrainBehaviorName();
 	// TODO NeuralNetwork getNeuralNetwork();
-	// TODO void setNeuralNetwork (NeuralNetwork neuralNetwork);
+	void setNeuralNetwork (NeuralNetwork neuralNetwork);
 	// TODO double useActivationFunctionf0();
 	// TODO double useActivationFunctionf1();
 	// TODO void singlePatternForwardAction();

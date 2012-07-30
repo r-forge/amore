@@ -1,9 +1,11 @@
 /**
  * 
  */
-package es.unileon.amorej;
+package es.unileon.amorej.net;
 
 import java.util.List;
+
+import es.unileon.amorej.NeuralFactory;
 
 /**
  * @author mcasl

@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.unileon.amorej.net.NeuralNetwork;
+
 public class SimpleNeuronTests {
 
 	@Before
@@ -14,14 +16,16 @@ public class SimpleNeuronTests {
 	@Test
 	public void testGetId() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("13");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("13", neuralNetwork);
 		assertTrue(neuron.getId().equals("13"));
 	}
 
 	@Test
 	public void testSetId() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("13");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("13", neuralNetwork);
 		neuron.setId("31");
 		assertTrue(neuron.getId().equals("31"));
 		neuron.setId("");
@@ -33,14 +37,16 @@ public class SimpleNeuronTests {
 	@Test(expected = AmoreJException.class)
 	public void testValidateIdIsNA() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("NA");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("NA", neuralNetwork);
 		neuron.validate();
 }
 
 	@Test(expected = AmoreJException.class)
 	public void testValidateIdIsEmptyString() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("", neuralNetwork);
 		neuron.validate();
 }
 

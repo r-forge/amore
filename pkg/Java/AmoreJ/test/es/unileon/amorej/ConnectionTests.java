@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.unileon.amorej.net.NeuralNetwork;
+
 public class ConnectionTests {
 
 	@Before
@@ -14,7 +16,8 @@ public class ConnectionTests {
 	@Test
 	public void testConstructor1Argument() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("1");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("1", neuralNetwork);
 		Connection connection = new Connection(neuron);
 		connection.show();
 		connection.validate();
@@ -24,7 +27,8 @@ public class ConnectionTests {
 	@Test
 	public void testConstructor2Arguments() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("1");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("1", neuralNetwork);
 		Connection connection = new Connection(neuron, 4.5);
 		connection.show();
 		connection.validate();
@@ -34,7 +38,8 @@ public class ConnectionTests {
 	@Test
 	public void testGetNeuron() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("12");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("12", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 9.8);
 		assertTrue(connection.getNextNeuron().getId().equals("12"));
 	}
@@ -42,11 +47,12 @@ public class ConnectionTests {
 	@Test
 	public void testSetNeuron() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron1 = neuralFactory.makeNeuron("12");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron1 = neuralFactory.makeNeuron("12", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron1, 9.7);
 		assertTrue(connection.getNextNeuron().getId().equals("12"));
 		connection.show();
-		Neuron neuron2 = neuralFactory.makeNeuron("21");
+		Neuron neuron2 = neuralFactory.makeNeuron("21", neuralNetwork);
 		connection.setNextNeuron(neuron2);
 		assertTrue(connection.getNextNeuron().getId().equals("21"));
 		connection.show();
@@ -58,7 +64,8 @@ public class ConnectionTests {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
 		Connection connection1 = neuralFactory.makeConnection(null, 8.7);
 		assertTrue(connection1.getId().equals("NA"));
-		Neuron neuron = neuralFactory.makeNeuron("9");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("9", neuralNetwork);
 		Connection connection2 = neuralFactory.makeConnection(neuron, 7.8);
 		assertTrue(connection2.getId().equals("9"));	
 	}
@@ -67,7 +74,8 @@ public class ConnectionTests {
 	@Test
 	public void testGetWeight() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("16");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("16", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
 		assertTrue(connection.getWeight()==12.4);
 	}
@@ -76,7 +84,8 @@ public class ConnectionTests {
 	@Test
 	public void testSetWeight() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("16");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("16", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
 		assertTrue(connection.getWeight()==12.4);
 	    connection.setWeight(2.2);
@@ -86,7 +95,8 @@ public class ConnectionTests {
 	@Test
 	public void testGetInputValue() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("16");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("16", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
 	    connection.setWeight(2.2);
 		assertTrue(connection.getInputValue()==0.0);
@@ -99,7 +109,8 @@ public class ConnectionTests {
 	@Test
 	public void testShow() {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("16");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("16", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4);
 		connection.show();
 	}
@@ -107,7 +118,8 @@ public class ConnectionTests {
 	@Test(expected = AmoreJException.class)
 		public void testValidateWeight() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("16");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("16", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 12.4/0.0);
 		connection.validate();
 	}
@@ -116,7 +128,8 @@ public class ConnectionTests {
 	@Test(expected = AmoreJException.class)
 	public void testValidateFromEmptyId() throws AmoreJException {
 		NeuralFactory neuralFactory = new MLPNoNetworkTrainBehaviorFactory();
-		Neuron neuron = neuralFactory.makeNeuron("");
+		NeuralNetwork neuralNetwork = neuralFactory.makeNeuralNetwork(neuralFactory);
+		Neuron neuron = neuralFactory.makeNeuron("", neuralNetwork);
 		Connection connection = neuralFactory.makeConnection(neuron, 2.7);
 		connection.validate();
 }

@@ -3,6 +3,11 @@
  */
 package es.unileon.amorej;
 
+import es.unileon.amorej.net.NeuralCreator;
+import es.unileon.amorej.net.NeuralNetwork;
+import es.unileon.amorej.net.SimpleNetwork;
+import es.unileon.amorej.net.SimpleNeuralCreator;
+
 /**
  * @author mcasl
  * 
@@ -27,8 +32,8 @@ public class MLPFactory implements NeuralFactory {
 	 * @see es.unileon.amorej.NeuralFactory#makeNeuron(java.lang.String)
 	 */
 	@Override
-	public Neuron makeNeuron(String id) {
-		Neuron neuron = new SimpleNeuron(this);
+	public Neuron makeNeuron(String id, NeuralNetwork neuralNetwork) {
+		Neuron neuron = new SimpleNeuron(neuralNetwork);
 		neuron.setId(id);
 		// TODO PredictBehaviorPtr
 		// TODO predictBehaviorPtr(makePredictBehavior(neuronPtr));
@@ -63,32 +68,23 @@ public class MLPFactory implements NeuralFactory {
 	// }
 	//
 
-	//TODO  NeuronPtr
-	// MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
-	// int totalAmountOfParameters, NeuralNetworkPtr& neuralNetworkPtr)
-	// {
-	// RNGScope scope;
-	//
-	// NeuronPtr neuronPtr(makeNeuron(Id));
-	// neuronPtr->setNeuralNetwork(neuralNetworkPtr);
-	//
-	// double extreme = sqrt(3 / totalAmountOfParameters);
-	// double weight;
-	// for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
-	// neuronIteratorPtr->next())
-	// {
-	// weight = as<double> (runif(1, -extreme, extreme));
-	// ConPtr conPtr(makeCon(neuronIteratorPtr->currentItem(), weight));
-	// neuronPtr->addCon(conPtr);
-	// }
-	//
-	// MLPbehavior* mlpBehavior =
-	// dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
-	// mlpBehavior->d_bias = as<double> (runif(1, -extreme, extreme));
-	//
-	// return neuronPtr;
-	// }
-	//
+public 	Neuron makeNeuron(String Id, Iterator<Neuron> neuronIterator,
+	 int totalAmountOfParameters, NeuralNetwork neuralNetwork) throws AmoreJException
+	 {
+	
+	 Neuron neuron= this.makeNeuron(Id, neuralNetwork);	
+	 double extreme = Math.sqrt(3.0 / totalAmountOfParameters);
+	 double weight;
+	 for (neuronIterator.first(); !neuronIterator.isDone(); neuronIterator.next()) {
+		 weight = (Math.random()-0.5)*2*extreme;
+		 Connection connection = this.makeConnection(neuronIterator.currentItem(), weight);
+		 neuron.addConnection(connection);
+	 }
+// TODO	 MLPbehavior* mlpBehavior =	 dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
+// TODO  mlpBehavior->d_bias = as<double> (runif(1, -extreme, extreme));
+	 return neuron;
+	 }
+	
 
 	public Container<Neuron> makeLayer() {
 		Container<Neuron> layer = new SimpleContainer<Neuron>();

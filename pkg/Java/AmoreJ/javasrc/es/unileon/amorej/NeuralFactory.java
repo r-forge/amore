@@ -3,6 +3,8 @@
  */
 package es.unileon.amorej;
 
+import es.unileon.amorej.net.NeuralNetwork;
+
 /**
  * @author mcasl
  *
@@ -13,8 +15,8 @@ public interface NeuralFactory {
 	  Container<Connection> makeConnectionContainer ();
 	  Container<Connection> makeConnectionContainer (int initialCapacity);
 // TODO	  PredictBehavior makePredictBehavior (Neuron neuron);
-	  Neuron makeNeuron (String Id);
-// TODO		  Neuron makeNeuron (String Id, NeuronIterator neuronIterator, int totalAmountOfParameters, NeuralNetwork neuralNetwork);
+	  Neuron makeNeuron (String Id, NeuralNetwork neuralNetwork);
+      Neuron makeNeuron(String Id, Iterator<Neuron> neuronIterator, int totalAmountOfParameters, NeuralNetwork neuralNetwork) throws AmoreJException;
 	  Container<Neuron> makeLayer ();
 	  Container<Container<Neuron>> makeLayerContainer ();
 	  NeuralNetwork makeNeuralNetwork (NeuralFactory neuralFactory);
