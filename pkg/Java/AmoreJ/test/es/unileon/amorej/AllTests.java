@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ ConnectionTests.class, SimpleContainerIteratorTests.class, SimpleContainerReverseIteratorTests.class,
-		SimpleContainerTests.class, SimpleNeuronTests.class, SimpleNetworkTest.class })
+		SimpleContainerTests.class, SimpleNeuronTests.class })
 public class AllTests {
 
 }
