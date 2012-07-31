@@ -30,21 +30,7 @@ public class SimpleNetwork implements NeuralNetwork {
 		this.factory = neuralFactory;
 	}
 
-	public void addNeuronToLayer(Neuron neuron, int index) {
-		boolean isIndexPointingToInputLayer = (index == 0);
-		boolean isIndexPointingToHiddenLayers = (index > 0)
-				&& (index <= hiddenLayers.size());
-		boolean isIndexPointingToOutputLayer = (index == 1 + hiddenLayers
-				.size());
-
-		if (isIndexPointingToInputLayer) {
-			inputLayer.add(neuron);
-		} else if (isIndexPointingToHiddenLayers) {
-			hiddenLayers.get(index - 1).add(neuron);
-		} else if (isIndexPointingToOutputLayer) {
-			inputLayer.add(neuron);
-		}
-	}
+	
 
 	public int numberOfLayers() {
 		return this.hiddenLayers.size() + 2;
