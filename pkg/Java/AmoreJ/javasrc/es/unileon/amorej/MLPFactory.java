@@ -112,9 +112,7 @@ public 	Neuron makeNeuron(String Id, Iterator<Neuron> neuronIterator,
 	}
 
 	//
-	//TODO  ActivationFunctionPtr
-	// MLPfactory::makeActivationFunction(NeuronPtr& neuronPtr,
-	// Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1)
+	//TODO  ActivationFunctionPtr MLPfactory::makeActivationFunction(NeuronPtr& neuronPtr, Rcpp::XPtr<CppFunctionPointer> f0, Rcpp::XPtr<CppFunctionPointer> f1)
 	// {
 	// ActivationFunctionPtr activationFunctionPtr(
 	// new ActivationFunction(neuronPtr, f0, f1));

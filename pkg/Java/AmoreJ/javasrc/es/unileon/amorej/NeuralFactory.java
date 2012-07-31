@@ -3,6 +3,7 @@
  */
 package es.unileon.amorej;
 
+import es.unileon.amorej.net.NeuralCreator;
 import es.unileon.amorej.net.NeuralNetwork;
 
 /**
@@ -20,7 +21,7 @@ public interface NeuralFactory {
 	  Container<Neuron> makeLayer ();
 	  Container<Container<Neuron>> makeLayerContainer ();
 	  NeuralNetwork makeNeuralNetwork (NeuralFactory neuralFactory);
-// TODO		  NeuralCreator makeNeuralCreator ();
+	  NeuralCreator makeNeuralCreator ();
 // TODO		  ActivationFunction makeActivationFunction (Neuron neuron, Rcpp::X<CppFunctionPointer> f0, Rcpp::X<CppFunctionPointer> f1);
 // TODO		  Rcpp::List makeXFunctionList (std::string functionName);
 // TODO		  NetworkTrainBehavior makeNetworkTrainBehavior (NeuralNetwork neuralNetwork);
