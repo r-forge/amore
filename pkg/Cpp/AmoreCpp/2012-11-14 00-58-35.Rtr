@@ -1,0 +1,68 @@
+﻿##------ 14/11/2012 00:58:35 ------##
+
+R version 2.15.0 (2012-03-30)
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener m'as informaci'on y
+'citation()' para saber c'omo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+
+[INFO] Updating the R environment index started...
+
+[INFO] The R environment index was updated successfully.
+> ls()
+character(0)
+> 
+> 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+Error en file(con, "r") : no se puede abrir la conexi'on
+Adem'as: Mensajes de aviso perdidos
+In file(con, "r") :
+  no fue posible abrir el archivo 'pkg/AMORE/src/AMORE.h': No such file or directory
+> 	testCode <- " 
++ 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
++ 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
++ 			
++ 			Con con( *neuronPtr , 4.5 );
++ 			con.show();
++ 			con.validate();	
++ 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= con.Id(),
++ 										Rcpp::Named(\"weight\") = con.getWeight()
++ 									);
++ 			"
+> 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
+Error: no se pudo encontrar la funci'on "cfunction"
+> 	result <- testCodefun()
+Error: no se pudo encontrar la funci'on "testCodefun"
+> 	checkEquals(result$Id, 1)
+Error: no se pudo encontrar la funci'on "checkEquals"
+> 	checkEquals(result$weight, 4.5)
+Error: no se pudo encontrar la funci'on "checkEquals"
+> 	
+> 
+> suppressMessages(require("inline"))
+Mensajes de aviso perdidos
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'inline'
+> suppressMessages(require("Rcpp"))
+Mensajes de aviso perdidos
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'Rcpp'
+> suppressMessages(require("RUnit"))
+Mensajes de aviso perdidos
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'RUnit'
+> install.packages("RUnit")
+--- Please select a CRAN mirror for use in this session ---
+Loading Tcl/Tk interface ... 
+[INFO] 14/11/2012 01:04:06 - R stopped.

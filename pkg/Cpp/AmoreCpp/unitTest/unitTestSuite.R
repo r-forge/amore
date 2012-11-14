@@ -11,7 +11,6 @@ suppressMessages(require("RUnit"))
 
 
 
-
 uniTestPath   <-  "./pkg/AMORE/unitTest"
 testFile <- "./www/unitTestResults.html"
 
@@ -32,9 +31,12 @@ testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 		rngNormalKind = "Kinderman-Ramage"
 )
 
+
+
 testResult <- runTestSuite(list( 
  				testsuite.AMORECppClasses					
 								))
 						
 printHTMLProtocol(testResult, file=testFile, testFileToLinkMap = testFileToSFLinkMap)
+
 
