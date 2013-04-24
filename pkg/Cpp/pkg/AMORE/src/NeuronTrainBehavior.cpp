@@ -5,9 +5,9 @@
  *      Author: mcasl
  */
 //=========================================================================================================
-
 #include "package.h"
 #include "classHeaders/NeuronTrainBehavior.h"
+#include "classHeaders/Neuron.h"
 
 NeuronTrainBehavior::NeuronTrainBehavior(NeuronPtr neuronPtr) :
   d_neuron(neuronPtr), d_delta(0.0), d_learningRate(0.0), d_momentum(0.0),
@@ -22,50 +22,43 @@ NeuronTrainBehavior::NeuronTrainBehavior(NeuronPtr neuronPtr) :
 int
 NeuronTrainBehavior::numberOfConnections()
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->numberOfConnections();
+  return d_neuron->numberOfConnections();
 }
 
 double
 NeuronTrainBehavior::getNeuronTarget()
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->getTarget();
+  return d_neuron->getTarget();
 }
 
 double
 NeuronTrainBehavior::getNeuronOutput()
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->getOutput();
+  return d_neuron->getOutput();
 }
 
 double
 NeuronTrainBehavior::getNeuronOutputDerivative()
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->getOutputDerivative();
+  return d_neuron->getOutputDerivative();
 }
 
 double
 NeuronTrainBehavior::costFunctionf0(double output, double target)
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->costFunctionf0(output, target);
+  return d_neuron->costFunctionf0(output, target);
 }
 
 double
 NeuronTrainBehavior::costFunctionf1(double output, double target)
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->costFunctionf1(output, target);
+  return d_neuron->costFunctionf1(output, target);
 }
 
 ConIteratorPtr
 NeuronTrainBehavior::getConIterator()
 {
-  NeuronPtr neuronPtr(d_neuron.lock());
-  return neuronPtr->getConIterator();
+  return d_neuron->getConIterator();
 }
 
 void

@@ -7,6 +7,7 @@ private:
   // Operations
 public:
   NetworkRinterface ();
+  ~NetworkRinterface ();
   Rcpp::NumericMatrix sim (Rcpp::NumericMatrix numericMatrix);
   Rcpp::List train (Rcpp::List parameterList);
   void createFeedForwardNetwork (Rcpp::NumericVector numberOfNeurons, Rcpp::CharacterVector hiddenLayersActivationFunctionName, Rcpp::CharacterVector outputLayerActivationFunctionName);

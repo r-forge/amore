@@ -11,6 +11,7 @@ protected:
   // Operations
 public:
 friend class SimpleNeuralCreator; 
+  virtual ~NeuralNetwork ();
   virtual Rcpp::NumericMatrix sim (Rcpp::NumericMatrix numericMatrix) = 0;
   virtual void setNetworkTrainBehavior (NetworkTrainBehaviorPtr networkTrainBehaviorPtr) = 0;
   virtual std::string getNetworkTrainBehaviorName () = 0;
@@ -18,11 +19,11 @@ friend class SimpleNeuralCreator;
   virtual void setCostFunction (CostFunctionPtr costFunctionPtr) = 0;
   virtual std::string getCostFunctionName () = 0;
   virtual Rcpp::List train (Rcpp::List parameterList) = 0;
-  virtual void writeInput (std::vector<double>::iterator& iterator) = 0;
-  virtual void writeTarget (std::vector<double>::iterator& iterator) = 0;
+  virtual void writeInput (std::vector<double>::iterator& iterator, NeuronIteratorPtr inputNeuronIteratorPtr) = 0;
+  virtual void writeTarget (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr) = 0;
   virtual void singlePatternForwardAction () = 0;
   virtual void singlePatternBackwardAction () = 0;
-  virtual void readOutput (std::vector<double>::iterator& iterator) = 0;
+  virtual void readOutput (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr) = 0;
   virtual size_type inputSize () = 0;
   virtual size_type outputSize () = 0;
   virtual double costFunctionf0 (double output, double target) = 0;
@@ -30,7 +31,9 @@ friend class SimpleNeuralCreator;
   virtual void setLearningRate (double learningRate) = 0;
   virtual void show () = 0;
   virtual bool validate () = 0;
+  NeuronIteratorPtr getInputNeuronIterator ();
+  NeuronIteratorPtr getOutputNeuronIterator ();
 protected:
-  NeuralNetwork (NeuralFactory& neuralFactory);
+  NeuralNetwork (NeuralFactoryPtr neuralFactoryPtr);
 };
 

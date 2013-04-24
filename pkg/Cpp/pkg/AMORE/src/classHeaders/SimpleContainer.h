@@ -15,8 +15,8 @@ friend class SimpleContainerIterator<T>;
   ~SimpleContainer ();
 private:
   T at (size_type element);
-   boost::shared_ptr< Iterator<T> > createIterator ();
-  boost::shared_ptr< Iterator<T> > createReverseIterator ();
+  Iterator<T>* createIterator ();
+  Iterator<T>* createReverseIterator ();
   void push_back (T const & const_reference);
   void reserve (int n);
   bool empty ();

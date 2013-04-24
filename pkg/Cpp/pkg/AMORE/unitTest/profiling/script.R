@@ -1,0 +1,21 @@
+	setwd("/Users/mcasl/Documents/workspace/amore/pkg/Cpp")
+	suppressMessages(require("inline"))
+	suppressMessages(require("Rcpp"))
+	suppressMessages(require("RUnit"))
+
+	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
+	testCode <- ""
+	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs="-lprofiler")
+	modAMORE <- Module("modAMORE",  getDynLib(testCodefun))
+	AMOREnet <- modAMORE$NetworkRinterface
+	net <- new (AMOREnet)
+	checkException(net$validate(), silent=TRUE)
+	net$createFeedForwardNetwork(c(2,40,3), "Tanh", "Identity")
+
+	xSim <- runif(10000, min=-1, max=1)
+	ySim <- runif(10000, min=-1, max=1)
+	PSim <- as.matrix( rbind(xSim,ySim) )
+	TSim <-  as.matrix( rbind(xSim^2,ySim^2, xSim+ySim) )
+
+net$train(list( inputMatrix = PSim, targetMatrix   = TSim, algorithm = "ADAPTgd", learningRate = 1e-4, costFunction  = "LMS", numberOfEpochs = 100,showStep=10))
+

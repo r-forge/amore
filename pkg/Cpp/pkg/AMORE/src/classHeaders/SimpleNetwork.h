@@ -1,12 +1,15 @@
 #pragma once
 #include "NeuralNetwork.h"
+#include "NetworkTrainBehavior.h"
+#include "CostFunction.h"
+#include "NeuralFactory.h"
 
-/// class SimpleNetwork - 
+/// class SimpleNetwork -
 class SimpleNetwork : public NeuralNetwork {
   // Operations
 public:
-  SimpleNetwork (NeuralFactory& neuralFactory);
-private:
+  SimpleNetwork (NeuralFactoryPtr neuralFactoryPtr);
+  ~SimpleNetwork ();
   Rcpp::NumericMatrix sim (Rcpp::NumericMatrix sim);
   void setNetworkTrainBehavior (NetworkTrainBehaviorPtr networkTrainBehaviorPtr);
   std::string getNetworkTrainBehaviorName ();
@@ -14,11 +17,11 @@ private:
   void setCostFunction (CostFunctionPtr costFunctionPtr);
   std::string getCostFunctionName ();
   Rcpp::List train (Rcpp::List parameterList);
-  void writeInput (std::vector<double>::iterator& iterator);
-  void writeTarget (std::vector<double>::iterator& iterator);
+  void writeInput (std::vector<double>::iterator& iterator, NeuronIteratorPtr inputNeuronIteratorPtr);
+  void writeTarget (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr);
   void singlePatternForwardAction ();
   void singlePatternBackwardAction ();
-  void readOutput (std::vector<double>::iterator& iterator);
+  void readOutput (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr);
   size_type inputSize ();
   size_type outputSize ();
   double costFunctionf0 (double output, double target);

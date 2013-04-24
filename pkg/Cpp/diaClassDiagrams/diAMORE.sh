@@ -27,14 +27,46 @@ echo "#include \"../SimpleContainerReverseIterator.code\" " >> ../pkg/AMORE/src/
 
 sed -e '/public:/ a\
 friend class NeuronTrainBehavior; ' -i ""  ../pkg/AMORE/src/classHeaders/PredictBehavior.h 
+
+sed -e '/#pragma once/ a\
+#include "MLPbehavior.h"\
+#include "ADAPTgdOutputNeuronTrainBehavior.h" \
+#include "ADAPTgdHiddenNeuronTrainBehavior.h" \
+' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h
+
 sed -e '/public:/ a\
-friend class MLPfactory; friend class NeuronTrainBehavior; ' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h 
+friend class MLPfactory; \
+friend class NeuronTrainBehavior; \
+friend void MLPbehavior::singlePatternForwardAction();\
+friend void SimpleNetwork::readOutput (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr);\
+friend void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction();\
+friend void ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction();\
+' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h
+
+
+sed -e '/#pragma once/ a\
+#include "MLPbehavior.h"\
+#include "ADAPTgdOutputNeuronTrainBehavior.h"\
+#include "ADAPTgdHiddenNeuronTrainBehavior.h" \
+' -i ""  ../pkg/AMORE/src/classHeaders/Connection.h
+
+sed -e '/public:/ a\
+friend void MLPbehavior::singlePatternForwardAction(); \
+friend void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction();\
+friend void ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction();\
+' -i ""  ../pkg/AMORE/src/classHeaders/Connection.h
+
 sed -e '/public:/ a\
 friend class MLPfactory; ' -i ""  ../pkg/AMORE/src/classHeaders/MLPbehavior.h 
 sed -e '/public:/ a\
-friend class SimpleNeuralCreator; ' -i ""  ../pkg/AMORE/src/classHeaders/NeuralNetwork.h 
+friend class SimpleNeuralCreator; ' -i ""  ../pkg/AMORE/src/classHeaders/NeuralNetwork.h
 
-sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h 
+
+
+
+
+
+sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h
 sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  ../pkg/AMORE/src/classHeaders/Neuralfactory.h 
 sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  ../pkg/AMORE/src/classHeaders/MLPfactory.h 
 sed -e 's/virtual \/\/ /\/\/ virtual /g' -i ""  ../pkg/AMORE/src/classHeaders/MLPNoNetworkTrainBehaviorFactory.h 

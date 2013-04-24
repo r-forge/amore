@@ -2,7 +2,7 @@
 #include "classHeaders/NetworkRinterface.h"
 
 
-RCPP_MODULE(modAMORE)
+RCPP_MODULE(AMOREcpp)
   {
     class_<NetworkRinterface>( "NetworkRinterface" )
     .constructor()

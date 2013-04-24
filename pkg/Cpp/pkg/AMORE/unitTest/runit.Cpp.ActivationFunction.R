@@ -1,5 +1,5 @@
 # Unit Tests for the ActivationFunction class methods
-# 
+#
 # Author: mcasl
 ###############################################################################
 
@@ -9,14 +9,14 @@ suppressMessages(require("RUnit"))
 
 
 ###############################################################################
-test.ActivationFunction.Cpp.Constructor <- function() {	
-###############################################################################	
+test.ActivationFunction.Cpp.Constructor <- function() {
+###############################################################################
 
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	otherCode <- '
 		using namespace Rcpp;
 	'
-	testCode <- ' 
+	testCode <- '
 		NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 		NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 		neuronPtr->show();
@@ -25,7 +25,7 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 
 		Rcpp::NumericVector result;
 		result["defaultBefore"]= neuronPtr->getOutput();
-		neuronPtr->singlePatternForwardAction();			
+		neuronPtr->singlePatternForwardAction();
 		result["defaultAfter"]= neuronPtr->getOutput();
 
 
@@ -35,30 +35,30 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 		ActivationFunctionPtr activationFunctionPtr ( neuralFactoryPtr->makeActivationFunction(neuronPtr, f0XPtr, f1XPtr)	);
 		neuronPtr->setActivationFunction(activationFunctionPtr);
 		result["TanhBefore"]= neuronPtr->getOutput();
-		neuronPtr->singlePatternForwardAction();			
+		neuronPtr->singlePatternForwardAction();
 		result["TanhAfter"]= neuronPtr->getOutput();
 		return	result;
 		'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs=otherCode, language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
-	
+
 	result
 
 
 
 
 
-	
-	
+
+
 }
 
 
 
 
 ###############################################################################
-test.ActivationFunction.Cpp.Constructor <- function() {	
-###############################################################################	
-	
+test.ActivationFunction.Cpp.Constructor <- function() {
+###############################################################################
+
 	otherCode <- '
  			double
 			f0(double inducedLocalField)
@@ -77,12 +77,14 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 			    typedef double (*CppFunctionPointer)(double);
 				return List::create( _["f0"]=XPtr<CppFunctionPointer>(new CppFunctionPointer(&f0)), _["f1"]=XPtr<CppFunctionPointer>(new CppFunctionPointer(&f1)) ) ;
 			'
-	
+
 	testCodefun <- cxxfunction(sig = character(), body = testCode, includes = otherCode, plugin="Rcpp")
 	functionPointers <- testCodefun()
-	
+	#
 
-	functionPointers	
+
+
+	functionPointers
 	testCode <- '
 		    typedef double (*CppFunctionPointer)(double);
 			List functionPointers(listOfFunctionPointers);
@@ -94,15 +96,14 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 	testCodefun <- cxxfunction(sig = signature(listOfFunctionPointers="externalpointer", x="numeric"), body = testCode, includes = otherCode, plugin="Rcpp")
 	result <-testCodefun(listOfFunctionPointers=functionPointers, x=0.1)
 	result
-
-	#      f0(x)      f1(x) 
-	# 0.09966799 0.99006629 
+	#      f0(x)      f1(x)
+	# 0.09966799 0.99006629
 
 	checkEquals(result, c("f0(x)"=tanh(0.1), "f1(x)"=1-tanh(0.1)^2))
 
 ###############################################################################
 #Benchmarking
-###############################################################################	
+###############################################################################
 
 otherCode <- '
 		using namespace Rcpp;
@@ -111,7 +112,7 @@ otherCode <- '
 		{
 		return( tanh(inducedLocalField) );
 		}
-		
+
 		double
 		f1(double inducedLocalField)
 		{
@@ -133,7 +134,7 @@ testCode <- '
 testCodefun <- cxxfunction(sig = character(), body = testCode, includes = otherCode, plugin="Rcpp")
 functionPointers <- testCodefun()
 
-	modTest <- Module("mod_Test", getDynLib(testCodefun))	
+	modTest <- Module("mod_Test", getDynLib(testCodefun))
 	modTest$Tanh_f0(0.1)
 
 ##  Benchmarking
@@ -147,7 +148,7 @@ testCode <- '
 		int N =as<int>(n);
 		double result;
 		for (int i = 0; i<N ; i++) {
-			 result = (*f0XPtr)(xx); 
+			 result = (*f0XPtr)(xx);
 		}
 		return wrap( result );
 		'
@@ -155,12 +156,12 @@ usingXPtrs <- cxxfunction(sig = signature(listOfFunctionPointers="externalpointe
 usingXPtrs(functionPointers, 0.4, 100)
 # [1] 0.379949
 
-testCode <- ' 
+testCode <- '
 			Rcpp::Function fx (myfun);
 			int N =as<int>(n);
 			double result;
 		for (int i = 0; i<N ; i++) {
-			 result = as<double>(fx(x)); 
+			 result = as<double>(fx(x));
 		}
 			return wrap( result );
 			'
@@ -168,12 +169,12 @@ usingTanhf0 <- cxxfunction(sig=signature(myfun="function", x="numeric", n="integ
 usingTanhf0(myfun=modTest$Tanh_f0, x=0.4, n=100)
 # [1] 0.379949
 
-testCode <- ' 
+testCode <- '
 			int N =as<int>(n);
 			double result;
 				double value = as<double>(x);
 			for (int i = 0; i<N ; i++) {
-				result = tanh(value); 
+				result = tanh(value);
 			}
 			return wrap( result );
 			'
@@ -189,9 +190,9 @@ benchmark(usingXPtrs(functionPointers, 0.4, 100), usingTanhf0(myfun=modTest$Tanh
 # 3                            usingTanh(x = 0.4, n = 100)   0.001        1
 # 2 usingTanhf0(myfun = modTest$Tanh_f0, x = 0.4, n = 100)   0.174      174
 
-	
-	
 
-		
+
+
+
 }
 

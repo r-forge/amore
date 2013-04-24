@@ -50,7 +50,7 @@ template<typename T>
   T
   SimpleContainerReverseIterator<T>::currentItem()
   {
-      if (isDone()) throw std::range_error("SimpleContainerReverseIterator::currentItem  Error: IteratorOutOfBounds");
+     //   if (isDone()) throw std::range_error("SimpleContainerReverseIterator::currentItem  Error: IteratorOutOfBounds");
       return d_container->at(d_current);
   }
 

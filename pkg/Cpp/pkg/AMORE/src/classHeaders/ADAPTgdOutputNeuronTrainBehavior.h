@@ -6,8 +6,8 @@ class ADAPTgdOutputNeuronTrainBehavior : public ADAPTgdNeuronTrainBehavior {
   // Operations
 public:
   ADAPTgdOutputNeuronTrainBehavior (NeuronPtr neuronPtr);
-private:
   void singlePatternBackwardAction ();
+private:
   void endOfEpochAction ();
   std::string getName ();
 };

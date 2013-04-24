@@ -20,6 +20,8 @@ SimpleNeuron::SimpleNeuron(NeuralFactory& neuralFactory) :
 {
 }
 
+SimpleNeuron::~SimpleNeuron(){
+}
 
 double
 SimpleNeuron::getInducedLocalField()
@@ -91,7 +93,7 @@ SimpleNeuron::setId(Handler Id)
 ConIteratorPtr
 SimpleNeuron::getConIterator()
 {
-  return d_nCons->createIterator();
+  return d_conIterator;
 }
 
 void
@@ -134,8 +136,7 @@ SimpleNeuron::getNeuronTrainBehaviorName()
 NeuralNetworkPtr
 SimpleNeuron::getNeuralNetwork( )
 {
-  NeuralNetworkPtr neuralNetworkPtr ( d_neuralNetwork.lock() );
-  return neuralNetworkPtr;
+  return d_neuralNetwork;
 }
 
 
@@ -195,7 +196,7 @@ SimpleNeuron::show()
       Rprintf("\n-----------------------------------");
       Rprintf("\n output: %lf", d_output);
       Rprintf("\n-----------------------------------");
-      Rprintf("\n Neuron Train Behavior: %s", getNeuronTrainBehaviorName().c_str() );
+      Rprintf("\n Neuron Train Behavior: %s", getNeuronTrainBehaviorName().c_str() ); //TODO revisar si esto es un memory-leak
       Rprintf("\n-----------------------------------");
 
     }
@@ -226,11 +227,13 @@ SimpleNeuron::show()
 bool
 SimpleNeuron::validate()
 {
-  BEGIN_RCPP
+
+BEGIN_RCPP
   if (getId() == NA_INTEGER ) throw std::range_error("[C++ SimpleNeuron::validate]: Error, Id is NA.");
     d_nCons->validate();
   return (TRUE);
-END_RCPP}
+END_RCPP
+}
 
 
 int
@@ -244,16 +247,14 @@ SimpleNeuron::numberOfConnections()
 double
 SimpleNeuron::costFunctionf0(double output, double target)
 {
-  NeuralNetworkPtr neuralNetworkPtr( d_neuralNetwork.lock() );
-  return neuralNetworkPtr->costFunctionf0( output, target );
+  return d_neuralNetwork->costFunctionf0( output, target );
 }
 
 
 double
 SimpleNeuron::costFunctionf1(double output, double target)
 {
-  NeuralNetworkPtr neuralNetworkPtr( d_neuralNetwork.lock() );
-  return neuralNetworkPtr->costFunctionf1( output, target );
+  return d_neuralNetwork->costFunctionf1( output, target );
 }
 
 
@@ -269,6 +270,7 @@ void
 SimpleNeuron::addToDelta(double value)
 {
   d_neuronTrainBehavior->addToDelta(value);
+
 }
 
 void

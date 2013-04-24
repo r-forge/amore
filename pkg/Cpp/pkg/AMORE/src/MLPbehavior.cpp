@@ -6,11 +6,13 @@
  */
 
 #include "package.h"
+#include "classHeaders/ActivationFunction.h"
 #include "classHeaders/Connection.h"
 #include "classHeaders/Iterator.h"
 #include "classHeaders/Neuron.h"
 #include "classHeaders/PredictBehavior.h"
 #include "classHeaders/MLPbehavior.h"
+
 //=========================================================================================================
 
 
@@ -24,18 +26,20 @@ MLPbehavior::singlePatternForwardAction()
 {
 
   double accumulator(d_bias);
-  ConIteratorPtr conIterator = getConIterator();
-  double weight;
-  double incomingSignalValue;
-  for (conIterator->first(); !conIterator->isDone(); conIterator->next())
-    {
-      weight = conIterator->currentItem()->getWeight();
-      incomingSignalValue = conIterator->currentItem()->getNeuron().getOutput();
-      accumulator += weight * incomingSignalValue;
-    }
-  setInducedLocalField(accumulator);
-  setOutput (useActivationFunctionf0());
-  setOutputDerivative (useActivationFunctionf1());
+  {
+	  ConIteratorPtr conIterator = d_neuron->d_conIterator;
+	  double weight;
+	  double incomingSignalValue;
+	  for (conIterator->first(); !conIterator->isDone(); conIterator->next())
+		{
+		  weight = conIterator->currentItem()->d_weight;
+		  incomingSignalValue = conIterator->currentItem()->d_neuron->d_output;
+		  accumulator += weight * incomingSignalValue;
+		}
+  }
+  d_neuron->d_inducedLocalField = accumulator;
+  d_neuron->d_output            = d_neuron->d_activationFunction->f0();
+  d_neuron->d_outputDerivative  = d_neuron->d_activationFunction->f1();
 }
 
 void

@@ -8,6 +8,10 @@
 #include "package.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
+#include "classHeaders/MLPNoNetworkTrainBehavior.h"
+#include "classHeaders/NeuronTrainBehavior.h"
+#include "classHeaders/NoNeuronTrainBehavior.h"
+
 
 
 NetworkTrainBehaviorPtr
