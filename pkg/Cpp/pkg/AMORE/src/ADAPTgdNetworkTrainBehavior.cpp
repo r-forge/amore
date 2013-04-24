@@ -6,6 +6,10 @@
  */
 #include "package.h"
 #include "classHeaders/ADAPTgdNetworkTrainBehavior.h"
+#include "classHeaders/NeuralNetwork.h"
+#include "classHeaders/Neuron.h"
+#include "classHeaders/Iterator.h"
+
 
 ADAPTgdNetworkTrainBehavior::ADAPTgdNetworkTrainBehavior( NeuralNetworkPtr neuralNetworkPtr) :
   AdaptNetworkTrainBehavior(neuralNetworkPtr)
@@ -32,26 +36,33 @@ ADAPTgdNetworkTrainBehavior::train(Rcpp::List parameterList)
   // Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
 
   int maxShows = (numberOfEpochs > showStep) ? numberOfEpochs / showStep : 1;
-  for (int idShow = 0; idShow < maxShows; ++idShow)
-    {
-      for (int step = 0; step < showStep; ++step)
-        {
-          inputIterator  = inputBegin;
-          targetIterator = targetBegin;
-          for (int idRow = 0; idRow < inputMatrix.ncol(); idRow++)
-            {
-              writeInput(inputIterator);
-              singlePatternForwardAction();
-              writeTarget(targetIterator);
-              singlePatternBackwardAction();
-            }
-        }
-      Rprintf("idShow: %d\n", idShow+1);
-//      inputIterator  = inputBegin;
-//    targetIterator = targetBegin;
-// TODO calculate error
-    }
+  {
+	  NeuronIteratorPtr inputNeuronIteratorPtr(d_neuralNetwork->getInputNeuronIterator());
+	  NeuronIteratorPtr outputNeuronIteratorPtr(d_neuralNetwork->getOutputNeuronIterator());
 
+	  for (int idShow = 0; idShow < maxShows; ++idShow)
+		{
+		  for (int step = 0; step < showStep; ++step)
+			{
+			  inputIterator  = inputBegin;
+			  targetIterator = targetBegin;
+			  for (int idRow = 0; idRow < inputMatrix.ncol(); idRow++)
+				{
+				  d_neuralNetwork->writeInput(inputIterator, inputNeuronIteratorPtr);
+				  d_neuralNetwork->singlePatternForwardAction();
+				  d_neuralNetwork->writeTarget(targetIterator, outputNeuronIteratorPtr);
+				  d_neuralNetwork->singlePatternBackwardAction();
+				}
+			}
+
+		  Rprintf("idShow: %d\n", idShow+1);
+	//      inputIterator  = inputBegin;
+	//    targetIterator = targetBegin;
+	// TODO calculate error
+	}
+	  delete outputNeuronIteratorPtr;
+	  delete inputNeuronIteratorPtr;
+  }
   Rcpp::List result;
   result["error"]=0.0; //TODO change
 

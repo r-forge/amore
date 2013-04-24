@@ -8,6 +8,7 @@
 
 #include "package.h"
 #include "classHeaders/MLPNeuronTrainBehavior.h"
+#include "classHeaders/Neuron.h"
 
 MLPNeuronTrainBehavior::MLPNeuronTrainBehavior(NeuronPtr neuronPtr) :
     NeuronTrainBehavior(neuronPtr)
@@ -18,8 +19,7 @@ MLPNeuronTrainBehavior::MLPNeuronTrainBehavior(NeuronPtr neuronPtr) :
 void
 MLPNeuronTrainBehavior::addToNeuronBias(double value)
 {
-  NeuronPtr neuronPtr( d_neuron.lock() );
-  neuronPtr->addToBias(value);
+  d_neuron->addToBias(value);
 }
 
 

@@ -13,271 +13,254 @@
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/SimpleNetwork.h"
 
-SimpleNetwork::SimpleNetwork(NeuralFactory& neuralFactory) :
-  NeuralNetwork(neuralFactory)
-{
+SimpleNetwork::SimpleNetwork(NeuralFactoryPtr neuralFactoryPtr) :
+		NeuralNetwork(neuralFactoryPtr) {
 }
 
-Rcpp::NumericMatrix
-SimpleNetwork::sim(Rcpp::NumericMatrix numericMatrix)
-{
-
-  bool checkIncorrectNumberOfRows(
-      inputSize() != static_cast<size_type> (numericMatrix.nrow()));
-  if (checkIncorrectNumberOfRows)
-    {
-      throw std::runtime_error(
-          "\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n");
-    }
-
-  Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
-  std::vector<double>::iterator inputIterator(numericMatrix.begin());
-  std::vector<double>::iterator outputIterator(outputMatrix.begin());
-
-  // PREDICT LOOP
-  for (int i = 0; i < numericMatrix.ncol(); i++)
-    {
-      writeInput(inputIterator);
-      singlePatternForwardAction();
-      readOutput(outputIterator);
-    }
-  return outputMatrix;
-
+SimpleNetwork::~SimpleNetwork() {
 }
 
-void
-SimpleNetwork::setNetworkTrainBehavior(
-    NetworkTrainBehaviorPtr networkTrainBehaviorPtr)
-{
-  d_networkTrainBehavior = networkTrainBehaviorPtr;
-}
+Rcpp::NumericMatrix SimpleNetwork::sim(Rcpp::NumericMatrix numericMatrix) {
 
-std::string
-SimpleNetwork::getNetworkTrainBehaviorName()
-{
-  return d_networkTrainBehavior->getName();
-}
+	bool checkIncorrectNumberOfRows(
+			inputSize() != static_cast<size_type>(numericMatrix.nrow()));
+	if (checkIncorrectNumberOfRows) {
+		throw std::runtime_error(
+				"\nIncorrect number or rows. The number of input neurons must be equal to the number of rows of the input matrix.\n");
+	}
 
-void
-SimpleNetwork::setCostFunction(CostFunctionPtr costFunctionPtr)
-{
-  d_costFunction = costFunctionPtr;
-}
+	Rcpp::NumericMatrix outputMatrix(outputSize(), numericMatrix.ncol());
+	std::vector<double>::iterator inputIterator(numericMatrix.begin());
+	std::vector<double>::iterator outputIterator(outputMatrix.begin());
 
-std::string
-SimpleNetwork::getCostFunctionName()
-{
-  return d_costFunction->getName();
-}
-
-void
-SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory)
-{
-
-  // Hidden Layers
-  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
-
-  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
-    {
-      NeuronIteratorPtr neuronIteratorPtr(
-          layerIteratorPtr->currentItem()->createIterator());
-      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-        {
-          NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
-              neuralFactory.makeHiddenNeuronTrainBehavior(
-                  neuronIteratorPtr->currentItem()));
-          neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(
-              neuronTrainBehaviorPtr);
-        }
-    }
-
-  // Output Layers
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
-          neuralFactory.makeOutputNeuronTrainBehavior(
-              neuronIteratorPtr->currentItem()));
-      neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(
-          neuronTrainBehaviorPtr);
-    }
-}
-
-void
-SimpleNetwork::writeInput(std::vector<double>::iterator& iterator)
-{
-  NeuronIteratorPtr neuronIteratorPtr(d_inputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      neuronIteratorPtr->currentItem()->setOutput(*iterator++);
-    }
-}
-
-void
-SimpleNetwork::writeTarget(std::vector<double>::iterator& iterator)
-{
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      neuronIteratorPtr->currentItem()->setTarget(*iterator++);
-    }
-}
-
-void
-SimpleNetwork::singlePatternForwardAction()
-{
-
-  // Hidden Layers
-  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
-
-  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
-    {
-      NeuronIteratorPtr neuronIteratorPtr(
-          layerIteratorPtr->currentItem()->createIterator());
-      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-        {
-          neuronIteratorPtr->currentItem()->singlePatternForwardAction();
-        }
-    }
-
-  // Output Layers
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      neuronIteratorPtr->currentItem()->singlePatternForwardAction();
-    }
-}
-
-void
-SimpleNetwork::singlePatternBackwardAction()
-{
-  // Output Layers
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createReverseIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
-    }
-
-  // Hidden Layers
-  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createReverseIterator());
-  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
-    {
-      NeuronIteratorPtr neuronIteratorPtr(
-          layerIteratorPtr->currentItem()->createReverseIterator());
-      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-        {
-          neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
-        }
-    }
-}
-
-void
-SimpleNetwork::readOutput(std::vector<double>::iterator& iterator)
-{
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      *iterator++ = neuronIteratorPtr->currentItem()->getOutput();
-    }
-}
-
-Rcpp::List
-SimpleNetwork::train(Rcpp::List parameterList)
-{
-  return d_networkTrainBehavior->train(parameterList);
+	// PREDICT LOOP
+	{
+		NeuronIteratorPtr inputNeuronIteratorPtr(d_inputLayer->createIterator());
+		NeuronIteratorPtr outputNeuronIteratorPtr(d_outputLayer->createIterator());
+		for (int i = 0; i < numericMatrix.ncol(); i++) {
+			writeInput(inputIterator, inputNeuronIteratorPtr);
+			singlePatternForwardAction();
+			readOutput(outputIterator, outputNeuronIteratorPtr);
+		}
+		delete outputNeuronIteratorPtr;
+		delete inputNeuronIteratorPtr;
+	}
+	return outputMatrix;
 
 }
 
-size_type
-SimpleNetwork::inputSize()
-{
-  return d_inputLayer->size();
+void SimpleNetwork::setNetworkTrainBehavior(
+		NetworkTrainBehaviorPtr networkTrainBehaviorPtr) {
+	d_networkTrainBehavior = networkTrainBehaviorPtr;
 }
 
-size_type
-SimpleNetwork::outputSize()
-{
-  return d_outputLayer->size();
+std::string SimpleNetwork::getNetworkTrainBehaviorName() {
+	return d_networkTrainBehavior->getName();
 }
 
-double
-SimpleNetwork::costFunctionf0(double output, double target)
-{
-  return d_costFunction->f0( output, target );
+void SimpleNetwork::setCostFunction(CostFunctionPtr costFunctionPtr) {
+	d_costFunction = costFunctionPtr;
 }
 
-
-double
-SimpleNetwork::costFunctionf1(double output, double target)
-{
-  return d_costFunction->f1( output, target );
+std::string SimpleNetwork::getCostFunctionName() {
+	return d_costFunction->getName();
 }
 
+void SimpleNetwork::setNeuronTrainBehavior(NeuralFactory& neuralFactory) {
+	// Hidden Layers
+	{
+		LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
+		for (layerIteratorPtr->first(); !layerIteratorPtr->isDone();
+				layerIteratorPtr->next()) {
+			NeuronIteratorPtr neuronIteratorPtr(
+					layerIteratorPtr->currentItem()->createIterator());
+			for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+					neuronIteratorPtr->next()) {
+				NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(
+						neuralFactory.makeHiddenNeuronTrainBehavior(
+								neuronIteratorPtr->currentItem()));
+				neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(
+						neuronTrainBehaviorPtr);
+			}
+			delete neuronIteratorPtr;
+		}
+		delete layerIteratorPtr;
+	}
+	// Output Layers
+	{
+		NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+		for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next()) {
+			NeuronTrainBehaviorPtr neuronTrainBehaviorPtr(neuralFactory.makeOutputNeuronTrainBehavior(neuronIteratorPtr->currentItem()));
+			neuronIteratorPtr->currentItem()->setNeuronTrainBehavior(neuronTrainBehaviorPtr);
+		}
+		delete neuronIteratorPtr;
+	}
+}
 
-void
-SimpleNetwork::setLearningRate(double learningRate)
-{
+void SimpleNetwork::writeInput(std::vector<double>::iterator& iterator, NeuronIteratorPtr neuronIteratorPtr) {
+	for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+			neuronIteratorPtr->next()) {
+		neuronIteratorPtr->currentItem()->setOutput(*iterator++);
+	}
+}
 
+//void SimpleNetwork::writeTarget(std::vector<double>::iterator& iterator) {
+//	NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+//	for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+//			neuronIteratorPtr->next()) {
+//		neuronIteratorPtr->currentItem()->setTarget(*iterator++);
+//	}
+//	delete neuronIteratorPtr;
+//}
 
-  // Hidden Layers
-  LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
+void SimpleNetwork::writeTarget(std::vector<double>::iterator& iterator, NeuronIteratorPtr neuronIteratorPtr) {
+	for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+			neuronIteratorPtr->next()) {
+		neuronIteratorPtr->currentItem()->setTarget(*iterator++);
+	}
+}
 
-  for (layerIteratorPtr->first(); !layerIteratorPtr->isDone(); layerIteratorPtr->next())
-    {
-      NeuronIteratorPtr neuronIteratorPtr(
-          layerIteratorPtr->currentItem()->createIterator());
-      for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-        {
-          neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
-        }
-    }
+void SimpleNetwork::singlePatternForwardAction() {
+	// Hidden Layers
+	{
+		LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
+		for (layerIteratorPtr->first(); !layerIteratorPtr->isDone();	layerIteratorPtr->next()) {
+			NeuronIteratorPtr neuronIteratorPtr(	layerIteratorPtr->currentItem()->createIterator());
+			for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();	neuronIteratorPtr->next()) {
+				neuronIteratorPtr->currentItem()->singlePatternForwardAction();
+			}
+			delete neuronIteratorPtr;
+		}
+		delete layerIteratorPtr;
+	}
 
-  // Output Layers
-  NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
-  for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
-    {
-      neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
-    }
+	// Output Layers
+	{
+		NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+		for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+				neuronIteratorPtr->next()) {
+			neuronIteratorPtr->currentItem()->singlePatternForwardAction();
+		}
+		delete neuronIteratorPtr;
+	}
+}
 
+void SimpleNetwork::singlePatternBackwardAction() {
+	// Output Layers
+	{
+		NeuronIteratorPtr neuronIteratorPtr(
+				d_outputLayer->createReverseIterator());
+		for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+				neuronIteratorPtr->next()) {
+			neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
+		}
+		delete neuronIteratorPtr;
+	}
+	// Hidden Layers
+	{
+		LayerIteratorPtr layerIteratorPtr(
+				d_hiddenLayers->createReverseIterator());
+		for (layerIteratorPtr->first(); !layerIteratorPtr->isDone();
+				layerIteratorPtr->next()) {
+			NeuronIteratorPtr neuronIteratorPtr(
+					layerIteratorPtr->currentItem()->createReverseIterator());
+			for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+					neuronIteratorPtr->next()) {
+				neuronIteratorPtr->currentItem()->singlePatternBackwardAction();
+			}
+			delete neuronIteratorPtr;
+		}
+		delete layerIteratorPtr;
+	}
+}
+
+void SimpleNetwork::readOutput(std::vector<double>::iterator& iterator, NeuronIteratorPtr neuronIteratorPtr) {
+	for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+			neuronIteratorPtr->next()) {
+		*iterator++ = neuronIteratorPtr->currentItem()->d_output;
+	}
+}
+
+Rcpp::List SimpleNetwork::train(Rcpp::List parameterList) {
+	return d_networkTrainBehavior->train(parameterList);
 
 }
 
+size_type SimpleNetwork::inputSize() {
+	return d_inputLayer->size();
+}
 
-void
-SimpleNetwork::show()
-{
-  Rprintf("\n\n=========================================================\n");
-  Rprintf("         Neural Network");
-  Rprintf("\n=========================================================");
+size_type SimpleNetwork::outputSize() {
+	return d_outputLayer->size();
+}
 
-  Rprintf("\n Input size: %d\n", inputSize());
-  Rprintf("\n Output size: %d\n", outputSize());
-  Rprintf("\n Network Train Behavior: %s\n",
-      getNetworkTrainBehaviorName().c_str());
-  Rprintf("\n Cost Function: %s\n", getCostFunctionName().c_str());
-  Rprintf("\n\n=========================================================\n");
-  Rprintf("         Input Layer");
-  Rprintf("\n=========================================================");
-  d_inputLayer->show();
+double SimpleNetwork::costFunctionf0(double output, double target) {
+	return d_costFunction->f0(output, target);
+}
 
-  Rprintf("\n\n=========================================================\n");
-  Rprintf("         Hidden Layers");
-  Rprintf("\n=========================================================");
-  d_hiddenLayers->show();
+double SimpleNetwork::costFunctionf1(double output, double target) {
+	return d_costFunction->f1(output, target);
+}
 
-  Rprintf("\n\n=========================================================\n");
-  Rprintf("         Output Layer");
-  Rprintf("\n=========================================================");
-  d_outputLayer->show();
-  Rprintf("\n=========================================================\n");
+void SimpleNetwork::setLearningRate(double learningRate) {
+
+	// Hidden Layers
+	{
+		LayerIteratorPtr layerIteratorPtr(d_hiddenLayers->createIterator());
+		for (layerIteratorPtr->first(); !layerIteratorPtr->isDone();
+				layerIteratorPtr->next()) {
+			NeuronIteratorPtr neuronIteratorPtr(
+					layerIteratorPtr->currentItem()->createIterator());
+			for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+					neuronIteratorPtr->next()) {
+				neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
+			}
+			delete neuronIteratorPtr;
+		}
+		delete layerIteratorPtr;
+	}
+	// Output Layers
+	{
+		NeuronIteratorPtr neuronIteratorPtr(d_outputLayer->createIterator());
+		for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone();
+				neuronIteratorPtr->next()) {
+			neuronIteratorPtr->currentItem()->setLearningRate(learningRate);
+		}
+		delete neuronIteratorPtr;
+	}
+}
+
+void SimpleNetwork::show() {
+	Rprintf("\n\n=========================================================\n");
+	Rprintf("         Neural Network");
+	Rprintf("\n=========================================================");
+
+	Rprintf("\n Input size: %d\n", inputSize());
+	Rprintf("\n Output size: %d\n", outputSize());
+	Rprintf("\n Network Train Behavior: %s\n",
+			getNetworkTrainBehaviorName().c_str()); // TODO revisar si esto es un memory-leak
+	Rprintf("\n Cost Function: %s\n", getCostFunctionName().c_str()); // TODO revisar si esto es un memory-leak
+	Rprintf("\n\n=========================================================\n");
+	Rprintf("         Input Layer");
+	Rprintf("\n=========================================================");
+	d_inputLayer->show();
+
+	Rprintf("\n\n=========================================================\n");
+	Rprintf("         Hidden Layers");
+	Rprintf("\n=========================================================");
+	d_hiddenLayers->show();
+
+	Rprintf("\n\n=========================================================\n");
+	Rprintf("         Output Layer");
+	Rprintf("\n=========================================================");
+	d_outputLayer->show();
+	Rprintf("\n=========================================================\n");
 
 }
 
-bool
-SimpleNetwork::validate()
-{
-  d_inputLayer->validate();
-  d_hiddenLayers->validate();
-  d_outputLayer->validate();
-  return true;
+bool SimpleNetwork::validate() {
+	d_inputLayer->validate();
+	d_hiddenLayers->validate();
+	d_outputLayer->validate();
+	return true;
 }

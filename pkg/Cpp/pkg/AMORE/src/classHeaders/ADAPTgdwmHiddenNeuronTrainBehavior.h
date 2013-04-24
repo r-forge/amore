@@ -6,8 +6,8 @@ class ADAPTgdwmHiddenNeuronTrainBehavior : public ADAPTgdwmNeuronTrainBehavior {
   // Operations
 public:
   ADAPTgdwmHiddenNeuronTrainBehavior (NeuronPtr neuronPtr);
-private:
   void singlePatternBackwardAction ();
+private:
   void endOfEpochAction ();
   std::string getName ();
 };

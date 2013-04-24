@@ -1,0 +1,393 @@
+
+R version 2.15.3 (2013-03-01) -- "Security Blanket"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener m'as informaci'on y
+'citation()' para saber c'omo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+[Previously saved workspace restored]
+
+> #
+> #
+> #
+> 
+> # Run unit tests and report the results in a html file
+> # Author: mcasl
+> ###############################################################################
+> 
+> suppressMessages(require("inline"))
+> suppressMessages(require("Rcpp"))
+> suppressMessages(require("RUnit"))
+> 
+> 
+> 
+> uniTestPath   <-  "./pkg/AMORE/unitTest"
+> testFile <- "./www/unitTestResults.html"
+> 
+> testFileToSFLinkMap <- function(testFileName, testDir = "unitTest") {
++ 	bname <- basename(testFileName)
++ 	regExp <- paste("^.*/([.a-zA-Z0-9]*)/", testDir,"/.*$", sep = "")
++ 	pack <- sub(regExp, "\1", testFileName)
++ 	return(paste("https://r-forge.r-project.org/scm/viewvc.php/pkg/AMORE/", pack, "/", testDir, "/", bname,"?root=amore", sep = ""))
++ }
+> 
+> 
+> 
+> testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
++ 		dirs = uniTestPath ,
++ 		testFileRegexp = "^runit.Cpp.+\\.R",
++ 		testFuncRegexp = "^test.+",
++ 		rngKind = "Marsaglia-Multicarry",
++ 		rngNormalKind = "Kinderman-Ramage"
++ )
+> 
+> 
+> 
+> testResult <- runTestSuite(list(
++  				testsuite.AMORECppClasses
++ 								))
+
+
+Executing test function test.ActivationFunction.Cpp.Constructor  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.Constructor  ... 
+From:	 1 	 Weight= 	 4.500000 done successfully.
+
+
+
+Executing test function test.Con.Cpp.Id  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.getNeuron  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.getWeight  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.setNeuron  ... 
+From:	 12 	 Weight= 	 9.700000
+From:	 21 	 Weight= 	 9.700000 done successfully.
+
+
+
+Executing test function test.Con.Cpp.setWeight  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.show  ... 
+From:	 16 	 Weight= 	 12.400000 done successfully.
+
+
+
+Executing test function test.Con.Cpp.validate_from  ...  done successfully.
+
+
+
+Executing test function test.Con.Cpp.validate_weight  ... file1634d5a23a28b.cpp: In function 'SEXPREC* file1634d5a23a28b()':
+file1634d5a23a28b.cpp:316: warning: division by zero in '1.24000000000000003552713678800500929355621337890625e+1 / 0.'
+ done successfully.
+
+
+
+Executing test function test.Container.Cpp.Constructor_EmptyArgumentList  ...  done successfully.
+
+
+
+Executing test function test.Container.Cpp.push_back  ...  done successfully.
+
+
+
+Executing test function test.Container.Cpp.show  ... 
+From:	 10 	 Weight= 	 1.500000
+From:	 20 	 Weight= 	 4.600000
+From:	 30 	 Weight= 	 8.600000 done successfully.
+
+
+
+Executing test function test.Container.Cpp.size  ...  done successfully.
+
+
+
+Executing test function test.ContainerIterator.Cpp.Constructor  ...  done successfully.
+
+
+
+Executing test function test.ContainerIterator.Cpp.currentItem  ...  done successfully.
+
+
+
+Executing test function test.ContainerIterator.Cpp.first  ...  done successfully.
+
+
+
+Executing test function test.ContainerIterator.Cpp.isDone  ...  done successfully.
+
+
+
+Executing test function test.ContainerIterator.Cpp.next  ...  done successfully.
+
+
+
+Executing test function test.ContainerReverseIterator.Cpp.Constructor  ...  done successfully.
+
+
+
+Executing test function test.ContainerReverseIterator.Cpp.currentItem  ...  done successfully.
+
+
+
+Executing test function test.ContainerReverseIterator.Cpp.first  ...  done successfully.
+
+
+
+Executing test function test.ContainerReverseIterator.Cpp.isDone  ...  done successfully.
+
+
+
+Executing test function test.ContainerReverseIterator.Cpp.next  ...  done successfully.
+
+
+
+Executing test function test.MLPfactory.Cpp.makeCon  ... 
+From:	 1 	 Weight= 	 4.500000 done successfully.
+
+
+
+Executing test function test.MLPfactory.Cpp.makeMLPbehavior  ... =================================== Input Neurons ===================================
+
+-----------------------------------
+ Id: 1
+-----------------------------------
+ output: 4.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 2
+-----------------------------------
+ output: 2.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 3
+-----------------------------------
+ output: 4.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------=================================== Output Neurons ===================================
+
+-----------------------------------
+ Id: 4
+-----------------------------------
+ bias: 0.000000
+ output: 0.999909
+ target: 0.000000
+-----------------------------------
+From:	 1 	 Weight= 	 0.250000
+From:	 2 	 Weight= 	 0.500000
+From:	 3 	 Weight= 	 0.750000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+----------------------------------- done successfully.
+
+
+
+Executing test function test.MLPfactory.Cpp.makeNeuron  ... 
+
+-----------------------------------
+ Id: 1
+-----------------------------------
+ output: 0.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+----------------------------------- done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.createCustomFeedForwardNetwork  ...  done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.createFeedForwardNetwork  ...  done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.inputSize  ...  done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.outputSize  ...  done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.show_InitializedNetwork  ... 
+
+=========================================================
+         Neural Network
+=========================================================
+ Input size: 2
+
+ Output size: 3
+
+ Network Train Behavior: MLPNoNetworkTrainBehavior
+
+ Cost Function: LMS
+
+
+=========================================================
+         Input Layer
+=========================================================
+
+-----------------------------------
+ Id: 1
+-----------------------------------
+ output: 0.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 2
+-----------------------------------
+ output: 0.000000
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+=========================================================
+         Hidden Layers
+=========================================================
+
+-----------------------------------
+ Id: 3
+-----------------------------------
+ bias: -0.142179
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 1 	 Weight= 	 -0.131577
+From:	 2 	 Weight= 	 0.077275
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 4
+-----------------------------------
+ bias: -0.126194
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 1 	 Weight= 	 -0.150690
+From:	 2 	 Weight= 	 0.319521
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 5
+-----------------------------------
+ bias: 0.085833
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 1 	 Weight= 	 -0.063932
+From:	 2 	 Weight= 	 -0.250974
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 6
+-----------------------------------
+ bias: 0.164462
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 1 	 Weight= 	 -0.275733
+From:	 2 	 Weight= 	 -0.257893
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+=========================================================
+         Output Layer
+=========================================================
+
+-----------------------------------
+ Id: 7
+-----------------------------------
+ bias: -0.288151
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 3 	 Weight= 	 -0.265158
+From:	 4 	 Weight= 	 0.132566
+From:	 5 	 Weight= 	 0.160406
+From:	 6 	 Weight= 	 -0.028307
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 8
+-----------------------------------
+ bias: -0.059899
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 3 	 Weight= 	 -0.058052
+From:	 4 	 Weight= 	 0.234802
+From:	 5 	 Weight= 	 0.076687
+From:	 6 	 Weight= 	 0.163471
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+
+-----------------------------------
+ Id: 9
+-----------------------------------
+ bias: -0.159296
+ output: 0.000000
+ target: 0.000000
+-----------------------------------
+From:	 3 	 Weight= 	 -0.186646
+From:	 4 	 Weight= 	 0.168933
+From:	 5 	 Weight= 	 0.203761
+From:	 6 	 Weight= 	 -0.239816
+-----------------------------------
+ Neuron Train Behavior: NoNeuronTrainBehavior
+-----------------------------------
+=========================================================
+ done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.show_UninitializedNetwork  ... 
+Uninitialized network. Please use any of the create methods available.
+ done successfully.
+
+
+
+Executing test function test.NetworkRinterface.Cpp.sim  ... 
+[INFO] 19/04/2013 21:55:27 - R stopped.
+

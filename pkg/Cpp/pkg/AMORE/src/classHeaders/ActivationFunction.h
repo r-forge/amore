@@ -4,7 +4,7 @@
 class ActivationFunction {
   // Attributes
 protected:
-  NeuronWeakPtr d_neuron;
+  NeuronPtr d_neuron;
   Rcpp::XPtr<CppFunctionPointer> d_f0;
   Rcpp::XPtr<CppFunctionPointer> d_f1;
   // Operations

@@ -1,6 +1,6 @@
-useDynLib(AMORE)
+useDynLib(AMOREcpp)
 exportPattern("^[[:alpha:]]+")
 import( Rcpp )
 
 
-	
+

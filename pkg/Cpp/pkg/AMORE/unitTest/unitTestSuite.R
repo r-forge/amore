@@ -1,5 +1,5 @@
-# 
-# 
+#
+#
 
 # Run unit tests and report the results in a html file
 # Author: mcasl
@@ -23,8 +23,16 @@ testFileToSFLinkMap <- function(testFileName, testDir = "unitTest") {
 
 
 
+testsuite.Neuron <- defineTestSuite("AMORE C++ Classes Unit Tests",
+		dirs = uniTestPath ,
+		testFileRegexp = "^runit.Cpp.Neuron+\\.R",
+		testFuncRegexp = "^test.+",
+		rngKind = "Marsaglia-Multicarry",
+		rngNormalKind = "Kinderman-Ramage"
+)
+
 testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
-		dirs = uniTestPath ,	
+		dirs = uniTestPath ,
 		testFileRegexp = "^runit.Cpp.+\\.R",
 		testFuncRegexp = "^test.+",
 		rngKind = "Marsaglia-Multicarry",
@@ -33,10 +41,12 @@ testsuite.AMORECppClasses <- defineTestSuite("AMORE C++ Classes Unit Tests",
 
 
 
-testResult <- runTestSuite(list( 
- 				testsuite.AMORECppClasses					
-								))
-						
+testResult <- runTestSuite(list(
+ 				testsuite.AMORECppClasses
+#testsuite.Neuron
+
+))
+
 printHTMLProtocol(testResult, file=testFile, testFileToLinkMap = testFileToSFLinkMap)
 
 

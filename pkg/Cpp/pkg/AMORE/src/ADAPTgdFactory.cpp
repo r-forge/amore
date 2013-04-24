@@ -8,6 +8,9 @@
 
 #include "package.h"
 #include "classHeaders/ADAPTgdFactory.h"
+#include "classHeaders/ADAPTgdNetworkTrainBehavior.h"
+#include "classHeaders/ADAPTgdOutputNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdHiddenNeuronTrainBehavior.h"
 
 NetworkTrainBehaviorPtr
 ADAPTgdFactory::makeNetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr)

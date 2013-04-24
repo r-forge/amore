@@ -8,6 +8,10 @@
 
 #include "package.h"
 #include "classHeaders/BATCHgdFactory.h"
+#include "classHeaders/BATCHgdNetworkTrainBehavior.h"
+#include "classHeaders/BATCHgdOutputNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdHiddenNeuronTrainBehavior.h"
+
 
 
 NetworkTrainBehaviorPtr

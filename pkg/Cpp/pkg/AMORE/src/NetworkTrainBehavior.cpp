@@ -9,7 +9,7 @@
 
 #include "package.h"
 #include "classHeaders/NetworkTrainBehavior.h"
-
+#include "classHeaders/NeuralNetwork.h"
 NetworkTrainBehavior::NetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr) :
   d_neuralNetwork(neuralNetworkPtr)
 {
@@ -17,34 +17,7 @@ NetworkTrainBehavior::NetworkTrainBehavior(NeuralNetworkPtr neuralNetworkPtr) :
 
 void
 NetworkTrainBehavior::setLearningRate (double learningRate){
-  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
+  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork);
   neuralNetworkPtr->setLearningRate(learningRate);
 }
 
-void
-NetworkTrainBehavior::writeInput(std::vector<double>::iterator& iterator)
-{
-  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
-  neuralNetworkPtr->writeInput(iterator);
-}
-
-void
-NetworkTrainBehavior::singlePatternForwardAction()
-{
-  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
-  neuralNetworkPtr->singlePatternForwardAction();
-}
-
-void
-NetworkTrainBehavior::writeTarget(std::vector<double>::iterator& iterator)
-{
-  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
-  neuralNetworkPtr->writeTarget(iterator);
-}
-
-void
-NetworkTrainBehavior::singlePatternBackwardAction()
-{
-  NeuralNetworkPtr neuralNetworkPtr(d_neuralNetwork.lock());
-  neuralNetworkPtr->singlePatternBackwardAction();
-}

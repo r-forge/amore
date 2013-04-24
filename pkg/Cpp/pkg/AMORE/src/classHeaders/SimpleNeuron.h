@@ -6,6 +6,7 @@ class SimpleNeuron : public Neuron {
   // Operations
 public:
   SimpleNeuron (NeuralFactory& neuralFactory);
+  ~SimpleNeuron ();
 private:
   double getInducedLocalField ();
   void setInducedLocalField (double inducedLocalField);

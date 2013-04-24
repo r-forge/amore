@@ -1,23 +1,33 @@
 
 ###############################################################################
-test.ContainerIterator.Cpp.Constructor<- function() {	
+test.ContainerIterator.Cpp.Constructor<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
+
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
-			NeuronPtr neuronPtr;
-			Rcpp::IntegerVector ids(Ids);
-			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
-				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
-				layerPtr->push_back(neuronPtr);
+			{
+				NeuronPtr neuronPtr;
+				Rcpp::IntegerVector ids(Ids);
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+					layerPtr->push_back(neuronPtr);
+				}
 			}
-			NeuronIteratorPtr itr = layerPtr->createIterator();
+
 			std::vector<int> result;
-			for ( itr->first(); !itr->isDone(); itr->next() ) {
-				result.push_back(itr->currentItem()->getId());
-			}
+			{
+				NeuronIteratorPtr itr = layerPtr->createIterator();
+				for ( itr->first(); !itr->isDone(); itr->next() ) {
+					result.push_back(itr->currentItem()->getId());
+				}
+				delete itr;
+   			}
+
+			delete layerPtr;
+			delete neuralFactoryPtr;
 			return wrap(	result	);
 		"
 	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -28,56 +38,76 @@ test.ContainerIterator.Cpp.Constructor<- function() {
 
 
 ###############################################################################
-test.ContainerIterator.Cpp.first<- function() {	
+test.ContainerIterator.Cpp.first<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
+
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
-			NeuronPtr neuronPtr;
-			Rcpp::IntegerVector ids(Ids);
-			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
-				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
-				layerPtr->push_back(neuronPtr);
+			{
+				NeuronPtr neuronPtr;
+				Rcpp::IntegerVector ids(Ids);
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+					layerPtr->push_back(neuronPtr);
+				}
 			}
-			NeuronIteratorPtr itr = layerPtr->createIterator();
-			itr->next();
-			itr->next();
-			itr->first();
-			int result = itr->currentItem()->getId();
+
+			int result;
+			{
+				NeuronIteratorPtr itr = layerPtr->createIterator();
+				itr->next();
+				itr->next();
+				itr->first();
+				result = itr->currentItem()->getId();
+				delete itr;
+			}
+
+			delete layerPtr;
+			delete neuralFactoryPtr;
 			return wrap(result);
 		"
 		testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 		result <- testCodefun(Ids= c(10,20,30))
-
 		checkEquals(result, 10)
 	# [1] TRUE
 }
 
 
 ###############################################################################
-test.ContainerIterator.Cpp.next<- function() {	
+test.ContainerIterator.Cpp.next<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
+
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
-			NeuronPtr neuronPtr;
-			Rcpp::IntegerVector ids(Ids);
-			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
-				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
-				layerPtr->push_back(neuronPtr);
+			{
+				NeuronPtr neuronPtr;
+				Rcpp::IntegerVector ids(Ids);
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+					layerPtr->push_back(neuronPtr);
+				}
 			}
-			NeuronIteratorPtr itr = layerPtr->createIterator();
-			itr->first();
+
 			std::vector<Handler> result;
-			result.push_back( itr->currentItem()->getId() );
-			itr->next();
-			result.push_back( itr->currentItem()->getId() );
-			itr->next();
-			result.push_back( itr->currentItem()->getId() );
+			{
+				NeuronIteratorPtr itr = layerPtr->createIterator();
+				itr->first();
+				result.push_back( itr->currentItem()->getId() );
+				itr->next();
+				result.push_back( itr->currentItem()->getId() );
+				itr->next();
+				result.push_back( itr->currentItem()->getId() );
+				delete itr;
+			}
+
+			delete layerPtr;
+			delete neuralFactoryPtr;
 			return wrap(result);
 		"
 	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -88,29 +118,39 @@ test.ContainerIterator.Cpp.next<- function() {
 
 
 ###############################################################################
-test.ContainerIterator.Cpp.isDone<- function() {	
+test.ContainerIterator.Cpp.isDone<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			// Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
+
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
-			NeuronPtr neuronPtr;
-			Rcpp::IntegerVector ids(Ids);
-			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
-				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
-				layerPtr->push_back(neuronPtr);
+			{
+				NeuronPtr neuronPtr;
+				Rcpp::IntegerVector ids(Ids);
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+					layerPtr->push_back(neuronPtr);
+				}
 			}
-			NeuronIteratorPtr itr = layerPtr->createIterator();
-			itr->first();
+
 			std::vector<bool> result;
-			result.push_back( itr->isDone() );
-			itr->next();
-			result.push_back( itr->isDone() );
-			itr->next();
-			result.push_back( itr->isDone() );
-			itr->next();
-			result.push_back( itr->isDone() );
+			{
+				NeuronIteratorPtr itr = layerPtr->createIterator();
+				itr->first();
+				result.push_back( itr->isDone() );
+				itr->next();
+				result.push_back( itr->isDone() );
+				itr->next();
+				result.push_back( itr->isDone() );
+				itr->next();
+				result.push_back( itr->isDone() );
+				delete itr;
+			}
+
+			delete layerPtr;
+			delete neuralFactoryPtr;
 			return wrap(result);
 		"
 	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
@@ -121,33 +161,42 @@ test.ContainerIterator.Cpp.isDone<- function() {
 
 
 ###############################################################################
-test.ContainerIterator.Cpp.currentItem<- function() {	
+test.ContainerIterator.Cpp.currentItem<- function() {
 ###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 BEGIN_RCPP
 			// Test
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
+
 			LayerPtr layerPtr ( neuralFactoryPtr->makeLayer() );
-			NeuronPtr neuronPtr;
-			Rcpp::IntegerVector ids(Ids);
-			for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){  
-				neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
-				layerPtr->push_back(neuronPtr);
+			{
+				NeuronPtr neuronPtr;
+				Rcpp::IntegerVector ids(Ids);
+				for (Rcpp::IntegerVector::iterator idItr = ids.begin() ; idItr!=ids.end();  ++idItr){
+					neuronPtr = neuralFactoryPtr->makeNeuron(*idItr) ;
+					layerPtr->push_back(neuronPtr);
+				}
 			}
-			NeuronIteratorPtr itr = layerPtr->createIterator();
-			itr->first();
+
 			std::vector<Handler> result;
-			result.push_back( itr->currentItem()->getId() ); // Id==10
-			itr->next();
-			result.push_back( itr->currentItem()->getId() ); // Id==20
-			itr->next();
-			result.push_back( itr->currentItem()->getId() ); // Id==30
-			itr->next();
-			result.push_back( itr->currentItem()->getId() ); // Error: IteratorOutOfBounds
+			{
+				NeuronIteratorPtr itr = layerPtr->createIterator();
+				itr->first();
+				result.push_back( itr->currentItem()->getId() ); // Id==10
+				itr->next();
+				result.push_back( itr->currentItem()->getId() ); // Id==20
+				itr->next();
+				result.push_back( itr->currentItem()->getId() ); // Id==30
+				itr->next();
+				result.push_back( itr->currentItem()->getId() ); // Error: IteratorOutOfBounds
+				delete itr;
+			}
+
+			delete layerPtr;
+			delete neuralFactoryPtr;
 			return wrap(result);
 END_RCPP
-
 			"
 	testCodefun <- cfunction(sig=signature(Ids="integer"), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	checkException( result <- testCodefun(Ids= c(10,20,30)) , silent=TRUE)

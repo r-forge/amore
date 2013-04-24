@@ -11,15 +11,17 @@
 //=========================================================================================================
 
 
+
 //! Constructor
 /*
  * Constructor, from=neuronPtr, weight=0
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  */
 
-Con::Con(Neuron& neuron) :
-  d_neuron( boost::ref(neuron) ), d_weight(0)
+Con::Con(NeuronPtr neuron) :
+  d_weight(0)
 {
+	 d_neuron=neuron;
 }
 
 //! Constructor
@@ -28,32 +30,16 @@ Con::Con(Neuron& neuron) :
  * \param neuronPtr A pointer to the neuron that is to be inserted in the \ref from field.
  * \param weight The new value (double) to be set in the \ref weight field.
  */
-Con::Con(Neuron& neuron, double weight) :
-  d_neuron(boost::ref(neuron)), d_weight(weight)
+Con::Con(NeuronPtr neuron, double weight) :
+  d_weight(weight)
 {
+	d_neuron=neuron;
 }
 
-//! %from field accessor.
-/*! This method allows access to the address stored in the private \ref from field (a pointer to a Neuron object).*
- * \return A pointer to the Neuron object referred to by the \ref from field.
- *
- *  \code
- *	//================
- *	//Usage example:
- *	//================
- *	// Data set up
- *	 		NeuronPtr ptShNeuron ( new Neuron(1) ); 	// Neuron Id is set 1
- *			ConPtr ptShCon( new Con(ptShNeuron) );  	// from points to ptShNeuron and weight is set to 0
- *	// Test
- *	  		ptShNeuron = ptShCon->getFrom() ;
- *			int result = ptShNeuron->getId();
- *
- *	// Now, result is equal to 1.
- * \endcode
- *
- * \sa getId and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
- */
-Neuron&
+Con::~Con() {
+}
+
+NeuronPtr
 Con::getNeuron()
 {
   return d_neuron;
@@ -61,9 +47,9 @@ Con::getNeuron()
 
 
 void
-Con::setNeuron(Neuron& neuron)
+Con::setNeuron(NeuronPtr neuron)
 {
-  d_neuron=boost::ref(neuron);
+  d_neuron= neuron;
 }
 
 //! A getter of the Id of the Neuron pointed by the from field.
@@ -88,7 +74,7 @@ Con::setNeuron(Neuron& neuron)
 int
 Con::Id()
 {
-  return d_neuron.get().getId();
+  return d_neuron->getId();
 }
 
 //! %weight field accessor.
@@ -113,6 +99,8 @@ Con::Id()
  *
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for further examples.
  */
+
+
 double
 Con::getWeight()
 {
@@ -130,7 +118,7 @@ Con::setWeight(double weight)
 double
 Con::getInputValue()
 {
-  return d_neuron.get().getOutput();
+  return d_neuron->getOutput();
 }
 
 
@@ -144,7 +132,7 @@ Con::addToWeight(double value)
 void
 Con::addToDelta(double value)
 {
-  d_neuron.get().addToDelta(value);
+  d_neuron->addToDelta(value);
 }
 
 
@@ -155,6 +143,7 @@ Con::addToDelta(double value)
  * \return true in case everything works without throwing an exception
  * \sa setWeight and the unit test files, e.g., runit.Cpp.Con.R, for usage examples.
  */
+
 void
 Con::show()
 {

@@ -14,8 +14,10 @@
 // I prefer to include the code using this file on a separate directory.
 //======================================================================================================================
 
+
 #include "classHeaders/Iterator.h"
 #include "classHeaders/SimpleContainerIterator.h"
+
 
 template<typename T>
   SimpleContainer<T>::SimpleContainer()
@@ -25,21 +27,21 @@ template<typename T>
 template<typename T>
   SimpleContainer<T>::~SimpleContainer()
   {
+		this->clear();
   }
 
 template<typename T>
   T
   SimpleContainer<T>::at(size_type element)
   {
-    return d_collection.at(element);
+    return d_collection[element];
   }
 
 template<typename T>
-  boost::shared_ptr<Iterator<T> >
+Iterator<T>*
   SimpleContainer<T>::createIterator()
   {
-    boost::shared_ptr < SimpleContainerIterator<T> > iteratorPtr(
-        new SimpleContainerIterator<T> ());
+    SimpleContainerIterator<T>* iteratorPtr(   new SimpleContainerIterator<T> () );
     iteratorPtr->d_container = this;
     iteratorPtr->d_current = 0;
     return iteratorPtr;
@@ -47,54 +49,15 @@ template<typename T>
 
 
 template<typename T>
-  boost::shared_ptr<Iterator<T> >
+Iterator<T>*
   SimpleContainer<T>::createReverseIterator()
   {
-    boost::shared_ptr < SimpleContainerReverseIterator<T> > iteratorPtr( new SimpleContainerReverseIterator<T> ());
+    SimpleContainerReverseIterator<T>* iteratorPtr( new SimpleContainerReverseIterator<T> ());
     iteratorPtr->d_container = this;
     iteratorPtr->d_current = -1 + this->size();
     return iteratorPtr;
   }
 
-
-// TODO use a factory method above
-
-
-//! Append a shared_ptr at the end of collection
-/*!
- * Implements push_back for the Container class
- * \param TsharedPtr A shared_ptr pointer to be inserted at the end of collection
- *
- * \code
- *              //================
- *              //Usage example:
- *              //================
- *              // Data set up
- *                      Neuron N1, N2, N3;
- *                      Container<Con> conContainer;
- *                      std::vector<ConPtr> vc;
- *                      std::vector<int> result;
- *                      N1.setId(10);
- *                      N2.setId(20);
- *                      N3.setId(30);
- *              // Test
- *                      ConPtr ptCon( new Con(&N1, 1.13) );     // Create new Con and initialize ptCon
- *                      conContainer.push_back(ptCon);                          // push_back
- *                      ptCon.reset(  new Con(&N2, 2.22) );             // create new Con and assign to ptCon
- *                      conContainer.push_back(ptCon);                          // push_back
- *                      ptCon.reset(  new Con(&N3, 3.33) );             // create new Con and assign to ptCon
- *                      conContainer.push_back(ptCon);                          // push_back
- *
- *                      vc = conContainer.load();
- *
- *                      result.push_back(vc.at(0)->getId());
- *                      result.push_back(vc.at(1)->getId());
- *                      result.push_back(vc.at(2)->getId());
- *      // After execution of this code, result contains a numeric vector with values 10, 20 and 30.
- * \endcode
- *
- * \sa C++ documentation for std::vector::push_back and the unit test files, e.g., runit.Cpp.Container.R, for usage examples.
- */
 
 template<typename T>
   void
@@ -134,7 +97,10 @@ template<typename T>
   void
   SimpleContainer<T>::clear()
   {
-    d_collection.clear();
+		while ( !d_collection.empty() ) {
+			delete  d_collection.back();
+			d_collection.pop_back();
+  		}
   }
 
 //! Pretty print of the SimpleContainer<T>
@@ -184,7 +150,7 @@ template<typename T>
   void
   SimpleContainer<T>::show()
   {
-    boost::shared_ptr < Iterator<T> > itr = createIterator();
+    Iterator<T>* itr = createIterator();
     for (itr->first(); !itr->isDone(); itr->next())
       {
         itr->currentItem()->show();
@@ -200,7 +166,7 @@ template<typename T>
   bool
   SimpleContainer<T>::validate()
   {
-    boost::shared_ptr < Iterator<T> > itr = createIterator();
+     Iterator<T>* itr = createIterator();
     for (itr->first(); !itr->isDone(); itr->next())
       {
         itr->currentItem()->validate();

@@ -6,6 +6,11 @@
  */
 
 #include "package.h"
+#include "functionDefinitions.code"
+#include "classHeaders/ActivationFunction.h"
+#include "classHeaders/LMS.h"
+#include "classHeaders/LMLS.h"
+#include "classHeaders/TAO.h"
 #include "classHeaders/Connection.h"
 #include "classHeaders/Neuron.h"
 #include "classHeaders/SimpleNeuron.h"
@@ -17,7 +22,7 @@
 #include "classHeaders/SimpleNeuralCreator.h"
 #include "classHeaders/predictBehavior.h"
 #include "classHeaders/MLPbehavior.h"
-#include "classHeaders/Iterator.h"
+#include "classHeaders/SimpleContainerReverseIterator.h"
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/MLPfactory.h"
 
@@ -25,7 +30,7 @@
 
 
 ConPtr
-MLPfactory::makeCon(Neuron& neuron, double weight)
+MLPfactory::makeCon(NeuronPtr neuron, double weight)
 {
   ConPtr conPtr(new Con(neuron, weight));
   return conPtr;
@@ -73,10 +78,10 @@ MLPfactory::makeNeuron(Handler Id, NeuronIteratorPtr neuronIteratorPtr,
   for (neuronIteratorPtr->first(); !neuronIteratorPtr->isDone(); neuronIteratorPtr->next())
     {
       weight = as<double> (runif(1, -extreme, extreme));
-      neuronPtr->addCon(makeCon(*neuronIteratorPtr->currentItem(), weight));
+      neuronPtr->addCon(makeCon(neuronIteratorPtr->currentItem(), weight));
     }
 
-  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior.get());
+  MLPbehavior* mlpBehavior = dynamic_cast<MLPbehavior*> (neuronPtr->d_predictBehavior);
   mlpBehavior->d_bias = as<double> (runif(1, -extreme, extreme));
 
   return neuronPtr;
@@ -101,10 +106,10 @@ MLPfactory::makeLayerContainer()
 
 
 NeuralNetworkPtr
-MLPfactory::makeNeuralNetwork(NeuralFactory& neuralFactory)
+MLPfactory::makeNeuralNetwork(NeuralFactoryPtr neuralFactoryPtr)
 {
-  NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactory));
-  neuralNetworkPtr->setNetworkTrainBehavior( neuralFactory.makeNetworkTrainBehavior(neuralNetworkPtr) );
+  NeuralNetworkPtr neuralNetworkPtr(new SimpleNetwork(neuralFactoryPtr));
+  neuralNetworkPtr->setNetworkTrainBehavior( neuralFactoryPtr->makeNetworkTrainBehavior(neuralNetworkPtr) );
   return neuralNetworkPtr;
 }
 

@@ -1,82 +1,49 @@
 #pragma once
 
-/*! \mainpage The AMORE++ package
-
- *
-
- * \section intro_sec Introduction
-
- *
-
- * Here you will find the documentation of the C++ component of the AMORE++ R package.
-
- * The AMORE++ package is a new version of the publicly available AMORE package for neural network training and simulation under R
-
- *
-
- * \section motiv_sec Motivation
-
- *
-
- * Since the release of the previous version of the AMORE many things have changed in the R programming world.
-
- * The advent of the Reference Classes and of packages like Rcpp, inline and RUnit compel us to write a better version of the package in order to provide a more useful framework for neural network training and simulation.
-
- *
-
- * \section RoadMap Road Map
-
- * This project is currently very active and the development team intends to provide a beta version as soon as this summer (2011)
-
- *
-
- */
-
 #include <iostream>
 #include <sstream>
 #include <algorithm>
 #include <vector>
 #include <iterator>
-#include <boost/shared_ptr.hpp>
-#include <boost/weak_ptr.hpp>
-#include <boost/ref.hpp>
-#include <valarray>    // for tanh, ...
+#include <string>
+#include <valarray>      // for tanh, ...
 #include <Rcpp.h>
 
 using namespace Rcpp;
 
 class ActivationFunction;
 class Con;
+template<typename T> class Container;
 class CostFunction;
-template<typename T>
-  class Container;
+class classNoTrainBehaviorFactory;
+
 class Identity;
 class IdentityFactory;
-class Identity;
-template<typename T>
-  class Iterator;
+template<typename T> class Iterator;
 class MLPbehavior;
 class MLPfactory;
 class NetworkRinterface;
 class NeuralNetwork;
+class SimpleNetwork;
 class NeuralCreator;
+class SimpleNeuralCreator;
 class NeuralFactory;
 class NetworkTrainBehavior;
+class PredictBehavior;
 class Neuron;
+class SimpleNeuron;
 class NeuronTrainBehavior;
 
-class PredictBehavior;
-template<typename T>
-  class SimpleContainer;
-template<typename T>
-  class SimpleContainerIterator;
-template<typename T>
-  class SimpleContainerReverseIterator;
-class SimpleNetwork;
-class SimpleNeuralCreator;
-class SimpleNeuron;
+template<typename T> class SimpleContainer;
+template<typename T> class SimpleContainerIterator;
+template<typename T> class SimpleContainerReverseIterator;
+
 class Tanh;
 class TanhFactory;
+
+
+class TrainingBehavior;
+
 
 #ifndef size_type
 #define size_type unsigned int
@@ -86,34 +53,29 @@ typedef int Handler;
 typedef double (*CppFunctionPointer)(double);
 
 
-typedef boost::reference_wrapper<PredictBehavior> ActivationFunctionRef;
-typedef boost::shared_ptr<CostFunction> CostFunctionPtr;
 
 
-typedef boost::reference_wrapper<PredictBehavior> PredictBehaviorRef;
-// typedef boost::reference_wrapper<TrainingBehavior> TrainingBehaviorRef;
-typedef boost::reference_wrapper<Neuron> NeuronRef;
+typedef Neuron* NeuronPtr;
+typedef Con* ConPtr;
 
-typedef boost::shared_ptr<ActivationFunction> ActivationFunctionPtr;
-typedef boost::shared_ptr<CostFunction> CostFunctionPtr;
-typedef boost::shared_ptr<PredictBehavior> PredictBehaviorPtr;
-typedef boost::shared_ptr<NetworkTrainBehavior> NetworkTrainBehaviorPtr;
-typedef boost::shared_ptr<NeuronTrainBehavior> NeuronTrainBehaviorPtr;
-typedef boost::shared_ptr<Neuron> NeuronPtr;
-typedef boost::shared_ptr<Con> ConPtr;
-typedef boost::shared_ptr<NeuralNetwork> NeuralNetworkPtr;
+typedef ActivationFunction* 		ActivationFunctionPtr;
+typedef CostFunction* 			CostFunctionPtr;
+typedef PredictBehavior* 		PredictBehaviorPtr;
+typedef NetworkTrainBehavior* 	NetworkTrainBehaviorPtr;
+typedef NeuronTrainBehavior* 	NeuronTrainBehaviorPtr;
+typedef NeuralNetwork* 			NeuralNetworkPtr;
 
-typedef boost::shared_ptr<Container<NeuronPtr> > LayerPtr;
-typedef boost::shared_ptr<Container<LayerPtr> > LayerContainerPtr;
-typedef boost::shared_ptr<Container<ConPtr> > ConContainerPtr;
+typedef Container<NeuronPtr>*	LayerPtr;
+typedef Container<LayerPtr>* 	LayerContainerPtr;
+typedef Container<ConPtr>* 	ConContainerPtr;
 
-typedef boost::shared_ptr<Iterator<LayerPtr> > LayerIteratorPtr;
-typedef boost::shared_ptr<Iterator<NeuronPtr> > NeuronIteratorPtr;
-typedef boost::shared_ptr<Iterator<ConPtr> > ConIteratorPtr;
 
-typedef boost::shared_ptr<NeuralFactory> NeuralFactoryPtr;
-typedef boost::shared_ptr<NeuralCreator> NeuralCreatorPtr;
+typedef Iterator<LayerPtr>*		LayerIteratorPtr;
+typedef Iterator<NeuronPtr>*		NeuronIteratorPtr;
+typedef Iterator<ConPtr>*		ConIteratorPtr;
 
-typedef boost::weak_ptr<NeuralNetwork> NeuralNetworkWeakPtr;
-typedef boost::weak_ptr<Neuron> NeuronWeakPtr;
+typedef NeuralFactory*			NeuralFactoryPtr;
+typedef NeuralCreator*			NeuralCreatorPtr;
+
+typedef CostFunction*			CostFunctionPtr;
 

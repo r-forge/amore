@@ -1,9 +1,13 @@
 #pragma once
-/// class Neuron - 
+#include "MLPbehavior.h"
+#include "SimpleNetwork.h"
+#include "ADAPTgdOutputNeuronTrainBehavior.h"
+#include "ADAPTgdHiddenNeuronTrainBehavior.h"
+/// class Neuron -
 class Neuron {
   // Attributes
 protected:
-  NeuralNetworkWeakPtr d_neuralNetwork;
+  NeuralNetworkPtr d_neuralNetwork;
   PredictBehaviorPtr d_predictBehavior;
   ActivationFunctionPtr d_activationFunction;
   NeuronTrainBehaviorPtr d_neuronTrainBehavior;
@@ -13,9 +17,16 @@ protected:
   double d_output;
   double d_outputDerivative;
   double d_target;
+  ConIteratorPtr d_conIterator;
   // Operations
 public:
-friend class MLPfactory; friend class NeuronTrainBehavior; 
+friend class MLPfactory;
+friend class NeuronTrainBehavior;
+friend void MLPbehavior::singlePatternForwardAction();
+friend void SimpleNetwork::readOutput (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr);
+friend void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction();
+friend void ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction();
+  virtual ~Neuron ();
   virtual double getInducedLocalField () = 0;
   virtual void setInducedLocalField (double inducedLocalField) = 0;
   virtual double getOutput () = 0;

@@ -1,5 +1,5 @@
 # Unit Tests for the MLPfactory C++ class methods
-# 
+#
 # Author: mcasl
 ###############################################################################
 
@@ -10,44 +10,44 @@ require("RUnit")
 
 
 ###############################################################################
-test.MLPfactory.Cpp.makeNeuron <- function() {	
-###############################################################################	
+test.MLPfactory.Cpp.makeNeuron <- function() {
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
 			neuronPtr->show();
-			neuronPtr->validate();	
+			neuronPtr->validate();
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= neuronPtr->getId()
 			);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
-	# 
+	#
 	# ------------------------
-	# 
+	#
 	#  Id: 1
 	# ------------------------
-	# 
+	#
 	#  bias: 0.000000
 	#  output: 0.000000
 	# ------------------------
-	# 
+	#
 	#  No connections defined
 	# ------------------------
 	# [1] TRUE
 
-	# 
+	#
 	# ------------------------
-	# 
+	#
 	#  Id: 1
 	# ------------------------
-	# 
+	#
 	#  bias: 0.000000
 	#  output: 0.000000
 	# ------------------------
-	# 
+	#
 	#  No connections defined
 	# ------------------------
 	# [1] TRUE
@@ -57,15 +57,15 @@ test.MLPfactory.Cpp.makeNeuron <- function() {
 
 
 ###############################################################################
-test.MLPfactory.Cpp.makeCon <- function() {	
-###############################################################################	
+test.MLPfactory.Cpp.makeCon <- function() {
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
 			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory() );
 			NeuronPtr neuronPtr( neuralFactoryPtr->makeNeuron(1) );
-			ConPtr conPtr( neuralFactoryPtr->makeCon(*neuronPtr, 4.5) ); 
+			ConPtr conPtr( neuralFactoryPtr->makeCon(neuronPtr, 4.5) );
 			conPtr->show();
-			conPtr->validate();	
+			conPtr->validate();
 			return	Rcpp::List::create(	Rcpp::Named(\"Id\") 	= conPtr->Id(),
 			Rcpp::Named(\"weight\") = conPtr->getWeight()
 			);
@@ -74,7 +74,7 @@ test.MLPfactory.Cpp.makeCon <- function() {
 	result <- testCodefun()
 	checkEquals(result$Id, 1)
 	checkEquals(result$weight, 4.5)
-	# From:	 1 	 Weight= 	 4.500000 
+	# From:	 1 	 Weight= 	 4.500000
 	# [1] TRUE
 	# [1] TRUE
 }
@@ -82,31 +82,31 @@ test.MLPfactory.Cpp.makeCon <- function() {
 
 
 ###############################################################################
-test.MLPfactory.Cpp.makeMLPbehavior <- function() {	
-###############################################################################	
+test.MLPfactory.Cpp.makeMLPbehavior <- function() {
+###############################################################################
 	incCode <-	paste(readLines( "pkg/AMORE/src/AMORE.h"),	collapse = "\n" )
 	testCode <- "
-			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );			
+			NeuralFactoryPtr neuralFactoryPtr( new MLPNoNetworkTrainBehaviorFactory );
 			LayerPtr inputLayerPtr (neuralFactoryPtr->makeLayer());
 			NeuronPtr neuronPtrInput1( neuralFactoryPtr->makeNeuron(1) );
 			NeuronPtr neuronPtrInput2( neuralFactoryPtr->makeNeuron(2) );
 			NeuronPtr neuronPtrInput3( neuralFactoryPtr->makeNeuron(3) );
 			inputLayerPtr->push_back(neuronPtrInput1);
-			inputLayerPtr->push_back(neuronPtrInput2);	
+			inputLayerPtr->push_back(neuronPtrInput2);
 			inputLayerPtr->push_back(neuronPtrInput3);
 			neuronPtrInput1->setOutput(4.0);
 			neuronPtrInput2->setOutput(2.0);
 			neuronPtrInput3->setOutput(4.0);
-			
+
 			LayerPtr outputLayerPtr (neuralFactoryPtr->makeLayer());
-		
+
 			Rcpp::XPtr<CppFunctionPointer>  f0XPtr(new CppFunctionPointer(&Tanh_f0)) ;
 			Rcpp::XPtr<CppFunctionPointer>  f1XPtr(new CppFunctionPointer(&Tanh_f1)) ;
 
 			NeuronPtr neuronPtrOutput4( neuralFactoryPtr->makeNeuron(4) );
-			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput1, 0.25));	// These are hand-made in order to check the sim results
-			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput2, 0.50));
-			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(*neuronPtrInput3, 0.75));
+			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(neuronPtrInput1, 0.25));	// These are hand-made in order to check the sim results
+			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(neuronPtrInput2, 0.50));
+			neuronPtrOutput4->addCon(neuralFactoryPtr->makeCon(neuronPtrInput3, 0.75));
 			ActivationFunctionPtr activationFunctionPtr ( neuralFactoryPtr->makeActivationFunction(neuronPtrOutput4, f0XPtr, f1XPtr)	);
 			neuronPtrOutput4->setActivationFunction(activationFunctionPtr);
 
@@ -116,12 +116,12 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 
 			Rprintf(\"===================================\");
 			Rprintf(\" Input Neurons \");
-			Rprintf(\"===================================\");			
+			Rprintf(\"===================================\");
 			inputLayerPtr->show();
 
 			Rprintf(\"===================================\");
 			Rprintf(\" Output Neurons \");
-			Rprintf(\"===================================\");	
+			Rprintf(\"===================================\");
 			outputLayerPtr->show();
 
 			return	Rcpp::List::create(	Rcpp::Named(\"outputN1\") = neuronPtrInput1->getOutput(),
@@ -131,7 +131,7 @@ test.MLPfactory.Cpp.makeMLPbehavior <- function() {
 			);
 			"
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs="using namespace Rcpp;", language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
-	result <- testCodefun()	
+	result <- testCodefun()
 	checkEquals(result$outputN1, 4)
 	checkEquals(result$outputN2, 2)
 	checkEquals(result$outputN3, 4)

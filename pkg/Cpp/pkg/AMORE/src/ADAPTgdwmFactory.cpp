@@ -8,6 +8,9 @@
 
 #include "package.h"
 #include "classHeaders/ADAPTgdwmFactory.h"
+#include "classHeaders/ADAPTgdwmNetworkTrainBehavior.h"
+#include "classHeaders/ADAPTgdwmOutputNeuronTrainBehavior.h"
+#include "classHeaders/ADAPTgdwmHiddenNeuronTrainBehavior.h"
 
 
 NetworkTrainBehaviorPtr

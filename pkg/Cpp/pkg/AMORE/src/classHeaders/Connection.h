@@ -1,17 +1,24 @@
 #pragma once
+#include "MLPbehavior.h"
+#include "ADAPTgdOutputNeuronTrainBehavior.h"
+#include "ADAPTgdHiddenNeuronTrainBehavior.h" 
 /// class Con - 
 class Con {
   // Attributes
 private:
-  NeuronRef d_neuron;
+  NeuronPtr d_neuron;
   double d_weight;
   // Operations
 public:
-  Con (Neuron& neuron);
-  Con (Neuron& neuron, double weight);
+friend void MLPbehavior::singlePatternForwardAction(); 
+friend void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction();
+friend void ADAPTgdHiddenNeuronTrainBehavior::singlePatternBackwardAction();
+  Con (NeuronPtr neuron);
+  Con (NeuronPtr neuron, double weight);
+  ~Con ();
   Handler Id ();
-  Neuron& getNeuron ();
-  void setNeuron (Neuron& neuron);
+  NeuronPtr getNeuron ();
+  void setNeuron (NeuronPtr neuron);
   double getWeight ();
   void setWeight (double weight);
   void addToWeight (double value);

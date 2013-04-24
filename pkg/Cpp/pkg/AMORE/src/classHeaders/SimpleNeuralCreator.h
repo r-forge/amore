@@ -7,7 +7,7 @@ class SimpleNeuralCreator : public NeuralCreator {
 public:
   SimpleNeuralCreator ();
 protected:
-  NeuralNetworkPtr createFeedForwardNetwork (NeuralFactory& neuralFactory, std::vector<int> numberOfNeurons, std::string hiddenLayersActivationFunctionName, std::string outputLayerActivationFunctionName);
-  NeuralNetworkPtr createCustomFeedForwardNetwork (NeuralFactory& neuralFactory, std::vector<int> numberOfNeurons, Rcpp::List hiddenLayersActivationFunction, Rcpp::List outputLayerActivationFunction);
+  NeuralNetworkPtr createFeedForwardNetwork (NeuralFactoryPtr neuralFactoryPtr, std::vector<int> numberOfNeurons, std::string hiddenLayersActivationFunctionName, std::string outputLayerActivationFunctionName);
+  NeuralNetworkPtr createCustomFeedForwardNetwork (NeuralFactoryPtr neuralFactoryPtr, std::vector<int> numberOfNeurons, Rcpp::List hiddenLayersActivationFunction, Rcpp::List outputLayerActivationFunction);
 };
 

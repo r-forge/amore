@@ -1,4 +1,4 @@
-Package: AMORE
+Package: AMOREcpp
 Type: Package
 Title: A new version of the AMORE package for neural network training and simulation. See AMORE.Classic for the legacy version of the package.
 Version: 0.4
@@ -7,7 +7,6 @@ Author: Manuel Castejon Limas, Camino Fernandez Llamas, Javier Alfonso Cendon, J
 Maintainer: Manuel Castejon Limas <manuel.castejon@gmail.com>
 Description: A package for neural network training and simulation.
 License: GNU GPL
-LazyLoad: yes
-Depends: methods, Rcpp (>= 0.9.4)
+Depends: methods, Rcpp (>= 0.10.2)
 LinkingTo: Rcpp
-RcppModules: modAMORE
+RcppModules: AMOREcpp

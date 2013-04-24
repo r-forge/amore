@@ -6,21 +6,29 @@
  */
 
 #include "package.h"
-
-
 #include "classHeaders/NeuralFactory.h"
 #include "classHeaders/NeuralNetwork.h"
 #include "classHeaders/NeuralCreator.h"
 #include "classHeaders/NetworkRinterface.h"
+#include "classHeaders/MLPNoNetworkTrainBehaviorFactory.h"
+#include "classHeaders/ADAPTgdFactory.h"
+#include "classHeaders/ADAPTgdwmFactory.h"
+#include "classHeaders/BATCHgdFactory.h"
+#include "classHeaders/BATCHgdwmFactory.h"
 
 
 
 //=========================================================================================================
 
 
-NetworkRinterface::NetworkRinterface()
+NetworkRinterface::NetworkRinterface() : d_neuralNetwork(NULL)
 {
 
+}
+
+NetworkRinterface::~NetworkRinterface()
+{
+	delete  d_neuralNetwork;
 }
 
 void
@@ -31,7 +39,7 @@ NetworkRinterface::createFeedForwardNetwork(Rcpp::NumericVector numberOfNeurons,
   std::string hiddenName = as<std::string> (hiddenLayersActivationFunctionName);
   std::string outputName = as<std::string> (outputLayerActivationFunctionName);
   std::vector<int> numOfNeurons = as< std::vector<int> >(numberOfNeurons) ;
-  d_neuralNetwork = neuralCreatorPtr->createFeedForwardNetwork(*neuralFactoryPtr, numOfNeurons, hiddenName, outputName);
+  d_neuralNetwork = neuralCreatorPtr->createFeedForwardNetwork(neuralFactoryPtr, numOfNeurons, hiddenName, outputName);
 }
 
 void
@@ -40,7 +48,7 @@ NetworkRinterface::createCustomFeedForwardNetwork(Rcpp::NumericVector numberOfNe
   NeuralFactoryPtr neuralFactoryPtr (new MLPNoNetworkTrainBehaviorFactory );
   NeuralCreatorPtr neuralCreatorPtr( neuralFactoryPtr->makeNeuralCreator() );
   std::vector<int> numOfNeurons = as< std::vector<int> >(numberOfNeurons) ;
-  d_neuralNetwork = neuralCreatorPtr->createCustomFeedForwardNetwork(*neuralFactoryPtr, numOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
+  d_neuralNetwork = neuralCreatorPtr->createCustomFeedForwardNetwork(neuralFactoryPtr, numOfNeurons, hiddenLayersActivationFunction, outputLayerActivationFunction);
 
 }
 

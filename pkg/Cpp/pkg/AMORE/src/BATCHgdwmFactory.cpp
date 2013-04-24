@@ -8,6 +8,10 @@
 
 #include "package.h"
 #include "classHeaders/BATCHgdwmFactory.h"
+#include "classHeaders/BATCHgdwmNetworkTrainBehavior.h"
+#include "classHeaders/BATCHgdwmOutputNeuronTrainBehavior.h"
+#include "classHeaders/BATCHgdwmHiddenNeuronTrainBehavior.h"
+
 
 
 

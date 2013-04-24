@@ -10,8 +10,8 @@ private:
 public:
 friend class MLPfactory; 
   MLPbehavior (NeuronPtr neuronPtr);
-private:
   void singlePatternForwardAction ();
+private:
   void show ();
   void addToBias (double value);
 };

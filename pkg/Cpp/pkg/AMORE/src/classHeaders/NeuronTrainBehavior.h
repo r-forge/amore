@@ -4,7 +4,7 @@
 class NeuronTrainBehavior {
   // Attributes
 protected:
-  NeuronWeakPtr d_neuron;
+  NeuronPtr d_neuron;
   double d_delta;
   double d_learningRate;
   double d_momentum;
