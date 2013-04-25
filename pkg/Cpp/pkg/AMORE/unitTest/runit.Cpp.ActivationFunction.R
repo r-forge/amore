@@ -41,7 +41,6 @@ test.ActivationFunction.Cpp.Constructor <- function() {
 		'
 	testCodefun <- cfunction(sig=signature(), body=testCode,includes=incCode, otherdefs=otherCode, language="C++", verbose=FALSE, convention=".Call",Rcpp=TRUE,cppargs=character(), cxxargs= paste("-I",getwd(),"/pkg/AMORE/src -I/opt/local/include",sep=""), libargs=character())
 	result <- testCodefun()
-
 	result
 
 

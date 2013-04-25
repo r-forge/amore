@@ -1,10 +1,7 @@
 #pragma once
 #include "NeuralNetwork.h"
-#include "NetworkTrainBehavior.h"
-#include "CostFunction.h"
-#include "NeuralFactory.h"
 
-/// class SimpleNetwork -
+/// class SimpleNetwork - 
 class SimpleNetwork : public NeuralNetwork {
   // Operations
 public:

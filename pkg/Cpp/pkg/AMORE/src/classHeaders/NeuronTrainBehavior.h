@@ -14,6 +14,7 @@ protected:
   double d_sumDeltaBias;
   // Operations
 public:
+  virtual ~NeuronTrainBehavior ();
   int numberOfConnections ();
   double getNeuronTarget ();
   double getNeuronOutput ();

@@ -1,9 +1,7 @@
 #pragma once
 #include "MLPbehavior.h"
-#include "SimpleNetwork.h"
-#include "ADAPTgdOutputNeuronTrainBehavior.h"
-#include "ADAPTgdHiddenNeuronTrainBehavior.h"
-/// class Neuron -
+#include "SimpleNetwork.h" 
+/// class Neuron - 
 class Neuron {
   // Attributes
 protected:
@@ -20,8 +18,8 @@ protected:
   ConIteratorPtr d_conIterator;
   // Operations
 public:
-friend class MLPfactory;
-friend class NeuronTrainBehavior;
+friend class MLPfactory; 
+friend class NeuronTrainBehavior; 
 friend void MLPbehavior::singlePatternForwardAction();
 friend void SimpleNetwork::readOutput (std::vector<double>::iterator& iterator, NeuronIteratorPtr outputNeuronIteratorPtr);
 friend void ADAPTgdOutputNeuronTrainBehavior::singlePatternBackwardAction();
