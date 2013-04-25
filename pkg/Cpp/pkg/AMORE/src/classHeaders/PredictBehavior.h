@@ -8,6 +8,7 @@ protected:
   // Operations
 public:
 friend class NeuronTrainBehavior; 
+  virtual ~PredictBehavior ();
   virtual void singlePatternForwardAction () = 0;
   virtual void show () = 0;
   virtual void addToBias (double value) = 0;

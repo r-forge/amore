@@ -29,9 +29,10 @@ sed -e '/public:/ a\
 friend class NeuronTrainBehavior; ' -i ""  ../pkg/AMORE/src/classHeaders/PredictBehavior.h 
 
 sed -e '/#pragma once/ a\
-#include "MLPbehavior.h"\
-#include "ADAPTgdOutputNeuronTrainBehavior.h" \
-#include "ADAPTgdHiddenNeuronTrainBehavior.h" \
+#include "MLPbehavior.h" a\
+#include "SimpleNetwork.h" a\ 
+#include "ADAPTgdOutputNeuronTrainBehavior.h" a\
+#include "ADAPTgdHiddenNeuronTrainBehavior.h"\
 ' -i ""  ../pkg/AMORE/src/classHeaders/Neuron.h
 
 sed -e '/public:/ a\
